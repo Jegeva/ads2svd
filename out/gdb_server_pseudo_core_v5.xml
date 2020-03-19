@@ -1,0 +1,133 @@
+<core_definition xmlns:cr="http://www.arm.com/core_reg" xmlns:tcf="http://com.arm.targetconfigurationeditor" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.arm.com/core_definition" architecture="GDBServer" xsi:schemaLocation="http://www.arm.com/core_definition ../Schemas/core_definition.xsd">
+  <name>GDBServerPseudoCore_v5</name>
+  <internal_name>ARM926EJ-S</internal_name>
+  <series>A</series>
+  <cr:register_list name="Core" display_by_default="true">
+
+    <register xmlns="http://www.arm.com/core_reg" name="R0" size="4" access="RW" xml:base="Registers/core_registers_gdb.xml">
+      <gui_name language="en">R0</gui_name>
+      <description language="en">R0</description>
+    </register>
+    <register xmlns="http://www.arm.com/core_reg" name="R1" size="4" access="RW" xml:base="Registers/core_registers_gdb.xml">
+      <gui_name language="en">R1</gui_name>
+      <description language="en">R1</description>
+    </register>
+    <register xmlns="http://www.arm.com/core_reg" name="R2" size="4" access="RW" xml:base="Registers/core_registers_gdb.xml">
+      <gui_name language="en">R2</gui_name>
+      <description language="en">R2</description>
+    </register>
+    <register xmlns="http://www.arm.com/core_reg" name="R3" size="4" access="RW" xml:base="Registers/core_registers_gdb.xml">
+      <gui_name language="en">R3</gui_name>
+      <description language="en">R3</description>
+    </register>
+    <register xmlns="http://www.arm.com/core_reg" name="R4" size="4" access="RW" xml:base="Registers/core_registers_gdb.xml">
+      <gui_name language="en">R4</gui_name>
+      <description language="en">R4</description>
+    </register>
+    <register xmlns="http://www.arm.com/core_reg" name="R5" size="4" access="RW" xml:base="Registers/core_registers_gdb.xml">
+      <gui_name language="en">R5</gui_name>
+      <description language="en">R5</description>
+    </register>
+    <register xmlns="http://www.arm.com/core_reg" name="R6" size="4" access="RW" xml:base="Registers/core_registers_gdb.xml">
+      <gui_name language="en">R6</gui_name>
+      <description language="en">R6</description>
+    </register>
+    <register xmlns="http://www.arm.com/core_reg" name="R7" size="4" access="RW" xml:base="Registers/core_registers_gdb.xml">
+      <gui_name language="en">R7</gui_name>
+      <description language="en">R7</description>
+    </register>
+    <register xmlns="http://www.arm.com/core_reg" name="R8" size="4" access="RW" xml:base="Registers/core_registers_gdb.xml">
+      <gui_name language="en">R8</gui_name>
+      <description language="en">R8</description>
+    </register>
+    <register xmlns="http://www.arm.com/core_reg" name="R9" size="4" access="RW" xml:base="Registers/core_registers_gdb.xml">
+      <gui_name language="en">R9</gui_name>
+      <description language="en">R9</description>
+    </register>
+    <register xmlns="http://www.arm.com/core_reg" name="R10" size="4" access="RW" xml:base="Registers/core_registers_gdb.xml">
+      <gui_name language="en">R10</gui_name>
+      <description language="en">R10</description>
+    </register>
+    <register xmlns="http://www.arm.com/core_reg" name="R11" size="4" access="RW" xml:base="Registers/core_registers_gdb.xml">
+      <gui_name language="en">R11</gui_name>
+      <description language="en">R11</description>
+    </register>
+    <register xmlns="http://www.arm.com/core_reg" name="R12" size="4" access="RW" xml:base="Registers/core_registers_gdb.xml">
+      <gui_name language="en">R12</gui_name>
+      <description language="en">R12</description>
+    </register>
+    <register xmlns="http://www.arm.com/core_reg" name="SP" size="4" access="RW" xml:base="Registers/core_registers_gdb.xml">
+      <gui_name language="en">SP</gui_name>
+      <description language="en">Stack Pointer</description>
+    </register>
+    <register xmlns="http://www.arm.com/core_reg" name="LR" size="4" access="RW" xml:base="Registers/core_registers_gdb.xml">
+      <gui_name language="en">LR</gui_name>
+      <description language="en">Link Register</description>
+    </register>
+    <register xmlns="http://www.arm.com/core_reg" name="PC" size="4" access="RW" xml:base="Registers/core_registers_gdb.xml">
+      <gui_name language="en">PC</gui_name>
+      <description language="en">Program Counter</description>
+    </register>
+
+
+    <register xmlns="http://www.arm.com/core_reg" name="CPSR" size="4" access="RMW" xml:base="Registers/CPSR/V5_gdbserver.xml">
+      <gui_name language="en">CPSR</gui_name>
+      <description language="en">Current Program Status Register</description>
+      <bitField conditional="false" name="N">
+        <gui_name language="en">N</gui_name>
+        <description language="en">Negative/Less than flag</description>
+        <definition>[31]</definition>
+      </bitField>
+      <bitField conditional="false" name="Z">
+        <gui_name language="en">Z</gui_name>
+        <description language="en">Zero flag</description>
+        <definition>[30]</definition>
+      </bitField>
+      <bitField conditional="false" name="C">
+        <gui_name language="en">C</gui_name>
+        <description language="en">Carry or Borrow or Extend flag</description>
+        <definition>[29]</definition>
+      </bitField>
+      <bitField conditional="false" name="V">
+        <gui_name language="en">V</gui_name>
+        <description language="en">Overflow flag</description>
+        <definition>[28]</definition>
+      </bitField>
+      <bitField conditional="false" name="Q">
+        <gui_name language="en">Q</gui_name>
+        <description language="en">Saturation flag</description>
+        <definition>[27]</definition>
+      </bitField>
+      <bitField conditional="false" name="J">
+        <gui_name language="en">J</gui_name>
+        <description language="en">Jazelle state</description>
+        <definition>[24]</definition>
+      </bitField>
+      <bitField conditional="false" name="I">
+        <gui_name language="en">I</gui_name>
+        <description language="en">IRQ disable</description>
+        <definition>[7]</definition>
+      </bitField>
+      <bitField conditional="false" name="F">
+        <gui_name language="en">F</gui_name>
+        <description language="en">FIQ disable</description>
+        <definition>[6]</definition>
+      </bitField>
+      <bitField conditional="false" name="T">
+        <gui_name language="en">T</gui_name>
+        <description language="en">Thumb state</description>
+        <definition>[5]</definition>
+      </bitField>
+      <bitField conditional="false" name="M" enumerationId="CPSR_MODE_BIT" access="RO">
+        <gui_name language="en">M</gui_name>
+        <description language="en">Mode</description>
+        <definition>[4:0]</definition>
+      </bitField>
+    </register>
+
+    <!-- Mode enum vals -->
+
+    <tcf:enumeration xmlns:tcf="http://com.arm.targetconfigurationeditor" name="CPSR_MODE_BIT" values="USR=0x10,FIQ=0x11,IRQ=0x12,SVC=0x13,UND=0x1B,ABT=0x17,SYS=0x1F" xml:base="Registers/CPSR/V5_gdbserver.xml"/>
+
+  </cr:register_list>
+</core_definition>

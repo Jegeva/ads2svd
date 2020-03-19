@@ -1,0 +1,2360 @@
+<core_definition xmlns="http://www.arm.com/core_definition" xmlns:cr="http://www.arm.com/core_reg" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:tcf="http://com.arm.targetconfigurationeditor" xsi:schemaLocation="http://www.arm.com/core_definition ../Schemas/core_definition.xsd" architecture="GDBServer64">
+  <name>GDBServerPseudoCoreAArch64</name>
+  <internal_name>V8-Generic</internal_name>
+  <series>A</series>
+  <reg_filter id="AARCH64" gui_name="AArch64" core_state="AArch64"/>
+  <cr:register_list filter="AARCH64" name="Core" display_by_default="true">
+
+    <register xmlns="http://www.arm.com/core_reg" name="X0" size="8" access="RW" xml:base="Registers/core_registers_gdb_aarch64.xml">
+      <gui_name language="en">X0</gui_name>
+      <description language="en">X0</description>
+    </register>
+    <register xmlns="http://www.arm.com/core_reg" name="X1" size="8" access="RW" xml:base="Registers/core_registers_gdb_aarch64.xml">
+      <gui_name language="en">X1</gui_name>
+      <description language="en">X1</description>
+    </register>
+    <register xmlns="http://www.arm.com/core_reg" name="X2" size="8" access="RW" xml:base="Registers/core_registers_gdb_aarch64.xml">
+      <gui_name language="en">X2</gui_name>
+      <description language="en">X2</description>
+    </register>
+    <register xmlns="http://www.arm.com/core_reg" name="X3" size="8" access="RW" xml:base="Registers/core_registers_gdb_aarch64.xml">
+      <gui_name language="en">X3</gui_name>
+      <description language="en">X3</description>
+    </register>
+    <register xmlns="http://www.arm.com/core_reg" name="X4" size="8" access="RW" xml:base="Registers/core_registers_gdb_aarch64.xml">
+      <gui_name language="en">X4</gui_name>
+      <description language="en">X4</description>
+    </register>
+    <register xmlns="http://www.arm.com/core_reg" name="X5" size="8" access="RW" xml:base="Registers/core_registers_gdb_aarch64.xml">
+      <gui_name language="en">X5</gui_name>
+      <description language="en">X5</description>
+    </register>
+    <register xmlns="http://www.arm.com/core_reg" name="X6" size="8" access="RW" xml:base="Registers/core_registers_gdb_aarch64.xml">
+      <gui_name language="en">X6</gui_name>
+      <description language="en">X6</description>
+    </register>
+    <register xmlns="http://www.arm.com/core_reg" name="X7" size="8" access="RW" xml:base="Registers/core_registers_gdb_aarch64.xml">
+      <gui_name language="en">X7</gui_name>
+      <description language="en">X7</description>
+    </register>
+    <register xmlns="http://www.arm.com/core_reg" name="X8" size="8" access="RW" xml:base="Registers/core_registers_gdb_aarch64.xml">
+      <gui_name language="en">X8</gui_name>
+      <description language="en">X8</description>
+    </register>
+    <register xmlns="http://www.arm.com/core_reg" name="X9" size="8" access="RW" xml:base="Registers/core_registers_gdb_aarch64.xml">
+      <gui_name language="en">X9</gui_name>
+      <description language="en">X9</description>
+    </register>
+    <register xmlns="http://www.arm.com/core_reg" name="X10" size="8" access="RW" xml:base="Registers/core_registers_gdb_aarch64.xml">
+      <gui_name language="en">X10</gui_name>
+      <description language="en">X10</description>
+    </register>
+    <register xmlns="http://www.arm.com/core_reg" name="X11" size="8" access="RW" xml:base="Registers/core_registers_gdb_aarch64.xml">
+      <gui_name language="en">X11</gui_name>
+      <description language="en">X11</description>
+    </register>
+    <register xmlns="http://www.arm.com/core_reg" name="X12" size="8" access="RW" xml:base="Registers/core_registers_gdb_aarch64.xml">
+      <gui_name language="en">X12</gui_name>
+      <description language="en">X12</description>
+    </register>
+    <register xmlns="http://www.arm.com/core_reg" name="X13" size="8" access="RW" xml:base="Registers/core_registers_gdb_aarch64.xml">
+      <gui_name language="en">X13</gui_name>
+      <description language="en">X13</description>
+    </register>
+    <register xmlns="http://www.arm.com/core_reg" name="X14" size="8" access="RW" xml:base="Registers/core_registers_gdb_aarch64.xml">
+      <gui_name language="en">X14</gui_name>
+      <description language="en">X14</description>
+    </register>
+    <register xmlns="http://www.arm.com/core_reg" name="X15" size="8" access="RW" xml:base="Registers/core_registers_gdb_aarch64.xml">
+      <gui_name language="en">X15</gui_name>
+      <description language="en">X15</description>
+    </register>
+    <register xmlns="http://www.arm.com/core_reg" name="X16" size="8" access="RW" xml:base="Registers/core_registers_gdb_aarch64.xml">
+      <gui_name language="en">X16</gui_name>
+      <description language="en">X16</description>
+    </register>
+    <register xmlns="http://www.arm.com/core_reg" name="X17" size="8" access="RW" xml:base="Registers/core_registers_gdb_aarch64.xml">
+      <gui_name language="en">X17</gui_name>
+      <description language="en">X17</description>
+    </register>
+    <register xmlns="http://www.arm.com/core_reg" name="X18" size="8" access="RW" xml:base="Registers/core_registers_gdb_aarch64.xml">
+      <gui_name language="en">X18</gui_name>
+      <description language="en">X18</description>
+    </register>
+    <register xmlns="http://www.arm.com/core_reg" name="X19" size="8" access="RW" xml:base="Registers/core_registers_gdb_aarch64.xml">
+      <gui_name language="en">X19</gui_name>
+      <description language="en">X19</description>
+    </register>
+    <register xmlns="http://www.arm.com/core_reg" name="X20" size="8" access="RW" xml:base="Registers/core_registers_gdb_aarch64.xml">
+      <gui_name language="en">X20</gui_name>
+      <description language="en">X20</description>
+    </register>
+    <register xmlns="http://www.arm.com/core_reg" name="X21" size="8" access="RW" xml:base="Registers/core_registers_gdb_aarch64.xml">
+      <gui_name language="en">X21</gui_name>
+      <description language="en">X21</description>
+    </register>
+    <register xmlns="http://www.arm.com/core_reg" name="X22" size="8" access="RW" xml:base="Registers/core_registers_gdb_aarch64.xml">
+      <gui_name language="en">X22</gui_name>
+      <description language="en">X22</description>
+    </register>
+    <register xmlns="http://www.arm.com/core_reg" name="X23" size="8" access="RW" xml:base="Registers/core_registers_gdb_aarch64.xml">
+      <gui_name language="en">X23</gui_name>
+      <description language="en">X23</description>
+    </register>
+    <register xmlns="http://www.arm.com/core_reg" name="X24" size="8" access="RW" xml:base="Registers/core_registers_gdb_aarch64.xml">
+      <gui_name language="en">X24</gui_name>
+      <description language="en">X24</description>
+    </register>
+    <register xmlns="http://www.arm.com/core_reg" name="X25" size="8" access="RW" xml:base="Registers/core_registers_gdb_aarch64.xml">
+      <gui_name language="en">X25</gui_name>
+      <description language="en">X25</description>
+    </register>
+    <register xmlns="http://www.arm.com/core_reg" name="X26" size="8" access="RW" xml:base="Registers/core_registers_gdb_aarch64.xml">
+      <gui_name language="en">X26</gui_name>
+      <description language="en">X26</description>
+    </register>
+    <register xmlns="http://www.arm.com/core_reg" name="X27" size="8" access="RW" xml:base="Registers/core_registers_gdb_aarch64.xml">
+      <gui_name language="en">X27</gui_name>
+      <description language="en">X27</description>
+    </register>
+    <register xmlns="http://www.arm.com/core_reg" name="X28" size="8" access="RW" xml:base="Registers/core_registers_gdb_aarch64.xml">
+      <gui_name language="en">X28</gui_name>
+      <description language="en">X28</description>
+    </register>
+    <register xmlns="http://www.arm.com/core_reg" name="X29" size="8" access="RW" xml:base="Registers/core_registers_gdb_aarch64.xml">
+      <gui_name language="en">X29</gui_name>
+      <description language="en">X29</description>
+    </register>
+    <register xmlns="http://www.arm.com/core_reg" name="X30" size="8" access="RW" xml:base="Registers/core_registers_gdb_aarch64.xml">
+      <gui_name language="en">X30</gui_name>
+      <description language="en">X30</description>
+    </register>
+    <register xmlns="http://www.arm.com/core_reg" name="SP" size="8" access="RW" xml:base="Registers/core_registers_gdb_aarch64.xml">
+      <gui_name language="en">SP</gui_name>
+      <description language="en">Stack Pointer</description>
+    </register>
+    <register xmlns="http://www.arm.com/core_reg" name="PC" size="8" access="RW" xml:base="Registers/core_registers_gdb_aarch64.xml">
+      <gui_name language="en">PC</gui_name>
+      <description language="en">Program Counter</description>
+    </register>
+
+
+    <register xmlns="http://www.arm.com/core_reg" access="RMW" name="CPSR" size="4" xml:base="Registers/CPSR/V8_gdbserver.xml">
+      <gui_name language="en">Current Processor State Register</gui_name>
+      <description language="en">Holds the current processor state.</description>
+      <bitField conditional="false" name="N">
+        <gui_name language="en">N</gui_name>
+        <description language="en">Negative condition flag.</description>
+        <definition>[31]</definition>
+      </bitField>
+      <bitField conditional="false" name="Z">
+        <gui_name language="en">Z</gui_name>
+        <description language="en">Zero condition flag.</description>
+        <definition>[30]</definition>
+      </bitField>
+      <bitField conditional="false" name="C">
+        <gui_name language="en">C</gui_name>
+        <description language="en">Carry condition flag.</description>
+        <definition>[29]</definition>
+      </bitField>
+      <bitField conditional="false" name="V">
+        <gui_name language="en">V</gui_name>
+        <description language="en">Overflow condition flag.</description>
+        <definition>[28]</definition>
+      </bitField>
+      <bitField conditional="false" name="SS">
+        <gui_name language="en">SS</gui_name>
+        <description language="en">Software step. Indicates whether software step is enabled.</description>
+        <definition>[21]</definition>
+      </bitField>
+      <bitField conditional="false" name="IL">
+        <gui_name language="en">IL</gui_name>
+        <description language="en">Set to 1 to indicate that on exception return, or as a result of an explicit change of the CPSR mode field in AArch32, an illegal state or mode was indicated.</description>
+        <definition>[20]</definition>
+      </bitField>
+      <bitField conditional="false" enumerationId="CPSR_D" name="D">
+        <gui_name language="en">D</gui_name>
+        <description language="en">Process state D mask. When the target exception level of the debug exception is higher than the current exception level, the exception is not masked by this bit.</description>
+        <definition>[9]</definition>
+      </bitField>
+      <bitField conditional="false" enumerationId="CPSR_A" name="A">
+        <gui_name language="en">A</gui_name>
+        <description language="en">Asynchronous abort mask bit. This bit has no effect on any Data Abort exception generated by a Watchpoint debug event, even if that exception is a synchronous.</description>
+        <definition>[8]</definition>
+      </bitField>
+      <bitField conditional="false" enumerationId="CPSR_I" name="I">
+        <gui_name language="en">I</gui_name>
+        <description language="en">IRQ mask bit.</description>
+        <definition>[7]</definition>
+      </bitField>
+      <bitField conditional="false" enumerationId="CPSR_F" name="F">
+        <gui_name language="en">F</gui_name>
+        <description language="en">FIQ mask bit.</description>
+        <definition>[6]</definition>
+      </bitField>
+      <bitField conditional="false" enumerationId="CPSR_NRW" name="nRW">
+        <gui_name language="en">nRW</gui_name>
+        <description language="en">Register width.</description>
+        <definition>[4]</definition>
+      </bitField>
+      <bitField conditional="false" enumerationId="CPSR_M" name="M">
+        <gui_name language="en">M</gui_name>
+        <description language="en">The current mode. For AArch64: M[3:2] holds the Exception Level. M[1] is unused, and returning to an exception level that is using AArch64 with this bit set is treated as an illegal exception return. M[0] is used to select the SP (0 means use SP0; 1 means the exception SP is determined by the EL).</description>
+        <definition>[3:0]</definition>
+      </bitField>
+    </register>
+
+    <!-- Mode enum vals -->
+
+    <tcf:enumeration xmlns:tcf="http://com.arm.targetconfigurationeditor" name="CPSR_NRW" xml:base="Registers/CPSR/V8_gdbserver.xml">
+      <tcf:enumItem name="AArch64" number="0"/>
+      <tcf:enumItem name="AArch32" number="1"/>
+    </tcf:enumeration>
+    <tcf:enumeration xmlns:tcf="http://com.arm.targetconfigurationeditor" name="CPSR_M" xml:base="Registers/CPSR/V8_gdbserver.xml">
+      <tcf:enumItem name="AArch64_EL0t_AArch32_User" number="0"/>
+      <tcf:enumItem name="AArch32_FIQ" number="1"/>
+      <tcf:enumItem name="AArch32_IRQ" number="2"/>
+      <tcf:enumItem name="AArch32_Supervisor" number="3"/>
+      <tcf:enumItem name="AArch64_EL1t" number="4"/>
+      <tcf:enumItem name="AArch64_EL1h" number="5"/>
+      <tcf:enumItem name="AArch32_Monitor" number="6"/>
+      <tcf:enumItem name="AArch32_Abort" number="7"/>
+      <tcf:enumItem name="AArch64_EL2t" number="8"/>
+      <tcf:enumItem name="AArch64_EL2h" number="9"/>
+      <tcf:enumItem name="AArch32_Hyp" number="10"/>
+      <tcf:enumItem name="AArch32_Undefined" number="11"/>
+      <tcf:enumItem name="AArch64_EL3t" number="12"/>
+      <tcf:enumItem name="AArch64_EL3h" number="13"/>
+      <tcf:enumItem name="AArch32_System" number="15"/>
+    </tcf:enumeration>
+    <tcf:enumeration xmlns:tcf="http://com.arm.targetconfigurationeditor" name="CPSR_F" xml:base="Registers/CPSR/V8_gdbserver.xml">
+      <tcf:enumItem name="Exception_not_masked" number="0"/>
+      <tcf:enumItem name="Exception_masked" number="1"/>
+    </tcf:enumeration>
+    <tcf:enumeration xmlns:tcf="http://com.arm.targetconfigurationeditor" name="CPSR_I" xml:base="Registers/CPSR/V8_gdbserver.xml">
+      <tcf:enumItem name="Exception_not_masked" number="0"/>
+      <tcf:enumItem name="Exception_masked" number="1"/>
+    </tcf:enumeration>
+    <tcf:enumeration xmlns:tcf="http://com.arm.targetconfigurationeditor" name="CPSR_D" xml:base="Registers/CPSR/V8_gdbserver.xml">
+      <tcf:enumItem name="Debug_exceptions_from_Watchpoint_Breakpoint_and_Single_step_units_are_not_masked" number="0"/>
+      <tcf:enumItem name="Debug_exceptions_from_Watchpoint_Breakpoint_and_Single_step_units_targeted_at_the_current_exception_level_or_lower_are_masked" number="1"/>
+    </tcf:enumeration>
+    <tcf:enumeration xmlns:tcf="http://com.arm.targetconfigurationeditor" name="CPSR_A" xml:base="Registers/CPSR/V8_gdbserver.xml">
+      <tcf:enumItem name="Exception_not_masked" number="0"/>
+      <tcf:enumItem name="Exception_masked" number="1"/>
+    </tcf:enumeration>
+
+  </cr:register_list>
+  <!-- SIMD -->
+  <cr:register_list filter="AARCH64" name="SIMD">
+
+    <register_group xmlns="http://www.arm.com/core_reg" name="Vector" xml:base="Registers/SIMD/V8_AARCH64_SIMD.xml">
+      <gui_name language="en">Vector</gui_name>
+      <description language="en">SIMD registers</description>
+      <register access="RW" name="V0" size="16">
+        <gui_name language="en">V0</gui_name>
+        <description language="en">V0</description>
+        <array element_bits="16" format="Float" index_from_lsb="true" name="F16">
+          <gui_name language="en">F16</gui_name>
+        </array>
+        <array element_bits="32" format="Float" index_from_lsb="true" name="F32">
+          <gui_name language="en">F32</gui_name>
+        </array>
+        <array element_bits="64" format="Float" index_from_lsb="true" name="F64">
+          <gui_name language="en">F64</gui_name>
+        </array>
+        <array element_bits="8" format="UnsignedInt" index_from_lsb="true" name="U8">
+          <gui_name language="en">U8</gui_name>
+        </array>
+        <array element_bits="16" format="UnsignedInt" index_from_lsb="true" name="U16">
+          <gui_name language="en">U16</gui_name>
+        </array>
+        <array element_bits="32" format="UnsignedInt" index_from_lsb="true" name="U32">
+          <gui_name language="en">U32</gui_name>
+        </array>
+        <array element_bits="64" format="UnsignedInt" index_from_lsb="true" name="U64">
+          <gui_name language="en">U64</gui_name>
+        </array>
+        <array element_bits="8" format="Int" index_from_lsb="true" name="S8">
+          <gui_name language="en">S8</gui_name>
+        </array>
+        <array element_bits="16" format="Int" index_from_lsb="true" name="S16">
+          <gui_name language="en">S16</gui_name>
+        </array>
+        <array element_bits="32" format="Int" index_from_lsb="true" name="S32">
+          <gui_name language="en">S32</gui_name>
+        </array>
+        <array element_bits="64" format="Int" index_from_lsb="true" name="S64">
+          <gui_name language="en">S64</gui_name>
+        </array>
+      </register>
+      <register access="RW" name="V1" size="16">
+        <gui_name language="en">V1</gui_name>
+        <description language="en">V1</description>
+        <array element_bits="16" format="Float" index_from_lsb="true" name="F16">
+          <gui_name language="en">F16</gui_name>
+        </array>
+        <array element_bits="32" format="Float" index_from_lsb="true" name="F32">
+          <gui_name language="en">F32</gui_name>
+        </array>
+        <array element_bits="64" format="Float" index_from_lsb="true" name="F64">
+          <gui_name language="en">F64</gui_name>
+        </array>
+        <array element_bits="8" format="UnsignedInt" index_from_lsb="true" name="U8">
+          <gui_name language="en">U8</gui_name>
+        </array>
+        <array element_bits="16" format="UnsignedInt" index_from_lsb="true" name="U16">
+          <gui_name language="en">U16</gui_name>
+        </array>
+        <array element_bits="32" format="UnsignedInt" index_from_lsb="true" name="U32">
+          <gui_name language="en">U32</gui_name>
+        </array>
+        <array element_bits="64" format="UnsignedInt" index_from_lsb="true" name="U64">
+          <gui_name language="en">U64</gui_name>
+        </array>
+        <array element_bits="8" format="Int" index_from_lsb="true" name="S8">
+          <gui_name language="en">S8</gui_name>
+        </array>
+        <array element_bits="16" format="Int" index_from_lsb="true" name="S16">
+          <gui_name language="en">S16</gui_name>
+        </array>
+        <array element_bits="32" format="Int" index_from_lsb="true" name="S32">
+          <gui_name language="en">S32</gui_name>
+        </array>
+        <array element_bits="64" format="Int" index_from_lsb="true" name="S64">
+          <gui_name language="en">S64</gui_name>
+        </array>
+      </register>
+      <register access="RW" name="V2" size="16">
+        <gui_name language="en">V2</gui_name>
+        <description language="en">V2</description>
+        <array element_bits="16" format="Float" index_from_lsb="true" name="F16">
+          <gui_name language="en">F16</gui_name>
+        </array>
+        <array element_bits="32" format="Float" index_from_lsb="true" name="F32">
+          <gui_name language="en">F32</gui_name>
+        </array>
+        <array element_bits="64" format="Float" index_from_lsb="true" name="F64">
+          <gui_name language="en">F64</gui_name>
+        </array>
+        <array element_bits="8" format="UnsignedInt" index_from_lsb="true" name="U8">
+          <gui_name language="en">U8</gui_name>
+        </array>
+        <array element_bits="16" format="UnsignedInt" index_from_lsb="true" name="U16">
+          <gui_name language="en">U16</gui_name>
+        </array>
+        <array element_bits="32" format="UnsignedInt" index_from_lsb="true" name="U32">
+          <gui_name language="en">U32</gui_name>
+        </array>
+        <array element_bits="64" format="UnsignedInt" index_from_lsb="true" name="U64">
+          <gui_name language="en">U64</gui_name>
+        </array>
+        <array element_bits="8" format="Int" index_from_lsb="true" name="S8">
+          <gui_name language="en">S8</gui_name>
+        </array>
+        <array element_bits="16" format="Int" index_from_lsb="true" name="S16">
+          <gui_name language="en">S16</gui_name>
+        </array>
+        <array element_bits="32" format="Int" index_from_lsb="true" name="S32">
+          <gui_name language="en">S32</gui_name>
+        </array>
+        <array element_bits="64" format="Int" index_from_lsb="true" name="S64">
+          <gui_name language="en">S64</gui_name>
+        </array>
+      </register>
+      <register access="RW" name="V3" size="16">
+        <gui_name language="en">V3</gui_name>
+        <description language="en">V3</description>
+        <array element_bits="16" format="Float" index_from_lsb="true" name="F16">
+          <gui_name language="en">F16</gui_name>
+        </array>
+        <array element_bits="32" format="Float" index_from_lsb="true" name="F32">
+          <gui_name language="en">F32</gui_name>
+        </array>
+        <array element_bits="64" format="Float" index_from_lsb="true" name="F64">
+          <gui_name language="en">F64</gui_name>
+        </array>
+        <array element_bits="8" format="UnsignedInt" index_from_lsb="true" name="U8">
+          <gui_name language="en">U8</gui_name>
+        </array>
+        <array element_bits="16" format="UnsignedInt" index_from_lsb="true" name="U16">
+          <gui_name language="en">U16</gui_name>
+        </array>
+        <array element_bits="32" format="UnsignedInt" index_from_lsb="true" name="U32">
+          <gui_name language="en">U32</gui_name>
+        </array>
+        <array element_bits="64" format="UnsignedInt" index_from_lsb="true" name="U64">
+          <gui_name language="en">U64</gui_name>
+        </array>
+        <array element_bits="8" format="Int" index_from_lsb="true" name="S8">
+          <gui_name language="en">S8</gui_name>
+        </array>
+        <array element_bits="16" format="Int" index_from_lsb="true" name="S16">
+          <gui_name language="en">S16</gui_name>
+        </array>
+        <array element_bits="32" format="Int" index_from_lsb="true" name="S32">
+          <gui_name language="en">S32</gui_name>
+        </array>
+        <array element_bits="64" format="Int" index_from_lsb="true" name="S64">
+          <gui_name language="en">S64</gui_name>
+        </array>
+      </register>
+      <register access="RW" name="V4" size="16">
+        <gui_name language="en">V4</gui_name>
+        <description language="en">V4</description>
+        <array element_bits="16" format="Float" index_from_lsb="true" name="F16">
+          <gui_name language="en">F16</gui_name>
+        </array>
+        <array element_bits="32" format="Float" index_from_lsb="true" name="F32">
+          <gui_name language="en">F32</gui_name>
+        </array>
+        <array element_bits="64" format="Float" index_from_lsb="true" name="F64">
+          <gui_name language="en">F64</gui_name>
+        </array>
+        <array element_bits="8" format="UnsignedInt" index_from_lsb="true" name="U8">
+          <gui_name language="en">U8</gui_name>
+        </array>
+        <array element_bits="16" format="UnsignedInt" index_from_lsb="true" name="U16">
+          <gui_name language="en">U16</gui_name>
+        </array>
+        <array element_bits="32" format="UnsignedInt" index_from_lsb="true" name="U32">
+          <gui_name language="en">U32</gui_name>
+        </array>
+        <array element_bits="64" format="UnsignedInt" index_from_lsb="true" name="U64">
+          <gui_name language="en">U64</gui_name>
+        </array>
+        <array element_bits="8" format="Int" index_from_lsb="true" name="S8">
+          <gui_name language="en">S8</gui_name>
+        </array>
+        <array element_bits="16" format="Int" index_from_lsb="true" name="S16">
+          <gui_name language="en">S16</gui_name>
+        </array>
+        <array element_bits="32" format="Int" index_from_lsb="true" name="S32">
+          <gui_name language="en">S32</gui_name>
+        </array>
+        <array element_bits="64" format="Int" index_from_lsb="true" name="S64">
+          <gui_name language="en">S64</gui_name>
+        </array>
+      </register>
+      <register access="RW" name="V5" size="16">
+        <gui_name language="en">V5</gui_name>
+        <description language="en">V5</description>
+        <array element_bits="16" format="Float" index_from_lsb="true" name="F16">
+          <gui_name language="en">F16</gui_name>
+        </array>
+        <array element_bits="32" format="Float" index_from_lsb="true" name="F32">
+          <gui_name language="en">F32</gui_name>
+        </array>
+        <array element_bits="64" format="Float" index_from_lsb="true" name="F64">
+          <gui_name language="en">F64</gui_name>
+        </array>
+        <array element_bits="8" format="UnsignedInt" index_from_lsb="true" name="U8">
+          <gui_name language="en">U8</gui_name>
+        </array>
+        <array element_bits="16" format="UnsignedInt" index_from_lsb="true" name="U16">
+          <gui_name language="en">U16</gui_name>
+        </array>
+        <array element_bits="32" format="UnsignedInt" index_from_lsb="true" name="U32">
+          <gui_name language="en">U32</gui_name>
+        </array>
+        <array element_bits="64" format="UnsignedInt" index_from_lsb="true" name="U64">
+          <gui_name language="en">U64</gui_name>
+        </array>
+        <array element_bits="8" format="Int" index_from_lsb="true" name="S8">
+          <gui_name language="en">S8</gui_name>
+        </array>
+        <array element_bits="16" format="Int" index_from_lsb="true" name="S16">
+          <gui_name language="en">S16</gui_name>
+        </array>
+        <array element_bits="32" format="Int" index_from_lsb="true" name="S32">
+          <gui_name language="en">S32</gui_name>
+        </array>
+        <array element_bits="64" format="Int" index_from_lsb="true" name="S64">
+          <gui_name language="en">S64</gui_name>
+        </array>
+      </register>
+      <register access="RW" name="V6" size="16">
+        <gui_name language="en">V6</gui_name>
+        <description language="en">V6</description>
+        <array element_bits="16" format="Float" index_from_lsb="true" name="F16">
+          <gui_name language="en">F16</gui_name>
+        </array>
+        <array element_bits="32" format="Float" index_from_lsb="true" name="F32">
+          <gui_name language="en">F32</gui_name>
+        </array>
+        <array element_bits="64" format="Float" index_from_lsb="true" name="F64">
+          <gui_name language="en">F64</gui_name>
+        </array>
+        <array element_bits="8" format="UnsignedInt" index_from_lsb="true" name="U8">
+          <gui_name language="en">U8</gui_name>
+        </array>
+        <array element_bits="16" format="UnsignedInt" index_from_lsb="true" name="U16">
+          <gui_name language="en">U16</gui_name>
+        </array>
+        <array element_bits="32" format="UnsignedInt" index_from_lsb="true" name="U32">
+          <gui_name language="en">U32</gui_name>
+        </array>
+        <array element_bits="64" format="UnsignedInt" index_from_lsb="true" name="U64">
+          <gui_name language="en">U64</gui_name>
+        </array>
+        <array element_bits="8" format="Int" index_from_lsb="true" name="S8">
+          <gui_name language="en">S8</gui_name>
+        </array>
+        <array element_bits="16" format="Int" index_from_lsb="true" name="S16">
+          <gui_name language="en">S16</gui_name>
+        </array>
+        <array element_bits="32" format="Int" index_from_lsb="true" name="S32">
+          <gui_name language="en">S32</gui_name>
+        </array>
+        <array element_bits="64" format="Int" index_from_lsb="true" name="S64">
+          <gui_name language="en">S64</gui_name>
+        </array>
+      </register>
+      <register access="RW" name="V7" size="16">
+        <gui_name language="en">V7</gui_name>
+        <description language="en">V7</description>
+        <array element_bits="16" format="Float" index_from_lsb="true" name="F16">
+          <gui_name language="en">F16</gui_name>
+        </array>
+        <array element_bits="32" format="Float" index_from_lsb="true" name="F32">
+          <gui_name language="en">F32</gui_name>
+        </array>
+        <array element_bits="64" format="Float" index_from_lsb="true" name="F64">
+          <gui_name language="en">F64</gui_name>
+        </array>
+        <array element_bits="8" format="UnsignedInt" index_from_lsb="true" name="U8">
+          <gui_name language="en">U8</gui_name>
+        </array>
+        <array element_bits="16" format="UnsignedInt" index_from_lsb="true" name="U16">
+          <gui_name language="en">U16</gui_name>
+        </array>
+        <array element_bits="32" format="UnsignedInt" index_from_lsb="true" name="U32">
+          <gui_name language="en">U32</gui_name>
+        </array>
+        <array element_bits="64" format="UnsignedInt" index_from_lsb="true" name="U64">
+          <gui_name language="en">U64</gui_name>
+        </array>
+        <array element_bits="8" format="Int" index_from_lsb="true" name="S8">
+          <gui_name language="en">S8</gui_name>
+        </array>
+        <array element_bits="16" format="Int" index_from_lsb="true" name="S16">
+          <gui_name language="en">S16</gui_name>
+        </array>
+        <array element_bits="32" format="Int" index_from_lsb="true" name="S32">
+          <gui_name language="en">S32</gui_name>
+        </array>
+        <array element_bits="64" format="Int" index_from_lsb="true" name="S64">
+          <gui_name language="en">S64</gui_name>
+        </array>
+      </register>
+      <register access="RW" name="V8" size="16">
+        <gui_name language="en">V8</gui_name>
+        <description language="en">V8</description>
+        <array element_bits="16" format="Float" index_from_lsb="true" name="F16">
+          <gui_name language="en">F16</gui_name>
+        </array>
+        <array element_bits="32" format="Float" index_from_lsb="true" name="F32">
+          <gui_name language="en">F32</gui_name>
+        </array>
+        <array element_bits="64" format="Float" index_from_lsb="true" name="F64">
+          <gui_name language="en">F64</gui_name>
+        </array>
+        <array element_bits="8" format="UnsignedInt" index_from_lsb="true" name="U8">
+          <gui_name language="en">U8</gui_name>
+        </array>
+        <array element_bits="16" format="UnsignedInt" index_from_lsb="true" name="U16">
+          <gui_name language="en">U16</gui_name>
+        </array>
+        <array element_bits="32" format="UnsignedInt" index_from_lsb="true" name="U32">
+          <gui_name language="en">U32</gui_name>
+        </array>
+        <array element_bits="64" format="UnsignedInt" index_from_lsb="true" name="U64">
+          <gui_name language="en">U64</gui_name>
+        </array>
+        <array element_bits="8" format="Int" index_from_lsb="true" name="S8">
+          <gui_name language="en">S8</gui_name>
+        </array>
+        <array element_bits="16" format="Int" index_from_lsb="true" name="S16">
+          <gui_name language="en">S16</gui_name>
+        </array>
+        <array element_bits="32" format="Int" index_from_lsb="true" name="S32">
+          <gui_name language="en">S32</gui_name>
+        </array>
+        <array element_bits="64" format="Int" index_from_lsb="true" name="S64">
+          <gui_name language="en">S64</gui_name>
+        </array>
+      </register>
+      <register access="RW" name="V9" size="16">
+        <gui_name language="en">V9</gui_name>
+        <description language="en">V9</description>
+        <array element_bits="16" format="Float" index_from_lsb="true" name="F16">
+          <gui_name language="en">F16</gui_name>
+        </array>
+        <array element_bits="32" format="Float" index_from_lsb="true" name="F32">
+          <gui_name language="en">F32</gui_name>
+        </array>
+        <array element_bits="64" format="Float" index_from_lsb="true" name="F64">
+          <gui_name language="en">F64</gui_name>
+        </array>
+        <array element_bits="8" format="UnsignedInt" index_from_lsb="true" name="U8">
+          <gui_name language="en">U8</gui_name>
+        </array>
+        <array element_bits="16" format="UnsignedInt" index_from_lsb="true" name="U16">
+          <gui_name language="en">U16</gui_name>
+        </array>
+        <array element_bits="32" format="UnsignedInt" index_from_lsb="true" name="U32">
+          <gui_name language="en">U32</gui_name>
+        </array>
+        <array element_bits="64" format="UnsignedInt" index_from_lsb="true" name="U64">
+          <gui_name language="en">U64</gui_name>
+        </array>
+        <array element_bits="8" format="Int" index_from_lsb="true" name="S8">
+          <gui_name language="en">S8</gui_name>
+        </array>
+        <array element_bits="16" format="Int" index_from_lsb="true" name="S16">
+          <gui_name language="en">S16</gui_name>
+        </array>
+        <array element_bits="32" format="Int" index_from_lsb="true" name="S32">
+          <gui_name language="en">S32</gui_name>
+        </array>
+        <array element_bits="64" format="Int" index_from_lsb="true" name="S64">
+          <gui_name language="en">S64</gui_name>
+        </array>
+      </register>
+      <register access="RW" name="V10" size="16">
+        <gui_name language="en">V10</gui_name>
+        <description language="en">V10</description>
+        <array element_bits="16" format="Float" index_from_lsb="true" name="F16">
+          <gui_name language="en">F16</gui_name>
+        </array>
+        <array element_bits="32" format="Float" index_from_lsb="true" name="F32">
+          <gui_name language="en">F32</gui_name>
+        </array>
+        <array element_bits="64" format="Float" index_from_lsb="true" name="F64">
+          <gui_name language="en">F64</gui_name>
+        </array>
+        <array element_bits="8" format="UnsignedInt" index_from_lsb="true" name="U8">
+          <gui_name language="en">U8</gui_name>
+        </array>
+        <array element_bits="16" format="UnsignedInt" index_from_lsb="true" name="U16">
+          <gui_name language="en">U16</gui_name>
+        </array>
+        <array element_bits="32" format="UnsignedInt" index_from_lsb="true" name="U32">
+          <gui_name language="en">U32</gui_name>
+        </array>
+        <array element_bits="64" format="UnsignedInt" index_from_lsb="true" name="U64">
+          <gui_name language="en">U64</gui_name>
+        </array>
+        <array element_bits="8" format="Int" index_from_lsb="true" name="S8">
+          <gui_name language="en">S8</gui_name>
+        </array>
+        <array element_bits="16" format="Int" index_from_lsb="true" name="S16">
+          <gui_name language="en">S16</gui_name>
+        </array>
+        <array element_bits="32" format="Int" index_from_lsb="true" name="S32">
+          <gui_name language="en">S32</gui_name>
+        </array>
+        <array element_bits="64" format="Int" index_from_lsb="true" name="S64">
+          <gui_name language="en">S64</gui_name>
+        </array>
+      </register>
+      <register access="RW" name="V11" size="16">
+        <gui_name language="en">V11</gui_name>
+        <description language="en">V11</description>
+        <array element_bits="16" format="Float" index_from_lsb="true" name="F16">
+          <gui_name language="en">F16</gui_name>
+        </array>
+        <array element_bits="32" format="Float" index_from_lsb="true" name="F32">
+          <gui_name language="en">F32</gui_name>
+        </array>
+        <array element_bits="64" format="Float" index_from_lsb="true" name="F64">
+          <gui_name language="en">F64</gui_name>
+        </array>
+        <array element_bits="8" format="UnsignedInt" index_from_lsb="true" name="U8">
+          <gui_name language="en">U8</gui_name>
+        </array>
+        <array element_bits="16" format="UnsignedInt" index_from_lsb="true" name="U16">
+          <gui_name language="en">U16</gui_name>
+        </array>
+        <array element_bits="32" format="UnsignedInt" index_from_lsb="true" name="U32">
+          <gui_name language="en">U32</gui_name>
+        </array>
+        <array element_bits="64" format="UnsignedInt" index_from_lsb="true" name="U64">
+          <gui_name language="en">U64</gui_name>
+        </array>
+        <array element_bits="8" format="Int" index_from_lsb="true" name="S8">
+          <gui_name language="en">S8</gui_name>
+        </array>
+        <array element_bits="16" format="Int" index_from_lsb="true" name="S16">
+          <gui_name language="en">S16</gui_name>
+        </array>
+        <array element_bits="32" format="Int" index_from_lsb="true" name="S32">
+          <gui_name language="en">S32</gui_name>
+        </array>
+        <array element_bits="64" format="Int" index_from_lsb="true" name="S64">
+          <gui_name language="en">S64</gui_name>
+        </array>
+      </register>
+      <register access="RW" name="V12" size="16">
+        <gui_name language="en">V12</gui_name>
+        <description language="en">V12</description>
+        <array element_bits="16" format="Float" index_from_lsb="true" name="F16">
+          <gui_name language="en">F16</gui_name>
+        </array>
+        <array element_bits="32" format="Float" index_from_lsb="true" name="F32">
+          <gui_name language="en">F32</gui_name>
+        </array>
+        <array element_bits="64" format="Float" index_from_lsb="true" name="F64">
+          <gui_name language="en">F64</gui_name>
+        </array>
+        <array element_bits="8" format="UnsignedInt" index_from_lsb="true" name="U8">
+          <gui_name language="en">U8</gui_name>
+        </array>
+        <array element_bits="16" format="UnsignedInt" index_from_lsb="true" name="U16">
+          <gui_name language="en">U16</gui_name>
+        </array>
+        <array element_bits="32" format="UnsignedInt" index_from_lsb="true" name="U32">
+          <gui_name language="en">U32</gui_name>
+        </array>
+        <array element_bits="64" format="UnsignedInt" index_from_lsb="true" name="U64">
+          <gui_name language="en">U64</gui_name>
+        </array>
+        <array element_bits="8" format="Int" index_from_lsb="true" name="S8">
+          <gui_name language="en">S8</gui_name>
+        </array>
+        <array element_bits="16" format="Int" index_from_lsb="true" name="S16">
+          <gui_name language="en">S16</gui_name>
+        </array>
+        <array element_bits="32" format="Int" index_from_lsb="true" name="S32">
+          <gui_name language="en">S32</gui_name>
+        </array>
+        <array element_bits="64" format="Int" index_from_lsb="true" name="S64">
+          <gui_name language="en">S64</gui_name>
+        </array>
+      </register>
+      <register access="RW" name="V13" size="16">
+        <gui_name language="en">V13</gui_name>
+        <description language="en">V13</description>
+        <array element_bits="16" format="Float" index_from_lsb="true" name="F16">
+          <gui_name language="en">F16</gui_name>
+        </array>
+        <array element_bits="32" format="Float" index_from_lsb="true" name="F32">
+          <gui_name language="en">F32</gui_name>
+        </array>
+        <array element_bits="64" format="Float" index_from_lsb="true" name="F64">
+          <gui_name language="en">F64</gui_name>
+        </array>
+        <array element_bits="8" format="UnsignedInt" index_from_lsb="true" name="U8">
+          <gui_name language="en">U8</gui_name>
+        </array>
+        <array element_bits="16" format="UnsignedInt" index_from_lsb="true" name="U16">
+          <gui_name language="en">U16</gui_name>
+        </array>
+        <array element_bits="32" format="UnsignedInt" index_from_lsb="true" name="U32">
+          <gui_name language="en">U32</gui_name>
+        </array>
+        <array element_bits="64" format="UnsignedInt" index_from_lsb="true" name="U64">
+          <gui_name language="en">U64</gui_name>
+        </array>
+        <array element_bits="8" format="Int" index_from_lsb="true" name="S8">
+          <gui_name language="en">S8</gui_name>
+        </array>
+        <array element_bits="16" format="Int" index_from_lsb="true" name="S16">
+          <gui_name language="en">S16</gui_name>
+        </array>
+        <array element_bits="32" format="Int" index_from_lsb="true" name="S32">
+          <gui_name language="en">S32</gui_name>
+        </array>
+        <array element_bits="64" format="Int" index_from_lsb="true" name="S64">
+          <gui_name language="en">S64</gui_name>
+        </array>
+      </register>
+      <register access="RW" name="V14" size="16">
+        <gui_name language="en">V14</gui_name>
+        <description language="en">V14</description>
+        <array element_bits="16" format="Float" index_from_lsb="true" name="F16">
+          <gui_name language="en">F16</gui_name>
+        </array>
+        <array element_bits="32" format="Float" index_from_lsb="true" name="F32">
+          <gui_name language="en">F32</gui_name>
+        </array>
+        <array element_bits="64" format="Float" index_from_lsb="true" name="F64">
+          <gui_name language="en">F64</gui_name>
+        </array>
+        <array element_bits="8" format="UnsignedInt" index_from_lsb="true" name="U8">
+          <gui_name language="en">U8</gui_name>
+        </array>
+        <array element_bits="16" format="UnsignedInt" index_from_lsb="true" name="U16">
+          <gui_name language="en">U16</gui_name>
+        </array>
+        <array element_bits="32" format="UnsignedInt" index_from_lsb="true" name="U32">
+          <gui_name language="en">U32</gui_name>
+        </array>
+        <array element_bits="64" format="UnsignedInt" index_from_lsb="true" name="U64">
+          <gui_name language="en">U64</gui_name>
+        </array>
+        <array element_bits="8" format="Int" index_from_lsb="true" name="S8">
+          <gui_name language="en">S8</gui_name>
+        </array>
+        <array element_bits="16" format="Int" index_from_lsb="true" name="S16">
+          <gui_name language="en">S16</gui_name>
+        </array>
+        <array element_bits="32" format="Int" index_from_lsb="true" name="S32">
+          <gui_name language="en">S32</gui_name>
+        </array>
+        <array element_bits="64" format="Int" index_from_lsb="true" name="S64">
+          <gui_name language="en">S64</gui_name>
+        </array>
+      </register>
+      <register access="RW" name="V15" size="16">
+        <gui_name language="en">V15</gui_name>
+        <description language="en">V15</description>
+        <array element_bits="16" format="Float" index_from_lsb="true" name="F16">
+          <gui_name language="en">F16</gui_name>
+        </array>
+        <array element_bits="32" format="Float" index_from_lsb="true" name="F32">
+          <gui_name language="en">F32</gui_name>
+        </array>
+        <array element_bits="64" format="Float" index_from_lsb="true" name="F64">
+          <gui_name language="en">F64</gui_name>
+        </array>
+        <array element_bits="8" format="UnsignedInt" index_from_lsb="true" name="U8">
+          <gui_name language="en">U8</gui_name>
+        </array>
+        <array element_bits="16" format="UnsignedInt" index_from_lsb="true" name="U16">
+          <gui_name language="en">U16</gui_name>
+        </array>
+        <array element_bits="32" format="UnsignedInt" index_from_lsb="true" name="U32">
+          <gui_name language="en">U32</gui_name>
+        </array>
+        <array element_bits="64" format="UnsignedInt" index_from_lsb="true" name="U64">
+          <gui_name language="en">U64</gui_name>
+        </array>
+        <array element_bits="8" format="Int" index_from_lsb="true" name="S8">
+          <gui_name language="en">S8</gui_name>
+        </array>
+        <array element_bits="16" format="Int" index_from_lsb="true" name="S16">
+          <gui_name language="en">S16</gui_name>
+        </array>
+        <array element_bits="32" format="Int" index_from_lsb="true" name="S32">
+          <gui_name language="en">S32</gui_name>
+        </array>
+        <array element_bits="64" format="Int" index_from_lsb="true" name="S64">
+          <gui_name language="en">S64</gui_name>
+        </array>
+      </register>
+      <register access="RW" name="V16" size="16">
+        <gui_name language="en">V16</gui_name>
+        <description language="en">V16</description>
+        <array element_bits="16" format="Float" index_from_lsb="true" name="F16">
+          <gui_name language="en">F16</gui_name>
+        </array>
+        <array element_bits="32" format="Float" index_from_lsb="true" name="F32">
+          <gui_name language="en">F32</gui_name>
+        </array>
+        <array element_bits="64" format="Float" index_from_lsb="true" name="F64">
+          <gui_name language="en">F64</gui_name>
+        </array>
+        <array element_bits="8" format="UnsignedInt" index_from_lsb="true" name="U8">
+          <gui_name language="en">U8</gui_name>
+        </array>
+        <array element_bits="16" format="UnsignedInt" index_from_lsb="true" name="U16">
+          <gui_name language="en">U16</gui_name>
+        </array>
+        <array element_bits="32" format="UnsignedInt" index_from_lsb="true" name="U32">
+          <gui_name language="en">U32</gui_name>
+        </array>
+        <array element_bits="64" format="UnsignedInt" index_from_lsb="true" name="U64">
+          <gui_name language="en">U64</gui_name>
+        </array>
+        <array element_bits="8" format="Int" index_from_lsb="true" name="S8">
+          <gui_name language="en">S8</gui_name>
+        </array>
+        <array element_bits="16" format="Int" index_from_lsb="true" name="S16">
+          <gui_name language="en">S16</gui_name>
+        </array>
+        <array element_bits="32" format="Int" index_from_lsb="true" name="S32">
+          <gui_name language="en">S32</gui_name>
+        </array>
+        <array element_bits="64" format="Int" index_from_lsb="true" name="S64">
+          <gui_name language="en">S64</gui_name>
+        </array>
+      </register>
+      <register access="RW" name="V17" size="16">
+        <gui_name language="en">V17</gui_name>
+        <description language="en">V17</description>
+        <array element_bits="16" format="Float" index_from_lsb="true" name="F16">
+          <gui_name language="en">F16</gui_name>
+        </array>
+        <array element_bits="32" format="Float" index_from_lsb="true" name="F32">
+          <gui_name language="en">F32</gui_name>
+        </array>
+        <array element_bits="64" format="Float" index_from_lsb="true" name="F64">
+          <gui_name language="en">F64</gui_name>
+        </array>
+        <array element_bits="8" format="UnsignedInt" index_from_lsb="true" name="U8">
+          <gui_name language="en">U8</gui_name>
+        </array>
+        <array element_bits="16" format="UnsignedInt" index_from_lsb="true" name="U16">
+          <gui_name language="en">U16</gui_name>
+        </array>
+        <array element_bits="32" format="UnsignedInt" index_from_lsb="true" name="U32">
+          <gui_name language="en">U32</gui_name>
+        </array>
+        <array element_bits="64" format="UnsignedInt" index_from_lsb="true" name="U64">
+          <gui_name language="en">U64</gui_name>
+        </array>
+        <array element_bits="8" format="Int" index_from_lsb="true" name="S8">
+          <gui_name language="en">S8</gui_name>
+        </array>
+        <array element_bits="16" format="Int" index_from_lsb="true" name="S16">
+          <gui_name language="en">S16</gui_name>
+        </array>
+        <array element_bits="32" format="Int" index_from_lsb="true" name="S32">
+          <gui_name language="en">S32</gui_name>
+        </array>
+        <array element_bits="64" format="Int" index_from_lsb="true" name="S64">
+          <gui_name language="en">S64</gui_name>
+        </array>
+      </register>
+      <register access="RW" name="V18" size="16">
+        <gui_name language="en">V18</gui_name>
+        <description language="en">V18</description>
+        <array element_bits="16" format="Float" index_from_lsb="true" name="F16">
+          <gui_name language="en">F16</gui_name>
+        </array>
+        <array element_bits="32" format="Float" index_from_lsb="true" name="F32">
+          <gui_name language="en">F32</gui_name>
+        </array>
+        <array element_bits="64" format="Float" index_from_lsb="true" name="F64">
+          <gui_name language="en">F64</gui_name>
+        </array>
+        <array element_bits="8" format="UnsignedInt" index_from_lsb="true" name="U8">
+          <gui_name language="en">U8</gui_name>
+        </array>
+        <array element_bits="16" format="UnsignedInt" index_from_lsb="true" name="U16">
+          <gui_name language="en">U16</gui_name>
+        </array>
+        <array element_bits="32" format="UnsignedInt" index_from_lsb="true" name="U32">
+          <gui_name language="en">U32</gui_name>
+        </array>
+        <array element_bits="64" format="UnsignedInt" index_from_lsb="true" name="U64">
+          <gui_name language="en">U64</gui_name>
+        </array>
+        <array element_bits="8" format="Int" index_from_lsb="true" name="S8">
+          <gui_name language="en">S8</gui_name>
+        </array>
+        <array element_bits="16" format="Int" index_from_lsb="true" name="S16">
+          <gui_name language="en">S16</gui_name>
+        </array>
+        <array element_bits="32" format="Int" index_from_lsb="true" name="S32">
+          <gui_name language="en">S32</gui_name>
+        </array>
+        <array element_bits="64" format="Int" index_from_lsb="true" name="S64">
+          <gui_name language="en">S64</gui_name>
+        </array>
+      </register>
+      <register access="RW" name="V19" size="16">
+        <gui_name language="en">V19</gui_name>
+        <description language="en">V19</description>
+        <array element_bits="16" format="Float" index_from_lsb="true" name="F16">
+          <gui_name language="en">F16</gui_name>
+        </array>
+        <array element_bits="32" format="Float" index_from_lsb="true" name="F32">
+          <gui_name language="en">F32</gui_name>
+        </array>
+        <array element_bits="64" format="Float" index_from_lsb="true" name="F64">
+          <gui_name language="en">F64</gui_name>
+        </array>
+        <array element_bits="8" format="UnsignedInt" index_from_lsb="true" name="U8">
+          <gui_name language="en">U8</gui_name>
+        </array>
+        <array element_bits="16" format="UnsignedInt" index_from_lsb="true" name="U16">
+          <gui_name language="en">U16</gui_name>
+        </array>
+        <array element_bits="32" format="UnsignedInt" index_from_lsb="true" name="U32">
+          <gui_name language="en">U32</gui_name>
+        </array>
+        <array element_bits="64" format="UnsignedInt" index_from_lsb="true" name="U64">
+          <gui_name language="en">U64</gui_name>
+        </array>
+        <array element_bits="8" format="Int" index_from_lsb="true" name="S8">
+          <gui_name language="en">S8</gui_name>
+        </array>
+        <array element_bits="16" format="Int" index_from_lsb="true" name="S16">
+          <gui_name language="en">S16</gui_name>
+        </array>
+        <array element_bits="32" format="Int" index_from_lsb="true" name="S32">
+          <gui_name language="en">S32</gui_name>
+        </array>
+        <array element_bits="64" format="Int" index_from_lsb="true" name="S64">
+          <gui_name language="en">S64</gui_name>
+        </array>
+      </register>
+      <register access="RW" name="V20" size="16">
+        <gui_name language="en">V20</gui_name>
+        <description language="en">V20</description>
+        <array element_bits="16" format="Float" index_from_lsb="true" name="F16">
+          <gui_name language="en">F16</gui_name>
+        </array>
+        <array element_bits="32" format="Float" index_from_lsb="true" name="F32">
+          <gui_name language="en">F32</gui_name>
+        </array>
+        <array element_bits="64" format="Float" index_from_lsb="true" name="F64">
+          <gui_name language="en">F64</gui_name>
+        </array>
+        <array element_bits="8" format="UnsignedInt" index_from_lsb="true" name="U8">
+          <gui_name language="en">U8</gui_name>
+        </array>
+        <array element_bits="16" format="UnsignedInt" index_from_lsb="true" name="U16">
+          <gui_name language="en">U16</gui_name>
+        </array>
+        <array element_bits="32" format="UnsignedInt" index_from_lsb="true" name="U32">
+          <gui_name language="en">U32</gui_name>
+        </array>
+        <array element_bits="64" format="UnsignedInt" index_from_lsb="true" name="U64">
+          <gui_name language="en">U64</gui_name>
+        </array>
+        <array element_bits="8" format="Int" index_from_lsb="true" name="S8">
+          <gui_name language="en">S8</gui_name>
+        </array>
+        <array element_bits="16" format="Int" index_from_lsb="true" name="S16">
+          <gui_name language="en">S16</gui_name>
+        </array>
+        <array element_bits="32" format="Int" index_from_lsb="true" name="S32">
+          <gui_name language="en">S32</gui_name>
+        </array>
+        <array element_bits="64" format="Int" index_from_lsb="true" name="S64">
+          <gui_name language="en">S64</gui_name>
+        </array>
+      </register>
+      <register access="RW" name="V21" size="16">
+        <gui_name language="en">V21</gui_name>
+        <description language="en">V21</description>
+        <array element_bits="16" format="Float" index_from_lsb="true" name="F16">
+          <gui_name language="en">F16</gui_name>
+        </array>
+        <array element_bits="32" format="Float" index_from_lsb="true" name="F32">
+          <gui_name language="en">F32</gui_name>
+        </array>
+        <array element_bits="64" format="Float" index_from_lsb="true" name="F64">
+          <gui_name language="en">F64</gui_name>
+        </array>
+        <array element_bits="8" format="UnsignedInt" index_from_lsb="true" name="U8">
+          <gui_name language="en">U8</gui_name>
+        </array>
+        <array element_bits="16" format="UnsignedInt" index_from_lsb="true" name="U16">
+          <gui_name language="en">U16</gui_name>
+        </array>
+        <array element_bits="32" format="UnsignedInt" index_from_lsb="true" name="U32">
+          <gui_name language="en">U32</gui_name>
+        </array>
+        <array element_bits="64" format="UnsignedInt" index_from_lsb="true" name="U64">
+          <gui_name language="en">U64</gui_name>
+        </array>
+        <array element_bits="8" format="Int" index_from_lsb="true" name="S8">
+          <gui_name language="en">S8</gui_name>
+        </array>
+        <array element_bits="16" format="Int" index_from_lsb="true" name="S16">
+          <gui_name language="en">S16</gui_name>
+        </array>
+        <array element_bits="32" format="Int" index_from_lsb="true" name="S32">
+          <gui_name language="en">S32</gui_name>
+        </array>
+        <array element_bits="64" format="Int" index_from_lsb="true" name="S64">
+          <gui_name language="en">S64</gui_name>
+        </array>
+      </register>
+      <register access="RW" name="V22" size="16">
+        <gui_name language="en">V22</gui_name>
+        <description language="en">V22</description>
+        <array element_bits="16" format="Float" index_from_lsb="true" name="F16">
+          <gui_name language="en">F16</gui_name>
+        </array>
+        <array element_bits="32" format="Float" index_from_lsb="true" name="F32">
+          <gui_name language="en">F32</gui_name>
+        </array>
+        <array element_bits="64" format="Float" index_from_lsb="true" name="F64">
+          <gui_name language="en">F64</gui_name>
+        </array>
+        <array element_bits="8" format="UnsignedInt" index_from_lsb="true" name="U8">
+          <gui_name language="en">U8</gui_name>
+        </array>
+        <array element_bits="16" format="UnsignedInt" index_from_lsb="true" name="U16">
+          <gui_name language="en">U16</gui_name>
+        </array>
+        <array element_bits="32" format="UnsignedInt" index_from_lsb="true" name="U32">
+          <gui_name language="en">U32</gui_name>
+        </array>
+        <array element_bits="64" format="UnsignedInt" index_from_lsb="true" name="U64">
+          <gui_name language="en">U64</gui_name>
+        </array>
+        <array element_bits="8" format="Int" index_from_lsb="true" name="S8">
+          <gui_name language="en">S8</gui_name>
+        </array>
+        <array element_bits="16" format="Int" index_from_lsb="true" name="S16">
+          <gui_name language="en">S16</gui_name>
+        </array>
+        <array element_bits="32" format="Int" index_from_lsb="true" name="S32">
+          <gui_name language="en">S32</gui_name>
+        </array>
+        <array element_bits="64" format="Int" index_from_lsb="true" name="S64">
+          <gui_name language="en">S64</gui_name>
+        </array>
+      </register>
+      <register access="RW" name="V23" size="16">
+        <gui_name language="en">V23</gui_name>
+        <description language="en">V23</description>
+        <array element_bits="16" format="Float" index_from_lsb="true" name="F16">
+          <gui_name language="en">F16</gui_name>
+        </array>
+        <array element_bits="32" format="Float" index_from_lsb="true" name="F32">
+          <gui_name language="en">F32</gui_name>
+        </array>
+        <array element_bits="64" format="Float" index_from_lsb="true" name="F64">
+          <gui_name language="en">F64</gui_name>
+        </array>
+        <array element_bits="8" format="UnsignedInt" index_from_lsb="true" name="U8">
+          <gui_name language="en">U8</gui_name>
+        </array>
+        <array element_bits="16" format="UnsignedInt" index_from_lsb="true" name="U16">
+          <gui_name language="en">U16</gui_name>
+        </array>
+        <array element_bits="32" format="UnsignedInt" index_from_lsb="true" name="U32">
+          <gui_name language="en">U32</gui_name>
+        </array>
+        <array element_bits="64" format="UnsignedInt" index_from_lsb="true" name="U64">
+          <gui_name language="en">U64</gui_name>
+        </array>
+        <array element_bits="8" format="Int" index_from_lsb="true" name="S8">
+          <gui_name language="en">S8</gui_name>
+        </array>
+        <array element_bits="16" format="Int" index_from_lsb="true" name="S16">
+          <gui_name language="en">S16</gui_name>
+        </array>
+        <array element_bits="32" format="Int" index_from_lsb="true" name="S32">
+          <gui_name language="en">S32</gui_name>
+        </array>
+        <array element_bits="64" format="Int" index_from_lsb="true" name="S64">
+          <gui_name language="en">S64</gui_name>
+        </array>
+      </register>
+      <register access="RW" name="V24" size="16">
+        <gui_name language="en">V24</gui_name>
+        <description language="en">V24</description>
+        <array element_bits="16" format="Float" index_from_lsb="true" name="F16">
+          <gui_name language="en">F16</gui_name>
+        </array>
+        <array element_bits="32" format="Float" index_from_lsb="true" name="F32">
+          <gui_name language="en">F32</gui_name>
+        </array>
+        <array element_bits="64" format="Float" index_from_lsb="true" name="F64">
+          <gui_name language="en">F64</gui_name>
+        </array>
+        <array element_bits="8" format="UnsignedInt" index_from_lsb="true" name="U8">
+          <gui_name language="en">U8</gui_name>
+        </array>
+        <array element_bits="16" format="UnsignedInt" index_from_lsb="true" name="U16">
+          <gui_name language="en">U16</gui_name>
+        </array>
+        <array element_bits="32" format="UnsignedInt" index_from_lsb="true" name="U32">
+          <gui_name language="en">U32</gui_name>
+        </array>
+        <array element_bits="64" format="UnsignedInt" index_from_lsb="true" name="U64">
+          <gui_name language="en">U64</gui_name>
+        </array>
+        <array element_bits="8" format="Int" index_from_lsb="true" name="S8">
+          <gui_name language="en">S8</gui_name>
+        </array>
+        <array element_bits="16" format="Int" index_from_lsb="true" name="S16">
+          <gui_name language="en">S16</gui_name>
+        </array>
+        <array element_bits="32" format="Int" index_from_lsb="true" name="S32">
+          <gui_name language="en">S32</gui_name>
+        </array>
+        <array element_bits="64" format="Int" index_from_lsb="true" name="S64">
+          <gui_name language="en">S64</gui_name>
+        </array>
+      </register>
+      <register access="RW" name="V25" size="16">
+        <gui_name language="en">V25</gui_name>
+        <description language="en">V25</description>
+        <array element_bits="16" format="Float" index_from_lsb="true" name="F16">
+          <gui_name language="en">F16</gui_name>
+        </array>
+        <array element_bits="32" format="Float" index_from_lsb="true" name="F32">
+          <gui_name language="en">F32</gui_name>
+        </array>
+        <array element_bits="64" format="Float" index_from_lsb="true" name="F64">
+          <gui_name language="en">F64</gui_name>
+        </array>
+        <array element_bits="8" format="UnsignedInt" index_from_lsb="true" name="U8">
+          <gui_name language="en">U8</gui_name>
+        </array>
+        <array element_bits="16" format="UnsignedInt" index_from_lsb="true" name="U16">
+          <gui_name language="en">U16</gui_name>
+        </array>
+        <array element_bits="32" format="UnsignedInt" index_from_lsb="true" name="U32">
+          <gui_name language="en">U32</gui_name>
+        </array>
+        <array element_bits="64" format="UnsignedInt" index_from_lsb="true" name="U64">
+          <gui_name language="en">U64</gui_name>
+        </array>
+        <array element_bits="8" format="Int" index_from_lsb="true" name="S8">
+          <gui_name language="en">S8</gui_name>
+        </array>
+        <array element_bits="16" format="Int" index_from_lsb="true" name="S16">
+          <gui_name language="en">S16</gui_name>
+        </array>
+        <array element_bits="32" format="Int" index_from_lsb="true" name="S32">
+          <gui_name language="en">S32</gui_name>
+        </array>
+        <array element_bits="64" format="Int" index_from_lsb="true" name="S64">
+          <gui_name language="en">S64</gui_name>
+        </array>
+      </register>
+      <register access="RW" name="V26" size="16">
+        <gui_name language="en">V26</gui_name>
+        <description language="en">V26</description>
+        <array element_bits="16" format="Float" index_from_lsb="true" name="F16">
+          <gui_name language="en">F16</gui_name>
+        </array>
+        <array element_bits="32" format="Float" index_from_lsb="true" name="F32">
+          <gui_name language="en">F32</gui_name>
+        </array>
+        <array element_bits="64" format="Float" index_from_lsb="true" name="F64">
+          <gui_name language="en">F64</gui_name>
+        </array>
+        <array element_bits="8" format="UnsignedInt" index_from_lsb="true" name="U8">
+          <gui_name language="en">U8</gui_name>
+        </array>
+        <array element_bits="16" format="UnsignedInt" index_from_lsb="true" name="U16">
+          <gui_name language="en">U16</gui_name>
+        </array>
+        <array element_bits="32" format="UnsignedInt" index_from_lsb="true" name="U32">
+          <gui_name language="en">U32</gui_name>
+        </array>
+        <array element_bits="64" format="UnsignedInt" index_from_lsb="true" name="U64">
+          <gui_name language="en">U64</gui_name>
+        </array>
+        <array element_bits="8" format="Int" index_from_lsb="true" name="S8">
+          <gui_name language="en">S8</gui_name>
+        </array>
+        <array element_bits="16" format="Int" index_from_lsb="true" name="S16">
+          <gui_name language="en">S16</gui_name>
+        </array>
+        <array element_bits="32" format="Int" index_from_lsb="true" name="S32">
+          <gui_name language="en">S32</gui_name>
+        </array>
+        <array element_bits="64" format="Int" index_from_lsb="true" name="S64">
+          <gui_name language="en">S64</gui_name>
+        </array>
+      </register>
+      <register access="RW" name="V27" size="16">
+        <gui_name language="en">V27</gui_name>
+        <description language="en">V27</description>
+        <array element_bits="16" format="Float" index_from_lsb="true" name="F16">
+          <gui_name language="en">F16</gui_name>
+        </array>
+        <array element_bits="32" format="Float" index_from_lsb="true" name="F32">
+          <gui_name language="en">F32</gui_name>
+        </array>
+        <array element_bits="64" format="Float" index_from_lsb="true" name="F64">
+          <gui_name language="en">F64</gui_name>
+        </array>
+        <array element_bits="8" format="UnsignedInt" index_from_lsb="true" name="U8">
+          <gui_name language="en">U8</gui_name>
+        </array>
+        <array element_bits="16" format="UnsignedInt" index_from_lsb="true" name="U16">
+          <gui_name language="en">U16</gui_name>
+        </array>
+        <array element_bits="32" format="UnsignedInt" index_from_lsb="true" name="U32">
+          <gui_name language="en">U32</gui_name>
+        </array>
+        <array element_bits="64" format="UnsignedInt" index_from_lsb="true" name="U64">
+          <gui_name language="en">U64</gui_name>
+        </array>
+        <array element_bits="8" format="Int" index_from_lsb="true" name="S8">
+          <gui_name language="en">S8</gui_name>
+        </array>
+        <array element_bits="16" format="Int" index_from_lsb="true" name="S16">
+          <gui_name language="en">S16</gui_name>
+        </array>
+        <array element_bits="32" format="Int" index_from_lsb="true" name="S32">
+          <gui_name language="en">S32</gui_name>
+        </array>
+        <array element_bits="64" format="Int" index_from_lsb="true" name="S64">
+          <gui_name language="en">S64</gui_name>
+        </array>
+      </register>
+      <register access="RW" name="V28" size="16">
+        <gui_name language="en">V28</gui_name>
+        <description language="en">V28</description>
+        <array element_bits="16" format="Float" index_from_lsb="true" name="F16">
+          <gui_name language="en">F16</gui_name>
+        </array>
+        <array element_bits="32" format="Float" index_from_lsb="true" name="F32">
+          <gui_name language="en">F32</gui_name>
+        </array>
+        <array element_bits="64" format="Float" index_from_lsb="true" name="F64">
+          <gui_name language="en">F64</gui_name>
+        </array>
+        <array element_bits="8" format="UnsignedInt" index_from_lsb="true" name="U8">
+          <gui_name language="en">U8</gui_name>
+        </array>
+        <array element_bits="16" format="UnsignedInt" index_from_lsb="true" name="U16">
+          <gui_name language="en">U16</gui_name>
+        </array>
+        <array element_bits="32" format="UnsignedInt" index_from_lsb="true" name="U32">
+          <gui_name language="en">U32</gui_name>
+        </array>
+        <array element_bits="64" format="UnsignedInt" index_from_lsb="true" name="U64">
+          <gui_name language="en">U64</gui_name>
+        </array>
+        <array element_bits="8" format="Int" index_from_lsb="true" name="S8">
+          <gui_name language="en">S8</gui_name>
+        </array>
+        <array element_bits="16" format="Int" index_from_lsb="true" name="S16">
+          <gui_name language="en">S16</gui_name>
+        </array>
+        <array element_bits="32" format="Int" index_from_lsb="true" name="S32">
+          <gui_name language="en">S32</gui_name>
+        </array>
+        <array element_bits="64" format="Int" index_from_lsb="true" name="S64">
+          <gui_name language="en">S64</gui_name>
+        </array>
+      </register>
+      <register access="RW" name="V29" size="16">
+        <gui_name language="en">V29</gui_name>
+        <description language="en">V29</description>
+        <array element_bits="16" format="Float" index_from_lsb="true" name="F16">
+          <gui_name language="en">F16</gui_name>
+        </array>
+        <array element_bits="32" format="Float" index_from_lsb="true" name="F32">
+          <gui_name language="en">F32</gui_name>
+        </array>
+        <array element_bits="64" format="Float" index_from_lsb="true" name="F64">
+          <gui_name language="en">F64</gui_name>
+        </array>
+        <array element_bits="8" format="UnsignedInt" index_from_lsb="true" name="U8">
+          <gui_name language="en">U8</gui_name>
+        </array>
+        <array element_bits="16" format="UnsignedInt" index_from_lsb="true" name="U16">
+          <gui_name language="en">U16</gui_name>
+        </array>
+        <array element_bits="32" format="UnsignedInt" index_from_lsb="true" name="U32">
+          <gui_name language="en">U32</gui_name>
+        </array>
+        <array element_bits="64" format="UnsignedInt" index_from_lsb="true" name="U64">
+          <gui_name language="en">U64</gui_name>
+        </array>
+        <array element_bits="8" format="Int" index_from_lsb="true" name="S8">
+          <gui_name language="en">S8</gui_name>
+        </array>
+        <array element_bits="16" format="Int" index_from_lsb="true" name="S16">
+          <gui_name language="en">S16</gui_name>
+        </array>
+        <array element_bits="32" format="Int" index_from_lsb="true" name="S32">
+          <gui_name language="en">S32</gui_name>
+        </array>
+        <array element_bits="64" format="Int" index_from_lsb="true" name="S64">
+          <gui_name language="en">S64</gui_name>
+        </array>
+      </register>
+      <register access="RW" name="V30" size="16">
+        <gui_name language="en">V30</gui_name>
+        <description language="en">V30</description>
+        <array element_bits="16" format="Float" index_from_lsb="true" name="F16">
+          <gui_name language="en">F16</gui_name>
+        </array>
+        <array element_bits="32" format="Float" index_from_lsb="true" name="F32">
+          <gui_name language="en">F32</gui_name>
+        </array>
+        <array element_bits="64" format="Float" index_from_lsb="true" name="F64">
+          <gui_name language="en">F64</gui_name>
+        </array>
+        <array element_bits="8" format="UnsignedInt" index_from_lsb="true" name="U8">
+          <gui_name language="en">U8</gui_name>
+        </array>
+        <array element_bits="16" format="UnsignedInt" index_from_lsb="true" name="U16">
+          <gui_name language="en">U16</gui_name>
+        </array>
+        <array element_bits="32" format="UnsignedInt" index_from_lsb="true" name="U32">
+          <gui_name language="en">U32</gui_name>
+        </array>
+        <array element_bits="64" format="UnsignedInt" index_from_lsb="true" name="U64">
+          <gui_name language="en">U64</gui_name>
+        </array>
+        <array element_bits="8" format="Int" index_from_lsb="true" name="S8">
+          <gui_name language="en">S8</gui_name>
+        </array>
+        <array element_bits="16" format="Int" index_from_lsb="true" name="S16">
+          <gui_name language="en">S16</gui_name>
+        </array>
+        <array element_bits="32" format="Int" index_from_lsb="true" name="S32">
+          <gui_name language="en">S32</gui_name>
+        </array>
+        <array element_bits="64" format="Int" index_from_lsb="true" name="S64">
+          <gui_name language="en">S64</gui_name>
+        </array>
+      </register>
+      <register access="RW" name="V31" size="16">
+        <gui_name language="en">V31</gui_name>
+        <description language="en">V31</description>
+        <array element_bits="16" format="Float" index_from_lsb="true" name="F16">
+          <gui_name language="en">F16</gui_name>
+        </array>
+        <array element_bits="32" format="Float" index_from_lsb="true" name="F32">
+          <gui_name language="en">F32</gui_name>
+        </array>
+        <array element_bits="64" format="Float" index_from_lsb="true" name="F64">
+          <gui_name language="en">F64</gui_name>
+        </array>
+        <array element_bits="8" format="UnsignedInt" index_from_lsb="true" name="U8">
+          <gui_name language="en">U8</gui_name>
+        </array>
+        <array element_bits="16" format="UnsignedInt" index_from_lsb="true" name="U16">
+          <gui_name language="en">U16</gui_name>
+        </array>
+        <array element_bits="32" format="UnsignedInt" index_from_lsb="true" name="U32">
+          <gui_name language="en">U32</gui_name>
+        </array>
+        <array element_bits="64" format="UnsignedInt" index_from_lsb="true" name="U64">
+          <gui_name language="en">U64</gui_name>
+        </array>
+        <array element_bits="8" format="Int" index_from_lsb="true" name="S8">
+          <gui_name language="en">S8</gui_name>
+        </array>
+        <array element_bits="16" format="Int" index_from_lsb="true" name="S16">
+          <gui_name language="en">S16</gui_name>
+        </array>
+        <array element_bits="32" format="Int" index_from_lsb="true" name="S32">
+          <gui_name language="en">S32</gui_name>
+        </array>
+        <array element_bits="64" format="Int" index_from_lsb="true" name="S64">
+          <gui_name language="en">S64</gui_name>
+        </array>
+      </register>
+    </register_group>
+    <register_group xmlns="http://www.arm.com/core_reg" name="Quad" xml:base="Registers/SIMD/V8_AARCH64_SIMD.xml">
+      <gui_name language="en">Quad</gui_name>
+      <description language="en">128-bit registers</description>
+      <register access="RW" name="Q0" size="16">
+        <gui_name language="en">Q0</gui_name>
+        <description language="en">Q0</description>
+        <device_register high_bit="127" low_bit="0" name="V0" shift="0"/>
+      </register>
+      <register access="RW" name="Q1" size="16">
+        <gui_name language="en">Q1</gui_name>
+        <description language="en">Q1</description>
+        <device_register high_bit="127" low_bit="0" name="V1" shift="0"/>
+      </register>
+      <register access="RW" name="Q2" size="16">
+        <gui_name language="en">Q2</gui_name>
+        <description language="en">Q2</description>
+        <device_register high_bit="127" low_bit="0" name="V2" shift="0"/>
+      </register>
+      <register access="RW" name="Q3" size="16">
+        <gui_name language="en">Q3</gui_name>
+        <description language="en">Q3</description>
+        <device_register high_bit="127" low_bit="0" name="V3" shift="0"/>
+      </register>
+      <register access="RW" name="Q4" size="16">
+        <gui_name language="en">Q4</gui_name>
+        <description language="en">Q4</description>
+        <device_register high_bit="127" low_bit="0" name="V4" shift="0"/>
+      </register>
+      <register access="RW" name="Q5" size="16">
+        <gui_name language="en">Q5</gui_name>
+        <description language="en">Q5</description>
+        <device_register high_bit="127" low_bit="0" name="V5" shift="0"/>
+      </register>
+      <register access="RW" name="Q6" size="16">
+        <gui_name language="en">Q6</gui_name>
+        <description language="en">Q6</description>
+        <device_register high_bit="127" low_bit="0" name="V6" shift="0"/>
+      </register>
+      <register access="RW" name="Q7" size="16">
+        <gui_name language="en">Q7</gui_name>
+        <description language="en">Q7</description>
+        <device_register high_bit="127" low_bit="0" name="V7" shift="0"/>
+      </register>
+      <register access="RW" name="Q8" size="16">
+        <gui_name language="en">Q8</gui_name>
+        <description language="en">Q8</description>
+        <device_register high_bit="127" low_bit="0" name="V8" shift="0"/>
+      </register>
+      <register access="RW" name="Q9" size="16">
+        <gui_name language="en">Q9</gui_name>
+        <description language="en">Q9</description>
+        <device_register high_bit="127" low_bit="0" name="V9" shift="0"/>
+      </register>
+      <register access="RW" name="Q10" size="16">
+        <gui_name language="en">Q10</gui_name>
+        <description language="en">Q10</description>
+        <device_register high_bit="127" low_bit="0" name="V10" shift="0"/>
+      </register>
+      <register access="RW" name="Q11" size="16">
+        <gui_name language="en">Q11</gui_name>
+        <description language="en">Q11</description>
+        <device_register high_bit="127" low_bit="0" name="V11" shift="0"/>
+      </register>
+      <register access="RW" name="Q12" size="16">
+        <gui_name language="en">Q12</gui_name>
+        <description language="en">Q12</description>
+        <device_register high_bit="127" low_bit="0" name="V12" shift="0"/>
+      </register>
+      <register access="RW" name="Q13" size="16">
+        <gui_name language="en">Q13</gui_name>
+        <description language="en">Q13</description>
+        <device_register high_bit="127" low_bit="0" name="V13" shift="0"/>
+      </register>
+      <register access="RW" name="Q14" size="16">
+        <gui_name language="en">Q14</gui_name>
+        <description language="en">Q14</description>
+        <device_register high_bit="127" low_bit="0" name="V14" shift="0"/>
+      </register>
+      <register access="RW" name="Q15" size="16">
+        <gui_name language="en">Q15</gui_name>
+        <description language="en">Q15</description>
+        <device_register high_bit="127" low_bit="0" name="V15" shift="0"/>
+      </register>
+      <register access="RW" name="Q16" size="16">
+        <gui_name language="en">Q16</gui_name>
+        <description language="en">Q16</description>
+        <device_register high_bit="127" low_bit="0" name="V16" shift="0"/>
+      </register>
+      <register access="RW" name="Q17" size="16">
+        <gui_name language="en">Q17</gui_name>
+        <description language="en">Q17</description>
+        <device_register high_bit="127" low_bit="0" name="V17" shift="0"/>
+      </register>
+      <register access="RW" name="Q18" size="16">
+        <gui_name language="en">Q18</gui_name>
+        <description language="en">Q18</description>
+        <device_register high_bit="127" low_bit="0" name="V18" shift="0"/>
+      </register>
+      <register access="RW" name="Q19" size="16">
+        <gui_name language="en">Q19</gui_name>
+        <description language="en">Q19</description>
+        <device_register high_bit="127" low_bit="0" name="V19" shift="0"/>
+      </register>
+      <register access="RW" name="Q20" size="16">
+        <gui_name language="en">Q20</gui_name>
+        <description language="en">Q20</description>
+        <device_register high_bit="127" low_bit="0" name="V20" shift="0"/>
+      </register>
+      <register access="RW" name="Q21" size="16">
+        <gui_name language="en">Q21</gui_name>
+        <description language="en">Q21</description>
+        <device_register high_bit="127" low_bit="0" name="V21" shift="0"/>
+      </register>
+      <register access="RW" name="Q22" size="16">
+        <gui_name language="en">Q22</gui_name>
+        <description language="en">Q22</description>
+        <device_register high_bit="127" low_bit="0" name="V22" shift="0"/>
+      </register>
+      <register access="RW" name="Q23" size="16">
+        <gui_name language="en">Q23</gui_name>
+        <description language="en">Q23</description>
+        <device_register high_bit="127" low_bit="0" name="V23" shift="0"/>
+      </register>
+      <register access="RW" name="Q24" size="16">
+        <gui_name language="en">Q24</gui_name>
+        <description language="en">Q24</description>
+        <device_register high_bit="127" low_bit="0" name="V24" shift="0"/>
+      </register>
+      <register access="RW" name="Q25" size="16">
+        <gui_name language="en">Q25</gui_name>
+        <description language="en">Q25</description>
+        <device_register high_bit="127" low_bit="0" name="V25" shift="0"/>
+      </register>
+      <register access="RW" name="Q26" size="16">
+        <gui_name language="en">Q26</gui_name>
+        <description language="en">Q26</description>
+        <device_register high_bit="127" low_bit="0" name="V26" shift="0"/>
+      </register>
+      <register access="RW" name="Q27" size="16">
+        <gui_name language="en">Q27</gui_name>
+        <description language="en">Q27</description>
+        <device_register high_bit="127" low_bit="0" name="V27" shift="0"/>
+      </register>
+      <register access="RW" name="Q28" size="16">
+        <gui_name language="en">Q28</gui_name>
+        <description language="en">Q28</description>
+        <device_register high_bit="127" low_bit="0" name="V28" shift="0"/>
+      </register>
+      <register access="RW" name="Q29" size="16">
+        <gui_name language="en">Q29</gui_name>
+        <description language="en">Q29</description>
+        <device_register high_bit="127" low_bit="0" name="V29" shift="0"/>
+      </register>
+      <register access="RW" name="Q30" size="16">
+        <gui_name language="en">Q30</gui_name>
+        <description language="en">Q30</description>
+        <device_register high_bit="127" low_bit="0" name="V30" shift="0"/>
+      </register>
+      <register access="RW" name="Q31" size="16">
+        <gui_name language="en">Q31</gui_name>
+        <description language="en">Q31</description>
+        <device_register high_bit="127" low_bit="0" name="V31" shift="0"/>
+      </register>
+    </register_group>
+    <register_group xmlns="http://www.arm.com/core_reg" name="Double" xml:base="Registers/SIMD/V8_AARCH64_SIMD.xml">
+      <gui_name language="en">Double</gui_name>
+      <description language="en">64-bit registers</description>
+      <register access="RW" format="Float" name="D0" size="8">
+        <gui_name language="en">D0</gui_name>
+        <description language="en">D0</description>
+        <device_register high_bit="63" low_bit="0" name="V0" shift="0"/>
+      </register>
+      <register access="RW" format="Float" name="D1" size="8">
+        <gui_name language="en">D1</gui_name>
+        <description language="en">D1</description>
+        <device_register high_bit="63" low_bit="0" name="V1" shift="0"/>
+      </register>
+      <register access="RW" format="Float" name="D2" size="8">
+        <gui_name language="en">D2</gui_name>
+        <description language="en">D2</description>
+        <device_register high_bit="63" low_bit="0" name="V2" shift="0"/>
+      </register>
+      <register access="RW" format="Float" name="D3" size="8">
+        <gui_name language="en">D3</gui_name>
+        <description language="en">D3</description>
+        <device_register high_bit="63" low_bit="0" name="V3" shift="0"/>
+      </register>
+      <register access="RW" format="Float" name="D4" size="8">
+        <gui_name language="en">D4</gui_name>
+        <description language="en">D4</description>
+        <device_register high_bit="63" low_bit="0" name="V4" shift="0"/>
+      </register>
+      <register access="RW" format="Float" name="D5" size="8">
+        <gui_name language="en">D5</gui_name>
+        <description language="en">D5</description>
+        <device_register high_bit="63" low_bit="0" name="V5" shift="0"/>
+      </register>
+      <register access="RW" format="Float" name="D6" size="8">
+        <gui_name language="en">D6</gui_name>
+        <description language="en">D6</description>
+        <device_register high_bit="63" low_bit="0" name="V6" shift="0"/>
+      </register>
+      <register access="RW" format="Float" name="D7" size="8">
+        <gui_name language="en">D7</gui_name>
+        <description language="en">D7</description>
+        <device_register high_bit="63" low_bit="0" name="V7" shift="0"/>
+      </register>
+      <register access="RW" format="Float" name="D8" size="8">
+        <gui_name language="en">D8</gui_name>
+        <description language="en">D8</description>
+        <device_register high_bit="63" low_bit="0" name="V8" shift="0"/>
+      </register>
+      <register access="RW" format="Float" name="D9" size="8">
+        <gui_name language="en">D9</gui_name>
+        <description language="en">D9</description>
+        <device_register high_bit="63" low_bit="0" name="V9" shift="0"/>
+      </register>
+      <register access="RW" format="Float" name="D10" size="8">
+        <gui_name language="en">D10</gui_name>
+        <description language="en">D10</description>
+        <device_register high_bit="63" low_bit="0" name="V10" shift="0"/>
+      </register>
+      <register access="RW" format="Float" name="D11" size="8">
+        <gui_name language="en">D11</gui_name>
+        <description language="en">D11</description>
+        <device_register high_bit="63" low_bit="0" name="V11" shift="0"/>
+      </register>
+      <register access="RW" format="Float" name="D12" size="8">
+        <gui_name language="en">D12</gui_name>
+        <description language="en">D12</description>
+        <device_register high_bit="63" low_bit="0" name="V12" shift="0"/>
+      </register>
+      <register access="RW" format="Float" name="D13" size="8">
+        <gui_name language="en">D13</gui_name>
+        <description language="en">D13</description>
+        <device_register high_bit="63" low_bit="0" name="V13" shift="0"/>
+      </register>
+      <register access="RW" format="Float" name="D14" size="8">
+        <gui_name language="en">D14</gui_name>
+        <description language="en">D14</description>
+        <device_register high_bit="63" low_bit="0" name="V14" shift="0"/>
+      </register>
+      <register access="RW" format="Float" name="D15" size="8">
+        <gui_name language="en">D15</gui_name>
+        <description language="en">D15</description>
+        <device_register high_bit="63" low_bit="0" name="V15" shift="0"/>
+      </register>
+      <register access="RW" format="Float" name="D16" size="8">
+        <gui_name language="en">D16</gui_name>
+        <description language="en">D16</description>
+        <device_register high_bit="63" low_bit="0" name="V16" shift="0"/>
+      </register>
+      <register access="RW" format="Float" name="D17" size="8">
+        <gui_name language="en">D17</gui_name>
+        <description language="en">D17</description>
+        <device_register high_bit="63" low_bit="0" name="V17" shift="0"/>
+      </register>
+      <register access="RW" format="Float" name="D18" size="8">
+        <gui_name language="en">D18</gui_name>
+        <description language="en">D18</description>
+        <device_register high_bit="63" low_bit="0" name="V18" shift="0"/>
+      </register>
+      <register access="RW" format="Float" name="D19" size="8">
+        <gui_name language="en">D19</gui_name>
+        <description language="en">D19</description>
+        <device_register high_bit="63" low_bit="0" name="V19" shift="0"/>
+      </register>
+      <register access="RW" format="Float" name="D20" size="8">
+        <gui_name language="en">D20</gui_name>
+        <description language="en">D20</description>
+        <device_register high_bit="63" low_bit="0" name="V20" shift="0"/>
+      </register>
+      <register access="RW" format="Float" name="D21" size="8">
+        <gui_name language="en">D21</gui_name>
+        <description language="en">D21</description>
+        <device_register high_bit="63" low_bit="0" name="V21" shift="0"/>
+      </register>
+      <register access="RW" format="Float" name="D22" size="8">
+        <gui_name language="en">D22</gui_name>
+        <description language="en">D22</description>
+        <device_register high_bit="63" low_bit="0" name="V22" shift="0"/>
+      </register>
+      <register access="RW" format="Float" name="D23" size="8">
+        <gui_name language="en">D23</gui_name>
+        <description language="en">D23</description>
+        <device_register high_bit="63" low_bit="0" name="V23" shift="0"/>
+      </register>
+      <register access="RW" format="Float" name="D24" size="8">
+        <gui_name language="en">D24</gui_name>
+        <description language="en">D24</description>
+        <device_register high_bit="63" low_bit="0" name="V24" shift="0"/>
+      </register>
+      <register access="RW" format="Float" name="D25" size="8">
+        <gui_name language="en">D25</gui_name>
+        <description language="en">D25</description>
+        <device_register high_bit="63" low_bit="0" name="V25" shift="0"/>
+      </register>
+      <register access="RW" format="Float" name="D26" size="8">
+        <gui_name language="en">D26</gui_name>
+        <description language="en">D26</description>
+        <device_register high_bit="63" low_bit="0" name="V26" shift="0"/>
+      </register>
+      <register access="RW" format="Float" name="D27" size="8">
+        <gui_name language="en">D27</gui_name>
+        <description language="en">D27</description>
+        <device_register high_bit="63" low_bit="0" name="V27" shift="0"/>
+      </register>
+      <register access="RW" format="Float" name="D28" size="8">
+        <gui_name language="en">D28</gui_name>
+        <description language="en">D28</description>
+        <device_register high_bit="63" low_bit="0" name="V28" shift="0"/>
+      </register>
+      <register access="RW" format="Float" name="D29" size="8">
+        <gui_name language="en">D29</gui_name>
+        <description language="en">D29</description>
+        <device_register high_bit="63" low_bit="0" name="V29" shift="0"/>
+      </register>
+      <register access="RW" format="Float" name="D30" size="8">
+        <gui_name language="en">D30</gui_name>
+        <description language="en">D30</description>
+        <device_register high_bit="63" low_bit="0" name="V30" shift="0"/>
+      </register>
+      <register access="RW" format="Float" name="D31" size="8">
+        <gui_name language="en">D31</gui_name>
+        <description language="en">D31</description>
+        <device_register high_bit="63" low_bit="0" name="V31" shift="0"/>
+      </register>
+    </register_group>
+    <register_group xmlns="http://www.arm.com/core_reg" name="Single" xml:base="Registers/SIMD/V8_AARCH64_SIMD.xml">
+      <gui_name language="en">Single</gui_name>
+      <description language="en">32-bit registers</description>
+      <register access="RW" format="Float" name="S0" size="4">
+        <gui_name language="en">S0</gui_name>
+        <description language="en">S0</description>
+        <device_register high_bit="31" low_bit="0" name="V0" shift="0"/>
+      </register>
+      <register access="RW" format="Float" name="S1" size="4">
+        <gui_name language="en">S1</gui_name>
+        <description language="en">S1</description>
+        <device_register high_bit="31" low_bit="0" name="V1" shift="0"/>
+      </register>
+      <register access="RW" format="Float" name="S2" size="4">
+        <gui_name language="en">S2</gui_name>
+        <description language="en">S2</description>
+        <device_register high_bit="31" low_bit="0" name="V2" shift="0"/>
+      </register>
+      <register access="RW" format="Float" name="S3" size="4">
+        <gui_name language="en">S3</gui_name>
+        <description language="en">S3</description>
+        <device_register high_bit="31" low_bit="0" name="V3" shift="0"/>
+      </register>
+      <register access="RW" format="Float" name="S4" size="4">
+        <gui_name language="en">S4</gui_name>
+        <description language="en">S4</description>
+        <device_register high_bit="31" low_bit="0" name="V4" shift="0"/>
+      </register>
+      <register access="RW" format="Float" name="S5" size="4">
+        <gui_name language="en">S5</gui_name>
+        <description language="en">S5</description>
+        <device_register high_bit="31" low_bit="0" name="V5" shift="0"/>
+      </register>
+      <register access="RW" format="Float" name="S6" size="4">
+        <gui_name language="en">S6</gui_name>
+        <description language="en">S6</description>
+        <device_register high_bit="31" low_bit="0" name="V6" shift="0"/>
+      </register>
+      <register access="RW" format="Float" name="S7" size="4">
+        <gui_name language="en">S7</gui_name>
+        <description language="en">S7</description>
+        <device_register high_bit="31" low_bit="0" name="V7" shift="0"/>
+      </register>
+      <register access="RW" format="Float" name="S8" size="4">
+        <gui_name language="en">S8</gui_name>
+        <description language="en">S8</description>
+        <device_register high_bit="31" low_bit="0" name="V8" shift="0"/>
+      </register>
+      <register access="RW" format="Float" name="S9" size="4">
+        <gui_name language="en">S9</gui_name>
+        <description language="en">S9</description>
+        <device_register high_bit="31" low_bit="0" name="V9" shift="0"/>
+      </register>
+      <register access="RW" format="Float" name="S10" size="4">
+        <gui_name language="en">S10</gui_name>
+        <description language="en">S10</description>
+        <device_register high_bit="31" low_bit="0" name="V10" shift="0"/>
+      </register>
+      <register access="RW" format="Float" name="S11" size="4">
+        <gui_name language="en">S11</gui_name>
+        <description language="en">S11</description>
+        <device_register high_bit="31" low_bit="0" name="V11" shift="0"/>
+      </register>
+      <register access="RW" format="Float" name="S12" size="4">
+        <gui_name language="en">S12</gui_name>
+        <description language="en">S12</description>
+        <device_register high_bit="31" low_bit="0" name="V12" shift="0"/>
+      </register>
+      <register access="RW" format="Float" name="S13" size="4">
+        <gui_name language="en">S13</gui_name>
+        <description language="en">S13</description>
+        <device_register high_bit="31" low_bit="0" name="V13" shift="0"/>
+      </register>
+      <register access="RW" format="Float" name="S14" size="4">
+        <gui_name language="en">S14</gui_name>
+        <description language="en">S14</description>
+        <device_register high_bit="31" low_bit="0" name="V14" shift="0"/>
+      </register>
+      <register access="RW" format="Float" name="S15" size="4">
+        <gui_name language="en">S15</gui_name>
+        <description language="en">S15</description>
+        <device_register high_bit="31" low_bit="0" name="V15" shift="0"/>
+      </register>
+      <register access="RW" format="Float" name="S16" size="4">
+        <gui_name language="en">S16</gui_name>
+        <description language="en">S16</description>
+        <device_register high_bit="31" low_bit="0" name="V16" shift="0"/>
+      </register>
+      <register access="RW" format="Float" name="S17" size="4">
+        <gui_name language="en">S17</gui_name>
+        <description language="en">S17</description>
+        <device_register high_bit="31" low_bit="0" name="V17" shift="0"/>
+      </register>
+      <register access="RW" format="Float" name="S18" size="4">
+        <gui_name language="en">S18</gui_name>
+        <description language="en">S18</description>
+        <device_register high_bit="31" low_bit="0" name="V18" shift="0"/>
+      </register>
+      <register access="RW" format="Float" name="S19" size="4">
+        <gui_name language="en">S19</gui_name>
+        <description language="en">S19</description>
+        <device_register high_bit="31" low_bit="0" name="V19" shift="0"/>
+      </register>
+      <register access="RW" format="Float" name="S20" size="4">
+        <gui_name language="en">S20</gui_name>
+        <description language="en">S20</description>
+        <device_register high_bit="31" low_bit="0" name="V20" shift="0"/>
+      </register>
+      <register access="RW" format="Float" name="S21" size="4">
+        <gui_name language="en">S21</gui_name>
+        <description language="en">S21</description>
+        <device_register high_bit="31" low_bit="0" name="V21" shift="0"/>
+      </register>
+      <register access="RW" format="Float" name="S22" size="4">
+        <gui_name language="en">S22</gui_name>
+        <description language="en">S22</description>
+        <device_register high_bit="31" low_bit="0" name="V22" shift="0"/>
+      </register>
+      <register access="RW" format="Float" name="S23" size="4">
+        <gui_name language="en">S23</gui_name>
+        <description language="en">S23</description>
+        <device_register high_bit="31" low_bit="0" name="V23" shift="0"/>
+      </register>
+      <register access="RW" format="Float" name="S24" size="4">
+        <gui_name language="en">S24</gui_name>
+        <description language="en">S24</description>
+        <device_register high_bit="31" low_bit="0" name="V24" shift="0"/>
+      </register>
+      <register access="RW" format="Float" name="S25" size="4">
+        <gui_name language="en">S25</gui_name>
+        <description language="en">S25</description>
+        <device_register high_bit="31" low_bit="0" name="V25" shift="0"/>
+      </register>
+      <register access="RW" format="Float" name="S26" size="4">
+        <gui_name language="en">S26</gui_name>
+        <description language="en">S26</description>
+        <device_register high_bit="31" low_bit="0" name="V26" shift="0"/>
+      </register>
+      <register access="RW" format="Float" name="S27" size="4">
+        <gui_name language="en">S27</gui_name>
+        <description language="en">S27</description>
+        <device_register high_bit="31" low_bit="0" name="V27" shift="0"/>
+      </register>
+      <register access="RW" format="Float" name="S28" size="4">
+        <gui_name language="en">S28</gui_name>
+        <description language="en">S28</description>
+        <device_register high_bit="31" low_bit="0" name="V28" shift="0"/>
+      </register>
+      <register access="RW" format="Float" name="S29" size="4">
+        <gui_name language="en">S29</gui_name>
+        <description language="en">S29</description>
+        <device_register high_bit="31" low_bit="0" name="V29" shift="0"/>
+      </register>
+      <register access="RW" format="Float" name="S30" size="4">
+        <gui_name language="en">S30</gui_name>
+        <description language="en">S30</description>
+        <device_register high_bit="31" low_bit="0" name="V30" shift="0"/>
+      </register>
+      <register access="RW" format="Float" name="S31" size="4">
+        <gui_name language="en">S31</gui_name>
+        <description language="en">S31</description>
+        <device_register high_bit="31" low_bit="0" name="V31" shift="0"/>
+      </register>
+    </register_group>
+    <register_group xmlns="http://www.arm.com/core_reg" name="Half" xml:base="Registers/SIMD/V8_AARCH64_SIMD.xml">
+      <gui_name language="en">Half</gui_name>
+      <description language="en">16-bit registers</description>
+      <register access="RW" format="Float" name="H0" size="2">
+        <gui_name language="en">H0</gui_name>
+        <description language="en">H0</description>
+        <device_register high_bit="15" low_bit="0" name="V0" shift="0"/>
+      </register>
+      <register access="RW" format="Float" name="H1" size="2">
+        <gui_name language="en">H1</gui_name>
+        <description language="en">H1</description>
+        <device_register high_bit="15" low_bit="0" name="V1" shift="0"/>
+      </register>
+      <register access="RW" format="Float" name="H2" size="2">
+        <gui_name language="en">H2</gui_name>
+        <description language="en">H2</description>
+        <device_register high_bit="15" low_bit="0" name="V2" shift="0"/>
+      </register>
+      <register access="RW" format="Float" name="H3" size="2">
+        <gui_name language="en">H3</gui_name>
+        <description language="en">H3</description>
+        <device_register high_bit="15" low_bit="0" name="V3" shift="0"/>
+      </register>
+      <register access="RW" format="Float" name="H4" size="2">
+        <gui_name language="en">H4</gui_name>
+        <description language="en">H4</description>
+        <device_register high_bit="15" low_bit="0" name="V4" shift="0"/>
+      </register>
+      <register access="RW" format="Float" name="H5" size="2">
+        <gui_name language="en">H5</gui_name>
+        <description language="en">H5</description>
+        <device_register high_bit="15" low_bit="0" name="V5" shift="0"/>
+      </register>
+      <register access="RW" format="Float" name="H6" size="2">
+        <gui_name language="en">H6</gui_name>
+        <description language="en">H6</description>
+        <device_register high_bit="15" low_bit="0" name="V6" shift="0"/>
+      </register>
+      <register access="RW" format="Float" name="H7" size="2">
+        <gui_name language="en">H7</gui_name>
+        <description language="en">H7</description>
+        <device_register high_bit="15" low_bit="0" name="V7" shift="0"/>
+      </register>
+      <register access="RW" format="Float" name="H8" size="2">
+        <gui_name language="en">H8</gui_name>
+        <description language="en">H8</description>
+        <device_register high_bit="15" low_bit="0" name="V8" shift="0"/>
+      </register>
+      <register access="RW" format="Float" name="H9" size="2">
+        <gui_name language="en">H9</gui_name>
+        <description language="en">H9</description>
+        <device_register high_bit="15" low_bit="0" name="V9" shift="0"/>
+      </register>
+      <register access="RW" format="Float" name="H10" size="2">
+        <gui_name language="en">H10</gui_name>
+        <description language="en">H10</description>
+        <device_register high_bit="15" low_bit="0" name="V10" shift="0"/>
+      </register>
+      <register access="RW" format="Float" name="H11" size="2">
+        <gui_name language="en">H11</gui_name>
+        <description language="en">H11</description>
+        <device_register high_bit="15" low_bit="0" name="V11" shift="0"/>
+      </register>
+      <register access="RW" format="Float" name="H12" size="2">
+        <gui_name language="en">H12</gui_name>
+        <description language="en">H12</description>
+        <device_register high_bit="15" low_bit="0" name="V12" shift="0"/>
+      </register>
+      <register access="RW" format="Float" name="H13" size="2">
+        <gui_name language="en">H13</gui_name>
+        <description language="en">H13</description>
+        <device_register high_bit="15" low_bit="0" name="V13" shift="0"/>
+      </register>
+      <register access="RW" format="Float" name="H14" size="2">
+        <gui_name language="en">H14</gui_name>
+        <description language="en">H14</description>
+        <device_register high_bit="15" low_bit="0" name="V14" shift="0"/>
+      </register>
+      <register access="RW" format="Float" name="H15" size="2">
+        <gui_name language="en">H15</gui_name>
+        <description language="en">H15</description>
+        <device_register high_bit="15" low_bit="0" name="V15" shift="0"/>
+      </register>
+      <register access="RW" format="Float" name="H16" size="2">
+        <gui_name language="en">H16</gui_name>
+        <description language="en">H16</description>
+        <device_register high_bit="15" low_bit="0" name="V16" shift="0"/>
+      </register>
+      <register access="RW" format="Float" name="H17" size="2">
+        <gui_name language="en">H17</gui_name>
+        <description language="en">H17</description>
+        <device_register high_bit="15" low_bit="0" name="V17" shift="0"/>
+      </register>
+      <register access="RW" format="Float" name="H18" size="2">
+        <gui_name language="en">H18</gui_name>
+        <description language="en">H18</description>
+        <device_register high_bit="15" low_bit="0" name="V18" shift="0"/>
+      </register>
+      <register access="RW" format="Float" name="H19" size="2">
+        <gui_name language="en">H19</gui_name>
+        <description language="en">H19</description>
+        <device_register high_bit="15" low_bit="0" name="V19" shift="0"/>
+      </register>
+      <register access="RW" format="Float" name="H20" size="2">
+        <gui_name language="en">H20</gui_name>
+        <description language="en">H20</description>
+        <device_register high_bit="15" low_bit="0" name="V20" shift="0"/>
+      </register>
+      <register access="RW" format="Float" name="H21" size="2">
+        <gui_name language="en">H21</gui_name>
+        <description language="en">H21</description>
+        <device_register high_bit="15" low_bit="0" name="V21" shift="0"/>
+      </register>
+      <register access="RW" format="Float" name="H22" size="2">
+        <gui_name language="en">H22</gui_name>
+        <description language="en">H22</description>
+        <device_register high_bit="15" low_bit="0" name="V22" shift="0"/>
+      </register>
+      <register access="RW" format="Float" name="H23" size="2">
+        <gui_name language="en">H23</gui_name>
+        <description language="en">H23</description>
+        <device_register high_bit="15" low_bit="0" name="V23" shift="0"/>
+      </register>
+      <register access="RW" format="Float" name="H24" size="2">
+        <gui_name language="en">H24</gui_name>
+        <description language="en">H24</description>
+        <device_register high_bit="15" low_bit="0" name="V24" shift="0"/>
+      </register>
+      <register access="RW" format="Float" name="H25" size="2">
+        <gui_name language="en">H25</gui_name>
+        <description language="en">H25</description>
+        <device_register high_bit="15" low_bit="0" name="V25" shift="0"/>
+      </register>
+      <register access="RW" format="Float" name="H26" size="2">
+        <gui_name language="en">H26</gui_name>
+        <description language="en">H26</description>
+        <device_register high_bit="15" low_bit="0" name="V26" shift="0"/>
+      </register>
+      <register access="RW" format="Float" name="H27" size="2">
+        <gui_name language="en">H27</gui_name>
+        <description language="en">H27</description>
+        <device_register high_bit="15" low_bit="0" name="V27" shift="0"/>
+      </register>
+      <register access="RW" format="Float" name="H28" size="2">
+        <gui_name language="en">H28</gui_name>
+        <description language="en">H28</description>
+        <device_register high_bit="15" low_bit="0" name="V28" shift="0"/>
+      </register>
+      <register access="RW" format="Float" name="H29" size="2">
+        <gui_name language="en">H29</gui_name>
+        <description language="en">H29</description>
+        <device_register high_bit="15" low_bit="0" name="V29" shift="0"/>
+      </register>
+      <register access="RW" format="Float" name="H30" size="2">
+        <gui_name language="en">H30</gui_name>
+        <description language="en">H30</description>
+        <device_register high_bit="15" low_bit="0" name="V30" shift="0"/>
+      </register>
+      <register access="RW" format="Float" name="H31" size="2">
+        <gui_name language="en">H31</gui_name>
+        <description language="en">H31</description>
+        <device_register high_bit="15" low_bit="0" name="V31" shift="0"/>
+      </register>
+    </register_group>
+
+    <!-- <xi:include href="Registers/SIMD/V8_AARCH64_SIMD.xml" xpointer="xmlns(namespace=http://com.arm.targetconfigurationeditor)xpointer(//namespace:enumeration)"/> -->
+    <!-- On bare metal these come from the System Registers so include them here-->
+
+    <register_group xmlns="http://www.arm.com/core_reg" name="Control" xml:base="Registers/SIMD/V8_AARCH64_FPCTRL.xml">
+      <gui_name language="en">Floating-point Status and Control Registers</gui_name>
+      <description language="en">Displays status and Controls floating-point extension behaviour</description>
+      <register access="RW" name="FPCR" size="4">
+        <gui_name language="en">Floating-point Control Register</gui_name>
+        <description language="en">Controls floating-point extension behaviour.</description>
+        <bitField conditional="false" enumerationId="FPCR_AHP" name="AHP">
+          <gui_name language="en">AHP</gui_name>
+          <description language="en">Alternative half-precision control bit:</description>
+          <definition>[26]</definition>
+        </bitField>
+        <bitField conditional="false" enumerationId="FPCR_DN" name="DN">
+          <gui_name language="en">DN</gui_name>
+          <description language="en">Default NaN mode control bit: The value of this bit only controls VFP arithmetic. Advanced SIMD arithmetic always uses the Default NaN setting, regardless of the value of the DN bit.</description>
+          <definition>[25]</definition>
+        </bitField>
+        <bitField conditional="false" enumerationId="FPCR_FZ" name="FZ">
+          <gui_name language="en">FZ</gui_name>
+          <description language="en">Flush-to-zero mode control bit: The value of this bit only controls VFP arithmetic. Advanced SIMD arithmetic always uses the Flush-to-zero setting, regardless of the value of the FZ bit.</description>
+          <definition>[24]</definition>
+        </bitField>
+        <bitField conditional="false" enumerationId="FPCR_RMODE" name="RMode">
+          <gui_name language="en">RMode</gui_name>
+          <description language="en">Rounding Mode control field. The encoding of this field is: The specified rounding mode is used by almost all VFP floating-point instructions. Advanced SIMD arithmetic always uses the Round to Nearest setting, regardless of the value of the RMode bits.</description>
+          <definition>[23:22]</definition>
+        </bitField>
+        <bitField conditional="false" name="Stride">
+          <gui_name language="en">Stride</gui_name>
+          <description language="en">From ARMv7, ARM deprecates use of nonzero values of the Stride and Len fields. The values of these fields are ignored by the Advanced SIMD extension.</description>
+          <definition>[21:20]</definition>
+        </bitField>
+        <bitField conditional="false" name="Len">
+          <gui_name language="en">Len</gui_name>
+          <description language="en">From ARMv7, ARM deprecates use of nonzero values of the Stride and Len fields. The values of these fields are ignored by the Advanced SIMD extension.</description>
+          <definition>[18:16]</definition>
+        </bitField>
+        <bitField conditional="false" enumerationId="FPCR_IDE" name="IDE">
+          <gui_name language="en">IDE</gui_name>
+          <description language="en">Input Denormal exception trap enable. Possible values are: This bit is supported only in VFPv2, VFPv3U, and VFPv4U; it is RAZ/WI on a system that implements VFPv3 or VFPv4. The values of this bit controls only VFP arithmetic. Advanced SIMD arithmetic always uses untrapped exception handling, regardless of the value of this bit.</description>
+          <definition>[15]</definition>
+        </bitField>
+        <bitField conditional="false" enumerationId="FPCR_IXE" name="IXE">
+          <gui_name language="en">IXE</gui_name>
+          <description language="en">Inexact exception trap enable. Possible values are: This bit is supported only in VFPv2, VFPv3U, and VFPv4U; it is RAZ/WI on a system that implements VFPv3 or VFPv4. The values of this bit controls only VFP arithmetic. Advanced SIMD arithmetic always uses untrapped exception handling, regardless of the value of this bit.</description>
+          <definition>[12]</definition>
+        </bitField>
+        <bitField conditional="false" enumerationId="FPCR_UFE" name="UFE">
+          <gui_name language="en">UFE</gui_name>
+          <description language="en">Underflow exception trap enable. Possible values are: This bit is supported only in VFPv2, VFPv3U, and VFPv4U; it is RAZ/WI on a system that implements VFPv3 or VFPv4. The values of this bit controls only VFP arithmetic. Advanced SIMD arithmetic always uses untrapped exception handling, regardless of the value of this bit.</description>
+          <definition>[11]</definition>
+        </bitField>
+        <bitField conditional="false" enumerationId="FPCR_OFE" name="OFE">
+          <gui_name language="en">OFE</gui_name>
+          <description language="en">Overflow exception trap enable. Possible values are: This bit is supported only in VFPv2, VFPv3U, and VFPv4U; it is RAZ/WI on a system that implements VFPv3 or VFPv4. The values of this bit controls only VFP arithmetic. Advanced SIMD arithmetic always uses untrapped exception handling, regardless of the value of this bit.</description>
+          <definition>[10]</definition>
+        </bitField>
+        <bitField conditional="false" enumerationId="FPCR_DZE" name="DZE">
+          <gui_name language="en">DZE</gui_name>
+          <description language="en">Division by Zero exception trap enable. Possible values are: This bit is supported only in VFPv2, VFPv3U, and VFPv4U; it is RAZ/WI on a system that implements VFPv3 or VFPv4. The values of this bit controls only VFP arithmetic. Advanced SIMD arithmetic always uses untrapped exception handling, regardless of the value of this bit.</description>
+          <definition>[9]</definition>
+        </bitField>
+        <bitField conditional="false" enumerationId="FPCR_IOE" name="IOE">
+          <gui_name language="en">IOE</gui_name>
+          <description language="en">Invalid Operation exception trap enable. Possible values are: This bit is supported only in VFPv2, VFPv3U, and VFPv4U; it is RAZ/WI on a system that implements VFPv3 or VFPv4. The values of this bit controls only VFP arithmetic. Advanced SIMD arithmetic always uses untrapped exception handling, regardless of the value of this bit.</description>
+          <definition>[8]</definition>
+        </bitField>
+      </register>
+      <register access="RW" name="FPSR" size="4">
+        <gui_name language="en">Floating-point Status Register</gui_name>
+        <description language="en">Provides floating-point system status information.</description>
+        <bitField conditional="false" name="N">
+          <gui_name language="en">N</gui_name>
+          <description language="en">Negative condition flag. This is updated by floating-point comparison operations.</description>
+          <definition>[31]</definition>
+        </bitField>
+        <bitField conditional="false" name="Z">
+          <gui_name language="en">Z</gui_name>
+          <description language="en">Zero condition flag. This is updated by floating-point comparison operations.</description>
+          <definition>[30]</definition>
+        </bitField>
+        <bitField conditional="false" name="C">
+          <gui_name language="en">C</gui_name>
+          <description language="en">Carry condition flag. This is updated by floating-point comparison operations.</description>
+          <definition>[29]</definition>
+        </bitField>
+        <bitField conditional="false" name="V">
+          <gui_name language="en">V</gui_name>
+          <description language="en">Overflow condition flag. This is updated by floating-point comparison operations.</description>
+          <definition>[28]</definition>
+        </bitField>
+        <bitField conditional="false" name="QC">
+          <gui_name language="en">QC</gui_name>
+          <description language="en">Cumulative saturation bit, Advanced SIMD only. This bit is set to 1 to indicate that an Advanced SIMD integer operation has saturated since 0 was last written to this bit.</description>
+          <definition>[27]</definition>
+        </bitField>
+        <bitField conditional="false" name="IDC">
+          <gui_name language="en">IDC</gui_name>
+          <description language="en">Input Denormal cumulative exception bit. This bit is set to 1 to indicate that the Input Denormal exception has occurred since 0 was last written to this bit. How VFP instructions update this bit depends on the value of the IDE bit. Advanced SIMD instructions set this bit if the Input Denormal exception occurs in one or more of the floating-point calculations performed by the instruction, regardless of the value of the IDE bit.</description>
+          <definition>[7]</definition>
+        </bitField>
+        <bitField conditional="false" name="IXC">
+          <gui_name language="en">IXC</gui_name>
+          <description language="en">Inexact cumulative exception bit. This bit is set to 1 to indicate that the Inexact exception has occurred since 0 was last written to this bit. How VFP instructions update this bit depends on the value of the IXE bit. Advanced SIMD instructions set this bit if the Inexact exception occurs in one or more of the floating-point calculations performed by the instruction, regardless of the value of the IXE bit.</description>
+          <definition>[4]</definition>
+        </bitField>
+        <bitField conditional="false" name="UFC">
+          <gui_name language="en">UFC</gui_name>
+          <description language="en">Underflow cumulative exception bit. This bit is set to 1 to indicate that the Underflow exception has occurred since 0 was last written to this bit. How VFP instructions update this bit depends on the value of the UFE bit. Advanced SIMD instructions set this bit if the Underflow exception occurs in one or more of the floating-point calculations performed by the instruction, regardless of the value of the UFE bit.</description>
+          <definition>[3]</definition>
+        </bitField>
+        <bitField conditional="false" name="OFC">
+          <gui_name language="en">OFC</gui_name>
+          <description language="en">Overflow cumulative exception bit. This bit is set to 1 to indicate that the Overflow exception has occurred since 0 was last written to this bit. How VFP instructions update this bit depends on the value of the OFE bit. Advanced SIMD instructions set this bit if the Overflow exception occurs in one or more of the floating-point calculations performed by the instruction, regardless of the value of the OFE bit.</description>
+          <definition>[2]</definition>
+        </bitField>
+        <bitField conditional="false" name="DZC">
+          <gui_name language="en">DZC</gui_name>
+          <description language="en">Division by Zero cumulative exception bit. This bit is set to 1 to indicate that the Division by Zero exception has occurred since 0 was last written to this bit. How VFP instructions update this bit depends on the value of the DZE bit. Advanced SIMD instructions set this bit if the Division by Zero exception occurs in one or more of the floating-point calculations performed by the instruction, regardless of the value of the DZE bit.</description>
+          <definition>[1]</definition>
+        </bitField>
+        <bitField conditional="false" name="IOC">
+          <gui_name language="en">IOC</gui_name>
+          <description language="en">Invalid Operation cumulative exception bit. This bit is set to 1 to indicate that the Invalid Operation exception has occurred since 0 was last written to this bit. How VFP instructions update this bit depends on the value of the IOE bit. Advanced SIMD instructions set this bit if the Invalid Operation exception occurs in one or more of the floating-point calculations performed by the instruction, regardless of the value of the IOE bit.</description>
+          <definition>[0]</definition>
+        </bitField>
+      </register>
+    </register_group>
+
+
+    <tcf:enumeration xmlns:tcf="http://com.arm.targetconfigurationeditor" name="FPCR_IXE" xml:base="Registers/SIMD/V8_AARCH64_FPCTRL.xml">
+      <tcf:enumItem name="Untrapped_exception_handling_selected_If_the_floating_point_exception_occurs_then_the_IXC_bit_is_set_to_1" number="0"/>
+      <tcf:enumItem name="Trapped_exception_handling_selected_If_the_floating_point_exception_occurs_hardware_does_not_update_the_IXC_bit_The_trap_handling_software_can_decide_whether_to_set_the_IXC_bit_to_1" number="1"/>
+    </tcf:enumeration>
+    <tcf:enumeration xmlns:tcf="http://com.arm.targetconfigurationeditor" name="MVFR1_EL1_ADVSIMD_INTEGER" xml:base="Registers/SIMD/V8_AARCH64_FPCTRL.xml">
+      <tcf:enumItem name="Not_implemented" number="0"/>
+      <tcf:enumItem name="Implemented" number="1"/>
+    </tcf:enumeration>
+    <tcf:enumeration xmlns:tcf="http://com.arm.targetconfigurationeditor" name="MVFR1_EL1_ADVSIMD_HPFP" xml:base="Registers/SIMD/V8_AARCH64_FPCTRL.xml">
+      <tcf:enumItem name="Not_implemented" number="0"/>
+      <tcf:enumItem name="Implemented_This_value_is_permitted_only_if_the_AdvSIMD_SPFP_field_is_0b0001" number="1"/>
+    </tcf:enumeration>
+    <tcf:enumeration xmlns:tcf="http://com.arm.targetconfigurationeditor" name="MVFR2_EL1_ADVSIMD_MISC" xml:base="Registers/SIMD/V8_AARCH64_FPCTRL.xml">
+      <tcf:enumItem name="No_support_for_miscellaneous_features" number="0"/>
+      <tcf:enumItem name="Floating_point_Conversion_to_Integer_with_Directed_Rounding_modes" number="1"/>
+      <tcf:enumItem name="As_0b0001_and_Floating_point_Round_to_Integral_Floating_point" number="2"/>
+      <tcf:enumItem name="As_0b0010_and_Floating_point_MaxNum_and_MinNum" number="3"/>
+    </tcf:enumeration>
+    <tcf:enumeration xmlns:tcf="http://com.arm.targetconfigurationeditor" name="MVFR0_EL1_SHORT_VECTORS" xml:base="Registers/SIMD/V8_AARCH64_FPCTRL.xml">
+      <tcf:enumItem name="Not_supported" number="0"/>
+      <tcf:enumItem name="Short_vector_operation_supported" number="1"/>
+    </tcf:enumeration>
+    <tcf:enumeration xmlns:tcf="http://com.arm.targetconfigurationeditor" name="MVFR0_EL1_DOUBLE_PRECISION" xml:base="Registers/SIMD/V8_AARCH64_FPCTRL.xml">
+      <tcf:enumItem name="Not_supported_in_hardware" number="0"/>
+      <tcf:enumItem name="Supported_VFPv2" number="1"/>
+      <tcf:enumItem name="Supported_VFPv3_or_VFPv4_VFPv3_adds_an_instruction_to_load_a_double_precision_floating_point_constant_and_conversions_between_double_precision_and_fixed_point_values" number="2"/>
+    </tcf:enumeration>
+    <tcf:enumeration xmlns:tcf="http://com.arm.targetconfigurationeditor" name="MVFR0_EL1_SINGLE_PRECISION" xml:base="Registers/SIMD/V8_AARCH64_FPCTRL.xml">
+      <tcf:enumItem name="Not_supported_in_hardware" number="0"/>
+      <tcf:enumItem name="Supported_VFPv2" number="1"/>
+      <tcf:enumItem name="Supported_VFPv3_or_VFPv4_VFPv3_adds_an_instruction_to_load_a_single_precision_floating_point_constant_and_conversions_between_single_precision_and_fixed_point_values" number="2"/>
+    </tcf:enumeration>
+    <tcf:enumeration xmlns:tcf="http://com.arm.targetconfigurationeditor" name="MVFR1_EL1_ADVSIMD_LOAD_STORE" xml:base="Registers/SIMD/V8_AARCH64_FPCTRL.xml">
+      <tcf:enumItem name="Not_implemented" number="0"/>
+      <tcf:enumItem name="Implemented" number="1"/>
+    </tcf:enumeration>
+    <tcf:enumeration xmlns:tcf="http://com.arm.targetconfigurationeditor" name="FPCR_IDE" xml:base="Registers/SIMD/V8_AARCH64_FPCTRL.xml">
+      <tcf:enumItem name="Untrapped_exception_handling_selected_If_the_floating_point_exception_occurs_then_the_IDC_bit_is_set_to_1" number="0"/>
+      <tcf:enumItem name="Trapped_exception_handling_selected_If_the_floating_point_exception_occurs_hardware_does_not_update_the_IDC_bit_The_trap_handling_software_can_decide_whether_to_set_the_IDC_bit_to_1" number="1"/>
+    </tcf:enumeration>
+    <tcf:enumeration xmlns:tcf="http://com.arm.targetconfigurationeditor" name="MVFR0_EL1_VFP_ROUNDING_MODES" xml:base="Registers/SIMD/V8_AARCH64_FPCTRL.xml">
+      <tcf:enumItem name="Only_Round_to_Nearest_mode_supported_except_that_Round_towards_Zero_mode_is_supported_for_VCVT_instructions_that_always_use_that_rounding_mode_regardless_of_the_FPSCR_setting" number="0"/>
+      <tcf:enumItem name="All_rounding_modes_supported" number="1"/>
+    </tcf:enumeration>
+    <tcf:enumeration xmlns:tcf="http://com.arm.targetconfigurationeditor" name="MVFR0_EL1_DIVIDE" xml:base="Registers/SIMD/V8_AARCH64_FPCTRL.xml">
+      <tcf:enumItem name="Not_supported_in_hardware" number="0"/>
+      <tcf:enumItem name="Supported" number="1"/>
+    </tcf:enumeration>
+    <tcf:enumeration xmlns:tcf="http://com.arm.targetconfigurationeditor" name="FPCR_IOE" xml:base="Registers/SIMD/V8_AARCH64_FPCTRL.xml">
+      <tcf:enumItem name="Untrapped_exception_handling_selected_If_the_floating_point_exception_occurs_then_the_IOC_bit_is_set_to_1" number="0"/>
+      <tcf:enumItem name="Trapped_exception_handling_selected_If_the_floating_point_exception_occurs_hardware_does_not_update_the_IOC_bit_The_trap_handling_software_can_decide_whether_to_set_the_IOC_bit_to_1" number="1"/>
+    </tcf:enumeration>
+    <tcf:enumeration xmlns:tcf="http://com.arm.targetconfigurationeditor" name="FPEXC32_EL2_EX" xml:base="Registers/SIMD/V8_AARCH64_FPCTRL.xml">
+      <tcf:enumItem name="The_only_significant_state_is_the_contents_of_the_registers_D0___D15_D16___D31_if_implemented_FPSCR_and_FPEXC_A_context_switch_can_be_performed_by_saving_and_restoring_the_values_of_these_registers" number="0"/>
+      <tcf:enumItem name="There_is_additional_state_that_must_be_handled_by_any_context_switch_system" number="1"/>
+    </tcf:enumeration>
+    <tcf:enumeration xmlns:tcf="http://com.arm.targetconfigurationeditor" name="FPCR_RMODE" xml:base="Registers/SIMD/V8_AARCH64_FPCTRL.xml">
+      <tcf:enumItem name="Round_to_Nearest_RN_mode" number="0"/>
+      <tcf:enumItem name="Round_towards_Plus_Infinity_RP_mode" number="1"/>
+      <tcf:enumItem name="Round_towards_Minus_Infinity_RM_mode" number="2"/>
+      <tcf:enumItem name="Round_towards_Zero_RZ_mode" number="3"/>
+    </tcf:enumeration>
+    <tcf:enumeration xmlns:tcf="http://com.arm.targetconfigurationeditor" name="MVFR0_EL1_ADVSIMD_REGISTERS" xml:base="Registers/SIMD/V8_AARCH64_FPCTRL.xml">
+      <tcf:enumItem name="Not_supported" number="0"/>
+      <tcf:enumItem name="Supported_16_x_64_bit_registers" number="1"/>
+      <tcf:enumItem name="Supported_32_x_64_bit_registers" number="2"/>
+    </tcf:enumeration>
+    <tcf:enumeration xmlns:tcf="http://com.arm.targetconfigurationeditor" name="MVFR1_EL1_VFP_HPFP" xml:base="Registers/SIMD/V8_AARCH64_FPCTRL.xml">
+      <tcf:enumItem name="Not_implemented" number="0"/>
+      <tcf:enumItem name="Implemented" number="1"/>
+    </tcf:enumeration>
+    <tcf:enumeration xmlns:tcf="http://com.arm.targetconfigurationeditor" name="FPCR_UFE" xml:base="Registers/SIMD/V8_AARCH64_FPCTRL.xml">
+      <tcf:enumItem name="Untrapped_exception_handling_selected_If_the_floating_point_exception_occurs_then_the_UFC_bit_is_set_to_1" number="0"/>
+      <tcf:enumItem name="Trapped_exception_handling_selected_If_the_floating_point_exception_occurs_hardware_does_not_update_the_UFC_bit_The_trap_handling_software_can_decide_whether_to_set_the_UFC_bit_to_1" number="1"/>
+    </tcf:enumeration>
+    <tcf:enumeration xmlns:tcf="http://com.arm.targetconfigurationeditor" name="MVFR0_EL1_VFP_EXCEPTION_TRAP" xml:base="Registers/SIMD/V8_AARCH64_FPCTRL.xml">
+      <tcf:enumItem name="Not_supported_This_is_the_value_for_VFPv3_and_VFPv4" number="0"/>
+      <tcf:enumItem name="Supported_by_the_hardware_This_is_the_value_for_VFPv3U_VFP4U_and_for_VFPv2_When_exception_trapping_is_supported_support_code_is_needed_to_handle_the_trapped_exceptions" number="1"/>
+    </tcf:enumeration>
+    <tcf:enumeration xmlns:tcf="http://com.arm.targetconfigurationeditor" name="FPCR_FZ" xml:base="Registers/SIMD/V8_AARCH64_FPCTRL.xml">
+      <tcf:enumItem name="Flush_to_zero_mode_disabled_Behavior_of_the_floating_point_system_is_fully_compliant_with_the_IEEE_754_standard" number="0"/>
+      <tcf:enumItem name="Flush_to_zero_mode_enabled" number="1"/>
+    </tcf:enumeration>
+    <tcf:enumeration xmlns:tcf="http://com.arm.targetconfigurationeditor" name="MVFR1_EL1_DEFAULT_NAN_MODE" xml:base="Registers/SIMD/V8_AARCH64_FPCTRL.xml">
+      <tcf:enumItem name="Hardware_supports_only_the_Default_NaN_mode_If_a_VFP_subarchitecture_is_implemented_its_support_code_might_include_support_for_propagation_of_NaN_values" number="0"/>
+      <tcf:enumItem name="Hardware_supports_propagation_of_NaN_values" number="1"/>
+    </tcf:enumeration>
+    <tcf:enumeration xmlns:tcf="http://com.arm.targetconfigurationeditor" name="FPCR_DZE" xml:base="Registers/SIMD/V8_AARCH64_FPCTRL.xml">
+      <tcf:enumItem name="Untrapped_exception_handling_selected_If_the_floating_point_exception_occurs_then_the_DZC_bit_is_set_to_1" number="0"/>
+      <tcf:enumItem name="Trapped_exception_handling_selected_If_the_floating_point_exception_occurs_hardware_does_not_update_the_DZC_bit_The_trap_handling_software_can_decide_whether_to_set_the_DZC_bit_to_1" number="1"/>
+    </tcf:enumeration>
+    <tcf:enumeration xmlns:tcf="http://com.arm.targetconfigurationeditor" name="FPCR_DN" xml:base="Registers/SIMD/V8_AARCH64_FPCTRL.xml">
+      <tcf:enumItem name="NaN_operands_propagate_through_to_the_output_of_a_floating_point_operation" number="0"/>
+      <tcf:enumItem name="Any_operation_involving_one_or_more_NaNs_returns_the_Default_NaN" number="1"/>
+    </tcf:enumeration>
+    <tcf:enumeration xmlns:tcf="http://com.arm.targetconfigurationeditor" name="FPEXC32_EL2_EN" xml:base="Registers/SIMD/V8_AARCH64_FPCTRL.xml">
+      <tcf:enumItem name="The_Advanced_SIMD_and_VFP_extensions_are_disabled" number="0"/>
+      <tcf:enumItem name="The_Advanced_SIMD_and_VFP_extensions_are_enabled_and_operate_normally" number="1"/>
+    </tcf:enumeration>
+    <tcf:enumeration xmlns:tcf="http://com.arm.targetconfigurationeditor" name="MVFR0_EL1_SQUARE_ROOT" xml:base="Registers/SIMD/V8_AARCH64_FPCTRL.xml">
+      <tcf:enumItem name="Not_supported_in_hardware" number="0"/>
+      <tcf:enumItem name="Supported" number="1"/>
+    </tcf:enumeration>
+    <tcf:enumeration xmlns:tcf="http://com.arm.targetconfigurationeditor" name="FPCR_OFE" xml:base="Registers/SIMD/V8_AARCH64_FPCTRL.xml">
+      <tcf:enumItem name="Untrapped_exception_handling_selected_If_the_floating_point_exception_occurs_then_the_OFC_bit_is_set_to_1" number="0"/>
+      <tcf:enumItem name="Trapped_exception_handling_selected_If_the_floating_point_exception_occurs_hardware_does_not_update_the_OFC_bit_The_trap_handling_software_can_decide_whether_to_set_the_OFC_bit_to_1" number="1"/>
+    </tcf:enumeration>
+    <tcf:enumeration xmlns:tcf="http://com.arm.targetconfigurationeditor" name="MVFR1_EL1_ADVSIMD_SPFP" xml:base="Registers/SIMD/V8_AARCH64_FPCTRL.xml">
+      <tcf:enumItem name="Not_implemented" number="0"/>
+      <tcf:enumItem name="Implemented_This_value_is_permitted_only_if_the_AdvSIMD_integer_field_is_0b0001" number="1"/>
+    </tcf:enumeration>
+    <tcf:enumeration xmlns:tcf="http://com.arm.targetconfigurationeditor" name="MVFR2_EL1_VFP_MISC" xml:base="Registers/SIMD/V8_AARCH64_FPCTRL.xml">
+      <tcf:enumItem name="No_support_for_miscellaneous_features" number="0"/>
+      <tcf:enumItem name="Support_for_Floating_point_selection" number="1"/>
+      <tcf:enumItem name="As_0b0001_and_Floating_point_Conversion_to_Integer_with_Directed_Rounding_modes" number="2"/>
+      <tcf:enumItem name="As_0b0010_and_Floating_point_Round_to_Integral_Floating_point" number="3"/>
+      <tcf:enumItem name="As_0b0011_and_Floating_point_MaxNum_and_MinNum" number="4"/>
+    </tcf:enumeration>
+    <tcf:enumeration xmlns:tcf="http://com.arm.targetconfigurationeditor" name="MVFR1_EL1_ADVSIMD_FMAC" xml:base="Registers/SIMD/V8_AARCH64_FPCTRL.xml">
+      <tcf:enumItem name="Not_implemented" number="0"/>
+      <tcf:enumItem name="Implemented" number="1"/>
+    </tcf:enumeration>
+    <tcf:enumeration xmlns:tcf="http://com.arm.targetconfigurationeditor" name="MVFR1_EL1_FTZ_MODE" xml:base="Registers/SIMD/V8_AARCH64_FPCTRL.xml">
+      <tcf:enumItem name="Hardware_supports_only_the_Flush_to_Zero_mode_of_operation_If_a_VFP_subarchitecture_is_implemented_its_support_code_might_include_support_for_full_denormalized_number_arithmetic" number="0"/>
+      <tcf:enumItem name="Hardware_supports_full_denormalized_number_arithmetic" number="1"/>
+    </tcf:enumeration>
+    <tcf:enumeration xmlns:tcf="http://com.arm.targetconfigurationeditor" name="FPCR_AHP" xml:base="Registers/SIMD/V8_AARCH64_FPCTRL.xml">
+      <tcf:enumItem name="IEEE_half_precision_format_selected" number="0"/>
+      <tcf:enumItem name="Alternative_half_precision_format_selected" number="1"/>
+    </tcf:enumeration>
+
+  </cr:register_list>
+</core_definition>

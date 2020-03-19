@@ -1,0 +1,3896 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<device xmlns:xs="http://www.w3.org/2001/XMLSchema-instance"
+        schemaVersion="1.3"
+        xs:noNamespaceSchemaLocation="CMSIS-SVD.xsd">
+   <vendor>ARM Ltd.</vendor>
+   <vendorID>ARM</vendorID>
+   <name>Cortex-M3</name>
+   <description>Cortex-M3 core descriptions, generated from ARM develloper studio</description>
+   <cpu>
+      <name>Cortex-M3</name>
+      <series>M</series>
+      <revision>r0p0</revision>
+      <endian>little</endian>
+      <mpuPresent>true</mpuPresent>
+      <vtorPresent>true</vtorPresent>
+      <nvicPrioBits>8</nvicPrioBits>
+      <vendorSystickConfig>true</vendorSystickConfig>
+   </cpu>
+   <addressUnitBits>8</addressUnitBits>
+   <width>32</width>
+   <peripherals>
+      <peripheral>
+         <name>Control</name>
+         <description>System Control registers</description>
+         <baseaddress>0xE000E008</baseaddress>
+         <addressBlock>
+            <offset>0x0</offset>
+            <size>0x260</size>
+            <usage>registers</usage>
+         </addressBlock>
+         <registers>
+            <register>
+               <name>ACTLR</name>
+               <addressOffset>0x0</addressOffset>
+               <size>0x20</size>
+               <access>read-write</access>
+               <fields>
+                  <field>
+                     <name>DISFOLD</name>
+                     <description>Disables folding of IT instructions</description>
+                     <bitOffset>2</bitOffset>
+                     <bitWidth>1</bitWidth>
+                  </field>
+                  <field>
+                     <name>DISDEFWBUF</name>
+                     <description>Disables write buffer use during default memory map accesses</description>
+                     <bitOffset>1</bitOffset>
+                     <bitWidth>1</bitWidth>
+                  </field>
+                  <field>
+                     <name>DISMCYCINT</name>
+                     <description>Disables interruption of multi-cycle instructions</description>
+                     <bitOffset>0</bitOffset>
+                     <bitWidth>1</bitWidth>
+                  </field>
+               </fields>
+            </register>
+            <register>
+               <name>ICSR</name>
+               <addressOffset>0xCFC</addressOffset>
+               <size>0x20</size>
+               <access>read-write</access>
+               <fields>
+                  <field>
+                     <name>NMIPENDSET</name>
+                     <description>Activates an NMI exception or reads back the current state</description>
+                     <bitOffset>31</bitOffset>
+                     <bitWidth>1</bitWidth>
+                  </field>
+                  <field>
+                     <name>PENDSVSET</name>
+                     <description>Sets a pending PendSV interrupt or reads back the current state</description>
+                     <bitOffset>28</bitOffset>
+                     <bitWidth>1</bitWidth>
+                  </field>
+                  <field>
+                     <name>PENDSVCLR</name>
+                     <description>Clears a pending PendSV interrupt</description>
+                     <bitOffset>27</bitOffset>
+                     <bitWidth>1</bitWidth>
+                  </field>
+                  <field>
+                     <name>PENDSTSET</name>
+                     <description>Sets a pending SysTick or reads back the current state</description>
+                     <bitOffset>26</bitOffset>
+                     <bitWidth>1</bitWidth>
+                  </field>
+                  <field>
+                     <name>PENDSTCLR</name>
+                     <description>Clears a pending SysTick, whether set here or by the timer hardware</description>
+                     <bitOffset>25</bitOffset>
+                     <bitWidth>1</bitWidth>
+                  </field>
+                  <field>
+                     <name>ISRPREEMPT</name>
+                     <description>Indicates whether a pending exception will be serviced on exit from debug halt state</description>
+                     <bitOffset>23</bitOffset>
+                     <bitWidth>1</bitWidth>
+                  </field>
+                  <field>
+                     <name>ISRPENDING</name>
+                     <description>Indicates if an external configurable, NVIC generated, interrupt is pending</description>
+                     <bitOffset>22</bitOffset>
+                     <bitWidth>1</bitWidth>
+                  </field>
+                  <field>
+                     <name>VECTPENDING</name>
+                     <description>The exception number for the highest priority pending exception. 0 indicates no pending exceptions</description>
+                     <bitOffset>12</bitOffset>
+                     <bitWidth>8</bitWidth>
+                  </field>
+                  <field>
+                     <name>RETTOBASE</name>
+                     <description>In Handler mode, indicates whether there is an active exception other than the exception indicated by the current value of the IPSR</description>
+                     <bitOffset>11</bitOffset>
+                     <bitWidth>1</bitWidth>
+                  </field>
+                  <field>
+                     <name>VECTACTIVE</name>
+                     <description>The exception number for the current executing exception</description>
+                     <bitOffset>0</bitOffset>
+                     <bitWidth>8</bitWidth>
+                  </field>
+               </fields>
+            </register>
+            <register>
+               <name>VTOR</name>
+               <addressOffset>0xD00</addressOffset>
+               <size>0x20</size>
+               <access>read-write</access>
+               <fields>
+                  <field>
+                     <name>TBLOFF</name>
+                     <description>Bits [31:7] of the vector table address</description>
+                     <bitOffset>7</bitOffset>
+                     <bitWidth>24</bitWidth>
+                  </field>
+                  <field>
+                     <name>TBLBASE</name>
+                     <description>Determines whether the vector table is in the code or SRAM memory region</description>
+                     <bitOffset>29</bitOffset>
+                     <bitWidth>1</bitWidth>
+                  </field>
+               </fields>
+            </register>
+            <register>
+               <name>DEMCR</name>
+               <addressOffset>0xDF4</addressOffset>
+               <size>0x20</size>
+               <access>read-only</access>
+               <fields>
+                  <field>
+                     <name>MON_EN</name>
+                     <description>Enable the DebugMonitor exception</description>
+                     <bitOffset>16</bitOffset>
+                     <bitWidth>1</bitWidth>
+                  </field>
+                  <field>
+                     <name>MON_PEND</name>
+                     <description>Sets or clears the pending state of the DebugMonitor exception</description>
+                     <bitOffset>17</bitOffset>
+                     <bitWidth>1</bitWidth>
+                  </field>
+               </fields>
+            </register>
+            <register>
+               <name>AIRCR</name>
+               <addressOffset>0xD04</addressOffset>
+               <size>0x20</size>
+               <access>read-write</access>
+               <fields>
+                  <field>
+                     <name>VECTKEY</name>
+                     <description>Vector Key</description>
+                     <bitOffset>16</bitOffset>
+                     <bitWidth>15</bitWidth>
+                  </field>
+                  <field>
+                     <name>VECTKEYSTAT</name>
+                     <description>UNKNOWN</description>
+                     <bitOffset>16</bitOffset>
+                     <bitWidth>15</bitWidth>
+                  </field>
+                  <field>
+                     <name>ENDIANNESS</name>
+                     <description>Indicates the memory system data endianness</description>
+                     <bitOffset>15</bitOffset>
+                     <bitWidth>1</bitWidth>
+                  </field>
+                  <field>
+                     <name>PRIGROUP</name>
+                     <description>Priority grouping, indicates the    binary point position.</description>
+                     <bitOffset>8</bitOffset>
+                     <bitWidth>2</bitWidth>
+                  </field>
+                  <field>
+                     <name>SYSRESETREQ</name>
+                     <description>System Reset Request</description>
+                     <bitOffset>2</bitOffset>
+                     <bitWidth>1</bitWidth>
+                  </field>
+                  <field>
+                     <name>VECTCLRACTIVE</name>
+                     <description>Clears all active state information for fixed and configurable exceptions</description>
+                     <bitOffset>1</bitOffset>
+                     <bitWidth>1</bitWidth>
+                  </field>
+               </fields>
+            </register>
+            <register>
+               <name>SCR</name>
+               <addressOffset>0xD08</addressOffset>
+               <size>0x20</size>
+               <access>read-write</access>
+               <fields>
+                  <field>
+                     <name>SEVONPEND</name>
+                     <description>Determines whether an interrupt transition from inactive state to pending state is a wakeup event</description>
+                     <bitOffset>4</bitOffset>
+                     <bitWidth>1</bitWidth>
+                  </field>
+                  <field>
+                     <name>SLEEPDEEP</name>
+                     <description>Hint indicating that waking from sleep might take longer</description>
+                     <bitOffset>2</bitOffset>
+                     <bitWidth>1</bitWidth>
+                  </field>
+                  <field>
+                     <name>SLEEPONEXIT</name>
+                     <description>whether, on an exit from an ISR that returns to the base level of execution priority, the processor enters a sleep state</description>
+                     <bitOffset>1</bitOffset>
+                     <bitWidth>1</bitWidth>
+                  </field>
+               </fields>
+            </register>
+            <register>
+               <name>CCR</name>
+               <addressOffset>0xD0C</addressOffset>
+               <size>0x20</size>
+               <access>read-write</access>
+               <fields>
+                  <field>
+                     <name>STKALIGN</name>
+                     <description>Determines whether the exception entry sequence guarantees 8-byte stack frame alignment, adjusting the SP if necessary before saving state</description>
+                     <bitOffset>9</bitOffset>
+                     <bitWidth>1</bitWidth>
+                  </field>
+                  <field>
+                     <name>BFHFNMIGN</name>
+                     <description>Determines the effect of precise data access faults on handlers running at priority -1 or priority -2</description>
+                     <bitOffset>8</bitOffset>
+                     <bitWidth>1</bitWidth>
+                  </field>
+                  <field>
+                     <name>DIV_0_TRP</name>
+                     <description>Controls the trap on divide by 0</description>
+                     <bitOffset>4</bitOffset>
+                     <bitWidth>1</bitWidth>
+                  </field>
+                  <field>
+                     <name>UNALIGN_TRP</name>
+                     <description>Controls the trapping of unaligned word or halfword accesses</description>
+                     <bitOffset>3</bitOffset>
+                     <bitWidth>1</bitWidth>
+                  </field>
+                  <field>
+                     <name>USERSETMPEND</name>
+                     <description>Controls whether unprivileged software can access the STIR</description>
+                     <bitOffset>1</bitOffset>
+                     <bitWidth>1</bitWidth>
+                  </field>
+                  <field>
+                     <name>NONBASETHRDENA</name>
+                     <description>Controls whether the processor can enter Thread mode at an execution priority level other than base level</description>
+                     <bitOffset>0</bitOffset>
+                     <bitWidth>1</bitWidth>
+                  </field>
+               </fields>
+            </register>
+            <register>
+               <name>SHPR1</name>
+               <addressOffset>0xD10</addressOffset>
+               <size>0x20</size>
+               <access>read-write</access>
+               <fields>
+                  <field>
+                     <name>PRI_7</name>
+                     <description>Priority of system handler 7</description>
+                     <bitOffset>24</bitOffset>
+                     <bitWidth>7</bitWidth>
+                  </field>
+                  <field>
+                     <name>PRI_6</name>
+                     <description>Priority of system handler 6, UsageFault</description>
+                     <bitOffset>16</bitOffset>
+                     <bitWidth>7</bitWidth>
+                  </field>
+                  <field>
+                     <name>PRI_5</name>
+                     <description>Priority of system handler 5, BusFault</description>
+                     <bitOffset>8</bitOffset>
+                     <bitWidth>7</bitWidth>
+                  </field>
+                  <field>
+                     <name>PRI_4</name>
+                     <description>Priority of system handler 4, MemManage</description>
+                     <bitOffset>0</bitOffset>
+                     <bitWidth>7</bitWidth>
+                  </field>
+               </fields>
+            </register>
+            <register>
+               <name>SHPR2</name>
+               <addressOffset>0xD14</addressOffset>
+               <size>0x20</size>
+               <access>read-write</access>
+               <fields>
+                  <field>
+                     <name>PRI_11</name>
+                     <description>Priority of system handler 11, SVCall</description>
+                     <bitOffset>24</bitOffset>
+                     <bitWidth>7</bitWidth>
+                  </field>
+                  <field>
+                     <name>PRI_10</name>
+                     <description>Priority of system handler 10</description>
+                     <bitOffset>16</bitOffset>
+                     <bitWidth>7</bitWidth>
+                  </field>
+                  <field>
+                     <name>PRI_9</name>
+                     <description>Priority of system handler 9</description>
+                     <bitOffset>8</bitOffset>
+                     <bitWidth>7</bitWidth>
+                  </field>
+                  <field>
+                     <name>PRI_8</name>
+                     <description>Priority of system handler 8</description>
+                     <bitOffset>0</bitOffset>
+                     <bitWidth>7</bitWidth>
+                  </field>
+               </fields>
+            </register>
+            <register>
+               <name>SHPR3</name>
+               <addressOffset>0xD18</addressOffset>
+               <size>0x20</size>
+               <access>read-write</access>
+               <fields>
+                  <field>
+                     <name>PRI_15</name>
+                     <description>Priority of system handler 15, SysTick</description>
+                     <bitOffset>24</bitOffset>
+                     <bitWidth>7</bitWidth>
+                  </field>
+                  <field>
+                     <name>PRI_14</name>
+                     <description>Priority of system handler 14, PendSV</description>
+                     <bitOffset>16</bitOffset>
+                     <bitWidth>7</bitWidth>
+                  </field>
+                  <field>
+                     <name>PRI_13</name>
+                     <description>Priority of system handler 13</description>
+                     <bitOffset>8</bitOffset>
+                     <bitWidth>7</bitWidth>
+                  </field>
+                  <field>
+                     <name>PRI_12</name>
+                     <description>Priority of system handler 4, DebugMonitor</description>
+                     <bitOffset>0</bitOffset>
+                     <bitWidth>7</bitWidth>
+                  </field>
+               </fields>
+            </register>
+            <register>
+               <name>SHCSR</name>
+               <addressOffset>0xD1C</addressOffset>
+               <size>0x20</size>
+               <access>read-write</access>
+               <fields>
+                  <field>
+                     <name>USGFAULTENA</name>
+                     <description>Enable UsageFault</description>
+                     <bitOffset>18</bitOffset>
+                     <bitWidth>1</bitWidth>
+                  </field>
+                  <field>
+                     <name>BUSFAULTENA</name>
+                     <description>Enable BusFault</description>
+                     <bitOffset>17</bitOffset>
+                     <bitWidth>1</bitWidth>
+                  </field>
+                  <field>
+                     <name>MEMFAULTENA</name>
+                     <description>Enable MemManage fault</description>
+                     <bitOffset>16</bitOffset>
+                     <bitWidth>1</bitWidth>
+                  </field>
+                  <field>
+                     <name>SVCALLPENDED</name>
+                     <description>SVCall pending</description>
+                     <bitOffset>15</bitOffset>
+                     <bitWidth>1</bitWidth>
+                  </field>
+                  <field>
+                     <name>BUSFAULTPENDED</name>
+                     <description>BusFault pending</description>
+                     <bitOffset>14</bitOffset>
+                     <bitWidth>1</bitWidth>
+                  </field>
+                  <field>
+                     <name>MEMFAULTPENDED</name>
+                     <description>MemManage pending</description>
+                     <bitOffset>13</bitOffset>
+                     <bitWidth>1</bitWidth>
+                  </field>
+                  <field>
+                     <name>USGFAULTPENDED</name>
+                     <description>UsageFault pending</description>
+                     <bitOffset>12</bitOffset>
+                     <bitWidth>1</bitWidth>
+                  </field>
+                  <field>
+                     <name>SYSTICKACT</name>
+                     <description>SysTick active</description>
+                     <bitOffset>11</bitOffset>
+                     <bitWidth>1</bitWidth>
+                  </field>
+                  <field>
+                     <name>PENDSVACT</name>
+                     <description>PendSV active</description>
+                     <bitOffset>10</bitOffset>
+                     <bitWidth>1</bitWidth>
+                  </field>
+                  <field>
+                     <name>MONITORACT</name>
+                     <description>Monitor active</description>
+                     <bitOffset>8</bitOffset>
+                     <bitWidth>1</bitWidth>
+                  </field>
+                  <field>
+                     <name>SVCALLACT</name>
+                     <description>SVCall active</description>
+                     <bitOffset>7</bitOffset>
+                     <bitWidth>1</bitWidth>
+                  </field>
+                  <field>
+                     <name>USGFAULTACT</name>
+                     <description>UsageFault active</description>
+                     <bitOffset>3</bitOffset>
+                     <bitWidth>1</bitWidth>
+                  </field>
+                  <field>
+                     <name>BUSFAULTACT</name>
+                     <description>BusFault active</description>
+                     <bitOffset>1</bitOffset>
+                     <bitWidth>1</bitWidth>
+                  </field>
+                  <field>
+                     <name>MEMFAULTACT</name>
+                     <description>MemManage active</description>
+                     <bitOffset>0</bitOffset>
+                     <bitWidth>1</bitWidth>
+                  </field>
+               </fields>
+            </register>
+            <register>
+               <name>CFSR</name>
+               <addressOffset>0xD20</addressOffset>
+               <size>0x20</size>
+               <access>read-write</access>
+               <fields>
+                  <field>
+                     <name>DIVBYZERO</name>
+                     <description>Divide by zero error</description>
+                     <bitOffset>25</bitOffset>
+                     <bitWidth>1</bitWidth>
+                  </field>
+                  <field>
+                     <name>UNALIGNED</name>
+                     <description>Unaligned access error</description>
+                     <bitOffset>24</bitOffset>
+                     <bitWidth>1</bitWidth>
+                  </field>
+                  <field>
+                     <name>NOCP</name>
+                     <description>Coprocessor access error</description>
+                     <bitOffset>19</bitOffset>
+                     <bitWidth>1</bitWidth>
+                  </field>
+                  <field>
+                     <name>INVPC</name>
+                     <description>Integrity check error on EXC_RETURN</description>
+                     <bitOffset>18</bitOffset>
+                     <bitWidth>1</bitWidth>
+                  </field>
+                  <field>
+                     <name>INVSTATE</name>
+                     <description>Instruction executed with invalid EPSR.T or EPSR.IT field</description>
+                     <bitOffset>17</bitOffset>
+                     <bitWidth>1</bitWidth>
+                  </field>
+                  <field>
+                     <name>UNDEFINSTR</name>
+                     <description>Processor has attempted to execute an undefined instruction.</description>
+                     <bitOffset>16</bitOffset>
+                     <bitWidth>1</bitWidth>
+                  </field>
+                  <field>
+                     <name>BFARVALID</name>
+                     <description>BFAR has valid contents</description>
+                     <bitOffset>15</bitOffset>
+                     <bitWidth>1</bitWidth>
+                  </field>
+                  <field>
+                     <name>LSPERR</name>
+                     <description>Bus fault during FP lazy state preservation</description>
+                     <bitOffset>13</bitOffset>
+                     <bitWidth>1</bitWidth>
+                  </field>
+                  <field>
+                     <name>STKERR</name>
+                     <description>Derived bus fault on exception entry</description>
+                     <bitOffset>12</bitOffset>
+                     <bitWidth>1</bitWidth>
+                  </field>
+                  <field>
+                     <name>UNSTKERR</name>
+                     <description>Derived bus fault on exception return</description>
+                     <bitOffset>11</bitOffset>
+                     <bitWidth>1</bitWidth>
+                  </field>
+                  <field>
+                     <name>IMPRECISERR</name>
+                     <description>Imprecise data access error</description>
+                     <bitOffset>10</bitOffset>
+                     <bitWidth>1</bitWidth>
+                  </field>
+                  <field>
+                     <name>PRECISERR</name>
+                     <description>Precise data access error</description>
+                     <bitOffset>9</bitOffset>
+                     <bitWidth>1</bitWidth>
+                  </field>
+                  <field>
+                     <name>IBUSERR</name>
+                     <description>Bus fault on an instruction prefetch</description>
+                     <bitOffset>8</bitOffset>
+                     <bitWidth>1</bitWidth>
+                  </field>
+                  <field>
+                     <name>MMARVALID</name>
+                     <description>MMAR has valid contents</description>
+                     <bitOffset>7</bitOffset>
+                     <bitWidth>1</bitWidth>
+                  </field>
+                  <field>
+                     <name>MLSPERR</name>
+                     <description>MemManage fault during FP lazy state preservation</description>
+                     <bitOffset>5</bitOffset>
+                     <bitWidth>1</bitWidth>
+                  </field>
+                  <field>
+                     <name>MSTKERR</name>
+                     <description>Derived MemManage fault on exception entry</description>
+                     <bitOffset>4</bitOffset>
+                     <bitWidth>1</bitWidth>
+                  </field>
+                  <field>
+                     <name>MUNSTKERR</name>
+                     <description>Derived MemManage fault on exception return</description>
+                     <bitOffset>3</bitOffset>
+                     <bitWidth>1</bitWidth>
+                  </field>
+                  <field>
+                     <name>DACCVIOL</name>
+                     <description>Data access violation. The MMAR shows the data address that the load or store tried to access</description>
+                     <bitOffset>1</bitOffset>
+                     <bitWidth>1</bitWidth>
+                  </field>
+                  <field>
+                     <name>IACCVIOL</name>
+                     <description>MPU or Execute Never (XN) default memory map access violation on an instruction fetch</description>
+                     <bitOffset>0</bitOffset>
+                     <bitWidth>1</bitWidth>
+                  </field>
+               </fields>
+            </register>
+            <register>
+               <name>HFSR</name>
+               <addressOffset>0xD24</addressOffset>
+               <size>0x20</size>
+               <access>read-write</access>
+               <fields>
+                  <field>
+                     <name>DEBUGEVT</name>
+                     <description>Indicates a Debug event has occurred</description>
+                     <bitOffset>31</bitOffset>
+                     <bitWidth>1</bitWidth>
+                  </field>
+                  <field>
+                     <name>FORCED</name>
+                     <description>Indicates a fault with configurable priority has been escalated to a HardFault</description>
+                     <bitOffset>30</bitOffset>
+                     <bitWidth>1</bitWidth>
+                  </field>
+                  <field>
+                     <name>VECTTBL</name>
+                     <description>Indicates a fault has occurred because of a vector table read error on exception processing</description>
+                     <bitOffset>1</bitOffset>
+                     <bitWidth>1</bitWidth>
+                  </field>
+               </fields>
+            </register>
+            <register>
+               <name>DFSR</name>
+               <addressOffset>0xD28</addressOffset>
+               <size>0x20</size>
+               <access>read-write</access>
+               <fields>
+                  <field>
+                     <name>EXTERNAL</name>
+                     <description>Indicates a debug event generated because of the assertion of EDBGRQ</description>
+                     <bitOffset>4</bitOffset>
+                     <bitWidth>1</bitWidth>
+                  </field>
+                  <field>
+                     <name>VCATCH</name>
+                     <description>Indicates triggering of a Vector catch</description>
+                     <bitOffset>3</bitOffset>
+                     <bitWidth>1</bitWidth>
+                  </field>
+                  <field>
+                     <name>DWTTRAP</name>
+                     <description>Indicates a debug event generated by the DWT</description>
+                     <bitOffset>2</bitOffset>
+                     <bitWidth>1</bitWidth>
+                  </field>
+                  <field>
+                     <name>BKPT</name>
+                     <description>Indicates a debug event generated by BKPT instruction execution or a breakpoint match in FPB</description>
+                     <bitOffset>1</bitOffset>
+                     <bitWidth>1</bitWidth>
+                  </field>
+                  <field>
+                     <name>HALTED</name>
+                     <description>Indicates a debug event generated by C_HALT or C_STEP request or setting DEMCR.MON_STEP</description>
+                     <bitOffset>0</bitOffset>
+                     <bitWidth>1</bitWidth>
+                  </field>
+               </fields>
+            </register>
+            <register>
+               <name>MMFAR</name>
+               <addressOffset>0xD2C</addressOffset>
+               <size>0x20</size>
+               <access>read-write</access>
+               <fields/>
+            </register>
+            <register>
+               <name>BFAR</name>
+               <addressOffset>0xD30</addressOffset>
+               <size>0x20</size>
+               <access>read-write</access>
+               <fields/>
+            </register>
+            <register>
+               <name>AFSR</name>
+               <addressOffset>0xD34</addressOffset>
+               <size>0x20</size>
+               <access>read-write</access>
+               <fields/>
+            </register>
+            <register>
+               <name>CPACR</name>
+               <addressOffset>0xD80</addressOffset>
+               <size>0x20</size>
+               <access>read-write</access>
+               <fields>
+                  <field>
+                     <name>CP11</name>
+                     <description>Defines access permissions for the CP11 coprocessor.</description>
+                     <bitOffset>22</bitOffset>
+                     <bitWidth>1</bitWidth>
+                  </field>
+                  <field>
+                     <name>CP10</name>
+                     <description>Defines access permissions for the CP10 coprocessor.</description>
+                     <bitOffset>20</bitOffset>
+                     <bitWidth>1</bitWidth>
+                  </field>
+                  <field>
+                     <name>CP7</name>
+                     <description>Defines access permissions for the CP7 coprocessor.</description>
+                     <bitOffset>14</bitOffset>
+                     <bitWidth>1</bitWidth>
+                  </field>
+                  <field>
+                     <name>CP6</name>
+                     <description>Defines access permissions for the CP6 coprocessor.</description>
+                     <bitOffset>12</bitOffset>
+                     <bitWidth>1</bitWidth>
+                  </field>
+                  <field>
+                     <name>CP5</name>
+                     <description>Defines access permissions for the CP5 coprocessor.</description>
+                     <bitOffset>10</bitOffset>
+                     <bitWidth>1</bitWidth>
+                  </field>
+                  <field>
+                     <name>CP4</name>
+                     <description>Defines access permissions for the CP4 coprocessor.</description>
+                     <bitOffset>8</bitOffset>
+                     <bitWidth>1</bitWidth>
+                  </field>
+                  <field>
+                     <name>CP3</name>
+                     <description>Defines access permissions for the CP3 coprocessor.</description>
+                     <bitOffset>6</bitOffset>
+                     <bitWidth>1</bitWidth>
+                  </field>
+                  <field>
+                     <name>CP2</name>
+                     <description>Defines access permissions for the CP2 coprocessor.</description>
+                     <bitOffset>4</bitOffset>
+                     <bitWidth>1</bitWidth>
+                  </field>
+                  <field>
+                     <name>CP1</name>
+                     <description>Defines access permissions for the CP1 coprocessor.</description>
+                     <bitOffset>2</bitOffset>
+                     <bitWidth>1</bitWidth>
+                  </field>
+                  <field>
+                     <name>CP0</name>
+                     <description>Defines access permissions for the CP0 coprocessor.</description>
+                     <bitOffset>0</bitOffset>
+                     <bitWidth>1</bitWidth>
+                  </field>
+               </fields>
+            </register>
+            <register>
+               <name>STIR</name>
+               <addressOffset>0xEF8</addressOffset>
+               <size>0x20</size>
+               <access>write-only</access>
+               <fields>
+                  <field>
+                     <name>INTID</name>
+                     <description>Indicates the interrupt to be triggered. The value written is (ExceptionNumber - 16)</description>
+                     <bitOffset>0</bitOffset>
+                     <bitWidth>8</bitWidth>
+                  </field>
+               </fields>
+            </register>
+         </registers>
+      </peripheral>
+      <peripheral>
+         <name>ID</name>
+         <description>ID registers</description>
+         <baseaddress>0xE000ED00</baseaddress>
+         <addressBlock>
+            <offset>0x0</offset>
+            <size>0x1C0</size>
+            <usage>registers</usage>
+         </addressBlock>
+         <registers>
+            <register>
+               <name>CPUID</name>
+               <addressOffset>0x0</addressOffset>
+               <size>0x20</size>
+               <access>read-only</access>
+               <fields>
+                  <field>
+                     <name>Implementer</name>
+                     <description>Implementer code</description>
+                     <bitOffset>24</bitOffset>
+                     <bitWidth>7</bitWidth>
+                  </field>
+                  <field>
+                     <name>Variant</name>
+                     <description>Implementation defined</description>
+                     <bitOffset>20</bitOffset>
+                     <bitWidth>3</bitWidth>
+                  </field>
+                  <field>
+                     <name>Constant</name>
+                     <description>Indicates the architecture</description>
+                     <bitOffset>16</bitOffset>
+                     <bitWidth>3</bitWidth>
+                  </field>
+                  <field>
+                     <name>Partno</name>
+                     <description>Indicates part number</description>
+                     <bitOffset>4</bitOffset>
+                     <bitWidth>11</bitWidth>
+                  </field>
+                  <field>
+                     <name>Revision</name>
+                     <description>Indicates revision</description>
+                     <bitOffset>0</bitOffset>
+                     <bitWidth>3</bitWidth>
+                  </field>
+               </fields>
+            </register>
+            <register>
+               <name>ID_PFR0</name>
+               <addressOffset>0x40</addressOffset>
+               <size>0x20</size>
+               <access>read-only</access>
+               <fields>
+                  <field>
+                     <name>State1</name>
+                     <description>Thumb instruction set support</description>
+                     <bitOffset>4</bitOffset>
+                     <bitWidth>3</bitWidth>
+                  </field>
+               </fields>
+            </register>
+            <register>
+               <name>ID_PFR1</name>
+               <addressOffset>0x44</addressOffset>
+               <size>0x20</size>
+               <access>read-only</access>
+               <fields>
+                  <field>
+                     <name>M_Profile</name>
+                     <description>M profile programmers' model</description>
+                     <bitOffset>8</bitOffset>
+                     <bitWidth>3</bitWidth>
+                  </field>
+               </fields>
+            </register>
+            <register>
+               <name>ID_DFR0</name>
+               <addressOffset>0x48</addressOffset>
+               <size>0x20</size>
+               <access>read-only</access>
+               <fields>
+                  <field>
+                     <name>M_Profile</name>
+                     <description>Debug model, M profile</description>
+                     <bitOffset>20</bitOffset>
+                     <bitWidth>3</bitWidth>
+                  </field>
+               </fields>
+            </register>
+            <register>
+               <name>ID_AFR0</name>
+               <addressOffset>0x4C</addressOffset>
+               <size>0x20</size>
+               <access>read-only</access>
+               <fields/>
+            </register>
+            <register>
+               <name>ID_MMFR0</name>
+               <addressOffset>0x50</addressOffset>
+               <size>0x20</size>
+               <access>read-only</access>
+               <fields>
+                  <field>
+                     <name>Auxiliary_registers</name>
+                     <description>Indicates support for Auxiliary registers</description>
+                     <bitOffset>20</bitOffset>
+                     <bitWidth>3</bitWidth>
+                  </field>
+                  <field>
+                     <name>Shareability_levels</name>
+                     <description>Indicates the number of shareability levels implemented</description>
+                     <bitOffset>12</bitOffset>
+                     <bitWidth>3</bitWidth>
+                  </field>
+                  <field>
+                     <name>Outermost_shareability</name>
+                     <description>Indicates the outermost shareability domain implemented</description>
+                     <bitOffset>8</bitOffset>
+                     <bitWidth>3</bitWidth>
+                  </field>
+                  <field>
+                     <name>PMSA</name>
+                     <description>Indicates support for a PMSA</description>
+                     <bitOffset>4</bitOffset>
+                     <bitWidth>3</bitWidth>
+                  </field>
+               </fields>
+            </register>
+            <register>
+               <name>ID_MMFR1</name>
+               <addressOffset>0x54</addressOffset>
+               <size>0x20</size>
+               <access>read-only</access>
+               <fields/>
+            </register>
+            <register>
+               <name>ID_MMFR2</name>
+               <addressOffset>0x58</addressOffset>
+               <size>0x20</size>
+               <access>read-only</access>
+               <fields>
+                  <field>
+                     <name>WFI</name>
+                     <description>Indicates support for wait-for-interrupt stalling. </description>
+                     <bitOffset>24</bitOffset>
+                     <bitWidth>3</bitWidth>
+                  </field>
+               </fields>
+            </register>
+            <register>
+               <name>ID_MMFR3</name>
+               <addressOffset>0x5C</addressOffset>
+               <size>0x20</size>
+               <access>read-only</access>
+               <fields/>
+            </register>
+            <register>
+               <name>ID_ISAR0</name>
+               <addressOffset>0x60</addressOffset>
+               <size>0x20</size>
+               <access>read-only</access>
+               <fields>
+                  <field>
+                     <name>Divide_instrs</name>
+                     <description>Indicates the supported divide instructions</description>
+                     <bitOffset>24</bitOffset>
+                     <bitWidth>3</bitWidth>
+                  </field>
+                  <field>
+                     <name>Debug_instrs</name>
+                     <description>Indicates the supported debug instructions</description>
+                     <bitOffset>20</bitOffset>
+                     <bitWidth>3</bitWidth>
+                  </field>
+                  <field>
+                     <name>Coproc_instrs</name>
+                     <description>Indicates the supported coprocessor instructions</description>
+                     <bitOffset>16</bitOffset>
+                     <bitWidth>3</bitWidth>
+                  </field>
+                  <field>
+                     <name>CmpBranch_instrs</name>
+                     <description>Indicates support for combined compare and branch instructions.</description>
+                     <bitOffset>12</bitOffset>
+                     <bitWidth>3</bitWidth>
+                  </field>
+                  <field>
+                     <name>Bitfield_instrs</name>
+                     <description>Indicates support for bitfield instructions. </description>
+                     <bitOffset>8</bitOffset>
+                     <bitWidth>3</bitWidth>
+                  </field>
+                  <field>
+                     <name>BitCount_instrs</name>
+                     <description>Indicates support for bit counting instructions. </description>
+                     <bitOffset>4</bitOffset>
+                     <bitWidth>3</bitWidth>
+                  </field>
+               </fields>
+            </register>
+            <register>
+               <name>ID_ISAR1</name>
+               <addressOffset>0x64</addressOffset>
+               <size>0x20</size>
+               <access>read-only</access>
+               <fields>
+                  <field>
+                     <name>Interwork_instrs</name>
+                     <description>Indicates support for instructions that branch between ARM and Thumb code.</description>
+                     <bitOffset>24</bitOffset>
+                     <bitWidth>3</bitWidth>
+                  </field>
+                  <field>
+                     <name>Immediate_instrs</name>
+                     <description>Indicates support for immediate instructions. </description>
+                     <bitOffset>20</bitOffset>
+                     <bitWidth>3</bitWidth>
+                  </field>
+                  <field>
+                     <name>IfThen_instrs</name>
+                     <description>Indicates support for IfThen instructions.</description>
+                     <bitOffset>16</bitOffset>
+                     <bitWidth>3</bitWidth>
+                  </field>
+                  <field>
+                     <name>Extend_instrs</name>
+                     <description>Indicates support for sign or zero extend instructions. </description>
+                     <bitOffset>12</bitOffset>
+                     <bitWidth>3</bitWidth>
+                  </field>
+               </fields>
+            </register>
+            <register>
+               <name>ID_ISAR2</name>
+               <addressOffset>0x68</addressOffset>
+               <size>0x20</size>
+               <access>read-only</access>
+               <fields>
+                  <field>
+                     <name>Reversal_instrs</name>
+                     <description>Indicates the supported reversal instructions. </description>
+                     <bitOffset>28</bitOffset>
+                     <bitWidth>3</bitWidth>
+                  </field>
+                  <field>
+                     <name>MultU_instrs</name>
+                     <description>Indicates the supported advanced unsigned multiply instructions.</description>
+                     <bitOffset>20</bitOffset>
+                     <bitWidth>3</bitWidth>
+                  </field>
+                  <field>
+                     <name>MultS_instrs</name>
+                     <description>Indicates the supported advanced signed multiply instructions.</description>
+                     <bitOffset>16</bitOffset>
+                     <bitWidth>3</bitWidth>
+                  </field>
+                  <field>
+                     <name>Mult_instrs</name>
+                     <description>Indicates the supported additional multiply instructions. </description>
+                     <bitOffset>12</bitOffset>
+                     <bitWidth>3</bitWidth>
+                  </field>
+                  <field>
+                     <name>MultiAccessInt_instrs</name>
+                     <description>Indicates the supported multi-access interruptible instructions.</description>
+                     <bitOffset>8</bitOffset>
+                     <bitWidth>3</bitWidth>
+                  </field>
+                  <field>
+                     <name>MultiAccessInt_instrs</name>
+                     <description>Indicates the supported memory hint instructions. </description>
+                     <bitOffset>4</bitOffset>
+                     <bitWidth>3</bitWidth>
+                  </field>
+                  <field>
+                     <name>LoadStore_instrs</name>
+                     <description>Indicates the supported additional load and store instructions. </description>
+                     <bitOffset>0</bitOffset>
+                     <bitWidth>3</bitWidth>
+                  </field>
+               </fields>
+            </register>
+            <register>
+               <name>ID_ISAR3</name>
+               <addressOffset>0x6C</addressOffset>
+               <size>0x20</size>
+               <access>read-only</access>
+               <fields>
+                  <field>
+                     <name>TrueNOP_instrs</name>
+                     <description>Indicates support for true NOP instructions.</description>
+                     <bitOffset>24</bitOffset>
+                     <bitWidth>3</bitWidth>
+                  </field>
+                  <field>
+                     <name>ThumbCopy_instrs</name>
+                     <description>Indicates support for Thumb copy instructions. </description>
+                     <bitOffset>20</bitOffset>
+                     <bitWidth>3</bitWidth>
+                  </field>
+                  <field>
+                     <name>TabBranch_instrs</name>
+                     <description>Indicates support for table branch instructions. </description>
+                     <bitOffset>16</bitOffset>
+                     <bitWidth>3</bitWidth>
+                  </field>
+                  <field>
+                     <name>SynchPrim_instrs</name>
+                     <description>Indicates support for synchronization primitive instructions.</description>
+                     <bitOffset>12</bitOffset>
+                     <bitWidth>3</bitWidth>
+                  </field>
+                  <field>
+                     <name>SVC_instrs</name>
+                     <description>Indicates support for SVC instructions.</description>
+                     <bitOffset>8</bitOffset>
+                     <bitWidth>3</bitWidth>
+                  </field>
+                  <field>
+                     <name>SIMD_instrs</name>
+                     <description>Indicates support for Single Instruction Multiple Data (SIMD) instructions.</description>
+                     <bitOffset>4</bitOffset>
+                     <bitWidth>3</bitWidth>
+                  </field>
+                  <field>
+                     <name>Saturate_instrs</name>
+                     <description>Indicates support for saturate instructions. </description>
+                     <bitOffset>0</bitOffset>
+                     <bitWidth>3</bitWidth>
+                  </field>
+               </fields>
+            </register>
+            <register>
+               <name>ID_ISAR4</name>
+               <addressOffset>0x70</addressOffset>
+               <size>0x20</size>
+               <access>read-only</access>
+               <fields>
+                  <field>
+                     <name>PSR_M_instrs</name>
+                     <description>Indicates support for saturate instructions. </description>
+                     <bitOffset>24</bitOffset>
+                     <bitWidth>3</bitWidth>
+                  </field>
+                  <field>
+                     <name>SynchPrim_instrs_frac</name>
+                     <description>Indicates support for Synchronization Primitives</description>
+                     <bitOffset>20</bitOffset>
+                     <bitWidth>3</bitWidth>
+                  </field>
+                  <field>
+                     <name>Barrier_instrs</name>
+                     <description>Indicates the supported barrier instructions. </description>
+                     <bitOffset>16</bitOffset>
+                     <bitWidth>3</bitWidth>
+                  </field>
+                  <field>
+                     <name>Writeback_instrs</name>
+                     <description>Indicates support for Writeback addressing modes</description>
+                     <bitOffset>8</bitOffset>
+                     <bitWidth>3</bitWidth>
+                  </field>
+                  <field>
+                     <name>WithShifts_instrs</name>
+                     <description>Indicates the support for instructions with shifts:</description>
+                     <bitOffset>4</bitOffset>
+                     <bitWidth>3</bitWidth>
+                  </field>
+                  <field>
+                     <name>Unpriv_instrs</name>
+                     <description>Indicates the supported unprivileged instructions</description>
+                     <bitOffset>0</bitOffset>
+                     <bitWidth>3</bitWidth>
+                  </field>
+               </fields>
+            </register>
+         </registers>
+      </peripheral>
+      <peripheral>
+         <name>SysTick</name>
+         <description>System Timer registers</description>
+         <baseaddress>0xE000E010</baseaddress>
+         <addressBlock>
+            <offset>0x0</offset>
+            <size>0x80</size>
+            <usage>registers</usage>
+         </addressBlock>
+         <registers>
+            <register>
+               <name>STCSR</name>
+               <addressOffset>0x0</addressOffset>
+               <size>0x20</size>
+               <access>read-write</access>
+               <fields>
+                  <field>
+                     <name>COUNTFLAG</name>
+                     <description>Indicates whether the counter has counted to 0 since the last read of this register</description>
+                     <bitOffset>16</bitOffset>
+                     <bitWidth>1</bitWidth>
+                  </field>
+                  <field>
+                     <name>CLKSOURCE</name>
+                     <description>Indicates the SysTick clock source</description>
+                     <bitOffset>2</bitOffset>
+                     <bitWidth>1</bitWidth>
+                  </field>
+                  <field>
+                     <name>TICKINT</name>
+                     <description>Indicates whether counting to 0 causes the status of the SysTick exception to change to pending</description>
+                     <bitOffset>1</bitOffset>
+                     <bitWidth>1</bitWidth>
+                  </field>
+                  <field>
+                     <name>ENABLE</name>
+                     <description>Indicates the enabled status of the SysTick counter</description>
+                     <bitOffset>0</bitOffset>
+                     <bitWidth>1</bitWidth>
+                  </field>
+               </fields>
+            </register>
+            <register>
+               <name>STRVR</name>
+               <addressOffset>0x4</addressOffset>
+               <size>0x20</size>
+               <access>read-write</access>
+               <fields>
+                  <field>
+                     <name>RELOAD</name>
+                     <description>The value to load into the SYST_CVR register when the counter reaches 0</description>
+                     <bitOffset>0</bitOffset>
+                     <bitWidth>23</bitWidth>
+                  </field>
+               </fields>
+            </register>
+            <register>
+               <name>STCVR</name>
+               <addressOffset>0x8</addressOffset>
+               <size>0x20</size>
+               <access>read-write</access>
+               <fields>
+                  <field>
+                     <name>CURRENT</name>
+                     <description>This is the value of the counter at the time it is sampled</description>
+                     <bitOffset>0</bitOffset>
+                     <bitWidth>23</bitWidth>
+                  </field>
+               </fields>
+            </register>
+            <register>
+               <name>STCR</name>
+               <addressOffset>0xC</addressOffset>
+               <size>0x20</size>
+               <access>read-only</access>
+               <fields>
+                  <field>
+                     <name>NOREF</name>
+                     <description>Indicates whether the IMPLEMENTATION DEFINED reference clock is provided</description>
+                     <bitOffset>31</bitOffset>
+                     <bitWidth>1</bitWidth>
+                  </field>
+                  <field>
+                     <name>SKEW</name>
+                     <description>Indicates whether the 10ms calibration value is exact</description>
+                     <bitOffset>30</bitOffset>
+                     <bitWidth>1</bitWidth>
+                  </field>
+                  <field>
+                     <name>TENMS</name>
+                     <description>Optionally, holds a reload value to be used for 10ms (100Hz) timing, subject to system clock skew errors</description>
+                     <bitOffset>0</bitOffset>
+                     <bitWidth>23</bitWidth>
+                  </field>
+               </fields>
+            </register>
+         </registers>
+      </peripheral>
+      <peripheral>
+         <name>NVIC</name>
+         <description>Nested Vectored Interrupt Controller registers</description>
+         <baseaddress>0xE000E004</baseaddress>
+         <addressBlock>
+            <offset>0x0</offset>
+            <size>0xCA0</size>
+            <usage>registers</usage>
+         </addressBlock>
+         <registers>
+            <register>
+               <name>ICTR</name>
+               <addressOffset>0x0</addressOffset>
+               <size>0x20</size>
+               <access>read-only</access>
+               <fields>
+                  <field>
+                     <name>INTLINESNUM</name>
+                     <description>The total number of interrupt lines supported n, defined in groups of
+32. That is, the total number of interrupt lines is up to (32*(INTLINESNUM+1)). However,
+the absolute maximum number of interrupts is 496, corresponding to the INTLINESNUM
+value 0b1111.</description>
+                     <bitOffset>0</bitOffset>
+                     <bitWidth>3</bitWidth>
+                  </field>
+               </fields>
+            </register>
+            <register>
+               <name>NVIC_ISER0</name>
+               <addressOffset>0xFC</addressOffset>
+               <size>0x20</size>
+               <access>read-write</access>
+               <fields/>
+            </register>
+            <register>
+               <name>NVIC_ISER1</name>
+               <addressOffset>0x00</addressOffset>
+               <size>0x20</size>
+               <access>read-write</access>
+               <fields/>
+            </register>
+            <register>
+               <name>NVIC_ISER2</name>
+               <addressOffset>0x04</addressOffset>
+               <size>0x20</size>
+               <access>read-write</access>
+               <fields/>
+            </register>
+            <register>
+               <name>NVIC_ISER3</name>
+               <addressOffset>0x08</addressOffset>
+               <size>0x20</size>
+               <access>read-write</access>
+               <fields/>
+            </register>
+            <register>
+               <name>NVIC_ISER4</name>
+               <addressOffset>0x0C</addressOffset>
+               <size>0x20</size>
+               <access>read-write</access>
+               <fields/>
+            </register>
+            <register>
+               <name>NVIC_ISER5</name>
+               <addressOffset>0x110</addressOffset>
+               <size>0x20</size>
+               <access>read-write</access>
+               <fields/>
+            </register>
+            <register>
+               <name>NVIC_ISER6</name>
+               <addressOffset>0x114</addressOffset>
+               <size>0x20</size>
+               <access>read-write</access>
+               <fields/>
+            </register>
+            <register>
+               <name>NVIC_ISER7</name>
+               <addressOffset>0x118</addressOffset>
+               <size>0x20</size>
+               <access>read-write</access>
+               <fields/>
+            </register>
+            <register>
+               <name>NVIC_ICER0</name>
+               <addressOffset>0x17C</addressOffset>
+               <size>0x20</size>
+               <access>read-write</access>
+               <fields/>
+            </register>
+            <register>
+               <name>NVIC_ICER1</name>
+               <addressOffset>0x180</addressOffset>
+               <size>0x20</size>
+               <access>read-write</access>
+               <fields/>
+            </register>
+            <register>
+               <name>NVIC_ICER2</name>
+               <addressOffset>0x184</addressOffset>
+               <size>0x20</size>
+               <access>read-write</access>
+               <fields/>
+            </register>
+            <register>
+               <name>NVIC_ICER3</name>
+               <addressOffset>0x188</addressOffset>
+               <size>0x20</size>
+               <access>read-write</access>
+               <fields/>
+            </register>
+            <register>
+               <name>NVIC_ICER4</name>
+               <addressOffset>0x18C</addressOffset>
+               <size>0x20</size>
+               <access>read-write</access>
+               <fields/>
+            </register>
+            <register>
+               <name>NVIC_ICER5</name>
+               <addressOffset>0x190</addressOffset>
+               <size>0x20</size>
+               <access>read-write</access>
+               <fields/>
+            </register>
+            <register>
+               <name>NVIC_ICER6</name>
+               <addressOffset>0x194</addressOffset>
+               <size>0x20</size>
+               <access>read-write</access>
+               <fields/>
+            </register>
+            <register>
+               <name>NVIC_ICER7</name>
+               <addressOffset>0x198</addressOffset>
+               <size>0x20</size>
+               <access>read-write</access>
+               <fields/>
+            </register>
+            <register>
+               <name>NVIC_ISPR0</name>
+               <addressOffset>0x1FC</addressOffset>
+               <size>0x20</size>
+               <access>read-write</access>
+               <fields/>
+            </register>
+            <register>
+               <name>NVIC_ISPR1</name>
+               <addressOffset>0x200</addressOffset>
+               <size>0x20</size>
+               <access>read-write</access>
+               <fields/>
+            </register>
+            <register>
+               <name>NVIC_ISPR2</name>
+               <addressOffset>0x204</addressOffset>
+               <size>0x20</size>
+               <access>read-write</access>
+               <fields/>
+            </register>
+            <register>
+               <name>NVIC_ISPR3</name>
+               <addressOffset>0x208</addressOffset>
+               <size>0x20</size>
+               <access>read-write</access>
+               <fields/>
+            </register>
+            <register>
+               <name>NVIC_ISPR4</name>
+               <addressOffset>0x20C</addressOffset>
+               <size>0x20</size>
+               <access>read-write</access>
+               <fields/>
+            </register>
+            <register>
+               <name>NVIC_ISPR5</name>
+               <addressOffset>0x210</addressOffset>
+               <size>0x20</size>
+               <access>read-write</access>
+               <fields/>
+            </register>
+            <register>
+               <name>NVIC_ISPR6</name>
+               <addressOffset>0x214</addressOffset>
+               <size>0x20</size>
+               <access>read-write</access>
+               <fields/>
+            </register>
+            <register>
+               <name>NVIC_ISPR7</name>
+               <addressOffset>0x218</addressOffset>
+               <size>0x20</size>
+               <access>read-write</access>
+               <fields/>
+            </register>
+            <register>
+               <name>NVIC_ICPR0</name>
+               <addressOffset>0x27C</addressOffset>
+               <size>0x20</size>
+               <access>read-write</access>
+               <fields/>
+            </register>
+            <register>
+               <name>NVIC_ICPR1</name>
+               <addressOffset>0x280</addressOffset>
+               <size>0x20</size>
+               <access>read-write</access>
+               <fields/>
+            </register>
+            <register>
+               <name>NVIC_ICPR2</name>
+               <addressOffset>0x284</addressOffset>
+               <size>0x20</size>
+               <access>read-write</access>
+               <fields/>
+            </register>
+            <register>
+               <name>NVIC_ICPR3</name>
+               <addressOffset>0x288</addressOffset>
+               <size>0x20</size>
+               <access>read-write</access>
+               <fields/>
+            </register>
+            <register>
+               <name>NVIC_ICPR4</name>
+               <addressOffset>0x28C</addressOffset>
+               <size>0x20</size>
+               <access>read-write</access>
+               <fields/>
+            </register>
+            <register>
+               <name>NVIC_ICPR5</name>
+               <addressOffset>0x290</addressOffset>
+               <size>0x20</size>
+               <access>read-write</access>
+               <fields/>
+            </register>
+            <register>
+               <name>NVIC_ICPR6</name>
+               <addressOffset>0x294</addressOffset>
+               <size>0x20</size>
+               <access>read-write</access>
+               <fields/>
+            </register>
+            <register>
+               <name>NVIC_ICPR7</name>
+               <addressOffset>0x298</addressOffset>
+               <size>0x20</size>
+               <access>read-write</access>
+               <fields/>
+            </register>
+            <register>
+               <name>NVIC_IABR0</name>
+               <addressOffset>0x2FC</addressOffset>
+               <size>0x20</size>
+               <access>read-write</access>
+               <fields/>
+            </register>
+            <register>
+               <name>NVIC_IABR1</name>
+               <addressOffset>0x300</addressOffset>
+               <size>0x20</size>
+               <access>read-write</access>
+               <fields/>
+            </register>
+            <register>
+               <name>NVIC_IABR2</name>
+               <addressOffset>0x304</addressOffset>
+               <size>0x20</size>
+               <access>read-write</access>
+               <fields/>
+            </register>
+            <register>
+               <name>NVIC_IABR3</name>
+               <addressOffset>0x308</addressOffset>
+               <size>0x20</size>
+               <access>read-write</access>
+               <fields/>
+            </register>
+            <register>
+               <name>NVIC_IABR4</name>
+               <addressOffset>0x30C</addressOffset>
+               <size>0x20</size>
+               <access>read-write</access>
+               <fields/>
+            </register>
+            <register>
+               <name>NVIC_IABR5</name>
+               <addressOffset>0x310</addressOffset>
+               <size>0x20</size>
+               <access>read-write</access>
+               <fields/>
+            </register>
+            <register>
+               <name>NVIC_IABR6</name>
+               <addressOffset>0x314</addressOffset>
+               <size>0x20</size>
+               <access>read-write</access>
+               <fields/>
+            </register>
+            <register>
+               <name>NVIC_IABR7</name>
+               <addressOffset>0x318</addressOffset>
+               <size>0x20</size>
+               <access>read-write</access>
+               <fields/>
+            </register>
+            <register>
+               <name>NVIC_IPR0</name>
+               <addressOffset>0x3FC</addressOffset>
+               <size>0x20</size>
+               <access>read-write</access>
+               <fields>
+                  <field>
+                     <name>PRI_N3</name>
+                     <description>Priority of interrupt 3</description>
+                     <bitOffset>24</bitOffset>
+                     <bitWidth>7</bitWidth>
+                  </field>
+                  <field>
+                     <name>PRI_N2</name>
+                     <description>Priority of interrupt 2</description>
+                     <bitOffset>16</bitOffset>
+                     <bitWidth>7</bitWidth>
+                  </field>
+                  <field>
+                     <name>PRI_N1</name>
+                     <description>Priority of interrupt 1</description>
+                     <bitOffset>8</bitOffset>
+                     <bitWidth>7</bitWidth>
+                  </field>
+                  <field>
+                     <name>PRI_N0</name>
+                     <description>Priority of interrupt 0</description>
+                     <bitOffset>0</bitOffset>
+                     <bitWidth>7</bitWidth>
+                  </field>
+               </fields>
+            </register>
+            <register>
+               <name>NVIC_IPR1</name>
+               <addressOffset>0x400</addressOffset>
+               <size>0x20</size>
+               <access>read-write</access>
+               <fields>
+                  <field>
+                     <name>PRI_N3</name>
+                     <description>Priority of interrupt 7</description>
+                     <bitOffset>24</bitOffset>
+                     <bitWidth>7</bitWidth>
+                  </field>
+                  <field>
+                     <name>PRI_N2</name>
+                     <description>Priority of interrupt 6</description>
+                     <bitOffset>16</bitOffset>
+                     <bitWidth>7</bitWidth>
+                  </field>
+                  <field>
+                     <name>PRI_N1</name>
+                     <description>Priority of interrupt 5</description>
+                     <bitOffset>8</bitOffset>
+                     <bitWidth>7</bitWidth>
+                  </field>
+                  <field>
+                     <name>PRI_N0</name>
+                     <description>Priority of interrupt 4</description>
+                     <bitOffset>0</bitOffset>
+                     <bitWidth>7</bitWidth>
+                  </field>
+               </fields>
+            </register>
+            <register>
+               <name>NVIC_IPR2</name>
+               <addressOffset>0x404</addressOffset>
+               <size>0x20</size>
+               <access>read-write</access>
+               <fields>
+                  <field>
+                     <name>PRI_N3</name>
+                     <description>Priority of interrupt 11</description>
+                     <bitOffset>24</bitOffset>
+                     <bitWidth>7</bitWidth>
+                  </field>
+                  <field>
+                     <name>PRI_N2</name>
+                     <description>Priority of interrupt 10</description>
+                     <bitOffset>16</bitOffset>
+                     <bitWidth>7</bitWidth>
+                  </field>
+                  <field>
+                     <name>PRI_N1</name>
+                     <description>Priority of interrupt 9</description>
+                     <bitOffset>8</bitOffset>
+                     <bitWidth>7</bitWidth>
+                  </field>
+                  <field>
+                     <name>PRI_N0</name>
+                     <description>Priority of interrupt 8</description>
+                     <bitOffset>0</bitOffset>
+                     <bitWidth>7</bitWidth>
+                  </field>
+               </fields>
+            </register>
+            <register>
+               <name>NVIC_IPR3</name>
+               <addressOffset>0x408</addressOffset>
+               <size>0x20</size>
+               <access>read-write</access>
+               <fields>
+                  <field>
+                     <name>PRI_N3</name>
+                     <description>Priority of interrupt 15</description>
+                     <bitOffset>24</bitOffset>
+                     <bitWidth>7</bitWidth>
+                  </field>
+                  <field>
+                     <name>PRI_N2</name>
+                     <description>Priority of interrupt 14</description>
+                     <bitOffset>16</bitOffset>
+                     <bitWidth>7</bitWidth>
+                  </field>
+                  <field>
+                     <name>PRI_N1</name>
+                     <description>Priority of interrupt 13</description>
+                     <bitOffset>8</bitOffset>
+                     <bitWidth>7</bitWidth>
+                  </field>
+                  <field>
+                     <name>PRI_N0</name>
+                     <description>Priority of interrupt 12</description>
+                     <bitOffset>0</bitOffset>
+                     <bitWidth>7</bitWidth>
+                  </field>
+               </fields>
+            </register>
+            <register>
+               <name>NVIC_IPR4</name>
+               <addressOffset>0x40C</addressOffset>
+               <size>0x20</size>
+               <access>read-write</access>
+               <fields>
+                  <field>
+                     <name>PRI_N3</name>
+                     <description>Priority of interrupt 19</description>
+                     <bitOffset>24</bitOffset>
+                     <bitWidth>7</bitWidth>
+                  </field>
+                  <field>
+                     <name>PRI_N2</name>
+                     <description>Priority of interrupt 18</description>
+                     <bitOffset>16</bitOffset>
+                     <bitWidth>7</bitWidth>
+                  </field>
+                  <field>
+                     <name>PRI_N1</name>
+                     <description>Priority of interrupt 17</description>
+                     <bitOffset>8</bitOffset>
+                     <bitWidth>7</bitWidth>
+                  </field>
+                  <field>
+                     <name>PRI_N0</name>
+                     <description>Priority of interrupt 16</description>
+                     <bitOffset>0</bitOffset>
+                     <bitWidth>7</bitWidth>
+                  </field>
+               </fields>
+            </register>
+            <register>
+               <name>NVIC_IPR5</name>
+               <addressOffset>0x410</addressOffset>
+               <size>0x20</size>
+               <access>read-write</access>
+               <fields>
+                  <field>
+                     <name>PRI_N3</name>
+                     <description>Priority of interrupt 23</description>
+                     <bitOffset>24</bitOffset>
+                     <bitWidth>7</bitWidth>
+                  </field>
+                  <field>
+                     <name>PRI_N2</name>
+                     <description>Priority of interrupt 22</description>
+                     <bitOffset>16</bitOffset>
+                     <bitWidth>7</bitWidth>
+                  </field>
+                  <field>
+                     <name>PRI_N1</name>
+                     <description>Priority of interrupt 21</description>
+                     <bitOffset>8</bitOffset>
+                     <bitWidth>7</bitWidth>
+                  </field>
+                  <field>
+                     <name>PRI_N0</name>
+                     <description>Priority of interrupt 20</description>
+                     <bitOffset>0</bitOffset>
+                     <bitWidth>7</bitWidth>
+                  </field>
+               </fields>
+            </register>
+            <register>
+               <name>NVIC_IPR6</name>
+               <addressOffset>0x414</addressOffset>
+               <size>0x20</size>
+               <access>read-write</access>
+               <fields>
+                  <field>
+                     <name>PRI_N3</name>
+                     <description>Priority of interrupt 27</description>
+                     <bitOffset>24</bitOffset>
+                     <bitWidth>7</bitWidth>
+                  </field>
+                  <field>
+                     <name>PRI_N2</name>
+                     <description>Priority of interrupt 26</description>
+                     <bitOffset>16</bitOffset>
+                     <bitWidth>7</bitWidth>
+                  </field>
+                  <field>
+                     <name>PRI_N1</name>
+                     <description>Priority of interrupt 25</description>
+                     <bitOffset>8</bitOffset>
+                     <bitWidth>7</bitWidth>
+                  </field>
+                  <field>
+                     <name>PRI_N0</name>
+                     <description>Priority of interrupt 24</description>
+                     <bitOffset>0</bitOffset>
+                     <bitWidth>7</bitWidth>
+                  </field>
+               </fields>
+            </register>
+            <register>
+               <name>NVIC_IPR7</name>
+               <addressOffset>0x418</addressOffset>
+               <size>0x20</size>
+               <access>read-write</access>
+               <fields>
+                  <field>
+                     <name>PRI_N3</name>
+                     <description>Priority of interrupt 31</description>
+                     <bitOffset>24</bitOffset>
+                     <bitWidth>7</bitWidth>
+                  </field>
+                  <field>
+                     <name>PRI_N2</name>
+                     <description>Priority of interrupt 30</description>
+                     <bitOffset>16</bitOffset>
+                     <bitWidth>7</bitWidth>
+                  </field>
+                  <field>
+                     <name>PRI_N1</name>
+                     <description>Priority of interrupt 29</description>
+                     <bitOffset>8</bitOffset>
+                     <bitWidth>7</bitWidth>
+                  </field>
+                  <field>
+                     <name>PRI_N0</name>
+                     <description>Priority of interrupt 28</description>
+                     <bitOffset>0</bitOffset>
+                     <bitWidth>7</bitWidth>
+                  </field>
+               </fields>
+            </register>
+            <register>
+               <name>NVIC_IPR8</name>
+               <addressOffset>0x41C</addressOffset>
+               <size>0x20</size>
+               <access>read-write</access>
+               <fields>
+                  <field>
+                     <name>PRI_N3</name>
+                     <description>Priority of interrupt 35</description>
+                     <bitOffset>24</bitOffset>
+                     <bitWidth>7</bitWidth>
+                  </field>
+                  <field>
+                     <name>PRI_N2</name>
+                     <description>Priority of interrupt 34</description>
+                     <bitOffset>16</bitOffset>
+                     <bitWidth>7</bitWidth>
+                  </field>
+                  <field>
+                     <name>PRI_N1</name>
+                     <description>Priority of interrupt 33</description>
+                     <bitOffset>8</bitOffset>
+                     <bitWidth>7</bitWidth>
+                  </field>
+                  <field>
+                     <name>PRI_N0</name>
+                     <description>Priority of interrupt 32</description>
+                     <bitOffset>0</bitOffset>
+                     <bitWidth>7</bitWidth>
+                  </field>
+               </fields>
+            </register>
+            <register>
+               <name>NVIC_IPR9</name>
+               <addressOffset>0x420</addressOffset>
+               <size>0x20</size>
+               <access>read-write</access>
+               <fields>
+                  <field>
+                     <name>PRI_N3</name>
+                     <description>Priority of interrupt 39</description>
+                     <bitOffset>24</bitOffset>
+                     <bitWidth>7</bitWidth>
+                  </field>
+                  <field>
+                     <name>PRI_N2</name>
+                     <description>Priority of interrupt 38</description>
+                     <bitOffset>16</bitOffset>
+                     <bitWidth>7</bitWidth>
+                  </field>
+                  <field>
+                     <name>PRI_N1</name>
+                     <description>Priority of interrupt 37</description>
+                     <bitOffset>8</bitOffset>
+                     <bitWidth>7</bitWidth>
+                  </field>
+                  <field>
+                     <name>PRI_N0</name>
+                     <description>Priority of interrupt 36</description>
+                     <bitOffset>0</bitOffset>
+                     <bitWidth>7</bitWidth>
+                  </field>
+               </fields>
+            </register>
+            <register>
+               <name>NVIC_IPR10</name>
+               <addressOffset>0x424</addressOffset>
+               <size>0x20</size>
+               <access>read-write</access>
+               <fields>
+                  <field>
+                     <name>PRI_N3</name>
+                     <description>Priority of interrupt 43</description>
+                     <bitOffset>24</bitOffset>
+                     <bitWidth>7</bitWidth>
+                  </field>
+                  <field>
+                     <name>PRI_N2</name>
+                     <description>Priority of interrupt 42</description>
+                     <bitOffset>16</bitOffset>
+                     <bitWidth>7</bitWidth>
+                  </field>
+                  <field>
+                     <name>PRI_N1</name>
+                     <description>Priority of interrupt 41</description>
+                     <bitOffset>8</bitOffset>
+                     <bitWidth>7</bitWidth>
+                  </field>
+                  <field>
+                     <name>PRI_N0</name>
+                     <description>Priority of interrupt 40</description>
+                     <bitOffset>0</bitOffset>
+                     <bitWidth>7</bitWidth>
+                  </field>
+               </fields>
+            </register>
+            <register>
+               <name>NVIC_IPR11</name>
+               <addressOffset>0x428</addressOffset>
+               <size>0x20</size>
+               <access>read-write</access>
+               <fields>
+                  <field>
+                     <name>PRI_N3</name>
+                     <description>Priority of interrupt 47</description>
+                     <bitOffset>24</bitOffset>
+                     <bitWidth>7</bitWidth>
+                  </field>
+                  <field>
+                     <name>PRI_N2</name>
+                     <description>Priority of interrupt 46</description>
+                     <bitOffset>16</bitOffset>
+                     <bitWidth>7</bitWidth>
+                  </field>
+                  <field>
+                     <name>PRI_N1</name>
+                     <description>Priority of interrupt 45</description>
+                     <bitOffset>8</bitOffset>
+                     <bitWidth>7</bitWidth>
+                  </field>
+                  <field>
+                     <name>PRI_N0</name>
+                     <description>Priority of interrupt 44</description>
+                     <bitOffset>0</bitOffset>
+                     <bitWidth>7</bitWidth>
+                  </field>
+               </fields>
+            </register>
+            <register>
+               <name>NVIC_IPR12</name>
+               <addressOffset>0x42C</addressOffset>
+               <size>0x20</size>
+               <access>read-write</access>
+               <fields>
+                  <field>
+                     <name>PRI_N3</name>
+                     <description>Priority of interrupt 51</description>
+                     <bitOffset>24</bitOffset>
+                     <bitWidth>7</bitWidth>
+                  </field>
+                  <field>
+                     <name>PRI_N2</name>
+                     <description>Priority of interrupt 50</description>
+                     <bitOffset>16</bitOffset>
+                     <bitWidth>7</bitWidth>
+                  </field>
+                  <field>
+                     <name>PRI_N1</name>
+                     <description>Priority of interrupt 49</description>
+                     <bitOffset>8</bitOffset>
+                     <bitWidth>7</bitWidth>
+                  </field>
+                  <field>
+                     <name>PRI_N0</name>
+                     <description>Priority of interrupt 48</description>
+                     <bitOffset>0</bitOffset>
+                     <bitWidth>7</bitWidth>
+                  </field>
+               </fields>
+            </register>
+            <register>
+               <name>NVIC_IPR13</name>
+               <addressOffset>0x430</addressOffset>
+               <size>0x20</size>
+               <access>read-write</access>
+               <fields>
+                  <field>
+                     <name>PRI_N3</name>
+                     <description>Priority of interrupt 55</description>
+                     <bitOffset>24</bitOffset>
+                     <bitWidth>7</bitWidth>
+                  </field>
+                  <field>
+                     <name>PRI_N2</name>
+                     <description>Priority of interrupt 54</description>
+                     <bitOffset>16</bitOffset>
+                     <bitWidth>7</bitWidth>
+                  </field>
+                  <field>
+                     <name>PRI_N1</name>
+                     <description>Priority of interrupt 53</description>
+                     <bitOffset>8</bitOffset>
+                     <bitWidth>7</bitWidth>
+                  </field>
+                  <field>
+                     <name>PRI_N0</name>
+                     <description>Priority of interrupt 52</description>
+                     <bitOffset>0</bitOffset>
+                     <bitWidth>7</bitWidth>
+                  </field>
+               </fields>
+            </register>
+            <register>
+               <name>NVIC_IPR14</name>
+               <addressOffset>0x434</addressOffset>
+               <size>0x20</size>
+               <access>read-write</access>
+               <fields>
+                  <field>
+                     <name>PRI_N3</name>
+                     <description>Priority of interrupt 59</description>
+                     <bitOffset>24</bitOffset>
+                     <bitWidth>7</bitWidth>
+                  </field>
+                  <field>
+                     <name>PRI_N2</name>
+                     <description>Priority of interrupt 58</description>
+                     <bitOffset>16</bitOffset>
+                     <bitWidth>7</bitWidth>
+                  </field>
+                  <field>
+                     <name>PRI_N1</name>
+                     <description>Priority of interrupt 57</description>
+                     <bitOffset>8</bitOffset>
+                     <bitWidth>7</bitWidth>
+                  </field>
+                  <field>
+                     <name>PRI_N0</name>
+                     <description>Priority of interrupt 56</description>
+                     <bitOffset>0</bitOffset>
+                     <bitWidth>7</bitWidth>
+                  </field>
+               </fields>
+            </register>
+            <register>
+               <name>NVIC_IPR15</name>
+               <addressOffset>0x438</addressOffset>
+               <size>0x20</size>
+               <access>read-write</access>
+               <fields>
+                  <field>
+                     <name>PRI_N3</name>
+                     <description>Priority of interrupt 63</description>
+                     <bitOffset>24</bitOffset>
+                     <bitWidth>7</bitWidth>
+                  </field>
+                  <field>
+                     <name>PRI_N2</name>
+                     <description>Priority of interrupt 62</description>
+                     <bitOffset>16</bitOffset>
+                     <bitWidth>7</bitWidth>
+                  </field>
+                  <field>
+                     <name>PRI_N1</name>
+                     <description>Priority of interrupt 61</description>
+                     <bitOffset>8</bitOffset>
+                     <bitWidth>7</bitWidth>
+                  </field>
+                  <field>
+                     <name>PRI_N0</name>
+                     <description>Priority of interrupt 60</description>
+                     <bitOffset>0</bitOffset>
+                     <bitWidth>7</bitWidth>
+                  </field>
+               </fields>
+            </register>
+            <register>
+               <name>NVIC_IPR16</name>
+               <addressOffset>0x43C</addressOffset>
+               <size>0x20</size>
+               <access>read-write</access>
+               <fields>
+                  <field>
+                     <name>PRI_N3</name>
+                     <description>Priority of interrupt 67</description>
+                     <bitOffset>24</bitOffset>
+                     <bitWidth>7</bitWidth>
+                  </field>
+                  <field>
+                     <name>PRI_N2</name>
+                     <description>Priority of interrupt 66</description>
+                     <bitOffset>16</bitOffset>
+                     <bitWidth>7</bitWidth>
+                  </field>
+                  <field>
+                     <name>PRI_N1</name>
+                     <description>Priority of interrupt 65</description>
+                     <bitOffset>8</bitOffset>
+                     <bitWidth>7</bitWidth>
+                  </field>
+                  <field>
+                     <name>PRI_N0</name>
+                     <description>Priority of interrupt 64</description>
+                     <bitOffset>0</bitOffset>
+                     <bitWidth>7</bitWidth>
+                  </field>
+               </fields>
+            </register>
+            <register>
+               <name>NVIC_IPR17</name>
+               <addressOffset>0x440</addressOffset>
+               <size>0x20</size>
+               <access>read-write</access>
+               <fields>
+                  <field>
+                     <name>PRI_N3</name>
+                     <description>Priority of interrupt 71</description>
+                     <bitOffset>24</bitOffset>
+                     <bitWidth>7</bitWidth>
+                  </field>
+                  <field>
+                     <name>PRI_N2</name>
+                     <description>Priority of interrupt 70</description>
+                     <bitOffset>16</bitOffset>
+                     <bitWidth>7</bitWidth>
+                  </field>
+                  <field>
+                     <name>PRI_N1</name>
+                     <description>Priority of interrupt 69</description>
+                     <bitOffset>8</bitOffset>
+                     <bitWidth>7</bitWidth>
+                  </field>
+                  <field>
+                     <name>PRI_N0</name>
+                     <description>Priority of interrupt 68</description>
+                     <bitOffset>0</bitOffset>
+                     <bitWidth>7</bitWidth>
+                  </field>
+               </fields>
+            </register>
+            <register>
+               <name>NVIC_IPR18</name>
+               <addressOffset>0x444</addressOffset>
+               <size>0x20</size>
+               <access>read-write</access>
+               <fields>
+                  <field>
+                     <name>PRI_N3</name>
+                     <description>Priority of interrupt 75</description>
+                     <bitOffset>24</bitOffset>
+                     <bitWidth>7</bitWidth>
+                  </field>
+                  <field>
+                     <name>PRI_N2</name>
+                     <description>Priority of interrupt 74</description>
+                     <bitOffset>16</bitOffset>
+                     <bitWidth>7</bitWidth>
+                  </field>
+                  <field>
+                     <name>PRI_N1</name>
+                     <description>Priority of interrupt 73</description>
+                     <bitOffset>8</bitOffset>
+                     <bitWidth>7</bitWidth>
+                  </field>
+                  <field>
+                     <name>PRI_N0</name>
+                     <description>Priority of interrupt 72</description>
+                     <bitOffset>0</bitOffset>
+                     <bitWidth>7</bitWidth>
+                  </field>
+               </fields>
+            </register>
+            <register>
+               <name>NVIC_IPR19</name>
+               <addressOffset>0x448</addressOffset>
+               <size>0x20</size>
+               <access>read-write</access>
+               <fields>
+                  <field>
+                     <name>PRI_N3</name>
+                     <description>Priority of interrupt 79</description>
+                     <bitOffset>24</bitOffset>
+                     <bitWidth>7</bitWidth>
+                  </field>
+                  <field>
+                     <name>PRI_N2</name>
+                     <description>Priority of interrupt 78</description>
+                     <bitOffset>16</bitOffset>
+                     <bitWidth>7</bitWidth>
+                  </field>
+                  <field>
+                     <name>PRI_N1</name>
+                     <description>Priority of interrupt 77</description>
+                     <bitOffset>8</bitOffset>
+                     <bitWidth>7</bitWidth>
+                  </field>
+                  <field>
+                     <name>PRI_N0</name>
+                     <description>Priority of interrupt 76</description>
+                     <bitOffset>0</bitOffset>
+                     <bitWidth>7</bitWidth>
+                  </field>
+               </fields>
+            </register>
+            <register>
+               <name>NVIC_IPR20</name>
+               <addressOffset>0x44C</addressOffset>
+               <size>0x20</size>
+               <access>read-write</access>
+               <fields>
+                  <field>
+                     <name>PRI_N3</name>
+                     <description>Priority of interrupt 83</description>
+                     <bitOffset>24</bitOffset>
+                     <bitWidth>7</bitWidth>
+                  </field>
+                  <field>
+                     <name>PRI_N2</name>
+                     <description>Priority of interrupt 82</description>
+                     <bitOffset>16</bitOffset>
+                     <bitWidth>7</bitWidth>
+                  </field>
+                  <field>
+                     <name>PRI_N1</name>
+                     <description>Priority of interrupt 81</description>
+                     <bitOffset>8</bitOffset>
+                     <bitWidth>7</bitWidth>
+                  </field>
+                  <field>
+                     <name>PRI_N0</name>
+                     <description>Priority of interrupt 80</description>
+                     <bitOffset>0</bitOffset>
+                     <bitWidth>7</bitWidth>
+                  </field>
+               </fields>
+            </register>
+            <register>
+               <name>NVIC_IPR21</name>
+               <addressOffset>0x450</addressOffset>
+               <size>0x20</size>
+               <access>read-write</access>
+               <fields>
+                  <field>
+                     <name>PRI_N3</name>
+                     <description>Priority of interrupt 87</description>
+                     <bitOffset>24</bitOffset>
+                     <bitWidth>7</bitWidth>
+                  </field>
+                  <field>
+                     <name>PRI_N2</name>
+                     <description>Priority of interrupt 86</description>
+                     <bitOffset>16</bitOffset>
+                     <bitWidth>7</bitWidth>
+                  </field>
+                  <field>
+                     <name>PRI_N1</name>
+                     <description>Priority of interrupt 85</description>
+                     <bitOffset>8</bitOffset>
+                     <bitWidth>7</bitWidth>
+                  </field>
+                  <field>
+                     <name>PRI_N0</name>
+                     <description>Priority of interrupt 84</description>
+                     <bitOffset>0</bitOffset>
+                     <bitWidth>7</bitWidth>
+                  </field>
+               </fields>
+            </register>
+            <register>
+               <name>NVIC_IPR22</name>
+               <addressOffset>0x454</addressOffset>
+               <size>0x20</size>
+               <access>read-write</access>
+               <fields>
+                  <field>
+                     <name>PRI_N3</name>
+                     <description>Priority of interrupt 91</description>
+                     <bitOffset>24</bitOffset>
+                     <bitWidth>7</bitWidth>
+                  </field>
+                  <field>
+                     <name>PRI_N2</name>
+                     <description>Priority of interrupt 90</description>
+                     <bitOffset>16</bitOffset>
+                     <bitWidth>7</bitWidth>
+                  </field>
+                  <field>
+                     <name>PRI_N1</name>
+                     <description>Priority of interrupt 89</description>
+                     <bitOffset>8</bitOffset>
+                     <bitWidth>7</bitWidth>
+                  </field>
+                  <field>
+                     <name>PRI_N0</name>
+                     <description>Priority of interrupt 88</description>
+                     <bitOffset>0</bitOffset>
+                     <bitWidth>7</bitWidth>
+                  </field>
+               </fields>
+            </register>
+            <register>
+               <name>NVIC_IPR23</name>
+               <addressOffset>0x458</addressOffset>
+               <size>0x20</size>
+               <access>read-write</access>
+               <fields>
+                  <field>
+                     <name>PRI_N3</name>
+                     <description>Priority of interrupt 95</description>
+                     <bitOffset>24</bitOffset>
+                     <bitWidth>7</bitWidth>
+                  </field>
+                  <field>
+                     <name>PRI_N2</name>
+                     <description>Priority of interrupt 94</description>
+                     <bitOffset>16</bitOffset>
+                     <bitWidth>7</bitWidth>
+                  </field>
+                  <field>
+                     <name>PRI_N1</name>
+                     <description>Priority of interrupt 93</description>
+                     <bitOffset>8</bitOffset>
+                     <bitWidth>7</bitWidth>
+                  </field>
+                  <field>
+                     <name>PRI_N0</name>
+                     <description>Priority of interrupt 92</description>
+                     <bitOffset>0</bitOffset>
+                     <bitWidth>7</bitWidth>
+                  </field>
+               </fields>
+            </register>
+            <register>
+               <name>NVIC_IPR24</name>
+               <addressOffset>0x45C</addressOffset>
+               <size>0x20</size>
+               <access>read-write</access>
+               <fields>
+                  <field>
+                     <name>PRI_N3</name>
+                     <description>Priority of interrupt 99</description>
+                     <bitOffset>24</bitOffset>
+                     <bitWidth>7</bitWidth>
+                  </field>
+                  <field>
+                     <name>PRI_N2</name>
+                     <description>Priority of interrupt 98</description>
+                     <bitOffset>16</bitOffset>
+                     <bitWidth>7</bitWidth>
+                  </field>
+                  <field>
+                     <name>PRI_N1</name>
+                     <description>Priority of interrupt 97</description>
+                     <bitOffset>8</bitOffset>
+                     <bitWidth>7</bitWidth>
+                  </field>
+                  <field>
+                     <name>PRI_N0</name>
+                     <description>Priority of interrupt 96</description>
+                     <bitOffset>0</bitOffset>
+                     <bitWidth>7</bitWidth>
+                  </field>
+               </fields>
+            </register>
+            <register>
+               <name>NVIC_IPR25</name>
+               <addressOffset>0x460</addressOffset>
+               <size>0x20</size>
+               <access>read-write</access>
+               <fields>
+                  <field>
+                     <name>PRI_N3</name>
+                     <description>Priority of interrupt 103</description>
+                     <bitOffset>24</bitOffset>
+                     <bitWidth>7</bitWidth>
+                  </field>
+                  <field>
+                     <name>PRI_N2</name>
+                     <description>Priority of interrupt 102</description>
+                     <bitOffset>16</bitOffset>
+                     <bitWidth>7</bitWidth>
+                  </field>
+                  <field>
+                     <name>PRI_N1</name>
+                     <description>Priority of interrupt 101</description>
+                     <bitOffset>8</bitOffset>
+                     <bitWidth>7</bitWidth>
+                  </field>
+                  <field>
+                     <name>PRI_N0</name>
+                     <description>Priority of interrupt 100</description>
+                     <bitOffset>0</bitOffset>
+                     <bitWidth>7</bitWidth>
+                  </field>
+               </fields>
+            </register>
+            <register>
+               <name>NVIC_IPR26</name>
+               <addressOffset>0x464</addressOffset>
+               <size>0x20</size>
+               <access>read-write</access>
+               <fields>
+                  <field>
+                     <name>PRI_N3</name>
+                     <description>Priority of interrupt 107</description>
+                     <bitOffset>24</bitOffset>
+                     <bitWidth>7</bitWidth>
+                  </field>
+                  <field>
+                     <name>PRI_N2</name>
+                     <description>Priority of interrupt 106</description>
+                     <bitOffset>16</bitOffset>
+                     <bitWidth>7</bitWidth>
+                  </field>
+                  <field>
+                     <name>PRI_N1</name>
+                     <description>Priority of interrupt 105</description>
+                     <bitOffset>8</bitOffset>
+                     <bitWidth>7</bitWidth>
+                  </field>
+                  <field>
+                     <name>PRI_N0</name>
+                     <description>Priority of interrupt 104</description>
+                     <bitOffset>0</bitOffset>
+                     <bitWidth>7</bitWidth>
+                  </field>
+               </fields>
+            </register>
+            <register>
+               <name>NVIC_IPR27</name>
+               <addressOffset>0x468</addressOffset>
+               <size>0x20</size>
+               <access>read-write</access>
+               <fields>
+                  <field>
+                     <name>PRI_N3</name>
+                     <description>Priority of interrupt 111</description>
+                     <bitOffset>24</bitOffset>
+                     <bitWidth>7</bitWidth>
+                  </field>
+                  <field>
+                     <name>PRI_N2</name>
+                     <description>Priority of interrupt 110</description>
+                     <bitOffset>16</bitOffset>
+                     <bitWidth>7</bitWidth>
+                  </field>
+                  <field>
+                     <name>PRI_N1</name>
+                     <description>Priority of interrupt 109</description>
+                     <bitOffset>8</bitOffset>
+                     <bitWidth>7</bitWidth>
+                  </field>
+                  <field>
+                     <name>PRI_N0</name>
+                     <description>Priority of interrupt 108</description>
+                     <bitOffset>0</bitOffset>
+                     <bitWidth>7</bitWidth>
+                  </field>
+               </fields>
+            </register>
+            <register>
+               <name>NVIC_IPR28</name>
+               <addressOffset>0x46C</addressOffset>
+               <size>0x20</size>
+               <access>read-write</access>
+               <fields>
+                  <field>
+                     <name>PRI_N3</name>
+                     <description>Priority of interrupt 115</description>
+                     <bitOffset>24</bitOffset>
+                     <bitWidth>7</bitWidth>
+                  </field>
+                  <field>
+                     <name>PRI_N2</name>
+                     <description>Priority of interrupt 114</description>
+                     <bitOffset>16</bitOffset>
+                     <bitWidth>7</bitWidth>
+                  </field>
+                  <field>
+                     <name>PRI_N1</name>
+                     <description>Priority of interrupt 113</description>
+                     <bitOffset>8</bitOffset>
+                     <bitWidth>7</bitWidth>
+                  </field>
+                  <field>
+                     <name>PRI_N0</name>
+                     <description>Priority of interrupt 112</description>
+                     <bitOffset>0</bitOffset>
+                     <bitWidth>7</bitWidth>
+                  </field>
+               </fields>
+            </register>
+            <register>
+               <name>NVIC_IPR29</name>
+               <addressOffset>0x470</addressOffset>
+               <size>0x20</size>
+               <access>read-write</access>
+               <fields>
+                  <field>
+                     <name>PRI_N3</name>
+                     <description>Priority of interrupt 119</description>
+                     <bitOffset>24</bitOffset>
+                     <bitWidth>7</bitWidth>
+                  </field>
+                  <field>
+                     <name>PRI_N2</name>
+                     <description>Priority of interrupt 118</description>
+                     <bitOffset>16</bitOffset>
+                     <bitWidth>7</bitWidth>
+                  </field>
+                  <field>
+                     <name>PRI_N1</name>
+                     <description>Priority of interrupt 117</description>
+                     <bitOffset>8</bitOffset>
+                     <bitWidth>7</bitWidth>
+                  </field>
+                  <field>
+                     <name>PRI_N0</name>
+                     <description>Priority of interrupt 116</description>
+                     <bitOffset>0</bitOffset>
+                     <bitWidth>7</bitWidth>
+                  </field>
+               </fields>
+            </register>
+            <register>
+               <name>NVIC_IPR30</name>
+               <addressOffset>0x474</addressOffset>
+               <size>0x20</size>
+               <access>read-write</access>
+               <fields>
+                  <field>
+                     <name>PRI_N3</name>
+                     <description>Priority of interrupt 123</description>
+                     <bitOffset>24</bitOffset>
+                     <bitWidth>7</bitWidth>
+                  </field>
+                  <field>
+                     <name>PRI_N2</name>
+                     <description>Priority of interrupt 122</description>
+                     <bitOffset>16</bitOffset>
+                     <bitWidth>7</bitWidth>
+                  </field>
+                  <field>
+                     <name>PRI_N1</name>
+                     <description>Priority of interrupt 121</description>
+                     <bitOffset>8</bitOffset>
+                     <bitWidth>7</bitWidth>
+                  </field>
+                  <field>
+                     <name>PRI_N0</name>
+                     <description>Priority of interrupt 120</description>
+                     <bitOffset>0</bitOffset>
+                     <bitWidth>7</bitWidth>
+                  </field>
+               </fields>
+            </register>
+            <register>
+               <name>NVIC_IPR31</name>
+               <addressOffset>0x478</addressOffset>
+               <size>0x20</size>
+               <access>read-write</access>
+               <fields>
+                  <field>
+                     <name>PRI_N3</name>
+                     <description>Priority of interrupt 127</description>
+                     <bitOffset>24</bitOffset>
+                     <bitWidth>7</bitWidth>
+                  </field>
+                  <field>
+                     <name>PRI_N2</name>
+                     <description>Priority of interrupt 126</description>
+                     <bitOffset>16</bitOffset>
+                     <bitWidth>7</bitWidth>
+                  </field>
+                  <field>
+                     <name>PRI_N1</name>
+                     <description>Priority of interrupt 125</description>
+                     <bitOffset>8</bitOffset>
+                     <bitWidth>7</bitWidth>
+                  </field>
+                  <field>
+                     <name>PRI_N0</name>
+                     <description>Priority of interrupt 124</description>
+                     <bitOffset>0</bitOffset>
+                     <bitWidth>7</bitWidth>
+                  </field>
+               </fields>
+            </register>
+            <register>
+               <name>NVIC_IPR32</name>
+               <addressOffset>0x47C</addressOffset>
+               <size>0x20</size>
+               <access>read-write</access>
+               <fields>
+                  <field>
+                     <name>PRI_N3</name>
+                     <description>Priority of interrupt 131</description>
+                     <bitOffset>24</bitOffset>
+                     <bitWidth>7</bitWidth>
+                  </field>
+                  <field>
+                     <name>PRI_N2</name>
+                     <description>Priority of interrupt 130</description>
+                     <bitOffset>16</bitOffset>
+                     <bitWidth>7</bitWidth>
+                  </field>
+                  <field>
+                     <name>PRI_N1</name>
+                     <description>Priority of interrupt 129</description>
+                     <bitOffset>8</bitOffset>
+                     <bitWidth>7</bitWidth>
+                  </field>
+                  <field>
+                     <name>PRI_N0</name>
+                     <description>Priority of interrupt 128</description>
+                     <bitOffset>0</bitOffset>
+                     <bitWidth>7</bitWidth>
+                  </field>
+               </fields>
+            </register>
+            <register>
+               <name>NVIC_IPR33</name>
+               <addressOffset>0x480</addressOffset>
+               <size>0x20</size>
+               <access>read-write</access>
+               <fields>
+                  <field>
+                     <name>PRI_N3</name>
+                     <description>Priority of interrupt 135</description>
+                     <bitOffset>24</bitOffset>
+                     <bitWidth>7</bitWidth>
+                  </field>
+                  <field>
+                     <name>PRI_N2</name>
+                     <description>Priority of interrupt 134</description>
+                     <bitOffset>16</bitOffset>
+                     <bitWidth>7</bitWidth>
+                  </field>
+                  <field>
+                     <name>PRI_N1</name>
+                     <description>Priority of interrupt 133</description>
+                     <bitOffset>8</bitOffset>
+                     <bitWidth>7</bitWidth>
+                  </field>
+                  <field>
+                     <name>PRI_N0</name>
+                     <description>Priority of interrupt 132</description>
+                     <bitOffset>0</bitOffset>
+                     <bitWidth>7</bitWidth>
+                  </field>
+               </fields>
+            </register>
+            <register>
+               <name>NVIC_IPR34</name>
+               <addressOffset>0x484</addressOffset>
+               <size>0x20</size>
+               <access>read-write</access>
+               <fields>
+                  <field>
+                     <name>PRI_N3</name>
+                     <description>Priority of interrupt 139</description>
+                     <bitOffset>24</bitOffset>
+                     <bitWidth>7</bitWidth>
+                  </field>
+                  <field>
+                     <name>PRI_N2</name>
+                     <description>Priority of interrupt 138</description>
+                     <bitOffset>16</bitOffset>
+                     <bitWidth>7</bitWidth>
+                  </field>
+                  <field>
+                     <name>PRI_N1</name>
+                     <description>Priority of interrupt 137</description>
+                     <bitOffset>8</bitOffset>
+                     <bitWidth>7</bitWidth>
+                  </field>
+                  <field>
+                     <name>PRI_N0</name>
+                     <description>Priority of interrupt 136</description>
+                     <bitOffset>0</bitOffset>
+                     <bitWidth>7</bitWidth>
+                  </field>
+               </fields>
+            </register>
+            <register>
+               <name>NVIC_IPR35</name>
+               <addressOffset>0x488</addressOffset>
+               <size>0x20</size>
+               <access>read-write</access>
+               <fields>
+                  <field>
+                     <name>PRI_N3</name>
+                     <description>Priority of interrupt 143</description>
+                     <bitOffset>24</bitOffset>
+                     <bitWidth>7</bitWidth>
+                  </field>
+                  <field>
+                     <name>PRI_N2</name>
+                     <description>Priority of interrupt 142</description>
+                     <bitOffset>16</bitOffset>
+                     <bitWidth>7</bitWidth>
+                  </field>
+                  <field>
+                     <name>PRI_N1</name>
+                     <description>Priority of interrupt 141</description>
+                     <bitOffset>8</bitOffset>
+                     <bitWidth>7</bitWidth>
+                  </field>
+                  <field>
+                     <name>PRI_N0</name>
+                     <description>Priority of interrupt 140</description>
+                     <bitOffset>0</bitOffset>
+                     <bitWidth>7</bitWidth>
+                  </field>
+               </fields>
+            </register>
+            <register>
+               <name>NVIC_IPR36</name>
+               <addressOffset>0x48C</addressOffset>
+               <size>0x20</size>
+               <access>read-write</access>
+               <fields>
+                  <field>
+                     <name>PRI_N3</name>
+                     <description>Priority of interrupt 147</description>
+                     <bitOffset>24</bitOffset>
+                     <bitWidth>7</bitWidth>
+                  </field>
+                  <field>
+                     <name>PRI_N2</name>
+                     <description>Priority of interrupt 146</description>
+                     <bitOffset>16</bitOffset>
+                     <bitWidth>7</bitWidth>
+                  </field>
+                  <field>
+                     <name>PRI_N1</name>
+                     <description>Priority of interrupt 145</description>
+                     <bitOffset>8</bitOffset>
+                     <bitWidth>7</bitWidth>
+                  </field>
+                  <field>
+                     <name>PRI_N0</name>
+                     <description>Priority of interrupt 144</description>
+                     <bitOffset>0</bitOffset>
+                     <bitWidth>7</bitWidth>
+                  </field>
+               </fields>
+            </register>
+            <register>
+               <name>NVIC_IPR37</name>
+               <addressOffset>0x490</addressOffset>
+               <size>0x20</size>
+               <access>read-write</access>
+               <fields>
+                  <field>
+                     <name>PRI_N3</name>
+                     <description>Priority of interrupt 151</description>
+                     <bitOffset>24</bitOffset>
+                     <bitWidth>7</bitWidth>
+                  </field>
+                  <field>
+                     <name>PRI_N2</name>
+                     <description>Priority of interrupt 150</description>
+                     <bitOffset>16</bitOffset>
+                     <bitWidth>7</bitWidth>
+                  </field>
+                  <field>
+                     <name>PRI_N1</name>
+                     <description>Priority of interrupt 149</description>
+                     <bitOffset>8</bitOffset>
+                     <bitWidth>7</bitWidth>
+                  </field>
+                  <field>
+                     <name>PRI_N0</name>
+                     <description>Priority of interrupt 148</description>
+                     <bitOffset>0</bitOffset>
+                     <bitWidth>7</bitWidth>
+                  </field>
+               </fields>
+            </register>
+            <register>
+               <name>NVIC_IPR38</name>
+               <addressOffset>0x494</addressOffset>
+               <size>0x20</size>
+               <access>read-write</access>
+               <fields>
+                  <field>
+                     <name>PRI_N3</name>
+                     <description>Priority of interrupt 155</description>
+                     <bitOffset>24</bitOffset>
+                     <bitWidth>7</bitWidth>
+                  </field>
+                  <field>
+                     <name>PRI_N2</name>
+                     <description>Priority of interrupt 154</description>
+                     <bitOffset>16</bitOffset>
+                     <bitWidth>7</bitWidth>
+                  </field>
+                  <field>
+                     <name>PRI_N1</name>
+                     <description>Priority of interrupt 153</description>
+                     <bitOffset>8</bitOffset>
+                     <bitWidth>7</bitWidth>
+                  </field>
+                  <field>
+                     <name>PRI_N0</name>
+                     <description>Priority of interrupt 152</description>
+                     <bitOffset>0</bitOffset>
+                     <bitWidth>7</bitWidth>
+                  </field>
+               </fields>
+            </register>
+            <register>
+               <name>NVIC_IPR39</name>
+               <addressOffset>0x498</addressOffset>
+               <size>0x20</size>
+               <access>read-write</access>
+               <fields>
+                  <field>
+                     <name>PRI_N3</name>
+                     <description>Priority of interrupt 159</description>
+                     <bitOffset>24</bitOffset>
+                     <bitWidth>7</bitWidth>
+                  </field>
+                  <field>
+                     <name>PRI_N2</name>
+                     <description>Priority of interrupt 158</description>
+                     <bitOffset>16</bitOffset>
+                     <bitWidth>7</bitWidth>
+                  </field>
+                  <field>
+                     <name>PRI_N1</name>
+                     <description>Priority of interrupt 157</description>
+                     <bitOffset>8</bitOffset>
+                     <bitWidth>7</bitWidth>
+                  </field>
+                  <field>
+                     <name>PRI_N0</name>
+                     <description>Priority of interrupt 156</description>
+                     <bitOffset>0</bitOffset>
+                     <bitWidth>7</bitWidth>
+                  </field>
+               </fields>
+            </register>
+            <register>
+               <name>NVIC_IPR40</name>
+               <addressOffset>0x49C</addressOffset>
+               <size>0x20</size>
+               <access>read-write</access>
+               <fields>
+                  <field>
+                     <name>PRI_N3</name>
+                     <description>Priority of interrupt 163</description>
+                     <bitOffset>24</bitOffset>
+                     <bitWidth>7</bitWidth>
+                  </field>
+                  <field>
+                     <name>PRI_N2</name>
+                     <description>Priority of interrupt 162</description>
+                     <bitOffset>16</bitOffset>
+                     <bitWidth>7</bitWidth>
+                  </field>
+                  <field>
+                     <name>PRI_N1</name>
+                     <description>Priority of interrupt 161</description>
+                     <bitOffset>8</bitOffset>
+                     <bitWidth>7</bitWidth>
+                  </field>
+                  <field>
+                     <name>PRI_N0</name>
+                     <description>Priority of interrupt 160</description>
+                     <bitOffset>0</bitOffset>
+                     <bitWidth>7</bitWidth>
+                  </field>
+               </fields>
+            </register>
+            <register>
+               <name>NVIC_IPR41</name>
+               <addressOffset>0x4A0</addressOffset>
+               <size>0x20</size>
+               <access>read-write</access>
+               <fields>
+                  <field>
+                     <name>PRI_N3</name>
+                     <description>Priority of interrupt 167</description>
+                     <bitOffset>24</bitOffset>
+                     <bitWidth>7</bitWidth>
+                  </field>
+                  <field>
+                     <name>PRI_N2</name>
+                     <description>Priority of interrupt 166</description>
+                     <bitOffset>16</bitOffset>
+                     <bitWidth>7</bitWidth>
+                  </field>
+                  <field>
+                     <name>PRI_N1</name>
+                     <description>Priority of interrupt 165</description>
+                     <bitOffset>8</bitOffset>
+                     <bitWidth>7</bitWidth>
+                  </field>
+                  <field>
+                     <name>PRI_N0</name>
+                     <description>Priority of interrupt 164</description>
+                     <bitOffset>0</bitOffset>
+                     <bitWidth>7</bitWidth>
+                  </field>
+               </fields>
+            </register>
+            <register>
+               <name>NVIC_IPR42</name>
+               <addressOffset>0x4A4</addressOffset>
+               <size>0x20</size>
+               <access>read-write</access>
+               <fields>
+                  <field>
+                     <name>PRI_N3</name>
+                     <description>Priority of interrupt 171</description>
+                     <bitOffset>24</bitOffset>
+                     <bitWidth>7</bitWidth>
+                  </field>
+                  <field>
+                     <name>PRI_N2</name>
+                     <description>Priority of interrupt 170</description>
+                     <bitOffset>16</bitOffset>
+                     <bitWidth>7</bitWidth>
+                  </field>
+                  <field>
+                     <name>PRI_N1</name>
+                     <description>Priority of interrupt 169</description>
+                     <bitOffset>8</bitOffset>
+                     <bitWidth>7</bitWidth>
+                  </field>
+                  <field>
+                     <name>PRI_N0</name>
+                     <description>Priority of interrupt 168</description>
+                     <bitOffset>0</bitOffset>
+                     <bitWidth>7</bitWidth>
+                  </field>
+               </fields>
+            </register>
+            <register>
+               <name>NVIC_IPR43</name>
+               <addressOffset>0x4A8</addressOffset>
+               <size>0x20</size>
+               <access>read-write</access>
+               <fields>
+                  <field>
+                     <name>PRI_N3</name>
+                     <description>Priority of interrupt 175</description>
+                     <bitOffset>24</bitOffset>
+                     <bitWidth>7</bitWidth>
+                  </field>
+                  <field>
+                     <name>PRI_N2</name>
+                     <description>Priority of interrupt 174</description>
+                     <bitOffset>16</bitOffset>
+                     <bitWidth>7</bitWidth>
+                  </field>
+                  <field>
+                     <name>PRI_N1</name>
+                     <description>Priority of interrupt 173</description>
+                     <bitOffset>8</bitOffset>
+                     <bitWidth>7</bitWidth>
+                  </field>
+                  <field>
+                     <name>PRI_N0</name>
+                     <description>Priority of interrupt 172</description>
+                     <bitOffset>0</bitOffset>
+                     <bitWidth>7</bitWidth>
+                  </field>
+               </fields>
+            </register>
+            <register>
+               <name>NVIC_IPR44</name>
+               <addressOffset>0x4AC</addressOffset>
+               <size>0x20</size>
+               <access>read-write</access>
+               <fields>
+                  <field>
+                     <name>PRI_N3</name>
+                     <description>Priority of interrupt 179</description>
+                     <bitOffset>24</bitOffset>
+                     <bitWidth>7</bitWidth>
+                  </field>
+                  <field>
+                     <name>PRI_N2</name>
+                     <description>Priority of interrupt 178</description>
+                     <bitOffset>16</bitOffset>
+                     <bitWidth>7</bitWidth>
+                  </field>
+                  <field>
+                     <name>PRI_N1</name>
+                     <description>Priority of interrupt 177</description>
+                     <bitOffset>8</bitOffset>
+                     <bitWidth>7</bitWidth>
+                  </field>
+                  <field>
+                     <name>PRI_N0</name>
+                     <description>Priority of interrupt 176</description>
+                     <bitOffset>0</bitOffset>
+                     <bitWidth>7</bitWidth>
+                  </field>
+               </fields>
+            </register>
+            <register>
+               <name>NVIC_IPR45</name>
+               <addressOffset>0x4B0</addressOffset>
+               <size>0x20</size>
+               <access>read-write</access>
+               <fields>
+                  <field>
+                     <name>PRI_N3</name>
+                     <description>Priority of interrupt 183</description>
+                     <bitOffset>24</bitOffset>
+                     <bitWidth>7</bitWidth>
+                  </field>
+                  <field>
+                     <name>PRI_N2</name>
+                     <description>Priority of interrupt 182</description>
+                     <bitOffset>16</bitOffset>
+                     <bitWidth>7</bitWidth>
+                  </field>
+                  <field>
+                     <name>PRI_N1</name>
+                     <description>Priority of interrupt 181</description>
+                     <bitOffset>8</bitOffset>
+                     <bitWidth>7</bitWidth>
+                  </field>
+                  <field>
+                     <name>PRI_N0</name>
+                     <description>Priority of interrupt 180</description>
+                     <bitOffset>0</bitOffset>
+                     <bitWidth>7</bitWidth>
+                  </field>
+               </fields>
+            </register>
+            <register>
+               <name>NVIC_IPR46</name>
+               <addressOffset>0x4B4</addressOffset>
+               <size>0x20</size>
+               <access>read-write</access>
+               <fields>
+                  <field>
+                     <name>PRI_N3</name>
+                     <description>Priority of interrupt 187</description>
+                     <bitOffset>24</bitOffset>
+                     <bitWidth>7</bitWidth>
+                  </field>
+                  <field>
+                     <name>PRI_N2</name>
+                     <description>Priority of interrupt 186</description>
+                     <bitOffset>16</bitOffset>
+                     <bitWidth>7</bitWidth>
+                  </field>
+                  <field>
+                     <name>PRI_N1</name>
+                     <description>Priority of interrupt 185</description>
+                     <bitOffset>8</bitOffset>
+                     <bitWidth>7</bitWidth>
+                  </field>
+                  <field>
+                     <name>PRI_N0</name>
+                     <description>Priority of interrupt 184</description>
+                     <bitOffset>0</bitOffset>
+                     <bitWidth>7</bitWidth>
+                  </field>
+               </fields>
+            </register>
+            <register>
+               <name>NVIC_IPR47</name>
+               <addressOffset>0x4B8</addressOffset>
+               <size>0x20</size>
+               <access>read-write</access>
+               <fields>
+                  <field>
+                     <name>PRI_N3</name>
+                     <description>Priority of interrupt 191</description>
+                     <bitOffset>24</bitOffset>
+                     <bitWidth>7</bitWidth>
+                  </field>
+                  <field>
+                     <name>PRI_N2</name>
+                     <description>Priority of interrupt 190</description>
+                     <bitOffset>16</bitOffset>
+                     <bitWidth>7</bitWidth>
+                  </field>
+                  <field>
+                     <name>PRI_N1</name>
+                     <description>Priority of interrupt 189</description>
+                     <bitOffset>8</bitOffset>
+                     <bitWidth>7</bitWidth>
+                  </field>
+                  <field>
+                     <name>PRI_N0</name>
+                     <description>Priority of interrupt 188</description>
+                     <bitOffset>0</bitOffset>
+                     <bitWidth>7</bitWidth>
+                  </field>
+               </fields>
+            </register>
+            <register>
+               <name>NVIC_IPR48</name>
+               <addressOffset>0x4BC</addressOffset>
+               <size>0x20</size>
+               <access>read-write</access>
+               <fields>
+                  <field>
+                     <name>PRI_N3</name>
+                     <description>Priority of interrupt 195</description>
+                     <bitOffset>24</bitOffset>
+                     <bitWidth>7</bitWidth>
+                  </field>
+                  <field>
+                     <name>PRI_N2</name>
+                     <description>Priority of interrupt 194</description>
+                     <bitOffset>16</bitOffset>
+                     <bitWidth>7</bitWidth>
+                  </field>
+                  <field>
+                     <name>PRI_N1</name>
+                     <description>Priority of interrupt 193</description>
+                     <bitOffset>8</bitOffset>
+                     <bitWidth>7</bitWidth>
+                  </field>
+                  <field>
+                     <name>PRI_N0</name>
+                     <description>Priority of interrupt 192</description>
+                     <bitOffset>0</bitOffset>
+                     <bitWidth>7</bitWidth>
+                  </field>
+               </fields>
+            </register>
+            <register>
+               <name>NVIC_IPR49</name>
+               <addressOffset>0x4C0</addressOffset>
+               <size>0x20</size>
+               <access>read-write</access>
+               <fields>
+                  <field>
+                     <name>PRI_N3</name>
+                     <description>Priority of interrupt 199</description>
+                     <bitOffset>24</bitOffset>
+                     <bitWidth>7</bitWidth>
+                  </field>
+                  <field>
+                     <name>PRI_N2</name>
+                     <description>Priority of interrupt 198</description>
+                     <bitOffset>16</bitOffset>
+                     <bitWidth>7</bitWidth>
+                  </field>
+                  <field>
+                     <name>PRI_N1</name>
+                     <description>Priority of interrupt 197</description>
+                     <bitOffset>8</bitOffset>
+                     <bitWidth>7</bitWidth>
+                  </field>
+                  <field>
+                     <name>PRI_N0</name>
+                     <description>Priority of interrupt 196</description>
+                     <bitOffset>0</bitOffset>
+                     <bitWidth>7</bitWidth>
+                  </field>
+               </fields>
+            </register>
+            <register>
+               <name>NVIC_IPR50</name>
+               <addressOffset>0x4C4</addressOffset>
+               <size>0x20</size>
+               <access>read-write</access>
+               <fields>
+                  <field>
+                     <name>PRI_N3</name>
+                     <description>Priority of interrupt 203</description>
+                     <bitOffset>24</bitOffset>
+                     <bitWidth>7</bitWidth>
+                  </field>
+                  <field>
+                     <name>PRI_N2</name>
+                     <description>Priority of interrupt 202</description>
+                     <bitOffset>16</bitOffset>
+                     <bitWidth>7</bitWidth>
+                  </field>
+                  <field>
+                     <name>PRI_N1</name>
+                     <description>Priority of interrupt 201</description>
+                     <bitOffset>8</bitOffset>
+                     <bitWidth>7</bitWidth>
+                  </field>
+                  <field>
+                     <name>PRI_N0</name>
+                     <description>Priority of interrupt 200</description>
+                     <bitOffset>0</bitOffset>
+                     <bitWidth>7</bitWidth>
+                  </field>
+               </fields>
+            </register>
+            <register>
+               <name>NVIC_IPR51</name>
+               <addressOffset>0x4C8</addressOffset>
+               <size>0x20</size>
+               <access>read-write</access>
+               <fields>
+                  <field>
+                     <name>PRI_N3</name>
+                     <description>Priority of interrupt 207</description>
+                     <bitOffset>24</bitOffset>
+                     <bitWidth>7</bitWidth>
+                  </field>
+                  <field>
+                     <name>PRI_N2</name>
+                     <description>Priority of interrupt 206</description>
+                     <bitOffset>16</bitOffset>
+                     <bitWidth>7</bitWidth>
+                  </field>
+                  <field>
+                     <name>PRI_N1</name>
+                     <description>Priority of interrupt 205</description>
+                     <bitOffset>8</bitOffset>
+                     <bitWidth>7</bitWidth>
+                  </field>
+                  <field>
+                     <name>PRI_N0</name>
+                     <description>Priority of interrupt 204</description>
+                     <bitOffset>0</bitOffset>
+                     <bitWidth>7</bitWidth>
+                  </field>
+               </fields>
+            </register>
+            <register>
+               <name>NVIC_IPR52</name>
+               <addressOffset>0x4CC</addressOffset>
+               <size>0x20</size>
+               <access>read-write</access>
+               <fields>
+                  <field>
+                     <name>PRI_N3</name>
+                     <description>Priority of interrupt 211</description>
+                     <bitOffset>24</bitOffset>
+                     <bitWidth>7</bitWidth>
+                  </field>
+                  <field>
+                     <name>PRI_N2</name>
+                     <description>Priority of interrupt 210</description>
+                     <bitOffset>16</bitOffset>
+                     <bitWidth>7</bitWidth>
+                  </field>
+                  <field>
+                     <name>PRI_N1</name>
+                     <description>Priority of interrupt 209</description>
+                     <bitOffset>8</bitOffset>
+                     <bitWidth>7</bitWidth>
+                  </field>
+                  <field>
+                     <name>PRI_N0</name>
+                     <description>Priority of interrupt 208</description>
+                     <bitOffset>0</bitOffset>
+                     <bitWidth>7</bitWidth>
+                  </field>
+               </fields>
+            </register>
+            <register>
+               <name>NVIC_IPR53</name>
+               <addressOffset>0x4D0</addressOffset>
+               <size>0x20</size>
+               <access>read-write</access>
+               <fields>
+                  <field>
+                     <name>PRI_N3</name>
+                     <description>Priority of interrupt 215</description>
+                     <bitOffset>24</bitOffset>
+                     <bitWidth>7</bitWidth>
+                  </field>
+                  <field>
+                     <name>PRI_N2</name>
+                     <description>Priority of interrupt 214</description>
+                     <bitOffset>16</bitOffset>
+                     <bitWidth>7</bitWidth>
+                  </field>
+                  <field>
+                     <name>PRI_N1</name>
+                     <description>Priority of interrupt 213</description>
+                     <bitOffset>8</bitOffset>
+                     <bitWidth>7</bitWidth>
+                  </field>
+                  <field>
+                     <name>PRI_N0</name>
+                     <description>Priority of interrupt 212</description>
+                     <bitOffset>0</bitOffset>
+                     <bitWidth>7</bitWidth>
+                  </field>
+               </fields>
+            </register>
+            <register>
+               <name>NVIC_IPR54</name>
+               <addressOffset>0x4D4</addressOffset>
+               <size>0x20</size>
+               <access>read-write</access>
+               <fields>
+                  <field>
+                     <name>PRI_N3</name>
+                     <description>Priority of interrupt 219</description>
+                     <bitOffset>24</bitOffset>
+                     <bitWidth>7</bitWidth>
+                  </field>
+                  <field>
+                     <name>PRI_N2</name>
+                     <description>Priority of interrupt 218</description>
+                     <bitOffset>16</bitOffset>
+                     <bitWidth>7</bitWidth>
+                  </field>
+                  <field>
+                     <name>PRI_N1</name>
+                     <description>Priority of interrupt 217</description>
+                     <bitOffset>8</bitOffset>
+                     <bitWidth>7</bitWidth>
+                  </field>
+                  <field>
+                     <name>PRI_N0</name>
+                     <description>Priority of interrupt 216</description>
+                     <bitOffset>0</bitOffset>
+                     <bitWidth>7</bitWidth>
+                  </field>
+               </fields>
+            </register>
+            <register>
+               <name>NVIC_IPR55</name>
+               <addressOffset>0x4D8</addressOffset>
+               <size>0x20</size>
+               <access>read-write</access>
+               <fields>
+                  <field>
+                     <name>PRI_N3</name>
+                     <description>Priority of interrupt 223</description>
+                     <bitOffset>24</bitOffset>
+                     <bitWidth>7</bitWidth>
+                  </field>
+                  <field>
+                     <name>PRI_N2</name>
+                     <description>Priority of interrupt 222</description>
+                     <bitOffset>16</bitOffset>
+                     <bitWidth>7</bitWidth>
+                  </field>
+                  <field>
+                     <name>PRI_N1</name>
+                     <description>Priority of interrupt 221</description>
+                     <bitOffset>8</bitOffset>
+                     <bitWidth>7</bitWidth>
+                  </field>
+                  <field>
+                     <name>PRI_N0</name>
+                     <description>Priority of interrupt 220</description>
+                     <bitOffset>0</bitOffset>
+                     <bitWidth>7</bitWidth>
+                  </field>
+               </fields>
+            </register>
+            <register>
+               <name>NVIC_IPR56</name>
+               <addressOffset>0x4DC</addressOffset>
+               <size>0x20</size>
+               <access>read-write</access>
+               <fields>
+                  <field>
+                     <name>PRI_N3</name>
+                     <description>Priority of interrupt 227</description>
+                     <bitOffset>24</bitOffset>
+                     <bitWidth>7</bitWidth>
+                  </field>
+                  <field>
+                     <name>PRI_N2</name>
+                     <description>Priority of interrupt 226</description>
+                     <bitOffset>16</bitOffset>
+                     <bitWidth>7</bitWidth>
+                  </field>
+                  <field>
+                     <name>PRI_N1</name>
+                     <description>Priority of interrupt 225</description>
+                     <bitOffset>8</bitOffset>
+                     <bitWidth>7</bitWidth>
+                  </field>
+                  <field>
+                     <name>PRI_N0</name>
+                     <description>Priority of interrupt 224</description>
+                     <bitOffset>0</bitOffset>
+                     <bitWidth>7</bitWidth>
+                  </field>
+               </fields>
+            </register>
+            <register>
+               <name>NVIC_IPR57</name>
+               <addressOffset>0x4E0</addressOffset>
+               <size>0x20</size>
+               <access>read-write</access>
+               <fields>
+                  <field>
+                     <name>PRI_N3</name>
+                     <description>Priority of interrupt 231</description>
+                     <bitOffset>24</bitOffset>
+                     <bitWidth>7</bitWidth>
+                  </field>
+                  <field>
+                     <name>PRI_N2</name>
+                     <description>Priority of interrupt 230</description>
+                     <bitOffset>16</bitOffset>
+                     <bitWidth>7</bitWidth>
+                  </field>
+                  <field>
+                     <name>PRI_N1</name>
+                     <description>Priority of interrupt 229</description>
+                     <bitOffset>8</bitOffset>
+                     <bitWidth>7</bitWidth>
+                  </field>
+                  <field>
+                     <name>PRI_N0</name>
+                     <description>Priority of interrupt 228</description>
+                     <bitOffset>0</bitOffset>
+                     <bitWidth>7</bitWidth>
+                  </field>
+               </fields>
+            </register>
+            <register>
+               <name>NVIC_IPR58</name>
+               <addressOffset>0x4E4</addressOffset>
+               <size>0x20</size>
+               <access>read-write</access>
+               <fields>
+                  <field>
+                     <name>PRI_N3</name>
+                     <description>Priority of interrupt 235</description>
+                     <bitOffset>24</bitOffset>
+                     <bitWidth>7</bitWidth>
+                  </field>
+                  <field>
+                     <name>PRI_N2</name>
+                     <description>Priority of interrupt 234</description>
+                     <bitOffset>16</bitOffset>
+                     <bitWidth>7</bitWidth>
+                  </field>
+                  <field>
+                     <name>PRI_N1</name>
+                     <description>Priority of interrupt 233</description>
+                     <bitOffset>8</bitOffset>
+                     <bitWidth>7</bitWidth>
+                  </field>
+                  <field>
+                     <name>PRI_N0</name>
+                     <description>Priority of interrupt 232</description>
+                     <bitOffset>0</bitOffset>
+                     <bitWidth>7</bitWidth>
+                  </field>
+               </fields>
+            </register>
+            <register>
+               <name>NVIC_IPR59</name>
+               <addressOffset>0x4E8</addressOffset>
+               <size>0x20</size>
+               <access>read-write</access>
+               <fields>
+                  <field>
+                     <name>PRI_N3</name>
+                     <description>Priority of interrupt 239</description>
+                     <bitOffset>24</bitOffset>
+                     <bitWidth>7</bitWidth>
+                  </field>
+                  <field>
+                     <name>PRI_N2</name>
+                     <description>Priority of interrupt 238</description>
+                     <bitOffset>16</bitOffset>
+                     <bitWidth>7</bitWidth>
+                  </field>
+                  <field>
+                     <name>PRI_N1</name>
+                     <description>Priority of interrupt 237</description>
+                     <bitOffset>8</bitOffset>
+                     <bitWidth>7</bitWidth>
+                  </field>
+                  <field>
+                     <name>PRI_N0</name>
+                     <description>Priority of interrupt 236</description>
+                     <bitOffset>0</bitOffset>
+                     <bitWidth>7</bitWidth>
+                  </field>
+               </fields>
+            </register>
+         </registers>
+      </peripheral>
+      <peripheral>
+         <name>MPU</name>
+         <description>Memory Protection Unit</description>
+         <baseaddress>0xE000ED90</baseaddress>
+         <addressBlock>
+            <offset>0x0</offset>
+            <size>0x160</size>
+            <usage>registers</usage>
+         </addressBlock>
+         <registers>
+            <register>
+               <name>MPU_TYPE</name>
+               <addressOffset>0x0</addressOffset>
+               <size>0x20</size>
+               <access>read-only</access>
+               <fields>
+                  <field>
+                     <name>SEPARATE</name>
+                     <description>Indicates support for separate instruction and data address maps</description>
+                     <bitOffset>0</bitOffset>
+                     <bitWidth>1</bitWidth>
+                  </field>
+                  <field>
+                     <name>DREGION</name>
+                     <description>Number of regions supported by the MPU</description>
+                     <bitOffset>8</bitOffset>
+                     <bitWidth>7</bitWidth>
+                  </field>
+                  <field>
+                     <name>IREGION</name>
+                     <description>Number of instruction regions supported by the MPU</description>
+                     <bitOffset>16</bitOffset>
+                     <bitWidth>7</bitWidth>
+                  </field>
+               </fields>
+            </register>
+            <register>
+               <name>MPU_CTRL</name>
+               <addressOffset>0x4</addressOffset>
+               <size>0x20</size>
+               <access>read-write</access>
+               <fields>
+                  <field>
+                     <name>ENABLE</name>
+                     <description>Enables the MPU</description>
+                     <bitOffset>0</bitOffset>
+                     <bitWidth>1</bitWidth>
+                  </field>
+                  <field>
+                     <name>HFNMIENA</name>
+                     <description>When the ENABLE bit is set to 1, controls whether handlers executing with priority less than 0 access memory with the MPU enabled or with the MPU disabled</description>
+                     <bitOffset>1</bitOffset>
+                     <bitWidth>1</bitWidth>
+                  </field>
+                  <field>
+                     <name>PRIVDEFENA</name>
+                     <description>When the ENABLE bit is set to 1, Enables the default memory map as a background region for privileged access</description>
+                     <bitOffset>2</bitOffset>
+                     <bitWidth>1</bitWidth>
+                  </field>
+               </fields>
+            </register>
+            <register>
+               <name>MPU_RNR</name>
+               <addressOffset>0x8</addressOffset>
+               <size>0x20</size>
+               <access>read-write</access>
+               <fields>
+                  <field>
+                     <name>REGION</name>
+                     <description>Indicates the memory region accessed by MPU_RBAR and MPU_RSAR</description>
+                     <bitOffset>0</bitOffset>
+                     <bitWidth>7</bitWidth>
+                  </field>
+               </fields>
+            </register>
+            <register>
+               <name>MPU_RBAR</name>
+               <addressOffset>0xC</addressOffset>
+               <size>0x20</size>
+               <access>read-write</access>
+               <fields>
+                  <field>
+                     <name>REGION</name>
+                     <description>On writes, can specify the number of the region to update. On reads, returns bits [3:0] of MPU_RNR</description>
+                     <bitOffset>0</bitOffset>
+                     <bitWidth>3</bitWidth>
+                  </field>
+                  <field>
+                     <name>VALID</name>
+                     <description>On writes, indicates whether the region to update is specified by MPU_RNR.REGION, or by the REGION value specified in this write. When using the REGION value specified by this write, MPU_RNR.REGION is updated to this value</description>
+                     <bitOffset>4</bitOffset>
+                     <bitWidth>1</bitWidth>
+                  </field>
+                  <field>
+                     <name>ADDR</name>
+                     <description>Base address of the region</description>
+                     <bitOffset>5</bitOffset>
+                     <bitWidth>26</bitWidth>
+                  </field>
+               </fields>
+            </register>
+            <register>
+               <name>MPU_RASR</name>
+               <addressOffset>0x0</addressOffset>
+               <size>0x20</size>
+               <access>read-write</access>
+               <fields>
+                  <field>
+                     <name>ENABLE</name>
+                     <description>Enables this region</description>
+                     <bitOffset>0</bitOffset>
+                     <bitWidth>1</bitWidth>
+                  </field>
+                  <field>
+                     <name>SIZE</name>
+                     <description>Indicates the region size</description>
+                     <bitOffset>1</bitOffset>
+                     <bitWidth>4</bitWidth>
+                  </field>
+                  <field>
+                     <name>SRD</name>
+                     <description>Subregion Disable</description>
+                     <bitOffset>8</bitOffset>
+                     <bitWidth>7</bitWidth>
+                  </field>
+                  <field>
+                     <name>B</name>
+                     <description>MPU Region Attribute field</description>
+                     <bitOffset>16</bitOffset>
+                     <bitWidth>1</bitWidth>
+                  </field>
+                  <field>
+                     <name>C</name>
+                     <description>MPU Region Attribute field</description>
+                     <bitOffset>17</bitOffset>
+                     <bitWidth>1</bitWidth>
+                  </field>
+                  <field>
+                     <name>S</name>
+                     <description>MPU Region Attribute field: Sharable</description>
+                     <bitOffset>18</bitOffset>
+                     <bitWidth>1</bitWidth>
+                  </field>
+                  <field>
+                     <name>TEX</name>
+                     <description>MPU Region Attribute field</description>
+                     <bitOffset>19</bitOffset>
+                     <bitWidth>2</bitWidth>
+                  </field>
+                  <field>
+                     <name>AP</name>
+                     <description>Access permissions</description>
+                     <bitOffset>24</bitOffset>
+                     <bitWidth>2</bitWidth>
+                  </field>
+                  <field>
+                     <name>XN</name>
+                     <description>Execute Never</description>
+                     <bitOffset>28</bitOffset>
+                     <bitWidth>1</bitWidth>
+                  </field>
+               </fields>
+            </register>
+            <register>
+               <name>MPU_RBAR_A1</name>
+               <addressOffset>0x14</addressOffset>
+               <size>0x20</size>
+               <access>read-write</access>
+               <fields>
+                  <field>
+                     <name>REGION</name>
+                     <description>On writes, can specify the number of the region to update. On reads, returns bits [3:0] of MPU_RNR</description>
+                     <bitOffset>0</bitOffset>
+                     <bitWidth>3</bitWidth>
+                  </field>
+                  <field>
+                     <name>VALID</name>
+                     <description>On writes, indicates whether the region to update is specified by MPU_RNR.REGION, or by the REGION value specified in this write. When using the REGION value specified by this write, MPU_RNR.REGION is updated to this value</description>
+                     <bitOffset>4</bitOffset>
+                     <bitWidth>1</bitWidth>
+                  </field>
+                  <field>
+                     <name>ADDR</name>
+                     <description>Base address of the region</description>
+                     <bitOffset>5</bitOffset>
+                     <bitWidth>26</bitWidth>
+                  </field>
+               </fields>
+            </register>
+            <register>
+               <name>MPU_RASR_A1</name>
+               <addressOffset>0x18</addressOffset>
+               <size>0x20</size>
+               <access>read-write</access>
+               <fields>
+                  <field>
+                     <name>ENABLE</name>
+                     <description>Enables this region</description>
+                     <bitOffset>0</bitOffset>
+                     <bitWidth>1</bitWidth>
+                  </field>
+                  <field>
+                     <name>SIZE</name>
+                     <description>Indicates the region size</description>
+                     <bitOffset>1</bitOffset>
+                     <bitWidth>4</bitWidth>
+                  </field>
+                  <field>
+                     <name>SRD</name>
+                     <description>Subregion Disable</description>
+                     <bitOffset>8</bitOffset>
+                     <bitWidth>7</bitWidth>
+                  </field>
+                  <field>
+                     <name>B</name>
+                     <description>MPU Region Attribute field</description>
+                     <bitOffset>16</bitOffset>
+                     <bitWidth>1</bitWidth>
+                  </field>
+                  <field>
+                     <name>C</name>
+                     <description>MPU Region Attribute field</description>
+                     <bitOffset>17</bitOffset>
+                     <bitWidth>1</bitWidth>
+                  </field>
+                  <field>
+                     <name>S</name>
+                     <description>MPU Region Attribute field: Sharable</description>
+                     <bitOffset>18</bitOffset>
+                     <bitWidth>1</bitWidth>
+                  </field>
+                  <field>
+                     <name>TEX</name>
+                     <description>MPU Region Attribute field</description>
+                     <bitOffset>19</bitOffset>
+                     <bitWidth>2</bitWidth>
+                  </field>
+                  <field>
+                     <name>AP</name>
+                     <description>Access permissions</description>
+                     <bitOffset>24</bitOffset>
+                     <bitWidth>2</bitWidth>
+                  </field>
+                  <field>
+                     <name>XN</name>
+                     <description>Execute Never</description>
+                     <bitOffset>28</bitOffset>
+                     <bitWidth>1</bitWidth>
+                  </field>
+               </fields>
+            </register>
+            <register>
+               <name>MPU_RBAR_A2</name>
+               <addressOffset>0x1C</addressOffset>
+               <size>0x20</size>
+               <access>read-write</access>
+               <fields>
+                  <field>
+                     <name>REGION</name>
+                     <description>On writes, can specify the number of the region to update. On reads, returns bits [3:0] of MPU_RNR</description>
+                     <bitOffset>0</bitOffset>
+                     <bitWidth>3</bitWidth>
+                  </field>
+                  <field>
+                     <name>VALID</name>
+                     <description>On writes, indicates whether the region to update is specified by MPU_RNR.REGION, or by the REGION value specified in this write. When using the REGION value specified by this write, MPU_RNR.REGION is updated to this value</description>
+                     <bitOffset>4</bitOffset>
+                     <bitWidth>1</bitWidth>
+                  </field>
+                  <field>
+                     <name>ADDR</name>
+                     <description>Base address of the region</description>
+                     <bitOffset>5</bitOffset>
+                     <bitWidth>26</bitWidth>
+                  </field>
+               </fields>
+            </register>
+            <register>
+               <name>MPU_RASR_A2</name>
+               <addressOffset>0x20</addressOffset>
+               <size>0x20</size>
+               <access>read-write</access>
+               <fields>
+                  <field>
+                     <name>ENABLE</name>
+                     <description>Enables this region</description>
+                     <bitOffset>0</bitOffset>
+                     <bitWidth>1</bitWidth>
+                  </field>
+                  <field>
+                     <name>SIZE</name>
+                     <description>Indicates the region size</description>
+                     <bitOffset>1</bitOffset>
+                     <bitWidth>4</bitWidth>
+                  </field>
+                  <field>
+                     <name>SRD</name>
+                     <description>Subregion Disable</description>
+                     <bitOffset>8</bitOffset>
+                     <bitWidth>7</bitWidth>
+                  </field>
+                  <field>
+                     <name>B</name>
+                     <description>MPU Region Attribute field</description>
+                     <bitOffset>16</bitOffset>
+                     <bitWidth>1</bitWidth>
+                  </field>
+                  <field>
+                     <name>C</name>
+                     <description>MPU Region Attribute field</description>
+                     <bitOffset>17</bitOffset>
+                     <bitWidth>1</bitWidth>
+                  </field>
+                  <field>
+                     <name>S</name>
+                     <description>MPU Region Attribute field: Sharable</description>
+                     <bitOffset>18</bitOffset>
+                     <bitWidth>1</bitWidth>
+                  </field>
+                  <field>
+                     <name>TEX</name>
+                     <description>MPU Region Attribute field</description>
+                     <bitOffset>19</bitOffset>
+                     <bitWidth>2</bitWidth>
+                  </field>
+                  <field>
+                     <name>AP</name>
+                     <description>Access permissions</description>
+                     <bitOffset>24</bitOffset>
+                     <bitWidth>2</bitWidth>
+                  </field>
+                  <field>
+                     <name>XN</name>
+                     <description>Execute Never</description>
+                     <bitOffset>28</bitOffset>
+                     <bitWidth>1</bitWidth>
+                  </field>
+               </fields>
+            </register>
+            <register>
+               <name>MPU_RBAR_A3</name>
+               <addressOffset>0x24</addressOffset>
+               <size>0x20</size>
+               <access>read-write</access>
+               <fields>
+                  <field>
+                     <name>REGION</name>
+                     <description>On writes, can specify the number of the region to update. On reads, returns bits [3:0] of MPU_RNR</description>
+                     <bitOffset>0</bitOffset>
+                     <bitWidth>3</bitWidth>
+                  </field>
+                  <field>
+                     <name>VALID</name>
+                     <description>On writes, indicates whether the region to update is specified by MPU_RNR.REGION, or by the REGION value specified in this write. When using the REGION value specified by this write, MPU_RNR.REGION is updated to this value</description>
+                     <bitOffset>4</bitOffset>
+                     <bitWidth>1</bitWidth>
+                  </field>
+                  <field>
+                     <name>ADDR</name>
+                     <description>Base address of the region</description>
+                     <bitOffset>5</bitOffset>
+                     <bitWidth>26</bitWidth>
+                  </field>
+               </fields>
+            </register>
+            <register>
+               <name>MPU_RASR_A3</name>
+               <addressOffset>0x28</addressOffset>
+               <size>0x20</size>
+               <access>read-write</access>
+               <fields>
+                  <field>
+                     <name>ENABLE</name>
+                     <description>Enables this region</description>
+                     <bitOffset>0</bitOffset>
+                     <bitWidth>1</bitWidth>
+                  </field>
+                  <field>
+                     <name>SIZE</name>
+                     <description>Indicates the region size</description>
+                     <bitOffset>1</bitOffset>
+                     <bitWidth>4</bitWidth>
+                  </field>
+                  <field>
+                     <name>SRD</name>
+                     <description>Subregion Disable</description>
+                     <bitOffset>8</bitOffset>
+                     <bitWidth>7</bitWidth>
+                  </field>
+                  <field>
+                     <name>B</name>
+                     <description>MPU Region Attribute field</description>
+                     <bitOffset>16</bitOffset>
+                     <bitWidth>1</bitWidth>
+                  </field>
+                  <field>
+                     <name>C</name>
+                     <description>MPU Region Attribute field</description>
+                     <bitOffset>17</bitOffset>
+                     <bitWidth>1</bitWidth>
+                  </field>
+                  <field>
+                     <name>S</name>
+                     <description>MPU Region Attribute field: Sharable</description>
+                     <bitOffset>18</bitOffset>
+                     <bitWidth>1</bitWidth>
+                  </field>
+                  <field>
+                     <name>TEX</name>
+                     <description>MPU Region Attribute field</description>
+                     <bitOffset>19</bitOffset>
+                     <bitWidth>2</bitWidth>
+                  </field>
+                  <field>
+                     <name>AP</name>
+                     <description>Access permissions</description>
+                     <bitOffset>24</bitOffset>
+                     <bitWidth>2</bitWidth>
+                  </field>
+                  <field>
+                     <name>XN</name>
+                     <description>Execute Never</description>
+                     <bitOffset>28</bitOffset>
+                     <bitWidth>1</bitWidth>
+                  </field>
+               </fields>
+            </register>
+         </registers>
+      </peripheral>
+   </peripherals>
+</device>

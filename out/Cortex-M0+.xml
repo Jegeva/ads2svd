@@ -1,0 +1,977 @@
+<core_definition xmlns="http://www.arm.com/core_definition" xmlns:cr="http://www.arm.com/core_reg" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:tcf="http://com.arm.targetconfigurationeditor" xsi:schemaLocation="http://www.arm.com/core_definition ../Schemas/core_definition.xsd" architecture="ARMv6M">
+  <name>Cortex-M0+</name>
+  <internal_name>Cortex-M0+</internal_name>
+  <series>M</series>
+  <cr:register_list name="Core" display_by_default="true">
+
+    <register xmlns="http://www.arm.com/core_reg" access="RW" name="R0" size="4" xml:base="Registers/core_registers_m0+.xml">
+      <gui_name language="en">R0</gui_name>
+      <description language="en">General purpose register</description>
+    </register>
+    <register xmlns="http://www.arm.com/core_reg" access="RW" name="R1" size="4" xml:base="Registers/core_registers_m0+.xml">
+      <gui_name language="en">R1</gui_name>
+      <description language="en">General purpose register</description>
+    </register>
+    <register xmlns="http://www.arm.com/core_reg" access="RW" name="R2" size="4" xml:base="Registers/core_registers_m0+.xml">
+      <gui_name language="en">R2</gui_name>
+      <description language="en">General purpose register</description>
+    </register>
+    <register xmlns="http://www.arm.com/core_reg" access="RW" name="R3" size="4" xml:base="Registers/core_registers_m0+.xml">
+      <gui_name language="en">R3</gui_name>
+      <description language="en">General purpose register</description>
+    </register>
+    <register xmlns="http://www.arm.com/core_reg" access="RW" name="R4" size="4" xml:base="Registers/core_registers_m0+.xml">
+      <gui_name language="en">R4</gui_name>
+      <description language="en">General purpose register</description>
+    </register>
+    <register xmlns="http://www.arm.com/core_reg" access="RW" name="R5" size="4" xml:base="Registers/core_registers_m0+.xml">
+      <gui_name language="en">R5</gui_name>
+      <description language="en">General purpose register</description>
+    </register>
+    <register xmlns="http://www.arm.com/core_reg" access="RW" name="R6" size="4" xml:base="Registers/core_registers_m0+.xml">
+      <gui_name language="en">R6</gui_name>
+      <description language="en">General purpose register</description>
+    </register>
+    <register xmlns="http://www.arm.com/core_reg" access="RW" name="R7" size="4" xml:base="Registers/core_registers_m0+.xml">
+      <gui_name language="en">R7</gui_name>
+      <description language="en">General purpose register</description>
+    </register>
+    <register xmlns="http://www.arm.com/core_reg" access="RW" name="R8" size="4" xml:base="Registers/core_registers_m0+.xml">
+      <gui_name language="en">R8</gui_name>
+      <description language="en">General purpose register</description>
+    </register>
+    <register xmlns="http://www.arm.com/core_reg" access="RW" name="R9" size="4" xml:base="Registers/core_registers_m0+.xml">
+      <gui_name language="en">R9</gui_name>
+      <description language="en">General purpose register</description>
+    </register>
+    <register xmlns="http://www.arm.com/core_reg" access="RW" name="R10" size="4" xml:base="Registers/core_registers_m0+.xml">
+      <gui_name language="en">R10</gui_name>
+      <description language="en">General purpose register</description>
+    </register>
+    <register xmlns="http://www.arm.com/core_reg" access="RW" name="R11" size="4" xml:base="Registers/core_registers_m0+.xml">
+      <gui_name language="en">R11</gui_name>
+      <description language="en">General purpose register</description>
+    </register>
+    <register xmlns="http://www.arm.com/core_reg" access="RW" name="R12" size="4" xml:base="Registers/core_registers_m0+.xml">
+      <gui_name language="en">R12</gui_name>
+      <description language="en">General purpose register</description>
+    </register>
+    <register xmlns="http://www.arm.com/core_reg" access="RW" name="SP" size="4" xml:base="Registers/core_registers_m0+.xml">
+      <gui_name language="en">SP</gui_name>
+      <device_name type="cadi">R13</device_name>
+      <description language="en">Stack pointer</description>
+    </register>
+    <register xmlns="http://www.arm.com/core_reg" access="RW" name="SP_MAIN" size="4" xml:base="Registers/core_registers_m0+.xml">
+      <gui_name language="en">SP_main</gui_name>
+      <device_name type="cadi">R13_MAIN</device_name>
+      <description language="en">Main stack pointer</description>
+    </register>
+    <register xmlns="http://www.arm.com/core_reg" access="RW" name="SP_PROCESS" size="4" xml:base="Registers/core_registers_m0+.xml">
+      <gui_name language="en">SP_process</gui_name>
+      <device_name type="cadi">R13_PROCESS</device_name>
+      <description language="en">Process stack pointer</description>
+    </register>
+    <register xmlns="http://www.arm.com/core_reg" access="RW" name="LR" size="4" xml:base="Registers/core_registers_m0+.xml">
+      <gui_name language="en">LR</gui_name>
+      <device_name type="cadi">R14</device_name>
+      <description language="en">The Link Register receives the return address from PC when a Branch and Link (BL) instruction is executed</description>
+    </register>
+    <register xmlns="http://www.arm.com/core_reg" access="RW" name="PC" size="4" xml:base="Registers/core_registers_m0+.xml">
+      <gui_name language="en">PC</gui_name>
+      <device_name type="cadi">R15</device_name>
+      <description language="en">Program counter</description>
+    </register>
+    <register xmlns="http://www.arm.com/core_reg" access="RW" name="xPSR" size="4" xml:base="Registers/core_registers_m0+.xml">
+      <gui_name language="en">xPSR</gui_name>
+      <description language="en">Program status register</description>
+      <bitField conditional="false" name="N">
+        <gui_name language="en">N</gui_name>
+        <description language="en">Negative or less than flag</description>
+        <definition>[31]</definition>
+      </bitField>
+      <bitField conditional="false" name="Z">
+        <gui_name language="en">Z</gui_name>
+        <description language="en">Zero flag</description>
+        <definition>[30]</definition>
+      </bitField>
+      <bitField conditional="false" name="C">
+        <gui_name language="en">C</gui_name>
+        <description language="en">Carry or borrow flag</description>
+        <definition>[29]</definition>
+      </bitField>
+      <bitField conditional="false" name="V">
+        <gui_name language="en">V</gui_name>
+        <description language="en">Overflow flag</description>
+        <definition>[28]</definition>
+      </bitField>
+      <bitField conditional="false" name="T">
+        <gui_name language="en">T</gui_name>
+        <description language="en">Thumb state</description>
+        <definition>[24]</definition>
+      </bitField>
+      <bitField access="RO" conditional="false" enumerationId="CORE_XPSR_EXCEPTION_NUMBER" name="EXCEPTION_NUMBER">
+        <gui_name language="en">Exception Number</gui_name>
+        <description language="en">Number of executing exception</description>
+        <definition>[5:0]</definition>
+      </bitField>
+    </register>
+    <register xmlns="http://www.arm.com/core_reg" access="RW" name="PRIMASK" size="4" xml:base="Registers/core_registers_m0+.xml">
+      <gui_name language="en">PRIMASK</gui_name>
+      <description language="en">Special-Purpose Priority Mask Register</description>
+      <bitField conditional="false" name="PM">
+        <gui_name language="en">PM</gui_name>
+        <description language="en">When set, raises execution priority to 0</description>
+        <definition>[0]</definition>
+      </bitField>
+    </register>
+    <register xmlns="http://www.arm.com/core_reg" access="RW" name="CONTROL" size="4" xml:base="Registers/core_registers_m0+.xml">
+      <gui_name language="en">CONTROL</gui_name>
+      <description language="en">The special-purpose CONTROL register.</description>
+      <bitField conditional="false" name="SPSEL" enumerationId="CORE_CONTROL_SPSEL">
+        <gui_name language="en">SPSEL</gui_name>
+        <description language="en">Defines the stack to use</description>
+        <definition>[1]</definition>
+      </bitField>
+      <bitField conditional="false" name="NPRIV" enumerationId="CORE_CONTROL_NPRIV">
+        <gui_name language="en">NPRIV</gui_name>
+        <description language="en">Defines the execution privilege in Thread mode</description>
+        <definition>[0]</definition>
+      </bitField>
+    </register>
+
+
+    <tcf:enumeration xmlns:tcf="http://com.arm.targetconfigurationeditor" name="CORE_XPSR_EXCEPTION_NUMBER" xml:base="Registers/core_registers_m0+.xml">
+      <tcf:enumItem name="Reset" number="0x001">
+        <tcf:gui_name>Reset</tcf:gui_name>
+      </tcf:enumItem>
+      <tcf:enumItem name="NMI" number="0x002">
+        <tcf:gui_name>NMI</tcf:gui_name>
+      </tcf:enumItem>
+      <tcf:enumItem name="Hard_Fault" number="0x003">
+        <tcf:gui_name>Hard Fault</tcf:gui_name>
+      </tcf:enumItem>
+      <tcf:enumItem name="SVCall" number="0x00B">
+        <tcf:gui_name>SVCall</tcf:gui_name>
+      </tcf:enumItem>
+      <tcf:enumItem name="PendSV" number="0x00E">
+        <tcf:gui_name>PendSV</tcf:gui_name>
+      </tcf:enumItem>
+      <tcf:enumItem name="SysTck" number="0x00F">
+        <tcf:gui_name>SysTck</tcf:gui_name>
+      </tcf:enumItem>
+      <tcf:enumItem name="NONE" number="0x000">
+        <tcf:gui_name>None</tcf:gui_name>
+      </tcf:enumItem>
+      <tcf:enumItem name="External_Interrupt_0x00" number="0x010">
+        <tcf:gui_name>External Interrupt 0x00</tcf:gui_name>
+      </tcf:enumItem>
+      <tcf:enumItem name="External_Interrupt_0x01" number="0x011">
+        <tcf:gui_name>External Interrupt 0x01</tcf:gui_name>
+      </tcf:enumItem>
+      <tcf:enumItem name="External_Interrupt_0x02" number="0x012">
+        <tcf:gui_name>External Interrupt 0x02</tcf:gui_name>
+      </tcf:enumItem>
+      <tcf:enumItem name="External_Interrupt_0x03" number="0x013">
+        <tcf:gui_name>External Interrupt 0x03</tcf:gui_name>
+      </tcf:enumItem>
+      <tcf:enumItem name="External_Interrupt_0x04" number="0x014">
+        <tcf:gui_name>External Interrupt 0x04</tcf:gui_name>
+      </tcf:enumItem>
+      <tcf:enumItem name="External_Interrupt_0x05" number="0x015">
+        <tcf:gui_name>External Interrupt 0x05</tcf:gui_name>
+      </tcf:enumItem>
+      <tcf:enumItem name="External_Interrupt_0x06" number="0x016">
+        <tcf:gui_name>External Interrupt 0x06</tcf:gui_name>
+      </tcf:enumItem>
+      <tcf:enumItem name="External_Interrupt_0x07" number="0x017">
+        <tcf:gui_name>External Interrupt 0x07</tcf:gui_name>
+      </tcf:enumItem>
+      <tcf:enumItem name="External_Interrupt_0x08" number="0x018">
+        <tcf:gui_name>External Interrupt 0x08</tcf:gui_name>
+      </tcf:enumItem>
+      <tcf:enumItem name="External_Interrupt_0x09" number="0x019">
+        <tcf:gui_name>External Interrupt 0x09</tcf:gui_name>
+      </tcf:enumItem>
+      <tcf:enumItem name="External_Interrupt_0x0A" number="0x01A">
+        <tcf:gui_name>External Interrupt 0x0A</tcf:gui_name>
+      </tcf:enumItem>
+      <tcf:enumItem name="External_Interrupt_0x0B" number="0x01B">
+        <tcf:gui_name>External Interrupt 0x0B</tcf:gui_name>
+      </tcf:enumItem>
+      <tcf:enumItem name="External_Interrupt_0x0C" number="0x01C">
+        <tcf:gui_name>External Interrupt 0x0C</tcf:gui_name>
+      </tcf:enumItem>
+      <tcf:enumItem name="External_Interrupt_0x0D" number="0x01D">
+        <tcf:gui_name>External Interrupt 0x0D</tcf:gui_name>
+      </tcf:enumItem>
+      <tcf:enumItem name="External_Interrupt_0x0E" number="0x01E">
+        <tcf:gui_name>External Interrupt 0x0E</tcf:gui_name>
+      </tcf:enumItem>
+      <tcf:enumItem name="External_Interrupt_0x0F" number="0x01F">
+        <tcf:gui_name>External Interrupt 0x0F</tcf:gui_name>
+      </tcf:enumItem>
+      <tcf:enumItem name="External_Interrupt_0x10" number="0x020">
+        <tcf:gui_name>External Interrupt 0x10</tcf:gui_name>
+      </tcf:enumItem>
+      <tcf:enumItem name="External_Interrupt_0x11" number="0x021">
+        <tcf:gui_name>External Interrupt 0x11</tcf:gui_name>
+      </tcf:enumItem>
+      <tcf:enumItem name="External_Interrupt_0x12" number="0x022">
+        <tcf:gui_name>External Interrupt 0x12</tcf:gui_name>
+      </tcf:enumItem>
+      <tcf:enumItem name="External_Interrupt_0x13" number="0x023">
+        <tcf:gui_name>External Interrupt 0x13</tcf:gui_name>
+      </tcf:enumItem>
+      <tcf:enumItem name="External_Interrupt_0x14" number="0x024">
+        <tcf:gui_name>External Interrupt 0x14</tcf:gui_name>
+      </tcf:enumItem>
+      <tcf:enumItem name="External_Interrupt_0x15" number="0x025">
+        <tcf:gui_name>External Interrupt 0x15</tcf:gui_name>
+      </tcf:enumItem>
+      <tcf:enumItem name="External_Interrupt_0x16" number="0x026">
+        <tcf:gui_name>External Interrupt 0x16</tcf:gui_name>
+      </tcf:enumItem>
+      <tcf:enumItem name="External_Interrupt_0x17" number="0x027">
+        <tcf:gui_name>External Interrupt 0x17</tcf:gui_name>
+      </tcf:enumItem>
+      <tcf:enumItem name="External_Interrupt_0x18" number="0x028">
+        <tcf:gui_name>External Interrupt 0x18</tcf:gui_name>
+      </tcf:enumItem>
+      <tcf:enumItem name="External_Interrupt_0x19" number="0x029">
+        <tcf:gui_name>External Interrupt 0x19</tcf:gui_name>
+      </tcf:enumItem>
+      <tcf:enumItem name="External_Interrupt_0x1A" number="0x02A">
+        <tcf:gui_name>External Interrupt 0x1A</tcf:gui_name>
+      </tcf:enumItem>
+      <tcf:enumItem name="External_Interrupt_0x1B" number="0x02B">
+        <tcf:gui_name>External Interrupt 0x1B</tcf:gui_name>
+      </tcf:enumItem>
+      <tcf:enumItem name="External_Interrupt_0x1C" number="0x02C">
+        <tcf:gui_name>External Interrupt 0x1C</tcf:gui_name>
+      </tcf:enumItem>
+      <tcf:enumItem name="External_Interrupt_0x1D" number="0x02D">
+        <tcf:gui_name>External Interrupt 0x1D</tcf:gui_name>
+      </tcf:enumItem>
+      <tcf:enumItem name="External_Interrupt_0x1E" number="0x02E">
+        <tcf:gui_name>External Interrupt 0x1E</tcf:gui_name>
+      </tcf:enumItem>
+      <tcf:enumItem name="External_Interrupt_0x1F" number="0x02F">
+        <tcf:gui_name>External Interrupt 0x1F</tcf:gui_name>
+      </tcf:enumItem>
+    </tcf:enumeration>
+    <tcf:enumeration xmlns:tcf="http://com.arm.targetconfigurationeditor" name="CORE_CONTROL_SPSEL" xml:base="Registers/core_registers_m0+.xml">
+      <tcf:enumItem name="SP_main_in_use" number="0">
+        <tcf:gui_name>SP_main is the current stack pointer</tcf:gui_name>
+      </tcf:enumItem>
+      <tcf:enumItem name="SP_process_in_use" number="1">
+        <tcf:gui_name>SP_process is the current stack pointer</tcf:gui_name>
+      </tcf:enumItem>
+    </tcf:enumeration>
+    <tcf:enumeration xmlns:tcf="http://com.arm.targetconfigurationeditor" name="CORE_CONTROL_NPRIV" xml:base="Registers/core_registers_m0+.xml">
+      <tcf:enumItem number="0" name="Privileged_access">
+        <tcf:gui_name>Privileged access</tcf:gui_name>
+      </tcf:enumItem>
+      <tcf:enumItem number="1" name="Unprivileged_access">
+        <tcf:gui_name>Unprivileged access</tcf:gui_name>
+      </tcf:enumItem>
+    </tcf:enumeration>
+
+  </cr:register_list>
+  <cr:register_list name="System">
+
+    <peripheral xmlns="http://www.arm.com/core_reg" name="SysTick" offset="0x00000000" xml:base="Registers/system_registers_m0+.xml">
+      <gui_name language="en">SysTick</gui_name>
+      <description language="en">System Timer registers</description>
+      <register access="RW" name="SYST_CSR" offset="0xE000E010" size="4">
+        <gui_name language="en">SysTick Control and Status</gui_name>
+        <description language="en">Controls the system timer and provides status data</description>
+        <bitField access="RO" conditional="false" enumerationId="SYST_CSR_COUNTFLAG" name="COUNTFLAG">
+          <gui_name language="en">COUNTFLAG</gui_name>
+          <description language="en">Indicates whether the counter has counted to 0 since the last read of this register</description>
+          <definition>[16]</definition>
+        </bitField>
+        <bitField conditional="false" enumerationId="SYST_CSR_CLKSOURCE" name="CLKSOURCE">
+          <gui_name language="en">CLKSOURCE</gui_name>
+          <description language="en">Indicates the SysTick clock source</description>
+          <definition>[2]</definition>
+        </bitField>
+        <bitField conditional="false" enumerationId="SYST_CSR_TICKINT" name="TICKINT">
+          <gui_name language="en">TICKINT</gui_name>
+          <description language="en">Indicates whether counting to 0 causes the status of the SysTick exception to change to pending</description>
+          <definition>[1]</definition>
+        </bitField>
+        <bitField conditional="false" enumerationId="SYST_CSR_ENABLE" name="ENABLE">
+          <gui_name language="en">ENABLE</gui_name>
+          <description language="en">Indicates the enabled status of the SysTick counter</description>
+          <definition>[0]</definition>
+        </bitField>
+      </register>
+      <register access="RW" name="SYST_RVR" offset="0xE000E014" size="4">
+        <gui_name language="en">SysTick Reload Value</gui_name>
+        <description language="en">Sets or reads the reload value of the SYST_CVR register</description>
+        <bitField conditional="false" name="RELOAD">
+          <gui_name language="en">RELOAD</gui_name>
+          <description language="en">The value to load into the SYST_CVR register when the counter reaches 0</description>
+          <definition>[23:0]</definition>
+        </bitField>
+      </register>
+      <register access="RW" name="SYST_CVR" offset="0xE000E018" size="4">
+        <gui_name language="en">SysTick Current Value</gui_name>
+        <description language="en">Reads or clears the current counter value</description>
+        <bitField conditional="false" name="CURRENT">
+          <gui_name language="en">CURRENT</gui_name>
+          <description language="en">This is the value of the counter at the time it is sampled</description>
+          <definition>[23:0]</definition>
+        </bitField>
+      </register>
+      <register access="RW" name="SYST_CALIB" offset="0xE000E01C" size="4">
+        <gui_name language="en">SysTick Calibration Value</gui_name>
+        <description language="en">Reads the calibration value and parameters for SysTick</description>
+        <bitField conditional="false" enumerationId="SYST_CALIB_NOREF" name="NOREF">
+          <gui_name language="en">NOREF</gui_name>
+          <description language="en">Indicates whether the IMPLEMENTATION DEFINED reference clock is provided</description>
+          <definition>[31]</definition>
+        </bitField>
+        <bitField conditional="false" enumerationId="SYST_CALIB_SKEW" name="SKEW">
+          <gui_name language="en">SKEW</gui_name>
+          <description language="en">Indicates whether the 10ms calibration value is exact</description>
+          <definition>[30]</definition>
+        </bitField>
+        <bitField conditional="false" name="TENMS">
+          <gui_name language="en">TENMS</gui_name>
+          <description language="en">Optionally, holds a reload value to be used for 10ms (100Hz) timing, subject to system clock skew errors</description>
+          <definition>[23:0]</definition>
+        </bitField>
+      </register>
+    </peripheral>
+    <peripheral xmlns="http://www.arm.com/core_reg" name="Control" offset="0x00000000" xml:base="Registers/system_registers_m0+.xml">
+      <gui_name language="en">System Control</gui_name>
+      <description language="en">System Control registers</description>
+      <register access="RW" name="ICSR" offset="0xE000ED04" size="4">
+        <gui_name language="en">Interrupt Control State</gui_name>
+        <description language="en">Controls and provides status information</description>
+        <bitField conditional="false" enumerationId="ICSR_NMIPENDSET" name="NMIPENDSET">
+          <gui_name language="en">NMIPENDSET</gui_name>
+          <description language="en">Activates an NMI exception or reads back the current state</description>
+          <definition>[31]</definition>
+        </bitField>
+        <bitField conditional="false" enumerationId="ICSR_PENDSET" name="PENDSVSET">
+          <gui_name language="en">PENDSVSET</gui_name>
+          <description language="en">Sets a pending PendSV interrupt or reads back the current state</description>
+          <definition>[28]</definition>
+        </bitField>
+        <bitField access="WO" conditional="false" enumerationId="ICSR_PENDCLR" name="PENDSVCLR">
+          <gui_name language="en">PENDSVCLR</gui_name>
+          <description language="en">Clears a pending PendSV interrupt</description>
+          <definition>[27]</definition>
+        </bitField>
+        <bitField conditional="false" enumerationId="ICSR_PENDSET" name="PENDSTSET">
+          <gui_name language="en">PENDSTSET</gui_name>
+          <description language="en">Sets a pending SysTick or reads back the current state</description>
+          <definition>[26]</definition>
+        </bitField>
+        <bitField access="WO" conditional="false" enumerationId="ICSR_PENDCLR" name="PENDSTCLR">
+          <gui_name language="en">PENDSTCLR</gui_name>
+          <description language="en">Clears a pending SysTick, whether set here or by the timer hardware</description>
+          <definition>[25]</definition>
+        </bitField>
+        <bitField access="RO" conditional="false" enumerationId="ICSR_PREEMPT" name="ISRPREEMPT">
+          <gui_name language="en">ISRPREEMPT</gui_name>
+          <description language="en">Indicates whether a pending exception will be serviced on exit from debug halt state</description>
+          <definition>[23]</definition>
+        </bitField>
+        <bitField access="RO" conditional="false" enumerationId="ICSR_PENDING" name="ISRPENDING">
+          <gui_name language="en">ISRPENDING</gui_name>
+          <description language="en">Indicates if an external configurable, NVIC generated, interrupt is pending</description>
+          <definition>[22]</definition>
+        </bitField>
+        <bitField access="RO" conditional="false" name="VECTPENDING">
+          <gui_name language="en">VECTPENDING</gui_name>
+          <description language="en">The exception number for the highest priority pending exception. 0 indicates no pending exceptions</description>
+          <definition>[20:12]</definition>
+        </bitField>
+        <bitField access="RO" conditional="false" name="VECTACTIVE">
+          <gui_name language="en">VECTACTIVE</gui_name>
+          <description language="en">The exception number for the current executing exception</description>
+          <definition>[8:0]</definition>
+        </bitField>
+      </register>
+      <register access="RW" name="AIRCR" offset="0xE000ED0C" size="4">
+        <gui_name language="en">Application Interrupt and Reset Control</gui_name>
+        <description language="en">Sets or returns interrupt control data</description>
+        <bitField access="WO" conditional="false" name="VECTKEY">
+          <gui_name language="en">VECTKEY</gui_name>
+          <description language="en">Vector Key</description>
+          <definition>[31:16]</definition>
+        </bitField>
+        <bitField access="RO" conditional="false" name="VECTKEYSTAT">
+          <gui_name language="en">VECTKEYSTAT</gui_name>
+          <description language="en">UNKNOWN</description>
+          <definition>[31:16]</definition>
+        </bitField>
+        <bitField access="RO" conditional="false" enumerationId="AIRCR_ENDIANNESS" name="ENDIANNESS">
+          <gui_name language="en">ENDIANNESS</gui_name>
+          <description language="en">Indicates the memory system data endianness</description>
+          <definition>[15]</definition>
+        </bitField>
+        <bitField access="WO" conditional="false" enumerationId="AIRCR_RESETREQ" name="SYSRESETREQ">
+          <gui_name language="en">SYSRESETREQ</gui_name>
+          <description language="en">System Reset Request</description>
+          <definition>[2]</definition>
+        </bitField>
+        <bitField access="WO" conditional="false" enumerationId="AIRCR_VECTCLR" name="VECTCLRACTIVE">
+          <gui_name language="en">VECTCLRACTIVE</gui_name>
+          <description language="en">Clears all active state information for fixed and configurable exceptions</description>
+          <definition>[1]</definition>
+        </bitField>
+      </register>
+      <register access="RO" name="CCR" offset="0xE000ED14" size="4">
+        <gui_name language="en">Configuration and Control</gui_name>
+        <description language="en">Returns configuration and control data</description>
+        <bitField conditional="false" name="STKALIGN">
+          <gui_name language="en">STKALIGN</gui_name>
+          <description language="en">On exception entry, the SP used prior to the exception is adjusted to be 8-byte aligned and the context to restore it is saved. The SP is restored on the associated exception return</description>
+          <definition>[9]</definition>
+        </bitField>
+        <bitField conditional="false" name="UNALIGN_TRP">
+          <gui_name language="en">UNALIGN_TRP</gui_name>
+          <description language="en">Unaligned word and halfword accesses generate a HardFault exception</description>
+          <definition>[3]</definition>
+        </bitField>
+      </register>
+      <register access="RW" name="SHPR2" offset="0xE000ED1C" size="4">
+        <gui_name language="en">System Handler Priority Register 2</gui_name>
+        <description language="en">Sets or returns priority for system handler 11</description>
+        <bitField conditional="false" name="PRI_11">
+          <gui_name language="en">PRI_11</gui_name>
+          <description language="en">Priority of system handler 11, SVCall</description>
+          <definition>[31:30]</definition>
+        </bitField>
+      </register>
+      <register access="RW" name="SHPR3" offset="0xE000ED20" size="4">
+        <gui_name language="en">System Handler Priority Register 3</gui_name>
+        <description language="en">Sets or returns priority for system handlers 14-15</description>
+        <bitField conditional="false" name="PRI_15">
+          <gui_name language="en">PRI_15</gui_name>
+          <description language="en">Priority of system handler 15, SysTick</description>
+          <definition>[31:30]</definition>
+        </bitField>
+        <bitField conditional="false" name="PRI_14">
+          <gui_name language="en">PRI_14</gui_name>
+          <description language="en">Priority of system handler 14, PendSV</description>
+          <definition>[23:22]</definition>
+        </bitField>
+      </register>
+      <register access="RW" name="SHCSR" offset="0xE000ED24" size="4">
+        <gui_name language="en">System Handler Control and State</gui_name>
+        <description language="en">Controls and provides the status of system handlers</description>
+        <bitField conditional="false" enumerationId="SHCSR_SVCCALLPEND" name="SVCALLPENDED">
+          <gui_name language="en">SVCALLPENDED</gui_name>
+          <description language="en">This bit reflects the pending state on a read, and updates the pending state, to the value written, on a write</description>
+          <definition>[15]</definition>
+        </bitField>
+      </register>
+      <register access="RW" name="VTOR" offset="0xE000ED08" size="4">
+        <gui_name language="en">Vector Table Offset</gui_name>
+        <description language="en">Holds the vector table offset address</description>
+        <bitField conditional="false" name="TBLOFF">
+          <gui_name language="en">TBLOFF</gui_name>
+          <description language="en">Bits [31:7] of the vector table address</description>
+          <definition>[31:7]</definition>
+        </bitField>
+        <bitField access="RO" conditional="false" name="TBLBASE" enumerationId="VTOR_TBLBASE">
+          <gui_name language="en">TBLBASE</gui_name>
+          <description language="en">Determines whether the vector table is in the code or SRAM memory region</description>
+          <definition>[29]</definition>
+        </bitField>
+      </register>
+    </peripheral>
+    <peripheral xmlns="http://www.arm.com/core_reg" name="ID" offset="0x00000000" xml:base="Registers/system_registers_m0+.xml">
+      <gui_name language="en">ID</gui_name>
+      <description language="en">ID registers</description>
+      <register access="RO" name="CPUID" offset="0xE000ED00" size="4">
+        <gui_name language="en">CPUID Base</gui_name>
+        <description language="en">Contains the part number, version, and implementation information that is specific to this processor</description>
+        <bitField conditional="false" name="Implementer">
+          <gui_name language="en">Implementer</gui_name>
+          <description language="en">Implementer code</description>
+          <definition>[31:24]</definition>
+        </bitField>
+        <bitField conditional="false" name="Variant">
+          <gui_name language="en">Variant</gui_name>
+          <description language="en">Implementation defined</description>
+          <definition>[23:20]</definition>
+        </bitField>
+        <bitField conditional="false" name="Constant">
+          <gui_name language="en">Constant</gui_name>
+          <description language="en">Indicates the architecture</description>
+          <definition>[19:16]</definition>
+        </bitField>
+        <bitField conditional="false" name="Partno">
+          <gui_name language="en">Partno</gui_name>
+          <description language="en">Indicates part number</description>
+          <definition>[15:4]</definition>
+        </bitField>
+        <bitField conditional="false" name="Revision">
+          <gui_name language="en">Revision</gui_name>
+          <description language="en">Indicates revision</description>
+          <definition>[3:0]</definition>
+        </bitField>
+      </register>
+    </peripheral>
+    <peripheral xmlns="http://www.arm.com/core_reg" name="MPU" offset="0x00000000" xml:base="Registers/system_registers_m0+.xml">
+      <gui_name language="en">MPU</gui_name>
+      <description language="en">Memory Protection Unit registers</description>
+      <register access="RO" name="MPU_TYPE" offset="0xE000ED90" size="4">
+        <gui_name language="en">MPU Type</gui_name>
+        <description language="en">The MPU Type Register indicates how many regions the MPU supports</description>
+        <bitField conditional="false" name="IREGION">
+          <gui_name language="en">IREGION</gui_name>
+          <description language="en">Instruction region, not supported</description>
+          <definition>[23:16]</definition>
+        </bitField>
+        <bitField conditional="false" name="DREGION">
+          <gui_name language="en">DREGION</gui_name>
+          <description language="en">Number of regions supported by the MPU</description>
+          <definition>[15:8]</definition>
+        </bitField>
+        <bitField conditional="false" name="SEPARATE">
+          <gui_name language="en">SEPARATE</gui_name>
+          <description language="en">Indicates support for separate instruction and data address maps</description>
+          <definition>[0]</definition>
+        </bitField>
+      </register>
+      <register access="RW" name="MPU_CTRL" offset="0xE000ED94" size="4">
+        <gui_name language="en">MPU Control</gui_name>
+        <description language="en">Enables the MPU, and when the MPU is enabled, controls whether the default memory map is enabled as a background region for privileged accesses, and whether the MPU is enabled for HardFaults and NMIs</description>
+        <bitField conditional="false" enumerationId="GENERIC_DISABLED_ENABLED" name="PRIVDEFENA">
+          <gui_name language="en">PRIVDEFENA</gui_name>
+          <description language="en">Privileged default memory map enable (when ENABLE = 1)</description>
+          <definition>[2]</definition>
+        </bitField>
+        <bitField conditional="false" enumerationId="GENERIC_DISABLED_ENABLED" name="HFNMIENA">
+          <gui_name language="en">HFNMIENA</gui_name>
+          <description language="en">MPU HardFault and NMI enable (when ENABLE = 1)</description>
+          <definition>[1]</definition>
+        </bitField>
+        <bitField conditional="false" enumerationId="GENERIC_DISABLED_ENABLED" name="ENABLE">
+          <gui_name language="en">ENABLE</gui_name>
+          <description language="en">Enables the MPU</description>
+          <definition>[0]</definition>
+        </bitField>
+      </register>
+      <register access="RW" name="MPU_RNR" offset="0xE000ED98" size="4">
+        <gui_name language="en">MPU Region Number</gui_name>
+        <description language="en">Selects the region currently accessed by MPU_RBAR and MPU_RASR</description>
+        <bitField conditional="false" name="REGION">
+          <gui_name language="en">REGION</gui_name>
+          <description language="en">Indicates the memory region accessed by MPU_RBAR and MPU_RASR</description>
+          <definition>[7:0]</definition>
+        </bitField>
+      </register>
+      <register access="RW" name="MPU_RBAR" offset="0xE000ED9C" size="4">
+        <gui_name language="en">MPU Region Base Address</gui_name>
+        <description language="en">Holds the base address of the region identified by MPU_RNR</description>
+        <bitField conditional="false" name="ADDR">
+          <gui_name language="en">ADDR</gui_name>
+          <description language="en">Base address of the region</description>
+          <definition>[31:8]</definition>
+        </bitField>
+        <bitField conditional="false" name="VALID">
+          <gui_name language="en">VALID</gui_name>
+          <description language="en">On writes to the register, indicates whether the write must update the base address of the region identified by the REGION field</description>
+          <definition>[4]</definition>
+        </bitField>
+        <bitField conditional="false" name="REGION">
+          <gui_name language="en">REGION</gui_name>
+          <description language="en">On writes, can specify the number of the region to update, on reads, returns bits [3:0] of MPU_RNR</description>
+          <definition>[3:0]</definition>
+        </bitField>
+      </register>
+      <register access="RW" name="MPU_RASR" offset="0xE000EDA0" size="4">
+        <gui_name language="en">MPU Region Attribute and Size</gui_name>
+        <description language="en">Defines the size, access behavior, and memory type of the region identified by MPU_RNR, and enables that region</description>
+        <bitField conditional="false" enumerationId="MPU_RASR_XN" name="XN">
+          <gui_name language="en">XN</gui_name>
+          <description language="en">Execute Never - Indicates whether the processor can execute instructions from the region</description>
+          <definition>[28]</definition>
+        </bitField>
+        <bitField conditional="false" enumerationId="MPU_RASR_AP" name="AP">
+          <gui_name language="en">AP</gui_name>
+          <description language="en">Access and privilege properties of the region</description>
+          <definition>[26:24]</definition>
+        </bitField>
+        <bitField conditional="false" enumerationId="MPU_RASR_TEX_S_C_B" name="TEX_S_C_B">
+          <gui_name language="en">TEX_S_C_B</gui_name>
+          <description language="en">Memory type, cacheable and shareable properties of the region</description>
+          <definition>[21:16]</definition>
+        </bitField>
+        <bitField conditional="false" name="SRD">
+          <gui_name language="en">SRD</gui_name>
+          <description language="en">Subregion Disable</description>
+          <definition>[15:8]</definition>
+        </bitField>
+        <bitField conditional="false" enumerationId="MPU_RASR_SIZE" name="SIZE">
+          <gui_name language="en">SIZE</gui_name>
+          <description language="en">Indicates the region size</description>
+          <definition>[5:1]</definition>
+        </bitField>
+        <bitField conditional="false" enumerationId="GENERIC_DISABLED_ENABLED" name="ENABLE">
+          <gui_name language="en">ENABLE</gui_name>
+          <description language="en">Enables this region (when the MPU is enabled)</description>
+          <definition>[0]</definition>
+        </bitField>
+      </register>
+    </peripheral>
+
+
+    <peripheral xmlns="http://www.arm.com/core_reg" name="NVIC" offset="0x00000000" xml:base="Registers/nvic_registers_v6m.xml">
+      <gui_name language="en">NVIC</gui_name>
+      <description language="en">Nested Vectored Interrupt Controller registers</description>
+      <register access="RW" name="NVIC_ISER0" size="4" offset="0xE000E100">
+        <gui_name language="en">Interrupt Set-Enable 0</gui_name>
+        <description language="en">Enables, or reads the enable state of a group of interrupts</description>
+      </register>
+      <register access="RW" name="NVIC_ICER0" size="4" offset="0xE000E180">
+        <gui_name language="en">Interrupt Clear-Enable 0</gui_name>
+        <description language="en">Disables, or reads the enable state of a group of interrupts</description>
+      </register>
+      <register access="RW" name="NVIC_ISPR0" size="4" offset="0xE000E200">
+        <gui_name language="en">Interrupt Set-Pending 0</gui_name>
+        <description language="en">For a group of interrupts, changes interrupt status to pending, or shows the current pending
+status</description>
+      </register>
+      <register access="RW" name="NVIC_ICPR0" size="4" offset="0xE000E280">
+        <gui_name language="en">Interrupt Set-Pending 0</gui_name>
+        <description language="en">For a group of interrupts, clears the interrupt pending status, or shows the current pending
+status</description>
+      </register>
+      <register access="RW" name="NVIC_IABR0" size="4" offset="0xE000E300">
+        <gui_name language="en">Interrupt Active Bit 0</gui_name>
+        <description language="en">For a group of 32 interrupts, shows whether each interrupt is active</description>
+      </register>
+      <register access="RW" name="NVIC_IPR0" size="4" offset="0xE000E400">
+        <gui_name language="en">Interrupt Priority Register 0</gui_name>
+        <description language="en">Sets or reads interrupt priorities</description>
+      </register>
+      <register access="RW" name="NVIC_IPR1" size="4" offset="0xE000E404">
+        <gui_name language="en">Interrupt Priority Register 1</gui_name>
+        <description language="en">Sets or reads interrupt priorities</description>
+      </register>
+      <register access="RW" name="NVIC_IPR2" size="4" offset="0xE000E408">
+        <gui_name language="en">Interrupt Priority Register 2</gui_name>
+        <description language="en">Sets or reads interrupt priorities</description>
+      </register>
+      <register access="RW" name="NVIC_IPR3" size="4" offset="0xE000E40C">
+        <gui_name language="en">Interrupt Priority Register 3</gui_name>
+        <description language="en">Sets or reads interrupt priorities</description>
+      </register>
+      <register access="RW" name="NVIC_IPR4" size="4" offset="0xE000E410">
+        <gui_name language="en">Interrupt Priority Register 4</gui_name>
+        <description language="en">Sets or reads interrupt priorities</description>
+      </register>
+      <register access="RW" name="NVIC_IPR5" size="4" offset="0xE000E414">
+        <gui_name language="en">Interrupt Priority Register 5</gui_name>
+        <description language="en">Sets or reads interrupt priorities</description>
+      </register>
+      <register access="RW" name="NVIC_IPR6" size="4" offset="0xE000E418">
+        <gui_name language="en">Interrupt Priority Register 6</gui_name>
+        <description language="en">Sets or reads interrupt priorities</description>
+      </register>
+      <register access="RW" name="NVIC_IPR7" size="4" offset="0xE000E41C">
+        <gui_name language="en">Interrupt Priority Register 7</gui_name>
+        <description language="en">Sets or reads interrupt priorities</description>
+      </register>
+    </peripheral>
+
+
+    <tcf:enumeration xmlns:tcf="http://com.arm.targetconfigurationeditor" name="MPU_RASR_SIZE" xml:base="Registers/system_registers_m0+.xml">
+      <tcf:enumItem number="0x0" name="Reserved">
+        <tcf:gui_name>Reserved</tcf:gui_name>
+      </tcf:enumItem>
+      <tcf:enumItem number="0x1" name="Reserved_">
+        <tcf:gui_name>Reserved</tcf:gui_name>
+      </tcf:enumItem>
+      <tcf:enumItem number="0x2" name="Reserved__">
+        <tcf:gui_name>Reserved</tcf:gui_name>
+      </tcf:enumItem>
+      <tcf:enumItem number="0x3" name="Reserved___">
+        <tcf:gui_name>Reserved</tcf:gui_name>
+      </tcf:enumItem>
+      <tcf:enumItem number="0x4" name="Reserved____">
+        <tcf:gui_name>Reserved</tcf:gui_name>
+      </tcf:enumItem>
+      <tcf:enumItem number="0x5" name="Reserved_____">
+        <tcf:gui_name>Reserved</tcf:gui_name>
+      </tcf:enumItem>
+      <tcf:enumItem number="0x6" name="Reserved______">
+        <tcf:gui_name>Reserved</tcf:gui_name>
+      </tcf:enumItem>
+      <tcf:enumItem number="0x7" name="_256B">
+        <tcf:gui_name>256B</tcf:gui_name>
+      </tcf:enumItem>
+      <tcf:enumItem number="0x8" name="_512B">
+        <tcf:gui_name>512B</tcf:gui_name>
+      </tcf:enumItem>
+      <tcf:enumItem number="0x9" name="_1KB">
+        <tcf:gui_name>1KB</tcf:gui_name>
+      </tcf:enumItem>
+      <tcf:enumItem number="0xa" name="_2KB">
+        <tcf:gui_name>2KB</tcf:gui_name>
+      </tcf:enumItem>
+      <tcf:enumItem number="0xb" name="_4KB">
+        <tcf:gui_name>4KB</tcf:gui_name>
+      </tcf:enumItem>
+      <tcf:enumItem number="0xc" name="_8KB">
+        <tcf:gui_name>8KB</tcf:gui_name>
+      </tcf:enumItem>
+      <tcf:enumItem number="0xd" name="_16KB">
+        <tcf:gui_name>16KB</tcf:gui_name>
+      </tcf:enumItem>
+      <tcf:enumItem number="0xe" name="_32KB">
+        <tcf:gui_name>32KB</tcf:gui_name>
+      </tcf:enumItem>
+      <tcf:enumItem number="0xf" name="_64KB">
+        <tcf:gui_name>64KB</tcf:gui_name>
+      </tcf:enumItem>
+      <tcf:enumItem number="0x10" name="_128KB">
+        <tcf:gui_name>128KB</tcf:gui_name>
+      </tcf:enumItem>
+      <tcf:enumItem number="0x11" name="_256KB">
+        <tcf:gui_name>256KB</tcf:gui_name>
+      </tcf:enumItem>
+      <tcf:enumItem number="0x12" name="_512KB">
+        <tcf:gui_name>512KB</tcf:gui_name>
+      </tcf:enumItem>
+      <tcf:enumItem number="0x13" name="_1MB">
+        <tcf:gui_name>1MB</tcf:gui_name>
+      </tcf:enumItem>
+      <tcf:enumItem number="0x14" name="_2MB">
+        <tcf:gui_name>2MB</tcf:gui_name>
+      </tcf:enumItem>
+      <tcf:enumItem number="0x15" name="_4MB">
+        <tcf:gui_name>4MB</tcf:gui_name>
+      </tcf:enumItem>
+      <tcf:enumItem number="0x16" name="_8MB">
+        <tcf:gui_name>8MB</tcf:gui_name>
+      </tcf:enumItem>
+      <tcf:enumItem number="0x17" name="_16MB">
+        <tcf:gui_name>16MB</tcf:gui_name>
+      </tcf:enumItem>
+      <tcf:enumItem number="0x18" name="_32MB">
+        <tcf:gui_name>32MB</tcf:gui_name>
+      </tcf:enumItem>
+      <tcf:enumItem number="0x19" name="_64MB">
+        <tcf:gui_name>64MB</tcf:gui_name>
+      </tcf:enumItem>
+      <tcf:enumItem number="0x1a" name="_128MB">
+        <tcf:gui_name>128MB</tcf:gui_name>
+      </tcf:enumItem>
+      <tcf:enumItem number="0x1b" name="_256MB">
+        <tcf:gui_name>256MB</tcf:gui_name>
+      </tcf:enumItem>
+      <tcf:enumItem number="0x1c" name="_512MB">
+        <tcf:gui_name>512MB</tcf:gui_name>
+      </tcf:enumItem>
+      <tcf:enumItem number="0x1d" name="_1GB">
+        <tcf:gui_name>1GB</tcf:gui_name>
+      </tcf:enumItem>
+      <tcf:enumItem number="0x1e" name="_2GB">
+        <tcf:gui_name>2GB</tcf:gui_name>
+      </tcf:enumItem>
+      <tcf:enumItem number="0x1f" name="_4GB">
+        <tcf:gui_name>4GB</tcf:gui_name>
+      </tcf:enumItem>
+    </tcf:enumeration>
+    <tcf:enumeration xmlns:tcf="http://com.arm.targetconfigurationeditor" name="MPU_RASR_TEX_S_C_B" xml:base="Registers/system_registers_m0+.xml">
+      <tcf:enumItem number="0x0" name="Strongly_ordered_Shareable">
+        <tcf:gui_name>Strongly ordered, shareable</tcf:gui_name>
+      </tcf:enumItem>
+      <tcf:enumItem number="0x1" name="Shared_device">
+        <tcf:gui_name>Shared device</tcf:gui_name>
+      </tcf:enumItem>
+      <tcf:enumItem number="0x2" name="Outer_inner_write_through_No_write_allocate_Not_shareable">
+        <tcf:gui_name>Outer/inner write through, No write allocate, not shareable</tcf:gui_name>
+      </tcf:enumItem>
+      <tcf:enumItem number="0x3" name="Outer_inner_write_back_No_write_allocate_Not_shareable">
+        <tcf:gui_name>Outer/inner write back, no write allocate, not shareable</tcf:gui_name>
+      </tcf:enumItem>
+      <tcf:enumItem number="0x4" name="Strongly_ordered_Shareable_">
+        <tcf:gui_name>Strongly ordered, shareable</tcf:gui_name>
+      </tcf:enumItem>
+      <tcf:enumItem number="0x5" name="Shared_device_">
+        <tcf:gui_name>Shared device</tcf:gui_name>
+      </tcf:enumItem>
+      <tcf:enumItem number="0x6" name="Outer_inner_write_through_No_write_allocate_Shareable">
+        <tcf:gui_name>Outer/inner write through, no write allocate, shareable</tcf:gui_name>
+      </tcf:enumItem>
+      <tcf:enumItem number="0x7" name="Outer_inner_write_back_No_write_allocate_Shareable">
+        <tcf:gui_name>Outer/inner write back, no write allocate, shareable</tcf:gui_name>
+      </tcf:enumItem>
+    </tcf:enumeration>
+    <tcf:enumeration xmlns:tcf="http://com.arm.targetconfigurationeditor" name="MPU_RASR_AP" xml:base="Registers/system_registers_m0+.xml">
+      <tcf:enumItem number="0x0" name="No_access">
+        <tcf:gui_name>No access</tcf:gui_name>
+      </tcf:enumItem>
+      <tcf:enumItem number="0x1" name="Privileged_RW">
+        <tcf:gui_name>Privileged RW</tcf:gui_name>
+      </tcf:enumItem>
+      <tcf:enumItem number="0x2" name="Privileged_RW_Unprivileged_RO">
+        <tcf:gui_name>Privileged RW, Unprivileged RO</tcf:gui_name>
+      </tcf:enumItem>
+      <tcf:enumItem number="0x3" name="Full_access">
+        <tcf:gui_name>Full access</tcf:gui_name>
+      </tcf:enumItem>
+      <tcf:enumItem number="0x4" name="Reserved">
+        <tcf:gui_name>Reserved</tcf:gui_name>
+      </tcf:enumItem>
+      <tcf:enumItem number="0x5" name="Privileged_RO">
+        <tcf:gui_name>Privileged RO</tcf:gui_name>
+      </tcf:enumItem>
+      <tcf:enumItem number="0x6" name="Privileged_RO_Unprivileged_RO">
+        <tcf:gui_name>Privileged RO, Unprivileged RO</tcf:gui_name>
+      </tcf:enumItem>
+      <tcf:enumItem number="0x7" name="Privileged_RO_Unprivileged_RO">
+        <tcf:gui_name>Privileged RO, Unprivileged RO</tcf:gui_name>
+      </tcf:enumItem>
+    </tcf:enumeration>
+    <tcf:enumeration xmlns:tcf="http://com.arm.targetconfigurationeditor" name="MPU_RASR_XN" xml:base="Registers/system_registers_m0+.xml">
+      <tcf:enumItem number="0x0" name="Execution_permitted">
+        <tcf:gui_name>Execution permitted</tcf:gui_name>
+      </tcf:enumItem>
+      <tcf:enumItem number="0x1" name="Execution_not_permitted">
+        <tcf:gui_name>Execution not permitted</tcf:gui_name>
+      </tcf:enumItem>
+    </tcf:enumeration>
+    <tcf:enumeration xmlns:tcf="http://com.arm.targetconfigurationeditor" name="GENERIC_DISABLED_ENABLED" xml:base="Registers/system_registers_m0+.xml">
+      <tcf:enumItem number="0x0" name="Disabled">
+        <tcf:gui_name>Disabled</tcf:gui_name>
+      </tcf:enumItem>
+      <tcf:enumItem number="0x1" name="Enabled">
+        <tcf:gui_name>Enabled</tcf:gui_name>
+      </tcf:enumItem>
+    </tcf:enumeration>
+    <tcf:enumeration xmlns:tcf="http://com.arm.targetconfigurationeditor" name="SYST_CSR_COUNTFLAG" xml:base="Registers/system_registers_m0+.xml">
+      <tcf:enumItem number="0x0" name="Not_counted_to_0">
+        <tcf:gui_name>Not counted to 0</tcf:gui_name>
+      </tcf:enumItem>
+      <tcf:enumItem number="0x1" name="Counted_to_0">
+        <tcf:gui_name>Counted to 0</tcf:gui_name>
+      </tcf:enumItem>
+    </tcf:enumeration>
+    <tcf:enumeration xmlns:tcf="http://com.arm.targetconfigurationeditor" name="SYST_CSR_CLKSOURCE" xml:base="Registers/system_registers_m0+.xml">
+      <tcf:enumItem number="0x0" name="External_clock">
+        <tcf:gui_name>External clock</tcf:gui_name>
+      </tcf:enumItem>
+      <tcf:enumItem number="0x1" name="Processor_clock">
+        <tcf:gui_name>Processor clock</tcf:gui_name>
+      </tcf:enumItem>
+    </tcf:enumeration>
+    <tcf:enumeration xmlns:tcf="http://com.arm.targetconfigurationeditor" name="SYST_CSR_TICKINT" xml:base="Registers/system_registers_m0+.xml">
+      <tcf:enumItem number="0x0" name="Does_not_affect_exception_status">
+        <tcf:gui_name>Does not affect exception status</tcf:gui_name>
+      </tcf:enumItem>
+      <tcf:enumItem number="0x1" name="Changes_exception_status">
+        <tcf:gui_name>Changes exception status</tcf:gui_name>
+      </tcf:enumItem>
+    </tcf:enumeration>
+    <tcf:enumeration xmlns:tcf="http://com.arm.targetconfigurationeditor" name="SYST_CSR_ENABLE" xml:base="Registers/system_registers_m0+.xml">
+      <tcf:enumItem number="0x0" name="Counter_disabled">
+        <tcf:gui_name>Counter disabled</tcf:gui_name>
+      </tcf:enumItem>
+      <tcf:enumItem number="0x1" name="Counter_operating">
+        <tcf:gui_name>Counter operating</tcf:gui_name>
+      </tcf:enumItem>
+    </tcf:enumeration>
+    <tcf:enumeration xmlns:tcf="http://com.arm.targetconfigurationeditor" name="SYST_CALIB_NOREF" xml:base="Registers/system_registers_m0+.xml">
+      <tcf:enumItem number="0x0" name="Implemented">
+        <tcf:gui_name>Implemented</tcf:gui_name>
+      </tcf:enumItem>
+      <tcf:enumItem number="0x1" name="Not_implemented">
+        <tcf:gui_name>Not implemented</tcf:gui_name>
+      </tcf:enumItem>
+    </tcf:enumeration>
+    <tcf:enumeration xmlns:tcf="http://com.arm.targetconfigurationeditor" name="SYST_CALIB_SKEW" xml:base="Registers/system_registers_m0+.xml">
+      <tcf:enumItem number="0x0" name="Exact">
+        <tcf:gui_name>Exact</tcf:gui_name>
+      </tcf:enumItem>
+      <tcf:enumItem number="0x1" name="Inexact">
+        <tcf:gui_name>Inexact</tcf:gui_name>
+      </tcf:enumItem>
+    </tcf:enumeration>
+    <tcf:enumeration xmlns:tcf="http://com.arm.targetconfigurationeditor" name="ICSR_NMIPENDSET" xml:base="Registers/system_registers_m0+.xml">
+      <tcf:enumItem number="0x0" name="Do_not_activate">
+        <tcf:gui_name>Do not activate</tcf:gui_name>
+      </tcf:enumItem>
+      <tcf:enumItem number="0x1" name="Activate_NMI_exception">
+        <tcf:gui_name>Activate NMI exception</tcf:gui_name>
+      </tcf:enumItem>
+    </tcf:enumeration>
+    <tcf:enumeration xmlns:tcf="http://com.arm.targetconfigurationeditor" name="ICSR_PENDSET" xml:base="Registers/system_registers_m0+.xml">
+      <tcf:enumItem number="0x0" name="Do_not_set">
+        <tcf:gui_name>Do not set</tcf:gui_name>
+      </tcf:enumItem>
+      <tcf:enumItem number="0x1" name="Set_pending">
+        <tcf:gui_name>Set pending</tcf:gui_name>
+      </tcf:enumItem>
+    </tcf:enumeration>
+    <tcf:enumeration xmlns:tcf="http://com.arm.targetconfigurationeditor" name="ICSR_PENDCLR" xml:base="Registers/system_registers_m0+.xml">
+      <tcf:enumItem number="0x0" name="Do_not_clear">
+        <tcf:gui_name>Do not clear</tcf:gui_name>
+      </tcf:enumItem>
+      <tcf:enumItem number="0x1" name="Clear_pending">
+        <tcf:gui_name>Clear pending</tcf:gui_name>
+      </tcf:enumItem>
+    </tcf:enumeration>
+    <tcf:enumeration xmlns:tcf="http://com.arm.targetconfigurationeditor" name="ICSR_PREEMPT" xml:base="Registers/system_registers_m0+.xml">
+      <tcf:enumItem number="0x0" name="Will_not_service">
+        <tcf:gui_name>Will not service</tcf:gui_name>
+      </tcf:enumItem>
+      <tcf:enumItem number="0x1" name="Will_service_pending_exception">
+        <tcf:gui_name>Will service pending exception</tcf:gui_name>
+      </tcf:enumItem>
+    </tcf:enumeration>
+    <tcf:enumeration xmlns:tcf="http://com.arm.targetconfigurationeditor" name="ICSR_PENDING" xml:base="Registers/system_registers_m0+.xml">
+      <tcf:enumItem number="0x0" name="Interrupt_not_pending">
+        <tcf:gui_name>Interrupt not pending</tcf:gui_name>
+      </tcf:enumItem>
+      <tcf:enumItem number="0x1" name="Interrupt_pending">
+        <tcf:gui_name>Interrupt pending</tcf:gui_name>
+      </tcf:enumItem>
+    </tcf:enumeration>
+    <tcf:enumeration xmlns:tcf="http://com.arm.targetconfigurationeditor" name="AIRCR_ENDIANNESS" xml:base="Registers/system_registers_m0+.xml">
+      <tcf:enumItem number="0x0" name="Little_endian">
+        <tcf:gui_name>Little endian</tcf:gui_name>
+      </tcf:enumItem>
+      <tcf:enumItem number="0x1" name="Big_endian">
+        <tcf:gui_name>Big endian</tcf:gui_name>
+      </tcf:enumItem>
+    </tcf:enumeration>
+    <tcf:enumeration xmlns:tcf="http://com.arm.targetconfigurationeditor" name="AIRCR_RESETREQ" xml:base="Registers/system_registers_m0+.xml">
+      <tcf:enumItem number="0x0" name="Do_not_request_reset">
+        <tcf:gui_name>Do not request reset</tcf:gui_name>
+      </tcf:enumItem>
+      <tcf:enumItem number="0x1" name="Request_reset">
+        <tcf:gui_name>Request reset</tcf:gui_name>
+      </tcf:enumItem>
+    </tcf:enumeration>
+    <tcf:enumeration xmlns:tcf="http://com.arm.targetconfigurationeditor" name="AIRCR_VECTCLR" xml:base="Registers/system_registers_m0+.xml">
+      <tcf:enumItem number="0x0" name="Do_not_clear">
+        <tcf:gui_name>Do not clear</tcf:gui_name>
+      </tcf:enumItem>
+      <tcf:enumItem number="0x1" name="Clear_state_information">
+        <tcf:gui_name>Clear state information</tcf:gui_name>
+      </tcf:enumItem>
+    </tcf:enumeration>
+    <tcf:enumeration xmlns:tcf="http://com.arm.targetconfigurationeditor" name="SHCSR_SVCCALLPEND" xml:base="Registers/system_registers_m0+.xml">
+      <tcf:enumItem number="0x0" name="Not_pending">
+        <tcf:gui_name>Not pending</tcf:gui_name>
+      </tcf:enumItem>
+      <tcf:enumItem number="0x1" name="Pending">
+        <tcf:gui_name>Pending</tcf:gui_name>
+      </tcf:enumItem>
+    </tcf:enumeration>
+    <tcf:enumeration xmlns:tcf="http://com.arm.targetconfigurationeditor" name="VTOR_TBLBASE" values="CODE=0,SRAM=1" xml:base="Registers/system_registers_m0+.xml"/>
+
+  </cr:register_list>
+</core_definition>
