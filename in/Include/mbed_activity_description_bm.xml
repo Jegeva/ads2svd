@@ -1,1 +1,0 @@
-<description language="en" xmlns="http://www.arm.com/project_type" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.arm.com/project_type ../../../Schemas/platform_data-1.xsd">Arm Debugger will connect to an mbed CMSIS-DAP to debug a bare metal application.</description>

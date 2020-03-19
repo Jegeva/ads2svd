@@ -1,1 +1,0 @@
-# Copyright (C) 2019 Arm Limited (or its affiliates). All rights reserved.
