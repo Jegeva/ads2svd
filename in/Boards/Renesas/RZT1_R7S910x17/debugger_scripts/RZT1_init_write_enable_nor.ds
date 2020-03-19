@@ -1,8 +1,0 @@
-######################################
-# NORFlash write enable
-######################################
-# WE0 setting
-mem set <verify=1>:0xA00002FF 8 {(unsigned char)0x00}
-mem set <verify=0>:0xA00002FF 8 {(unsigned char)0x40}
-mem set <verify=0>:0xA000021E 8 {(unsigned char)0x22}
-mem set <verify=0>:0xA0000083 8 {(unsigned char)0x58}

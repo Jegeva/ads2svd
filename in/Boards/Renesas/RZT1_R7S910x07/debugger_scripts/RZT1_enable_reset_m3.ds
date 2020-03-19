@@ -1,4 +1,0 @@
-# enable Cortex-M3 reset
-mem set <verify=0>:0xA00B0B00 32 0x0000A502     # disable the protect on register
-mem set <verify=0>:0xA00B0220 32 0x4321A50F     # enable Cortex-M3 reset
-mem set <verify=0>:0xA00B0B00 32 0x0000A500     # enable the protect on register

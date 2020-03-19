@@ -1,5 +1,0 @@
-options.traceBuffer.traceWrapMode=wrap
-options.traceBuffer.clearTraceOnConnect=true
-options.traceBuffer.bufferSize=Buffer16M
-options.traceBuffer.traceCaptureDevice=FMTrace
-options.traceBuffer.startTraceOnConnect=true

@@ -1,5 +1,0 @@
-# Tue Sept 03 16:59:40 BST 2013
-options.trace.traceCapture=none
-options.coreTrace.cortexM3coreTrace=false
-options.coreTrace.cortexM3coreTrace.Cortex_M3_0=true
-options.itm.itm=false

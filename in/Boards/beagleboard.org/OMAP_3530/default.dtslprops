@@ -1,8 +1,0 @@
-# Tue Sept 03 16:59:40 BST 2013
-options.trace.traceCapture=none
-options.coreTrace.cortexA8coreTrace=false
-options.coreTrace.cortexA8coreTrace.Cortex_A8_0=true
-options.coreTrace.cortexA8coreTrace.cycleAccurate=false
-options.coreTrace.cortexA8coreTrace.traceRange=false
-options.coreTrace.cortexA8coreTrace.traceRange.start=0x0
-options.coreTrace.cortexA8coreTrace.traceRange.end=0xFFFFFFFF

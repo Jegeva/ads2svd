@@ -1,6 +1,0 @@
-#Thu Feb 05 09:38:57 GMT 2015
-options.traceBuffer.traceWrapMode=wrap
-options.traceBuffer.clearTraceOnConnect=true
-options.traceBuffer.bufferSize=Buffer16M
-options.traceBuffer.traceCaptureDevice=FMTrace
-options.traceBuffer.startTraceOnConnect=true
