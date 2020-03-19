@@ -1,0 +1,18 @@
+#Tue Nov 13 16:17:22 GMT 2012
+options.cortexA15.coreTrace.cycleAccurate=false
+options.cortexA15.coreTrace.contextIDs=true
+options.itm.itm=false
+options.cortexA15.coreTrace.triggerhalt=false
+options.cortexA15.coreTrace=false
+options.cortexA15.coreTrace.traceRange.start=0x0
+options.cortexA15.coreTrace.traceRange.end=0xFFFFFFFF
+options.cortexA15.coreTrace.traceRange=false
+options.cortexA15.coreTrace.timestamp=true
+options.cortexA15=
+options.cortexA15.coreTrace.Cortex_A15_1=true
+options.cortexA15.coreTrace.Cortex_A15_0=true
+options.traceBuffer.traceCapture=none
+options.itm=
+options.cortexA15.coreTrace.contextIDs.contextIDsSize=32
+options.traceBuffer=
+options=

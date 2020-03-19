@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" /><title>
+	            System Register index by encoding
+	          </title><link rel="stylesheet" type="text/css" href="insn.css" /></head><body><table align="center"><tr><td><div class="topbar"><a href="AArch32-regindex.html">AArch32 Registers</a></div></td><td><div class="topbar"><a href="AArch64-regindex.html">AArch64 Registers</a></div></td><td><div class="topbar"><a href="AArch32-sysindex.html">AArch32 Instructions</a></div></td><td><div class="topbar"><a href="AArch64-sysindex.html">AArch64 Instructions</a></div></td><td><div class="topbar"><a href="enc_index.html">Index by Encoding</a></div></td><td><div class="topbar"><a href="ext_alpha_index.html">External Registers</a></div></td><td><div class="topbar"><a href="ext_enc_index.html">External Registers by Offset</a></div></td><td><div class="topbar"><a href="func_index.html">Registers by Functional Group</a></div></td><td><div class="topbar"><a href="notice.html">Proprietary Notice</a></div></td></tr></table><hr /><h1 class="sysregindex">System Register index by instruction and encoding</h1><p>Below are indexes for registers and operations accessed in the following ways:</p><p>For AArch32</p><ul><li><a href="#mrc_mcr_32">MRC/MCR</a></li></ul><p>For AArch64</p><ul><li><a href="#mrs_msr_64">MRS/MSR</a></li></ul><h2>Registers and operations in AArch32</h2>
+    <h2 class="sysregindex"><a name="mrc_mcr_32" id="mrc_mcr_32">
+		        Accessed using MRC/MCR:
+		      </a></h2><table class="instructiontable">
+      <thead>
+        <tr class="header1">
+          <th colspan="5">Register selectors</th>
+          <th rowspan="2">Name</th>
+          <th rowspan="2">Description</th>
+        </tr>
+        <tr class="header2">
+          <th class="bitfields">coproc</th>
+          <th class="bitfields">opc1</th>
+          <th class="bitfields">CRn</th>
+          <th class="bitfields">CRm</th>
+          <th class="bitfields">opc2</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="bitfields">1111</td>
+          <td class="bitfields">000</td>
+          <td class="bitfields">0001</td>
+          <td class="bitfields">0000</td>
+          <td class="bitfields">010</td>
+          <td>
+            <a href="">CPACR</a>
+          </td>
+          <td>Architectural Feature Access Control Register</td>
+        </tr>
+        <tr>
+          <td class="bitfields">1111</td>
+          <td class="bitfields">000</td>
+          <td class="bitfields">0010</td>
+          <td class="bitfields">0000</td>
+          <td class="bitfields">010</td>
+          <td>
+            <a href="">TTBCR</a>
+          </td>
+          <td>Translation Table Base Control Register</td>
+        </tr>
+        <tr>
+          <td class="bitfields">1111</td>
+          <td class="bitfields">000</td>
+          <td class="bitfields">0010</td>
+          <td class="bitfields">0000</td>
+          <td class="bitfields">011</td>
+          <td>
+            <a href="">TTBCR2</a>
+          </td>
+          <td>Translation Table Base Control Register 2</td>
+        </tr>
+        <tr>
+          <td class="bitfields">1111</td>
+          <td class="bitfields">000</td>
+          <td class="bitfields">0101</td>
+          <td class="bitfields">0000</td>
+          <td class="bitfields">000</td>
+          <td>
+            <a href="">DFSR</a>
+          </td>
+          <td>Data Fault Status Register</td>
+        </tr>
+        <tr>
+          <td class="bitfields">1111</td>
+          <td class="bitfields">100</td>
+          <td class="bitfields">0001</td>
+          <td class="bitfields">0001</td>
+          <td class="bitfields">000</td>
+          <td>
+            <a href="">HCR</a>
+          </td>
+          <td>Hyp Configuration Register</td>
+        </tr>
+        <tr>
+          <td class="bitfields">1111</td>
+          <td class="bitfields">100</td>
+          <td class="bitfields">0001</td>
+          <td class="bitfields">0001</td>
+          <td class="bitfields">010</td>
+          <td>
+            <a href="">HCPTR</a>
+          </td>
+          <td>Hyp Architectural Feature Trap Register</td>
+        </tr>
+        <tr>
+          <td class="bitfields">1111</td>
+          <td class="bitfields">100</td>
+          <td class="bitfields">0001</td>
+          <td class="bitfields">0001</td>
+          <td class="bitfields">100</td>
+          <td>
+            <a href="">HCR2</a>
+          </td>
+          <td>Hyp Configuration Register 2</td>
+        </tr>
+        <tr>
+          <td class="bitfields">1111</td>
+          <td class="bitfields">100</td>
+          <td class="bitfields">0010</td>
+          <td class="bitfields">0000</td>
+          <td class="bitfields">010</td>
+          <td>
+            <a href="">HTCR</a>
+          </td>
+          <td>Hyp Translation Control Register</td>
+        </tr>
+        <tr>
+          <td class="bitfields">1111</td>
+          <td class="bitfields">100</td>
+          <td class="bitfields">0101</td>
+          <td class="bitfields">0010</td>
+          <td class="bitfields">000</td>
+          <td>
+            <a href="">HSR</a>
+          </td>
+          <td>Hyp Syndrome Register</td>
+        </tr>
+      </tbody>
+    </table>
+  <h2>Registers and operations in AArch64</h2>
+    <h2 class="sysregindex"><a name="mrs_msr_64" id="mrs_msr_64">
+		        Accessed using MRS/MSR:
+		      </a></h2><table class="instructiontable">
+      <thead>
+        <tr class="header1">
+          <th colspan="5">Register selectors</th>
+          <th rowspan="2">Name</th>
+          <th rowspan="2">Description</th>
+        </tr>
+        <tr class="header2">
+          <th class="bitfields">op0</th>
+          <th class="bitfields">op1</th>
+          <th class="bitfields">CRn</th>
+          <th class="bitfields">CRm</th>
+          <th class="bitfields">op2</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="bitfields">11</td>
+          <td class="bitfields">000</td>
+          <td class="bitfields">0000</td>
+          <td class="bitfields">0100</td>
+          <td class="bitfields">000</td>
+          <td>
+            <a href="AArch64-id_aa64pfr0_el1.html">ID_AA64PFR0_EL1</a>
+          </td>
+          <td>AArch64 Processor Feature Register 0</td>
+        </tr>
+        <tr>
+          <td class="bitfields">11</td>
+          <td class="bitfields">000</td>
+          <td class="bitfields">0000</td>
+          <td class="bitfields">0100</td>
+          <td class="bitfields">100</td>
+          <td>
+            <a href="AArch64-id_aa64zfr0_el1.html">ID_AA64ZFR0_EL1</a>
+          </td>
+          <td>SVE Feature ID register 0</td>
+        </tr>
+        <tr>
+          <td class="bitfields">11</td>
+          <td class="bitfields">000</td>
+          <td class="bitfields">0001</td>
+          <td class="bitfields">0000</td>
+          <td class="bitfields">010</td>
+          <td>
+            <a href="AArch64-cpacr_el1.html">CPACR_EL1</a>
+          </td>
+          <td>Architectural Feature Access Control Register</td>
+        </tr>
+        <tr>
+          <td class="bitfields">11</td>
+          <td class="bitfields">100</td>
+          <td class="bitfields">0001</td>
+          <td class="bitfields">0001</td>
+          <td class="bitfields">000</td>
+          <td>
+            <a href="AArch64-hcr_el2.html">HCR_EL2</a>
+          </td>
+          <td>Hypervisor Configuration Register</td>
+        </tr>
+        <tr>
+          <td class="bitfields">11</td>
+          <td class="bitfields">100</td>
+          <td class="bitfields">0001</td>
+          <td class="bitfields">0001</td>
+          <td class="bitfields">010</td>
+          <td>
+            <a href="AArch64-cptr_el2.html">CPTR_EL2</a>
+          </td>
+          <td>Architectural Feature Trap Register (EL2)</td>
+        </tr>
+        <tr>
+          <td class="bitfields">11</td>
+          <td class="bitfields">110</td>
+          <td class="bitfields">0001</td>
+          <td class="bitfields">0001</td>
+          <td class="bitfields">010</td>
+          <td>
+            <a href="AArch64-cptr_el3.html">CPTR_EL3</a>
+          </td>
+          <td>Architectural Feature Trap Register (EL3)</td>
+        </tr>
+        <tr>
+          <td class="bitfields">11</td>
+          <td class="bitfields">000</td>
+          <td class="bitfields">0001</td>
+          <td class="bitfields">0010</td>
+          <td class="bitfields">000</td>
+          <td>
+            <a href="AArch64-zcr_el1.html">ZCR_EL1</a>
+          </td>
+          <td>SVE Control Register for EL1</td>
+        </tr>
+        <tr>
+          <td class="bitfields">11</td>
+          <td class="bitfields">100</td>
+          <td class="bitfields">0001</td>
+          <td class="bitfields">0010</td>
+          <td class="bitfields">000</td>
+          <td>
+            <a href="AArch64-zcr_el2.html">ZCR_EL2</a>
+          </td>
+          <td>SVE Control Register for EL2</td>
+        </tr>
+        <tr>
+          <td class="bitfields">11</td>
+          <td class="bitfields">110</td>
+          <td class="bitfields">0001</td>
+          <td class="bitfields">0010</td>
+          <td class="bitfields">000</td>
+          <td>
+            <a href="AArch64-zcr_el3.html">ZCR_EL3</a>
+          </td>
+          <td>SVE Control Register for EL3</td>
+        </tr>
+        <tr>
+          <td class="bitfields">11</td>
+          <td class="bitfields">000</td>
+          <td class="bitfields">0010</td>
+          <td class="bitfields">0000</td>
+          <td class="bitfields">010</td>
+          <td>
+            <a href="AArch64-tcr_el1.html">TCR_EL1</a>
+          </td>
+          <td>Translation Control Register (EL1)</td>
+        </tr>
+        <tr>
+          <td class="bitfields">11</td>
+          <td class="bitfields">100</td>
+          <td class="bitfields">0010</td>
+          <td class="bitfields">0000</td>
+          <td class="bitfields">010</td>
+          <td>
+            <a href="AArch64-tcr_el2.html">TCR_EL2</a>
+          </td>
+          <td>Translation Control Register (EL2)</td>
+        </tr>
+        <tr>
+          <td class="bitfields">11</td>
+          <td class="bitfields">000</td>
+          <td class="bitfields">0101</td>
+          <td class="bitfields">0010</td>
+          <td class="bitfields">000</td>
+          <td>
+            <a href="AArch64-esr_el1.html">ESR_EL1</a>
+          </td>
+          <td>Exception Syndrome Register (EL1)</td>
+        </tr>
+        <tr>
+          <td class="bitfields">11</td>
+          <td class="bitfields">100</td>
+          <td class="bitfields">0101</td>
+          <td class="bitfields">0010</td>
+          <td class="bitfields">000</td>
+          <td>
+            <a href="AArch64-esr_el2.html">ESR_EL2</a>
+          </td>
+          <td>Exception Syndrome Register (EL2)</td>
+        </tr>
+        <tr>
+          <td class="bitfields">11</td>
+          <td class="bitfields">110</td>
+          <td class="bitfields">0101</td>
+          <td class="bitfields">0010</td>
+          <td class="bitfields">000</td>
+          <td>
+            <a href="AArch64-esr_el3.html">ESR_EL3</a>
+          </td>
+          <td>Exception Syndrome Register (EL3)</td>
+        </tr>
+      </tbody>
+    </table>
+  <hr /><table align="center"><tr><td><div class="topbar"><a href="AArch32-regindex.html">AArch32 Registers</a></div></td><td><div class="topbar"><a href="AArch64-regindex.html">AArch64 Registers</a></div></td><td><div class="topbar"><a href="AArch32-sysindex.html">AArch32 Instructions</a></div></td><td><div class="topbar"><a href="AArch64-sysindex.html">AArch64 Instructions</a></div></td><td><div class="topbar"><a href="enc_index.html">Index by Encoding</a></div></td><td><div class="topbar"><a href="ext_alpha_index.html">External Registers</a></div></td><td><div class="topbar"><a href="ext_enc_index.html">External Registers by Offset</a></div></td><td><div class="topbar"><a href="func_index.html">Registers by Functional Group</a></div></td><td><div class="topbar"><a href="notice.html">Proprietary Notice</a></div></td></tr></table><p class="versions">04/08/2017 23:19</p><p class="copyconf">Copyright © 2010-2017 ARM Limited or its affiliates. All rights reserved. </p></body></html>

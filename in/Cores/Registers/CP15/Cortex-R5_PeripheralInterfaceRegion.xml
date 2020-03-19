@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<register_list
+    name="CP15"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns="http://www.arm.com/core_reg"
+    xsi:schemaLocation="http://www.arm.com/core_reg ../../../Schemas/core_register_definition.xsd"
+    xmlns:tcf="http://com.arm.targetconfigurationeditor">
+    <register_group name="PeripheralInterfaceRegion">
+        <gui_name language="en">PeripheralInterfaceRegion</gui_name>
+        <description language="en">Peripheral Interface Region Registers.</description>
+        <register access="RW" name="CP15_LLPP_NORMAL_AXI_REGION" size="4">
+            <gui_name language="en">LLPP Normal AXI Region Register</gui_name>
+            <description language="en">Describes the size and base of the interface, and contains an enable bit for the interface</description>
+            <bitField conditional="false" name="BaseAddress" access="RO" format="Hex">
+                <gui_name language="en">BaseAddress</gui_name>
+                <description language="en">The base address of the interface, given as bits [31:12] of the address of the interface in the memory map</description>
+                <definition>[31:12]</definition>
+            </bitField>
+            <bitField conditional="false" name="Size" enumerationId="CP15_PERIPHERAL_INTERFACE_SIZE" access="RO">
+                <gui_name language="en">Size</gui_name>
+                <description language="en">Indicates the size of the interface</description>
+                <definition>[6:2]</definition>
+            </bitField>
+            <bitField conditional="false" name="En" enumerationId="GENERIC_DISABLED_ENABLED">
+                <gui_name language="en">En</gui_name>
+                <description language="en">Enable</description>
+                <definition>[0]</definition>
+            </bitField>
+        </register>
+        <register access="RW" name="CP15_LLPP_VIRTUAL_AXI_REGION" size="4">
+            <gui_name language="en">LLPP Virtual AXI Region Register</gui_name>
+            <description language="en">Describes the size and base of the interface, and contains an enable bit for the interface</description>
+            <bitField conditional="false" name="BaseAddress" access="RO" format="Hex">
+                <gui_name language="en">BaseAddress</gui_name>
+                <description language="en">The base address of the interface, given as bits [31:12] of the address of the interface in the memory map</description>
+                <definition>[31:12]</definition>
+            </bitField>
+            <bitField conditional="false" name="Size" enumerationId="CP15_PERIPHERAL_INTERFACE_SIZE" access="RO">
+                <gui_name language="en">Size</gui_name>
+                <description language="en">Indicates the size of the interface</description>
+                <definition>[6:2]</definition>
+            </bitField>
+            <bitField conditional="false" name="En" enumerationId="GENERIC_DISABLED_ENABLED">
+                <gui_name language="en">En</gui_name>
+                <description language="en">Enable</description>
+                <definition>[0]</definition>
+            </bitField>
+        </register>
+        <register access="RW" name="CP15_AHB_PERIPHERAL_INTERFACE_REGION" size="4">
+            <gui_name language="en">AHB Peripheral Interface Region Register</gui_name>
+            <description language="en">Describes the size and base of the interface, and contains an enable bit for the interface</description>
+            <bitField conditional="false" name="BaseAddress" access="RO" format="Hex">
+                <gui_name language="en">BaseAddress</gui_name>
+                <description language="en">The base address of the interface, given as bits [31:12] of the address of the interface in the memory map</description>
+                <definition>[31:12]</definition>
+            </bitField>
+            <bitField conditional="false" name="Size" enumerationId="CP15_PERIPHERAL_INTERFACE_SIZE" access="RO">
+                <gui_name language="en">Size</gui_name>
+                <description language="en">Indicates the size of the interface</description>
+                <definition>[6:2]</definition>
+            </bitField>
+            <bitField conditional="false" name="En" enumerationId="GENERIC_DISABLED_ENABLED">
+                <gui_name language="en">En</gui_name>
+                <description language="en">Enable</description>
+                <definition>[0]</definition>
+            </bitField>
+        </register>
+    </register_group>
+</register_list>
+

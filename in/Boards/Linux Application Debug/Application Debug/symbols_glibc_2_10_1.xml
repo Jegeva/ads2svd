@@ -1,0 +1,61 @@
+<symbol_list xmlns="http://www.arm.com/project_type"
+                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                xsi:schemaLocation="http://www.arm.com/project_type ../Schemas/platform_data-1.xsd">
+
+<!-- includes all symbols that we think a glibc from linux 2.6.35 and below are likely to ask for -->
+<symbol>_thread_db_sizeof_pthread</symbol>
+<symbol>_thread_db_pthread_list</symbol>
+<symbol>_thread_db_pthread_report_events</symbol>
+<symbol>_thread_db_pthread_tid</symbol>
+<symbol>_thread_db_pthread_pid</symbol>
+<symbol>_thread_db_pthread_start_routine</symbol>
+<symbol>_thread_db_pthread_cancelhandling</symbol>
+<symbol>_thread_db_pthread_schedpolicy</symbol>
+<symbol>_thread_db_pthread_schedparam_sched_priority</symbol>
+<symbol>_thread_db_pthread_specific</symbol>
+<symbol>_thread_db_pthread_eventbuf</symbol>
+<symbol>_thread_db_pthread_eventbuf_eventmask</symbol>
+<symbol>_thread_db_pthread_eventbuf_eventmask_event_bits</symbol>
+<symbol>_thread_db_pthread_nextevent</symbol>
+<symbol>_thread_db_sizeof_list_t</symbol>
+<symbol>_thread_db_list_t_next</symbol>
+<symbol>_thread_db_list_t_prev</symbol>
+<symbol>_thread_db_sizeof_td_thr_events_t</symbol>
+<symbol>_thread_db_td_thr_events_t_event_bits</symbol>
+<symbol>_thread_db_sizeof_td_eventbuf_t</symbol>
+<symbol>_thread_db_td_eventbuf_t_eventnum</symbol>
+<symbol>_thread_db_td_eventbuf_t_eventdata</symbol>
+<symbol>stack_used</symbol>
+<symbol>__stack_user</symbol>
+<symbol>nptl_version</symbol>
+<symbol>__nptl_create_event</symbol>
+<symbol>__nptl_death_event</symbol>
+<symbol>__nptl_threads_events</symbol>
+<symbol>__nptl_nthreads</symbol>
+<symbol>_thread_db___nptl_nthreads</symbol>
+<symbol>__nptl_last_event</symbol>
+<symbol>_thread_db___nptl_last_event</symbol>
+<symbol>__nptl_initial_report_events</symbol>
+<symbol>_thread_db__nptl_initial_report_events</symbol>
+<symbol>__pthread_keys</symbol>
+<symbol>_thread_db___pthread_keys</symbol>
+<symbol>_thread_db_sizeof_pthread_key_struct</symbol>
+<symbol>_thread_db_pthread_key_struct_seq</symbol>
+<symbol>_thread_db_pthread_key_struct_destr</symbol>
+<symbol>_thread_db_sizeof_pthread_key_data</symbol>
+<symbol>_thread_db_pthread_key_data_seq</symbol>
+<symbol>_thread_db_pthread_key_data_data</symbol>
+<symbol>_thread_db_sizeof_pthread_key_data_level2</symbol>
+<symbol>_thread_db_pthread_key_data_level2_data</symbol>
+<symbol>_thread_db_link_map_l_tls_modid</symbol>
+<symbol>_thread_db_dtv_dtv</symbol>
+<symbol>_thread_db_dtv_t_pointer_val</symbol>
+<symbol>_thread_db_pthread_dtvp</symbol>
+<symbol>_thread_db_const_thread_area</symbol>
+<symbol>_thread_db_register64</symbol>
+<symbol>_thread_db_register32</symbol>
+<symbol>_thread_db_register64_thread_area</symbol>
+<symbol>_thread_db_register32_thread_area</symbol>
+<!-- thread_created_hook used by Android apparently -->
+ <symbol>_thread_created_hook</symbol>
+</symbol_list>

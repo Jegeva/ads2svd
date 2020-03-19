@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>FPSCR</title>
+    <link href="insn.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body><table align="center"><tr><td><div class="topbar"><a href="AArch32-regindex.html">AArch32 Registers</a></div></td><td><div class="topbar"><a href="AArch64-regindex.html">AArch64 Registers</a></div></td><td><div class="topbar"><a href="AArch32-sysindex.html">AArch32 Instructions</a></div></td><td><div class="topbar"><a href="AArch64-sysindex.html">AArch64 Instructions</a></div></td><td><div class="topbar"><a href="enc_index.html">Index by Encoding</a></div></td><td><div class="topbar"><a href="ext_alpha_index.html">External Registers</a></div></td><td><div class="topbar"><a href="ext_enc_index.html">External Registers by Offset</a></div></td><td><div class="topbar"><a href="func_index.html">Registers by Functional Group</a></div></td></tr></table><hr /><h1 class="register-section">FPSCR, Floating-Point Status and Control Register</h1><p>The FPSCR characteristics are:</p><h2>Purpose</h2>
+          <p>Provides floating-point system status information and control.</p>
+        <p>This 
+        register
+       is part of:</p><ul><li>The Special-purpose registers functional group.</li><li>The Floating-point registers functional group.</li></ul><h2>Configuration</h2>
+        <p>There is one instance of this register that is used in both Secure and Non-secure states.</p>
+      
+          <p>The named fields in this register map to the equivalent fields in the AArch64 <a href="AArch64-fpcr.html">FPCR</a> and <a href="AArch64-fpsr.html">FPSR</a>.</p>
+        
+          <p>It is <span class="arm-defined-word">IMPLEMENTATION DEFINED</span> whether the Len and Stride fields can be programmed to non-zero values, which will cause some AArch32 floating-point instruction encodings to be <span class="arm-defined-word">UNDEFINED</span>, or whether these fields are RAZ.</p>
+        
+          <p>Implemented only if the implementation includes the Advanced SIMD and floating-point functionality.</p>
+        <p>
+                RW fields in this register reset to architecturally <span class="arm-defined-word">UNKNOWN</span> values.
+              </p><h2>Attributes</h2>
+          <p>FPSCR is a 32-bit register.</p>
+        <h2>Field descriptions</h2><p>The FPSCR bit assignments are:</p><table class="regdiagram"><thead><tr><td>31</td><td>30</td><td>29</td><td>28</td><td>27</td><td>26</td><td>25</td><td>24</td><td>23</td><td>22</td><td>21</td><td>20</td><td>19</td><td>18</td><td>17</td><td>16</td><td>15</td><td>14</td><td>13</td><td>12</td><td>11</td><td>10</td><td>9</td><td>8</td><td>7</td><td>6</td><td>5</td><td>4</td><td>3</td><td>2</td><td>1</td><td>0</td></tr></thead><tbody><tr class="firstrow"><td class="lr" colspan="1"><a href="#N">N</a></td><td class="lr" colspan="1"><a href="#Z">Z</a></td><td class="lr" colspan="1"><a href="#C">C</a></td><td class="lr" colspan="1"><a href="#V">V</a></td><td class="lr" colspan="1"><a href="#QC">QC</a></td><td class="lr" colspan="1"><a href="#AHP">AHP</a></td><td class="lr" colspan="1"><a href="#DN">DN</a></td><td class="lr" colspan="1"><a href="#FZ">FZ</a></td><td class="lr" colspan="2"><a href="#RMode">RMode</a></td><td class="lr" colspan="2"><a href="#Stride">Stride</a></td><td class="lr">0</td><td class="lr" colspan="3"><a href="#Len">Len</a></td><td class="lr" colspan="1"><a href="#IDE">IDE</a></td><td class="l">0</td><td class="r">0</td><td class="lr" colspan="1"><a href="#IXE">IXE</a></td><td class="lr" colspan="1"><a href="#UFE">UFE</a></td><td class="lr" colspan="1"><a href="#OFE">OFE</a></td><td class="lr" colspan="1"><a href="#DZE">DZE</a></td><td class="lr" colspan="1"><a href="#IOE">IOE</a></td><td class="lr" colspan="1"><a href="#IDC">IDC</a></td><td class="l">0</td><td class="r">0</td><td class="lr" colspan="1"><a href="#IXC">IXC</a></td><td class="lr" colspan="1"><a href="#UFC">UFC</a></td><td class="lr" colspan="1"><a href="#OFC">OFC</a></td><td class="lr" colspan="1"><a href="#DZC">DZC</a></td><td class="lr" colspan="1"><a href="#IOC">IOC</a></td></tr></tbody></table><h4 id="N">N, bit [31]
+              </h4>
+              <p>Negative condition flag. This is updated by floating-point comparison operations.</p>
+            <h4 id="Z">Z, bit [30]
+              </h4>
+              <p>Zero condition flag. This is updated by floating-point comparison operations.</p>
+            <h4 id="C">C, bit [29]
+              </h4>
+              <p>Carry condition flag. This is updated by floating-point comparison operations.</p>
+            <h4 id="V">V, bit [28]
+              </h4>
+              <p>Overflow condition flag. This is updated by floating-point comparison operations.</p>
+            <h4 id="QC">QC, bit [27]
+              </h4>
+              <p>Cumulative saturation bit, Advanced SIMD only. This bit is set to 1 to indicate that an Advanced SIMD integer operation has saturated since 0 was last written to this bit.</p>
+            <h4 id="AHP">AHP, bit [26]
+              </h4>
+              <p>Alternative half-precision control bit:</p>
+            <table class="valuetable"><tr><th>AHP</th><th>Meaning</th></tr><tr><td class="bitfield">0</td><td>
+                  <p>IEEE half-precision format selected.</p>
+                </td></tr><tr><td class="bitfield">1</td><td>
+                  <p>Alternative half-precision format selected.</p>
+                </td></tr></table><h4 id="DN">DN, bit [25]
+              </h4>
+              <p>Default NaN mode control bit:</p>
+            <table class="valuetable"><tr><th>DN</th><th>Meaning</th></tr><tr><td class="bitfield">0</td><td>
+                  <p>NaN operands propagate through to the output of a floating-point operation.</p>
+                </td></tr><tr><td class="bitfield">1</td><td>
+                  <p>Any operation involving one or more NaNs returns the Default NaN.</p>
+                </td></tr></table>
+              <p>The value of this bit only controls scalar floating-point arithmetic. Advanced SIMD arithmetic always uses the Default NaN setting, regardless of the value of the DN bit.</p>
+            <h4 id="FZ">FZ, bit [24]
+              </h4>
+              <p>Flush-to-zero mode control bit:</p>
+            <table class="valuetable"><tr><th>FZ</th><th>Meaning</th></tr><tr><td class="bitfield">0</td><td>
+                  <p>Flush-to-zero mode disabled. Behavior of the floating-point system is fully compliant with the IEEE 754 standard.</p>
+                </td></tr><tr><td class="bitfield">1</td><td>
+                  <p>Flush-to-zero mode enabled.</p>
+                </td></tr></table>
+              <p>The value of this bit only controls scalar floating-point arithmetic. Advanced SIMD arithmetic always uses the Flush-to-zero setting, regardless of the value of the FZ bit.</p>
+            <h4 id="RMode">RMode, bits [23:22]
+                  </h4>
+              <p>Rounding Mode control field. The encoding of this field is:</p>
+            <table class="valuetable"><tr><th>RMode</th><th>Meaning</th></tr><tr><td class="bitfield">00</td><td>
+                  <p>Round to Nearest (RN) mode</p>
+                </td></tr><tr><td class="bitfield">01</td><td>
+                  <p>Round towards Plus Infinity (RP) mode</p>
+                </td></tr><tr><td class="bitfield">10</td><td>
+                  <p>Round towards Minus Infinity (RM) mode</p>
+                </td></tr><tr><td class="bitfield">11</td><td>
+                  <p>Round towards Zero (RZ) mode.</p>
+                </td></tr></table>
+              <p>The specified rounding mode is used by almost all scalar floating-point instructions. Advanced SIMD arithmetic always uses the Round to Nearest setting, regardless of the value of the RMode bits.</p>
+            <h4 id="Stride">Stride, bits [21:20]
+                  </h4>
+              <p>It is <span class="arm-defined-word">IMPLEMENTATION DEFINED</span> whether this field is RW or RAZ.</p>
+            
+              <p>If this field is RW and is set to a value other than zero, some floating-point instruction encodings are <span class="arm-defined-word">UNDEFINED</span>. The instruction pseudocode identifies these instructions.</p>
+            
+              <p>ARM strongly recommends that software never sets this field to a value other than zero.</p>
+            
+              <p>The value of this field is ignored when processing Advanced SIMD instructions.</p>
+            <h4 id="0">
+                Bit [19]
+              </h4>
+              <p>Reserved, <span class="arm-defined-word">RES0</span>.</p>
+            <h4 id="Len">Len, bits [18:16]
+                  </h4>
+              <p>It is <span class="arm-defined-word">IMPLEMENTATION DEFINED</span> whether this field is RW or RAZ.</p>
+            
+              <p>If this field is RW and is set to a value other than zero, some floating-point instruction encodings are <span class="arm-defined-word">UNDEFINED</span>. The instruction pseudocode identifies these instructions.</p>
+            
+              <p>ARM strongly recommends that software never sets this field to a value other than zero.</p>
+            
+              <p>The value of this field is ignored when processing Advanced SIMD instructions.</p>
+            <h4 id="IDE">IDE, bit [15]
+              </h4>
+              <p>Input Denormal floating-point exception trap enable. Possible values are:</p>
+            <table class="valuetable"><tr><th>IDE</th><th>Meaning</th></tr><tr><td class="bitfield">0</td><td>
+                  <p>Untrapped exception handling selected. If the floating-point exception occurs then the IDC bit is set to 1.</p>
+                </td></tr><tr><td class="bitfield">1</td><td>
+                  <p>Trapped exception handling selected. If the floating-point exception occurs, the PE does not update the IDC bit. The trap handling software can decide whether to set the IDC bit to 1.</p>
+                </td></tr></table>
+              <p>This bit is RW only if the implementation supports the trapping of floating-point exceptions. In an implementation that does not support floating-point exception trapping, this bit is <span class="arm-defined-word">RES0</span>.</p>
+            
+              <p>When this bit is RW, it applies only to floating-point operations. Advanced SIMD operations always use untrapped floating-point exception handling in AArch32 state.</p>
+            <h4 id="0">
+                Bits [14:13]
+              </h4>
+              <p>Reserved, <span class="arm-defined-word">RES0</span>.</p>
+            <h4 id="IXE">IXE, bit [12]
+              </h4>
+              <p>Inexact floating-point exception trap enable. Possible values are:</p>
+            <table class="valuetable"><tr><th>IXE</th><th>Meaning</th></tr><tr><td class="bitfield">0</td><td>
+                  <p>Untrapped exception handling selected. If the floating-point exception occurs then the IXC bit is set to 1.</p>
+                </td></tr><tr><td class="bitfield">1</td><td>
+                  <p>Trapped exception handling selected. If the floating-point exception occurs, the PE does not update the IXC bit. The trap handling software can decide whether to set the IXC bit to 1.</p>
+                </td></tr></table>
+              <p>This bit is RW only if the implementation supports the trapping of floating-point exceptions. In an implementation that does not support floating-point exception trapping, this bit is <span class="arm-defined-word">RES0</span>.</p>
+            
+              <p>When this bit is RW, it applies only to floating-point operations. Advanced SIMD operations always use untrapped floating-point exception handling in AArch32 state.</p>
+            <h4 id="UFE">UFE, bit [11]
+              </h4>
+              <p>Underflow floating-point exception trap enable. Possible values are:</p>
+            <table class="valuetable"><tr><th>UFE</th><th>Meaning</th></tr><tr><td class="bitfield">0</td><td>
+                  <p>Untrapped exception handling selected. If the floating-point exception occurs then the UFC bit is set to 1.</p>
+                </td></tr><tr><td class="bitfield">1</td><td>
+                  <p>Trapped exception handling selected. If the floating-point exception occurs, the PE does not update the UFC bit. The trap handling software can decide whether to set the UFC bit to 1.</p>
+                </td></tr></table>
+              <p>This bit is RW only if the implementation supports the trapping of floating-point exceptions. In an implementation that does not support floating-point exception trapping, this bit is <span class="arm-defined-word">RES0</span>.</p>
+            
+              <p>When this bit is RW, it applies only to floating-point operations. Advanced SIMD operations always use untrapped floating-point exception handling in AArch32 state.</p>
+            <h4 id="OFE">OFE, bit [10]
+              </h4>
+              <p>Overflow floating-point exception trap enable. Possible values are:</p>
+            <table class="valuetable"><tr><th>OFE</th><th>Meaning</th></tr><tr><td class="bitfield">0</td><td>
+                  <p>Untrapped exception handling selected. If the floating-point exception occurs then the OFC bit is set to 1.</p>
+                </td></tr><tr><td class="bitfield">1</td><td>
+                  <p>Trapped exception handling selected. If the floating-point exception occurs, the PE does not update the OFC bit. The trap handling software can decide whether to set the OFC bit to 1.</p>
+                </td></tr></table>
+              <p>This bit is RW only if the implementation supports the trapping of floating-point exceptions. In an implementation that does not support floating-point exception trapping, this bit is <span class="arm-defined-word">RES0</span>.</p>
+            
+              <p>When this bit is RW, it applies only to floating-point operations. Advanced SIMD operations always use untrapped floating-point exception handling in AArch32 state.</p>
+            <h4 id="DZE">DZE, bit [9]
+              </h4>
+              <p>Divide by Zero floating-point exception trap enable. Possible values are:</p>
+            <table class="valuetable"><tr><th>DZE</th><th>Meaning</th></tr><tr><td class="bitfield">0</td><td>
+                  <p>Untrapped exception handling selected. If the floating-point exception occurs then the DZC bit is set to 1.</p>
+                </td></tr><tr><td class="bitfield">1</td><td>
+                  <p>Trapped exception handling selected. If the floating-point exception occurs, the PE does not update the DZC bit. The trap handling software can decide whether to set the DZC bit to 1.</p>
+                </td></tr></table>
+              <p>This bit is RW only if the implementation supports the trapping of floating-point exceptions. In an implementation that does not support floating-point exception trapping, this bit is <span class="arm-defined-word">RES0</span>.</p>
+            
+              <p>When this bit is RW, it applies only to floating-point operations. Advanced SIMD operations always use untrapped floating-point exception handling in AArch32 state.</p>
+            <h4 id="IOE">IOE, bit [8]
+              </h4>
+              <p>Invalid Operation floating-point exception trap enable. Possible values are:</p>
+            <table class="valuetable"><tr><th>IOE</th><th>Meaning</th></tr><tr><td class="bitfield">0</td><td>
+                  <p>Untrapped exception handling selected. If the floating-point exception occurs then the IOC bit is set to 1.</p>
+                </td></tr><tr><td class="bitfield">1</td><td>
+                  <p>Trapped exception handling selected. If the floating-point exception occurs, the PE does not update the IOC bit. The trap handling software can decide whether to set the IOC bit to 1.</p>
+                </td></tr></table>
+              <p>This bit is RW only if the implementation supports the trapping of floating-point exceptions. In an implementation that does not support floating-point exception trapping, this bit is <span class="arm-defined-word">RES0</span>.</p>
+            
+              <p>When this bit is RW, it applies only to floating-point operations. Advanced SIMD operations always use untrapped floating-point exception handling in AArch32 state.</p>
+            <h4 id="IDC">IDC, bit [7]
+              </h4>
+              <p>Input Denormal cumulative floating-point exception bit. This bit is set to 1 to indicate that the Input Denormal floating-point exception has occurred since 0 was last written to this bit.</p>
+            
+              <p>How VFP instructions update this bit depends on the value of the IDE bit.</p>
+            
+              <p>Advanced SIMD instructions set this bit if the Input Denormal floating-point exception occurs in one or more of the floating-point calculations performed by the instruction, regardless of the value of the IDE bit.</p>
+            <h4 id="0">
+                Bits [6:5]
+              </h4>
+              <p>Reserved, <span class="arm-defined-word">RES0</span>.</p>
+            <h4 id="IXC">IXC, bit [4]
+              </h4>
+              <p>Inexact cumulative floating-point exception bit. This bit is set to 1 to indicate that the Inexact floating-point exception has occurred since 0 was last written to this bit.</p>
+            
+              <p>How VFP instructions update this bit depends on the value of the IXE bit.</p>
+            
+              <p>Advanced SIMD instructions set this bit if the Inexact floating-point exception occurs in one or more of the floating-point calculations performed by the instruction, regardless of the value of the IXE bit.</p>
+            <h4 id="UFC">UFC, bit [3]
+              </h4>
+              <p>Underflow cumulative floating-point exception bit. This bit is set to 1 to indicate that the Underflow floating-point exception has occurred since 0 was last written to this bit.</p>
+            
+              <p>How VFP instructions update this bit depends on the value of the UFE bit.</p>
+            
+              <p>Advanced SIMD instructions set this bit if the Underflow floating-point exception occurs in one or more of the floating-point calculations performed by the instruction, regardless of the value of the UFE bit.</p>
+            <h4 id="OFC">OFC, bit [2]
+              </h4>
+              <p>Overflow cumulative floating-point exception bit. This bit is set to 1 to indicate that the Overflow floating-point exception has occurred since 0 was last written to this bit.</p>
+            
+              <p>How VFP instructions update this bit depends on the value of the OFE bit.</p>
+            
+              <p>Advanced SIMD instructions set this bit if the Overflow floating-point exception occurs in one or more of the floating-point calculations performed by the instruction, regardless of the value of the OFE bit.</p>
+            <h4 id="DZC">DZC, bit [1]
+              </h4>
+              <p>Divide by Zero cumulative floating-point exception bit. This bit is set to 1 to indicate that the Divide by Zero floating-point exception has occurred since 0 was last written to this bit.</p>
+            
+              <p>How VFP instructions update this bit depends on the value of the DZE bit.</p>
+            
+              <p>Advanced SIMD instructions set this bit if the Divide by Zero floating-point exception occurs in one or more of the floating-point calculations performed by the instruction, regardless of the value of the DZE bit.</p>
+            <h4 id="IOC">IOC, bit [0]
+              </h4>
+              <p>Invalid Operation cumulative floating-point exception bit. This bit is set to 1 to indicate that the Invalid Operation floating-point exception has occurred since 0 was last written to this bit.</p>
+            
+              <p>How VFP instructions update this bit depends on the value of the IOE bit.</p>
+            
+              <p>Advanced SIMD instructions set this bit if the Invalid Operation floating-point exception occurs in one or more of the floating-point calculations performed by the instruction, regardless of the value of the IOE bit.</p>
+            <div class="access_mechanisms"><h2>Accessing the FPSCR</h2><div class="access_instructions"><div class="access_instruction"><p>This register can be read using VMRS with the following syntax:</p><p class="asm-code">VMRS  &lt;Rt&gt;, &lt;spec_reg&gt;</p></div><div class="access_instruction"><p>This register can be written using VMSR with the following syntax:</p><p class="asm-code">VMSR  &lt;spec_reg&gt;, &lt;Rt&gt;</p></div><p>This syntax uses the following encoding in the System instruction encoding space:</p><table class="access_instructions"><tr><th rowspan="1">
+        &lt;spec_reg&gt;
+      </th><th>reg</th></tr><tr><td>FPSCR</td><td>0001</td></tr></table></div><h3>Accessibility</h3><p>The register is accessible as follows:</p><table class="accessibility"><tr><th class="accessibility_control" colspan="3">
+            Control
+          </th><th colspan="4">
+          Accessibility
+        </th></tr><tr><th class="accessibility_control">E2H</th><th class="accessibility_control">TGE</th><th class="accessibility_control">NS</th><th>EL0</th><th>EL1</th><th>EL2</th><th>EL3</th></tr><tr><td class="accessibility_control">x</td><td class="accessibility_control">x</td><td class="accessibility_control">0</td><td>RW</td><td>RW</td><td>
+        n/a
+      </td><td>RW</td></tr><tr><td class="accessibility_control">x</td><td class="accessibility_control">0</td><td class="accessibility_control">1</td><td>RW</td><td>RW</td><td>RW</td><td>RW</td></tr><tr><td class="accessibility_control">x</td><td class="accessibility_control">1</td><td class="accessibility_control">1</td><td>RW</td><td>
+        n/a
+      </td><td>RW</td><td>RW</td></tr></table><p><p>This table applies to all instructions that can access this register.</p></p><h3>Traps and enables</h3><div class="traps_intro"><p>For a description of the prioritization of any generated exceptions, see section G1.11.2 (Exception priority order) in the <i>ARM<sup>®</sup> Architecture Reference Manual, ARMv8, for ARMv8-A architecture profile</i> for exceptions taken to AArch32 state, and section D1.13.2 (Synchronous exception prioritization) for exceptions taken to AArch64 state. Subject to the prioritization rules, the following traps and enables are applicable when 
+            accessing this register.
+          </p></div><p>
+        When
+        HCR_EL2.E2H==0
+        :
+      </p><ul><li><p>If <a href="AArch32-cpacr.html">CPACR</a>.cp10==00, accesses to this register from PL0 and PL1 are <span class="arm-defined-word">UNDEFINED</span>.</p></li><li><p>If <a href="AArch32-cpacr.html">CPACR</a>.cp10==01, accesses to this register from PL0 are <span class="arm-defined-word">UNDEFINED</span>.</p></li><li><p>If <a href="AArch64-cpacr_el1.html">CPACR_EL1</a>.FPEN==00, accesses to this register from PL0 are trapped to EL1.</p></li><li><p>If <a href="AArch64-cpacr_el1.html">CPACR_EL1</a>.FPEN==01, accesses to this register from PL0 are trapped to EL1.</p></li><li><p>If <a href="AArch64-cpacr_el1.html">CPACR_EL1</a>.FPEN==10, accesses to this register from PL0 are trapped to EL1.</p></li></ul><p>
+        When
+        EL2 is implemented and is using AArch64
+        and
+        SCR_EL3.NS==1 &amp;&amp; HCR_EL2.E2H==0
+        :
+      </p><ul><li><p>If <a href="AArch64-cptr_el2.html">CPTR_EL2</a>.TFP==1, Non-secure accesses to this register from EL0 and EL1 are trapped to EL2.</p></li></ul><p>
+        When
+        EL2 is implemented and is using AArch64
+        and
+        SCR_EL3.NS==1 &amp;&amp; HCR_EL2.E2H==1 &amp;&amp; HCR_EL2.TGE==0
+        :
+      </p><ul><li><p>If <a href="AArch64-cpacr_el1.html">CPACR_EL1</a>.FPEN==00, Non-secure accesses to this register from EL0 are trapped to EL1.</p></li><li><p>If <a href="AArch64-cpacr_el1.html">CPACR_EL1</a>.FPEN==01, Non-secure accesses to this register from EL0 are trapped to EL1.</p></li><li><p>If <a href="AArch64-cpacr_el1.html">CPACR_EL1</a>.FPEN==10, Non-secure accesses to this register from EL0 are trapped to EL1.</p></li><li><p>If <a href="AArch64-cptr_el2.html">CPTR_EL2</a>.FPEN==00, Non-secure accesses to this register from EL0 and EL1 are trapped to EL2.</p></li><li><p>If <a href="AArch64-cptr_el2.html">CPTR_EL2</a>.FPEN==10, Non-secure accesses to this register from EL0 and EL1 are trapped to EL2.</p></li></ul><p>
+        When
+        EL2 is implemented and is using AArch64
+        and
+        SCR_EL3.NS==1 &amp;&amp; HCR_EL2.E2H==1 &amp;&amp; HCR_EL2.TGE==1
+        :
+      </p><ul><li><p>If <a href="AArch64-cptr_el2.html">CPTR_EL2</a>.FPEN==00, Non-secure accesses to this register from EL0 are trapped to EL2.</p></li><li><p>If <a href="AArch64-cptr_el2.html">CPTR_EL2</a>.FPEN==01, Non-secure accesses to this register from EL0 are trapped to EL2.</p></li><li><p>If <a href="AArch64-cptr_el2.html">CPTR_EL2</a>.FPEN==10, Non-secure accesses to this register from EL0 are trapped to EL2.</p></li></ul><p>
+        When
+        EL2 is implemented and is using AArch32
+        and
+        SCR_EL3.NS==1
+        :
+      </p><ul><li><p>If <a href="AArch32-hcptr.html">HCPTR</a>.TCP10==1, Non-secure accesses to this register from EL0 and EL1 are trapped to Hyp mode.</p></li><li><p>If <a href="AArch32-hcptr.html">HCPTR</a>.TCP10==1, Non-secure accesses to this register from EL2 are <span class="arm-defined-word">UNDEFINED</span>.</p></li></ul><p>
+        When
+        EL3 is implemented and is using AArch32
+        and
+        SCR_EL3.NS==1
+        :
+      </p><ul><li><p>If <a href="AArch32-nsacr.html">NSACR</a>.cp10==0, Non-secure accesses to this register from EL0, EL1, and EL2 are <span class="arm-defined-word">UNDEFINED</span>.</p></li></ul><p>
+        When
+        EL3 is implemented and is using AArch64
+        :
+      </p><ul><li><p>If <a href="AArch64-cptr_el3.html">CPTR_EL3</a>.TFP==1, accesses to this register from EL0, EL1, and EL2 are trapped to EL3.</p></li></ul></div><br /><br /><hr /><table align="center"><tr><td><div class="topbar"><a href="AArch32-regindex.html">AArch32 Registers</a></div></td><td><div class="topbar"><a href="AArch64-regindex.html">AArch64 Registers</a></div></td><td><div class="topbar"><a href="AArch32-sysindex.html">AArch32 Instructions</a></div></td><td><div class="topbar"><a href="AArch64-sysindex.html">AArch64 Instructions</a></div></td><td><div class="topbar"><a href="enc_index.html">Index by Encoding</a></div></td><td><div class="topbar"><a href="ext_alpha_index.html">External Registers</a></div></td><td><div class="topbar"><a href="ext_enc_index.html">External Registers by Offset</a></div></td><td><div class="topbar"><a href="func_index.html">Registers by Functional Group</a></div></td></tr></table><p class="versions">24/03/2017 16:41</p><p class="copyconf">Copyright © 2010-2017 ARM Limited or its affiliates. All rights reserved. This document is Confidential.</p></body>
+</html>

@@ -1,0 +1,4 @@
+<browse_script xmlns="http://www.arm.com/project_type" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.arm.com/project_type ../../../Schemas/platform_data-1.xsd">
+    <name language="en">CDB://Scripts/device_browser.py</name>
+    <arguments>--app=browse_cmsis_dap</arguments>
+</browse_script>

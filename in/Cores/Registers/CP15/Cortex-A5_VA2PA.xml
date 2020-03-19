@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<register_list name="CP15"
+               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+               xmlns="http://www.arm.com/core_reg"
+               xsi:schemaLocation="http://www.arm.com/core_reg ../../../Schemas/core_register_definition.xsd"
+               xmlns:tcf="http://com.arm.targetconfigurationeditor">
+
+<register_group name="VAtoPA">
+        <gui_name language="en">VA to PA Translation</gui_name>
+        <description language="en">VA to PA Translation Registers</description>
+        <register access="RW" name="PAR" size="4">
+        <gui_name language="en">PAR</gui_name>
+            <alias_name>CP15_PAR</alias_name>
+            <device_name type="rvi">CP15_PAR</device_name>
+            <device_name type="cadi">PAR</device_name>
+        <description language="en">Physical Address Register</description>
+        <bitField conditional="false" name="PA">
+            <gui_name language="en">PA</gui_name>
+            <description language="en">Contains the physical address after a successful translation</description>
+            <definition>[31:12]</definition>
+        </bitField>
+        <bitField conditional="false" name="NS" enumerationId="GENERIC_CLEAR_SET">
+            <gui_name language="en">NS</gui_name>
+            <description language="en">Indicates the state of the NS attribute bit in the translation table</description>
+            <definition>[9]</definition>
+        </bitField>
+        <bitField conditional="false" name="SH" enumerationId="PAR_NS">
+            <gui_name language="en">SH</gui_name>
+            <description language="en">Indicates shareable memory: 0 = nonshared 1 = shared</description>
+            <definition>[7]</definition>
+        </bitField>
+        <bitField conditional="false" name="INNER" enumerationId="PAR_INNER">
+            <gui_name language="en">INNER</gui_name>
+            <description language="en">Indicates the inner attributes from the translation table</description>
+            <definition>[6:4]</definition>
+        </bitField>
+        <bitField conditional="false" name="OUTER" enumerationId="PAR_OUTER">
+            <gui_name language="en">OUTER</gui_name>
+            <description language="en">Indicates the outer attributes from the translation table</description>
+            <definition>[3:2]</definition>
+        </bitField>
+        <bitField conditional="false" name="Supersection" enumerationId="PAR_SS">
+            <gui_name language="en">SS</gui_name>
+            <description language="en">Indicates if the result is a supersection</description>
+            <definition>[1]</definition>
+        </bitField>
+        <bitField conditional="false" name="DFSR" enumerationId="E_I_D_FAULT_STATUS">
+            <gui_name language="en">DFSR</gui_name>
+            <description language="en">Holds the FSR bits for the aborted address</description>
+            <definition>[6:1]</definition>
+        </bitField>
+        <bitField conditional="false" name="F" enumerationId="PAR_F">
+            <gui_name language="en">F</gui_name>
+            <description language="en">Indicates that the translation succeeded</description>
+            <definition>[0]</definition>
+        </bitField>
+    </register>
+    <register access="WO" name="V2PCWPR" size="4">
+        <gui_name language="en">V2PCWPR</gui_name>
+        <alias_name>CP15_V2PCWPR</alias_name>
+        <device_name type="rvi">CP15_V2PCWPR</device_name>
+        <device_name type="cadi">V2PCWPR</device_name>
+        <description language="en">VA-to-PA translation in the Current World with privileged read permission</description>
+    </register>
+    <register access="WO" name="V2PCWPW" size="4">
+        <gui_name language="en">V2PCWPW</gui_name>
+        <alias_name>CP15_V2PCWPW</alias_name>
+        <device_name type="rvi">CP15_V2PCWPW</device_name>
+        <device_name type="cadi">V2PCWPW</device_name>
+        <description language="en">VA-to-PA translation in the Current World with privileged write permission</description>
+    </register>
+    <register access="WO" name="V2PCWUR" size="4">
+        <gui_name language="en">V2PCWUR</gui_name>
+        <alias_name>CP15_V2PCWUR</alias_name>
+        <device_name type="rvi">CP15_V2PCWUR</device_name>
+        <device_name type="cadi">V2PCWUR</device_name>
+        <description language="en">VA-to-PA translation in the Current World with User read permission</description>
+    </register>
+    <register access="WO" name="V2PCWUW" size="4">
+        <gui_name language="en">V2PCWUW</gui_name>
+        <alias_name>CP15_V2PCWUW</alias_name>
+        <device_name type="rvi">CP15_V2PCWUW</device_name>
+        <device_name type="cadi">V2PCWUW</device_name>
+        <description language="en">VA-to-PA translation in the Current World with User write permission</description>
+    </register>
+    <register access="WO" name="V2POWPR" size="4">
+        <gui_name language="en">V2POWPR</gui_name>
+        <alias_name>CP15_V2POWPR</alias_name>
+        <device_name type="rvi">CP15_V2POWPR</device_name>
+        <device_name type="cadi">V2POWPR</device_name>
+        <description language="en">VA-to-PA translation in the Other World with privileged read permission</description>
+    </register>
+    <register access="WO" name="V2POWPW" size="4">
+        <gui_name language="en">V2POWPW</gui_name>
+        <alias_name>CP15_V2POWPW</alias_name>
+        <device_name type="rvi">CP15_V2POWPW</device_name>
+        <device_name type="cadi">V2POWPW</device_name>
+        <description language="en">VA-to-PA translation in the Other World with privileged write permission</description>
+    </register>
+    <register access="WO" name="V2POWUR" size="4">
+        <gui_name language="en">V2POWUR</gui_name>
+        <alias_name>CP15_V2POWUR</alias_name>
+        <device_name type="rvi">CP15_V2POWUR</device_name>
+        <device_name type="cadi">V2POWUR</device_name>
+        <description language="en">VA-to-PA translation in the Other World with User read permission</description>
+    </register>
+    <register access="WO" name="V2POWUW" size="4">
+        <gui_name language="en">V2POWUW</gui_name>
+        <alias_name>CP15_V2POWUW</alias_name>
+        <device_name type="rvi">CP15_V2POWUW</device_name>
+        <device_name type="cadi">V2POWUW</device_name>
+        <description language="en">VA-to-PA translation in the Other World with User write permission</description>
+    </register>
+</register_group>
+
+</register_list>
+

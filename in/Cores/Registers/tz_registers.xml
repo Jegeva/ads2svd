@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<register_list
+    name="Core" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns="http://www.arm.com/core_reg"
+    xmlns:xi="http://www.w3.org/2001/XInclude"
+    xsi:schemaLocation="http://www.arm.com/core_reg ../../Schemas/core_register_definition.xsd">
+
+    <!-- MON mode Registers  -->
+    <register_group name="MON">
+        <gui_name language="en">MON</gui_name>
+        <description language="en">Banked Core Registers In MON mode</description>
+        <register name="R13_MON" size="4" access="RW">
+            <gui_name language="en">SP_MON</gui_name>
+            <device_name type="alternative">SP_MON</device_name>
+            <description language="en">Stack Pointer in MON mode</description>
+        </register>
+        <register name="R14_MON" size="4" access="RW">
+            <gui_name language="en">LR_MON</gui_name>
+            <device_name type="alternative">LR_MON</device_name>
+            <description language="en">Link Register in MON mode</description>
+        </register>
+        <register name="SPSR_MON" size="4" access="RW">
+            <gui_name language="en">SPSR_MON</gui_name>
+            <description language="en">Saved Program Status Register</description>
+            <xi:include href="CPSR/psrfields_V6_7.xml" xpointer="xmlns(cr=http://www.arm.com/core_reg)xpointer(//cr:bitField)"/>
+        </register>
+    </register_group>
+</register_list>

@@ -1,0 +1,285 @@
+<?xml version="1.0"?>
+
+<?RVConfigUtility MajorVersion = "0" MinorVersion = "0" PatchVersion = "0"?>
+<RVConfigUtility>
+   <redistributable value="true"/>
+   <RVConfigModule>
+      <?RVConfig DLL_NAME = "connection" MajorVersion = "1" MinorVersion = "0" PatchVersion = "0" Expanded = "true" Active = "false" Enabled = "true" UserLabel = ""?>
+      <ScanChainNames Type = "Str">?</ScanChainNames>
+      <ConnectionManager Type = "User" Inherited = "true">0x03DA8ABC</ConnectionManager>
+      <TemplateManager Type = "User" Inherited = "true">0x03DA8AD8</TemplateManager>
+      <BrokerCoreList Type = "User" Inherited = "true">0x03DA8B0C</BrokerCoreList>
+      <PlatformName Type = "Str" Inherited = "true"/>
+      <NoOfScanChains Type = "Int32" Inherited = "true">1</NoOfScanChains>
+      <FirmwareVersion Type = "Str">4.13.0</FirmwareVersion>
+      <VehicleType Type = "Str">DSTREAM</VehicleType>
+      <ConnectionName Type = "Str" Inherited = "true"/>
+      <ChildModuleName Type = "Str" Inherited = "true">Devices</ChildModuleName>
+      <RVConfigModule>
+         <?RVConfig DLL_NAME = "scanchain" Expanded = "true" Active = "true" Enabled = "true" UserLabel = "" MajorVersion = "1" MinorVersion = "1" PatchVersion = "0"?>
+         <ModuleName Type = "Str">Devices</ModuleName>
+         <TemplateName Type = "Str" Inherited = "true">/real-ice/jtag-templates/arm/cs_memap/V1.0</TemplateName>
+         <ChildModuleName Type = "Str" Inherited = "true">CSMEMAP</ChildModuleName>
+         <TAPPosUpdateInProgress Type = "Str" Inherited = "true">FALSE</TAPPosUpdateInProgress>
+         <CurrentTAPPos Type = "Str" Inherited = "true">_4_</CurrentTAPPos>
+         <NewTAPPos Type = "Str" Inherited = "true">_4_</NewTAPPos>
+         <DeviceOptions Type = "Str" Inherited = "true"></DeviceOptions>
+         <IRLength Type = "Str" Inherited = "true">0</IRLength>
+         <RVConfigModule>
+            <?RVConfig DLL_NAME = "dynamiccore" Expanded = "true" Active = "false" Enabled = "true" UserLabel = "" MajorVersion = "1" MinorVersion = "0" PatchVersion = "0"?>
+            <TemplateName Type = "Str"></TemplateName>
+            <ModuleName Type = "Str">UNKNOWN</ModuleName>
+            <IRLength Type = "Str">6</IRLength>
+            <DeviceOptions Type = "Str"></DeviceOptions>
+         </RVConfigModule>
+         <RVConfigModule>
+            <?RVConfig DLL_NAME = "dynamiccore" Expanded = "true" Active = "false" Enabled = "true" UserLabel = "" MajorVersion = "1" MinorVersion = "0" PatchVersion = "0"?>
+            <TemplateName Type = "Str">/real-ice/jtag-templates/arm/cs_arm_dap/V1.0</TemplateName>
+            <ModuleName Type = "Str">ARMCS-DP</ModuleName>
+            <IRLength Type = "Str">4</IRLength>
+            <DeviceOptions Type = "Str"></DeviceOptions>
+            <CanonicalName Type = "Str">ARMCS-DP</CanonicalName>
+            <Class Type = "Str">DebugPort</Class>
+            <DataList Type = "Branch">
+               <DataListUID Type = "User">0x00000004</DataListUID>
+               <MEMORY_ACCESS_AP Type = "Str">0x00000000</MEMORY_ACCESS_AP>
+            </DataList>
+            <ExtendedTypeInfo Type = "Branch"/>
+         </RVConfigModule>
+         <RVConfigModule>
+            <?RVConfig DLL_NAME = "dynamiccore" Expanded = "true" Active = "false" Enabled = "true" UserLabel = "" MajorVersion = "1" MinorVersion = "0" PatchVersion = "0"?>
+            <TemplateName Type = "Str">/real-ice/jtag-templates/arm/cortexr4/V1.0</TemplateName>
+            <ModuleName Type = "Str">Cortex-R4</ModuleName>
+            <IRLength Type = "Str">0</IRLength>
+            <DeviceOptions Type = "Str">ETM,VFPv3-D16</DeviceOptions>
+            <CanonicalName Type = "Str">Cortex-R4</CanonicalName>
+            <Class Type = "Str">CoreExecutable</Class>
+            <DataList Type = "Branch">
+               <DataListUID Type = "User">0x00000005</DataListUID>
+               <CORESIGHT_AP_INDEX Type = "Str">0x00000001</CORESIGHT_AP_INDEX>
+               <CORESIGHT_BASE_ADDRESS Type = "Str">0x80001000</CORESIGHT_BASE_ADDRESS>
+               <CODESEQ_ENABLED Type = "Str">False</CODESEQ_ENABLED>
+               <CODESEQ_CODE_ADDR Type = "Str">0x0007FF80</CODESEQ_CODE_ADDR>
+               <CODESEQ_CODE_SIZE Type = "Str">0x80</CODESEQ_CODE_SIZE>
+               <CODESEQ_TIMEOUT Type = "Str">100</CODESEQ_TIMEOUT>
+               <BYPASS_MEMPROT_IN_DBG Type = "Str">True</BYPASS_MEMPROT_IN_DBG>
+               <CLEAR_BRKHW Type = "Str">True</CLEAR_BRKHW>
+               <JTAG_TIMEOUTS_ENABLED Type = "Str">True</JTAG_TIMEOUTS_ENABLED>
+               <POST_RESET_STATE Type = "Str">1</POST_RESET_STATE>
+               <BYPASS_DEVICE_ID_CHECK Type = "Str">False</BYPASS_DEVICE_ID_CHECK>
+               <DEBUG_ACCEL Type = "Str">0</DEBUG_ACCEL>
+               <ALLOW_BACKGROUND_PROC Type = "Str">True</ALLOW_BACKGROUND_PROC>
+               <ALLOW_DBGNOPWRDWN Type = "Str">True</ALLOW_DBGNOPWRDWN>
+               <CTI_SYNCH_START Type = "Str">False</CTI_SYNCH_START>
+               <CHECK_DSCR_DBGEN Type = "Str">True</CHECK_DSCR_DBGEN>
+            </DataList>
+            <ExtendedTypeInfo Type = "Branch"/>
+         </RVConfigModule>
+         <RVConfigModule>
+            <?RVConfig DLL_NAME = "dynamiccore" Expanded = "true" Active = "false" Enabled = "true" UserLabel = ""?>
+            <TemplateName Type = "Str">/real-ice/jtag-templates/arm/cs_memap/V1.0</TemplateName>
+            <ModuleName Type = "Str">CSMEMAP</ModuleName>
+            <IRLength Type = "Str">0</IRLength>
+            <DeviceOptions Type = "Str"></DeviceOptions>
+            <CanonicalName Type = "Str">CSMEMAP</CanonicalName>
+            <Class Type = "Str">AccessPort</Class>
+            <DataList Type = "Branch">
+               <DataListUID Type = "User">0x00000008</DataListUID>
+               <CORESIGHT_AP_INDEX Type = "Str">0x00000000</CORESIGHT_AP_INDEX>
+            </DataList>
+            <ExtendedTypeInfo Type = "Branch"/>
+         </RVConfigModule>
+         <RVConfigModule>
+            <?RVConfig DLL_NAME = "dynamiccore" Expanded = "true" Active = "false" Enabled = "true" UserLabel = ""?>
+            <TemplateName Type = "Str">/real-ice/jtag-templates/arm/cs_memap/V1.0</TemplateName>
+            <ModuleName Type = "Str">CSMEMAP</ModuleName>
+            <IRLength Type = "Str">0</IRLength>
+            <DeviceOptions Type = "Str"></DeviceOptions>
+            <CanonicalName Type = "Str">CSMEMAP</CanonicalName>
+            <Class Type = "Str">AccessPort</Class>
+            <DataList Type = "Branch">
+               <DataListUID Type = "User">0x00000009</DataListUID>
+               <CORESIGHT_AP_INDEX Type = "Str">0x00000001</CORESIGHT_AP_INDEX>
+            </DataList>
+            <ExtendedTypeInfo Type = "Branch"/>
+         </RVConfigModule>
+         <DataList Type = "Branch">
+            <DataListUID Type = "User">0x00000002</DataListUID>
+            <ClockType Type = "Int32">7</ClockType>
+            <ClockSpeed Type = "Str">10000000</ClockSpeed>
+            <OtherSpeed Type = "Str">10.000 MHz</OtherSpeed>
+            <Tap_Count Type = "UInt32">5</Tap_Count>
+            <Tap_0 Type = "Branch">
+               <DataListUID Type = "User">0x00000003</DataListUID>
+               <CoreName Type = "Str"></CoreName>
+               <FamilyName Type = "Str"></FamilyName>
+               <DllName Type = "Str">dynamiccore</DllName>
+               <TemplateVersion Type = "Str"></TemplateVersion>
+               <DllVersion Type = "Str"></DllVersion>
+               <Description Type = "Str">UNKNOWN</Description>
+               <IRLength Type = "Str">6</IRLength>
+               <TemplateName Type = "Str"></TemplateName>
+               <DeviceID Type = "Str"></DeviceID>
+               <Manufacturer Type = "Str"></Manufacturer>
+               <DeviceOptions Type = "Str"></DeviceOptions>
+               <Class Type = "Str"></Class>
+               <CanonicalName Type = "Str"></CanonicalName>
+            </Tap_0>
+            <Tap_1 Type = "Branch">
+               <DataListUID Type = "User">0x00000004</DataListUID>
+               <CoreName Type = "Str">ARMCS-DP</CoreName>
+               <FamilyName Type = "Str">CoreSight</FamilyName>
+               <DllName Type = "Str">dynamiccore</DllName>
+               <TemplateVersion Type = "Str">1:0:0</TemplateVersion>
+               <DllVersion Type = "Str">rvi.dynamic.core</DllVersion>
+               <Description Type = "Str">ARMCS-DP</Description>
+               <IRLength Type = "Str">4</IRLength>
+               <TemplateName Type = "Str">/real-ice/jtag-templates/arm/cs_arm_dap/V1.0</TemplateName>
+               <DeviceID Type = "Str"></DeviceID>
+               <Manufacturer Type = "Str"></Manufacturer>
+               <DeviceOptions Type = "Str"></DeviceOptions>
+               <Class Type = "Str">DebugPort</Class>
+               <CanonicalName Type = "Str">ARMCS-DP</CanonicalName>
+            </Tap_1>
+            <Tap_2 Type = "Branch">
+               <DataListUID Type = "User">0x00000005</DataListUID>
+               <CoreName Type = "Str">Cortex-R4</CoreName>
+               <FamilyName Type = "Str">Cortex</FamilyName>
+               <DllName Type = "Str">dynamiccore</DllName>
+               <TemplateVersion Type = "Str">1:0:0</TemplateVersion>
+               <DllVersion Type = "Str">rvi.dynamic.core</DllVersion>
+               <Description Type = "Str">Cortex-R4</Description>
+               <IRLength Type = "Str">0</IRLength>
+               <TemplateName Type = "Str">/real-ice/jtag-templates/arm/cortexr4/V1.0</TemplateName>
+               <DeviceID Type = "Str"></DeviceID>
+               <Manufacturer Type = "Str"></Manufacturer>
+               <DeviceOptions Type = "Str">ETM,VFPv3-D16</DeviceOptions>
+               <Class Type = "Str">CoreExecutable</Class>
+               <CanonicalName Type = "Str">Cortex-R4</CanonicalName>
+            </Tap_2>
+            <Tap_3 Type = "Branch">
+               <DataListUID Type = "User">0x00000008</DataListUID>
+               <CoreName Type = "Str">CSMEMAP</CoreName>
+               <FamilyName Type = "Str">CoreSight</FamilyName>
+               <DllName Type = "Str">dynamiccore</DllName>
+               <TemplateVersion Type = "Str">1:0:0</TemplateVersion>
+               <DllVersion Type = "Str">rvi.dynamic.core</DllVersion>
+               <Description Type = "Str">CSMEMAP</Description>
+               <IRLength Type = "Str">0</IRLength>
+               <TemplateName Type = "Str">/real-ice/jtag-templates/arm/cs_memap/V1.0</TemplateName>
+               <DeviceID Type = "Str"></DeviceID>
+               <Manufacturer Type = "Str"></Manufacturer>
+               <DeviceOptions Type = "Str"></DeviceOptions>
+               <Class Type = "Str">AccessPort</Class>
+               <CanonicalName Type = "Str">CSMEMAP</CanonicalName>
+            </Tap_3>
+            <Tap_4 Type = "Branch">
+               <DataListUID Type = "User">0x00000009</DataListUID>
+               <CoreName Type = "Str">CSMEMAP</CoreName>
+               <FamilyName Type = "Str">CoreSight</FamilyName>
+               <DllName Type = "Str">dynamiccore</DllName>
+               <TemplateVersion Type = "Str">1:0:0</TemplateVersion>
+               <DllVersion Type = "Str">rvi.dynamic.core</DllVersion>
+               <Description Type = "Str">CSMEMAP</Description>
+               <IRLength Type = "Str">0</IRLength>
+               <TemplateName Type = "Str">/real-ice/jtag-templates/arm/cs_memap/V1.0</TemplateName>
+               <DeviceID Type = "Str"></DeviceID>
+               <Manufacturer Type = "Str"></Manufacturer>
+               <DeviceOptions Type = "Str"></DeviceOptions>
+               <Class Type = "Str">AccessPort</Class>
+               <CanonicalName Type = "Str">CSMEMAP</CanonicalName>
+            </Tap_4>
+         </DataList>
+      </RVConfigModule>
+      <RVConfigModule>
+         <?RVConfig DLL_NAME = "advanced" Expanded = "true" Active = "false" Enabled = "true" UserLabel = "" MajorVersion = "1" MinorVersion = "0" PatchVersion = "0"?>
+         <ModuleName Type = "Str">Advanced</ModuleName>
+         <ScanChain0BitPattern Type = "Int32">0</ScanChain0BitPattern>
+         <DataList Type = "Branch">
+            <ResetOperation Type = "UInt32">0</ResetOperation>
+            <TResetOnInitConnect Type = "UInt32">0</TResetOnInitConnect>
+            <SResetOnInitConnect Type = "UInt32">0</SResetOnInitConnect>
+            <ResetHoldTime Type = "UInt32">100</ResetHoldTime>
+            <PostResetDelay Type = "UInt32">1000</PostResetDelay>
+            <nTRSTHoldTime Type = "UInt32">10</nTRSTHoldTime>
+            <nTRSTPostResetTime Type = "UInt32">10</nTRSTPostResetTime>
+            <DoSoftTAPReset Type = "UInt32">1</DoSoftTAPReset>
+            <Linked_SRST_TRST Type = "UInt32">0</Linked_SRST_TRST>
+            <AllowICETAPReset Type = "UInt32">1</AllowICETAPReset>
+            <AllowICELatchSysRst Type = "UInt32">0</AllowICELatchSysRst>
+            <nTRSTHighMode Type = "UInt32">0</nTRSTHighMode>
+            <nTRSTLowMode Type = "UInt32">0</nTRSTLowMode>
+            <nSRSTHighMode Type = "UInt32">1</nSRSTHighMode>
+            <nSRSTLowMode Type = "UInt32">0</nSRSTLowMode>
+            <LVDSProbeMode Type = "UInt32">1</LVDSProbeMode>
+            <SWJEnable Type = "UInt32">0</SWJEnable>
+            <UseDeprecatedSWJ Type = "UInt32">0</UseDeprecatedSWJ>
+            <UserOut_P1 Type = "UInt32">0</UserOut_P1>
+            <UserOut_P2 Type = "UInt32">0</UserOut_P2>
+            <UserOut_P3 Type = "UInt32">0</UserOut_P3>
+            <UserOut_P4 Type = "UInt32">0</UserOut_P4>
+            <UserOut_P5 Type = "UInt32">0</UserOut_P5>
+            <UserOut_P6_COAX Type = "UInt32">0</UserOut_P6_COAX>
+            <SWOMode Type = "UInt32">0</SWOMode>
+            <SWOBaudRate Type = "UInt32">0</SWOBaudRate>
+            <PythonScript Type = "Str">from panda import *&#x0A;from LDDI import *&#x0A;from icepick import *&#x0A;import rvi&#x0A;&#x0A;icePickConfigured = False&#x0A;&#x0A;def readID():&#x0A;    err = JTAG_ConfigScanChain(0, 6, 0, 1)&#x0A;    icepick.doScanIR(4, [0xF], RDDI_JTAGS_RTI, 1)&#x0A;    JTAG_ConfigScanChain(4, 0, 1, 0)&#x0A;    icepick.doScanIR(6, [0x3F], RDDI_JTAGS_RTI, 1)&#x0A;    JTAG_TMS(10, [0, 0])&#x0A;    idCode = readIDCODE([0x04],  6, 32)&#x0A;    print &quot;ICEPick IDCODE is %02x%02x%02x%02x&quot; % (idCode[3], idCode[2],idCode[1], idCode[0])&#x0A;    if err == 0:&#x0A;        JTAG_ConfigScanChain(0, 6, 0, 1)&#x0A;        idCode = readIDCODE([0x0E],  4, 32)&#x0A;        print &quot;DAP IDCODE is %02x%02x%02x%02x&quot; % (idCode[3], idCode[2],idCode[1], idCode[0])&#x0A;    return err&#x0A;&#x0A;def enable_ICEPICK_D(port):&#x0A;    print &quot;enable_ICEPICK_D()&quot;&#x0A;    global icePickConfigured&#x0A;    if icePickConfigured:&#x0A;        return True&#x0A;    success = reenable_ICEPICK_D(port)&#x0A;    if success:&#x0A;        icePickConfigured = True&#x0A;    return success&#x0A;&#x0A;&#x0A;def reenable_ICEPICK_D(port):&#x0A;    print &quot;reenable_ICEPICK_D()&quot;&#x0A;    if not openJTAG():&#x0A;        return False&#x0A;    err = doTAPReset()&#x0A;    if err == 0:&#x0A;        err = JTAG_StateJump(RDDI_JTAGS_TLR)&#x0A;    icepick.wakeUpDebugLogic()&#x0A;    JTAG_ConfigScanChain(0, 0, 0, 0)&#x0A;    idCode = readIDCODE([0x04],  6, 32)&#x0A;    print &quot;ICEPick IDCODE is %02x%02x%02x%02x&quot; % (idCode[3], idCode[2],idCode[1], idCode[0])&#x0A;    icepick.connectIcepick(True)&#x0A;    icepick.writeIcepickRegister(IcepickDControl.Block,IcepickDControl.Reg.Control,IcepickDControl.Bit.D2D_POWEROVERRIDE | IcepickDControl.Bit.KEEPPOWEREDINTLR | IcepickDControl.Bit.BLOCKSYSRESET)&#x0A;    icepick.checkIcepickRegisterWriteResult()&#x0A;    icepick.writeIcepickRegister(DebugTapLinking.Block,port,DebugTapLinking.Bit.FORCEACTIVE | DebugTapLinking.Bit.SELECTTAP | DebugTapLinking.Bit.DEBUGENABLE | DebugTapLinking.Bit.INHIBITSLEEP)&#x0A;&#x0A;    err = readID()&#x0A;    JTAG_Disconnect()&#x0A;    return err == 0&#x0A;&#x0A;def HandleOpenConn(dev, type, state):&#x0A;    print &quot;HandleOpenConn()&quot;&#x0A;    if type==1:&#x0A;        if not enable_ICEPICK_D(0):&#x0A;            return False&#x0A;&#x0A;    return handleOpenConn(dev,type,state)&#x0A;&#x0A;def UnknownStateRecovery():&#x0A;    print &quot;UnknownStateRecovery()&quot;&#x0A;    reenable_ICEPICK_D(0)&#x0A;&#x0A;def HandleExeReset(flags):&#x0A;    DAPDevID = 0x02&#x0A;    R4DevID = 0x03&#x0A;&#x0A;    openedDAPConn = False&#x0A;    err, id, version, message = Debug_OpenConn(DAPDevID)&#x0A;    if err == 0:&#x0A;        openedDAPConn = True&#x0A;    elif err == 0x101:&#x0A;        err = 0&#x0A;    if err == 0:&#x0A;        err, apIdx, baseAddr = rvi.getCoreSightConfig(R4DevID)&#x0A;        if err == 0:&#x0A;            handleExeGo(R4DevID)&#x0A;            err = doReset()&#x0A;            if rvi.wantToStopOnReset(R4DevID):&#x0A;                handleExeStopTarget(R4DevID)&#x0A;    if openedDAPConn:&#x0A;        err2 = Debug_CloseConn(DAPDevID)&#x0A;    if err == 0:&#x0A;        err = err2&#x0A;&#x0A;&#x0A;def doReset():&#x0A;    print &quot;doReset()&quot;&#x0A;    if not openJTAG():&#x0A;        return False&#x0A;    JTAG_ConfigScanChain(4, 0, 1, 0)&#x0A;    idCode = readIDCODE([0x04],  6, 32)&#x0A;    print &quot;ICEPick IDCODE is %02x%02x%02x%02x&quot; % (idCode[3], idCode[2],idCode[1], idCode[0])&#x0A;    icepick.connectIcepick(True)&#x0A;    icepick.writeIcepickRegister(IcepickDControl.Block,IcepickDControl.Reg.Control,IcepickDControl.Bit.D2D_POWEROVERRIDE | IcepickDControl.Bit.KEEPPOWEREDINTLR | IcepickDControl.Bit.SYSTEMRESET)&#x0A;    icepick.checkIcepickRegisterWriteResult()&#x0A;&#x0A;    err = readID()&#x0A;    JTAG_Disconnect()&#x0A;    print &quot;doReset() done&quot;&#x0A;    return err == 0&#x0A;</PythonScript>
+            <PowerFilterTime Type = "UInt32">100</PowerFilterTime>
+         </DataList>
+      </RVConfigModule>
+      <JtagClockFreq Type = "UInt32" Inherited = "true">10000000</JtagClockFreq>
+      <JtagClockType Type = "UInt32" Inherited = "true">0</JtagClockType>
+      <LVDSProbeMode Type = "UInt32" Inherited = "true">1</LVDSProbeMode>
+      <SWJEnable Type = "Int32" Inherited = "true">0</SWJEnable>
+      <UseDeprecatedSWJ Type = "Int32" Inherited = "true">0</UseDeprecatedSWJ>
+      <RVConfigModule>
+         <?RVConfig DLL_NAME = "trace" Expanded = "true" Active = "false" Enabled = "true" UserLabel = "" MajorVersion = "1" MinorVersion = "0" PatchVersion = "0"?>
+         <DataList Type = "Branch">
+            <DELAY_TRACE_CLOCK Type = "Int32">0</DELAY_TRACE_CLOCK>
+            <DELAY_TRACE_SIGNAL_1 Type = "Int32">0</DELAY_TRACE_SIGNAL_1>
+            <DELAY_TRACE_SIGNAL_2 Type = "Int32">0</DELAY_TRACE_SIGNAL_2>
+            <DELAY_TRACE_SIGNAL_3 Type = "Int32">0</DELAY_TRACE_SIGNAL_3>
+            <DELAY_TRACE_SIGNAL_4 Type = "Int32">0</DELAY_TRACE_SIGNAL_4>
+            <DELAY_TRACE_SIGNAL_5 Type = "Int32">0</DELAY_TRACE_SIGNAL_5>
+            <DELAY_TRACE_SIGNAL_6 Type = "Int32">0</DELAY_TRACE_SIGNAL_6>
+            <DELAY_TRACE_SIGNAL_7 Type = "Int32">0</DELAY_TRACE_SIGNAL_7>
+            <DELAY_TRACE_SIGNAL_8 Type = "Int32">0</DELAY_TRACE_SIGNAL_8>
+            <DELAY_TRACE_SIGNAL_9 Type = "Int32">0</DELAY_TRACE_SIGNAL_9>
+            <DELAY_TRACE_SIGNAL_10 Type = "Int32">0</DELAY_TRACE_SIGNAL_10>
+            <DELAY_TRACE_SIGNAL_11 Type = "Int32">0</DELAY_TRACE_SIGNAL_11>
+            <DELAY_TRACE_SIGNAL_12 Type = "Int32">0</DELAY_TRACE_SIGNAL_12>
+            <DELAY_TRACE_SIGNAL_13 Type = "Int32">0</DELAY_TRACE_SIGNAL_13>
+            <DELAY_TRACE_SIGNAL_14 Type = "Int32">0</DELAY_TRACE_SIGNAL_14>
+            <DELAY_TRACE_SIGNAL_15 Type = "Int32">0</DELAY_TRACE_SIGNAL_15>
+            <DELAY_TRACE_SIGNAL_16 Type = "Int32">0</DELAY_TRACE_SIGNAL_16>
+            <DELAY_TRACE_SIGNAL_17 Type = "Int32">0</DELAY_TRACE_SIGNAL_17>
+            <DELAY_TRACE_SIGNAL_18 Type = "Int32">0</DELAY_TRACE_SIGNAL_18>
+            <DELAY_TRACE_SIGNAL_19 Type = "Int32">0</DELAY_TRACE_SIGNAL_19>
+            <DELAY_TRACE_SIGNAL_20 Type = "Int32">0</DELAY_TRACE_SIGNAL_20>
+            <DELAY_TRACE_SIGNAL_21 Type = "Int32">0</DELAY_TRACE_SIGNAL_21>
+            <DELAY_TRACE_SIGNAL_22 Type = "Int32">0</DELAY_TRACE_SIGNAL_22>
+            <DELAY_TRACE_SIGNAL_23 Type = "Int32">0</DELAY_TRACE_SIGNAL_23>
+            <DELAY_TRACE_SIGNAL_24 Type = "Int32">0</DELAY_TRACE_SIGNAL_24>
+            <DELAY_TRACE_SIGNAL_25 Type = "Int32">0</DELAY_TRACE_SIGNAL_25>
+            <DELAY_TRACE_SIGNAL_26 Type = "Int32">0</DELAY_TRACE_SIGNAL_26>
+            <DELAY_TRACE_SIGNAL_27 Type = "Int32">0</DELAY_TRACE_SIGNAL_27>
+            <DELAY_TRACE_SIGNAL_28 Type = "Int32">0</DELAY_TRACE_SIGNAL_28>
+            <DELAY_TRACE_SIGNAL_29 Type = "Int32">0</DELAY_TRACE_SIGNAL_29>
+            <DELAY_TRACE_SIGNAL_30 Type = "Int32">0</DELAY_TRACE_SIGNAL_30>
+            <DELAY_TRACE_SIGNAL_31 Type = "Int32">0</DELAY_TRACE_SIGNAL_31>
+            <DELAY_TRACE_SIGNAL_32 Type = "Int32">0</DELAY_TRACE_SIGNAL_32>
+            <DELAY_TRACE_SIGNAL_33 Type = "Int32">0</DELAY_TRACE_SIGNAL_33>
+            <DELAY_TRACE_SIGNAL_34 Type = "Int32">0</DELAY_TRACE_SIGNAL_34>
+            <DELAY_TRACE_SIGNAL_35 Type = "Int32">0</DELAY_TRACE_SIGNAL_35>
+            <DELAY_TRACE_SIGNAL_36 Type = "Int32">0</DELAY_TRACE_SIGNAL_36>
+         </DataList>
+      </RVConfigModule>
+      <ConnectionType Type = "Str">TCP/IP</ConnectionType>
+      <CoresightAssociations Type = "Branch">
+         <Device Type = "EnumStr">Name=UNKNOWN_0;Type=</Device>
+         <Device Type = "EnumStr">Name=ARMCS-DP_0;Type=ARMCS-DP</Device>
+         <Device Type = "EnumStr">Name=Cortex-R4_0;Type=Cortex-R4</Device>
+         <Device Type = "EnumStr">Name=CSMEMAP_0;Type=CSMEMAP</Device>
+         <Device Type = "EnumStr">Name=CSMEMAP_1;Type=CSMEMAP</Device>
+      </CoresightAssociations>
+   </RVConfigModule>
+</RVConfigUtility>

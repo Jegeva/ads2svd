@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<platform_data xmlns:peripheral="http://com.arm.targetconfigurationeditor" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.arm.com/project_type" type="HARDWARE" xsi:schemaLocation="http://www.arm.com/project_type ../../../Schemas/platform_data-1.xsd">
+    <project_type_list>
+        <xi:include href="../../../Gdbserver/tcp_project_types_v5.xml"/>
+        <project_type type="BARE_METAL">
+            <name language="en">Bare Metal Debug</name>
+            <description language="en">This allows a bare-metal debug connection.</description>
+            <execution_environment id="BARE_METAL">
+                <name language="en">Bare Metal Debug</name>
+                <description language="en">Connect to a platform using a DSTREAM/RVI</description>
+                <xi:include href="../../../Include/hardware_address.xml"/>
+                <param default="CDB://TI_DM6467.rvc" id="config_file" type="string" visible="false"/>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug ARM926EJ-S</name>
+                    <xi:include href="../../../Include/dstream_activity_description_bm.xml"/>
+                    <xi:include href="../../../Include/dstream_connection_type.xml"/>
+                    <core connection_id="ARM926EJ-S">
+                        <core_definition>ARM926EJ-S</core_definition>
+                    </core>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug ARM926EJ-S</name>
+                    <xi:include href="../../../Include/rvi_activity_description_bm.xml"/>
+                    <xi:include href="../../../Include/rvi_connection_type.xml"/>
+                    <core connection_id="ARM926EJ-S">
+                        <core_definition>ARM926EJ-S</core_definition>
+                    </core>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug ARM926EJ-S</name>
+                    <xi:include href="../../../Include/dstream_st_activity_description_bm.xml"/>
+                    <xi:include href="../../../Include/dstream_st_connection_type.xml"/>
+                    <core connection_id="ARM926EJ-S">
+                        <core_definition>ARM926EJ-S</core_definition>
+                    </core>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug ARM926EJ-S</name>
+                    <xi:include href="../../../Include/dstream_pt_activity_description_bm.xml"/>
+                    <xi:include href="../../../Include/dstream_pt_connection_type.xml"/>
+                    <core connection_id="ARM926EJ-S">
+                        <core_definition>ARM926EJ-S</core_definition>
+                    </core>
+                </activity>
+                <!-- ETMv1 Trace not supported yet
+                <activity id="ICE_DEBUG_WITH_ETB_TRACE" type="Debug_and_Trace">
+                    <name language="en">Debug and ETB Trace ARM926EJ-S</name>
+                    <xi:include href="../../../Include/dstream_activity_description_bm.xml"/>
+                    <xi:include href="../../../Include/dstream_connection_type.xml"/>
+                    <param default="CDB://DM6467.py" id="dtsl_config_script" type="string" visible="false"/>
+                    <param default="DM6467ETB" id="dtsl_config" type="string" visible="false"/>
+                    <param default="ETB" id="dtsl_tracesource" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG_WITH_ETB_TRACE" type="Debug_and_Trace">
+                    <name language="en">Debug and ETB Trace ARM926EJ-S</name>
+                    <xi:include href="../../../Include/rvi_activity_description_bm.xml"/>
+                    <xi:include href="../../../Include/rvi_connection_type.xml"/>
+                    <param default="CDB://DM6467.py" id="dtsl_config_script" type="string" visible="false"/>
+                    <param default="DM6467ETB" id="dtsl_config" type="string" visible="false"/>
+                    <param default="ETB" id="dtsl_tracesource" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG_WITH_ETB_TRACE" type="Debug_and_Trace">
+                    <name language="en">Debug and ETB Trace ARM926EJ-S</name>
+                    <xi:include href="../../../Include/dstream_st_activity_description_bm.xml"/>
+                    <xi:include href="../../../Include/dstream_st_connection_type.xml"/>
+                    <param default="CDB://DM6467.py" id="dtsl_config_script" type="string" visible="false"/>
+                    <param default="DM6467ETB" id="dtsl_config" type="string" visible="false"/>
+                    <param default="ETB" id="dtsl_tracesource" type="string" visible="false"/>
+                </activity>
+                -->
+            </execution_environment>
+        </project_type>
+        <project_type os_abstraction="LINUX_KERNEL" type="BARE_METAL">
+            <name language="en">Linux Kernel and/or Device Driver Debug</name>
+            <description language="en">This allows a bare-metal debug connection for Linux kernel or Linux device driver debug.</description>
+            <execution_environment id="bare_metal_linux_kernel_debug">
+                <name language="en">Linux Kernel Debug</name>
+                <description language="en">Connect to a platform using a DSTREAM/RVI</description>
+                <xi:include href="../../../Include/hardware_address.xml"/>
+                <param default="CDB://TI_DM6467.rvc" id="config_file" type="string" visible="false"/>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug ARM926EJ-S</name>
+                    <xi:include href="../../../Include/dstream_activity_description_lk.xml"/>
+                    <xi:include href="../../../Include/dstream_connection_type.xml"/>
+                    <core connection_id="ARM926EJ-S">
+                        <core_definition>ARM926EJ-S</core_definition>
+                    </core>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug ARM926EJ-S</name>
+                    <xi:include href="../../../Include/rvi_activity_description_lk.xml"/>
+                    <xi:include href="../../../Include/rvi_connection_type.xml"/>
+                    <core connection_id="ARM926EJ-S">
+                        <core_definition>ARM926EJ-S</core_definition>
+                    </core>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug ARM926EJ-S</name>
+                    <xi:include href="../../../Include/dstream_st_activity_description_lk.xml"/>
+                    <xi:include href="../../../Include/dstream_st_connection_type.xml"/>
+                    <core connection_id="ARM926EJ-S">
+                        <core_definition>ARM926EJ-S</core_definition>
+                    </core>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug ARM926EJ-S</name>
+                    <xi:include href="../../../Include/dstream_pt_activity_description_lk.xml"/>
+                    <xi:include href="../../../Include/dstream_pt_connection_type.xml"/>
+                    <core connection_id="ARM926EJ-S">
+                        <core_definition>ARM926EJ-S</core_definition>
+                    </core>
+                </activity>
+                <!-- ETMv1 Trace not supported yet
+                <activity id="ICE_DEBUG_WITH_ETB_TRACE" type="Debug_and_Trace">
+                    <name language="en">Debug and ETB Trace ARM926EJ-S</name>
+                    <xi:include href="../../../Include/dstream_activity_description_bm.xml"/>
+                    <xi:include href="../../../Include/dstream_connection_type.xml"/>
+                    <param default="CDB://DM6467.py" id="dtsl_config_script" type="string" visible="false"/>
+                    <param default="DM6467ETB" id="dtsl_config" type="string" visible="false"/>
+                    <param default="ETB" id="dtsl_tracesource" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG_WITH_ETB_TRACE" type="Debug_and_Trace">
+                    <name language="en">Debug and ETB Trace ARM926EJ-S</name>
+                    <xi:include href="../../../Include/rvi_activity_description_bm.xml"/>
+                    <xi:include href="../../../Include/rvi_connection_type.xml"/>
+                    <param default="CDB://DM6467.py" id="dtsl_config_script" type="string" visible="false"/>
+                    <param default="DM6467ETB" id="dtsl_config" type="string" visible="false"/>
+                    <param default="ETB" id="dtsl_tracesource" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG_WITH_ETB_TRACE" type="Debug_and_Trace">
+                    <name language="en">Debug and ETB Trace ARM926EJ-S</name>
+                    <xi:include href="../../../Include/dstream_st_activity_description_bm.xml"/>
+                    <xi:include href="../../../Include/dstream_st_connection_type.xml"/>
+                    <param default="CDB://DM6467.py" id="dtsl_config_script" type="string" visible="false"/>
+                    <param default="DM6467ETB" id="dtsl_config" type="string" visible="false"/>
+                    <param default="ETB" id="dtsl_tracesource" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG_WITH_ETB_TRACE" type="Debug_and_Trace">
+                    <name language="en">Debug and Kernel-only ETB Trace ARM926EJ-S</name>
+                    <xi:include href="../../../Include/dstream_activity_description_bm.xml"/>
+                    <xi:include href="../../../Include/dstream_connection_type.xml"/>
+                    <param default="CDB://DM6467.py" id="dtsl_config_script" type="string" visible="false"/>
+                    <param default="DM6467ETBKernelOnly" id="dtsl_config" type="string" visible="false"/>
+                    <param default="ETB" id="dtsl_tracesource" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG_WITH_ETB_TRACE" type="Debug_and_Trace">
+                    <name language="en">Debug and Kernel-only ETB Trace ARM926EJ-S</name>
+                    <xi:include href="../../../Include/rvi_activity_description_bm.xml"/>
+                    <xi:include href="../../../Include/rvi_connection_type.xml"/>
+                    <param default="CDB://DM6467.py" id="dtsl_config_script" type="string" visible="false"/>
+                    <param default="DM6467ETBKernelOnly" id="dtsl_config" type="string" visible="false"/>
+                    <param default="ETB" id="dtsl_tracesource" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG_WITH_ETB_TRACE" type="Debug_and_Trace">
+                    <name language="en">Debug and Kernel-only ETB Trace ARM926EJ-S</name>
+                    <xi:include href="../../../Include/dstream_st_activity_description_bm.xml"/>
+                    <xi:include href="../../../Include/dstream_st_connection_type.xml"/>
+                    <param default="CDB://DM6467.py" id="dtsl_config_script" type="string" visible="false"/>
+                    <param default="DM6467ETBKernelOnly" id="dtsl_config" type="string" visible="false"/>
+                    <param default="ETB" id="dtsl_tracesource" type="string" visible="false"/>
+                </activity>
+                -->
+            </execution_environment>
+        </project_type>
+    </project_type_list>
+</platform_data>

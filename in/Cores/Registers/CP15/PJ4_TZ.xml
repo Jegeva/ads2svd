@@ -1,0 +1,750 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+
+<!-- Register names prefixed with an underscore are placeholders for registers currently missing from the RVI templates -->
+
+<register_list name="CP15"
+               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+               xmlns="http://www.arm.com/core_reg"
+               xmlns:xi="http://www.w3.org/2001/XInclude"
+               xsi:schemaLocation="http://www.arm.com/core_reg ../../../Schemas/core_register_definition.xsd"
+               xmlns:tcf="http://com.arm.targetconfigurationeditor">
+
+    <access_world>Secure</access_world>
+    <!-- CP15 Registers in Secure Mode -->
+    <register_group name="Secure">
+        <gui_name language="en">Secure Mode Registers</gui_name>
+        <description language="en">CP15 Registers that are banked in Secure Mode</description>
+        <register access="RO" name="S_CACHE_SIZE_SELECT" size="4">
+            <gui_name language="en">CP15_S_CACHE_SIZE_SELECT</gui_name>
+            <alias_name>CP15_S_CACHE_SIZE_SELECT</alias_name>
+            <device_name type="rvi">CP15_S_CACHE_SIZE_SELECT</device_name>
+            <device_name type="cadi">CP15_S_CACHE_SIZE_SELECT</device_name>
+            <description language="en">Secure World cache size selection register</description>
+            <bitField conditional="false" enumerationId="E_CSS_LEVEL" high_bit="3" low_bit="1" name="Level">
+                <gui_name language="en">Cache level selected</gui_name>
+                <description language="en">Cache level selected</description>
+                <definition>[3:1]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="E_CSS_IND" high_bit="0" low_bit="0" name="InD">
+                <gui_name language="en">InD</gui_name>
+                <description language="en">Instruction or Data/Unified.</description>
+                <definition>[0]</definition>
+            </bitField>
+        </register>
+        <register access="RW" name="S_CONTROL" size="4">
+            <gui_name language="en">CP15_S_CONTROL</gui_name>
+            <alias_name>CP15_S_CONTROL</alias_name>
+            <device_name type="rvi">CP15_S_CONTROL</device_name>
+            <device_name type="cadi">CP15_S_CONTROL</device_name>
+            <description language="en">Secure World control register</description>
+            <bitField conditional="false" enumerationId="E_ENABLED" high_bit="30" low_bit="30" name="TE">
+                <gui_name language="en">Thumb exception enable</gui_name>
+                <description language="en">Thumb exception enable bit.</description>
+                <definition>[30]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="E_ENABLED" high_bit="29" low_bit="29" name="FA">
+                <gui_name language="en">Force AP functionality</gui_name>
+                <description language="en">This bit controls the Force AP functionality in the MMU that generates Access Bit faults.</description>
+                <definition>[29]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="E_ENABLED" high_bit="28" low_bit="28" name="TR">
+                <gui_name language="en">TEX remap</gui_name>
+                <description language="en">This bit controls the TEX remap functionality in the MMU.</description>
+                <definition>[28]</definition>
+            </bitField>
+            <bitField conditional="false" high_bit="27" low_bit="27" name="NMFI" access="RO">
+                <gui_name language="en">Non-maskable Fast Interrupt Enable</gui_name>
+                <description language="en">This is the Non-Maskable Fast Interrupt enable bit.</description>
+                <definition>[27]</definition>
+            </bitField>
+            <bitField conditional="false" high_bit="25" low_bit="25" name="EE">
+                <gui_name language="en">EE</gui_name>
+                <description language="en">Determines how the E bit in the CPSR is set on an exception.</description>
+                <definition>[25]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="E_ENABLED" high_bit="24" low_bit="24" name="VE">
+                <gui_name language="en">VIC interface enable</gui_name>
+                <description language="en">This bit enables the VIC interface to determine interrupt vectors.</description>
+                <definition>[24]</definition>
+            </bitField>
+            <bitField conditional="false" high_bit="23" low_bit="23" name="XP">
+                <gui_name language="en">Extended page enable</gui_name>
+                <description language="en">This bit enables extended page tables to be configured for the hardware page translation mechanism.</description>
+                <definition>[23]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="E_ENABLED" high_bit="22" low_bit="22" name="U">
+                <gui_name language="en">Unaligned data access enable</gui_name>
+                <description language="en">Enables unaligned data access operations, including mixed little/big endian operation.</description>
+                <definition>[22]</definition>
+            </bitField>
+            <bitField conditional="false" high_bit="21" low_bit="21" name="FI">
+                <gui_name language="en">FI</gui_name>
+                <description language="en">FI</description>
+                <definition>[21]</definition>
+            </bitField>
+            <bitField conditional="false" high_bit="18" low_bit="18" name="IT">
+                <gui_name language="en">Instruction TCM</gui_name>
+                <description language="en">This field is deprecated.</description>
+                <definition>[18]</definition>
+            </bitField>
+            <bitField conditional="false" high_bit="16" low_bit="16" name="DT">
+                <gui_name language="en">Data TCM</gui_name>
+                <description language="en">This field is deprecated.</description>
+                <definition>[16]</definition>
+            </bitField>
+            <bitField conditional="false" high_bit="13" low_bit="13" name="V">
+                <gui_name language="en">Exception vector address</gui_name>
+                <description language="en">This bit defines the location of exception vectors.</description>
+                <definition>[13]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="E_ENABLED" high_bit="12" low_bit="12" name="I">
+                <gui_name language="en">I-cache enable</gui_name>
+                <description language="en">Determines if instructions can be cached in any instruction cache at any cache level.</description>
+                <definition>[12]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="E_ENABLED" high_bit="11" low_bit="11" name="BPU">
+                <gui_name language="en">Branch prediction unit enable</gui_name>
+                <description language="en">Enables the branch prediction unit.</description>
+                <definition>[11]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="E_ENABLED" high_bit="2" low_bit="2" name="C">
+                <gui_name language="en">D-cache enable</gui_name>
+                <description language="en">Determines if data can be cached in a data or unified cache at any cache level.</description>
+                <definition>[2]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="E_ENABLED" high_bit="1" low_bit="1" name="A">
+                <gui_name language="en">Alignment fault check enable</gui_name>
+                <description language="en">This bit enables data address alignment fault checking.</description>
+                <definition>[1]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="E_ENABLED" high_bit="0" low_bit="0" name="M">
+                <gui_name language="en">MMU enable</gui_name>
+                <description language="en">Enables the MMU.</description>
+                <definition>[0]</definition>
+            </bitField>
+        </register>
+        <register access="RW" name="S_AUXILIARY_CONTROL" size="4">
+            <gui_name language="en">CP15_S_AUXILIARY_CONTROL</gui_name>
+            <alias_name>CP15_S_AUXILIARY_CONTROL</alias_name>
+            <device_name type="rvi">CP15_S_AUXILIARY_CONTROL</device_name>
+            <device_name type="cadi">CP15_S_AUXILIARY_CONTROL</device_name>
+            <description language="en">Secure World auxiliary control register</description>
+            <bitField conditional="false" enumerationId="E_ENABLED" high_bit="3" low_bit="3" name="L1PE">
+                <gui_name language="en">L1 parity checking enable</gui_name>
+                <description language="en">Enables L1 cache parity checking.</description>
+                <definition>[3]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="E_ENABLED" high_bit="1" low_bit="1" name="L2EN">
+                <gui_name language="en">L2 parity checking enable</gui_name>
+                <description language="en">Enables L2 cache parity checking.</description>
+                <definition>[1]</definition>
+            </bitField>
+        </register>
+        <register access="RW" name="S_TTBR0" size="4">
+            <gui_name language="en">CP15_S_TTBR0</gui_name>
+            <alias_name>CP15_S_TTBR0</alias_name>
+            <device_name type="rvi">CP15_S_TTBR0</device_name>
+            <device_name type="cadi">CP15_S_TTBR0</device_name>
+            <description language="en">Secure World translation table base register 0</description>
+            <bitField conditional="false" high_bit="31" low_bit="7" name="Translation_table_base_0">
+                <gui_name language="en">Translation_table_base_0</gui_name>
+                <description language="en">Holds the translation table base address, the physical address of the first level translation table.</description>
+                <definition>[31:7]</definition>
+            </bitField>
+            <bitField conditional="false" high_bit="5" low_bit="5" name="NOS">
+                <gui_name language="en">Not outer shareable</gui_name>
+                <description language="en">This bit indicates the outer-shareable attribute for the memory associated with a translation table walk to shared memory.</description>
+                <definition>[5]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="E_RGN_TYPE" high_bit="4" low_bit="3" name="OC">
+                <gui_name language="en">OC</gui_name>
+                <description language="en">Indicates the outer cacheable attributes for translation table walking.</description>
+                <definition>[4:3]</definition>
+            </bitField>
+            <bitField conditional="false" high_bit="1" low_bit="1" name="S">
+                <gui_name language="en">S</gui_name>
+                <description language="en">Indicates the translation table walk is to non-shared or to shared memory.</description>
+                <definition>[1]</definition>
+            </bitField>
+            <bitField conditional="false" high_bit="0" low_bit="0" name="C">
+                <gui_name language="en">C</gui_name>
+                <description language="en">Indicates the translation table walk is inner cacheable or inner non-cacheable.</description>
+                <definition>[0]</definition>
+            </bitField>
+        </register>
+        <register access="RW" name="S_TTBR1" size="4">
+            <gui_name language="en">CP15_S_TTBR1</gui_name>
+            <alias_name>CP15_S_TTBR1</alias_name>
+            <device_name type="rvi">CP15_S_TTBR1</device_name>
+            <device_name type="cadi">CP15_S_TTBR1</device_name>
+            <description language="en">Secure World translation table base register 1</description>
+            <bitField conditional="false" high_bit="31" low_bit="14" name="Translation_table_base_0">
+                <gui_name language="en">Translation_table_base_0</gui_name>
+                <description language="en">Holds the translation table base address, the physical address of the first level translation table.</description>
+                <definition>[31:14]</definition>
+            </bitField>
+            <bitField conditional="false" high_bit="5" low_bit="5" name="NOS">
+                <gui_name language="en">Not outer shareable</gui_name>
+                <description language="en">This bit indicates the outer-shareable attribute for the memory associated with a translation table walk to shared memory.</description>
+                <definition>[5]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="E_RGN_TYPE" high_bit="4" low_bit="3" name="OC">
+                <gui_name language="en">OC</gui_name>
+                <description language="en">Indicates the outer cacheable attributes for translation table walking.</description>
+                <definition>[4:3]</definition>
+            </bitField>
+            <bitField conditional="false" high_bit="2" low_bit="2" name="P">
+                <gui_name language="en">P</gui_name>
+                <description language="en">Table walk memory attribute.</description>
+                <definition>[2]</definition>
+            </bitField>
+            <bitField conditional="false" high_bit="1" low_bit="1" name="S">
+                <gui_name language="en">S</gui_name>
+                <description language="en">Indicates the translation table walk is to non-shared or to shared memory.</description>
+                <definition>[1]</definition>
+            </bitField>
+            <bitField conditional="false" high_bit="0" low_bit="0" name="C">
+                <gui_name language="en">C</gui_name>
+                <description language="en">Indicates the translation table walk is inner cacheable or inner non-cacheable.</description>
+                <definition>[0]</definition>
+            </bitField>
+        </register>
+        <register access="RW" name="S_TTBC" size="4">
+            <gui_name language="en">CP15_S_TTBC</gui_name>
+            <alias_name>CP15_S_TTBC</alias_name>
+            <device_name type="rvi">CP15_S_TTBC</device_name>
+            <device_name type="cadi">CP15_S_TTBC</device_name>
+            <description language="en">Secure World translation table base control register</description>
+            <bitField conditional="false" high_bit="5" low_bit="5" name="PD1">
+                <gui_name language="en">PD1</gui_name>
+                <description language="en">Specifies occurrence of a translation table walk on a TLB miss when using Translation Table Base Register 1. When translation table walk is disabled, a section translation fault occurs instead on a TLB miss.</description>
+                <definition>[5]</definition>
+            </bitField>
+            <bitField conditional="false" high_bit="4" low_bit="4" name="PD0">
+                <gui_name language="en">PD0</gui_name>
+                <description language="en">Specifies occurrence of a translation table walk on a TLB miss when using Translation Table Base Register 0. When translation table walk is disabled, a section translation fault occurs instead on a TLB miss.</description>
+                <definition>[4]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="E_TBR_PAGE_SIZE" high_bit="2" low_bit="0" name="N">
+                <gui_name language="en">N</gui_name>
+                <description language="en">Specifies the boundary size of Translation Table Base Register 0.</description>
+                <definition>[2:0]</definition>
+            </bitField>
+        </register>
+        <register access="RW" name="S_DACR" size="4">
+            <gui_name language="en">CP15_S_DACR</gui_name>
+            <alias_name>CP15_S_DACR</alias_name>
+            <device_name type="rvi">CP15_S_DACR</device_name>
+            <device_name type="cadi">CP15_S_DACR</device_name>
+            <description language="en">Secure World domain access control register</description>
+            <bitField conditional="false" enumerationId="E_DOMAIN_ACC_CTRL" high_bit="31" low_bit="30" name="D15">
+                <gui_name language="en">D15</gui_name>
+                <description language="en">Defines the access permissions for domain D15</description>
+                <definition>[31:30]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="E_DOMAIN_ACC_CTRL" high_bit="29" low_bit="28" name="D14">
+                <gui_name language="en">D14</gui_name>
+                <description language="en">Defines the access permissions for domain D14</description>
+                <definition>[29:28]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="E_DOMAIN_ACC_CTRL" high_bit="27" low_bit="26" name="D13">
+                <gui_name language="en">D13</gui_name>
+                <description language="en">Defines the access permissions for domain D13</description>
+                <definition>[27:26]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="E_DOMAIN_ACC_CTRL" high_bit="25" low_bit="24" name="D12">
+                <gui_name language="en">D12</gui_name>
+                <description language="en">Defines the access permissions for domain D12</description>
+                <definition>[25:24]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="E_DOMAIN_ACC_CTRL" high_bit="23" low_bit="22" name="D11">
+                <gui_name language="en">D11</gui_name>
+                <description language="en">Defines the access permissions for domain D11</description>
+                <definition>[23:22]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="E_DOMAIN_ACC_CTRL" high_bit="21" low_bit="20" name="D10">
+                <gui_name language="en">D10</gui_name>
+                <description language="en">Defines the access permissions for domain D10</description>
+                <definition>[21:20]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="E_DOMAIN_ACC_CTRL" high_bit="19" low_bit="18" name="D9">
+                <gui_name language="en">D9</gui_name>
+                <description language="en">Defines the access permissions for domain D9</description>
+                <definition>[19:18]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="E_DOMAIN_ACC_CTRL" high_bit="17" low_bit="16" name="D8">
+                <gui_name language="en">D8</gui_name>
+                <description language="en">Defines the access permissions for domain D8</description>
+                <definition>[17:16]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="E_DOMAIN_ACC_CTRL" high_bit="15" low_bit="14" name="D7">
+                <gui_name language="en">D7</gui_name>
+                <description language="en">Defines the access permissions for domain D7</description>
+                <definition>[15:14]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="E_DOMAIN_ACC_CTRL" high_bit="13" low_bit="12" name="D6">
+                <gui_name language="en">D6</gui_name>
+                <description language="en">Defines the access permissions for domain D6</description>
+                <definition>[13:12]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="E_DOMAIN_ACC_CTRL" high_bit="11" low_bit="10" name="D5">
+                <gui_name language="en">D5</gui_name>
+                <description language="en">Defines the access permissions for domain D5</description>
+                <definition>[11:10]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="E_DOMAIN_ACC_CTRL" high_bit="9" low_bit="8" name="D4">
+                <gui_name language="en">D4</gui_name>
+                <description language="en">Defines the access permissions for domain D4</description>
+                <definition>[9:8]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="E_DOMAIN_ACC_CTRL" high_bit="7" low_bit="6" name="D3">
+                <gui_name language="en">D3</gui_name>
+                <description language="en">Defines the access permissions for domain D3</description>
+                <definition>[7:6]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="E_DOMAIN_ACC_CTRL" high_bit="5" low_bit="4" name="D2">
+                <gui_name language="en">D2</gui_name>
+                <description language="en">Defines the access permissions for domain D2</description>
+                <definition>[5:4]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="E_DOMAIN_ACC_CTRL" high_bit="3" low_bit="2" name="D1">
+                <gui_name language="en">D1</gui_name>
+                <description language="en">Defines the access permissions for domain D1</description>
+                <definition>[3:2]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="E_DOMAIN_ACC_CTRL" high_bit="2" low_bit="0" name="D0">
+                <gui_name language="en">D0</gui_name>
+                <description language="en">Defines the access permissions for domain D0</description>
+                <definition>[2:0]</definition>
+            </bitField>
+        </register>
+        <register access="RW" name="S_DFSR" size="4">
+            <gui_name language="en">CP15_S_DFSR</gui_name>
+            <alias_name>CP15_S_DFSR</alias_name>
+            <device_name type="rvi">CP15_S_DFSR</device_name>
+            <device_name type="cadi">CP15_S_DFSR</device_name>
+            <description language="en">Secure World data fault status register</description>
+            <bitField conditional="false" high_bit="12" low_bit="12" name="SD">
+                <gui_name language="en">SD</gui_name>
+                <description language="en">Indicates whether an AXI Decode or Slave error caused an abort. This bit is only valid for external aborts. For all other aborts this bit Should-Be-Zero.</description>
+                <definition>[12]</definition>
+            </bitField>
+            <bitField conditional="false" high_bit="11" low_bit="11" name="RW">
+                <gui_name language="en">RW</gui_name>
+                <description language="en">Indicates whether a read or write access caused an abort.</description>
+                <definition>[11]</definition>
+            </bitField>
+            <bitField conditional="false" high_bit="10" low_bit="10" name="S">
+                <gui_name language="en">S</gui_name>
+                <description language="en">Part of the Status field. See Status bits [3:0].</description>
+                <definition>[10]</definition>
+            </bitField>
+            <bitField conditional="false" high_bit="7" low_bit="4" name="Domain">
+                <gui_name language="en">Domain</gui_name>
+                <description language="en">Indicates which one of the 16 domains, D15-D0, is accessed when a data fault occurs. This field takes values 0-15.</description>
+                <definition>[7:4]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="E_D_FAULT_STATUS" high_bit="3" low_bit="0" name="Status">
+                <gui_name language="en">Status</gui_name>
+                <description language="en">Indicates the type of exception generated. Determined by bits 10, 3:0.</description>
+                <definition>[3:0][10]</definition>
+            </bitField>
+        </register>
+        <register access="RW" name="S_IFSR" size="4">
+            <gui_name language="en">CP15_S_IFSR</gui_name>
+            <alias_name>CP15_S_IFSR</alias_name>
+            <device_name type="rvi">CP15_S_IFSR</device_name>
+            <device_name type="cadi">CP15_S_IFSR</device_name>
+            <description language="en">Secure World instruction fault status register</description>
+            <bitField conditional="false" high_bit="12" low_bit="12" name="SD">
+                <gui_name language="en">SD</gui_name>
+                <description language="en">Indicates whether an AXI Decode or Slave error caused an abort. This bit is only valid for external aborts. For all other aborts this bit Should-Be-Zero.</description>
+                <definition>[12]</definition>
+            </bitField>
+            <bitField conditional="false" high_bit="10" low_bit="10" name="S">
+                <gui_name language="en">S</gui_name>
+                <description language="en">Part of the Status field. See bits [3:0].</description>
+                <definition>[10]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="E_I_FAULT_STATUS" high_bit="3" low_bit="0" name="STATUS">
+                <gui_name language="en">STATUS</gui_name>
+                <description language="en">Indicates the type of exception generated. Determined by bits 10, 3:0.</description>
+                <definition>[3:0][10]</definition>
+            </bitField>
+        </register>
+        <register access="RW" name="S_DATA_AUX_FAULT" size="4">
+            <gui_name language="en">CP15_S_DATA_AUX_FAULT</gui_name>
+            <alias_name>CP15_S_DATA_AUX_FAULT</alias_name>
+            <device_name type="rvi">CP15_S_DATA_AUX_FAULT</device_name>
+            <device_name type="cadi">CP15_S_DATA_AUX_FAULT</device_name>
+            <description language="en">Secure World data auxiliary fault status register</description>
+        </register>
+        <register access="RW" name="S_INSTR_AUX_FAULT" size="4">
+            <gui_name language="en">CP15_S_INSTR_AUX_FAULT</gui_name>
+            <alias_name>CP15_S_INSTR_AUX_FAULT</alias_name>
+            <device_name type="rvi">CP15_S_INSTR_AUX_FAULT</device_name>
+            <device_name type="cadi">CP15_S_INSTR_AUX_FAULT</device_name>
+            <description language="en">Secure World instruction auxiliary fault status register</description>
+        </register>
+        <register access="RW" name="S_DFAR" size="4">
+            <gui_name language="en">CP15_S_DFAR</gui_name>
+            <alias_name>CP15_S_DFAR</alias_name>
+            <device_name type="rvi">CP15_S_DFAR</device_name>
+            <device_name type="cadi">CP15_S_DFAR</device_name>
+            <description language="en">Secure World data fault address register</description>
+        </register>
+        <register access="RW" name="S_IFAR" size="4">
+            <gui_name language="en">CP15_S_IFAR</gui_name>
+            <alias_name>CP15_S_IFAR</alias_name>
+            <device_name type="rvi">CP15_S_IFAR</device_name>
+            <device_name type="cadi">CP15_S_IFAR</device_name>
+            <description language="en">Secure World instruction fault address register</description>
+        </register>
+        <register access="WO" name="S_TLB_INVALIDATE_ALL" size="4">
+            <gui_name language="en">CP15_S_TLB_INVALIDATE_ALL</gui_name>
+            <alias_name>CP15_S_TLB_INVALIDATE_ALL</alias_name>
+            <device_name type="rvi">CP15_S_TLB_INVALIDATE_ALL</device_name>
+            <device_name type="cadi">CP15_S_TLB_INVALIDATE_ALL</device_name>
+            <description language="en">Secure World invalidate TLB all unlocked entries.</description>
+        </register>
+        <register access="WO" name="S_TLB_INVALIDATE_MVA" size="4">
+            <gui_name language="en">CP15_S_TLB_INVALIDATE_MVA</gui_name>
+            <alias_name>CP15_S_TLB_INVALIDATE_MVA</alias_name>
+            <device_name type="rvi">CP15_S_TLB_INVALIDATE_MVA</device_name>
+            <device_name type="cadi">CP15_S_TLB_INVALIDATE_MVA</device_name>
+            <description language="en">Secure World invalidate TLB single entry by MVA.</description>
+        </register>
+        <register access="WO" name="S_TLB_INVALIDATE_ASID" size="4">
+            <gui_name language="en">CP15_S_TLB_INVALIDATE_ASID</gui_name>
+            <alias_name>CP15_S_TLB_INVALIDATE_ASID</alias_name>
+            <device_name type="rvi">CP15_S_TLB_INVALIDATE_ASID</device_name>
+            <device_name type="cadi">CP15_S_TLB_INVALIDATE_ASID</device_name>
+            <description language="en">Secure World invalidate TLB entry on ASID match.</description>
+        </register>
+        <register access="RW" name="S_PRIM_REGION_REMAP" size="4">
+            <gui_name language="en">CP15_S_PRIM_REGION_REMAP</gui_name>
+            <alias_name>CP15_S_PRIM_REGION_REMAP</alias_name>
+            <device_name type="rvi">CP15_S_PRIM_REGION_REMAP</device_name>
+            <device_name type="cadi">CP15_S_PRIM_REGION_REMAP</device_name>
+            <description language="en">Secure World primary region remap register</description>
+            <bitField conditional="false" high_bit="19" low_bit="19" name="_19">
+                <gui_name language="en">_19</gui_name>
+                <description language="en">Remaps shareable attribute when S=1 for Normal regions</description>
+                <definition>[19]</definition>
+            </bitField>
+            <bitField conditional="false" high_bit="18" low_bit="18" name="_18">
+                <gui_name language="en">_18</gui_name>
+                <description language="en">Remaps shareable attribute when S=0 for Normal regions</description>
+                <definition>[18]</definition>
+            </bitField>
+            <bitField conditional="false" high_bit="17" low_bit="17" name="_17">
+                <gui_name language="en">_17</gui_name>
+                <description language="en">Remaps shareable attribute when S=1 for Device regions</description>
+                <definition>[17]</definition>
+            </bitField>
+            <bitField conditional="false" high_bit="16" low_bit="16" name="_16">
+                <gui_name language="en">_16</gui_name>
+                <description language="en">Remaps shareable attribute when S=0 for Device regions</description>
+                <definition>[16]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="E_PRIME_MEM_ENCODING" high_bit="15" low_bit="14" name="_15_14">
+                <gui_name language="en">_15_14</gui_name>
+                <description language="en">Remaps {TEX[0],C,B} = 0x7</description>
+                <definition>[15:14]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="E_PRIME_MEM_ENCODING" high_bit="13" low_bit="12" name="_13_12">
+                <gui_name language="en">_13_12</gui_name>
+                <description language="en">Remaps {TEX[0],C,B} = 0x6</description>
+                <definition>[13:12]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="E_PRIME_MEM_ENCODING" high_bit="11" low_bit="10" name="_11_10">
+                <gui_name language="en">_11_10</gui_name>
+                <description language="en">Remaps {TEX[0],C,B} = 0x5</description>
+                <definition>[11:10]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="E_PRIME_MEM_ENCODING" high_bit="9" low_bit="8" name="_9_8">
+                <gui_name language="en">_9_8</gui_name>
+                <description language="en">Remaps {TEX[0],C,B} = 0x4</description>
+                <definition>[9:8]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="E_PRIME_MEM_ENCODING" high_bit="7" low_bit="6" name="_7_6">
+                <gui_name language="en">_7_6</gui_name>
+                <description language="en">Remaps {TEX[0],C,B} = 0x3</description>
+                <definition>[7:6]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="E_PRIME_MEM_ENCODING" high_bit="5" low_bit="4" name="_5_4">
+                <gui_name language="en">_5_4</gui_name>
+                <description language="en">Remaps {TEX[0],C,B} = 0x2</description>
+                <definition>[5:4]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="E_PRIME_MEM_ENCODING" high_bit="3" low_bit="2" name="_3_2">
+                <gui_name language="en">_3_2</gui_name>
+                <description language="en">Remaps {TEX[0],C,B} = 0x1</description>
+                <definition>[3:2]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="E_PRIME_MEM_ENCODING" high_bit="1" low_bit="0" name="_1_0">
+                <gui_name language="en">_1_0</gui_name>
+                <description language="en">Remaps {TEX[0],C,B} = 0x0</description>
+                <definition>[1:0]</definition>
+            </bitField>
+        </register>
+        <register access="RW" name="S_NORM_MEM_REMAP" size="4">
+            <gui_name language="en">CP15_S_NORM_MEM_REMAP</gui_name>
+            <alias_name>CP15_S_NORM_MEM_REMAP</alias_name>
+            <device_name type="rvi">CP15_S_NORM_MEM_REMAP</device_name>
+            <device_name type="cadi">CP15_S_NORM_MEM_REMAP</device_name>
+            <description language="en">Secure World normal memory remap register</description>
+            <bitField conditional="false" enumerationId="E_OUTER" high_bit="31" low_bit="30" name="_31_30">
+                <gui_name language="en">_31_30</gui_name>
+                <description language="en">Remaps outer attribute for {TEX[0],C,B} = b111</description>
+                <definition>[31:30]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="E_OUTER" high_bit="29" low_bit="28" name="_29_28">
+                <gui_name language="en">_29_28</gui_name>
+                <description language="en">Remaps outer attribute for {TEX[0],C,B} = b110</description>
+                <definition>[29:28]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="E_OUTER" high_bit="27" low_bit="26" name="_27_26">
+                <gui_name language="en">_27_26</gui_name>
+                <description language="en">Remaps outer attribute for {TEX[0],C,B} = b101</description>
+                <definition>[27:26]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="E_OUTER" high_bit="25" low_bit="24" name="_25_24">
+                <gui_name language="en">_25_24</gui_name>
+                <description language="en">Remaps outer attribute for {TEX[0],C,B} = b100</description>
+                <definition>[25:24]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="E_OUTER" high_bit="23" low_bit="22" name="_23_22">
+                <gui_name language="en">_23_22</gui_name>
+                <description language="en">Remaps outer attribute for {TEX[0],C,B} = b011</description>
+                <definition>[23:22]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="E_OUTER" high_bit="21" low_bit="20" name="_21_20">
+                <gui_name language="en">_21_20</gui_name>
+                <description language="en">Remaps outer attribute for {TEX[0],C,B} = b010</description>
+                <definition>[21:20]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="E_OUTER" high_bit="19" low_bit="18" name="_19_18">
+                <gui_name language="en">_19_18</gui_name>
+                <description language="en">Remaps outer attribute for {TEX[0],C,B} = b001</description>
+                <definition>[19:18]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="E_OUTER" high_bit="17" low_bit="16" name="_17_16">
+                <gui_name language="en">_17_16</gui_name>
+                <description language="en">Remaps outer attribute for {TEX[0],C,B} = b000</description>
+                <definition>[17:16]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="E_OUTER" high_bit="15" low_bit="14" name="_15_14">
+                <gui_name language="en">_15_14</gui_name>
+                <description language="en">Remaps inner attribute for {TEX[0],C,B} = b111</description>
+                <definition>[15:14]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="E_OUTER" high_bit="13" low_bit="12" name="_13_12">
+                <gui_name language="en">_13_12</gui_name>
+                <description language="en">Remaps inner attribute for {TEX[0],C,B} = b110</description>
+                <definition>[13:12]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="E_OUTER" high_bit="11" low_bit="10" name="_11_10">
+                <gui_name language="en">_11_10</gui_name>
+                <description language="en">Remaps inner attribute for {TEX[0],C,B} = b101</description>
+                <definition>[11:10]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="E_OUTER" high_bit="9" low_bit="8" name="_9_8">
+                <gui_name language="en">_9_8</gui_name>
+                <description language="en">Remaps inner attribute for {TEX[0],C,B} = b100</description>
+                <definition>[9:8]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="E_OUTER" high_bit="7" low_bit="6" name="_7_6">
+                <gui_name language="en">_7_6</gui_name>
+                <description language="en">Remaps inner attribute for {TEX[0],C,B} = b011</description>
+                <definition>[7:6]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="E_OUTER" high_bit="5" low_bit="4" name="_5_4">
+                <gui_name language="en">_5_4</gui_name>
+                <description language="en">Remaps inner attribute for {TEX[0],C,B} = b010</description>
+                <definition>[5:4]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="E_OUTER" high_bit="3" low_bit="2" name="_3_2">
+                <gui_name language="en">_3_2</gui_name>
+                <description language="en">Remaps inner attribute for {TEX[0],C,B} = b001</description>
+                <definition>[3:2]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="E_OUTER" high_bit="1" low_bit="0" name="_1_0">
+                <gui_name language="en">_1_0</gui_name>
+                <description language="en">Remaps inner attribute for {TEX[0],C,B} = b000</description>
+                <definition>[1:0]</definition>
+            </bitField>
+        </register>
+        <register access="RW" name="S_PID" size="4">
+            <gui_name language="en">CP15_S_PID</gui_name>
+            <alias_name>CP15_S_PID</alias_name>
+            <device_name type="rvi">CP15_S_PID</device_name>
+            <device_name type="cadi">CP15_S_PID</device_name>
+            <description language="en">Secure World Process ID</description>
+            <bitField conditional="false" high_bit="31" low_bit="25" name="PID">
+                <gui_name language="en">FCSE PID</gui_name>
+                <description language="en">Provides the Process ID for fast context switch memory mappings</description>
+                <definition>[31:25]</definition>
+            </bitField>
+        </register>
+        <register access="RW" name="S_CID" size="4">
+            <gui_name language="en">CP15_S_CID</gui_name>
+            <alias_name>CP15_S_CID</alias_name>
+            <device_name type="rvi">CP15_S_CID</device_name>
+            <device_name type="cadi">CP15_S_CID</device_name>
+            <description language="en">Secure World context ID</description>
+            <bitField conditional="false" high_bit="31" low_bit="8" name="Context_ID">
+                <gui_name language="en">Context_ID</gui_name>
+                <description language="en">Extends the ASID to form the process ID and identifies the current process</description>
+                <definition>[31:8]</definition>
+            </bitField>
+            <bitField conditional="false" high_bit="7" low_bit="0" name="ASID">
+                <gui_name language="en">ASID</gui_name>
+                <description language="en">Holds the ASID of the current process to identify the current ASID</description>
+                <definition>[7:0]</definition>
+            </bitField>
+        </register>
+        <register access="RW" name="S_USER_RW_ID" size="4">
+            <gui_name language="en">CP15_S_USER_RW_ID</gui_name>
+            <alias_name>CP15_S_USER_RW_ID</alias_name>
+            <device_name type="rvi">CP15_S_USER_RW_ID</device_name>
+            <device_name type="cadi">CP15_S_USER_RW_ID</device_name>
+            <description language="en">Secure World User read/write thread and process ID register</description>
+        </register>
+        <register access="RW" name="S_USER_RO_ID" size="4">
+            <gui_name language="en">CP15_S_USER_RO_ID</gui_name>
+            <alias_name>CP15_S_USER_RO_ID</alias_name>
+            <device_name type="rvi">CP15_S_USER_RO_ID</device_name>
+            <device_name type="cadi">CP15_S_USER_RO_ID</device_name>
+            <description language="en">Secure World User read-only thread and process ID register</description>
+        </register>
+        <register access="RW" name="S_PRIVILEGED_ID" size="4">
+            <gui_name language="en">CP15_S_PRIVILEGED_ID</gui_name>
+            <alias_name>CP15_S_PRIVILEGED_ID</alias_name>
+            <device_name type="rvi">CP15_S_PRIVILEGED_ID</device_name>
+            <device_name type="cadi">CP15_S_PRIVILEGED_ID</device_name>
+            <description language="en">Secure World User privileged only thread and process ID register</description>
+        </register>
+        <register access="RW" name="S_PA" size="4">
+            <gui_name language="en">CP15_S_PA</gui_name>
+            <alias_name>CP15_S_PA</alias_name>
+            <device_name type="rvi">CP15_S_PA</device_name>
+            <device_name type="cadi">CP15_S_PA</device_name>
+            <description language="en">Secure World Physical Address register</description>
+            <bitField conditional="false" high_bit="31" low_bit="10" name="PA">
+                <gui_name language="en">PA</gui_name>
+                <description language="en">Contains the physical address after a successful translation.</description>
+                <definition>[31:10]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="E_NS" high_bit="9" low_bit="9" name="NS">
+                <gui_name language="en">NS</gui_name>
+                <description language="en">Indicates the state of the NS attribute bit in the translation table.</description>
+                <definition>[9]</definition>
+            </bitField>
+            <bitField conditional="false" high_bit="8" low_bit="8" name="P">
+                <gui_name language="en">P</gui_name>
+                <description language="en">Not used in the processor.</description>
+                <definition>[8]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="E_SHARED" high_bit="7" low_bit="7" name="SH">
+                <gui_name language="en">SH</gui_name>
+                <description language="en">Indicates shareable memory: 0 = non-shared 1 = shared.</description>
+                <definition>[7]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="E_INNER" high_bit="6" low_bit="4" name="INNER">
+                <gui_name language="en">INNER</gui_name>
+                <description language="en">Indicates the inner attributes from the translation table.</description>
+                <definition>[6:4]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="E_OUTER" high_bit="3" low_bit="2" name="OUTER">
+                <gui_name language="en">OUTER</gui_name>
+                <description language="en">Indicates the outer attributes from the translation table.</description>
+                <definition>[3:2]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="E_PA_0" high_bit="0" low_bit="0" name="_0">
+                <gui_name language="en">_0</gui_name>
+                <description language="en">Indicates that the translation succeeded. 0=Translation successful.</description>
+                <definition>[0]</definition>
+            </bitField>
+            <bitField conditional="false" high_bit="6" low_bit="1" name="FSR">
+                <gui_name language="en">FSR</gui_name>
+                <description language="en">Holds the FSR bits for the aborted address.</description>
+                <definition>[6:1]</definition>
+            </bitField>
+        </register>
+    </register_group>
+
+    <tcf:enumeration name="E_AFMC_WWC" values="No_wait_cycle=0,_2_wait_cycles=1,_4_wait_cycles=2,_8_wait_cycles=3,_16_wait_cycles=4,_16_32_wait_cycles=5,_16_64_wait_cycles=6,_16_64_wait_cycles=7"/>
+    <tcf:enumeration name="E_CACHE_SUPPORT" values="No_cache=0x0,Instruction_cache_only=0x1,Data_cache_only=0x2,Separate_instruction_and_data_cache=0x3,Unified_cache=0x4"/>
+    <tcf:enumeration name="E_CACHE_TYPE_DIMINLINE" values="Eight_32_bit_word_data_line_length=0x3"/>
+    <tcf:enumeration name="E_CACHE_TYPE_FORMAT" values="ARMv7_Format=0x4"/>
+    <tcf:enumeration name="E_CACHE_TYPE_L1IPOLICY" values="Physical_Index_Tag_L1_ICache_Policy=0x3"/>
+    <tcf:enumeration name="E_CONTROL_EE" values="CPSR_E_bit_0_on_exception=0,CPSR_E_bit_1_on_exception=1"/>
+    <tcf:enumeration name="E_CONTROL_FI" values="All_performance_features_enabled=0,Low_interrupt_latency_configuration_enabled=1"/>
+    <tcf:enumeration name="E_CONTROL_NMFI" values="Fast_interrupts_maskable_in_CPSR=0,Fast_interrupts_not_maskable=1"/>
+    <tcf:enumeration name="E_CONTROL_V" values="Normal_exception_vectors=0,High_exception_vectors=1"/>
+    <tcf:enumeration name="E_CONTROL_XP" values="Subpage_AP_bits_enabled=0,Subpage_AP_bits_disabled=1"/>
+    <tcf:enumeration name="E_CP_ACC_PERMISSION" values="Access_denied=0,Privileged_mode_access_only=1,Reserved=2,Privileged_and_User_mode_access=3"/>
+    <tcf:enumeration name="E_CSID_ASSOC" values="_4_ways=0x3,_8_ways=0x7"/>
+    <tcf:enumeration name="E_CSID_LINESIZE" values="_8_words_per_cache_line=0x1"/>
+    <tcf:enumeration name="E_CSID_NUMSETS" values="_128_Sets=0x7f,_256_sets=0xff,_2048_sets=0x7ff"/>
+    <tcf:enumeration name="E_CSS_IND" values="Select_data_or_unified_cache=0,Select_instruction_cache=1"/>
+    <tcf:enumeration name="E_CSS_LEVEL" values="Select_L1_Cache=0x0,Select_L2_Cache=0x1"/>
+    <tcf:enumeration name="E_D_FAULT_STATUS" values="Alignment_fault=1,Instruction_debug_event_fault=2,Access_Bit_fault_on_Section=3,Instruction_cache_maintenance_fault=4,Translation_Section_fault=5,Access_Bit_fault_on_Page=6,Translation_Page_fault=7,Precise_external_abort=8,Domain_Section_fault=9,Domain_Page_fault=11,External_abort_on_translation_first_level=12,Permission_Section_fault=13,External_abort_on_translation_second_level=14,Permission_Page_fault=15,No_function_reset_value=16,Imprecise_External_Abort=22,Data_side_asynchronous_parity_error=24"/>
+    <tcf:enumeration name="E_DFSR_RW" values="Read_access_caused_abort=0,Write_access_caused_abort=1"/>
+    <tcf:enumeration name="E_DISABLED" values="Enabled=0,Disabled=1"/>
+    <tcf:enumeration name="E_DOMAIN_ACC_CTRL" values="No_Access=0,Client=1,Reserved=2,Manager=3"/>
+    <tcf:enumeration name="E_ENABLED" values="Disabled=0,Enabled=1"/>
+    <tcf:enumeration name="E_EVENT" values="Software_Increment=0x00,Instruction_fetch_cache_refill=0x01,Instruction_fetch_TLB_refill=0x02,Data_read_write_cache_refill=0x03,Data_read_write_cache_access=0x04,Data_read_write_TLB_refill=0x05,Data_read_architecturally_executed=0x06,Data_write_architecturally_executed=0x07,Instruction_architecturally_executed=0x08,Exception_taken=0x09,Exception_return_architecturally_executed=0x0A,Instruction_context_ID_write_architecturally_executed=0x0B,Non_exception_PC_change_architecturally_executed=0x0C,Immediate_branch_architecturally_executed=0x0D,Non_exception_procedure_return_architecturally_executed=0x0E,Unaligned_access_architecturally_executed=0x0F,Branch_mispredicted_or_not_predicted=0x10,Cycle_count=0x11,Predictable_branch=0x12,D_Cache_Read_Hit=0x40,D_Cache_Read_Miss=0x41,D_Cache_Write_Hit=0x42,D_Cache_Write_Miss=0x43,MMU_Bus_Request=0x44,I_Cache_Bus_Request=0x45,WB_write_latency=0x46,Hold_LDM_STM=0x47,No_Dual_cflag=0x48,No_Dual_Register_Plus=0x49,LDST_ROB0_on_Hold=0x4A,LDST_ROB1_on_Hold=0x4B,Data_Write_Access_Count=0x4C,Data_Read_Access_Count=0x4D,A2_Stall=0x4E,L2_Cache_Write_Hit=0x4F,L2_Cache_Write_Miss=0x50,L2_Cache_Read_Count=0x51,I_Cache_Read_Miss=0x60,ITLB_Miss=0x61,Single_Issue=0x62,Branch_Retired=0x63,ROB_Full=0x64,MMU_Read_Beat=0x65,WB_Write_Beat=0x66,Dual_Issue=0x67,No_Dual_Raw=0x68,Hold_IS=0x69,L2_Cache_Latency=0x6A,D_Cache_Access=0x70,DTLB_Miss=0x71,Branch_Prediction_Miss=0x72,A1_Stall=0x74,D_Cache_Read_Latency=0x75,D_Cache_Write_Latency=0x76,No_Dual_Register_File=0x77,BIU_Simultaneous_Access=0x78,L2_Cache_Read_Hit=0x79,L2_Cache_Read_Miss=0x7A,L2_Cache_Eviction=0x7B,TLB_Miss=0x80,Branches_Taken=0x81,WB_Full=0x82,D_Cache_Read_Beat=0x83,D_Cache_Write_Beat=0x84,No_Dual_HW=0x85,No_Dual_Multiple=0x86,BIU_Any_Access=0x87,Main_TLB_refill_caused_by_I_Cache=0x88,Main_TLB_refill_caused_by_D_Cache=0x89,I_Cache_read_beat=0x8A,Event_from_source_PMUEXTIN_0=0x90,Event_from_source_PMUEXTIN_1=0x91,Event_from_source_PMUEXTIN_0_or_1=0x92,WMMX2_store_FIFO_full=0xC0,WMMX2_finish_FIFO_full=0xC1,WMMX2_instruction_FIFO_full=0xC2,WMMX2_instruction_retired=0xC3,WMMX2_Busy=0xC4,WMMX2_Hold_MI=0xC5,WMMX2_Hold_MW=0xC6,L0IC_line_fill=0xF0,L0IC_hit_prefetch_buffer=0xF1"/>
+    <tcf:enumeration name="E_FEATURE_SUPPORT" values="Not_Supported=0,Supported=1"/>
+    <tcf:enumeration name="E_FEATURE_SUPPORT_2" values="Not_Supported=0,Supported=2"/>
+    <tcf:enumeration name="E_FEATURE_SUPPORT_3" values="Not_Supported=0,Supported=3"/>
+    <tcf:enumeration name="E_FEATURE_SUPPORT_4" values="Not_Supported=0,Supported=4"/>
+    <tcf:enumeration name="E_I_FAULT_STATUS" values="Instruction_debug_event_fault=2,Access_Bit_fault_on_Section=3,Translation_Section_fault=5,Access_Bit_fault_on_Page=6,Translation_Page_fault=7,Precise_external_abort=8,Domain_Section_fault=9,Domain_Page_fault=11,External_abort_on_translation_first_level=12,Permission_Section_fault=13,External_abort_on_translation_second_level=14,Permission_Page_fault=15,Instruction_side_asynchronous_parity_error=25"/>
+    <tcf:enumeration name="E_ID_IMP" values="Marvell=0x56"/>
+    <tcf:enumeration name="E_INNER" values="Non_cacheable=0x0,Strongly_Ordered=0x1,Reserved=0x2,Device=0x3,Reserved=0x4,Reserved=0x5,Inner_Write_through_no_allocate_on_write=0x6,Inner_Write_back_no_allocate_on_write=0x7"/>
+    <tcf:enumeration name="E_ISAR0_COP_INST" values="No_coprocessor_support=0x0,Adds_CDP_LDC_MCR_MRC_STC=0x1,Adds_CDP2_LDC2_MCR2_MRC2_STC2=0x2,Adds_MCRR_MRRC=0x3,Adds_MCRR2_MRRC2=0x4"/>
+    <tcf:enumeration name="E_ISAR2_MAI_INST" values="LDM_STM_non_interruptable=0x0,LDM_STM_restartable=0x1,LDM_STM_continuable=0x2"/>
+    <tcf:enumeration name="E_ISAR2_MH_INST" values="No_memory_hint_instructions=0x0,Adds_PLD=0x1,Adds_PLD=0x2,Adds_PLI=0x3"/>
+    <tcf:enumeration name="E_ISAR2_MUL_INST" values="Only_MUL=0x0,Adds_MLA=0x1,Adds_MLS=0x2"/>
+    <tcf:enumeration name="E_ISAR2_REV_INST" values="No_reversal_instructions=0x0,Adds_REV_REV16_REVSH=0x1,Adds_RBIT=0x2"/>
+    <tcf:enumeration name="E_ISAR3_SP_INST" values="No_synchronization_primitives=0x0,Adds_LDREX_STREX=0x1,Adds_LDREXB_LDREXH_LDREXD_STREXB_STREXH_STREXD_CLREX=0x2"/>
+    <tcf:enumeration name="E_ISAR3_SVC_INST" values="No_SIMD_instructions=0x0,Adds_SSAT_USAT=0x1,Reserved=0x2,SIMD_instructions=0x3"/>
+    <tcf:enumeration name="E_ISAR4_UNP_INST" values="No_T_variant_instructions=0x0,Adds_LDRBT_LDRT_STRBT_STRT=0x1,Adds_LDRHT_LDRSBT_LDRSHT_STRHT=0x2"/>
+    <tcf:enumeration name="E_ISAR4_WS_INST" values="Non_zero_shifts_support_MOV_and_shift_instructions=0x0,Shifts_of_loads_stores_over_range_LSL_0_to_3=0x1,Reserved=0x2,Adds_other_constant_shift_operations=0x3,Adds_register_controlled_shift_options=0x4"/>
+    <tcf:enumeration name="E_ISR_A" values="No_abort=0,Abort_pending=1"/>
+    <tcf:enumeration name="E_ISR_F" values="No_FIQ=0,FIQ_pending=1"/>
+    <tcf:enumeration name="E_ISR_I" values="No_IRQ=0,IRQ_pending=1"/>
+    <tcf:enumeration name="E_L2CAC_L2I" values="L2_observes_outer_cacheability=0,L2_observes_inner_cacheability=1"/>
+    <tcf:enumeration name="E_LOCKED" values="Unlocked=0,Locked=1"/>
+    <tcf:enumeration name="E_MMFR1_BTB" values="BTB_flushing_not_required=0x4"/>
+    <tcf:enumeration name="E_NS" values="Secure=0,Non_secure=1"/>
+    <tcf:enumeration name="E_OUTER" values="Non_cacheable=0x0,Write_back_allocate_on_write=0x1,Write_through_no_allocate_on_write=0x2,Write_back_no_allocate_on_write=0x3"/>
+    <tcf:enumeration name="E_PA_0" values="Translation_successful=0,Translation_aborted=1"/>
+    <tcf:enumeration name="E_PCS_SEL" values="Select_counter_0=0,Select_counter1=1,Select_counter_2=2,Select_counter_3=3"/>
+    <tcf:enumeration name="E_PMC_C" values="No_action=0,Reset_cycle_counter=1"/>
+    <tcf:enumeration name="E_PMC_D" values="Count_every_clock_cycle=0,Count_every_64th_clock_cycle=1"/>
+    <tcf:enumeration name="E_PMC_P" values="No_action=0,Reset_performance_counters=1"/>
+    <tcf:enumeration name="E_PRIME_MEM_ENCODING" values="Strongly_ordered=0,Device=1,Normal=2,UNP_Normal=3"/>
+    <tcf:enumeration name="E_RGN_TYPE" values="Outer_non_cacheable=0,Reserved=1,Outer_non_cacheable=2,Outer_Write_back=3"/>
+    <tcf:enumeration name="E_SD" values="AXI_Decode_error_caused_abort=0,AXI_Slave_error_caused_abort=1"/>
+    <tcf:enumeration name="E_SECURITY" values="Secure_Access_only=0,Secure_or_Non_Secure_Access=1"/>
+    <tcf:enumeration name="E_SHARED" values="Non_Shared=0,Shared=1"/>
+    <tcf:enumeration name="E_TBR_PAGE_SIZE" values="_16KB=0,_8KB=1,_4KB=2,_2KB=3,_1KB=4,_512B=5,_256B=6,_128B=7"/>
+    <tcf:enumeration name="E_TLB_TYPE_DLSIZE" values="Eight_lockable_entries=0x8"/>
+    <tcf:enumeration name="E_TLB_TYPE_ILSIZE" values="Unified_TLB=0"/>
+    <tcf:enumeration name="E_TLB_TYPE_U" values="Unified_TLB=0,Separate_data_and_instruction_TLBs=1"/>
+    <tcf:enumeration name="E_TLBLA_XN" values="Can_execute=0,Cannot_execute=1"/>
+    <tcf:enumeration name="E_TLBLCK_P" values="Place_next_entry_in_unlocked_region=0,Lock_next_entry_into_selected_slot=1"/>
+    <tcf:enumeration name="E_TLBLCK_V" values="Slot_1=0x0,Slot_2=0x1,Slot_3=0x2,Slot_4=0x3,Slot_5=0x4,Slot_6=0x5,Slot_7=0x6,Slot_8=0x7"/>
+    <tcf:enumeration name="E_TLBLPA_SIZE" values="_16MB_supersection=0x0,_4KB_page=0x1,_64KB_page=0x2,_1MB_section=0x3"/>
+    <tcf:enumeration name="E_TLBLVA_G" values="Application_specific_entry=0,Global_entry=1"/>
+    <tcf:enumeration name="E_TTBC_N" values="_16KB=0,_8KB=1,_4KB=2,_2KB=3,_1KB=4,_512B=5,_256B=6,_128B=7"/>
+    <tcf:enumeration name="E_TTBC_PD01" values="Perform_translation_table_walk=0,Do_not_perform_translation_table_walk=1"/>
+    <tcf:enumeration name="E_TTBR01_C" values="Inner_non_cacheable=0,Inner_cacheable=1"/>
+    <tcf:enumeration name="E_TTBR01_NOS" values="Shareable_Outer_shareable=0,Shareable_Not_Outer_shareable=1"/>
+    <tcf:enumeration name="E_TTBR01_OC" values="Outer_Non_Cacheable=0,Reserved=1,Outer_Non_Cacheable=2,Outer_Write_back=3"/>
+    <tcf:enumeration name="E_TTBR1_P" values="ASSP_attribute_not_applied_during_page_table_access=0,ASSP_attribute_is_applied_during_page_table_access=1"/>
+    <tcf:enumeration name="E_VALID" values="Invalid=0,Valid=1"/>
+
+</register_list>

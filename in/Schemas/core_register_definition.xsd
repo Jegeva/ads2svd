@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+        targetNamespace="http://www.arm.com/core_reg" 
+        xmlns="http://www.arm.com/core_reg" 
+        elementFormDefault="qualified"
+        xmlns:xi="http://www.w3.org/2001/XInclude"
+        xmlns:tcf="http://com.arm.targetconfigurationeditor">
+
+    <xs:import namespace="http://www.w3.org/XML/1998/namespace" schemaLocation="http://www.w3.org/2009/01/xml.xsd"/>
+    <xs:import namespace="http://www.w3.org/2001/XInclude" schemaLocation="http://www.w3.org/2001/XInclude.xsd"/>
+    <xs:import namespace="http://com.arm.targetconfigurationeditor" schemaLocation="board-01.xsd"/>
+
+    <!-- Definition of root element register List -->
+    <xs:element name="register_list" type="register_list_type"/>
+  
+  
+    <!--  Define "container" element (used in include files) -->
+    <xs:element name="container">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:choice minOccurs="1" maxOccurs="unbounded">
+                <xs:element ref="register_list" minOccurs="0" maxOccurs="unbounded"/>
+                    <xs:element ref="xi:include" minOccurs="0" maxOccurs="unbounded"/>
+                </xs:choice>
+            </xs:sequence>  
+        </xs:complexType>
+    </xs:element>
+  
+    <!-- Define Register Group Element -->
+    <xs:element name="register_group">
+        <xs:complexType>
+        <xs:sequence>
+            <xs:element ref="gui_name" minOccurs="1" maxOccurs="1"/>
+            <xs:element ref="description" minOccurs="1" maxOccurs="1"/>
+            <xs:element ref="disable_condition" minOccurs="0" maxOccurs="1"/>
+            <xs:choice minOccurs="1" maxOccurs="unbounded">
+                <xs:element ref="register" minOccurs="0" maxOccurs="unbounded"/>
+                <xs:element ref="xi:include" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:choice>
+        </xs:sequence>
+        <!-- Define attributes for register group element -->
+        <xs:attribute name="name" type="c_symbol_type" use="required"></xs:attribute>
+        <xs:attribute name="filter" type="xs:string" />
+        <xs:attribute name="display_by_default" type="booleanEnum"/>
+        </xs:complexType>
+    </xs:element>
+
+    <!-- Define peripheral Element -->
+    <xs:element name="peripheral">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="gui_name" minOccurs="1" maxOccurs="1"/>
+                <xs:element ref="description" minOccurs="1" maxOccurs="1"/>
+                <xs:element ref="disable_condition" minOccurs="0" maxOccurs="1"/>
+                <xs:element ref="register" minOccurs="1" maxOccurs="unbounded"/>
+            </xs:sequence>
+            <!-- Define attributes for peripheral element -->
+            <xs:attribute name="name" type="c_symbol_type" use="required"></xs:attribute>
+            <xs:attribute name="offset" type="xs:string" use="required"></xs:attribute>
+        </xs:complexType>
+    </xs:element>
+
+    <!-- Define gui_name element -->
+    <xs:element name="gui_name">
+        <xs:complexType mixed="true">
+          <xs:attribute name="language" type="xs:language" use="required"/> 
+        </xs:complexType>
+    </xs:element>
+  
+    <!-- Define Description Element -->
+    <xs:element name="description">
+        <xs:complexType mixed="true">
+        <xs:attribute name="language" type="xs:language" use="required"/> 
+        </xs:complexType>
+    </xs:element>
+    
+    <!--  Define Disable Condition Element -->
+    <xs:element name="disable_condition" type="xs:string"/>
+  
+    <!-- Define Register Element -->
+    <xs:element name="register">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="gui_name" minOccurs="1" maxOccurs="1"/>
+                <xs:element ref="alias_name" minOccurs="0" maxOccurs="unbounded"/>
+                <xs:element ref="device_name" minOccurs="0" maxOccurs="unbounded" />
+                <xs:element ref="description" minOccurs="1" maxOccurs="1"/>
+                <xs:element ref="disable_condition" minOccurs="0" maxOccurs="1"/>
+                <xs:choice>
+                  <xs:choice minOccurs="0" maxOccurs="unbounded">
+                      <xs:element ref="bitField" minOccurs="0" maxOccurs="unbounded"/>
+                      <xs:element ref="conditional" minOccurs="0" maxOccurs="unbounded"/>
+                    </xs:choice>
+                    <xs:element ref="array" minOccurs="0" maxOccurs="unbounded"/>
+                </xs:choice>
+                <xs:element name="device_register" type="device_register_type" minOccurs="0" maxOccurs="unbounded"/>
+                <xs:element ref="xi:include" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+            <xs:attribute name="name" type="c_symbol_type" use="required"/>
+            <xs:attribute name="size" type="widthEnum" use="required" />
+            <xs:attribute name="offset" type="xs:string" />
+            <xs:attribute name="access" type="accessEnum" use="required"/>
+            <xs:attribute name="format" type="numericalDisplayFormat" use="optional" default="Hex"/>
+            <xs:attribute name="display_by_default" type="booleanEnum"/>
+            <xs:attribute name="doclink" type="xs:string" />
+            <xs:attribute name="hidden" type="booleanEnum"/>
+        </xs:complexType>
+    </xs:element>
+
+    <!-- Define conditional inclusion of bitfields -->
+    <xs:element name="conditional">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="bitField" minOccurs="1" maxOccurs="unbounded" />
+            </xs:sequence>
+            <xs:attribute name="expr" type="xs:string" use="required" />
+        </xs:complexType>
+    </xs:element>
+
+    <!-- Define alias_name Element -->
+    <xs:element name="alias_name" type="xs:string"/>
+    
+    <!-- Define bitField Element -->
+    <xs:element name="bitField">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="gui_name" minOccurs="1" maxOccurs="1"/>
+                <xs:element ref="description" minOccurs="0" maxOccurs="1"/>
+                <xs:element ref="definition" minOccurs="1" maxOccurs="1"/>
+            </xs:sequence>
+            <xs:attribute name="conditional" type="booleanEnum" use="optional"/>
+            <xs:attribute name="enumerationId" use="optional"/>
+            <xs:attribute name="high_bit" type="bitFieldSize" use="optional"/>
+            <xs:attribute name="low_bit" type="bitFieldSize" use="optional"/>
+            <xs:attribute name="name" type="c_symbol_type" use="required"/>
+            <xs:attribute name="access" type="accessEnum" use="optional" default="RW"/>
+            <xs:attribute name="format" type="numericalDisplayFormat" use="optional" default="Hex"/>
+        </xs:complexType>
+    </xs:element>
+
+    <!-- Define array types -->
+    <xs:element name="array">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="gui_name" minOccurs="1" maxOccurs="1"/>
+                <xs:element ref="description" minOccurs="0" maxOccurs="1"/>
+            </xs:sequence>
+            <xs:attribute name="name" type="c_symbol_type" use="required"/>
+            <xs:attribute name="element_bits"  type="xs:decimal" use="required"/>
+            <xs:attribute name="element_stride"  type="xs:decimal" use="optional"/>
+            <xs:attribute name="format" type="numericalDisplayFormat" use="required"/>
+            <xs:attribute name="index_from_lsb" type="booleanEnum" use="required"/>
+        </xs:complexType>
+    </xs:element>
+    
+    <xs:element name="definition" type="bitFieldPattern" />
+  
+    <!-- User defined types -->
+    
+    <!-- Definition boolean enumeration-->
+    <xs:simpleType name="booleanEnum">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="false"/>
+            <xs:enumeration value="true"/>
+        </xs:restriction>
+    </xs:simpleType>
+  
+    <!-- Definition width enumeration-->
+    <xs:simpleType name="widthEnum">
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="256"/>
+            <xs:enumeration value="128"/>
+            <xs:enumeration value="64"/>
+            <xs:enumeration value="32"/>
+            <xs:enumeration value="16"/>
+            <xs:enumeration value="8"/>
+            <xs:enumeration value="4"/>
+            <xs:enumeration value="2"/>
+            <xs:enumeration value="1"/>
+        </xs:restriction>
+    </xs:simpleType>
+  
+    <!-- Definition of Access enumeration -->
+    <xs:simpleType name="accessEnum">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="RW"/>
+            <xs:enumeration value="RO"/>
+            <xs:enumeration value="WO"/>
+            <xs:enumeration value="RMW"/>
+        </xs:restriction>
+    </xs:simpleType>
+  
+    <!-- Define Pattern for Bit field definition element -->
+    <xs:simpleType name="bitFieldPattern">
+        <xs:restriction base="xs:string">
+        <xs:pattern value="((\[[0-9]+\])|(\[[0-9]+:[0-9]+\]))+"></xs:pattern>
+        </xs:restriction>
+    </xs:simpleType>
+  
+    <!-- Define range for bit fields -->
+    <xs:simpleType name="bitFieldSize">
+        <xs:restriction base="xs:decimal">
+            <xs:maxInclusive value="31"/>
+            <xs:minInclusive value="0"/>
+        </xs:restriction>
+    </xs:simpleType>
+  
+    <!-- <device_register name="D0" high_bit="31" low_bit="0" shift="0"/> -->
+    <xs:complexType name="device_register_type">
+        <xs:attribute name="name" type="tcf:NameType"/>
+        <xs:attribute name="high_bit" type="bitFieldSize_128"/>
+        <xs:attribute name="low_bit" type="bitFieldSize_128"/>
+        <xs:attribute name="shift" type="xs:decimal"/>
+    </xs:complexType>
+    
+    <xs:simpleType name="bitFieldSize_128">
+        <xs:restriction base="xs:decimal">
+            <xs:maxInclusive value="127"/>
+            <xs:minInclusive value="0"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="c_symbol_type">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[a-zA-Z_$][a-zA-Z_$0-9]*"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <xs:element name="device_name">
+        <xs:complexType mixed="true">
+          <xs:attribute name="type" type="xs:string"/> 
+        </xs:complexType>
+    </xs:element>
+
+    <!-- Format of bit field inclusion file -->
+    <xs:element name="bitFields">
+        <xs:complexType>
+            <xs:sequence>
+            <xs:choice minOccurs="0" maxOccurs="unbounded">
+                <xs:element ref="bitField" minOccurs="0" maxOccurs="unbounded"/>
+                <xs:element ref="array" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:choice>
+        </xs:sequence>
+        <xs:attributeGroup ref="xml:specialAttrs"/>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:complexType name="register_list_type">
+        <xs:sequence>
+            <xs:element name="access_world" type="tcf:addrTypeEnum" minOccurs="0" maxOccurs="1"/>
+            <xs:choice minOccurs="0" maxOccurs="unbounded">
+                <xs:element ref="xi:include"/>
+                <xs:element ref="register_group"/>
+                <xs:element ref="peripheral" minOccurs="0" maxOccurs="unbounded"/>
+                <xs:element ref="register" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:choice>
+            <xs:element ref="tcf:enumeration" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+        <xs:attribute name="name" type="xs:string" use="required"/>
+        <xs:attribute name="filter" type="xs:string" />
+        <xs:attribute name="display_by_default" type="booleanEnum"/>
+        <xs:attribute name="override" type="booleanEnum"/>      
+        <xs:attributeGroup ref="xml:specialAttrs"/>
+    </xs:complexType>
+
+    <!-- Definition of Access enumeration -->
+    <xs:simpleType name="numericalDisplayFormat">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="Hex"/>
+            <xs:enumeration value="Float"/>
+            <xs:enumeration value="Int"/>
+            <xs:enumeration value="UnsignedInt"/>
+            <xs:enumeration value="Binary"/>
+            <xs:enumeration value="Boolean"/>
+        </xs:restriction>
+    </xs:simpleType>
+</xs:schema>

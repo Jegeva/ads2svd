@@ -1,0 +1,335 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<register_list
+    name="CP15"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns="http://www.arm.com/core_reg"
+    xsi:schemaLocation="http://www.arm.com/core_reg ../../../Schemas/core_register_definition.xsd"
+    xmlns:tcf="http://com.arm.targetconfigurationeditor">
+    <register_group name="SBanked">
+        <gui_name language="en">Secure Mode Registers</gui_name>
+        <description language="en">Secure Mode Registers</description>
+        <register access="RW" name="S_SCTLR" size="4">
+            <gui_name language="en">System Control</gui_name>
+            <alias_name>CP15_S_SCTLR</alias_name>
+            <device_name type="rvi">CP15_S_SCTLR</device_name>
+            <device_name type="cadi">S_SCTLR</device_name>
+            <description language="en">Provides the top level control of the system, including its memory system</description>
+            <bitField conditional="false" enumerationId="E_DISABLED_ENABLED" name="TE">
+                <gui_name language="en">TE</gui_name>
+                <description language="en">Thumb exception Enable</description>
+                <definition>[30]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="CP15_SCTLR_BANKED" name="AFE">
+                <gui_name language="en">AFE</gui_name>
+                <description language="en">Access Flag Enable</description>
+                <definition>[29]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="E_DISABLED_ENABLED" name="TRE">
+                <gui_name language="en">TRE</gui_name>
+                <description language="en">TEX Remap Enable</description>
+                <definition>[28]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="E_DISABLED_ENABLED" name="NMFI">
+                <gui_name language="en">NMFI</gui_name>
+                <description language="en">Nonmaskable FIQ support</description>
+                <definition>[27]</definition>
+            </bitField>
+            <bitField conditional="false" name="EE">
+                <gui_name language="en">EE</gui_name>
+                <description language="en">Determines the value of the E bit in the CPSR on an exception</description>
+                <definition>[25]</definition>
+            </bitField>
+            <bitField conditional="false" name="HA">
+                <gui_name language="en">HA</gui_name>
+                <description language="en">RAZ/WI</description>
+                <definition>[17:16]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="CP15_SCTLR_V" name="V">
+                <gui_name language="en">V</gui_name>
+                <description language="en">Selects the base address of the exception vectors</description>
+                <definition>[13]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="E_DISABLED_ENABLED" name="I">
+                <gui_name language="en">I</gui_name>
+                <description language="en">Determines if instructions can be cached in any instruction cache at any cache level</description>
+                <definition>[12]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="E_DISABLED_ENABLED" name="Z">
+                <gui_name language="en">Z</gui_name>
+                <description language="en">Enables program flow prediction</description>
+                <definition>[11]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="E_DISABLED_ENABLED" name="SW">
+                <gui_name language="en">SW</gui_name>
+                <description language="en">SWP/SWPB enable bit</description>
+                <definition>[10]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="E_DISABLED_ENABLED" name="C">
+                <gui_name language="en">C</gui_name>
+                <description language="en">Determines if data can be cached in a data or unified cache at any cache level</description>
+                <definition>[2]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="E_DISABLED_ENABLED" name="A">
+                <gui_name language="en">A</gui_name>
+                <description language="en">Enables strict alignment of data to detect alignment faults in data accesses</description>
+                <definition>[1]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="E_DISABLED_ENABLED" name="M">
+                <gui_name language="en">M</gui_name>
+                <description language="en">Enables the MMU</description>
+                <definition>[0]</definition>
+            </bitField>
+        </register>
+        <register access="RW" name="S_VBAR" size="4">
+            <gui_name language="en">Vector Base Address</gui_name>
+            <alias_name>CP15_S_VBAR</alias_name>
+            <device_name type="rvi">CP15_S_VBAR</device_name>
+            <device_name type="cadi">S_VBAR</device_name>
+            <description language="en">Provides the exception base address for exceptions that are not handled in Monitor mode</description>
+        </register>
+        <register access="RW" name="S_TTBR0" size="4">
+            <gui_name language="en">Translation Table Base Register 0</gui_name>
+            <alias_name>CP15_S_TTBR0</alias_name>
+            <device_name type="rvi">CP15_S_TTBR0</device_name>
+            <device_name type="cadi">S_TTBR0</device_name>
+            <description language="en">Holds the base address of translation table 0, and information about the memory it occupies</description>
+        </register>
+        <register access="RW" name="S_TTBR1" size="4">
+            <gui_name language="en">Translation Table Base Register 1</gui_name>
+            <alias_name>CP15_S_TTBR1</alias_name>
+            <device_name type="rvi">CP15_S_TTBR1</device_name>
+            <device_name type="cadi">S_TTBR1</device_name>
+            <description language="en">Holds the base address of translation table 1, and information about the memory it occupies</description>
+        </register>
+        <register access="RW" name="S_TTBCR" size="4">
+            <gui_name language="en">Translation Table Base Control</gui_name>
+            <alias_name>CP15_S_TTBCR</alias_name>
+            <device_name type="rvi">CP15_S_TTBCR</device_name>
+            <device_name type="cadi">S_TTBCR</device_name>
+            <description language="en">Determines which of the Translation Table Base Registers define the base address for a translation table walk</description>
+            <bitField conditional="false" name="PD1">
+                <gui_name language="en">PD1</gui_name>
+                <description language="en">Specifies occurrence of a translation table walk on a TLB miss when using Translation Table Base Register 1. When translation table walk is disabled, a section translation fault occurs instead on a TLB miss.</description>
+                <definition>[5]</definition>
+            </bitField>
+            <bitField conditional="false" name="PD0">
+                <gui_name language="en">PD0</gui_name>
+                <description language="en">Specifies occurrence of a translation table walk on a TLB miss when using Translation Table Base Register 0. When translation table walk is disabled, a section translation fault occurs instead on a TLB miss.</description>
+                <definition>[4]</definition>
+            </bitField>
+            <bitField conditional="false" name="N">
+                <gui_name language="en">N</gui_name>
+                <description language="en">Specifies the boundary size of Translation Table Base Register 0.</description>
+                <definition>[2:0]</definition>
+            </bitField>
+        </register>
+        <register access="RW" name="S_DACR" size="4">
+            <gui_name language="en">Domain Access Control</gui_name>
+            <alias_name>CP15_S_DACR</alias_name>
+            <device_name type="rvi">CP15_S_DACR</device_name>
+            <device_name type="cadi">S_DACR</device_name>
+            <description language="en">Defines the access permission for each of the sixteen memory domains</description>
+            <bitField conditional="false" enumerationId="E_DOMAIN_ACC_CTRL" name="D15">
+                <gui_name language="en">D15</gui_name>
+                <description language="en">Defines the access permissions for domain D15 </description>
+                <definition>[31:30]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="E_DOMAIN_ACC_CTRL" name="D14">
+                <gui_name language="en">D14</gui_name>
+                <description language="en">Defines the access permissions for domain D14 </description>
+                <definition>[29:28]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="E_DOMAIN_ACC_CTRL" name="D13">
+                <gui_name language="en">D13</gui_name>
+                <description language="en">Defines the access permissions for domain D13 </description>
+                <definition>[27:26]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="E_DOMAIN_ACC_CTRL" name="D12">
+                <gui_name language="en">D12</gui_name>
+                <description language="en">Defines the access permissions for domain D12 </description>
+                <definition>[25:24]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="E_DOMAIN_ACC_CTRL" name="D11">
+                <gui_name language="en">D11</gui_name>
+                <description language="en">Defines the access permissions for domain D11 </description>
+                <definition>[23:22]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="E_DOMAIN_ACC_CTRL" name="D10">
+                <gui_name language="en">D10</gui_name>
+                <description language="en">Defines the access permissions for domain D10 </description>
+                <definition>[21:20]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="E_DOMAIN_ACC_CTRL" name="D9">
+                <gui_name language="en">D9</gui_name>
+                <description language="en">Defines the access permissions for domain D9 </description>
+                <definition>[19:18]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="E_DOMAIN_ACC_CTRL" name="D8">
+                <gui_name language="en">D8</gui_name>
+                <description language="en">Defines the access permissions for domain D8 </description>
+                <definition>[17:16]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="E_DOMAIN_ACC_CTRL" name="D7">
+                <gui_name language="en">D7</gui_name>
+                <description language="en">Defines the access permissions for domain D7 </description>
+                <definition>[15:14]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="E_DOMAIN_ACC_CTRL" name="D6">
+                <gui_name language="en">D6</gui_name>
+                <description language="en">Defines the access permissions for domain D6 </description>
+                <definition>[13:12]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="E_DOMAIN_ACC_CTRL" name="D5">
+                <gui_name language="en">D5</gui_name>
+                <description language="en">Defines the access permissions for domain D5 </description>
+                <definition>[11:10]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="E_DOMAIN_ACC_CTRL" name="D4">
+                <gui_name language="en">D4</gui_name>
+                <description language="en">Defines the access permissions for domain D4 </description>
+                <definition>[9:8]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="E_DOMAIN_ACC_CTRL" name="D3">
+                <gui_name language="en">D3</gui_name>
+                <description language="en">Defines the access permissions for domain D3 </description>
+                <definition>[7:6]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="E_DOMAIN_ACC_CTRL" name="D2">
+                <gui_name language="en">D2</gui_name>
+                <description language="en">Defines the access permissions for domain D2 </description>
+                <definition>[5:4]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="E_DOMAIN_ACC_CTRL" name="D1">
+                <gui_name language="en">D1</gui_name>
+                <description language="en">Defines the access permissions for domain D1 </description>
+                <definition>[3:2]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="E_DOMAIN_ACC_CTRL" name="D0">
+                <gui_name language="en">D0</gui_name>
+                <description language="en">Defines the access permissions for domain D0 </description>
+                <definition>[2:0]</definition>
+            </bitField>
+        </register>
+        <register access="RW" name="S_DFSR" size="4">
+            <gui_name language="en">Data Fault Status</gui_name>
+            <alias_name>CP15_S_DFSR</alias_name>
+            <device_name type="rvi">CP15_S_DFSR</device_name>
+            <device_name type="cadi">S_DFSR</device_name>
+            <description language="en">holds status information about the last data fault</description>
+            <bitField name="EXT" conditional="false">
+                <gui_name language="en">ExT</gui_name>
+                <description language="en">External abort type.</description>
+                <definition>[12]</definition>
+            </bitField>
+            <bitField name="WNR" conditional="false" enumerationId="E_CP15_WNR">
+                <gui_name language="en">WnR</gui_name>
+                <description language="en">Write not Read Bit. Indicates whether the abort was caused by a write or a read access.</description>
+                <definition>[11]</definition>
+            </bitField>
+            <bitField name="FS" conditional="false">
+                <gui_name language="en">FS</gui_name>
+                <description language="en">Fault Status Bits</description>
+                <definition>[3:0][10]</definition>
+            </bitField>
+        </register>
+        <register access="RW" name="S_IFSR" size="4">
+            <gui_name language="en">Instruction Fault Status</gui_name>
+            <alias_name>CP15_S_IFSR</alias_name>
+            <device_name type="rvi">CP15_S_IFSR</device_name>
+            <device_name type="cadi">S_IFSR</device_name>
+            <description language="en">holds status information about the last instruction fault</description>
+        </register>
+        <register access="RW" name="S_ADFSR" size="4">
+            <gui_name language="en">Auxiliary Data Fault Status</gui_name>
+            <alias_name>CP15_S_ADFSR</alias_name>
+            <device_name type="rvi">CP15_S_ADFSR</device_name>
+            <device_name type="cadi">S_ADFSR</device_name>
+            <description language="en">Enables the system to return additional implementation defined fault status information</description>
+        </register>
+        <register access="RW" name="S_AIFSR" size="4">
+            <gui_name language="en">Auxiliary Instruction Fault Status</gui_name>
+            <alias_name>CP15_S_AIFSR</alias_name>
+            <device_name type="rvi">CP15_S_AIFSR</device_name>
+            <device_name type="cadi">S_AIFSR</device_name>
+            <description language="en">Enables the system to return additional implementation defined fault status information</description>
+        </register>
+        <register access="RW" name="S_DFAR" size="4">
+            <gui_name language="en">Data Fault Address</gui_name>
+            <alias_name>CP15_S_DFAR</alias_name>
+            <device_name type="rvi">CP15_S_DFAR</device_name>
+            <device_name type="cadi">S_DFAR</device_name>
+            <description language="en">Holds the MVA of the faulting address that caused a synchronous Data Abort exception</description>
+        </register>
+        <register access="RW" name="S_IFAR" size="4">
+            <gui_name language="en">Instruction Fault Address</gui_name>
+            <alias_name>CP15_S_IFAR</alias_name>
+            <device_name type="rvi">CP15_S_IFAR</device_name>
+            <device_name type="cadi">S_IFAR</device_name>
+            <description language="en">Holds the MVA of the faulting access that caused a synchronous Prefetch Abort exception</description>
+        </register>
+        <register access="RW" name="S_PRRR" size="4">
+            <gui_name language="en">Primary Region Remap</gui_name>
+            <alias_name>CP15_S_PRRR</alias_name>
+            <device_name type="rvi">CP15_S_PRRR</device_name>
+            <device_name type="cadi">S_PRRR</device_name>
+            <description language="en">Controls, in some cases, the top level mapping of the TEX[0],C, and B memory region attributes</description>
+        </register>
+        <register access="RW" name="S_NMRR" size="4">
+            <gui_name language="en">Normal Memory Remap</gui_name>
+            <alias_name>CP15_S_NMRR</alias_name>
+            <device_name type="rvi">CP15_S_NMRR</device_name>
+            <device_name type="cadi">S_NMRR</device_name>
+            <description language="en">Provides,in some cases, additional mapping controls for memory regions that are mapped as Normal memory by their entry in the PRRR</description>
+        </register>
+        <register access="RW" name="S_FCSEIDR" size="4">
+            <gui_name language="en">FCSE Process ID</gui_name>
+            <alias_name>CP15_S_FCSEIDR</alias_name>
+            <device_name type="rvi">CP15_S_FCSEIDR</device_name>
+            <device_name type="cadi">S_FCSEIDR</device_name>
+            <description language="en">identifies the current Process ID for the Fast Context Switch Extension</description>
+            <bitField conditional="false" name="FCSE_PID">
+                <gui_name language="en">FCSE PID</gui_name>
+                <description language="en">Holds the ProcID. Identifies a specific process for fast context switch. The reset value is 0. The purpose of the FCSE PID Register is to provide the ProcID for fast context switch memory mappings. The MMU uses the contents of this register to map memory addresses in the range 0-32MB.</description>
+                <definition>[31:25]</definition>
+            </bitField>
+        </register>
+        <register access="RW" name="S_CONTEXTIDR" size="4">
+            <gui_name language="en">Context ID</gui_name>
+            <alias_name>CP15_S_CONTEXTIDR</alias_name>
+            <device_name type="rvi">CP15_S_CONTEXTIDR</device_name>
+            <device_name type="cadi">S_CONTEXTIDR</device_name>
+            <description language="en">identifies the current Process Identifier and Address Space Identifier</description>
+            <bitField conditional="false" name="PROCID">
+                <gui_name language="en">PROCID</gui_name>
+                <description language="en">Extends the ASID to form the process ID and identifies the current process. The reset value is 0.</description>
+                <definition>[31:8]</definition>
+            </bitField>
+            <bitField conditional="false" name="ASID">
+                <gui_name language="en">ASID</gui_name>
+                <description language="en">Holds the ASID of the current process to identify the current ASID. The reset value is 0.</description>
+                <definition>[7:0]</definition>
+            </bitField>
+        </register>
+        <register access="RW" name="S_TPIDRURW" size="4">
+            <gui_name language="en">User Read/Write Thread ID</gui_name>
+            <alias_name>CP15_S_TPIDRURW</alias_name>
+            <device_name type="rvi">CP15_S_TPIDRURW</device_name>
+            <device_name type="cadi">S_TPIDRURW</device_name>
+            <description language="en">User Read/Write Thread ID</description>
+        </register>
+        <register access="RW" name="S_TPIDRURO" size="4">
+            <gui_name language="en">User Read-only Thread ID</gui_name>
+            <alias_name>CP15_S_TPIDRURO</alias_name>
+            <device_name type="rvi">CP15_S_TPIDRURO</device_name>
+            <device_name type="cadi">S_TPIDRURO</device_name>
+            <description language="en">User Read-only Thread ID</description>
+        </register>
+        <register access="RW" name="S_TPIDRPRW" size="4">
+            <gui_name language="en">Privileged Only Thread ID</gui_name>
+            <alias_name>CP15_S_TPIDRPRW</alias_name>
+            <device_name type="rvi">CP15_S_TPIDRPRW</device_name>
+            <device_name type="cadi">S_TPIDRPRW</device_name>
+            <description language="en">Privileged Only Thread ID</description>
+        </register>
+    </register_group>
+</register_list>

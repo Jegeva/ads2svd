@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>SCR</title>
+    <link href="insn.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body><table align="center"><tr><td><div class="topbar"><a href="AArch32-regindex.html">AArch32 Registers</a></div></td><td><div class="topbar"><a href="AArch64-regindex.html">AArch64 Registers</a></div></td><td><div class="topbar"><a href="AArch32-sysindex.html">AArch32 Instructions</a></div></td><td><div class="topbar"><a href="AArch64-sysindex.html">AArch64 Instructions</a></div></td><td><div class="topbar"><a href="enc_index.html">Index by Encoding</a></div></td><td><div class="topbar"><a href="ext_alpha_index.html">External Registers</a></div></td><td><div class="topbar"><a href="ext_enc_index.html">External Registers by Offset</a></div></td><td><div class="topbar"><a href="func_index.html">Registers by Functional Group</a></div></td></tr></table><hr /><h1 class="register-section">SCR, Secure Configuration Register</h1><p>The SCR characteristics are:</p><h2>Purpose</h2>
+          <p>When EL3 is implemented and can use AArch32, defines the configuration of the current Security state. It specifies:</p>
+        
+          <ul>
+            <li>
+              The Security state, either Secure or Non-secure.
+            </li>
+            <li>
+              What mode the PE branches to if an IRQ, FIQ, or External Abort occurs.
+            </li>
+            <li>
+              Whether the CPSR.F or CPSR.A bits can be modified when SCR.NS==1.
+            </li>
+          </ul>
+        <p>This 
+        register
+       is part of the Security registers functional group.</p><h2>Configuration</h2>
+        <p>This register is only accessible in Secure state.</p>
+      <p>AArch32 System register SCR 
+            can be mapped to 
+            AArch64 System register <a href="AArch64-scr_el3.html">SCR_EL3</a>, but this is not architecturally mandated.
+          </p><p>
+                Some or all RW fields of this register have defined reset values. 
+                
+        These apply
+      
+                whenever the register is accessible. 
+                This means they apply when the PE resets into EL3 using AArch32.
+              </p><h2>Attributes</h2>
+          <p>SCR is a 32-bit register.</p>
+        <h2>Field descriptions</h2><p>The SCR bit assignments are:</p><table class="regdiagram"><thead><tr><td>31</td><td>30</td><td>29</td><td>28</td><td>27</td><td>26</td><td>25</td><td>24</td><td>23</td><td>22</td><td>21</td><td>20</td><td>19</td><td>18</td><td>17</td><td>16</td><td>15</td><td>14</td><td>13</td><td>12</td><td>11</td><td>10</td><td>9</td><td>8</td><td>7</td><td>6</td><td>5</td><td>4</td><td>3</td><td>2</td><td>1</td><td>0</td></tr></thead><tbody><tr class="firstrow"><td class="l">0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td class="r">0</td><td class="lr" colspan="1"><a href="#TERR">TERR</a></td><td class="lr">0</td><td class="lr" colspan="1"><a href="#TWE">TWE</a></td><td class="lr" colspan="1"><a href="#TWI">TWI</a></td><td class="l">0</td><td class="r">0</td><td class="lr" colspan="1"><a href="#SIF">SIF</a></td><td class="lr" colspan="1"><a href="#HCE">HCE</a></td><td class="lr" colspan="1"><a href="#SCD">SCD</a></td><td class="lr" colspan="1"><a href="#nET">nET</a></td><td class="lr" colspan="1"><a href="#AW">AW</a></td><td class="lr" colspan="1"><a href="#FW">FW</a></td><td class="lr" colspan="1"><a href="#EA">EA</a></td><td class="lr" colspan="1"><a href="#FIQ">FIQ</a></td><td class="lr" colspan="1"><a href="#IRQ">IRQ</a></td><td class="lr" colspan="1"><a href="#NS">NS</a></td></tr></tbody></table><h4 id="0">
+                Bits [31:16]
+              </h4>
+              <p>Reserved, <span class="arm-defined-word">RES0</span>.</p>
+            <h4 id="TERR">TERR, bit [15]
+              </h4>
+              <p>Trap Error record accesses. If the RAS Extension is implemented, the possible values of this bit are:</p>
+            <table class="valuetable"><tr><th>TERR</th><th>Meaning</th></tr><tr><td class="bitfield">0</td><td>
+                  <p>Does not trap accesses to record registers from EL1 and EL2 to EL3.</p>
+                </td></tr><tr><td class="bitfield">1</td><td>
+                  <p>Accesses to the ER* registers from EL1 and EL2 generate a Trap exception to EL3.</p>
+                </td></tr></table>
+              <p>This bit resets to 0 on Warm reset.</p>
+            
+              <p>When the RAS Extension is not implemented, this field is <span class="arm-defined-word">RES0</span>.</p>
+            <h4 id="0">
+                Bit [14]
+              </h4>
+              <p>Reserved, <span class="arm-defined-word">RES0</span>.</p>
+            <h4 id="TWE">TWE, bit [13]
+              </h4>
+              <p>Traps WFE instructions to Monitor mode.</p>
+            <table class="valuetable"><tr><th>TWE</th><th>Meaning</th></tr><tr><td class="bitfield">0</td><td>
+                  <p>This control does not cause any instructions to be trapped.</p>
+                </td></tr><tr><td class="bitfield">1</td><td>
+                  <p>Any attempt to execute a WFE instruction in any mode other than Monitor mode is trapped to Monitor mode, if the instruction would otherwise have caused the PE to enter a low-power state and the attempted execution does not generate an exception that is taken to EL1 or EL2 by <a href="AArch32-sctlr.html">SCTLR</a>.nTWE or <a href="AArch32-hcr.html">HCR</a>.TWE.</p>
+                
+                  <p>Any exception that is taken to EL1 or to EL2 has priority over this trap.</p>
+                </td></tr></table>
+              <p>The attempted execution of a conditional WFE instruction is only trapped if the instruction passes its condition code check.</p>
+            
+              <div class="note"><span class="note-header">Note</span>
+                <p>Since a WFE or WFI can complete at any time, even without a Wakeup event, the traps on WFE of WFI are not guaranteed to be taken, even if the WFE or WFI is executed when there is no Wakeup event. The only guarantee is that if the instruction does not complete in finite time in the absence of a Wakeup event, the trap will be taken.</p>
+              </div>
+            <p>When this register has an architecturally-defined reset value, this field resets to <span class="binarynumber">0</span>.</p><h4 id="TWI">TWI, bit [12]
+              </h4>
+              <p>Traps WFI instructions to Monitor mode.</p>
+            <table class="valuetable"><tr><th>TWI</th><th>Meaning</th></tr><tr><td class="bitfield">0</td><td>
+                  <p>This control does not cause any instructions to be trapped.</p>
+                </td></tr><tr><td class="bitfield">1</td><td>
+                  <p>Any attempt to execute a WFI instruction in any mode other than Monitor mode is trapped to Monitor mode, if the instruction would otherwise have caused the PE to enter a low-power state and the attempted execution does not generate an exception that is taken to EL1 or EL2 by <a href="AArch32-sctlr.html">SCTLR</a>.nTWI or <a href="AArch32-hcr.html">HCR</a>.TWI.</p>
+                
+                  <p>Any exception that is taken to EL1 or to EL2 has priority over this trap.</p>
+                </td></tr></table>
+              <p>The attempted execution of a conditional WFI instruction is only trapped if the instruction passes its condition code check.</p>
+            
+              <div class="note"><span class="note-header">Note</span>
+                <p>Since a WFE or WFI can complete at any time, even without a Wakeup event, the traps on WFE of WFI are not guaranteed to be taken, even if the WFE or WFI is executed when there is no Wakeup event. The only guarantee is that if the instruction does not complete in finite time in the absence of a Wakeup event, the trap will be taken.</p>
+              </div>
+            <p>When this register has an architecturally-defined reset value, this field resets to <span class="binarynumber">0</span>.</p><h4 id="0">
+                Bits [11:10]
+              </h4>
+              <p>Reserved, <span class="arm-defined-word">RES0</span>.</p>
+            <h4 id="SIF">SIF, bit [9]
+              </h4>
+              <p>Secure instruction fetch. When the PE is in Secure state, this bit disables instruction fetch from Non-secure memory. The possible values for this bit are:</p>
+            <table class="valuetable"><tr><th>SIF</th><th>Meaning</th></tr><tr><td class="bitfield">0</td><td>
+                  <p>Secure state instruction fetches from Non-secure memory are permitted.</p>
+                </td></tr><tr><td class="bitfield">1</td><td>
+                  <p>Secure state instruction fetches from Non-secure memory are not permitted.</p>
+                </td></tr></table>
+              <p>This bit is permitted to be cached in a TLB.</p>
+            <p>When this register has an architecturally-defined reset value, this field resets to <span class="binarynumber">0</span>.</p><h4 id="HCE">HCE, bit [8]
+              </h4>
+              <p>Hypervisor Call instruction enable. Enables EL2 and Non-secure EL1 execution of HVC instructions.</p>
+            <table class="valuetable"><tr><th>HCE</th><th>Meaning</th></tr><tr><td class="bitfield">0</td><td>
+                  <p>HVC instructions are:</p>
+                
+                  <ul>
+                    <li>
+                      <span class="arm-defined-word">UNDEFINED</span> at Non-secure EL1. The Undefined Instruction exception is taken from PL1 to PL1.
+                    </li>
+                    <li>
+                      <span class="arm-defined-word">UNPREDICTABLE</span> at EL2. Behavior is one of the following:<ul><li>The instruction is <span class="arm-defined-word">UNDEFINED</span>.</li><li>The instruction executes as a NOP.</li></ul>
+                    </li>
+                  </ul>
+                </td></tr><tr><td class="bitfield">1</td><td>
+                  <p>HVC instructions are enabled at EL2 and Non-secure EL1.</p>
+                </td></tr></table>
+              <div class="note"><span class="note-header">Note</span>
+                <p>HVC instructions are always <span class="arm-defined-word">UNDEFINED</span> at EL0 and in Secure state.</p>
+              </div>
+            
+              <p>If EL2 is not implemented, this bit is <span class="arm-defined-word">RES0</span> and HVC is <span class="arm-defined-word">UNDEFINED</span>.</p>
+            <p>When this register has an architecturally-defined reset value, if this field is implemented as an RW field, it resets to <span class="binarynumber">0</span>.</p><h4 id="SCD">SCD, bit [7]
+              </h4>
+              <p>Secure Monitor Call disable. Disables SMC instructions.</p>
+            <table class="valuetable"><tr><th>SCD</th><th>Meaning</th></tr><tr><td class="bitfield">0</td><td>
+                  <p>SMC instructions are enabled.</p>
+                </td></tr><tr><td class="bitfield">1</td><td>
+                  <p>In Non-secure state, SMC instructions are <span class="arm-defined-word">UNDEFINED</span>. The Undefined Instruction exception is taken from the current Exception level to the current Exception level.</p>
+                
+                  <p>In Secure state, behavior is one of the following:</p>
+                
+                  <ul>
+                    <li>
+                      The instruction is <span class="arm-defined-word">UNDEFINED</span>.
+                    </li>
+                    <li>
+                      The instruction executes as a NOP.
+                    </li>
+                  </ul>
+                </td></tr></table>
+              <div class="note"><span class="note-header">Note</span>
+                <p>SMC instructions are always <span class="arm-defined-word">UNDEFINED</span> at PL0.</p>
+              </div>
+            <p>When this register has an architecturally-defined reset value, this field resets to <span class="binarynumber">0</span>.</p><h4 id="nET">nET, bit [6]
+              </h4>
+              <p>Not Early Termination. This bit disables early termination. The possible values of this bit are:</p>
+            <table class="valuetable"><tr><th>nET</th><th>Meaning</th></tr><tr><td class="bitfield">0</td><td>
+                  <p>Early termination permitted. Execution time of data operations can depend on the data values.</p>
+                </td></tr><tr><td class="bitfield">1</td><td>
+                  <p>Disable early termination. The number of cycles required for data operations is forced to be independent of the data values.</p>
+                </td></tr></table>
+              <p>This <span class="arm-defined-word">IMPLEMENTATION DEFINED</span> mechanism can disable data dependent timing optimizations from multiplies and data operations. It can provide system support against information leakage that might be exploited by timing correlation types of attack.</p>
+            
+              <p>On implementations that do not support early termination or do not support disabling early termination, this bit is <span class="arm-defined-word">RES0</span>.</p>
+            <p>When this register has an architecturally-defined reset value, if this field is implemented as an RW field, it resets to <span class="binarynumber">0</span>.</p><h4 id="AW">AW, bit [5]
+              </h4>
+              <p>When the value of SCR.EA is 1 and the value of <a href="AArch32-hcr.html">HCR</a>.AMO is 0, this bit controls whether <a href="AArch32-cpsr.html">CPSR</a>.A masks an external abort taken from Non-secure state, and the possible values of this bit are:</p>
+            <table class="valuetable"><tr><th>AW</th><th>Meaning</th></tr><tr><td class="bitfield">0</td><td>
+                  <p>External aborts taken from Non-secure state are not masked by <a href="AArch32-cpsr.html">CPSR</a>.A, and are taken to EL3.</p>
+                
+                  <p>External aborts taken from Secure state are masked by <a href="AArch32-cpsr.html">CPSR</a>.A.</p>
+                </td></tr><tr><td class="bitfield">1</td><td>
+                  <p>External aborts taken from either Security state are masked by <a href="AArch32-cpsr.html">CPSR</a>.A. When <a href="AArch32-cpsr.html">CPSR</a>.A is 0, the abort is taken to EL3.</p>
+                </td></tr></table>
+              <p>When SCR.EA is 0 or <a href="AArch32-hcr.html">HCR</a>.AMO is 1, this bit has no effect.</p>
+            <p>When this register has an architecturally-defined reset value, this field resets to <span class="binarynumber">0</span>.</p><h4 id="FW">FW, bit [4]
+              </h4>
+              <p>When the value of SCR.FIQ is 1 and the value of <a href="AArch32-hcr.html">HCR</a>.FMO is 0, this bit controls whether <a href="AArch32-cpsr.html">CPSR</a>.F masks an FIQ interrupt taken from Non-secure state, and the possible values of this bit are:</p>
+            <table class="valuetable"><tr><th>FW</th><th>Meaning</th></tr><tr><td class="bitfield">0</td><td>
+                  <p>An FIQ taken from Non-secure state is not masked by <a href="AArch32-cpsr.html">CPSR</a>.F, and is taken to EL3.</p>
+                
+                  <p>An FIQ taken from Secure state is masked by <a href="AArch32-cpsr.html">CPSR</a>.F.</p>
+                </td></tr><tr><td class="bitfield">1</td><td>
+                  <p>An FIQ taken from either Security state is masked by <a href="AArch32-cpsr.html">CPSR</a>.F. When <a href="AArch32-cpsr.html">CPSR</a>.F is 0, the FIQ is taken to EL3.</p>
+                </td></tr></table>
+              <p>When SCR.FIQ is 0 or <a href="AArch32-hcr.html">HCR</a>.FMO is 1, this bit has no effect.</p>
+            <p>When this register has an architecturally-defined reset value, this field resets to <span class="binarynumber">0</span>.</p><h4 id="EA">EA, bit [3]
+              </h4>
+              <p>External Abort handler. This bit controls which mode takes external aborts. The possible values of this bit are:</p>
+            <table class="valuetable"><tr><th>EA</th><th>Meaning</th></tr><tr><td class="bitfield">0</td><td>
+                  <p>External aborts taken to Abort mode.</p>
+                </td></tr><tr><td class="bitfield">1</td><td>
+                  <p>External aborts taken to Monitor mode.</p>
+                </td></tr></table><p>When this register has an architecturally-defined reset value, this field resets to <span class="binarynumber">0</span>.</p><h4 id="FIQ">FIQ, bit [2]
+              </h4>
+              <p>FIQ handler. This bit controls which mode takes FIQ exceptions. The possible values of this bit are:</p>
+            <table class="valuetable"><tr><th>FIQ</th><th>Meaning</th></tr><tr><td class="bitfield">0</td><td>
+                  <p>FIQs taken to FIQ mode.</p>
+                </td></tr><tr><td class="bitfield">1</td><td>
+                  <p>FIQs taken to Monitor mode.</p>
+                </td></tr></table><p>When this register has an architecturally-defined reset value, this field resets to <span class="binarynumber">0</span>.</p><h4 id="IRQ">IRQ, bit [1]
+              </h4>
+              <p>IRQ handler. This bit controls which mode takes IRQ exceptions. The possible values of this bit are:</p>
+            <table class="valuetable"><tr><th>IRQ</th><th>Meaning</th></tr><tr><td class="bitfield">0</td><td>
+                  <p>IRQs taken to IRQ mode.</p>
+                </td></tr><tr><td class="bitfield">1</td><td>
+                  <p>IRQs taken to Monitor mode.</p>
+                </td></tr></table><p>When this register has an architecturally-defined reset value, this field resets to <span class="binarynumber">0</span>.</p><h4 id="NS">NS, bit [0]
+              </h4>
+              <p>Non-secure bit. Except when the PE is in Monitor mode, this bit determines the Security state of the PE:</p>
+            <table class="valuetable"><tr><th>NS</th><th>Meaning</th></tr><tr><td class="bitfield">0</td><td>
+                  <p>PE is in Secure state.</p>
+                </td></tr><tr><td class="bitfield">1</td><td>
+                  <p>PE is in Non-secure state.</p>
+                </td></tr></table>
+              <p>If the <a href="AArch32-hcr.html">HCR</a>.TGE bit is set, an attempt to change from a Secure PL1 mode to a Non-secure EL1 mode by changing the SCR.NS bit from 0 to 1 results in the SCR.NS bit remaining as 0.</p>
+            <p>When this register has an architecturally-defined reset value, this field resets to <span class="binarynumber">0</span>.</p><div class="access_mechanisms"><h2>Accessing the SCR</h2><div class="access_instructions"><div class="access_instruction"><p>This register can be read using MRC with the following syntax:</p><p class="asm-code">MRC  &lt;syntax&gt;</p></div><div class="access_instruction"><p>This register can be written using MCR with the following syntax:</p><p class="asm-code">MCR  &lt;syntax&gt;</p></div><p>This syntax uses the following encoding in the System instruction encoding space:</p><table class="access_instructions"><tr><th rowspan="1">
+        &lt;syntax&gt;
+      </th><th>opc1</th><th>opc2</th><th>CRn</th><th>coproc</th><th>CRm</th></tr><tr><td>p15, 0, 
+                &lt;Rt&gt;, c1, c1, 0</td><td>000</td><td>000</td><td>0001</td><td>1111</td><td>0001</td></tr></table><ul></ul></div><h3>Accessibility</h3><p>The register is accessible as follows:</p><table class="accessibility"><tr><th class="accessibility_control" colspan="3">
+            Control
+          </th><th colspan="4">
+          Accessibility
+        </th></tr><tr><th class="accessibility_control">E2H</th><th class="accessibility_control">TGE</th><th class="accessibility_control">NS</th><th>EL0</th><th>EL1</th><th>EL2</th><th>EL3</th></tr><tr><td class="accessibility_control">x</td><td class="accessibility_control">x</td><td class="accessibility_control">0</td><td>
+        -
+      </td><td>
+        -
+      </td><td>
+        n/a
+      </td><td>RW</td></tr><tr><td class="accessibility_control">x</td><td class="accessibility_control">0</td><td class="accessibility_control">1</td><td>
+        -
+      </td><td>
+        -
+      </td><td>
+        -
+      </td><td>RW</td></tr><tr><td class="accessibility_control">x</td><td class="accessibility_control">1</td><td class="accessibility_control">1</td><td>
+        -
+      </td><td>
+        n/a
+      </td><td>
+        -
+      </td><td>RW</td></tr></table><p><p>This table applies to all instructions that can access this register.</p></p>
+            <p>If EL3 is implemented and is using AArch64, any read or write to SCR from Secure EL1 using AArch32 is trapped as an exception to EL3.</p>
+          <h3>Traps and enables</h3><div class="traps_intro"><p>For a description of the prioritization of any generated exceptions, see section G1.11.2 (Exception priority order) in the <i>ARM<sup>®</sup> Architecture Reference Manual, ARMv8, for ARMv8-A architecture profile</i> for exceptions taken to AArch32 state, and section D1.13.2 (Synchronous exception prioritization) for exceptions taken to AArch64 state. Subject to the prioritization rules, the following traps and enables are applicable when 
+            accessing this register.
+          </p></div><p>
+        When
+        EL2 is implemented and is using AArch64
+        and
+        SCR_EL3.NS==1 &amp;&amp; HCR_EL2.E2H==0
+        :
+      </p><ul><li><p>If <a href="AArch64-hstr_el2.html">HSTR_EL2</a>.T1==1, Non-secure accesses to this register from EL1 are trapped to EL2.</p></li></ul><p>
+        When
+        EL2 is implemented and is using AArch64
+        and
+        SCR_EL3.NS==1 &amp;&amp; HCR_EL2.E2H==1 &amp;&amp; HCR_EL2.TGE==0
+        :
+      </p><ul><li><p>If <a href="AArch64-hstr_el2.html">HSTR_EL2</a>.T1==1, Non-secure accesses to this register from EL1 are trapped to EL2.</p></li></ul><p>
+        When
+        EL2 is implemented and is using AArch32
+        and
+        SCR_EL3.NS==1
+        :
+      </p><ul><li><p>If <a href="AArch32-hstr.html">HSTR</a>.T1==1, Non-secure accesses to this register from EL1 are trapped to Hyp mode.</p></li></ul></div><br /><br /><hr /><table align="center"><tr><td><div class="topbar"><a href="AArch32-regindex.html">AArch32 Registers</a></div></td><td><div class="topbar"><a href="AArch64-regindex.html">AArch64 Registers</a></div></td><td><div class="topbar"><a href="AArch32-sysindex.html">AArch32 Instructions</a></div></td><td><div class="topbar"><a href="AArch64-sysindex.html">AArch64 Instructions</a></div></td><td><div class="topbar"><a href="enc_index.html">Index by Encoding</a></div></td><td><div class="topbar"><a href="ext_alpha_index.html">External Registers</a></div></td><td><div class="topbar"><a href="ext_enc_index.html">External Registers by Offset</a></div></td><td><div class="topbar"><a href="func_index.html">Registers by Functional Group</a></div></td></tr></table><p class="versions">24/03/2017 16:41</p><p class="copyconf">Copyright © 2010-2017 ARM Limited or its affiliates. All rights reserved. This document is Confidential.</p></body>
+</html>

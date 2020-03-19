@@ -1,0 +1,9 @@
+<soc
+    xmlns="http://www.arm.com/soc_definition"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:tcf="http://com.arm.targetconfigurationeditor"
+    xsi:schemaLocation="http://www.arm.com/soc_definition ../../Schemas/soc_definition.xsd">
+   <core name="Cortex-A9" core_definition="Cortex-A9">
+      <tcf board_id="hps_svd" address_prefix="AHB" replaceable="true"/>
+   </core>
+</soc>

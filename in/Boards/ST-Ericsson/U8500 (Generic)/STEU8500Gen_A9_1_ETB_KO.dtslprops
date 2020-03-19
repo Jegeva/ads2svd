@@ -1,0 +1,9 @@
+# Mon Sep 02 09:53:40 BST 2013
+options.trace.traceCapture=ETB
+options.coreTrace.cortexA9coreTrace=true
+options.coreTrace.cortexA9coreTrace.Cortex_A9_0=false
+options.coreTrace.cortexA9coreTrace.Cortex_A9_1=true
+options.coreTrace.cortexA9coreTrace.cycleAccurate=false
+options.coreTrace.cortexA9coreTrace.traceRange=true
+options.coreTrace.cortexA9coreTrace.traceRange.start=0xBF000000
+options.coreTrace.cortexA9coreTrace.traceRange.end=0xFFFFFFFF

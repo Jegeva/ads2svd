@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<register_list
+    name="CP15"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns="http://www.arm.com/core_reg"
+    xsi:schemaLocation="http://www.arm.com/core_reg ../../../Schemas/core_register_definition.xsd"
+    xmlns:tcf="http://com.arm.targetconfigurationeditor">
+    <register_group name="Cache">
+        <gui_name language="en">Cache</gui_name>
+        <description language="en">Determines the instruction and data minimum line length in bytes to enable a range of addresses to be invalidated</description>
+        <register access="RO" name="CACHE_TYPE" size="4">
+            <gui_name language="en">Cache Type</gui_name>
+            <alias_name>CP15_CACHE_TYPE</alias_name>
+            <device_name type="rvi">CP15_CACHE_TYPE</device_name>
+            <device_name type="cadi">CP15_CACHE_TYPE</device_name>
+            <description language="en">Cache Type</description>
+            <bitField conditional="false" name="CWG" enumerationId="CP15_CACHE_TYPE_CWG">
+                <gui_name language="en">CWG</gui_name>
+                <description language="en">Cache Write-back Granule</description>
+                <definition>[27:24]</definition>
+            </bitField>
+            <bitField conditional="false" name="ERG" enumerationId="CP15_CACHE_TYPE_ERG">
+                <gui_name language="en">ERG</gui_name>
+                <description language="en">Exclusives Reservation Granule</description>
+                <definition>[23:20]</definition>
+            </bitField>
+            <bitField conditional="false" name="DMINLINE" enumerationId="CP15_CACHE_TYPE_DMINLINE">
+                <gui_name language="en">DMINLINE</gui_name>
+                <description language="en">Indicates log2 of the number of words in the smallest cache line of the data and unified caches</description>
+                <definition>[19:16]</definition>
+            </bitField>
+            <bitField conditional="false" name="IMINLINE" enumerationId="CP15_CACHE_TYPE_IMINLINE">
+                <gui_name language="en">IMINLINE</gui_name>
+                <description language="en">Indicates log2 of the number of words in the smallest cache line of the instruction caches</description>
+                <definition>[3:0]</definition>
+            </bitField>
+        </register>
+        <register access="RO" name="CACHE_SIZE_ID" size="4">
+            <gui_name language="en">Cache Size ID</gui_name>
+            <alias_name>CP15_CACHE_SIZE_ID</alias_name>
+            <device_name type="rvi">CP15_CACHE_SIZE_ID</device_name>
+            <device_name type="cadi">CP15_CACHE_SIZE_ID</device_name>
+            <description language="en">Provides the current cache size information for the instruction and data caches</description>
+            <bitField conditional="false" name="WT" enumerationId="GENERIC_NOT_SUPPORTED_SUPPORTED">
+                <gui_name language="en">WT</gui_name>
+                <description language="en">Indicates support available for write-through</description>
+                <definition>[31]</definition>
+            </bitField>
+            <bitField conditional="false" name="WB" enumerationId="GENERIC_NOT_SUPPORTED_SUPPORTED">
+                <gui_name language="en">WB</gui_name>
+                <description language="en">Indicates support available for write-back</description>
+                <definition>[30]</definition>
+            </bitField>
+            <bitField conditional="false" name="RA" enumerationId="GENERIC_NOT_SUPPORTED_SUPPORTED">
+                <gui_name language="en">RA</gui_name>
+                <description language="en">Indicates support available for read allocation</description>
+                <definition>[29]</definition>
+            </bitField>
+            <bitField conditional="false" name="WA" enumerationId="GENERIC_NOT_SUPPORTED_SUPPORTED">
+                <gui_name language="en">WA</gui_name>
+                <description language="en">Indicates support available for write allocation</description>
+                <definition>[28]</definition>
+            </bitField>
+            <bitField conditional="false" name="NUMSETS">
+                <gui_name language="en">NUMSETS</gui_name>
+                <description language="en">Indicates the number of sets as (number of sets) - 1</description>
+                <definition>[27:13]</definition>
+            </bitField>
+            <bitField conditional="false" name="ASSOC">
+                <gui_name language="en">ASSOC</gui_name>
+                <description language="en">Indicates the number of ways as (number of ways) - 1</description>
+                <definition>[12:3]</definition>
+            </bitField>
+            <bitField conditional="false" name="LINESIZE">
+                <gui_name language="en">LINESIZE</gui_name>
+                <description language="en">Indicates the number of words in each cache line</description>
+                <definition>[2:0]</definition>
+            </bitField>
+        </register>
+        <register access="RO" name="CACHE_LEVEL_ID" size="4">
+            <gui_name language="en">Cache Level ID</gui_name>
+            <alias_name>CP15_CACHE_LEVEL_ID</alias_name>
+            <device_name type="rvi">CP15_CACHE_LEVEL_ID</device_name>
+            <device_name type="cadi">CP15_CACHE_LEVEL_ID</device_name>
+            <description language="en">Indicates the cache levels that are implemented</description>
+            <bitField conditional="false" name="LOU" enumerationId="CP15_CACHE_LEVEL_ID_LOU">
+                <gui_name language="en">LOU</gui_name>
+                <description language="en">Level of unification</description>
+                <definition>[29:27]</definition>
+            </bitField>
+            <bitField conditional="false" name="LOC" enumerationId="CP15_CACHE_LEVEL_ID_LOC">
+                <gui_name language="en">LOC</gui_name>
+                <description language="en">Level of coherency</description>
+                <definition>[26:24]</definition>
+            </bitField>
+            <bitField conditional="false" name="CL_8" enumerationId="CP15_CACHE_LEVEL_ID_CL">
+                <gui_name language="en">CL_8</gui_name>
+                <description language="en">Level 8 cache type</description>
+                <definition>[23:21]</definition>
+            </bitField>
+            <bitField conditional="false" name="CL_7" enumerationId="CP15_CACHE_LEVEL_ID_CL">
+                <gui_name language="en">CL_7</gui_name>
+                <description language="en">Level 7 cache type</description>
+                <definition>[20:18]</definition>
+            </bitField>
+            <bitField conditional="false" name="CL_6" enumerationId="CP15_CACHE_LEVEL_ID_CL">
+                <gui_name language="en">CL_6</gui_name>
+                <description language="en">Level 6 cache type</description>
+                <definition>[17:15]</definition>
+            </bitField>
+            <bitField conditional="false" name="CL_5" enumerationId="CP15_CACHE_LEVEL_ID_CL">
+                <gui_name language="en">CL_5</gui_name>
+                <description language="en">Level 5 cache type</description>
+                <definition>[14:12]</definition>
+            </bitField>
+            <bitField conditional="false" name="CL_4" enumerationId="CP15_CACHE_LEVEL_ID_CL">
+                <gui_name language="en">CL_4</gui_name>
+                <description language="en">Level 4 cache type</description>
+                <definition>[11:9]</definition>
+            </bitField>
+            <bitField conditional="false" name="CL_3" enumerationId="CP15_CACHE_LEVEL_ID_CL">
+                <gui_name language="en">CL_3</gui_name>
+                <description language="en">Level 3 cache type</description>
+                <definition>[8:6]</definition>
+            </bitField>
+            <bitField conditional="false" name="CL_2" enumerationId="CP15_CACHE_LEVEL_ID_CL">
+                <gui_name language="en">CL_2</gui_name>
+                <description language="en">Level 2 cache type</description>
+                <definition>[5:3]</definition>
+            </bitField>
+            <bitField conditional="false" name="CL_1" enumerationId="CP15_CACHE_LEVEL_ID_CL">
+                <gui_name language="en">CL_1_2</gui_name>
+                <description language="en">Indicates no unified cache at CL1</description>
+                <definition>[2:0]</definition>
+            </bitField>
+        </register>
+        <register access="RW" name="CACHE_SIZE_SELECT" size="4">
+            <gui_name language="en">Cache Size Select</gui_name>
+            <alias_name>CP15_CACHE_SIZE_SELECT</alias_name>
+            <device_name type="rvi">CP15_CACHE_SIZE_SELECT</device_name>
+            <device_name type="cadi">CP15_CACHE_SIZE_SELECT</device_name>
+            <description language="en">Holds the value that the processor uses to select the Current Cache Size Identification Register to use</description>
+            <bitField conditional="false" name="LEVEL">
+                <gui_name language="en">LEVEL</gui_name>
+                <description language="en">Identifies which cache level to select</description>
+                <definition>[3:1]</definition>
+            </bitField>
+            <bitField conditional="false" name="IND">
+                <gui_name language="en">IND</gui_name>
+                <description language="en">Identifies instruction or data cache to use</description>
+                <definition>[0]</definition>
+            </bitField>
+        </register>
+        <register access="WO" name="NOP_WFI" size="4">
+            <gui_name language="en">Wait for Interrupt(NOP)</gui_name>
+            <alias_name>CP15_NOP_WFI</alias_name>
+            <device_name type="rvi">CP15_NOP_WFI</device_name>
+            <device_name type="cadi">CP15_NOP_WFI</device_name>
+            <description language="en">Implemented as a NOP</description>
+        </register>
+        <register access="WO" name="CACHE_I_INVALIDATE_ALL" size="4">
+            <gui_name language="en">Invalidate All ICache</gui_name>
+            <alias_name>CP15_CACHE_I_INVALIDATE_ALL</alias_name>
+            <device_name type="rvi">CP15_CACHE_I_INVALIDATE_ALL</device_name>
+            <device_name type="cadi">CP15_CACHE_I_INVALIDATE_ALL</device_name>
+            <description language="en">Invalidate all I-caches and flush branch predictor arrays</description>
+        </register>
+        <register access="WO" name="CACHE_I_INVALIDATE" size="4">
+            <gui_name language="en">Invalidate ICache</gui_name>
+            <alias_name>CP15_CACHE_I_INVALIDATE</alias_name>
+            <device_name type="rvi">CP15_CACHE_I_INVALIDATE</device_name>
+            <device_name type="cadi">CP15_CACHE_I_INVALIDATE</device_name>
+            <description language="en">Invalidate I-cache line by MVA to point of unification</description>
+        </register>
+        <register access="WO" name="CACHE_FLUSH_PREFETCH" size="4">
+            <gui_name language="en">Cache Flush Prefetch</gui_name>
+            <alias_name>CP15_CACHE_FLUSH_PREFETCH</alias_name>
+            <device_name type="rvi">CP15_CACHE_FLUSH_PREFETCH</device_name>
+            <device_name type="cadi">CP15_CACHE_FLUSH_PREFETCH</device_name>
+            <description language="en">Flush prefetch buffer (user and privileged modes)</description>
+        </register>
+        <register access="WO" name="DPU_INVALIDATE_BPA" size="4">
+            <gui_name language="en">DPU Invalidate BPA</gui_name>
+            <alias_name>CP15_DPU_INVALIDATE_BPA</alias_name>
+            <device_name type="rvi">CP15_DPU_INVALIDATE_BPA</device_name>
+            <device_name type="cadi">CP15_DPU_INVALIDATE_BPA</device_name>
+            <description language="en">Invalidate entire branch predictor array</description>
+        </register>
+        <register access="WO" name="DPU_INVALIDATE_VA" size="4">
+            <gui_name language="en">DPU Invalidate VA</gui_name>
+            <alias_name>CP15_DPU_INVALIDATE_VA</alias_name>
+            <device_name type="rvi">CP15_DPU_INVALIDATE_VA</device_name>
+            <device_name type="cadi">CP15_DPU_INVALIDATE_VA</device_name>
+            <description language="en">Invalidate VA from branch predictor array</description>
+        </register>
+        <register access="WO" name="CACHE_INVALIDATE_D_BY_MVA" size="4">
+            <gui_name language="en">Invalidate DCache(by MVA)</gui_name>
+            <alias_name>CP15_CACHE_INVALIDATE_D_BY_MVA</alias_name>
+            <device_name type="rvi">CP15_CACHE_INVALIDATE_D_BY_MVA</device_name>
+            <device_name type="cadi">CP15_CACHE_INVALIDATE_D_BY_MVA</device_name>
+            <description language="en">Invalidate D-cache line by MVA to point of coherency</description>
+        </register>
+        <register access="WO" name="CACHE_INVALIDATE_D_BY_SET_WAY" size="4">
+            <gui_name language="en">Invalidate DCache (by set/way)</gui_name>
+            <alias_name>CP15_CACHE_INVALIDATE_D_BY_SET_WAY</alias_name>
+            <device_name type="rvi">CP15_CACHE_INVALIDATE_D_BY_SET_WAY</device_name>
+            <device_name type="cadi">CP15_CACHE_INVALIDATE_D_BY_SET_WAY</device_name>
+            <description language="en">Invalidate D-cache line by set/way</description>
+        </register>
+        <register access="WO" name="CACHE_CLEAN_D_BY_MVA_COHERENCY" size="4">
+            <gui_name language="en">Clean DCache (by MVA coherency)</gui_name>
+            <alias_name>CP15_CACHE_CLEAN_D_BY_MVA_COHERENCY</alias_name>
+            <device_name type="rvi">CP15_CACHE_CLEAN_D_BY_MVA_COHERENCY</device_name>
+            <device_name type="cadi">CP15_CACHE_CLEAN_D_BY_MVA_COHERENCY</device_name>
+            <description language="en">Clean D-cache by MVA to point of coherency</description>
+        </register>
+        <register access="WO" name="CACHE_CLEAN_D_BY_SET_WAY" size="4">
+            <gui_name language="en">Clean DCache (by set/way)</gui_name>
+            <alias_name>CP15_CACHE_CLEAN_D_BY_SET_WAY</alias_name>
+            <device_name type="rvi">CP15_CACHE_CLEAN_D_BY_SET_WAY</device_name>
+            <device_name type="cadi">CP15_CACHE_CLEAN_D_BY_SET_WAY</device_name>
+            <description language="en">Clean D-cache by set/way</description>
+        </register>
+        <register access="WO" name="DATA_SYNCHRONISATION_BARRIER" size="4">
+            <gui_name language="en">Data Synchronisation Barrier</gui_name>
+            <alias_name>CP15_DATA_SYNCHRONISATION_BARRIER</alias_name>
+            <device_name type="rvi">CP15_DATA_SYNCHRONISATION_BARRIER</device_name>
+            <device_name type="cadi">CP15_DATA_SYNCHRONISATION_BARRIER</device_name>
+            <description language="en">Data synchronisation barrier (user and privileged modes)</description>
+        </register>
+        <register access="WO" name="DATA_MEMORY_BARRIER" size="4">
+            <gui_name language="en">Data Memory Barrier</gui_name>
+            <alias_name>CP15_DATA_MEMORY_BARRIER</alias_name>
+            <device_name type="rvi">CP15_DATA_MEMORY_BARRIER</device_name>
+            <device_name type="cadi">CP15_DATA_MEMORY_BARRIER</device_name>
+            <description language="en">Data memory barrier (user and privileged modes)</description>
+        </register>
+        <register access="WO" name="CACHE_CLEAN_D_BY_MVA_UNIFICATION" size="4">
+            <gui_name language="en">Clean DCache (by MVA Unification)</gui_name>
+            <alias_name>CP15_CACHE_CLEAN_D_BY_MVA_UNIFICATION</alias_name>
+            <device_name type="rvi">CP15_CACHE_CLEAN_D_BY_MVA_UNIFICATION</device_name>
+            <device_name type="cadi">CP15_CACHE_CLEAN_D_BY_MVA_UNIFICATION</device_name>
+            <description language="en">Clean D-cache by MVA to point of unification</description>
+        </register>
+        <register access="WO" name="CACHE_CLEAN_INVALIDATE_D_BY_MVA_COHERENCY" size="4">
+            <gui_name language="en">Clean Invalidate DCache (by MVA coherency)</gui_name>
+            <alias_name>CP15_CACHE_CLEAN_INVALIDATE_D_BY_MVA_COHERENCY</alias_name>
+            <device_name type="rvi">CP15_CACHE_CLEAN_INVALIDATE_D_BY_MVA_COHERENCY</device_name>
+            <device_name type="cadi">CP15_CACHE_CLEAN_INVALIDATE_D_BY_MVA_COHERENCY</device_name>
+            <description language="en">Clean and invalidate D-cache line by MVA to point of coherency</description>
+        </register>
+        <register access="WO" name="CACHE_CLEAN_INVALIDATE_D_BY_SET_WAY" size="4">
+            <gui_name language="en">Clean Invalidate DCache(by set/way)</gui_name>
+            <alias_name>CP15_CACHE_CLEAN_INVALIDATE_D_BY_SET_WAY</alias_name>
+            <device_name type="rvi">CP15_CACHE_CLEAN_INVALIDATE_D_BY_SET_WAY</device_name>
+            <device_name type="cadi">CP15_CACHE_CLEAN_INVALIDATE_D_BY_SET_WAY</device_name>
+            <description language="en">Clean and invalidate D-cache line by set/way</description>
+        </register>
+        <register access="WO" name="CACHE_D_INVALIDATE_ALL" size="4">
+            <gui_name language="en">Invalidate All DCache</gui_name>
+            <alias_name>CP15_CACHE_D_INVALIDATE_ALL</alias_name>
+            <device_name type="rvi">CP15_CACHE_D_INVALIDATE_ALL</device_name>
+            <device_name type="cadi">CP15_CACHE_D_INVALIDATE_ALL</device_name>
+            <description language="en">Invalidate all DCache</description>
+        </register>
+        <register access="WO" name="CACHE_SIZE_OVERRIDE" size="4">
+            <gui_name language="en">Cache Size Override</gui_name>
+            <alias_name>CP15_CACHE_SIZE_OVERRIDE</alias_name>
+            <device_name type="rvi">CP15_CACHE_SIZE_OVERRIDE</device_name>
+            <device_name type="cadi">CP15_CACHE_SIZE_OVERRIDE</device_name>
+            <description language="en">Cache size override</description>
+        </register>
+    </register_group>
+</register_list>
+

@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xs:schema
+    xmlns="http://www.arm.com/probe"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    targetNamespace="http://www.arm.com/probe"
+    elementFormDefault="qualified">
+
+    <xs:element name="probes">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="probe" type="probe" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:simpleType name="lib_type">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="RDDI-DAP"/>
+            <xs:enumeration value="RDDI-MEMAP"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:complexType name="debug_lib">
+        <xs:attribute name="name" type="xs:string"/>
+        <xs:attribute name="type" type="lib_type" default="RDDI-DAP"/>
+        <xs:attribute name="config" type="xs:string"/>
+        <xs:attribute name="args" type="xs:string"/>
+    </xs:complexType>
+
+    <xs:complexType name="trace_lib">
+        <xs:attribute name="name" type="xs:string"/>
+        <xs:attribute name="config" type="xs:string"/>
+    </xs:complexType>
+
+    <xs:complexType name="probe">
+        <xs:sequence>
+            <xs:element name="name" type="xs:string"/>
+
+            <!-- Maintain lib_type to be compatible original schema or new debug_lib type-->
+            <xs:choice>
+                <xs:element name="lib_name" type="xs:string"/>
+                <xs:element name="debug_lib" type="debug_lib"/>
+            </xs:choice>
+
+            <xs:element name="trace_lib" type="trace_lib" minOccurs="0"/>
+            <xs:element name="config_items" type="config_items" minOccurs="0"/>
+            <xs:element name="capabilities" type="capabilities" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="config_items">
+        <xs:sequence>
+            <xs:element name="config_item" type="config_item" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="config_item">
+        <xs:sequence>
+            <xs:element name="name" type="xs:string"/>
+            <xs:element name="description" type="xs:string" minOccurs="0"/>
+            <xs:choice minOccurs="0">
+                <xs:element name="type" type="xs:string"/>
+                <xs:element name="enum_options" type="enum_options"/>
+            </xs:choice>
+            <xs:element name="default_value" type="xs:string"/>
+            <xs:element name="user_modifiable" type="xs:boolean" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="enum_options">
+        <xs:sequence>
+            <xs:element name="enum_option" type="xs:string" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="capabilities">
+        <xs:sequence>
+            <xs:element name="capability" type="capability" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="capability">
+        <xs:sequence>
+            <xs:element name="name" type="xs:string"/>
+            <xs:element name="value" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+
+</xs:schema>

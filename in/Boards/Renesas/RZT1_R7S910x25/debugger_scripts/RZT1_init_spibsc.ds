@@ -1,0 +1,19 @@
+######################################
+# Initialize SPIBSC
+######################################
+# Low power setting
+mem set <verify=0>:0xA00B0B00 32 0x0000A502               # PRCR
+mem set <verify=0>:0xA00B0308 32 0x00007D7E               # MSTPCRC
+mem set <verify=0>:0xA00B0B00 32 0x0000A500               # PRCR
+# MPC setting
+mem set <verify=1>:0xA00002FF 8 {(unsigned char)0x00}     # MPC.PWPR
+mem set <verify=1>:0xA00002FF 8 {(unsigned char)0x40}
+mem set <verify=0>:0xA0000230 8 {(unsigned char)0x1B}     # MPC.P60PFS
+mem set <verify=0>:0xA0000231 8 {(unsigned char)0x1B}     # MPC.P61PFS
+mem set <verify=0>:0xA0000232 8 {(unsigned char)0x1B}     # MPC.P62PFS
+mem set <verify=0>:0xA0000233 8 {(unsigned char)0x1B}     # MPC.P63PFS
+mem set <verify=0>:0xA0000234 8 {(unsigned char)0x1B}     # MPC.P64PFS
+mem set <verify=0>:0xA0000235 8 {(unsigned char)0x1B}     # MPC.P65PFS
+mem set <verify=1>:0xA00002FF 8 {(unsigned char)0x80}     # MPC.PWPR
+# PORT setting
+mem set <verify=0>:0xA0000086 8 {(unsigned char)0x1D}     # PORT6.PMR

@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!--Copyright (C) 2009-2017  Arm Limited (or its affiliates). All rights reserved.--><platform_data xmlns="http://www.arm.com/project_type" xmlns:peripheral="http://com.arm.targetconfigurationeditor" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="RTSM" xsi:schemaLocation="http://www.arm.com/project_type ../../../Schemas/platform_data-1.xsd">
+    <project_type_list>
+            <project_type type="BARE_METAL">
+            <name language="en">Bare Metal Debug</name>
+            <description language="en">This allows a bare-metal debug connection.</description>
+            <execution_environment id="BARE_METAL">
+                <name language="en">Bare Metal Debug</name>
+                <description language="en">Connect to the simulation via the CADI interface</description>
+                <param default="CDB://cadi_config.xml" id="config_file" type="string" visible="false"/>
+                <!-- Plugin to use -->
+                <param default="ScalableVectorExtension" id="model_plugins" type="string" visible="true">
+                    <name>Model plugin</name>
+                    <description>Location of SVE model plugin</description>
+                </param>
+                <!--The model_params param enables the model parameters field in the launch configuration. The parameters are passed to the setup_script.-->
+                <param default="" id="model_params" type="string" visible="true">
+                    <name>Model parameters</name>
+                    <description>Model parameters</description>
+                </param>
+                <!--The script below is used to launch the model, if its executable is known. It can be used as a basis for more specific scripts.-->
+                <setup_script>
+                    <name>CDB://../../../Scripts/rtsm_launcher.py</name>
+                    <arguments>FVP_Base_AEMv8A</arguments>
+                </setup_script>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug ARMAEMv8-A_MP_0</name>
+                    <description language="en">Debug a bare metal application on the ARMAEMv8-A FVP Core 0</description>
+                    <core connection_id="ARMAEMv8-A_MP_0">
+                        <core_definition>ARMAEMv8-A_</core_definition>
+                    </core>
+                    <param default="CDB://dtsl_config_script.py" id="dtsl_config_script" type="string" visible="false"/>
+                    <param default="DtslScript" id="dtsl_config" type="string" visible="false"/>
+                    <param default="options.traceBuffer.traceCaptureDevice" id="dtsl_tracecapture_option" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug ARMAEMv8-A_MP_1</name>
+                    <description language="en">Debug a bare metal application on the ARMAEMv8-A FVP Core 1</description>
+                    <core connection_id="ARMAEMv8-A_MP_1">
+                        <core_definition>ARMAEMv8-A_</core_definition>
+                    </core>
+                    <param default="CDB://dtsl_config_script.py" id="dtsl_config_script" type="string" visible="false"/>
+                    <param default="DtslScript" id="dtsl_config" type="string" visible="false"/>
+                    <param default="options.traceBuffer.traceCaptureDevice" id="dtsl_tracecapture_option" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug ARMAEMv8-A_MP_2</name>
+                    <description language="en">Debug a bare metal application on the ARMAEMv8-A FVP Core 2</description>
+                    <core connection_id="ARMAEMv8-A_MP_2">
+                        <core_definition>ARMAEMv8-A_</core_definition>
+                    </core>
+                    <param default="CDB://dtsl_config_script.py" id="dtsl_config_script" type="string" visible="false"/>
+                    <param default="DtslScript" id="dtsl_config" type="string" visible="false"/>
+                    <param default="options.traceBuffer.traceCaptureDevice" id="dtsl_tracecapture_option" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug ARMAEMv8-A_MP_3</name>
+                    <description language="en">Debug a bare metal application on the ARMAEMv8-A FVP Core 3</description>
+                    <core connection_id="ARMAEMv8-A_MP_3">
+                        <core_definition>ARMAEMv8-A_</core_definition>
+                    </core>
+                    <param default="CDB://dtsl_config_script.py" id="dtsl_config_script" type="string" visible="false"/>
+                    <param default="DtslScript" id="dtsl_config" type="string" visible="false"/>
+                    <param default="options.traceBuffer.traceCaptureDevice" id="dtsl_tracecapture_option" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug ARMAEMv8-A_x4 SMP</name>
+                    <description language="en">Connect to all cores to perform bare metal application debug</description>
+                    <core connection_id="AEMv8-A_x4 SMP">
+                        <core_definition>ARMAEMv8-A_</core_definition>
+                    </core>
+                    <param default="CDB://dtsl_config_script.py" id="dtsl_config_script" type="string" visible="false"/>
+                    <param default="DtslScript" id="dtsl_config" type="string" visible="false"/>
+                    <param default="options.traceBuffer.traceCaptureDevice" id="dtsl_tracecapture_option" type="string" visible="false"/>
+                </activity>
+            </execution_environment>
+        </project_type>
+        <project_type os_abstraction="LINUX_KERNEL" type="BARE_METAL">
+            <name language="en">Linux Kernel Debug</name>
+            <description language="en">This allows a bare-metal debug connection for Linux kernel or Linux device driver debug.</description>
+            <execution_environment id="bare_metal_linux_kernel_debug">
+                <name language="en">Linux Kernel Debug</name>
+                <description language="en">Connect to the simulation via the CADI interface</description>
+                <param default="CDB://cadi_config.xml" id="config_file" type="string" visible="false"/>
+                <!-- Plugin to use -->
+                <param default="ScalableVectorExtension" id="model_plugins" type="string" visible="true">
+                    <name>Model plugin</name>
+                    <description>Location of SVE model plugin</description>
+                </param>
+                <!--The model_params param enables the model parameters field in the launch configuration. The parameters are passed to the setup_script.-->
+                <param default="" id="model_params" type="string" visible="true">
+                    <name>Model parameters</name>
+                    <description>Model parameters</description>
+                </param>
+                <!--The script below is used to launch the model, if its executable is known. It can be used as a basis for more specific scripts.-->
+                <setup_script>
+                    <name>CDB://../../../Scripts/rtsm_launcher.py</name>
+                    <arguments>FVP_Base_AEMv8A</arguments>
+                </setup_script>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug ARMAEMv8-A_MP_0</name>
+                    <description language="en">Debug a Linux Kernel on the ARMAEMv8-A FVP Core 0</description>
+                    <core connection_id="ARMAEMv8-A_MP_0">
+                        <core_definition>ARMAEMv8-A_</core_definition>
+                    </core>
+                    <param default="CDB://dtsl_config_script.py" id="dtsl_config_script" type="string" visible="false"/>
+                    <param default="DtslScript" id="dtsl_config" type="string" visible="false"/>
+                    <param default="options.traceBuffer.traceCaptureDevice" id="dtsl_tracecapture_option" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug ARMAEMv8-A_MP_1</name>
+                    <description language="en">Debug a Linux Kernel on the ARMAEMv8-A FVP Core 1</description>
+                    <core connection_id="ARMAEMv8-A_MP_1">
+                        <core_definition>ARMAEMv8-A_</core_definition>
+                    </core>
+                    <param default="CDB://dtsl_config_script.py" id="dtsl_config_script" type="string" visible="false"/>
+                    <param default="DtslScript" id="dtsl_config" type="string" visible="false"/>
+                    <param default="options.traceBuffer.traceCaptureDevice" id="dtsl_tracecapture_option" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug ARMAEMv8-A_MP_2</name>
+                    <description language="en">Debug a Linux Kernel on the ARMAEMv8-A FVP Core 2</description>
+                    <core connection_id="ARMAEMv8-A_MP_2">
+                        <core_definition>ARMAEMv8-A_</core_definition>
+                    </core>
+                    <param default="CDB://dtsl_config_script.py" id="dtsl_config_script" type="string" visible="false"/>
+                    <param default="DtslScript" id="dtsl_config" type="string" visible="false"/>
+                    <param default="options.traceBuffer.traceCaptureDevice" id="dtsl_tracecapture_option" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug ARMAEMv8-A_MP_3</name>
+                    <description language="en">Debug a Linux Kernel on the ARMAEMv8-A FVP Core 3</description>
+                    <core connection_id="ARMAEMv8-A_MP_3">
+                        <core_definition>ARMAEMv8-A_</core_definition>
+                    </core>
+                    <param default="CDB://dtsl_config_script.py" id="dtsl_config_script" type="string" visible="false"/>
+                    <param default="DtslScript" id="dtsl_config" type="string" visible="false"/>
+                    <param default="options.traceBuffer.traceCaptureDevice" id="dtsl_tracecapture_option" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug ARMAEMv8-A_x4 SMP</name>
+                    <description language="en">Arm Debugger will connect to ARMAEMv8-A FVP to debug an SMP Linux Kernel</description>
+                    <core connection_id="AEMv8-A_x4 SMP">
+                        <core_definition>ARMAEMv8-A_</core_definition>
+                    </core>
+                    <param default="CDB://dtsl_config_script.py" id="dtsl_config_script" type="string" visible="false"/>
+                    <param default="DtslScript" id="dtsl_config" type="string" visible="false"/>
+                    <param default="options.traceBuffer.traceCaptureDevice" id="dtsl_tracecapture_option" type="string" visible="false"/>
+                </activity>
+            </execution_environment>
+        </project_type>
+    </project_type_list>
+</platform_data>

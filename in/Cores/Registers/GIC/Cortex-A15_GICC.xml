@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<register_list name="VGIC" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.arm.com/core_reg"
+    xsi:schemaLocation="http://www.arm.com/core_reg ../../../Schemas/core_register_definition.xsd">
+
+    <register_group name="GICC">
+        <gui_name language="en">VGIC Physical CPU Interface</gui_name>
+        <description language="en">VGIC Physical CPU Interface</description>
+
+        <register name="GICC_CTLR_S" size="4" access="RW">
+            <gui_name language="en">GICC_CTLR_S</gui_name>
+            <description language="en">[S] CPU Interface Control</description>
+        </register>
+        <register name="GICC_CTLR_NS" size="4" access="RW">
+            <gui_name language="en">GICC_CTLR_NS</gui_name>
+            <description language="en">[N] CPU Interface Control</description>
+        </register>
+        <register name="GICC_PMR" size="4" access="RW">
+            <gui_name language="en">GICC_PMR</gui_name>
+            <description language="en">Priority Mask Register</description>
+        </register>
+        <register name="GICC_BPR_S" size="4" access="RW">
+            <gui_name language="en">GICC_BPR_S</gui_name>
+            <description language="en">[S] Binary Point Register</description>
+        </register>
+        <register name="GICC_BPR_N" size="4" access="RW">
+            <gui_name language="en">GICC_BPR_N</gui_name>
+            <description language="en">[N] Binary Point Register</description>
+        </register>
+        <register name="GICC_IAR" size="4" access="RW">
+            <gui_name language="en">GICC_IAR</gui_name>
+            <description language="en">Interrupt Acknowledge</description>
+        </register>
+        <register name="GICC_EOIR" size="4" access="RW">
+            <gui_name language="en">GICC_EOIR</gui_name>
+            <description language="en">End of Interrupt</description>
+        </register>
+        <register name="GICC_RPR" size="4" access="RW">
+            <gui_name language="en">GICC_RPR</gui_name>
+            <description language="en">Running Priority</description>
+        </register>
+        <register name="GICC_HPPIR" size="4" access="RW">
+            <gui_name language="en">GICC_HPPIR</gui_name>
+            <description language="en">Highest Priority Pending Interrupt</description>
+        </register>
+        <register name="GICC_ABPR" size="4" access="RW">
+            <gui_name language="en">GICC_ABPR</gui_name>
+            <description language="en">Aliased Non-Secure Binary Point</description>
+        </register>
+        <register name="GICC_AIAR" size="4" access="RW">
+            <gui_name language="en">GICC_AIAR</gui_name>
+            <description language="en">Aliased Interrupt Acknowledge</description>
+        </register>
+        <register name="GICC_AEOIR" size="4" access="RW">
+            <gui_name language="en">GICC_AEOIR</gui_name>
+            <description language="en">Aliased End of Interrupt</description>
+        </register>
+        <register name="GICC_AHPPIR" size="4" access="RW">
+            <gui_name language="en">GICC_AHPPIR</gui_name>
+            <description language="en">Aliased Highest Priority Pending Interrupt</description>
+        </register>
+        <register name="GICC_APR0" size="4" access="RW">
+            <gui_name language="en">GICC_APR0</gui_name>
+            <description language="en">Active Priority Register 0</description>
+        </register>
+        <register name="GICC_APR1" size="4" access="RW">
+            <gui_name language="en">GICC_APR1</gui_name>
+            <description language="en">Active Priority Register 1</description>
+        </register>
+        <register name="GICC_APR2" size="4" access="RW">
+            <gui_name language="en">GICC_APR2</gui_name>
+            <description language="en">Active Priority Register 2</description>
+        </register>
+        <register name="GICC_APR3" size="4" access="RW">
+            <gui_name language="en">GICC_APR3</gui_name>
+            <description language="en">Active Priority Register 3</description>
+        </register>
+        <register name="GICC_NSAPR0" size="4" access="RW">
+            <gui_name language="en">GICC_NSAPR0</gui_name>
+            <description language="en">Non Secure Active Priority Register 0</description>
+        </register>
+        <register name="GICC_NSAPR1" size="4" access="RW">
+            <gui_name language="en">GICC_NSAPR1</gui_name>
+            <description language="en">Non Secure Active Priority Register 1</description>
+        </register>
+        <register name="GICC_NSAPR2" size="4" access="RW">
+            <gui_name language="en">GICC_NSAPR2</gui_name>
+            <description language="en">Non Secure Active Priority Register 2</description>
+        </register>
+        <register name="GICC_NSAPR3" size="4" access="RW">
+            <gui_name language="en">GICC_NSAPR3</gui_name>
+            <description language="en">Non Secure Active Priority Register 3</description>
+        </register>
+        <register name="GICC_IIDR" size="4" access="RW">
+            <gui_name language="en">GICC_IIDR</gui_name>
+            <description language="en">CPU Interface Implementation ID</description>
+        </register>
+        <register name="GICC_DIR" size="4" access="RW">
+            <gui_name language="en">GICC_DIR</gui_name>
+            <description language="en">Deactivate Interrupt</description>
+        </register>
+    </register_group>
+</register_list>

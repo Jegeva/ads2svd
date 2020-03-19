@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<register_list name="CP15"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:xi="http://www.w3.org/2001/XInclude"
+    xmlns="http://www.arm.com/core_reg"
+    xsi:schemaLocation="http://www.arm.com/core_reg ../../../Schemas/core_register_definition.xsd"
+    xmlns:tcf="http://com.arm.targetconfigurationeditor">
+    <register_group name="VirtualizationExtensions">
+        <gui_name language="en">Virtualization Extensions</gui_name>
+        <description language="en">Virtualization Extensions registers</description>
+        <xi:include href="Cortex-v7A_VirtExt.xml" xpointer="xmlns(reg_group=http://www.arm.com/core_reg)xpointer(//reg_group:register)"/>
+        <register access="RW" name="HADFSR" size="4">
+            <gui_name language="en">HADFSR</gui_name>
+            <alias_name>CP15_HADFSR</alias_name>
+            <device_name type="rvi">CP15_HADFSR</device_name>
+            <device_name type="cadi">HADFSR</device_name>
+            <device_name type="rvi">CP15_HADFSR</device_name>
+            <device_name type="cadi">HADFSR</device_name>
+            <description language="en">Hypervisor Auxiliary Data Fault Status</description>
+            <bitField conditional="false" name="VALID">
+                <gui_name language="en">VALID</gui_name>
+                <description language="en">Valid</description>
+                <definition>[31]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="HADFSR_RAMID" name="RAM_ID">
+                <gui_name language="en">RAM_ID</gui_name>
+                <description language="en">RAM Identifier</description>
+                <definition>[30:24]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="HADFSR_L2ERR" name="L2ERR">
+                <gui_name language="en">L2ERR</gui_name>
+                <description language="en">L2 Error</description>
+                <definition>[23]</definition>
+            </bitField>
+            <bitField conditional="false" name="BANK_WAY">
+                <gui_name language="en">BANK_WAY</gui_name>
+                <description language="en">L1 ECC Double-Bit Error Bank/Way</description>
+                <definition>[22:18]</definition>
+            </bitField>
+            <bitField conditional="false" name="INDEX">
+                <gui_name language="en">INDEX</gui_name>
+                <description language="en">L1 ECC Double-Bit Error Index Address</description>
+                <definition>[17:0]</definition>
+            </bitField>
+        </register>
+        <register access="RW" name="HAIFSR" size="4">
+            <gui_name language="en">HAIFSR</gui_name>
+            <alias_name>CP15_HAIFSR</alias_name>
+            <device_name type="rvi">CP15_HAIFSR</device_name>
+            <device_name type="cadi">HAIFSR</device_name>
+            <device_name type="rvi">CP15_HAIFSR</device_name>
+            <device_name type="cadi">HAIFSR</device_name>
+            <description language="en">Hypervisor Auxiliary Instruction Fault Status</description>
+        </register>
+        <register access="RW" name="HMAIR0" size="4">
+            <gui_name language="en">HMAIR0</gui_name>
+            <alias_name>CP15_HMAIR0</alias_name>
+            <device_name type="rvi">CP15_HMAIR0</device_name>
+            <device_name type="cadi">HMAIR0</device_name>
+            <device_name type="rvi">CP15_HMAIR0</device_name>
+            <device_name type="cadi">HMAIR0</device_name>
+            <description language="en">Hypervisor Memory Attribute Indirection 0</description>
+            <bitField conditional="false" name="ATTR3">
+                <gui_name language="en">ATTR3</gui_name>
+                <description language="en">Attr 3</description>
+                <definition>[31:24]</definition>
+            </bitField>
+            <bitField conditional="false" name="ATTR2">
+                <gui_name language="en">ATTR2</gui_name>
+                <description language="en">Attr 2</description>
+                <definition>[23:16]</definition>
+            </bitField>
+            <bitField conditional="false" name="ATTR1">
+                <gui_name language="en">ATTR1</gui_name>
+                <description language="en">Attr 1</description>
+                <definition>[15:8]</definition>
+            </bitField>
+            <bitField conditional="false" name="ATTR0">
+                <gui_name language="en">ATTR0</gui_name>
+                <description language="en">Attr 0</description>
+                <definition>[7:0]</definition>
+            </bitField>
+        </register>
+        <register access="RW" name="HMAIR1" size="4">
+            <gui_name language="en">HMAIR1</gui_name>
+            <alias_name>CP15_HMAIR1</alias_name>
+            <device_name type="rvi">CP15_HMAIR1</device_name>
+            <device_name type="cadi">HMAIR1</device_name>
+            <device_name type="rvi">CP15_HMAIR1</device_name>
+            <device_name type="cadi">HMAIR1</device_name>
+            <description language="en">Hypervisor Memory Attribute Indirection 1</description>
+            <bitField conditional="false" name="ATTR7">
+                <gui_name language="en">ATTR7</gui_name>
+                <description language="en">Attr 7</description>
+                <definition>[31:24]</definition>
+            </bitField>
+            <bitField conditional="false" name="ATTR6">
+                <gui_name language="en">ATTR6</gui_name>
+                <description language="en">Attr 6</description>
+                <definition>[23:16]</definition>
+            </bitField>
+            <bitField conditional="false" name="ATTR5">
+                <gui_name language="en">ATTR5</gui_name>
+                <description language="en">Attr 5</description>
+                <definition>[15:8]</definition>
+            </bitField>
+            <bitField conditional="false" name="ATTR4">
+                <gui_name language="en">ATTR4</gui_name>
+                <description language="en">Attr 4</description>
+                <definition>[7:0]</definition>
+            </bitField>
+        </register>
+    </register_group>
+</register_list>
+

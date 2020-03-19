@@ -1,0 +1,515 @@
+<config_db
+    xmlns="http://www.arm.com/cdb_config"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.arm.com/cdb_config ../Schemas/cdb_config.xsd">
+<!--Copyright (C) 2009-2018 Arm Limited. All rights reserved.-->
+    <manufacturer name="Arm Development Boards">
+    <display_name>Arm</display_name>
+        <platform name="MPS_M0+">
+            <display_name>Microcontroller Prototyping System (MPS1) Cortex-M0+</display_name>
+        </platform>
+        <platform name="MPS_M0">
+            <display_name>Microcontroller Prototyping System (MPS1) Cortex-M0</display_name>
+        </platform>
+        <platform name="MPS_M1">
+            <display_name>Microcontroller Prototyping System (MPS1) Cortex-M1</display_name>
+        </platform>
+        <platform name="MPS_M3">
+            <display_name>Microcontroller Prototyping System (MPS1) Cortex-M3</display_name>
+        </platform>
+        <platform name="MPS_M4">
+            <display_name>Microcontroller Prototyping System (MPS1) Cortex-M4</display_name>
+        </platform>
+        <platform name="MPS2_M0+">
+            <display_name>Cortex-M Prototyping System (MPS2) Cortex-M0+</display_name>
+        </platform>
+        <platform name="MPS2_M0">
+            <display_name>Cortex-M Prototyping System (MPS2) Cortex-M0</display_name>
+        </platform>
+        <platform name="MPS2_M1">
+            <display_name>Cortex-M Prototyping System (MPS2) Cortex-M1</display_name>
+        </platform>
+        <platform name="MPS2_M3">
+            <display_name>Cortex-M Prototyping System (MPS2) Cortex-M3</display_name>
+        </platform>
+        <platform name="MPS2_M4">
+            <display_name>Cortex-M Prototyping System (MPS2) Cortex-M4</display_name>
+        </platform>
+        <platform name="MPS2_M7_BASIC">
+            <display_name>Cortex-M Prototyping System (MPS2) Cortex-M7 (SMM-M7)</display_name>
+        </platform>
+        <platform name="MPS2_M7_CS">
+            <display_name>Cortex-M Prototyping System (MPS2) Cortex-M7 (SMM-M7CS)</display_name>
+        </platform>
+        <platform name="MPS2PLUS_M3_DesignStart">
+            <display_name>Cortex-M Prototyping System (MPS2+) Cortex-M3 DesignStart</display_name>
+        </platform>
+        <platform name="MPS2PLUS_M23_IOT">
+            <display_name>Cortex-M Prototyping System (MPS2+) Cortex-M23 IoT</display_name>
+        </platform>
+        <platform name="MPS2PLUS_M33_IOT">
+            <display_name>Cortex-M Prototyping System (MPS2+) Cortex-M33 IoT</display_name>
+        </platform>
+        <platform name="MPS3_IOT_M33">
+            <display_name>Cortex-M Prototyping System (MPS3) Cortex-M33 IoT</display_name>
+        </platform>
+        <platform name="Juno_TC_R0">
+            <display_name>Juno Arm Development Platform (r0)</display_name>
+        </platform>
+        <platform name="Juno_TC_R1">
+            <display_name>Juno Arm Development Platform (r1)</display_name>
+        </platform>
+        <platform name="Juno_TC_R2">
+            <display_name>Juno Arm Development Platform (r2)</display_name>
+        </platform>
+        <platform name="Versatile_Express_A9x4">
+            <display_name>Versatile Express A9x4</display_name>
+        </platform>
+        <platform name="Versatile_Express_A5x2">
+            <display_name>Versatile Express A5x2</display_name>
+        </platform>
+        <platform name="Versatile_Express_A15_SMM">
+            <display_name>Versatile Express Cortex-A15 Soft Macrocell Model</display_name>
+        </platform>
+        <platform name="Versatile_Express_A15_Neon_SMM">
+            <display_name>Versatile Express Cortex-A15 Neon Soft Macrocell Model</display_name>
+        </platform>
+        <platform name="Versatile_Express_A15x2_SMM">
+            <display_name>Versatile Express Cortex-A15x2 Soft Macrocell Model</display_name>
+        </platform>
+        <platform name="Versatile_Express_R5x2">
+            <display_name>Versatile Express R5x2</display_name>
+        </platform>
+        <platform name="Versatile_Express_A53x2_SMM">
+            <display_name>Versatile Express A53x2 Soft Macrocell Model</display_name>
+        </platform>
+        <platform name="Versatile_Express_A57x1_SMM">
+            <display_name>Versatile Express A57x1 Soft Macrocell Model</display_name>
+        </platform>
+        <platform name="Versatile_Express_V2P-CA15">
+            <display_name>Versatile Express V2P-CA15</display_name>
+        </platform>
+        <platform name="Versatile_Express_V2P-CA15_A7">
+            <display_name>Versatile Express V2P-CA15_A7</display_name>
+        </platform>
+        <platform name="Musca-A">
+            <display_name>Musca-A Board Cortex-M33 (SSE-200 subsystem)</display_name>
+        </platform>
+        <platform name="Musca-B1u">
+            <display_name>Musca-B Board Cortex-M33 (SSE-200 subsystem)</display_name>
+        </platform>
+        <platform name="V2M-MPS3">
+            <display_name>Cortex-R52 SMP</display_name>
+        </platform>
+    </manufacturer>
+    <manufacturer name="Arm FVP (Installed with Arm DS)">
+        <platform name="Cortex-A9x1_FVP_LinuxApp">
+            <display_name>Cortex-A9x1 pre-configured to boot Arm Embedded Linux</display_name>
+        </platform>
+        <platform name="Cortex-A9x4_FVP_LinuxApp">
+            <display_name>Cortex-A9x4 pre-configured to boot Arm Embedded Linux</display_name>
+        </platform>
+    </manufacturer>
+    <manufacturer name="Arm FVP">
+        <platform name="Cortex-A8_2_FVP">
+            <display_name>EB_Cortex-A8</display_name>
+        </platform>
+    </manufacturer>
+    <manufacturer name="Atmel">
+        <platform name="AT91SAM9263-EK">
+            <display_name>AT91SAM9263-EK</display_name>
+        </platform>
+        <platform name="AT91SAM9G15-EK">
+            <display_name>AT91SAM9G15-EK</display_name>
+        </platform>
+        <platform name="AT91SAM9G20-EK">
+            <display_name>AT91SAM9G20-EK</display_name>
+        </platform>
+        <platform name="AT91SAM9G35-EK">
+            <display_name>AT91SAM9G35-EK</display_name>
+        </platform>
+        <platform name="AT91SAM9G45-EK-ES">
+            <display_name>AT91SAM9G45-EK-ES</display_name>
+        </platform>
+        <platform name="AT91SAM9M10-G45-EK">
+            <display_name>AT91SAM9M10-G45-EK</display_name>
+        </platform>
+        <platform name="AT91SAM9X25-EK">
+            <display_name>AT91SAM9X25-EK</display_name>
+        </platform>
+    </manufacturer>
+    <manufacturer name="Core_Logic">
+        <display_name>Core Logic</display_name>
+        <platform name="CLM9721">
+            <display_name>CLM9721</display_name>
+        </platform>
+    </manufacturer>
+    <manufacturer name="Embedded_Artists">
+        <display_name>Embedded Artists</display_name>
+        <platform name="LPC3141_DK">
+            <display_name>LPC3141 Developer's Kit</display_name>
+        </platform>
+        <platform name="LPC3152_DK">
+            <display_name>LPC3152 Developer's Kit</display_name>
+        </platform>
+    </manufacturer>
+    <manufacturer name="FDI">
+        <platform name="LPC3250">
+            <display_name>LPC3250</display_name>
+        </platform>
+    </manufacturer>
+    <manufacturer name="Fujitsu">
+        <platform name="Emerald-P">
+            <display_name>Emerald-P (MB86R12)</display_name>
+        </platform>
+    </manufacturer>
+    <manufacturer name="Freescale">
+        <platform name="iMX23_EVK">
+            <display_name>i.MX23 EVK</display_name>
+        </platform>
+        <platform name="iMX25_PDK">
+            <display_name>i.MX25 PDK</display_name>
+        </platform>
+        <platform name="iMX28_EVK">
+            <display_name>i.MX28 EVK</display_name>
+        </platform>
+        <platform name="iMX50_EVK">
+            <display_name>i.MX50 EVK</display_name>
+        </platform>
+        <platform name="iMX51_PDK">
+            <display_name>i.MX51 PDK</display_name>
+        </platform>
+        <platform name="iMX53_QuickStart">
+            <display_name>i.MX53 Quick Start</display_name>
+        </platform>
+    </manufacturer>
+        <manufacturer name="NXP">
+        <platform name="iMX23_EVK">
+            <display_name>i.MX23 EVK</display_name>
+        </platform>
+        <platform name="iMX25_PDK">
+            <display_name>i.MX25 PDK</display_name>
+        </platform>
+        <platform name="iMX28_EVK">
+            <display_name>i.MX28 EVK</display_name>
+        </platform>
+        <platform name="iMX50_EVK">
+            <display_name>i.MX50 EVK</display_name>
+        </platform>
+        <platform name="iMX51_PDK">
+            <display_name>i.MX51 PDK</display_name>
+        </platform>
+        <platform name="iMX53_QuickStart">
+            <display_name>i.MX53 Quick Start</display_name>
+        </platform>
+        <platform name="iMX8M_EVK">
+            <display_name>i.MX8M EVK</display_name>
+        </platform>
+        <platform name="iMX8MM_EVK">
+            <display_name>i.MX8MM EVK</display_name>
+        </platform>
+    </manufacturer>
+    <manufacturer name="Generic">
+        <platform name="gdbserver_NEON">
+            <display_name>gdbserver with NEON</display_name>
+        </platform>
+        <platform name="gdbserver_aarch64">
+            <display_name>gdbserver AArch64</display_name>
+        </platform>
+        <platform name="ST_STA2064">
+            <display_name>ST STA2064/65</display_name>
+        </platform>
+        <platform name="Mindspeed_M84000">
+            <display_name>Mindspeed M84000 (Transcede 4000)</display_name>
+        </platform>
+        <platform name="UndoDb">
+            <display_name>UndoDB</display_name>
+        </platform>
+    </manufacturer>
+    <manufacturer name="Icytecture">
+        <platform name="iMX35">
+            <display_name>i.MX35</display_name>
+        </platform>
+    </manufacturer>
+    <manufacturer name="Silica_Phytec">
+        <display_name>Silica Phytec</display_name>
+        <platform name="iMX35">
+            <display_name>i.MX35</display_name>
+        </platform>
+    </manufacturer>
+    <manufacturer name="Marvell">
+        <platform name="PJ4">
+            <display_name>PJ4 (No TrustZone)</display_name>
+        </platform>
+        <platform name="PJ4_TZ">
+            <display_name>PJ4 (TrustZone)</display_name>
+        </platform>
+        <platform name="Marvell_88i9346">
+            <display_name>Marvell 88i9346</display_name>
+        </platform>
+    </manufacturer>
+    <manufacturer name="beagleboard.org">
+        <platform name="OMAP_3530">
+            <display_name>OMAP 3530</display_name>
+        </platform>
+        <platform name="xM">
+            <display_name>xM</display_name>
+        </platform>
+    </manufacturer>
+    <manufacturer name="Mistral">
+        <platform name="AM3730">
+            <display_name>AM3730</display_name>
+        </platform>
+    </manufacturer>
+    <manufacturer name="LOGIC_PD">
+        <display_name>LOGIC PD</display_name>
+        <platform name="AM1808_EVM">
+            <display_name>AM1808 EVM</display_name>
+        </platform>
+        <platform name="AM3517">
+            <display_name>AM3517</display_name>
+        </platform>
+        <platform name="iMX27_ZOOM_LITEKIT">
+            <display_name>i.MX27 ZOOM LITEKIT</display_name>
+        </platform>
+        <platform name="iMX31_ZOOM_LITEKIT">
+            <display_name>i.MX31 ZOOM LITEKIT</display_name>
+        </platform>
+        <platform name="OMAP_3430_MDP">
+            <display_name>OMAP 3430 MDP</display_name>
+        </platform>
+        <platform name="OMAP_L138_eXperimenter">
+            <display_name>OMAP L138 eXperimenter</display_name>
+        </platform>
+    </manufacturer>
+    <manufacturer name="Mindspeed">
+        <platform name="M84000_EVM">
+            <display_name>M84000 EVM (Transcede 4000)</display_name>
+        </platform>
+    </manufacturer>
+    <manufacturer name="Spectrum_Digital">
+        <display_name>Spectrum Digital</display_name>
+        <platform name="AM1707_EVM">
+            <display_name>AM1707 EVM (ARM JTAG)</display_name>
+        </platform>
+        <platform name="DM8168_EVM">
+            <display_name>DM8168 EVM</display_name>
+        </platform>
+        <platform name="TMDXEVM6467T">
+            <display_name>TMDXEVM6467T (ARM JTAG)</display_name>
+        </platform>
+    </manufacturer>
+    <manufacturer name="LG_Electronics">
+        <display_name>LG Electronics</display_name>
+        <platform name="L9">
+            <display_name>L9</display_name>
+        </platform>
+    </manufacturer>
+    <manufacturer name="ST">
+        <platform name="SPEAr300">
+            <display_name>SPEAr300</display_name>
+        </platform>
+        <platform name="SPEAr310">
+            <display_name>SPEAr310</display_name>
+        </platform>
+        <platform name="SPEAr320">
+            <display_name>SPEAr320</display_name>
+        </platform>
+        <platform name="SPEAr600">
+            <display_name>SPEAr600</display_name>
+        </platform>
+    </manufacturer>
+    <manufacturer name="ST-Ericsson">
+        <platform name="U8500_EVB">
+            <display_name>U8500 EVB</display_name>
+        </platform>
+    </manufacturer>
+    <manufacturer name="pandaboard.org">
+        <platform name="OMAP_4430">
+            <display_name>OMAP 4430</display_name>
+        </platform>
+        <platform name="OMAP_4460">
+            <display_name>OMAP 4460 (Pandaboard ES)</display_name>
+        </platform>
+    </manufacturer>
+    <manufacturer name="Samsung">
+        <platform name="Exynos_4210">
+            <display_name>Exynos 4210</display_name>
+        </platform>
+        <platform name="S5PC100_SMDK">
+            <display_name>S5PC100 SMDK</display_name>
+        </platform>
+        <platform name="S5PC110_SMDK">
+            <display_name>S5PC110 SMDK</display_name>
+        </platform>
+        <platform name="S5PV210_SMDK">
+            <display_name>S5PV210 SMDK</display_name>
+        </platform>
+    </manufacturer>
+    <manufacturer name="nVIDIA">
+        <platform name="Tegra_250_Dev_Kit">
+            <display_name>Tegra 250 Dev Kit</display_name>
+        </platform>
+        <platform name="Tegra_3">
+            <display_name>Tegra 3 Dev Kit</display_name>
+        </platform>
+    </manufacturer>
+    <manufacturer name="ST">
+        <platform name="SPEAr1310">
+            <display_name>SPEAr1310</display_name>
+        </platform>
+    </manufacturer>
+    <manufacturer name="Texas_Instruments">
+        <display_name>Texas Instruments</display_name>
+        <platform name="AM335x_EVM">
+            <display_name>AM3352/4/6/7/8/9 EVM</display_name>
+        </platform>
+        <platform name="Blaze_MDP">
+            <display_name>Blaze MDP</display_name>
+        </platform>
+        <platform name="DM814x (Generic)">
+            <display_name>DM814x/C6A814x/AM387x (Generic)</display_name>
+        </platform>
+    </manufacturer>
+    <manufacturer name="Calao_Systems">
+        <display_name>CALAO Systems</display_name>
+        <platform name="Snowball_SDK">
+            <display_name>Snowball</display_name>
+        </platform>
+    </manufacturer>
+    <manufacturer name="Xilinx">
+        <platform name="Zynq-7000_EK_I">
+            <display_name>Zynq-7000 SoC (Independent)</display_name>
+        </platform>
+        <platform name="Zynq-7000_EK">
+            <display_name>Zynq-7000 SoC (Cascaded)</display_name>
+        </platform>
+        <platform name="Zynq UltraSCALE">
+            <display_name>Zynq UltraScale+ MPSoC (Cascaded)</display_name>
+        </platform>
+    </manufacturer>
+    <manufacturer name="Origenboard.org">
+        <platform name="Exynos_4210">
+            <display_name>Exynos 4210</display_name>
+        </platform>
+    </manufacturer>
+    <manufacturer name="Nufront">
+        <platform name="NS115DevKit">
+            <display_name>NS115 Development Kit</display_name>
+        </platform>
+    </manufacturer>
+    <manufacturer name="Keil">
+        <platform name="MCBSTR9">
+            <display_name>Keil MCBSTR9 Evaluation Board</display_name>
+        </platform>
+        <platform name="MCBSTM32E">
+            <display_name>Keil MCBSTM32E Evaluation Board</display_name>
+        </platform>
+    </manufacturer>
+    <manufacturer name="ST">
+        <platform name="STA2064 (Generic)">
+            <display_name>STA2064/65 (Generic)</display_name>
+        </platform>
+    </manufacturer>
+    <manufacturer name="Renesas">
+        <display_name>Renesas</display_name>
+        <platform name="R_CAR_E2_R8A7794">
+            <display_name>R-Car E2 R8A7794</display_name>
+        </platform>
+        <platform name="R7S721001">
+            <display_name>RZ/A1H R7S721001</display_name>
+        </platform>
+        <platform name="RZA1L">
+            <display_name>RZ/A1L R7S721020</display_name>
+        </platform>
+        <platform name="RZA2M">
+            <display_name>RZ/A2M</display_name>
+        </platform>
+        <platform name="RZT1_R7S910x01">
+            <display_name>RZ/T1 R7S910x01 (Generic)</display_name>
+        </platform>
+        <platform name="RZT1_R7S910x02">
+            <display_name>RZ/T1 R7S910x02 (Generic)</display_name>
+        </platform>
+        <platform name="RZT1_R7S910x06">
+            <display_name>RZ/T1 R7S910x06 (Generic)</display_name>
+        </platform>
+        <platform name="RZT1_R7S910x07">
+            <display_name>RZ/T1 R7S910x07 (Generic)</display_name>
+        </platform>
+        <platform name="RZT1_R7S910x11">
+            <display_name>RZ/T1 R7S910x11 (Generic)</display_name>
+        </platform>
+        <platform name="RZT1_R7S910x13">
+            <display_name>RZ/T1 R7S910x13 (Generic)</display_name>
+        </platform>
+        <platform name="RZT1_R7S910x15">
+            <display_name>RZ/T1 R7S910x15 (Generic)</display_name>
+        </platform>
+        <platform name="RZT1_R7S910x16">
+            <display_name>RZ/T1 R7S910x16 (Generic)</display_name>
+        </platform>
+        <platform name="RZT1_R7S910x17">
+            <display_name>RZ/T1 R7S910x17 (Generic)</display_name>
+        </platform>
+        <platform name="RZT1_R7S910x18">
+            <display_name>RZ/T1 R7S910x18 (Generic)</display_name>
+        </platform>
+        <platform name="RZT1_R7S910x25">
+            <display_name>RZ/T1 R7S910x25 (Generic)</display_name>
+        </platform>
+        <platform name="RZT1_R7S910x26">
+            <display_name>RZ/T1 R7S910x26 (Generic)</display_name>
+        </platform>
+        <platform name="RZT1_R7S910x27">
+            <display_name>RZ/T1 R7S910x27 (Generic)</display_name>
+        </platform>
+        <platform name="RZT1_R7S910x28">
+            <display_name>RZ/T1 R7S910x28 (Generic)</display_name>
+        </platform>
+        <platform name="RZT1_RTK7910022C00000BR">
+            <display_name>RZ/T1 RTK7910022C00000BR</display_name>
+        </platform>
+        <platform name="RZT1_RTK7910018S00000BE">
+            <display_name>RZ/T1 RTK7910018S00000BE</display_name>
+        </platform>
+        <platform name="RZT1_RTK7910018S90000BE">
+            <display_name>RZ/T1 RTK7910018S90000BE</display_name>
+        </platform>
+        <platform name="R-Car H3">
+            <display_name>R-Car H3 R8A77950</display_name>
+        </platform>
+        <platform name="R-Car M3 Salvator-X">
+            <display_name>R-Car M3-W R8A77960</display_name>
+        </platform>
+    </manufacturer>
+    <manufacturer name="Cavium">
+        <display_name>Cavium</display_name>
+        <platform name="ThunderX_AP0">
+            <display_name>ThunderX AP0</display_name>
+        </platform>
+        <platform name="ThunderX_AP1">
+            <display_name>ThunderX AP1</display_name>
+        </platform>
+        <platform name="ThunderX-r2_AP0">
+            <display_name>ThunderX-r2 AP0</display_name>
+        </platform>
+    </manufacturer>
+    <manufacturer name="Android Application Debug">
+        <platform name="Native Application Library Debug">
+            <display_name>Native Application/Library Debug</display_name>
+        </platform>
+        <platform name="Native Application Library Debug with Rewind Support">
+            <display_name>Native Application/Library Debug with Rewind Support</display_name>
+        </platform>
+    </manufacturer>
+    <manufacturer name="Linux Application Debug">
+        <platform name="Application Debug">
+            <display_name>Application Debug</display_name>
+        </platform>
+        <platform name="Application Debug with Rewind Support">
+            <display_name>Application Debug with Rewind Support</display_name>
+        </platform>
+    </manufacturer>
+    <default_key>Arm FVP (Installed with Arm DS) - VE_Cortex_A9x1</default_key>
+</config_db>

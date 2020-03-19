@@ -1,0 +1,73 @@
+; RDDI-DAP config file for rddi-dap-ulp_2.dll
+;
+; New .ini like format, ; is comment
+;
+; Section names and data case sensitive.
+;
+
+; section for communication info to debug unit(ULINKpro D)
+; valid keys:-
+;  ULP_TOUT -> Time out value ULINKpro D library
+;  MAC_TOUT -> Time out value for macro exectuion in ULINKpro D
+;  Firm     -> Path to firmware of ULINKpro D.
+;
+[rddi-dap-dev]
+ULP_TOUT = 1000
+MAC_TOUT = 0
+Firm = ulinkpro-d.bin
+
+; configuration info for the device - all data in here is passed to
+; configuration string verbatim and is not processed by the dll
+;
+[rddi-dap-cfg]
+; Key::Port
+;   SW : Debug port is SWD.
+;   JTAG : Debug port is JTAG.
+Port=JTAG
+Clock=9
+SWJ=Y
+
+; For Factory diagnosis
+;disable_accel_jtag_repeat=1
+;disable_accel_jtag_AWAW=1
+;disable_accel_jtag_AWAR=1
+;disable_accel_swd_repeat=1
+;disable_accel_swd_AWAW=1
+;disable_accel_swd_AWAR=1
+
+
+; configuration for the rddi-dap
+; processed by dll to provide RDDI-DAP required data.
+;
+; valid keys:-
+;   NUM_DAPS -> number of DAPs on the device
+;   DAP_ID<x>=<y> -> where <x> is a value 0 <= x < NUM_DAPS; must be NUM_DAPS DAP_ID<x> entries.
+;                    where <y> is a value 0 <= y < tap-cfg::NUM_TAPS; (JTAG)
+;                    where <y> is a TARGETID; (SWD, not implemented)
+
+[rddi-dap]
+NUM_DAPS=1
+DAP_ID0=1
+
+; configuration info for JTAG TAPs
+;   [tap-cfg] : General TAP configuration
+;   [tap_*]   : ID and length of IR per TAPs
+;
+;--- Devices ---
+;
+;                             dap_0
+;            tap_0            tap_1
+;   TDI --> UNKNOWN(SJC?) --> CS-DAP --> TDO
+;            IR=6              IR=4
+;
+[tap-cfg]
+NUM_TAPS=2
+
+
+[tap_0]
+NAME=UNKNOWN
+IR_LEN=6
+
+[tap_1]
+NAME=ADIv5-JTAG-DP
+IR_LEN=4

@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<register_list name="CP15"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns="http://www.arm.com/core_reg"
+    xsi:schemaLocation="http://www.arm.com/core_reg ../../../Schemas/core_register_definition.xsd"
+    xmlns:tcf="http://com.arm.targetconfigurationeditor">
+    <register_group name="SecurityExtensions">
+        <gui_name language="en">Security Extensions</gui_name>
+        <description language="en">Security Extensions registers</description>
+        <register access="RW" name="SCR" size="4">
+            <gui_name language="en">SCR</gui_name>
+            <alias_name>CP15_SCR</alias_name>
+            <device_name type="rvi">CP15_SCR</device_name>
+            <device_name type="cadi">SCR</device_name>
+            <device_name type="rvi">CP15_SCR</device_name>
+            <device_name type="cadi">SCR</device_name>
+            <description language="en">Secure Configuration</description>
+            <bitField conditional="false" name="SIF" enumerationId="SCR_SIF">
+                <gui_name language="en">SIF</gui_name>
+                <description language="en">Secure Instruction Fetch</description>
+                <definition>[9]</definition>
+            </bitField>
+            <bitField conditional="false" name="HCE" enumerationId="SCR_HCE">
+                <gui_name language="en">HCE</gui_name>
+                <description language="en">Hyp Call</description>
+                <definition>[8]</definition>
+            </bitField>
+            <bitField conditional="false" name="SCD" enumerationId="SCR_SCD">
+                <gui_name language="en">SCD</gui_name>
+                <description language="en">Secure Monitor Call</description>
+                <definition>[7]</definition>
+            </bitField>
+            <bitField conditional="false" name="NET" enumerationId="SCR_NET">
+                <gui_name language="en">NET</gui_name>
+                <description language="en">Early Termination</description>
+                <definition>[6]</definition>
+            </bitField>
+            <bitField conditional="false" name="AW">
+                <gui_name language="en">AW</gui_name>
+                <description language="en">CPSR A-bit writeable</description>
+                <definition>[5]</definition>
+            </bitField>
+            <bitField conditional="false" name="FW">
+                <gui_name language="en">FW</gui_name>
+                <description language="en">CPSR F-bit writeable</description>
+                <definition>[4]</definition>
+            </bitField>
+            <bitField conditional="false" name="EA" enumerationId="SCR_EA">
+                <gui_name language="en">EA</gui_name>
+                <description language="en">External Abort mode</description>
+                <definition>[3]</definition>
+            </bitField>
+            <bitField conditional="false" name="FIQ" enumerationId="SCR_FIQ">
+                <gui_name language="en">FIQ</gui_name>
+                <description language="en">FIQ mode</description>
+                <definition>[2]</definition>
+            </bitField>
+            <bitField conditional="false" name="IRQ" enumerationId="SCR_IRQ">
+                <gui_name language="en">IRQ</gui_name>
+                <description language="en">IRQ mode</description>
+                <definition>[1]</definition>
+            </bitField>
+            <bitField conditional="false" name="NS" enumerationId="SCR_NS">
+                <gui_name language="en">NS</gui_name>
+                <description language="en">Security State</description>
+                <definition>[0]</definition>
+            </bitField>
+        </register>
+        <register access="RW" name="SDER" size="4">
+            <gui_name language="en">SDER</gui_name>
+            <alias_name>CP15_SDER</alias_name>
+            <device_name type="rvi">CP15_SDER</device_name>
+            <device_name type="cadi">SDER</device_name>
+            <device_name type="rvi">CP15_SDER</device_name>
+            <device_name type="cadi">SDER</device_name>
+            <description language="en">Secure Debug Enable</description>
+            <bitField conditional="false" name="SUNIDEN">
+                <gui_name language="en">SUNIDEN</gui_name>
+                <description language="en">Secure User Non-Invasive Debug</description>
+                <definition>[1]</definition>
+            </bitField>
+            <bitField conditional="false" name="SUIDEN">
+                <gui_name language="en">SUIDEN</gui_name>
+                <description language="en">Secure User Invasive Debug</description>
+                <definition>[0]</definition>
+            </bitField>
+        </register>
+        <!-- See implementation-specific groups for NSACR -->
+        <register access="RW" name="VBAR" size="4">
+            <gui_name language="en">VBAR</gui_name>
+            <alias_name>CP15_VBAR</alias_name>
+            <device_name type="rvi">CP15_VBAR</device_name>
+            <device_name type="cadi">VBAR</device_name>
+            <device_name type="rvi">CP15_VBAR</device_name>
+            <device_name type="cadi">VBAR</device_name>
+            <description language="en">Vector Base Address</description>
+        </register>
+        <register access="RW" name="MVBAR" size="4">
+            <gui_name language="en">MVBAR</gui_name>
+            <alias_name>CP15_MVBAR</alias_name>
+            <device_name type="rvi">CP15_MVBAR</device_name>
+            <device_name type="cadi">MVBAR</device_name>
+            <device_name type="rvi">CP15_MVBAR</device_name>
+            <device_name type="cadi">MVBAR</device_name>
+            <description language="en">Monitor Vector Base Address</description>
+        </register>
+        <register access="RO" name="ISR" size="4">
+            <gui_name language="en">ISR</gui_name>
+            <alias_name>CP15_ISR</alias_name>
+            <device_name type="rvi">CP15_ISR</device_name>
+            <device_name type="cadi">ISR</device_name>
+            <device_name type="rvi">CP15_ISR</device_name>
+            <device_name type="cadi">ISR</device_name>
+            <description language="en">Interrupt Status</description>
+            <bitField conditional="false" name="A">
+                <gui_name language="en">A</gui_name>
+                <description language="en">External abort pending</description>
+                <definition>[8]</definition>
+            </bitField>
+            <bitField conditional="false" name="I">
+                <gui_name language="en">I</gui_name>
+                <description language="en">IRQ pending</description>
+                <definition>[7]</definition>
+            </bitField>
+            <bitField conditional="false" name="F">
+                <gui_name language="en">F</gui_name>
+                <description language="en">FIQ pending</description>
+                <definition>[6]</definition>
+            </bitField>
+        </register>
+    </register_group>
+</register_list>
+

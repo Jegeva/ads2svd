@@ -1,0 +1,2011 @@
+<core_contents xmlns="http://www.arm.com/core_contents" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.arm.com/core_contents ../Schemas/core_contents.xsd">
+  <!--This file has been automatically generated from the database content. Please do not edit manually-->
+<manufacturer name="Actions Semiconductor">
+    <platform name="ActDuino S500">
+      <type>HARDWARE</type>
+    <core>Cortex-A9</core>
+    </platform>
+  <platform name="ActDuino S700">
+      <type>HARDWARE</type>
+    <core>Cortex-A53</core>
+    </platform>
+  <platform name="ActDuino S900">
+      <type>HARDWARE</type>
+    <core>Cortex-A53</core>
+    </platform>
+  </manufacturer>
+<manufacturer name="Alpha Project">
+    <platform name="AP-RZA-0A">
+      <type>HARDWARE</type>
+    <core>GDBServerPseudoCore</core>
+    <core>Cortex-A9</core>
+    </platform>
+  </manufacturer>
+<manufacturer name="Altera">
+    <platform name="Agilex SoC">
+      <type>HARDWARE</type>
+    <core>Cortex-A53</core>
+    </platform>
+  <platform name="Arria 10 SoC">
+      <type>HARDWARE</type>
+    <core>GDBServerPseudoCore</core>
+    <core>Cortex-A9</core>
+    </platform>
+  <platform name="Arria V SoC">
+      <type>HARDWARE</type>
+    <core>GDBServerPseudoCore</core>
+    <core>Cortex-A9</core>
+    </platform>
+  <platform name="Cyclone V SoC (Dual Core)">
+      <type>HARDWARE</type>
+    <core>GDBServerPseudoCore</core>
+    <core>Cortex-A9</core>
+    </platform>
+  <platform name="Cyclone V SoC (Single Core)">
+      <type>HARDWARE</type>
+    <core>GDBServerPseudoCore</core>
+    <core>Cortex-A9</core>
+    </platform>
+  <platform name="Dual Arria V SoC (2 Dual Core SoCs)">
+      <type>HARDWARE</type>
+    <core>GDBServerPseudoCore</core>
+    <core>Cortex-A9</core>
+    </platform>
+  <platform name="Dual Cyclone V SoC (2 Dual Core SoCs)">
+      <type>HARDWARE</type>
+    <core>GDBServerPseudoCore</core>
+    <core>Cortex-A9</core>
+    </platform>
+  <platform name="Stratix 10">
+      <type>HARDWARE</type>
+    <core>Cortex-A53</core>
+    </platform>
+  </manufacturer>
+<manufacturer name="Applied Micro">
+    <platform name="883208">
+      <type>HARDWARE</type>
+    <core>ARMAEMv8-A_</core>
+    </platform>
+  </manufacturer>
+<manufacturer name="Arm Development Boards">
+    <platform name="EB-CT-R4F">
+      <type>HARDWARE</type>
+    <core>Cortex-R4</core>
+    </platform>
+  <platform name="EB-CT1156T2F-S">
+      <type>HARDWARE</type>
+    <core>ARM1156T2F-S</core>
+    </platform>
+  <platform name="EB-CT11MPCore">
+      <type>HARDWARE</type>
+    <core>ARM11MPCore</core>
+    </platform>
+  <platform name="Juno_TC_R0">
+      <type>HARDWARE</type>
+    <core>Cortex-M3</core>
+    <core>Cortex-A57</core>
+    <core>Cortex-A53</core>
+    </platform>
+  <platform name="Juno_TC_R1">
+      <type>HARDWARE</type>
+    <core>Cortex-M3</core>
+    <core>Cortex-A57</core>
+    <core>Cortex-A53</core>
+    </platform>
+  <platform name="Juno_TC_R2">
+      <type>HARDWARE</type>
+    <core>Cortex-A72</core>
+    <core>Cortex-M3</core>
+    <core>Cortex-A53</core>
+    </platform>
+  <platform name="MPS2PLUS_M23_IOT">
+      <type>HARDWARE</type>
+    <core>Cortex-M23</core>
+    </platform>
+  <platform name="MPS2PLUS_M33_IOT">
+      <type>HARDWARE</type>
+    <core>Cortex-M33</core>
+    </platform>
+  <platform name="MPS2PLUS_M3_DesignStart">
+      <type>HARDWARE</type>
+    <core>Cortex-M3</core>
+    </platform>
+  <platform name="MPS2_M0">
+      <type>HARDWARE</type>
+    <core>Cortex-M0</core>
+    </platform>
+  <platform name="MPS2_M0+">
+      <type>HARDWARE</type>
+    <core>Cortex-M0+</core>
+    </platform>
+  <platform name="MPS2_M1">
+      <type>HARDWARE</type>
+    <core>Cortex-M1</core>
+    </platform>
+  <platform name="MPS2_M3">
+      <type>HARDWARE</type>
+    <core>Cortex-M3</core>
+    </platform>
+  <platform name="MPS2_M4">
+      <type>HARDWARE</type>
+    <core>Cortex-M4</core>
+    </platform>
+  <platform name="MPS2_M7_BASIC">
+      <type>HARDWARE</type>
+    <core>Cortex-M7</core>
+    </platform>
+  <platform name="MPS2_M7_CS">
+      <type>HARDWARE</type>
+    <core>Cortex-M7</core>
+    </platform>
+  <platform name="MPS3_IOT_M33">
+      <type>HARDWARE</type>
+    <core>Cortex-M33</core>
+    </platform>
+  <platform name="MPS_M0">
+      <type>HARDWARE</type>
+    <core>Cortex-M0</core>
+    </platform>
+  <platform name="MPS_M0+">
+      <type>HARDWARE</type>
+    <core>Cortex-M0+</core>
+    </platform>
+  <platform name="MPS_M1">
+      <type>HARDWARE</type>
+    <core>Cortex-M1</core>
+    </platform>
+  <platform name="MPS_M3">
+      <type>HARDWARE</type>
+    <core>Cortex-M3</core>
+    </platform>
+  <platform name="MPS_M4">
+      <type>HARDWARE</type>
+    <core>Cortex-M4</core>
+    </platform>
+  <platform name="Musca-A">
+      <type>HARDWARE</type>
+    <core>Cortex-M33</core>
+    </platform>
+  <platform name="Musca-B1u">
+      <type>HARDWARE</type>
+    <core>Cortex-M33</core>
+    </platform>
+  <platform name="PB1176JZF-S">
+      <type>HARDWARE</type>
+    <core>ARM1176JZF-S</core>
+    </platform>
+  <platform name="V2M-MPS3">
+      <type>HARDWARE</type>
+    <core>Cortex-R52</core>
+    </platform>
+  <platform name="Versatile_Express_A15_Neon_SMM">
+      <type>HARDWARE</type>
+    <core>Cortex-A15</core>
+    </platform>
+  <platform name="Versatile_Express_A15_SMM">
+      <type>HARDWARE</type>
+    <core>Cortex-A15</core>
+    </platform>
+  <platform name="Versatile_Express_A15x2_SMM">
+      <type>HARDWARE</type>
+    <core>Cortex-A15</core>
+    </platform>
+  <platform name="Versatile_Express_A53x2_SMM">
+      <type>HARDWARE</type>
+    <core>Cortex-A53</core>
+    </platform>
+  <platform name="Versatile_Express_A57x1_SMM">
+      <type>HARDWARE</type>
+    <core>Cortex-A57</core>
+    </platform>
+  <platform name="Versatile_Express_A5x2">
+      <type>HARDWARE</type>
+    <core>Cortex-A5</core>
+    </platform>
+  <platform name="Versatile_Express_A9x4">
+      <type>HARDWARE</type>
+    <core>Cortex-A9</core>
+    </platform>
+  <platform name="Versatile_Express_R5x2">
+      <type>HARDWARE</type>
+    <core>Cortex-R5</core>
+    </platform>
+  <platform name="Versatile_Express_V2P-CA15">
+      <type>HARDWARE</type>
+    <core>Cortex-A15</core>
+    </platform>
+  <platform name="Versatile_Express_V2P-CA15_A7">
+      <type>HARDWARE</type>
+    <core>Cortex-A7</core>
+    <core>Cortex-A15</core>
+    </platform>
+  </manufacturer>
+<manufacturer name="Arm FVP">
+    <platform name="BaseR_R52x1">
+      <type>RTSM</type>
+    <core>Cortex-R52</core>
+    </platform>
+  <platform name="BaseR_R52x2">
+      <type>RTSM</type>
+    <core>Cortex-R52</core>
+    </platform>
+  <platform name="BaseR_R52x4">
+      <type>RTSM</type>
+    <core>Cortex-R52</core>
+    </platform>
+  <platform name="Base_A32x1">
+      <type>RTSM</type>
+    <core>Cortex-A32</core>
+    </platform>
+  <platform name="Base_A32x2">
+      <type>RTSM</type>
+    <core>Cortex-A32</core>
+    </platform>
+  <platform name="Base_A32x4">
+      <type>RTSM</type>
+    <core>Cortex-A32</core>
+    </platform>
+  <platform name="Base_A35x1">
+      <type>RTSM</type>
+    <core>Cortex-A35</core>
+    </platform>
+  <platform name="Base_A35x2">
+      <type>RTSM</type>
+    <core>Cortex-A35</core>
+    </platform>
+  <platform name="Base_A35x4">
+      <type>RTSM</type>
+    <core>Cortex-A35</core>
+    </platform>
+  <platform name="Base_A53x1">
+      <type>RTSM</type>
+    <core>Cortex-A53</core>
+    </platform>
+  <platform name="Base_A53x2">
+      <type>RTSM</type>
+    <core>Cortex-A53</core>
+    </platform>
+  <platform name="Base_A53x4">
+      <type>RTSM</type>
+    <core>Cortex-A53</core>
+    </platform>
+  <platform name="Base_A55x1">
+      <type>RTSM</type>
+    <core>Cortex-A55</core>
+    </platform>
+  <platform name="Base_A55x1_A75x1">
+      <type>RTSM</type>
+    <core>Cortex-A55</core>
+    <core>Cortex-A75</core>
+    </platform>
+  <platform name="Base_A55x2">
+      <type>RTSM</type>
+    <core>Cortex-A55</core>
+    </platform>
+  <platform name="Base_A55x2_A75x2">
+      <type>RTSM</type>
+    <core>Cortex-A55</core>
+    <core>Cortex-A75</core>
+    </platform>
+  <platform name="Base_A55x4">
+      <type>RTSM</type>
+    <core>Cortex-A55</core>
+    </platform>
+  <platform name="Base_A55x4_A75x1">
+      <type>RTSM</type>
+    <core>Cortex-A55</core>
+    <core>Cortex-A75</core>
+    </platform>
+  <platform name="Base_A55x4_A75x2">
+      <type>RTSM</type>
+    <core>Cortex-A55</core>
+    <core>Cortex-A75</core>
+    </platform>
+  <platform name="Base_A55x4_A75x4">
+      <type>RTSM</type>
+    <core>Cortex-A55</core>
+    <core>Cortex-A75</core>
+    </platform>
+  <platform name="Base_A55x4_A76x2">
+      <type>RTSM</type>
+    <core>Cortex-A55</core>
+    <core>Cortex-A76</core>
+    </platform>
+  <platform name="Base_A57x1">
+      <type>RTSM</type>
+    <core>Cortex-A57</core>
+    </platform>
+  <platform name="Base_A57x1_A35x1">
+      <type>RTSM</type>
+    <core>Cortex-A35</core>
+    <core>Cortex-A57</core>
+    </platform>
+  <platform name="Base_A57x1_A53x1">
+      <type>RTSM</type>
+    <core>Cortex-A57</core>
+    <core>Cortex-A53</core>
+    </platform>
+  <platform name="Base_A57x2">
+      <type>RTSM</type>
+    <core>Cortex-A57</core>
+    </platform>
+  <platform name="Base_A57x2_A53x4">
+      <type>RTSM</type>
+    <core>Cortex-A57</core>
+    <core>Cortex-A53</core>
+    </platform>
+  <platform name="Base_A57x4">
+      <type>RTSM</type>
+    <core>Cortex-A57</core>
+    </platform>
+  <platform name="Base_A57x4_A35x4">
+      <type>RTSM</type>
+    <core>Cortex-A35</core>
+    <core>Cortex-A57</core>
+    </platform>
+  <platform name="Base_A57x4_A53x4">
+      <type>RTSM</type>
+    <core>Cortex-A57</core>
+    <core>Cortex-A53</core>
+    </platform>
+  <platform name="Base_A72x1">
+      <type>RTSM</type>
+    <core>Cortex-A72</core>
+    </platform>
+  <platform name="Base_A72x1_A53x1">
+      <type>RTSM</type>
+    <core>Cortex-A72</core>
+    <core>Cortex-A53</core>
+    </platform>
+  <platform name="Base_A72x2">
+      <type>RTSM</type>
+    <core>Cortex-A72</core>
+    </platform>
+  <platform name="Base_A72x2_A53x4">
+      <type>RTSM</type>
+    <core>Cortex-A72</core>
+    <core>Cortex-A53</core>
+    </platform>
+  <platform name="Base_A72x4">
+      <type>RTSM</type>
+    <core>Cortex-A72</core>
+    </platform>
+  <platform name="Base_A72x4_A53x4">
+      <type>RTSM</type>
+    <core>Cortex-A72</core>
+    <core>Cortex-A53</core>
+    </platform>
+  <platform name="Base_A73x1">
+      <type>RTSM</type>
+    <core>Cortex-A73</core>
+    </platform>
+  <platform name="Base_A73x1_A53x1">
+      <type>RTSM</type>
+    <core>Cortex-A73</core>
+    <core>Cortex-A53</core>
+    </platform>
+  <platform name="Base_A73x2">
+      <type>RTSM</type>
+    <core>Cortex-A73</core>
+    </platform>
+  <platform name="Base_A73x2_A53x4">
+      <type>RTSM</type>
+    <core>Cortex-A73</core>
+    <core>Cortex-A53</core>
+    </platform>
+  <platform name="Base_A73x4">
+      <type>RTSM</type>
+    <core>Cortex-A73</core>
+    </platform>
+  <platform name="Base_A73x4_A53x4">
+      <type>RTSM</type>
+    <core>Cortex-A73</core>
+    <core>Cortex-A53</core>
+    </platform>
+  <platform name="Base_A75x1">
+      <type>RTSM</type>
+    <core>Cortex-A75</core>
+    </platform>
+  <platform name="Base_A75x2">
+      <type>RTSM</type>
+    <core>Cortex-A75</core>
+    </platform>
+  <platform name="Base_A75x4">
+      <type>RTSM</type>
+    <core>Cortex-A75</core>
+    </platform>
+  <platform name="Base_A76AEx2">
+      <type>RTSM</type>
+    <core>Cortex-A76AE</core>
+    </platform>
+  <platform name="Base_A76AEx4">
+      <type>RTSM</type>
+    <core>Cortex-A76AE</core>
+    </platform>
+  <platform name="Base_A76AEx8">
+      <type>RTSM</type>
+    <core>Cortex-A76AE</core>
+    </platform>
+  <platform name="Base_A76x1">
+      <type>RTSM</type>
+    <core>Cortex-A76</core>
+    </platform>
+  <platform name="Base_A76x2">
+      <type>RTSM</type>
+    <core>Cortex-A76</core>
+    </platform>
+  <platform name="Base_A76x4">
+      <type>RTSM</type>
+    <core>Cortex-A76</core>
+    </platform>
+  <platform name="Base_AEMv8A">
+      <type>RTSM</type>
+    <core>ARMAEMv8-A_</core>
+    </platform>
+  <platform name="Base_AEMv8A_AEMv8A">
+      <type>RTSM</type>
+    <core>ARMAEMv8-A_</core>
+    </platform>
+  <platform name="Base_AEMv8A_AEMv8A_AEMv8A_AEMv8A_CCN502">
+      <type>RTSM</type>
+    <core>ARMAEMv8-A_</core>
+    </platform>
+  <platform name="Base_AEMv8A_AEMv8A_AEMv8A_AEMv8A_CCN512">
+      <type>RTSM</type>
+    <core>ARMAEMv8-A_</core>
+    </platform>
+  <platform name="Base_AEMv8A_AEMv8A_CCN504">
+      <type>RTSM</type>
+    <core>ARMAEMv8-A_</core>
+    </platform>
+  <platform name="Base_AEMv8A_SVE">
+      <type>RTSM</type>
+    <core>ARMAEMv8-A_</core>
+    </platform>
+  <platform name="Base_RevC_2xAEMv8A">
+      <type>RTSM</type>
+    <core>ARMAEMv8-A_</core>
+    </platform>
+  <platform name="Cortex-A5 DesignStart">
+      <type>RTSM</type>
+    <core>Cortex-A5</core>
+    </platform>
+  <platform name="Cortex-A8_2_FVP">
+      <type>RTSM</type>
+    <core>Cortex-A8</core>
+    </platform>
+  <platform name="Infra_Ref_Data_Ashbrook_A53">
+      <type>RTSM</type>
+    <core>Cortex-M7</core>
+    <core>Cortex-A53</core>
+    </platform>
+  <platform name="MPS2_AEMv8M">
+      <type>RTSM</type>
+    <core>AEMv8M</core>
+    </platform>
+  <platform name="MPS2_Cortex_M0">
+      <type>RTSM</type>
+    <core>Cortex-M0</core>
+    </platform>
+  <platform name="MPS2_Cortex_M0plus">
+      <type>RTSM</type>
+    <core>Cortex-M0+</core>
+    </platform>
+  <platform name="MPS2_Cortex_M23">
+      <type>RTSM</type>
+    <core>Cortex-M23_FVP</core>
+    </platform>
+  <platform name="MPS2_Cortex_M3">
+      <type>RTSM</type>
+    <core>Cortex-M3</core>
+    </platform>
+  <platform name="MPS2_Cortex_M33">
+      <type>RTSM</type>
+    <core>Cortex-M33_FVP</core>
+    </platform>
+  <platform name="MPS2_Cortex_M35P">
+      <type>RTSM</type>
+    <core>Cortex-M35P_FVP</core>
+    </platform>
+  <platform name="MPS2_Cortex_M35P_CRYPTOCELL">
+      <type>RTSM</type>
+    <core>Cortex-M35P_FVP</core>
+    </platform>
+  <platform name="MPS2_Cortex_M4">
+      <type>RTSM</type>
+    <core>Cortex-M4</core>
+    </platform>
+  <platform name="MPS2_Cortex_M7">
+      <type>RTSM</type>
+    <core>Cortex-M7</core>
+    </platform>
+  <platform name="MPS_Cortex_M0">
+      <type>RTSM</type>
+    <core>Cortex-M0</core>
+    </platform>
+  <platform name="MPS_Cortex_M0Plus">
+      <type>RTSM</type>
+    <core>Cortex-M0+</core>
+    </platform>
+  <platform name="MPS_Cortex_M3">
+      <type>RTSM</type>
+    <core>Cortex-M3</core>
+    </platform>
+  <platform name="MPS_Cortex_M4">
+      <type>RTSM</type>
+    <core>Cortex-M4</core>
+    </platform>
+  <platform name="VE_AEMv8x1">
+      <type>RTSM</type>
+    <core>ARMAEMv8-A_</core>
+    </platform>
+  <platform name="VE_AEMv8x4">
+      <type>RTSM</type>
+    <core>ARMAEMv8-A_</core>
+    </platform>
+  <platform name="VE_Cortex_A12x1">
+      <type>RTSM</type>
+    <core>Cortex-A12</core>
+    </platform>
+  <platform name="VE_Cortex_A12x2">
+      <type>RTSM</type>
+    <core>Cortex-A12</core>
+    </platform>
+  <platform name="VE_Cortex_A12x3">
+      <type>RTSM</type>
+    <core>Cortex-A12</core>
+    </platform>
+  <platform name="VE_Cortex_A12x4">
+      <type>RTSM</type>
+    <core>Cortex-A12</core>
+    </platform>
+  <platform name="VE_Cortex_A15x1">
+      <type>RTSM</type>
+    <core>Cortex-A15</core>
+    </platform>
+  <platform name="VE_Cortex_A15x1_A7x1">
+      <type>RTSM</type>
+    <core>Cortex-A7</core>
+    <core>Cortex-A15</core>
+    </platform>
+  <platform name="VE_Cortex_A15x1_A7x1_MMU400_DMA330">
+      <type>RTSM</type>
+    <core>Cortex-A7</core>
+    <core>Cortex-A15</core>
+    </platform>
+  <platform name="VE_Cortex_A15x2">
+      <type>RTSM</type>
+    <core>Cortex-A15</core>
+    </platform>
+  <platform name="VE_Cortex_A15x4">
+      <type>RTSM</type>
+    <core>Cortex-A15</core>
+    </platform>
+  <platform name="VE_Cortex_A15x4_A7x4">
+      <type>RTSM</type>
+    <core>Cortex-A7</core>
+    <core>Cortex-A15</core>
+    </platform>
+  <platform name="VE_Cortex_A15x4_A7x4_MMU400_DMA330">
+      <type>RTSM</type>
+    <core>Cortex-A7</core>
+    <core>Cortex-A15</core>
+    </platform>
+  <platform name="VE_Cortex_A17x1">
+      <type>RTSM</type>
+    <core>Cortex-A17</core>
+    </platform>
+  <platform name="VE_Cortex_A17x1_A7x1">
+      <type>RTSM</type>
+    <core>Cortex-A7</core>
+    <core>Cortex-A17</core>
+    </platform>
+  <platform name="VE_Cortex_A17x2">
+      <type>RTSM</type>
+    <core>Cortex-A17</core>
+    </platform>
+  <platform name="VE_Cortex_A17x3">
+      <type>RTSM</type>
+    <core>Cortex-A17</core>
+    </platform>
+  <platform name="VE_Cortex_A17x4">
+      <type>RTSM</type>
+    <core>Cortex-A17</core>
+    </platform>
+  <platform name="VE_Cortex_A17x4_A7x4">
+      <type>RTSM</type>
+    <core>Cortex-A7</core>
+    <core>Cortex-A17</core>
+    </platform>
+  <platform name="VE_Cortex_A53x1">
+      <type>RTSM</type>
+    <core>Cortex-A53</core>
+    </platform>
+  <platform name="VE_Cortex_A53x2">
+      <type>RTSM</type>
+    <core>Cortex-A53</core>
+    </platform>
+  <platform name="VE_Cortex_A53x4">
+      <type>RTSM</type>
+    <core>Cortex-A53</core>
+    </platform>
+  <platform name="VE_Cortex_A57x1">
+      <type>RTSM</type>
+    <core>Cortex-A57</core>
+    </platform>
+  <platform name="VE_Cortex_A57x2">
+      <type>RTSM</type>
+    <core>Cortex-A57</core>
+    </platform>
+  <platform name="VE_Cortex_A57x4">
+      <type>RTSM</type>
+    <core>Cortex-A57</core>
+    </platform>
+  <platform name="VE_Cortex_A5x1">
+      <type>RTSM</type>
+    <core>Cortex-A5</core>
+    </platform>
+  <platform name="VE_Cortex_A72x1">
+      <type>RTSM</type>
+    <core>Cortex-A72</core>
+    </platform>
+  <platform name="VE_Cortex_A72x2">
+      <type>RTSM</type>
+    <core>Cortex-A72</core>
+    </platform>
+  <platform name="VE_Cortex_A72x4">
+      <type>RTSM</type>
+    <core>Cortex-A72</core>
+    </platform>
+  <platform name="VE_Cortex_A7x1">
+      <type>RTSM</type>
+    <core>Cortex-A7</core>
+    </platform>
+  <platform name="VE_Cortex_A7x2">
+      <type>RTSM</type>
+    <core>Cortex-A7</core>
+    </platform>
+  <platform name="VE_Cortex_A7x3">
+      <type>RTSM</type>
+    <core>Cortex-A7</core>
+    </platform>
+  <platform name="VE_Cortex_A7x4">
+      <type>RTSM</type>
+    <core>Cortex-A7</core>
+    </platform>
+  <platform name="VE_Cortex_A9x1">
+      <type>RTSM</type>
+    <core>Cortex-A9</core>
+    </platform>
+  <platform name="VE_Cortex_A9x2">
+      <type>RTSM</type>
+    <core>Cortex-A9</core>
+    </platform>
+  <platform name="VE_Cortex_A9x4">
+      <type>RTSM</type>
+    <core>Cortex-A9</core>
+    </platform>
+  <platform name="VE_Cortex_R4">
+      <type>RTSM</type>
+    <core>Cortex-R4</core>
+    </platform>
+  <platform name="VE_Cortex_R5x1">
+      <type>RTSM</type>
+    <core>Cortex-R5</core>
+    </platform>
+  <platform name="VE_Cortex_R5x2">
+      <type>RTSM</type>
+    <core>Cortex-R5</core>
+    </platform>
+  <platform name="VE_Cortex_R7x1">
+      <type>RTSM</type>
+    <core>Cortex-R7</core>
+    </platform>
+  <platform name="VE_Cortex_R7x2">
+      <type>RTSM</type>
+    <core>Cortex-R7</core>
+    </platform>
+  <platform name="VE_Cortex_R8x1">
+      <type>RTSM</type>
+    <core>Cortex-R8</core>
+    </platform>
+  <platform name="VE_Cortex_R8x2">
+      <type>RTSM</type>
+    <core>Cortex-R8</core>
+    </platform>
+  <platform name="VE_Cortex_R8x4">
+      <type>RTSM</type>
+    <core>Cortex-R8</core>
+    </platform>
+  </manufacturer>
+<manufacturer name="Arm FVP (Installed with Arm DS)">
+    <platform name="BaseR_R52x1">
+      <type>RTSM</type>
+    <core>Cortex-R52</core>
+    </platform>
+  <platform name="Base_A32x1">
+      <type>RTSM</type>
+    <core>Cortex-A32</core>
+    </platform>
+  <platform name="Base_A35x1">
+      <type>RTSM</type>
+    <core>Cortex-A35</core>
+    </platform>
+  <platform name="Base_A53x1">
+      <type>RTSM</type>
+    <core>Cortex-A53</core>
+    </platform>
+  <platform name="Base_A55x1">
+      <type>RTSM</type>
+    <core>Cortex-A55</core>
+    </platform>
+  <platform name="Base_A55x4_A75x2">
+      <type>RTSM</type>
+    <core>Cortex-A55</core>
+    <core>Cortex-A75</core>
+    </platform>
+  <platform name="Base_A55x4_A76x2">
+      <type>RTSM</type>
+    <core>Cortex-A55</core>
+    <core>Cortex-A76</core>
+    </platform>
+  <platform name="Base_A57x1">
+      <type>RTSM</type>
+    <core>Cortex-A57</core>
+    </platform>
+  <platform name="Base_A57x2_A53x4">
+      <type>RTSM</type>
+    <core>Cortex-A57</core>
+    <core>Cortex-A53</core>
+    </platform>
+  <platform name="Base_A72x1">
+      <type>RTSM</type>
+    <core>Cortex-A72</core>
+    </platform>
+  <platform name="Base_A72x2_A53x4">
+      <type>RTSM</type>
+    <core>Cortex-A72</core>
+    <core>Cortex-A53</core>
+    </platform>
+  <platform name="Base_A73x1">
+      <type>RTSM</type>
+    <core>Cortex-A73</core>
+    </platform>
+  <platform name="Base_A73x2_A53x4">
+      <type>RTSM</type>
+    <core>Cortex-A73</core>
+    <core>Cortex-A53</core>
+    </platform>
+  <platform name="Base_A75x1">
+      <type>RTSM</type>
+    <core>Cortex-A75</core>
+    </platform>
+  <platform name="Base_A76AEx2">
+      <type>RTSM</type>
+    <core>Cortex-A76AE</core>
+    </platform>
+  <platform name="Base_A76x1">
+      <type>RTSM</type>
+    <core>Cortex-A76</core>
+    </platform>
+  <platform name="MPS2_Cortex_M0">
+      <type>RTSM</type>
+    <core>Cortex-M0</core>
+    </platform>
+  <platform name="MPS2_Cortex_M0plus">
+      <type>RTSM</type>
+    <core>Cortex-M0+</core>
+    </platform>
+  <platform name="MPS2_Cortex_M23">
+      <type>RTSM</type>
+    <core>Cortex-M23_FVP</core>
+    </platform>
+  <platform name="MPS2_Cortex_M3">
+      <type>RTSM</type>
+    <core>Cortex-M3</core>
+    </platform>
+  <platform name="MPS2_Cortex_M33">
+      <type>RTSM</type>
+    <core>Cortex-M33_FVP</core>
+    </platform>
+  <platform name="MPS2_Cortex_M4">
+      <type>RTSM</type>
+    <core>Cortex-M4</core>
+    </platform>
+  <platform name="MPS2_Cortex_M7">
+      <type>RTSM</type>
+    <core>Cortex-M7</core>
+    </platform>
+  <platform name="VE_Cortex_A15x1">
+      <type>RTSM</type>
+    <core>Cortex-A15</core>
+    </platform>
+  <platform name="VE_Cortex_A15x4_A7x4">
+      <type>RTSM</type>
+    <core>Cortex-A7</core>
+    <core>Cortex-A15</core>
+    </platform>
+  <platform name="VE_Cortex_A17x1">
+      <type>RTSM</type>
+    <core>Cortex-A17</core>
+    </platform>
+  <platform name="VE_Cortex_A5x1">
+      <type>RTSM</type>
+    <core>Cortex-A5</core>
+    </platform>
+  <platform name="VE_Cortex_A7x1">
+      <type>RTSM</type>
+    <core>Cortex-A7</core>
+    </platform>
+  <platform name="VE_Cortex_A9x1">
+      <type>RTSM</type>
+    <core>Cortex-A9</core>
+    </platform>
+  <platform name="VE_Cortex_A9x4">
+      <type>RTSM</type>
+    <core>Cortex-A9</core>
+    </platform>
+  <platform name="VE_Cortex_R4">
+      <type>RTSM</type>
+    <core>Cortex-R4</core>
+    </platform>
+  <platform name="VE_Cortex_R5x1">
+      <type>RTSM</type>
+    <core>Cortex-R5</core>
+    </platform>
+  <platform name="VE_Cortex_R7x1">
+      <type>RTSM</type>
+    <core>Cortex-R7</core>
+    </platform>
+  <platform name="VE_Cortex_R8x1">
+      <type>RTSM</type>
+    <core>Cortex-R8</core>
+    </platform>
+  </manufacturer>
+<manufacturer name="Arm SubSystem FVP">
+    <platform name="CoreLink SGI-572">
+      <type>RTSM</type>
+    <core>Cortex-A72</core>
+    <core>Cortex-M7</core>
+    </platform>
+  <platform name="CoreLink SGI-575">
+      <type>RTSM</type>
+    <core>Cortex-M7</core>
+    <core>Cortex-A75</core>
+    </platform>
+  <platform name="CoreLink SGM-573">
+      <type>RTSM</type>
+    <core>Cortex-A73</core>
+    <core>Cortex-M3</core>
+    <core>Cortex-A53</core>
+    </platform>
+  <platform name="CoreLink SGM-773">
+      <type>RTSM</type>
+    <core>Cortex-A73</core>
+    <core>Cortex-M3</core>
+    <core>Cortex-A53</core>
+    </platform>
+  <platform name="CoreLink SGM-775">
+      <type>RTSM</type>
+    <core>Cortex-A55</core>
+    <core>Cortex-A75</core>
+    <core>Cortex-M3</core>
+    </platform>
+  </manufacturer>
+<manufacturer name="Atmel">
+    <platform name="AT91SAM9263-EK">
+      <type>HARDWARE</type>
+    <core>ARM926EJ-S</core>
+    </platform>
+  <platform name="AT91SAM9G15 (Generic)">
+      <type>HARDWARE</type>
+    <core>ARM926EJ-S</core>
+    </platform>
+  <platform name="AT91SAM9G15-EK">
+      <type>HARDWARE</type>
+    <core>ARM926EJ-S</core>
+    </platform>
+  <platform name="AT91SAM9G20 (Generic)">
+      <type>HARDWARE</type>
+    <core>ARM926EJ-S</core>
+    </platform>
+  <platform name="AT91SAM9G20-EK">
+      <type>HARDWARE</type>
+    <core>ARM926EJ-S</core>
+    </platform>
+  <platform name="AT91SAM9G25 (Generic)">
+      <type>HARDWARE</type>
+    <core>ARM926EJ-S</core>
+    </platform>
+  <platform name="AT91SAM9G25-EK">
+      <type>HARDWARE</type>
+    <core>ARM926EJ-S</core>
+    </platform>
+  <platform name="AT91SAM9G35 (Generic)">
+      <type>HARDWARE</type>
+    <core>ARM926EJ-S</core>
+    </platform>
+  <platform name="AT91SAM9G35-EK">
+      <type>HARDWARE</type>
+    <core>ARM926EJ-S</core>
+    </platform>
+  <platform name="AT91SAM9G45 (Generic)">
+      <type>HARDWARE</type>
+    <core>ARM926EJ-S</core>
+    </platform>
+  <platform name="AT91SAM9G45-EK-ES">
+      <type>HARDWARE</type>
+    <core>ARM926EJ-S</core>
+    </platform>
+  <platform name="AT91SAM9M10 (Generic)">
+      <type>HARDWARE</type>
+    <core>ARM926EJ-S</core>
+    </platform>
+  <platform name="AT91SAM9M10-G45-EK">
+      <type>HARDWARE</type>
+    <core>ARM926EJ-S</core>
+    </platform>
+  <platform name="AT91SAM9X25 (Generic)">
+      <type>HARDWARE</type>
+    <core>ARM926EJ-S</core>
+    </platform>
+  <platform name="AT91SAM9X25-EK">
+      <type>HARDWARE</type>
+    <core>ARM926EJ-S</core>
+    </platform>
+  <platform name="AT91SAM9X35 (Generic)">
+      <type>HARDWARE</type>
+    <core>ARM926EJ-S</core>
+    </platform>
+  <platform name="AT91SAM9X35-EK">
+      <type>HARDWARE</type>
+    <core>ARM926EJ-S</core>
+    </platform>
+  <platform name="SAMA5D2x">
+      <type>HARDWARE</type>
+    <core>Cortex-A5</core>
+    </platform>
+  <platform name="SAMA5D3x">
+      <type>HARDWARE</type>
+    <core>Cortex-A5</core>
+    </platform>
+  </manufacturer>
+<manufacturer name="Avnet">
+    <platform name="Zedboard_JTAG_J15">
+      <type>HARDWARE</type>
+    <core>Cortex-A9</core>
+    </platform>
+  </manufacturer>
+<manufacturer name="Boundary Devices">
+    <platform name="Nitrogen6X">
+      <type>HARDWARE</type>
+    <core>Cortex-A9</core>
+    </platform>
+  <platform name="SABRE Lite">
+      <type>HARDWARE</type>
+    <core>Cortex-A9</core>
+    </platform>
+  </manufacturer>
+<manufacturer name="CSR">
+    <platform name="SiRFprimaII">
+      <type>HARDWARE</type>
+    <core>Cortex-A9</core>
+    </platform>
+  </manufacturer>
+<manufacturer name="Calao_Systems">
+    <platform name="Snowball_SDK">
+      <type>HARDWARE</type>
+    <core>Cortex-A9</core>
+    </platform>
+  </manufacturer>
+<manufacturer name="Cavium">
+    <platform name="ThunderX-r2_AP0">
+      <type>HARDWARE</type>
+    <core>ThunderX-r2</core>
+    </platform>
+  <platform name="ThunderX_AP0">
+      <type>HARDWARE</type>
+    <core>ThunderX</core>
+    </platform>
+  <platform name="ThunderX_AP1">
+      <type>HARDWARE</type>
+    <core>ThunderX</core>
+    </platform>
+  </manufacturer>
+<manufacturer name="Core_Logic">
+    <platform name="CLM9721">
+      <type>HARDWARE</type>
+    <core>Cortex-A8_NS</core>
+    </platform>
+  </manufacturer>
+<manufacturer name="Embedded_Artists">
+    <platform name="LPC3141_DK">
+      <type>HARDWARE</type>
+    <core>ARM926EJ-S</core>
+    </platform>
+  <platform name="LPC3152_DK">
+      <type>HARDWARE</type>
+    <core>ARM926EJ-S</core>
+    </platform>
+  </manufacturer>
+<manufacturer name="Emtrion">
+    <platform name="DIMM-EMEV2">
+      <type>HARDWARE</type>
+    <core>Cortex-A9</core>
+    </platform>
+  <platform name="DIMM-MX53">
+      <type>HARDWARE</type>
+    <core>Cortex-A8</core>
+    </platform>
+  </manufacturer>
+<manufacturer name="FDI">
+    <platform name="LPC3250">
+      <type>HARDWARE</type>
+    <core>ARM926EJ-S</core>
+    </platform>
+  </manufacturer>
+<manufacturer name="Faraday">
+    <platform name="SoCreativeIV-A380">
+      <type>HARDWARE</type>
+    <core>Cortex-A9</core>
+    </platform>
+  </manufacturer>
+<manufacturer name="Fujitsu">
+    <platform name="Emerald-P">
+      <type>HARDWARE</type>
+    <core>Cortex-A9</core>
+    </platform>
+  </manufacturer>
+<manufacturer name="Generic">
+    <platform name="Snapshot">
+      <type>SNAPSHOT</type>
+    <core>__dynamic__</core>
+    </platform>
+  </manufacturer>
+<manufacturer name="HardKernel">
+    <platform name="oDroidQ">
+      <type>HARDWARE</type>
+    <core>Cortex-A9</core>
+    </platform>
+  </manufacturer>
+<manufacturer name="Icytecture">
+    <platform name="iMX35">
+      <type>HARDWARE</type>
+    <core>ARM1136JF-S</core>
+    </platform>
+  </manufacturer>
+<manufacturer name="Intel">
+    <platform name="AXM5500x16 SIM">
+      <type>RTSM</type>
+    <core>Cortex-A15</core>
+    </platform>
+  <platform name="AXM5500x4 SIM">
+      <type>RTSM</type>
+    <core>Cortex-A15</core>
+    </platform>
+  <platform name="AXM5504">
+      <type>HARDWARE</type>
+    <core>Cortex-A15</core>
+    </platform>
+  <platform name="AXM5508">
+      <type>HARDWARE</type>
+    <core>Cortex-A15</core>
+    </platform>
+  <platform name="AXM5512">
+      <type>HARDWARE</type>
+    <core>Cortex-A15</core>
+    </platform>
+  <platform name="AXM5516">
+      <type>HARDWARE</type>
+    <core>Cortex-A15</core>
+    </platform>
+  <platform name="AXM5600x16 SIM">
+      <type>RTSM</type>
+    <core>Cortex-A57</core>
+    </platform>
+  <platform name="AXM5600x4 SIM">
+      <type>RTSM</type>
+    <core>Cortex-A57</core>
+    </platform>
+  <platform name="AXM5604">
+      <type>HARDWARE</type>
+    <core>Cortex-A57</core>
+    </platform>
+  <platform name="AXM5608">
+      <type>HARDWARE</type>
+    <core>Cortex-A57</core>
+    </platform>
+  <platform name="AXM5612">
+      <type>HARDWARE</type>
+    <core>Cortex-A57</core>
+    </platform>
+  <platform name="AXM5616">
+      <type>HARDWARE</type>
+    <core>Cortex-A57</core>
+    </platform>
+  </manufacturer>
+<manufacturer name="Intel SoC FPGA">
+    <platform name="Agilex SoC">
+      <type>HARDWARE</type>
+    <core>Cortex-A53</core>
+    </platform>
+  <platform name="Arria 10 SoC">
+      <type>HARDWARE</type>
+    <core>GDBServerPseudoCore</core>
+    <core>Cortex-A9</core>
+    </platform>
+  <platform name="Arria V SoC">
+      <type>HARDWARE</type>
+    <core>GDBServerPseudoCore</core>
+    <core>Cortex-A9</core>
+    </platform>
+  <platform name="Cyclone V SoC (Dual Core)">
+      <type>HARDWARE</type>
+    <core>GDBServerPseudoCore</core>
+    <core>Cortex-A9</core>
+    </platform>
+  <platform name="Cyclone V SoC (Single Core)">
+      <type>HARDWARE</type>
+    <core>GDBServerPseudoCore</core>
+    <core>Cortex-A9</core>
+    </platform>
+  <platform name="Dual Arria V SoC (2 Dual Core SoCs)">
+      <type>HARDWARE</type>
+    <core>GDBServerPseudoCore</core>
+    <core>Cortex-A9</core>
+    </platform>
+  <platform name="Dual Cyclone V SoC (2 Dual Core SoCs)">
+      <type>HARDWARE</type>
+    <core>GDBServerPseudoCore</core>
+    <core>Cortex-A9</core>
+    </platform>
+  <platform name="Stratix 10">
+      <type>HARDWARE</type>
+    <core>Cortex-A53</core>
+    </platform>
+  </manufacturer>
+<manufacturer name="Keil">
+    <platform name="MCB1760">
+      <type>HARDWARE</type>
+    <core>Cortex-M3</core>
+    </platform>
+  <platform name="MCBSTM32E">
+      <type>HARDWARE</type>
+    <core>Cortex-M3</core>
+    </platform>
+  <platform name="MCBSTR9">
+      <type>HARDWARE</type>
+    <core>ARM966E-S</core>
+    </platform>
+  </manufacturer>
+<manufacturer name="Kyoto">
+    <platform name="KZM-A9-Dual">
+      <type>HARDWARE</type>
+    <core>Cortex-A9</core>
+    </platform>
+  </manufacturer>
+<manufacturer name="LG_Electronics">
+    <platform name="L9">
+      <type>HARDWARE</type>
+    <core>Cortex-A9</core>
+    </platform>
+  </manufacturer>
+<manufacturer name="LOGIC_PD">
+    <platform name="AM1808_EVM">
+      <type>HARDWARE</type>
+    <core>ARM926EJ-S</core>
+    </platform>
+  <platform name="AM3517">
+      <type>HARDWARE</type>
+    <core>Cortex-A8_NS</core>
+    </platform>
+  <platform name="OMAP_3430_MDP">
+      <type>HARDWARE</type>
+    <core>Cortex-A8_NS</core>
+    </platform>
+  <platform name="OMAP_L138_eXperimenter">
+      <type>HARDWARE</type>
+    <core>ARM926EJ-S</core>
+    </platform>
+  <platform name="iMX27_ZOOM_LITEKIT">
+      <type>HARDWARE</type>
+    <core>ARM926EJ-S</core>
+    </platform>
+  <platform name="iMX31_ZOOM_LITEKIT">
+      <type>HARDWARE</type>
+    <core>ARM1136JF-S_r0</core>
+    </platform>
+  </manufacturer>
+<manufacturer name="Linux Application Debug">
+    <platform name="Application Debug">
+      <type>LINUXAPP</type>
+    <core>GDBServerPseudoCore</core>
+    <core>__dynamic__</core>
+    </platform>
+  </manufacturer>
+<manufacturer name="Marvell">
+    <platform name="88F8040">
+      <type>HARDWARE</type>
+    <core>Cortex-A72</core>
+    <core>Cortex-M3</core>
+    </platform>
+  <platform name="88FR101">
+      <type>HARDWARE</type>
+    <core>88FR101</core>
+    </platform>
+  <platform name="88FR111">
+      <type>HARDWARE</type>
+    <core>88FR111</core>
+    </platform>
+  <platform name="Marvell_88i9346">
+      <type>HARDWARE</type>
+    <core>Cortex-R4</core>
+    </platform>
+  <platform name="PJ4">
+      <type>HARDWARE</type>
+    <core>PJ4_NS</core>
+    </platform>
+  <platform name="PJ4 (Generic with TrustZone)">
+      <type>HARDWARE</type>
+    <core>PJ4</core>
+    </platform>
+  <platform name="PJ4 (Generic without TrustZone)">
+      <type>HARDWARE</type>
+    <core>PJ4_NS</core>
+    </platform>
+  <platform name="PJ4_TZ">
+      <type>HARDWARE</type>
+    <core>PJ4</core>
+    </platform>
+  </manufacturer>
+<manufacturer name="Mindspeed">
+    <platform name="M84000 (Generic Transcede 4000)">
+      <type>HARDWARE</type>
+    <core>Cortex-A9</core>
+    </platform>
+  <platform name="M84000_EVM">
+      <type>HARDWARE</type>
+    <core>Cortex-A9</core>
+    </platform>
+  <platform name="T2200">
+      <type>HARDWARE</type>
+    <core>Cortex-A9</core>
+    </platform>
+  <platform name="T3300">
+      <type>HARDWARE</type>
+    <core>Cortex-A9</core>
+    </platform>
+  </manufacturer>
+<manufacturer name="Mistral">
+    <platform name="AM3730">
+      <type>HARDWARE</type>
+    <core>Cortex-A8_NS</core>
+    </platform>
+  </manufacturer>
+<manufacturer name="NXP">
+    <platform name="Kinetis L Series (Generic)">
+      <type>HARDWARE</type>
+    <core>Cortex-M0+</core>
+    </platform>
+  <platform name="LPC3131 (Generic)">
+      <type>HARDWARE</type>
+    <core>ARM926EJ-S</core>
+    </platform>
+  <platform name="LPC3141 (Generic)">
+      <type>HARDWARE</type>
+    <core>ARM926EJ-S</core>
+    </platform>
+  <platform name="LPC3152 (Generic)">
+      <type>HARDWARE</type>
+    <core>ARM926EJ-S</core>
+    </platform>
+  <platform name="LPC3220 (Generic)">
+      <type>HARDWARE</type>
+    <core>ARM926EJ-S</core>
+    </platform>
+  <platform name="LPC3230 (Generic)">
+      <type>HARDWARE</type>
+    <core>ARM926EJ-S</core>
+    </platform>
+  <platform name="LPC3240 (Generic)">
+      <type>HARDWARE</type>
+    <core>ARM926EJ-S</core>
+    </platform>
+  <platform name="LPC3250 (Generic)">
+      <type>HARDWARE</type>
+    <core>ARM926EJ-S</core>
+    </platform>
+  <platform name="LS1024A-RDB">
+      <type>HARDWARE</type>
+    <core>Cortex-A9</core>
+    </platform>
+  <platform name="LS1043A-RDB">
+      <type>HARDWARE</type>
+    <core>Cortex-A53</core>
+    </platform>
+  <platform name="LS2085A">
+      <type>HARDWARE</type>
+    <core>Cortex-A57</core>
+    </platform>
+  <platform name="Shiner (Generic)">
+      <type>HARDWARE</type>
+    <core>Cortex-M3</core>
+    <core>Cortex-A9</core>
+    </platform>
+  <platform name="TWR-LS1021A">
+      <type>HARDWARE</type>
+    <core>Cortex-A7</core>
+    </platform>
+  <platform name="TWR-LS1021A r2">
+      <type>HARDWARE</type>
+    <core>Cortex-A7</core>
+    </platform>
+  <platform name="Vybrid VF3xx">
+      <type>HARDWARE</type>
+    <core>Cortex-A5</core>
+    <core>GDBServerPseudoCore_v5</core>
+    </platform>
+  <platform name="Vybrid VF5xx">
+      <type>HARDWARE</type>
+    <core>Cortex-A5</core>
+    <core>GDBServerPseudoCore_v5</core>
+    </platform>
+  <platform name="Vybrid VF6xx">
+      <type>HARDWARE</type>
+    <core>Cortex-A5</core>
+    <core>Cortex-M4</core>
+    <core>GDBServerPseudoCore_v5</core>
+    </platform>
+  <platform name="i.MX233 (Generic)">
+      <type>HARDWARE</type>
+    <core>ARM926EJ-S</core>
+    </platform>
+  <platform name="i.MX25 (Generic)">
+      <type>HARDWARE</type>
+    <core>ARM926EJ-S</core>
+    </platform>
+  <platform name="i.MX27 (Generic)">
+      <type>HARDWARE</type>
+    <core>ARM926EJ-S</core>
+    </platform>
+  <platform name="i.MX28 (Generic)">
+      <type>HARDWARE</type>
+    <core>ARM926EJ-S</core>
+    </platform>
+  <platform name="i.MX31 (Generic)">
+      <type>HARDWARE</type>
+    <core>ARM1136JF-S_r0</core>
+    </platform>
+  <platform name="i.MX35 (Generic)">
+      <type>HARDWARE</type>
+    <core>ARM1136JF-S</core>
+    </platform>
+  <platform name="i.MX50 (Generic)">
+      <type>HARDWARE</type>
+    <core>Cortex-A8</core>
+    </platform>
+  <platform name="i.MX51 (Generic)">
+      <type>HARDWARE</type>
+    <core>Cortex-A8</core>
+    </platform>
+  <platform name="i.MX535 (Generic)">
+      <type>HARDWARE</type>
+    <core>Cortex-A8_NS</core>
+    </platform>
+  <platform name="i.MX6 Dual (Generic)">
+      <type>HARDWARE</type>
+    <core>Cortex-A9</core>
+    </platform>
+  <platform name="i.MX6 DualLite (Generic)">
+      <type>HARDWARE</type>
+    <core>Cortex-A9</core>
+    </platform>
+  <platform name="i.MX6 Quad (Generic)">
+      <type>HARDWARE</type>
+    <core>Cortex-A9</core>
+    </platform>
+  <platform name="i.MX6 Solo (Generic)">
+      <type>HARDWARE</type>
+    <core>Cortex-A9</core>
+    </platform>
+  <platform name="i.MX6 SoloLite (Generic)">
+      <type>HARDWARE</type>
+    <core>Cortex-A9</core>
+    </platform>
+  <platform name="i.MX6 SoloX Sabre SDB">
+      <type>HARDWARE</type>
+    <core>Cortex-M4</core>
+    <core>Cortex-A9</core>
+    </platform>
+  <platform name="i.MX6 UltraLite (Generic)">
+      <type>HARDWARE</type>
+    <core>Cortex-A7</core>
+    </platform>
+  <platform name="i.MX7 Dual">
+      <type>HARDWARE</type>
+    <core>Cortex-A7</core>
+    <core>Cortex-M4</core>
+    </platform>
+  <platform name="i.MX7 SDB">
+      <type>HARDWARE</type>
+    <core>Cortex-A7</core>
+    <core>Cortex-M4</core>
+    </platform>
+  <platform name="i.MX8QM">
+      <type>HARDWARE</type>
+    <core>Cortex-A72</core>
+    <core>Cortex-M4</core>
+    <core>Cortex-A53</core>
+    </platform>
+  <platform name="i.MX8QXP">
+      <type>HARDWARE</type>
+    <core>Cortex-A35</core>
+    <core>Cortex-M4</core>
+    </platform>
+  <platform name="iMX23_EVK">
+      <type>HARDWARE</type>
+    <core>ARM926EJ-S</core>
+    </platform>
+  <platform name="iMX25_PDK">
+      <type>HARDWARE</type>
+    <core>ARM926EJ-S</core>
+    </platform>
+  <platform name="iMX28_EVK">
+      <type>HARDWARE</type>
+    <core>ARM926EJ-S</core>
+    </platform>
+  <platform name="iMX50_EVK">
+      <type>HARDWARE</type>
+    <core>Cortex-A8</core>
+    </platform>
+  <platform name="iMX51_PDK">
+      <type>HARDWARE</type>
+    <core>Cortex-A8</core>
+    </platform>
+  <platform name="iMX53_QuickStart">
+      <type>HARDWARE</type>
+    <core>Cortex-A8_NS</core>
+    </platform>
+  <platform name="iMX8MM_EVK">
+      <type>HARDWARE</type>
+    <core>Cortex-M4</core>
+    <core>Cortex-A53</core>
+    </platform>
+  <platform name="iMX8M_EVK">
+      <type>HARDWARE</type>
+    <core>Cortex-M4</core>
+    <core>Cortex-A53</core>
+    </platform>
+  </manufacturer>
+<manufacturer name="Nufront">
+    <platform name="NS115 (Generic)">
+      <type>HARDWARE</type>
+    <core>Cortex-A9</core>
+    </platform>
+  <platform name="NS115DevKit">
+      <type>HARDWARE</type>
+    <core>Cortex-A9</core>
+    </platform>
+  </manufacturer>
+<manufacturer name="Origenboard.org">
+    <platform name="Exynos_4210">
+      <type>HARDWARE</type>
+    <core>Cortex-A9</core>
+    </platform>
+  </manufacturer>
+<manufacturer name="Phytec">
+    <platform name="Vybrid-VF65">
+      <type>HARDWARE</type>
+    <core>Cortex-A5</core>
+    <core>Cortex-M4</core>
+    <core>GDBServerPseudoCore_v5</core>
+    </platform>
+  <platform name="i.MX7 Dual">
+      <type>HARDWARE</type>
+    <core>Cortex-A7</core>
+    <core>Cortex-M4</core>
+    </platform>
+  <platform name="i.MX8M">
+      <type>HARDWARE</type>
+    <core>Cortex-M4</core>
+    <core>Cortex-A53</core>
+    </platform>
+  </manufacturer>
+<manufacturer name="RC Module">
+    <platform name="MB77.07">
+      <type>HARDWARE</type>
+    <core>ARM1176JZF-S</core>
+    </platform>
+  <platform name="MC127.01">
+      <type>HARDWARE</type>
+    <core>ARM1176JZF-S</core>
+    </platform>
+  <platform name="MC127.04">
+      <type>HARDWARE</type>
+    <core>Cortex-A5</core>
+    </platform>
+  <platform name="MC76.01">
+      <type>HARDWARE</type>
+    <core>ARM1176JZF-S</core>
+    </platform>
+  </manufacturer>
+<manufacturer name="Raspberry Pi Foundation">
+    <platform name="Raspberry Pi 2">
+      <type>HARDWARE</type>
+    <core>Cortex-A7</core>
+    </platform>
+  <platform name="Raspberry Pi 3">
+      <type>HARDWARE</type>
+    <core>Cortex-A53</core>
+    </platform>
+  </manufacturer>
+<manufacturer name="Realtek">
+    <platform name="Real-M200">
+      <type>HARDWARE</type>
+    <core>V8M-Generic</core>
+    </platform>
+  <platform name="Real-M300">
+      <type>HARDWARE</type>
+    <core>V8M-Generic</core>
+    </platform>
+  <platform name="Real-M500">
+      <type>HARDWARE</type>
+    <core>V8M-Generic</core>
+    </platform>
+  </manufacturer>
+<manufacturer name="Renesas">
+    <platform name="R-Car H3">
+      <type>HARDWARE</type>
+    <core>Cortex-A57</core>
+    <core>Cortex-R7</core>
+    <core>Cortex-A53</core>
+    </platform>
+  <platform name="R-Car M3 Salvator-X">
+      <type>HARDWARE</type>
+    <core>Cortex-A57</core>
+    <core>Cortex-R7</core>
+    <core>Cortex-A53</core>
+    </platform>
+  <platform name="R7S721001">
+      <type>HARDWARE</type>
+    <core>GDBServerPseudoCore</core>
+    <core>Cortex-A9</core>
+    </platform>
+  <platform name="RZA1L">
+      <type>HARDWARE</type>
+    <core>GDBServerPseudoCore</core>
+    <core>Cortex-A9</core>
+    </platform>
+  <platform name="RZA2M">
+      <type>HARDWARE</type>
+    <core>Cortex-A9</core>
+    </platform>
+  <platform name="RZT1_R7S910x01">
+      <type>HARDWARE</type>
+    <core>Cortex-R4</core>
+    </platform>
+  <platform name="RZT1_R7S910x02">
+      <type>HARDWARE</type>
+    <core>Cortex-R4</core>
+    </platform>
+  <platform name="RZT1_R7S910x06">
+      <type>HARDWARE</type>
+    <core>Cortex-R4</core>
+    </platform>
+  <platform name="RZT1_R7S910x07">
+      <type>HARDWARE</type>
+    <core>Cortex-R4</core>
+    </platform>
+  <platform name="RZT1_R7S910x11">
+      <type>HARDWARE</type>
+    <core>Cortex-R4</core>
+    </platform>
+  <platform name="RZT1_R7S910x13">
+      <type>HARDWARE</type>
+    <core>Cortex-R4</core>
+    </platform>
+  <platform name="RZT1_R7S910x15">
+      <type>HARDWARE</type>
+    <core>Cortex-M3</core>
+    <core>Cortex-R4</core>
+    </platform>
+  <platform name="RZT1_R7S910x16">
+      <type>HARDWARE</type>
+    <core>Cortex-M3</core>
+    <core>Cortex-R4</core>
+    </platform>
+  <platform name="RZT1_R7S910x17">
+      <type>HARDWARE</type>
+    <core>Cortex-M3</core>
+    <core>Cortex-R4</core>
+    </platform>
+  <platform name="RZT1_R7S910x18">
+      <type>HARDWARE</type>
+    <core>Cortex-M3</core>
+    <core>Cortex-R4</core>
+    </platform>
+  <platform name="RZT1_R7S910x25">
+      <type>HARDWARE</type>
+    <core>Cortex-R4</core>
+    </platform>
+  <platform name="RZT1_R7S910x26">
+      <type>HARDWARE</type>
+    <core>Cortex-R4</core>
+    </platform>
+  <platform name="RZT1_R7S910x27">
+      <type>HARDWARE</type>
+    <core>Cortex-R4</core>
+    </platform>
+  <platform name="RZT1_R7S910x28">
+      <type>HARDWARE</type>
+    <core>Cortex-R4</core>
+    </platform>
+  <platform name="RZT1_RTK7910018S00000BE">
+      <type>HARDWARE</type>
+    <core>Cortex-M3</core>
+    <core>Cortex-R4</core>
+    </platform>
+  <platform name="RZT1_RTK7910018S90000BE">
+      <type>HARDWARE</type>
+    <core>Cortex-M3</core>
+    <core>Cortex-R4</core>
+    </platform>
+  <platform name="RZT1_RTK7910022C00000BR">
+      <type>HARDWARE</type>
+    <core>Cortex-M3</core>
+    <core>Cortex-R4</core>
+    </platform>
+  <platform name="R_CAR_E2_R8A7794">
+      <type>HARDWARE</type>
+    <core>Cortex-A7</core>
+    </platform>
+  </manufacturer>
+<manufacturer name="ST">
+    <platform name="SPEAr1310">
+      <type>HARDWARE</type>
+    <core>Cortex-A9</core>
+    </platform>
+  <platform name="SPEAr300">
+      <type>HARDWARE</type>
+    <core>ARM926EJ-S</core>
+    </platform>
+  <platform name="SPEAr300 (Generic)">
+      <type>HARDWARE</type>
+    <core>ARM926EJ-S</core>
+    </platform>
+  <platform name="SPEAr310">
+      <type>HARDWARE</type>
+    <core>ARM926EJ-S</core>
+    </platform>
+  <platform name="SPEAr310 (Generic)">
+      <type>HARDWARE</type>
+    <core>ARM926EJ-S</core>
+    </platform>
+  <platform name="SPEAr320">
+      <type>HARDWARE</type>
+    <core>ARM926EJ-S</core>
+    </platform>
+  <platform name="SPEAr320 (Generic)">
+      <type>HARDWARE</type>
+    <core>ARM926EJ-S</core>
+    </platform>
+  <platform name="SPEAr600">
+      <type>HARDWARE</type>
+    <core>ARM926EJ-S</core>
+    </platform>
+  <platform name="SPEAr600 (Generic)">
+      <type>HARDWARE</type>
+    <core>ARM926EJ-S</core>
+    </platform>
+  <platform name="STA2064 (Generic)">
+      <type>HARDWARE</type>
+    <core>ARM1176JZF-S</core>
+    </platform>
+  <platform name="STR912 (Generic)">
+      <type>HARDWARE</type>
+    <core>ARM966E-S</core>
+    </platform>
+  </manufacturer>
+<manufacturer name="ST-Ericsson">
+    <platform name="AP9500 (Generic)">
+      <type>HARDWARE</type>
+    <core>Cortex-A9</core>
+    </platform>
+  <platform name="U8500 (Generic)">
+      <type>HARDWARE</type>
+    <core>Cortex-A9</core>
+    </platform>
+  <platform name="U8500_EVB">
+      <type>HARDWARE</type>
+    <core>Cortex-A9</core>
+    </platform>
+  <platform name="U8540 (Generic)">
+      <type>HARDWARE</type>
+    <core>Cortex-A9</core>
+    </platform>
+  </manufacturer>
+<manufacturer name="STMicroelectronics">
+    <platform name="STM32MP15x">
+      <type>HARDWARE</type>
+    <core>Cortex-A7</core>
+    <core>Cortex-M4</core>
+    </platform>
+  </manufacturer>
+<manufacturer name="Samsung">
+    <platform name="Exynos 4210 (Generic)">
+      <type>HARDWARE</type>
+    <core>Cortex-A9</core>
+    </platform>
+  <platform name="Exynos 44XX (Generic)">
+      <type>HARDWARE</type>
+    <core>Cortex-A9</core>
+    </platform>
+  <platform name="Exynos 5250">
+      <type>HARDWARE</type>
+    <core>Cortex-A15</core>
+    </platform>
+  <platform name="Exynos_4210">
+      <type>HARDWARE</type>
+    <core>Cortex-A9</core>
+    </platform>
+  <platform name="S5PC100 (Generic)">
+      <type>HARDWARE</type>
+    <core>Cortex-A8</core>
+    </platform>
+  <platform name="S5PC100_SMDK">
+      <type>HARDWARE</type>
+    <core>Cortex-A8</core>
+    </platform>
+  <platform name="S5PC110 (Generic)">
+      <type>HARDWARE</type>
+    <core>Cortex-A8</core>
+    </platform>
+  <platform name="S5PC110_SMDK">
+      <type>HARDWARE</type>
+    <core>Cortex-A8</core>
+    </platform>
+  <platform name="S5PV210 (Generic)">
+      <type>HARDWARE</type>
+    <core>Cortex-A8</core>
+    </platform>
+  <platform name="S5PV210_SMDK">
+      <type>HARDWARE</type>
+    <core>Cortex-A8</core>
+    </platform>
+  </manufacturer>
+<manufacturer name="Silica_Phytec">
+    <platform name="iMX35">
+      <type>HARDWARE</type>
+    <core>ARM1136JF-S</core>
+    </platform>
+  </manufacturer>
+<manufacturer name="Spansion">
+    <platform name="MB9BF506N (Generic)">
+      <type>HARDWARE</type>
+    <core>Cortex-M3</core>
+    </platform>
+  <platform name="S6J3110EJAA">
+      <type>HARDWARE</type>
+    <core>Cortex-R5</core>
+    </platform>
+  </manufacturer>
+<manufacturer name="Spectrum_Digital">
+    <platform name="AM1707_EVM">
+      <type>HARDWARE</type>
+    <core>ARM926EJ-S</core>
+    </platform>
+  <platform name="DM8168_EVM">
+      <type>HARDWARE</type>
+    <core>Cortex-A8_NS</core>
+    </platform>
+  <platform name="TMDXEVM6467T">
+      <type>HARDWARE</type>
+    <core>ARM926EJ-S</core>
+    </platform>
+  </manufacturer>
+<manufacturer name="Texas_Instruments">
+    <platform name="AM1707 (Generic)">
+      <type>HARDWARE</type>
+    <core>ARM926EJ-S</core>
+    </platform>
+  <platform name="AM1808 (Generic)">
+      <type>HARDWARE</type>
+    <core>ARM926EJ-S</core>
+    </platform>
+  <platform name="AM335x_EVM">
+      <type>HARDWARE</type>
+    <core>Cortex-A8_NS</core>
+    </platform>
+  <platform name="AM3517 (Generic)">
+      <type>HARDWARE</type>
+    <core>Cortex-A8_NS</core>
+    </platform>
+  <platform name="AM3730 (Generic)">
+      <type>HARDWARE</type>
+    <core>Cortex-A8_NS</core>
+    </platform>
+  <platform name="AM387x (Generic)">
+      <type>HARDWARE</type>
+    <core>Cortex-A8_NS</core>
+    </platform>
+  <platform name="AM437x">
+      <type>HARDWARE</type>
+    <core>Cortex-M3</core>
+    <core>Cortex-A9</core>
+    </platform>
+  <platform name="Blaze_MDP">
+      <type>HARDWARE</type>
+    <core>Cortex-A9</core>
+    </platform>
+  <platform name="DM3725 (Generic)">
+      <type>HARDWARE</type>
+    <core>Cortex-A8_NS</core>
+    </platform>
+  <platform name="DM3730 (Generic)">
+      <type>HARDWARE</type>
+    <core>Cortex-A8_NS</core>
+    </platform>
+  <platform name="DM6467 (Generic)">
+      <type>HARDWARE</type>
+    <core>ARM926EJ-S</core>
+    </platform>
+  <platform name="DM814x (Generic)">
+      <type>HARDWARE</type>
+    <core>Cortex-A8_NS</core>
+    </platform>
+  <platform name="DM8168 (Generic)">
+      <type>HARDWARE</type>
+    <core>Cortex-A8_NS</core>
+    </platform>
+  <platform name="EVMK2H KeyStone II">
+      <type>HARDWARE</type>
+    <core>Cortex-A15</core>
+    </platform>
+  <platform name="OMAP 3430 (Generic)">
+      <type>HARDWARE</type>
+    <core>Cortex-A8_NS</core>
+    </platform>
+  <platform name="OMAP 34XX (Generic)">
+      <type>HARDWARE</type>
+    <core>Cortex-A8_NS</core>
+    </platform>
+  <platform name="OMAP 3530 (Generic)">
+      <type>HARDWARE</type>
+    <core>Cortex-A8_NS</core>
+    </platform>
+  <platform name="OMAP 35XX (Generic)">
+      <type>HARDWARE</type>
+    <core>Cortex-A8_NS</core>
+    </platform>
+  <platform name="OMAP 3630 (Generic)">
+      <type>HARDWARE</type>
+    <core>Cortex-A8_NS</core>
+    </platform>
+  <platform name="OMAP 4430 (Generic)">
+      <type>HARDWARE</type>
+    <core>Cortex-M3</core>
+    <core>Cortex-A9</core>
+    </platform>
+  <platform name="OMAP 4460 (Generic)">
+      <type>HARDWARE</type>
+    <core>Cortex-M3</core>
+    <core>Cortex-A9</core>
+    </platform>
+  <platform name="OMAP 543X (Generic)">
+      <type>HARDWARE</type>
+    <core>Cortex-A15</core>
+    <core>Cortex-M4</core>
+    </platform>
+  <platform name="OMAP L138 (Generic)">
+      <type>HARDWARE</type>
+    <core>ARM926EJ-S</core>
+    </platform>
+  <platform name="RM57Lx">
+      <type>HARDWARE</type>
+    <core>Cortex-R5</core>
+    </platform>
+  <platform name="TMDX570LS04HDK">
+      <type>HARDWARE</type>
+    <core>Cortex-R4</core>
+    </platform>
+  <platform name="TMDX570LS12HDK">
+      <type>HARDWARE</type>
+    <core>Cortex-R4</core>
+    </platform>
+  <platform name="TMDX570LS31HDK">
+      <type>HARDWARE</type>
+    <core>Cortex-R4</core>
+    </platform>
+  <platform name="TMDXRM42HDK">
+      <type>HARDWARE</type>
+    <core>Cortex-R4</core>
+    </platform>
+  <platform name="TMDXRM46HDK">
+      <type>HARDWARE</type>
+    <core>Cortex-R4</core>
+    </platform>
+  <platform name="TMDXRM48HDK">
+      <type>HARDWARE</type>
+    <core>Cortex-R4</core>
+    </platform>
+  </manufacturer>
+<manufacturer name="Xilinx">
+    <platform name="Zynq UltraSCALE">
+      <type>HARDWARE</type>
+    <core>Cortex-R5</core>
+    <core>Cortex-A53</core>
+    </platform>
+  <platform name="Zynq-7000_EK">
+      <type>HARDWARE</type>
+    <core>Cortex-A9</core>
+    </platform>
+  <platform name="Zynq-7000_EK_I">
+      <type>HARDWARE</type>
+    <core>Cortex-A9</core>
+    </platform>
+  </manufacturer>
+<manufacturer name="beagleboard.org">
+    <platform name="OMAP_3530">
+      <type>HARDWARE</type>
+    <core>Cortex-A8_NS</core>
+    </platform>
+  <platform name="xM">
+      <type>HARDWARE</type>
+    <core>Cortex-A8_NS</core>
+    </platform>
+  </manufacturer>
+<manufacturer name="mbed">
+    <platform name="NXP LPC11U24">
+      <type>HARDWARE</type>
+    <core>Cortex-M0</core>
+    </platform>
+  <platform name="NXP LPC1768">
+      <type>HARDWARE</type>
+    <core>Cortex-M3</core>
+    </platform>
+  </manufacturer>
+<manufacturer name="nVIDIA">
+    <platform name="Jetson TX2">
+      <type>HARDWARE</type>
+    <core>Cortex-A57</core>
+    <core>Cortex-R5</core>
+    </platform>
+  <platform name="Tegra 250 (Generic)">
+      <type>HARDWARE</type>
+    <core>ARM7TDMI_r4</core>
+    <core>Cortex-A9</core>
+    </platform>
+  <platform name="Tegra 3 (Generic)">
+      <type>HARDWARE</type>
+    <core>ARM7TDMI_r4</core>
+    <core>Cortex-A9</core>
+    </platform>
+  <platform name="Tegra_250_Dev_Kit">
+      <type>HARDWARE</type>
+    <core>ARM7TDMI_r4</core>
+    <core>Cortex-A9</core>
+    </platform>
+  <platform name="Tegra_3">
+      <type>HARDWARE</type>
+    <core>ARM7TDMI_r4</core>
+    <core>Cortex-A9</core>
+    </platform>
+  </manufacturer>
+<manufacturer name="pandaboard.org">
+    <platform name="OMAP_4430">
+      <type>HARDWARE</type>
+    <core>Cortex-M3</core>
+    <core>Cortex-A9</core>
+    </platform>
+  <platform name="OMAP_4460">
+      <type>HARDWARE</type>
+    <core>Cortex-M3</core>
+    <core>Cortex-A9</core>
+    </platform>
+  <platform name="OMAP_5432">
+      <type>HARDWARE</type>
+    <core>Cortex-A15</core>
+    <core>Cortex-M4</core>
+    </platform>
+  </manufacturer>
+</core_contents>

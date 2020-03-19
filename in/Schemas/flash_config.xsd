@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+            targetNamespace="http://www.arm.com/flash_config"
+            xmlns="http://www.arm.com/flash_config"
+            xmlns:xi="http://www.w3.org/2001/XInclude"
+            elementFormDefault="qualified">
+     
+    <xs:import namespace="http://www.w3.org/XML/1998/namespace" schemaLocation="http://www.w3.org/2009/01/xml.xsd"/>
+
+ 
+     <xs:element name="flash_config">
+        <xs:complexType>
+            <xs:complexContent>
+                <xs:restriction base="xs:anyType">
+                    <xs:sequence>
+                        <xs:element name="devices" type="flash_device_list" maxOccurs="1"/>
+                        <xs:element name="method_configs" type="flash_method_config_list" maxOccurs="1"/>
+                    </xs:sequence>
+                </xs:restriction>
+            </xs:complexContent>
+        </xs:complexType>      
+    </xs:element>
+ 
+     <xs:complexType name="flash_device_list">
+        <xs:complexContent> 
+            <xs:restriction base="xs:anyType">
+                <xs:sequence>
+                    <xs:element name="device" type="flash_device_type" minOccurs="1" maxOccurs="unbounded"/>
+                </xs:sequence>
+            </xs:restriction>
+        </xs:complexContent>
+    </xs:complexType>
+    
+    <xs:complexType name="flash_region_type">
+        <xs:attribute name="address" type="xs:string" use="required"/>
+        <xs:attribute name="size"    type="xs:string" use="required"/>
+    </xs:complexType>
+
+    <xs:complexType name="flash_region_list">
+         <xs:complexContent> 
+             <xs:restriction base="xs:anyType">
+               <xs:sequence>
+                    <xs:element name="region" type="flash_region_type" minOccurs="1" maxOccurs="unbounded"/>
+                </xs:sequence>
+            </xs:restriction>
+         </xs:complexContent>
+    </xs:complexType>
+
+
+    <xs:complexType name="flash_device_type">    
+         <xs:complexContent>
+             <xs:restriction base="xs:anyType">
+                <xs:sequence>
+                    <xs:element name="regions" type="flash_region_list" minOccurs="0"/>
+                    <xs:element name="programming_type" type="flash_programming_type"/>
+                </xs:sequence>
+                <xs:attribute name="name" type="xs:string" use="required"/>
+                <xs:attribute name="description" type="xs:string" use="optional"/>
+            </xs:restriction>
+         </xs:complexContent>
+    </xs:complexType>
+    
+    <xs:complexType name="flash_programming_type">   
+        <xs:complexContent> 
+            <xs:restriction base="xs:anyType">  
+                <xs:sequence>
+                    <xs:element name="method" type="flash_method" minOccurs="1"/>
+                    <xs:element name="setup" type="flash_script" minOccurs="0"/>
+                    <xs:element name="teardown" type="flash_script" minOccurs="0"/>
+                </xs:sequence>
+                <xs:attribute name="type" type="xs:string" use="required"/>
+            </xs:restriction>
+        </xs:complexContent> 
+    </xs:complexType>
+
+    <xs:complexType name="flash_method">
+        <xs:attribute name="language" type="xs:string" use="required"/>
+        <xs:attribute name="script"   type="xs:string" use="required"/>
+        <xs:attribute name="class"    type="xs:string" use="required"/>
+        <xs:attribute name="method_config" type="xs:string" use="required"/>
+    </xs:complexType>
+
+    <xs:complexType name="flash_script">
+        <xs:attribute name="script" type="xs:string" use="required"/>
+        <xs:attribute name="method" type="xs:string" use="required"/>
+    </xs:complexType>
+
+    <xs:complexType name="flash_method_config_list">
+        <xs:complexContent> 
+            <xs:restriction base="xs:anyType">
+                <xs:sequence>
+                    <xs:element name="method_config" type="flash_method_config" minOccurs="1" maxOccurs="unbounded"/>
+                </xs:sequence>
+            </xs:restriction>
+        </xs:complexContent> 
+    </xs:complexType>
+
+    <xs:complexType name="flash_method_config">     
+        <xs:complexContent>
+            <xs:restriction base="xs:anyType"> 
+                <xs:sequence>
+                    <xs:element name="params" type="flash_params_list" maxOccurs="1"/>
+                    <xs:element name="algorithm_characteristics" type="flash_algorithm_characteristics_list" minOccurs="0" maxOccurs="1"/>
+                </xs:sequence>
+                <xs:attribute name="id" type="xs:string" use="required"/>
+            </xs:restriction>
+        </xs:complexContent> 
+    </xs:complexType>
+
+    <xs:complexType name="flash_parameter">
+        <xs:attribute name="name"  type="xs:string" use="required"/>
+        <xs:attribute name="type"  type="xs:string" use="required"/>
+        <xs:attribute name="value" type="xs:string" use="required"/>
+    </xs:complexType>
+
+    <xs:complexType name="flash_algorithm_characteristics_list">
+        <xs:complexContent>
+            <xs:restriction base="xs:anyType">
+                <xs:sequence>
+                    <xs:element name="value" type="flash_parameter" minOccurs="0" maxOccurs="unbounded"/>
+                </xs:sequence>
+            </xs:restriction>
+        </xs:complexContent> 
+    </xs:complexType>
+
+    <xs:complexType name="flash_params_list">
+        <xs:complexContent>
+            <xs:restriction base="xs:anyType">
+                <xs:sequence>
+                    <xs:element name="param" type="flash_parameter" minOccurs="0" maxOccurs="unbounded"/>
+                </xs:sequence>
+            </xs:restriction>
+        </xs:complexContent> 
+    </xs:complexType>
+</xs:schema>

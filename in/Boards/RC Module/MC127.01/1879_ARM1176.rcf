@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<debug_and_trace_config>
+    <rcf_version value="1.0"/>
+    <redistributable value="true"/>
+    <debug_vehicle_config>
+        <connection address=""/>
+        <jtag_clock adaptive="true" speed="10000000"/>
+        <scctimeout value="30000"/>
+        <debug_vehicle_connection type="DSTREAM" version="">
+            <connection_config>
+                <config_item name="TResetOnInitConnect">1</config_item>
+                <config_item name="SResetOnInitConnect">0</config_item>
+                <config_item name="AllowICELatchSysRst">1</config_item>
+                <config_item name="AllowICETAPReset">1</config_item>
+                <config_item name="DoSoftTAPReset">1</config_item>
+                <config_item name="nTRSTHoldTime">10</config_item>
+                <config_item name="nTRSTPostResetTime">10</config_item>
+                <config_item name="ResetHoldTime">100</config_item>
+                <config_item name="PostResetDelay">1000</config_item>
+                <config_item name="nTRSTHighMode">0</config_item>
+                <config_item name="nTRSTLowMode">0</config_item>
+                <config_item name="nSRSTHighMode">1</config_item>
+                <config_item name="nSRSTLowMode">0</config_item>
+                <config_item name="Linked_SRST_TRST">0</config_item>
+                <config_item name="SWOBaudRate">0</config_item>
+                <config_item name="SWOMode">0</config_item>
+                <config_item name="LVDSProbeMode">1</config_item>
+                <config_item name="SWJEnable">0</config_item>
+                <config_item name="UseDeprecatedSWJ">0</config_item>
+                <config_item name="UserOut_P1">0</config_item>
+                <config_item name="UserOut_P2">0</config_item>
+                <config_item name="UserOut_P3">0</config_item>
+                <config_item name="UserOut_P4">0</config_item>
+                <config_item name="UserOut_P5">0</config_item>
+                <config_item name="UserOut_P6_COAX">0</config_item>
+                <config_item name="UserOut_DBGRQ">0</config_item>
+                <config_item name="PowerFilterTime">100</config_item>
+                <config_item name="DSTREAMCS20">0</config_item>
+            </connection_config>
+        </debug_vehicle_connection>
+    </debug_vehicle_config>
+    <platform info_url="" manufacturer="Module" title="1879_ARM1176">
+        <scanchain>
+            <device name="ARM1176JZF-S" type="ARM1176JZF-S">
+                <config_items>
+                    <config_item name="IGNORE_BAD_JTAG_IDCODE">True</config_item>
+                </config_items>
+            </device>
+            <device name="ETM" type="ETM"/>
+            <device name="ETB" type="ETB"/>
+        </scanchain>
+    </platform>
+</debug_and_trace_config>

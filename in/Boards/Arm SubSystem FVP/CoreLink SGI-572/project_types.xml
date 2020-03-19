@@ -1,0 +1,1159 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!--Copyright (C) 2009-2016 ARM Limited. All rights reserved.--><platform_data xmlns="http://www.arm.com/project_type" xmlns:peripheral="http://com.arm.targetconfigurationeditor" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" info_url="" type="RTSM" xsi:schemaLocation="http://www.arm.com/project_type ../../../Schemas/platform_data-1.xsd">
+    <project_type_list>
+        <project_type type="BARE_METAL">
+            <name language="en">Bare Metal Debug</name>
+            <description language="en">This allows a bare-metal debug connection.</description>
+            <execution_environment id="BARE_METAL">
+                <name language="en">Bare Metal Debug</name>
+                <description language="en">Connect to the simulation via the CADI interface</description>
+                <param default="CDB://cadi_config.xml" id="config_file" type="string" visible="false"/>
+                <!--The model_params param enables the model parameters field in the launch configuration. The parameters are passed to the setup_script.-->
+                <param default="" id="model_params" type="string" visible="true">
+                    <name>Model parameters</name>
+                    <description>Model parameters</description>
+                </param>
+                <!--The script below is used to launch the model, if its executable is known. It can be used as a basis for more specific scripts.-->
+                <setup_script>
+                    <name>CDB://Scripts/rtsm_launcher.py</name>
+                    <arguments>"FVP_CSS_Ashbrook"</arguments>
+                </setup_script>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A72_0</name>
+                    <xi:include href="../../../Include/bare_metal_fvp_activity_description.xml"/>
+                    <core connection_id="ARM_Cortex-A72_0">
+                        <core_definition>Cortex-A72</core_definition>
+                    </core>
+                    <param default="CDB://dtsl_config_script.py" id="dtsl_config_script" type="string" visible="false"/>
+                    <param default="DtslScript" id="dtsl_config" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A72_1</name>
+                    <xi:include href="../../../Include/bare_metal_fvp_activity_description.xml"/>
+                    <core connection_id="ARM_Cortex-A72_1">
+                        <core_definition>Cortex-A72</core_definition>
+                    </core>
+                    <param default="CDB://dtsl_config_script.py" id="dtsl_config_script" type="string" visible="false"/>
+                    <param default="DtslScript" id="dtsl_config" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A72_10</name>
+                    <xi:include href="../../../Include/bare_metal_fvp_activity_description.xml"/>
+                    <core connection_id="ARM_Cortex-A72_10">
+                        <core_definition>Cortex-A72</core_definition>
+                    </core>
+                    <param default="CDB://dtsl_config_script.py" id="dtsl_config_script" type="string" visible="false"/>
+                    <param default="DtslScript" id="dtsl_config" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A72_11</name>
+                    <xi:include href="../../../Include/bare_metal_fvp_activity_description.xml"/>
+                    <core connection_id="ARM_Cortex-A72_11">
+                        <core_definition>Cortex-A72</core_definition>
+                    </core>
+                    <param default="CDB://dtsl_config_script.py" id="dtsl_config_script" type="string" visible="false"/>
+                    <param default="DtslScript" id="dtsl_config" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A72_12</name>
+                    <xi:include href="../../../Include/bare_metal_fvp_activity_description.xml"/>
+                    <core connection_id="ARM_Cortex-A72_12">
+                        <core_definition>Cortex-A72</core_definition>
+                    </core>
+                    <param default="CDB://dtsl_config_script.py" id="dtsl_config_script" type="string" visible="false"/>
+                    <param default="DtslScript" id="dtsl_config" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A72_13</name>
+                    <xi:include href="../../../Include/bare_metal_fvp_activity_description.xml"/>
+                    <core connection_id="ARM_Cortex-A72_13">
+                        <core_definition>Cortex-A72</core_definition>
+                    </core>
+                    <param default="CDB://dtsl_config_script.py" id="dtsl_config_script" type="string" visible="false"/>
+                    <param default="DtslScript" id="dtsl_config" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A72_14</name>
+                    <xi:include href="../../../Include/bare_metal_fvp_activity_description.xml"/>
+                    <core connection_id="ARM_Cortex-A72_14">
+                        <core_definition>Cortex-A72</core_definition>
+                    </core>
+                    <param default="CDB://dtsl_config_script.py" id="dtsl_config_script" type="string" visible="false"/>
+                    <param default="DtslScript" id="dtsl_config" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A72_15</name>
+                    <xi:include href="../../../Include/bare_metal_fvp_activity_description.xml"/>
+                    <core connection_id="ARM_Cortex-A72_15">
+                        <core_definition>Cortex-A72</core_definition>
+                    </core>
+                    <param default="CDB://dtsl_config_script.py" id="dtsl_config_script" type="string" visible="false"/>
+                    <param default="DtslScript" id="dtsl_config" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A72_16</name>
+                    <xi:include href="../../../Include/bare_metal_fvp_activity_description.xml"/>
+                    <core connection_id="ARM_Cortex-A72_16">
+                        <core_definition>Cortex-A72</core_definition>
+                    </core>
+                    <param default="CDB://dtsl_config_script.py" id="dtsl_config_script" type="string" visible="false"/>
+                    <param default="DtslScript" id="dtsl_config" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A72_17</name>
+                    <xi:include href="../../../Include/bare_metal_fvp_activity_description.xml"/>
+                    <core connection_id="ARM_Cortex-A72_17">
+                        <core_definition>Cortex-A72</core_definition>
+                    </core>
+                    <param default="CDB://dtsl_config_script.py" id="dtsl_config_script" type="string" visible="false"/>
+                    <param default="DtslScript" id="dtsl_config" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A72_18</name>
+                    <xi:include href="../../../Include/bare_metal_fvp_activity_description.xml"/>
+                    <core connection_id="ARM_Cortex-A72_18">
+                        <core_definition>Cortex-A72</core_definition>
+                    </core>
+                    <param default="CDB://dtsl_config_script.py" id="dtsl_config_script" type="string" visible="false"/>
+                    <param default="DtslScript" id="dtsl_config" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A72_19</name>
+                    <xi:include href="../../../Include/bare_metal_fvp_activity_description.xml"/>
+                    <core connection_id="ARM_Cortex-A72_19">
+                        <core_definition>Cortex-A72</core_definition>
+                    </core>
+                    <param default="CDB://dtsl_config_script.py" id="dtsl_config_script" type="string" visible="false"/>
+                    <param default="DtslScript" id="dtsl_config" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A72_2</name>
+                    <xi:include href="../../../Include/bare_metal_fvp_activity_description.xml"/>
+                    <core connection_id="ARM_Cortex-A72_2">
+                        <core_definition>Cortex-A72</core_definition>
+                    </core>
+                    <param default="CDB://dtsl_config_script.py" id="dtsl_config_script" type="string" visible="false"/>
+                    <param default="DtslScript" id="dtsl_config" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A72_20</name>
+                    <xi:include href="../../../Include/bare_metal_fvp_activity_description.xml"/>
+                    <core connection_id="ARM_Cortex-A72_20">
+                        <core_definition>Cortex-A72</core_definition>
+                    </core>
+                    <param default="CDB://dtsl_config_script.py" id="dtsl_config_script" type="string" visible="false"/>
+                    <param default="DtslScript" id="dtsl_config" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A72_21</name>
+                    <xi:include href="../../../Include/bare_metal_fvp_activity_description.xml"/>
+                    <core connection_id="ARM_Cortex-A72_21">
+                        <core_definition>Cortex-A72</core_definition>
+                    </core>
+                    <param default="CDB://dtsl_config_script.py" id="dtsl_config_script" type="string" visible="false"/>
+                    <param default="DtslScript" id="dtsl_config" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A72_22</name>
+                    <xi:include href="../../../Include/bare_metal_fvp_activity_description.xml"/>
+                    <core connection_id="ARM_Cortex-A72_22">
+                        <core_definition>Cortex-A72</core_definition>
+                    </core>
+                    <param default="CDB://dtsl_config_script.py" id="dtsl_config_script" type="string" visible="false"/>
+                    <param default="DtslScript" id="dtsl_config" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A72_23</name>
+                    <xi:include href="../../../Include/bare_metal_fvp_activity_description.xml"/>
+                    <core connection_id="ARM_Cortex-A72_23">
+                        <core_definition>Cortex-A72</core_definition>
+                    </core>
+                    <param default="CDB://dtsl_config_script.py" id="dtsl_config_script" type="string" visible="false"/>
+                    <param default="DtslScript" id="dtsl_config" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A72_24</name>
+                    <xi:include href="../../../Include/bare_metal_fvp_activity_description.xml"/>
+                    <core connection_id="ARM_Cortex-A72_24">
+                        <core_definition>Cortex-A72</core_definition>
+                    </core>
+                    <param default="CDB://dtsl_config_script.py" id="dtsl_config_script" type="string" visible="false"/>
+                    <param default="DtslScript" id="dtsl_config" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A72_25</name>
+                    <xi:include href="../../../Include/bare_metal_fvp_activity_description.xml"/>
+                    <core connection_id="ARM_Cortex-A72_25">
+                        <core_definition>Cortex-A72</core_definition>
+                    </core>
+                    <param default="CDB://dtsl_config_script.py" id="dtsl_config_script" type="string" visible="false"/>
+                    <param default="DtslScript" id="dtsl_config" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A72_26</name>
+                    <xi:include href="../../../Include/bare_metal_fvp_activity_description.xml"/>
+                    <core connection_id="ARM_Cortex-A72_26">
+                        <core_definition>Cortex-A72</core_definition>
+                    </core>
+                    <param default="CDB://dtsl_config_script.py" id="dtsl_config_script" type="string" visible="false"/>
+                    <param default="DtslScript" id="dtsl_config" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A72_27</name>
+                    <xi:include href="../../../Include/bare_metal_fvp_activity_description.xml"/>
+                    <core connection_id="ARM_Cortex-A72_27">
+                        <core_definition>Cortex-A72</core_definition>
+                    </core>
+                    <param default="CDB://dtsl_config_script.py" id="dtsl_config_script" type="string" visible="false"/>
+                    <param default="DtslScript" id="dtsl_config" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A72_28</name>
+                    <xi:include href="../../../Include/bare_metal_fvp_activity_description.xml"/>
+                    <core connection_id="ARM_Cortex-A72_28">
+                        <core_definition>Cortex-A72</core_definition>
+                    </core>
+                    <param default="CDB://dtsl_config_script.py" id="dtsl_config_script" type="string" visible="false"/>
+                    <param default="DtslScript" id="dtsl_config" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A72_29</name>
+                    <xi:include href="../../../Include/bare_metal_fvp_activity_description.xml"/>
+                    <core connection_id="ARM_Cortex-A72_29">
+                        <core_definition>Cortex-A72</core_definition>
+                    </core>
+                    <param default="CDB://dtsl_config_script.py" id="dtsl_config_script" type="string" visible="false"/>
+                    <param default="DtslScript" id="dtsl_config" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A72_3</name>
+                    <xi:include href="../../../Include/bare_metal_fvp_activity_description.xml"/>
+                    <core connection_id="ARM_Cortex-A72_3">
+                        <core_definition>Cortex-A72</core_definition>
+                    </core>
+                    <param default="CDB://dtsl_config_script.py" id="dtsl_config_script" type="string" visible="false"/>
+                    <param default="DtslScript" id="dtsl_config" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A72_30</name>
+                    <xi:include href="../../../Include/bare_metal_fvp_activity_description.xml"/>
+                    <core connection_id="ARM_Cortex-A72_30">
+                        <core_definition>Cortex-A72</core_definition>
+                    </core>
+                    <param default="CDB://dtsl_config_script.py" id="dtsl_config_script" type="string" visible="false"/>
+                    <param default="DtslScript" id="dtsl_config" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A72_31</name>
+                    <xi:include href="../../../Include/bare_metal_fvp_activity_description.xml"/>
+                    <core connection_id="ARM_Cortex-A72_31">
+                        <core_definition>Cortex-A72</core_definition>
+                    </core>
+                    <param default="CDB://dtsl_config_script.py" id="dtsl_config_script" type="string" visible="false"/>
+                    <param default="DtslScript" id="dtsl_config" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A72_32</name>
+                    <xi:include href="../../../Include/bare_metal_fvp_activity_description.xml"/>
+                    <core connection_id="ARM_Cortex-A72_32">
+                        <core_definition>Cortex-A72</core_definition>
+                    </core>
+                    <param default="CDB://dtsl_config_script.py" id="dtsl_config_script" type="string" visible="false"/>
+                    <param default="DtslScript" id="dtsl_config" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A72_33</name>
+                    <xi:include href="../../../Include/bare_metal_fvp_activity_description.xml"/>
+                    <core connection_id="ARM_Cortex-A72_33">
+                        <core_definition>Cortex-A72</core_definition>
+                    </core>
+                    <param default="CDB://dtsl_config_script.py" id="dtsl_config_script" type="string" visible="false"/>
+                    <param default="DtslScript" id="dtsl_config" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A72_34</name>
+                    <xi:include href="../../../Include/bare_metal_fvp_activity_description.xml"/>
+                    <core connection_id="ARM_Cortex-A72_34">
+                        <core_definition>Cortex-A72</core_definition>
+                    </core>
+                    <param default="CDB://dtsl_config_script.py" id="dtsl_config_script" type="string" visible="false"/>
+                    <param default="DtslScript" id="dtsl_config" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A72_35</name>
+                    <xi:include href="../../../Include/bare_metal_fvp_activity_description.xml"/>
+                    <core connection_id="ARM_Cortex-A72_35">
+                        <core_definition>Cortex-A72</core_definition>
+                    </core>
+                    <param default="CDB://dtsl_config_script.py" id="dtsl_config_script" type="string" visible="false"/>
+                    <param default="DtslScript" id="dtsl_config" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A72_36</name>
+                    <xi:include href="../../../Include/bare_metal_fvp_activity_description.xml"/>
+                    <core connection_id="ARM_Cortex-A72_36">
+                        <core_definition>Cortex-A72</core_definition>
+                    </core>
+                    <param default="CDB://dtsl_config_script.py" id="dtsl_config_script" type="string" visible="false"/>
+                    <param default="DtslScript" id="dtsl_config" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A72_37</name>
+                    <xi:include href="../../../Include/bare_metal_fvp_activity_description.xml"/>
+                    <core connection_id="ARM_Cortex-A72_37">
+                        <core_definition>Cortex-A72</core_definition>
+                    </core>
+                    <param default="CDB://dtsl_config_script.py" id="dtsl_config_script" type="string" visible="false"/>
+                    <param default="DtslScript" id="dtsl_config" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A72_38</name>
+                    <xi:include href="../../../Include/bare_metal_fvp_activity_description.xml"/>
+                    <core connection_id="ARM_Cortex-A72_38">
+                        <core_definition>Cortex-A72</core_definition>
+                    </core>
+                    <param default="CDB://dtsl_config_script.py" id="dtsl_config_script" type="string" visible="false"/>
+                    <param default="DtslScript" id="dtsl_config" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A72_39</name>
+                    <xi:include href="../../../Include/bare_metal_fvp_activity_description.xml"/>
+                    <core connection_id="ARM_Cortex-A72_39">
+                        <core_definition>Cortex-A72</core_definition>
+                    </core>
+                    <param default="CDB://dtsl_config_script.py" id="dtsl_config_script" type="string" visible="false"/>
+                    <param default="DtslScript" id="dtsl_config" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A72_4</name>
+                    <xi:include href="../../../Include/bare_metal_fvp_activity_description.xml"/>
+                    <core connection_id="ARM_Cortex-A72_4">
+                        <core_definition>Cortex-A72</core_definition>
+                    </core>
+                    <param default="CDB://dtsl_config_script.py" id="dtsl_config_script" type="string" visible="false"/>
+                    <param default="DtslScript" id="dtsl_config" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A72_40</name>
+                    <xi:include href="../../../Include/bare_metal_fvp_activity_description.xml"/>
+                    <core connection_id="ARM_Cortex-A72_40">
+                        <core_definition>Cortex-A72</core_definition>
+                    </core>
+                    <param default="CDB://dtsl_config_script.py" id="dtsl_config_script" type="string" visible="false"/>
+                    <param default="DtslScript" id="dtsl_config" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A72_41</name>
+                    <xi:include href="../../../Include/bare_metal_fvp_activity_description.xml"/>
+                    <core connection_id="ARM_Cortex-A72_41">
+                        <core_definition>Cortex-A72</core_definition>
+                    </core>
+                    <param default="CDB://dtsl_config_script.py" id="dtsl_config_script" type="string" visible="false"/>
+                    <param default="DtslScript" id="dtsl_config" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A72_42</name>
+                    <xi:include href="../../../Include/bare_metal_fvp_activity_description.xml"/>
+                    <core connection_id="ARM_Cortex-A72_42">
+                        <core_definition>Cortex-A72</core_definition>
+                    </core>
+                    <param default="CDB://dtsl_config_script.py" id="dtsl_config_script" type="string" visible="false"/>
+                    <param default="DtslScript" id="dtsl_config" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A72_43</name>
+                    <xi:include href="../../../Include/bare_metal_fvp_activity_description.xml"/>
+                    <core connection_id="ARM_Cortex-A72_43">
+                        <core_definition>Cortex-A72</core_definition>
+                    </core>
+                    <param default="CDB://dtsl_config_script.py" id="dtsl_config_script" type="string" visible="false"/>
+                    <param default="DtslScript" id="dtsl_config" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A72_44</name>
+                    <xi:include href="../../../Include/bare_metal_fvp_activity_description.xml"/>
+                    <core connection_id="ARM_Cortex-A72_44">
+                        <core_definition>Cortex-A72</core_definition>
+                    </core>
+                    <param default="CDB://dtsl_config_script.py" id="dtsl_config_script" type="string" visible="false"/>
+                    <param default="DtslScript" id="dtsl_config" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A72_45</name>
+                    <xi:include href="../../../Include/bare_metal_fvp_activity_description.xml"/>
+                    <core connection_id="ARM_Cortex-A72_45">
+                        <core_definition>Cortex-A72</core_definition>
+                    </core>
+                    <param default="CDB://dtsl_config_script.py" id="dtsl_config_script" type="string" visible="false"/>
+                    <param default="DtslScript" id="dtsl_config" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A72_46</name>
+                    <xi:include href="../../../Include/bare_metal_fvp_activity_description.xml"/>
+                    <core connection_id="ARM_Cortex-A72_46">
+                        <core_definition>Cortex-A72</core_definition>
+                    </core>
+                    <param default="CDB://dtsl_config_script.py" id="dtsl_config_script" type="string" visible="false"/>
+                    <param default="DtslScript" id="dtsl_config" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A72_47</name>
+                    <xi:include href="../../../Include/bare_metal_fvp_activity_description.xml"/>
+                    <core connection_id="ARM_Cortex-A72_47">
+                        <core_definition>Cortex-A72</core_definition>
+                    </core>
+                    <param default="CDB://dtsl_config_script.py" id="dtsl_config_script" type="string" visible="false"/>
+                    <param default="DtslScript" id="dtsl_config" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A72_5</name>
+                    <xi:include href="../../../Include/bare_metal_fvp_activity_description.xml"/>
+                    <core connection_id="ARM_Cortex-A72_5">
+                        <core_definition>Cortex-A72</core_definition>
+                    </core>
+                    <param default="CDB://dtsl_config_script.py" id="dtsl_config_script" type="string" visible="false"/>
+                    <param default="DtslScript" id="dtsl_config" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A72_6</name>
+                    <xi:include href="../../../Include/bare_metal_fvp_activity_description.xml"/>
+                    <core connection_id="ARM_Cortex-A72_6">
+                        <core_definition>Cortex-A72</core_definition>
+                    </core>
+                    <param default="CDB://dtsl_config_script.py" id="dtsl_config_script" type="string" visible="false"/>
+                    <param default="DtslScript" id="dtsl_config" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A72_7</name>
+                    <xi:include href="../../../Include/bare_metal_fvp_activity_description.xml"/>
+                    <core connection_id="ARM_Cortex-A72_7">
+                        <core_definition>Cortex-A72</core_definition>
+                    </core>
+                    <param default="CDB://dtsl_config_script.py" id="dtsl_config_script" type="string" visible="false"/>
+                    <param default="DtslScript" id="dtsl_config" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A72_8</name>
+                    <xi:include href="../../../Include/bare_metal_fvp_activity_description.xml"/>
+                    <core connection_id="ARM_Cortex-A72_8">
+                        <core_definition>Cortex-A72</core_definition>
+                    </core>
+                    <param default="CDB://dtsl_config_script.py" id="dtsl_config_script" type="string" visible="false"/>
+                    <param default="DtslScript" id="dtsl_config" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A72_9</name>
+                    <xi:include href="../../../Include/bare_metal_fvp_activity_description.xml"/>
+                    <core connection_id="ARM_Cortex-A72_9">
+                        <core_definition>Cortex-A72</core_definition>
+                    </core>
+                    <param default="CDB://dtsl_config_script.py" id="dtsl_config_script" type="string" visible="false"/>
+                    <param default="DtslScript" id="dtsl_config" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A72x4 SMP Cluster 0</name>
+                    <xi:include href="../../../Include/bare_metal_fvp_activity_description.xml"/>
+                    <core connection_id="ARM_Cortex-A72x4 SMP Cluster 0">
+                        <core_definition>Cortex-A72</core_definition>
+                    </core>
+                    <param default="CDB://dtsl_config_script.py" id="dtsl_config_script" type="string" visible="false"/>
+                    <param default="DtslScript" id="dtsl_config" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A72x4 SMP Cluster 1</name>
+                    <xi:include href="../../../Include/bare_metal_fvp_activity_description.xml"/>
+                    <core connection_id="ARM_Cortex-A72x4 SMP Cluster 1">
+                        <core_definition>Cortex-A72</core_definition>
+                    </core>
+                    <param default="CDB://dtsl_config_script.py" id="dtsl_config_script" type="string" visible="false"/>
+                    <param default="DtslScript" id="dtsl_config" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A72x4 SMP Cluster 10</name>
+                    <xi:include href="../../../Include/bare_metal_fvp_activity_description.xml"/>
+                    <core connection_id="ARM_Cortex-A72x4 SMP Cluster 10">
+                        <core_definition>Cortex-A72</core_definition>
+                    </core>
+                    <param default="CDB://dtsl_config_script.py" id="dtsl_config_script" type="string" visible="false"/>
+                    <param default="DtslScript" id="dtsl_config" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A72x4 SMP Cluster 11</name>
+                    <xi:include href="../../../Include/bare_metal_fvp_activity_description.xml"/>
+                    <core connection_id="ARM_Cortex-A72x4 SMP Cluster 11">
+                        <core_definition>Cortex-A72</core_definition>
+                    </core>
+                    <param default="CDB://dtsl_config_script.py" id="dtsl_config_script" type="string" visible="false"/>
+                    <param default="DtslScript" id="dtsl_config" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A72x4 SMP Cluster 2</name>
+                    <xi:include href="../../../Include/bare_metal_fvp_activity_description.xml"/>
+                    <core connection_id="ARM_Cortex-A72x4 SMP Cluster 2">
+                        <core_definition>Cortex-A72</core_definition>
+                    </core>
+                    <param default="CDB://dtsl_config_script.py" id="dtsl_config_script" type="string" visible="false"/>
+                    <param default="DtslScript" id="dtsl_config" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A72x4 SMP Cluster 3</name>
+                    <xi:include href="../../../Include/bare_metal_fvp_activity_description.xml"/>
+                    <core connection_id="ARM_Cortex-A72x4 SMP Cluster 3">
+                        <core_definition>Cortex-A72</core_definition>
+                    </core>
+                    <param default="CDB://dtsl_config_script.py" id="dtsl_config_script" type="string" visible="false"/>
+                    <param default="DtslScript" id="dtsl_config" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A72x4 SMP Cluster 4</name>
+                    <xi:include href="../../../Include/bare_metal_fvp_activity_description.xml"/>
+                    <core connection_id="ARM_Cortex-A72x4 SMP Cluster 4">
+                        <core_definition>Cortex-A72</core_definition>
+                    </core>
+                    <param default="CDB://dtsl_config_script.py" id="dtsl_config_script" type="string" visible="false"/>
+                    <param default="DtslScript" id="dtsl_config" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A72x4 SMP Cluster 5</name>
+                    <xi:include href="../../../Include/bare_metal_fvp_activity_description.xml"/>
+                    <core connection_id="ARM_Cortex-A72x4 SMP Cluster 5">
+                        <core_definition>Cortex-A72</core_definition>
+                    </core>
+                    <param default="CDB://dtsl_config_script.py" id="dtsl_config_script" type="string" visible="false"/>
+                    <param default="DtslScript" id="dtsl_config" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A72x4 SMP Cluster 6</name>
+                    <xi:include href="../../../Include/bare_metal_fvp_activity_description.xml"/>
+                    <core connection_id="ARM_Cortex-A72x4 SMP Cluster 6">
+                        <core_definition>Cortex-A72</core_definition>
+                    </core>
+                    <param default="CDB://dtsl_config_script.py" id="dtsl_config_script" type="string" visible="false"/>
+                    <param default="DtslScript" id="dtsl_config" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A72x4 SMP Cluster 7</name>
+                    <xi:include href="../../../Include/bare_metal_fvp_activity_description.xml"/>
+                    <core connection_id="ARM_Cortex-A72x4 SMP Cluster 7">
+                        <core_definition>Cortex-A72</core_definition>
+                    </core>
+                    <param default="CDB://dtsl_config_script.py" id="dtsl_config_script" type="string" visible="false"/>
+                    <param default="DtslScript" id="dtsl_config" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A72x4 SMP Cluster 8</name>
+                    <xi:include href="../../../Include/bare_metal_fvp_activity_description.xml"/>
+                    <core connection_id="ARM_Cortex-A72x4 SMP Cluster 8">
+                        <core_definition>Cortex-A72</core_definition>
+                    </core>
+                    <param default="CDB://dtsl_config_script.py" id="dtsl_config_script" type="string" visible="false"/>
+                    <param default="DtslScript" id="dtsl_config" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A72x4 SMP Cluster 9</name>
+                    <xi:include href="../../../Include/bare_metal_fvp_activity_description.xml"/>
+                    <core connection_id="ARM_Cortex-A72x4 SMP Cluster 9">
+                        <core_definition>Cortex-A72</core_definition>
+                    </core>
+                    <param default="CDB://dtsl_config_script.py" id="dtsl_config_script" type="string" visible="false"/>
+                    <param default="DtslScript" id="dtsl_config" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-M7_0</name>
+                    <xi:include href="../../../Include/bare_metal_fvp_activity_description.xml"/>
+                    <core connection_id="ARM_Cortex-M7_0">
+                        <core_definition>Cortex-M7</core_definition>
+                    </core>
+                    <param default="CDB://dtsl_config_script.py" id="dtsl_config_script" type="string" visible="false"/>
+                    <param default="DtslScript" id="dtsl_config" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-M7_1</name>
+                    <xi:include href="../../../Include/bare_metal_fvp_activity_description.xml"/>
+                    <core connection_id="ARM_Cortex-M7_1">
+                        <core_definition>Cortex-M7</core_definition>
+                    </core>
+                    <param default="CDB://dtsl_config_script.py" id="dtsl_config_script" type="string" visible="false"/>
+                    <param default="DtslScript" id="dtsl_config" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">MULTI CLUSTER SMP</name>
+                    <xi:include href="../../../Include/bare_metal_fvp_activity_description.xml"/>
+                    <core connection_id="MULTI CLUSTER SMP">
+                        <core_definition>Cortex-A72</core_definition>
+                    </core>
+                    <param default="CDB://dtsl_config_script.py" id="dtsl_config_script" type="string" visible="false"/>
+                    <param default="DtslScript" id="dtsl_config" type="string" visible="false"/>
+                </activity>
+            </execution_environment>
+        </project_type>
+        <project_type os_abstraction="LINUX_KERNEL" type="BARE_METAL">
+            <name language="en">Linux Kernel and/or Device Driver Debug</name>
+            <description language="en">Linux Kernel and/or Device Driver Debug</description>
+            <execution_environment id="LINUX_KERNEL">
+                <name language="en">Linux Kernel Debug</name>
+                <description language="en">Connect to the simulation via the CADI interface</description>
+                <param default="CDB://cadi_config.xml" id="config_file" type="string" visible="false"/>
+                <!--The model_params param enables the model parameters field in the launch configuration. The parameters are passed to the setup_script.-->
+                <param default="" id="model_params" type="string" visible="true">
+                    <name>Model parameters</name>
+                    <description>Model parameters</description>
+                </param>
+                <!--The script below is used to launch the model, if its executable is known. It can be used as a basis for more specific scripts.-->
+                <setup_script>
+                    <name>CDB://Scripts/rtsm_launcher.py</name>
+                    <arguments>"FVP_CSS_Ashbrook"</arguments>
+                </setup_script>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A72_0</name>
+                    <xi:include href="../../../Include/linux_kernel_fvp_activity_description.xml"/>
+                    <core connection_id="ARM_Cortex-A72_0">
+                        <core_definition>Cortex-A72</core_definition>
+                    </core>
+                    <param default="CDB://dtsl_config_script.py" id="dtsl_config_script" type="string" visible="false"/>
+                    <param default="DtslScript" id="dtsl_config" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A72_1</name>
+                    <xi:include href="../../../Include/linux_kernel_fvp_activity_description.xml"/>
+                    <core connection_id="ARM_Cortex-A72_1">
+                        <core_definition>Cortex-A72</core_definition>
+                    </core>
+                    <param default="CDB://dtsl_config_script.py" id="dtsl_config_script" type="string" visible="false"/>
+                    <param default="DtslScript" id="dtsl_config" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A72_10</name>
+                    <xi:include href="../../../Include/linux_kernel_fvp_activity_description.xml"/>
+                    <core connection_id="ARM_Cortex-A72_10">
+                        <core_definition>Cortex-A72</core_definition>
+                    </core>
+                    <param default="CDB://dtsl_config_script.py" id="dtsl_config_script" type="string" visible="false"/>
+                    <param default="DtslScript" id="dtsl_config" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A72_11</name>
+                    <xi:include href="../../../Include/linux_kernel_fvp_activity_description.xml"/>
+                    <core connection_id="ARM_Cortex-A72_11">
+                        <core_definition>Cortex-A72</core_definition>
+                    </core>
+                    <param default="CDB://dtsl_config_script.py" id="dtsl_config_script" type="string" visible="false"/>
+                    <param default="DtslScript" id="dtsl_config" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A72_12</name>
+                    <xi:include href="../../../Include/linux_kernel_fvp_activity_description.xml"/>
+                    <core connection_id="ARM_Cortex-A72_12">
+                        <core_definition>Cortex-A72</core_definition>
+                    </core>
+                    <param default="CDB://dtsl_config_script.py" id="dtsl_config_script" type="string" visible="false"/>
+                    <param default="DtslScript" id="dtsl_config" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A72_13</name>
+                    <xi:include href="../../../Include/linux_kernel_fvp_activity_description.xml"/>
+                    <core connection_id="ARM_Cortex-A72_13">
+                        <core_definition>Cortex-A72</core_definition>
+                    </core>
+                    <param default="CDB://dtsl_config_script.py" id="dtsl_config_script" type="string" visible="false"/>
+                    <param default="DtslScript" id="dtsl_config" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A72_14</name>
+                    <xi:include href="../../../Include/linux_kernel_fvp_activity_description.xml"/>
+                    <core connection_id="ARM_Cortex-A72_14">
+                        <core_definition>Cortex-A72</core_definition>
+                    </core>
+                    <param default="CDB://dtsl_config_script.py" id="dtsl_config_script" type="string" visible="false"/>
+                    <param default="DtslScript" id="dtsl_config" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A72_15</name>
+                    <xi:include href="../../../Include/linux_kernel_fvp_activity_description.xml"/>
+                    <core connection_id="ARM_Cortex-A72_15">
+                        <core_definition>Cortex-A72</core_definition>
+                    </core>
+                    <param default="CDB://dtsl_config_script.py" id="dtsl_config_script" type="string" visible="false"/>
+                    <param default="DtslScript" id="dtsl_config" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A72_16</name>
+                    <xi:include href="../../../Include/linux_kernel_fvp_activity_description.xml"/>
+                    <core connection_id="ARM_Cortex-A72_16">
+                        <core_definition>Cortex-A72</core_definition>
+                    </core>
+                    <param default="CDB://dtsl_config_script.py" id="dtsl_config_script" type="string" visible="false"/>
+                    <param default="DtslScript" id="dtsl_config" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A72_17</name>
+                    <xi:include href="../../../Include/linux_kernel_fvp_activity_description.xml"/>
+                    <core connection_id="ARM_Cortex-A72_17">
+                        <core_definition>Cortex-A72</core_definition>
+                    </core>
+                    <param default="CDB://dtsl_config_script.py" id="dtsl_config_script" type="string" visible="false"/>
+                    <param default="DtslScript" id="dtsl_config" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A72_18</name>
+                    <xi:include href="../../../Include/linux_kernel_fvp_activity_description.xml"/>
+                    <core connection_id="ARM_Cortex-A72_18">
+                        <core_definition>Cortex-A72</core_definition>
+                    </core>
+                    <param default="CDB://dtsl_config_script.py" id="dtsl_config_script" type="string" visible="false"/>
+                    <param default="DtslScript" id="dtsl_config" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A72_19</name>
+                    <xi:include href="../../../Include/linux_kernel_fvp_activity_description.xml"/>
+                    <core connection_id="ARM_Cortex-A72_19">
+                        <core_definition>Cortex-A72</core_definition>
+                    </core>
+                    <param default="CDB://dtsl_config_script.py" id="dtsl_config_script" type="string" visible="false"/>
+                    <param default="DtslScript" id="dtsl_config" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A72_2</name>
+                    <xi:include href="../../../Include/linux_kernel_fvp_activity_description.xml"/>
+                    <core connection_id="ARM_Cortex-A72_2">
+                        <core_definition>Cortex-A72</core_definition>
+                    </core>
+                    <param default="CDB://dtsl_config_script.py" id="dtsl_config_script" type="string" visible="false"/>
+                    <param default="DtslScript" id="dtsl_config" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A72_20</name>
+                    <xi:include href="../../../Include/linux_kernel_fvp_activity_description.xml"/>
+                    <core connection_id="ARM_Cortex-A72_20">
+                        <core_definition>Cortex-A72</core_definition>
+                    </core>
+                    <param default="CDB://dtsl_config_script.py" id="dtsl_config_script" type="string" visible="false"/>
+                    <param default="DtslScript" id="dtsl_config" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A72_21</name>
+                    <xi:include href="../../../Include/linux_kernel_fvp_activity_description.xml"/>
+                    <core connection_id="ARM_Cortex-A72_21">
+                        <core_definition>Cortex-A72</core_definition>
+                    </core>
+                    <param default="CDB://dtsl_config_script.py" id="dtsl_config_script" type="string" visible="false"/>
+                    <param default="DtslScript" id="dtsl_config" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A72_22</name>
+                    <xi:include href="../../../Include/linux_kernel_fvp_activity_description.xml"/>
+                    <core connection_id="ARM_Cortex-A72_22">
+                        <core_definition>Cortex-A72</core_definition>
+                    </core>
+                    <param default="CDB://dtsl_config_script.py" id="dtsl_config_script" type="string" visible="false"/>
+                    <param default="DtslScript" id="dtsl_config" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A72_23</name>
+                    <xi:include href="../../../Include/linux_kernel_fvp_activity_description.xml"/>
+                    <core connection_id="ARM_Cortex-A72_23">
+                        <core_definition>Cortex-A72</core_definition>
+                    </core>
+                    <param default="CDB://dtsl_config_script.py" id="dtsl_config_script" type="string" visible="false"/>
+                    <param default="DtslScript" id="dtsl_config" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A72_24</name>
+                    <xi:include href="../../../Include/linux_kernel_fvp_activity_description.xml"/>
+                    <core connection_id="ARM_Cortex-A72_24">
+                        <core_definition>Cortex-A72</core_definition>
+                    </core>
+                    <param default="CDB://dtsl_config_script.py" id="dtsl_config_script" type="string" visible="false"/>
+                    <param default="DtslScript" id="dtsl_config" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A72_25</name>
+                    <xi:include href="../../../Include/linux_kernel_fvp_activity_description.xml"/>
+                    <core connection_id="ARM_Cortex-A72_25">
+                        <core_definition>Cortex-A72</core_definition>
+                    </core>
+                    <param default="CDB://dtsl_config_script.py" id="dtsl_config_script" type="string" visible="false"/>
+                    <param default="DtslScript" id="dtsl_config" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A72_26</name>
+                    <xi:include href="../../../Include/linux_kernel_fvp_activity_description.xml"/>
+                    <core connection_id="ARM_Cortex-A72_26">
+                        <core_definition>Cortex-A72</core_definition>
+                    </core>
+                    <param default="CDB://dtsl_config_script.py" id="dtsl_config_script" type="string" visible="false"/>
+                    <param default="DtslScript" id="dtsl_config" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A72_27</name>
+                    <xi:include href="../../../Include/linux_kernel_fvp_activity_description.xml"/>
+                    <core connection_id="ARM_Cortex-A72_27">
+                        <core_definition>Cortex-A72</core_definition>
+                    </core>
+                    <param default="CDB://dtsl_config_script.py" id="dtsl_config_script" type="string" visible="false"/>
+                    <param default="DtslScript" id="dtsl_config" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A72_28</name>
+                    <xi:include href="../../../Include/linux_kernel_fvp_activity_description.xml"/>
+                    <core connection_id="ARM_Cortex-A72_28">
+                        <core_definition>Cortex-A72</core_definition>
+                    </core>
+                    <param default="CDB://dtsl_config_script.py" id="dtsl_config_script" type="string" visible="false"/>
+                    <param default="DtslScript" id="dtsl_config" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A72_29</name>
+                    <xi:include href="../../../Include/linux_kernel_fvp_activity_description.xml"/>
+                    <core connection_id="ARM_Cortex-A72_29">
+                        <core_definition>Cortex-A72</core_definition>
+                    </core>
+                    <param default="CDB://dtsl_config_script.py" id="dtsl_config_script" type="string" visible="false"/>
+                    <param default="DtslScript" id="dtsl_config" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A72_3</name>
+                    <xi:include href="../../../Include/linux_kernel_fvp_activity_description.xml"/>
+                    <core connection_id="ARM_Cortex-A72_3">
+                        <core_definition>Cortex-A72</core_definition>
+                    </core>
+                    <param default="CDB://dtsl_config_script.py" id="dtsl_config_script" type="string" visible="false"/>
+                    <param default="DtslScript" id="dtsl_config" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A72_30</name>
+                    <xi:include href="../../../Include/linux_kernel_fvp_activity_description.xml"/>
+                    <core connection_id="ARM_Cortex-A72_30">
+                        <core_definition>Cortex-A72</core_definition>
+                    </core>
+                    <param default="CDB://dtsl_config_script.py" id="dtsl_config_script" type="string" visible="false"/>
+                    <param default="DtslScript" id="dtsl_config" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A72_31</name>
+                    <xi:include href="../../../Include/linux_kernel_fvp_activity_description.xml"/>
+                    <core connection_id="ARM_Cortex-A72_31">
+                        <core_definition>Cortex-A72</core_definition>
+                    </core>
+                    <param default="CDB://dtsl_config_script.py" id="dtsl_config_script" type="string" visible="false"/>
+                    <param default="DtslScript" id="dtsl_config" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A72_32</name>
+                    <xi:include href="../../../Include/linux_kernel_fvp_activity_description.xml"/>
+                    <core connection_id="ARM_Cortex-A72_32">
+                        <core_definition>Cortex-A72</core_definition>
+                    </core>
+                    <param default="CDB://dtsl_config_script.py" id="dtsl_config_script" type="string" visible="false"/>
+                    <param default="DtslScript" id="dtsl_config" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A72_33</name>
+                    <xi:include href="../../../Include/linux_kernel_fvp_activity_description.xml"/>
+                    <core connection_id="ARM_Cortex-A72_33">
+                        <core_definition>Cortex-A72</core_definition>
+                    </core>
+                    <param default="CDB://dtsl_config_script.py" id="dtsl_config_script" type="string" visible="false"/>
+                    <param default="DtslScript" id="dtsl_config" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A72_34</name>
+                    <xi:include href="../../../Include/linux_kernel_fvp_activity_description.xml"/>
+                    <core connection_id="ARM_Cortex-A72_34">
+                        <core_definition>Cortex-A72</core_definition>
+                    </core>
+                    <param default="CDB://dtsl_config_script.py" id="dtsl_config_script" type="string" visible="false"/>
+                    <param default="DtslScript" id="dtsl_config" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A72_35</name>
+                    <xi:include href="../../../Include/linux_kernel_fvp_activity_description.xml"/>
+                    <core connection_id="ARM_Cortex-A72_35">
+                        <core_definition>Cortex-A72</core_definition>
+                    </core>
+                    <param default="CDB://dtsl_config_script.py" id="dtsl_config_script" type="string" visible="false"/>
+                    <param default="DtslScript" id="dtsl_config" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A72_36</name>
+                    <xi:include href="../../../Include/linux_kernel_fvp_activity_description.xml"/>
+                    <core connection_id="ARM_Cortex-A72_36">
+                        <core_definition>Cortex-A72</core_definition>
+                    </core>
+                    <param default="CDB://dtsl_config_script.py" id="dtsl_config_script" type="string" visible="false"/>
+                    <param default="DtslScript" id="dtsl_config" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A72_37</name>
+                    <xi:include href="../../../Include/linux_kernel_fvp_activity_description.xml"/>
+                    <core connection_id="ARM_Cortex-A72_37">
+                        <core_definition>Cortex-A72</core_definition>
+                    </core>
+                    <param default="CDB://dtsl_config_script.py" id="dtsl_config_script" type="string" visible="false"/>
+                    <param default="DtslScript" id="dtsl_config" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A72_38</name>
+                    <xi:include href="../../../Include/linux_kernel_fvp_activity_description.xml"/>
+                    <core connection_id="ARM_Cortex-A72_38">
+                        <core_definition>Cortex-A72</core_definition>
+                    </core>
+                    <param default="CDB://dtsl_config_script.py" id="dtsl_config_script" type="string" visible="false"/>
+                    <param default="DtslScript" id="dtsl_config" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A72_39</name>
+                    <xi:include href="../../../Include/linux_kernel_fvp_activity_description.xml"/>
+                    <core connection_id="ARM_Cortex-A72_39">
+                        <core_definition>Cortex-A72</core_definition>
+                    </core>
+                    <param default="CDB://dtsl_config_script.py" id="dtsl_config_script" type="string" visible="false"/>
+                    <param default="DtslScript" id="dtsl_config" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A72_4</name>
+                    <xi:include href="../../../Include/linux_kernel_fvp_activity_description.xml"/>
+                    <core connection_id="ARM_Cortex-A72_4">
+                        <core_definition>Cortex-A72</core_definition>
+                    </core>
+                    <param default="CDB://dtsl_config_script.py" id="dtsl_config_script" type="string" visible="false"/>
+                    <param default="DtslScript" id="dtsl_config" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A72_40</name>
+                    <xi:include href="../../../Include/linux_kernel_fvp_activity_description.xml"/>
+                    <core connection_id="ARM_Cortex-A72_40">
+                        <core_definition>Cortex-A72</core_definition>
+                    </core>
+                    <param default="CDB://dtsl_config_script.py" id="dtsl_config_script" type="string" visible="false"/>
+                    <param default="DtslScript" id="dtsl_config" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A72_41</name>
+                    <xi:include href="../../../Include/linux_kernel_fvp_activity_description.xml"/>
+                    <core connection_id="ARM_Cortex-A72_41">
+                        <core_definition>Cortex-A72</core_definition>
+                    </core>
+                    <param default="CDB://dtsl_config_script.py" id="dtsl_config_script" type="string" visible="false"/>
+                    <param default="DtslScript" id="dtsl_config" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A72_42</name>
+                    <xi:include href="../../../Include/linux_kernel_fvp_activity_description.xml"/>
+                    <core connection_id="ARM_Cortex-A72_42">
+                        <core_definition>Cortex-A72</core_definition>
+                    </core>
+                    <param default="CDB://dtsl_config_script.py" id="dtsl_config_script" type="string" visible="false"/>
+                    <param default="DtslScript" id="dtsl_config" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A72_43</name>
+                    <xi:include href="../../../Include/linux_kernel_fvp_activity_description.xml"/>
+                    <core connection_id="ARM_Cortex-A72_43">
+                        <core_definition>Cortex-A72</core_definition>
+                    </core>
+                    <param default="CDB://dtsl_config_script.py" id="dtsl_config_script" type="string" visible="false"/>
+                    <param default="DtslScript" id="dtsl_config" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A72_44</name>
+                    <xi:include href="../../../Include/linux_kernel_fvp_activity_description.xml"/>
+                    <core connection_id="ARM_Cortex-A72_44">
+                        <core_definition>Cortex-A72</core_definition>
+                    </core>
+                    <param default="CDB://dtsl_config_script.py" id="dtsl_config_script" type="string" visible="false"/>
+                    <param default="DtslScript" id="dtsl_config" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A72_45</name>
+                    <xi:include href="../../../Include/linux_kernel_fvp_activity_description.xml"/>
+                    <core connection_id="ARM_Cortex-A72_45">
+                        <core_definition>Cortex-A72</core_definition>
+                    </core>
+                    <param default="CDB://dtsl_config_script.py" id="dtsl_config_script" type="string" visible="false"/>
+                    <param default="DtslScript" id="dtsl_config" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A72_46</name>
+                    <xi:include href="../../../Include/linux_kernel_fvp_activity_description.xml"/>
+                    <core connection_id="ARM_Cortex-A72_46">
+                        <core_definition>Cortex-A72</core_definition>
+                    </core>
+                    <param default="CDB://dtsl_config_script.py" id="dtsl_config_script" type="string" visible="false"/>
+                    <param default="DtslScript" id="dtsl_config" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A72_47</name>
+                    <xi:include href="../../../Include/linux_kernel_fvp_activity_description.xml"/>
+                    <core connection_id="ARM_Cortex-A72_47">
+                        <core_definition>Cortex-A72</core_definition>
+                    </core>
+                    <param default="CDB://dtsl_config_script.py" id="dtsl_config_script" type="string" visible="false"/>
+                    <param default="DtslScript" id="dtsl_config" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A72_5</name>
+                    <xi:include href="../../../Include/linux_kernel_fvp_activity_description.xml"/>
+                    <core connection_id="ARM_Cortex-A72_5">
+                        <core_definition>Cortex-A72</core_definition>
+                    </core>
+                    <param default="CDB://dtsl_config_script.py" id="dtsl_config_script" type="string" visible="false"/>
+                    <param default="DtslScript" id="dtsl_config" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A72_6</name>
+                    <xi:include href="../../../Include/linux_kernel_fvp_activity_description.xml"/>
+                    <core connection_id="ARM_Cortex-A72_6">
+                        <core_definition>Cortex-A72</core_definition>
+                    </core>
+                    <param default="CDB://dtsl_config_script.py" id="dtsl_config_script" type="string" visible="false"/>
+                    <param default="DtslScript" id="dtsl_config" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A72_7</name>
+                    <xi:include href="../../../Include/linux_kernel_fvp_activity_description.xml"/>
+                    <core connection_id="ARM_Cortex-A72_7">
+                        <core_definition>Cortex-A72</core_definition>
+                    </core>
+                    <param default="CDB://dtsl_config_script.py" id="dtsl_config_script" type="string" visible="false"/>
+                    <param default="DtslScript" id="dtsl_config" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A72_8</name>
+                    <xi:include href="../../../Include/linux_kernel_fvp_activity_description.xml"/>
+                    <core connection_id="ARM_Cortex-A72_8">
+                        <core_definition>Cortex-A72</core_definition>
+                    </core>
+                    <param default="CDB://dtsl_config_script.py" id="dtsl_config_script" type="string" visible="false"/>
+                    <param default="DtslScript" id="dtsl_config" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A72_9</name>
+                    <xi:include href="../../../Include/linux_kernel_fvp_activity_description.xml"/>
+                    <core connection_id="ARM_Cortex-A72_9">
+                        <core_definition>Cortex-A72</core_definition>
+                    </core>
+                    <param default="CDB://dtsl_config_script.py" id="dtsl_config_script" type="string" visible="false"/>
+                    <param default="DtslScript" id="dtsl_config" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A72x4 SMP Cluster 0</name>
+                    <xi:include href="../../../Include/linux_kernel_fvp_activity_description.xml"/>
+                    <core connection_id="ARM_Cortex-A72x4 SMP Cluster 0">
+                        <core_definition>Cortex-A72</core_definition>
+                    </core>
+                    <param default="CDB://dtsl_config_script.py" id="dtsl_config_script" type="string" visible="false"/>
+                    <param default="DtslScript" id="dtsl_config" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A72x4 SMP Cluster 1</name>
+                    <xi:include href="../../../Include/linux_kernel_fvp_activity_description.xml"/>
+                    <core connection_id="ARM_Cortex-A72x4 SMP Cluster 1">
+                        <core_definition>Cortex-A72</core_definition>
+                    </core>
+                    <param default="CDB://dtsl_config_script.py" id="dtsl_config_script" type="string" visible="false"/>
+                    <param default="DtslScript" id="dtsl_config" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A72x4 SMP Cluster 10</name>
+                    <xi:include href="../../../Include/linux_kernel_fvp_activity_description.xml"/>
+                    <core connection_id="ARM_Cortex-A72x4 SMP Cluster 10">
+                        <core_definition>Cortex-A72</core_definition>
+                    </core>
+                    <param default="CDB://dtsl_config_script.py" id="dtsl_config_script" type="string" visible="false"/>
+                    <param default="DtslScript" id="dtsl_config" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A72x4 SMP Cluster 11</name>
+                    <xi:include href="../../../Include/linux_kernel_fvp_activity_description.xml"/>
+                    <core connection_id="ARM_Cortex-A72x4 SMP Cluster 11">
+                        <core_definition>Cortex-A72</core_definition>
+                    </core>
+                    <param default="CDB://dtsl_config_script.py" id="dtsl_config_script" type="string" visible="false"/>
+                    <param default="DtslScript" id="dtsl_config" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A72x4 SMP Cluster 2</name>
+                    <xi:include href="../../../Include/linux_kernel_fvp_activity_description.xml"/>
+                    <core connection_id="ARM_Cortex-A72x4 SMP Cluster 2">
+                        <core_definition>Cortex-A72</core_definition>
+                    </core>
+                    <param default="CDB://dtsl_config_script.py" id="dtsl_config_script" type="string" visible="false"/>
+                    <param default="DtslScript" id="dtsl_config" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A72x4 SMP Cluster 3</name>
+                    <xi:include href="../../../Include/linux_kernel_fvp_activity_description.xml"/>
+                    <core connection_id="ARM_Cortex-A72x4 SMP Cluster 3">
+                        <core_definition>Cortex-A72</core_definition>
+                    </core>
+                    <param default="CDB://dtsl_config_script.py" id="dtsl_config_script" type="string" visible="false"/>
+                    <param default="DtslScript" id="dtsl_config" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A72x4 SMP Cluster 4</name>
+                    <xi:include href="../../../Include/linux_kernel_fvp_activity_description.xml"/>
+                    <core connection_id="ARM_Cortex-A72x4 SMP Cluster 4">
+                        <core_definition>Cortex-A72</core_definition>
+                    </core>
+                    <param default="CDB://dtsl_config_script.py" id="dtsl_config_script" type="string" visible="false"/>
+                    <param default="DtslScript" id="dtsl_config" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A72x4 SMP Cluster 5</name>
+                    <xi:include href="../../../Include/linux_kernel_fvp_activity_description.xml"/>
+                    <core connection_id="ARM_Cortex-A72x4 SMP Cluster 5">
+                        <core_definition>Cortex-A72</core_definition>
+                    </core>
+                    <param default="CDB://dtsl_config_script.py" id="dtsl_config_script" type="string" visible="false"/>
+                    <param default="DtslScript" id="dtsl_config" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A72x4 SMP Cluster 6</name>
+                    <xi:include href="../../../Include/linux_kernel_fvp_activity_description.xml"/>
+                    <core connection_id="ARM_Cortex-A72x4 SMP Cluster 6">
+                        <core_definition>Cortex-A72</core_definition>
+                    </core>
+                    <param default="CDB://dtsl_config_script.py" id="dtsl_config_script" type="string" visible="false"/>
+                    <param default="DtslScript" id="dtsl_config" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A72x4 SMP Cluster 7</name>
+                    <xi:include href="../../../Include/linux_kernel_fvp_activity_description.xml"/>
+                    <core connection_id="ARM_Cortex-A72x4 SMP Cluster 7">
+                        <core_definition>Cortex-A72</core_definition>
+                    </core>
+                    <param default="CDB://dtsl_config_script.py" id="dtsl_config_script" type="string" visible="false"/>
+                    <param default="DtslScript" id="dtsl_config" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A72x4 SMP Cluster 8</name>
+                    <xi:include href="../../../Include/linux_kernel_fvp_activity_description.xml"/>
+                    <core connection_id="ARM_Cortex-A72x4 SMP Cluster 8">
+                        <core_definition>Cortex-A72</core_definition>
+                    </core>
+                    <param default="CDB://dtsl_config_script.py" id="dtsl_config_script" type="string" visible="false"/>
+                    <param default="DtslScript" id="dtsl_config" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A72x4 SMP Cluster 9</name>
+                    <xi:include href="../../../Include/linux_kernel_fvp_activity_description.xml"/>
+                    <core connection_id="ARM_Cortex-A72x4 SMP Cluster 9">
+                        <core_definition>Cortex-A72</core_definition>
+                    </core>
+                    <param default="CDB://dtsl_config_script.py" id="dtsl_config_script" type="string" visible="false"/>
+                    <param default="DtslScript" id="dtsl_config" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">MULTI CLUSTER SMP</name>
+                    <xi:include href="../../../Include/linux_kernel_fvp_activity_description.xml"/>
+                    <core connection_id="MULTI CLUSTER SMP">
+                        <core_definition>Cortex-A72</core_definition>
+                    </core>
+                    <param default="CDB://dtsl_config_script.py" id="dtsl_config_script" type="string" visible="false"/>
+                    <param default="DtslScript" id="dtsl_config" type="string" visible="false"/>
+                </activity>
+            </execution_environment>
+        </project_type>
+    </project_type_list>
+</platform_data>

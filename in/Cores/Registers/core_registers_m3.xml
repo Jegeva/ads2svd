@@ -1,0 +1,457 @@
+<register_list
+    name="Core"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns="http://www.arm.com/core_reg"
+    xsi:schemaLocation="http://www.arm.com/core_reg ../../Schemas/core_register_definition.xsd"
+    xmlns:tcf="http://com.arm.targetconfigurationeditor">
+
+    <access_world>Non-Secure</access_world>
+
+    <register_group name="Core">
+        <gui_name language="en">Core</gui_name>
+        <description language="en">Core</description>
+        <register access="RW" name="R0" size="4">
+            <gui_name language="en">R0</gui_name>
+            <description language="en">General purpose register</description>
+        </register>
+        <register access="RW" name="R1" size="4">
+            <gui_name language="en">R1</gui_name>
+            <description language="en">General purpose register</description>
+        </register>
+        <register access="RW" name="R2" size="4">
+            <gui_name language="en">R2</gui_name>
+            <description language="en">General purpose register</description>
+        </register>
+        <register access="RW" name="R3" size="4">
+            <gui_name language="en">R3</gui_name>
+            <description language="en">General purpose register</description>
+        </register>
+        <register access="RW" name="R4" size="4">
+            <gui_name language="en">R4</gui_name>
+            <description language="en">General purpose register</description>
+        </register>
+        <register access="RW" name="R5" size="4">
+            <gui_name language="en">R5</gui_name>
+            <description language="en">General purpose register</description>
+        </register>
+        <register access="RW" name="R6" size="4">
+            <gui_name language="en">R6</gui_name>
+            <description language="en">General purpose register</description>
+        </register>
+        <register access="RW" name="R7" size="4">
+            <gui_name language="en">R7</gui_name>
+            <description language="en">General purpose register</description>
+        </register>
+        <register access="RW" name="R8" size="4">
+            <gui_name language="en">R8</gui_name>
+            <description language="en">General purpose register</description>
+        </register>
+        <register access="RW" name="R9" size="4">
+            <gui_name language="en">R9</gui_name>
+            <description language="en">General purpose register</description>
+        </register>
+        <register access="RW" name="R10" size="4">
+            <gui_name language="en">R10</gui_name>
+            <description language="en">General purpose register</description>
+        </register>
+        <register access="RW" name="R11" size="4">
+            <gui_name language="en">R11</gui_name>
+            <description language="en">General purpose register</description>
+        </register>
+        <register access="RW" name="R12" size="4">
+            <gui_name language="en">R12</gui_name>
+            <description language="en">General purpose register</description>
+        </register>
+        <register access="RW" name="SP" size="4">
+            <gui_name language="en">SP</gui_name>
+            <device_name type="cadi">R13</device_name>
+            <description language="en">Stack pointer</description>
+        </register>
+        <register access="RW" name="SP_MAIN" size="4">
+            <gui_name language="en">SP_main</gui_name>
+            <device_name type="cadi">R13_MAIN</device_name>
+            <description language="en">Main stack pointer</description>
+        </register>
+        <register access="RW" name="SP_PROCESS" size="4">
+            <gui_name language="en">SP_process</gui_name>
+            <device_name type="cadi">R13_PROCESS</device_name>
+            <description language="en">Process stack pointer</description>
+        </register>
+        <register access="RW" name="LR" size="4">
+            <gui_name language="en">LR</gui_name>
+            <device_name type="cadi">R14</device_name>
+            <description language="en">The Link Register receives the return address from PC when a Branch and Link (BL) instruction is executed</description>
+        </register>
+        <register access="RW" name="PC" size="4">
+            <gui_name language="en">PC</gui_name>
+            <device_name type="cadi">R15</device_name>
+            <description language="en">Program counter</description>
+        </register>
+        <register access="RW" name="xPSR" size="4">
+            <gui_name language="en">xPSR</gui_name>
+            <description language="en">Program status register</description>
+            <bitField conditional="false" name="N">
+                <gui_name language="en">N</gui_name>
+                <description language="en">Negative or less than flag</description>
+                <definition>[31]</definition>
+            </bitField>
+            <bitField conditional="false" name="Z">
+                <gui_name language="en">Z</gui_name>
+                <description language="en">Zero flag</description>
+                <definition>[30]</definition>
+            </bitField>
+            <bitField conditional="false" name="C">
+                <gui_name language="en">C</gui_name>
+                <description language="en">Carry or borrow flag</description>
+                <definition>[29]</definition>
+            </bitField>
+            <bitField conditional="false" name="V">
+                <gui_name language="en">V</gui_name>
+                <description language="en">Overflow flag</description>
+                <definition>[28]</definition>
+            </bitField>
+            <bitField conditional="false" name="Q">
+                <gui_name language="en">Q</gui_name>
+                <description language="en">Saturation flag</description>
+                <definition>[27]</definition>
+            </bitField>
+            <bitField conditional="false" name="ICI">
+                <gui_name language="en">ICI</gui_name>
+                <description language="en">Holds the continuation state of the Load Multiple or Store Multiple instruction during interrupt processing</description>
+                <definition>[15:10][26:25]</definition>
+            </bitField>
+            <bitField conditional="false" name="IT">
+                <gui_name language="en">IT</gui_name>
+                <description language="en">If-Then execution state</description>
+                <definition>[15:10][26:25]</definition>
+            </bitField>
+            <bitField conditional="false" name="T">
+                <gui_name language="en">T</gui_name>
+                <description language="en">Thumb state</description>
+                <definition>[24]</definition>
+            </bitField>
+            <bitField access="RO" conditional="false" name="EXCEPTION_NUMBER" enumerationId="CORE_XPSR_EXCEPTION_NUMBER">
+                <gui_name language="en">Exception Number</gui_name>
+                <description language="en">Number of executing exception</description>
+                <definition>[8:0]</definition>
+            </bitField>
+        </register>
+        <register access="RW" name="PRIMASK" size="4">
+            <gui_name language="en">PRIMASK</gui_name>
+            <description language="en">The Priority Mask Register prevents activation of all exceptions with configurable priority</description>
+            <bitField conditional="false" name="PM">
+                <gui_name language="en">PM</gui_name>
+                <description language="en">When set, prevents activation of all exceptions with configurable priority</description>
+                <definition>[0]</definition>
+            </bitField>
+        </register>
+        <register access="RW" name="BASEPRI" size="4">
+            <gui_name language="en">BASEPRI</gui_name>
+            <description language="en">Defines the minimum priority for exception processing</description>
+            <bitField conditional="false" name="BASEPRI">
+                <gui_name language="en">BASEPRI</gui_name>
+                <description language="en">Defines the minimum priority for exception processing</description>
+                <definition>[7:0]</definition>
+            </bitField>
+        </register>
+        <register access="RW" name="FAULTMASK" size="4">
+            <gui_name language="en">FAULTMASK</gui_name>
+            <description language="en">Allows the execution priority to be raised to -1 (Hard Fault)</description>
+            <bitField conditional="false" name="FM">
+                <gui_name language="en">FM</gui_name>
+                <description language="en">When set, raises execution priority to -1 (Hard Fault)</description>
+                <definition>[0]</definition>
+            </bitField>
+        </register>
+        <register access="RW" name="CONTROL" size="4">
+            <gui_name language="en">CONTROL</gui_name>
+            <description language="en">The special-purpose CONTROL register.</description>
+            <bitField conditional="false" name="FPCA" enumerationId="CORE_CONTROL_FPCA">
+                <gui_name language="en">FPCA</gui_name>
+                <description language="en">Defines whether the FP extension is active in the current context (implementation specific)</description>
+                <definition>[2]</definition>
+            </bitField>
+            <bitField conditional="false" name="SPSEL" enumerationId="CORE_CONTROL_SPSEL">
+                <gui_name language="en">SPSEL</gui_name>
+                <description language="en">Defines the stack to use</description>
+                <definition>[1]</definition>
+            </bitField>
+            <bitField conditional="false" name="NPRIV" enumerationId="CORE_CONTROL_NPRIV">
+                <gui_name language="en">NPRIV</gui_name>
+                <description language="en">Defines the execution privilege in Thread mode</description>
+                <definition>[0]</definition>
+            </bitField>
+        </register>
+    </register_group>
+    <tcf:enumeration name="CORE_XPSR_EXCEPTION_NUMBER">
+        <tcf:description>Current exception</tcf:description>
+        <tcf:enumItem number="0x000" name="NONE"><tcf:gui_name>None</tcf:gui_name></tcf:enumItem>
+        <tcf:enumItem number="0x001" name="RESET"><tcf:gui_name>Reset</tcf:gui_name></tcf:enumItem>
+        <tcf:enumItem number="0x002" name="NMI"><tcf:gui_name>NMI</tcf:gui_name></tcf:enumItem>
+        <tcf:enumItem number="0x003" name="HARDFAULT"><tcf:gui_name>HardFault</tcf:gui_name></tcf:enumItem>
+        <tcf:enumItem number="0x004" name="MEMMANAGE"><tcf:gui_name>MemManage</tcf:gui_name></tcf:enumItem>
+        <tcf:enumItem number="0x005" name="BUSFAULT"><tcf:gui_name>BusFault</tcf:gui_name></tcf:enumItem>
+        <tcf:enumItem number="0x006" name="USAGEFAULT"><tcf:gui_name>UsageFault</tcf:gui_name></tcf:enumItem>
+        <tcf:enumItem number="0x007" name="RESERVED"><tcf:gui_name>Reserved</tcf:gui_name></tcf:enumItem>
+        <tcf:enumItem number="0x008" name="RESERVED"><tcf:gui_name>Reserved</tcf:gui_name></tcf:enumItem>
+        <tcf:enumItem number="0x009" name="RESERVED"><tcf:gui_name>Reserved</tcf:gui_name></tcf:enumItem>
+        <tcf:enumItem number="0x00A" name="RESERVED"><tcf:gui_name>Reserved</tcf:gui_name></tcf:enumItem>
+        <tcf:enumItem number="0x00B" name="SVCALL"><tcf:gui_name>SVCall</tcf:gui_name></tcf:enumItem>
+        <tcf:enumItem number="0x00C" name="DEBUG_MONITOR"><tcf:gui_name>Debug Monitor</tcf:gui_name></tcf:enumItem>
+        <tcf:enumItem number="0x00D" name="RESERVED"><tcf:gui_name>Reserved</tcf:gui_name></tcf:enumItem>
+        <tcf:enumItem number="0x00E" name="PENDSV"><tcf:gui_name>PendSV</tcf:gui_name></tcf:enumItem>
+        <tcf:enumItem number="0x00F" name="SYSTICK"><tcf:gui_name>SysTick</tcf:gui_name></tcf:enumItem>
+        <tcf:enumItem number="0x010" name="EXTERNAL_INT_0x00"><tcf:gui_name>External Interrupt 0x00</tcf:gui_name></tcf:enumItem>
+        <tcf:enumItem number="0x011" name="EXTERNAL_INT_0x01"><tcf:gui_name>External Interrupt 0x01</tcf:gui_name></tcf:enumItem>
+        <tcf:enumItem number="0x012" name="EXTERNAL_INT_0x02"><tcf:gui_name>External Interrupt 0x02</tcf:gui_name></tcf:enumItem>
+        <tcf:enumItem number="0x013" name="EXTERNAL_INT_0x03"><tcf:gui_name>External Interrupt 0x03</tcf:gui_name></tcf:enumItem>
+        <tcf:enumItem number="0x014" name="EXTERNAL_INT_0x04"><tcf:gui_name>External Interrupt 0x04</tcf:gui_name></tcf:enumItem>
+        <tcf:enumItem number="0x015" name="EXTERNAL_INT_0x05"><tcf:gui_name>External Interrupt 0x05</tcf:gui_name></tcf:enumItem>
+        <tcf:enumItem number="0x016" name="EXTERNAL_INT_0x06"><tcf:gui_name>External Interrupt 0x06</tcf:gui_name></tcf:enumItem>
+        <tcf:enumItem number="0x017" name="EXTERNAL_INT_0x07"><tcf:gui_name>External Interrupt 0x07</tcf:gui_name></tcf:enumItem>
+        <tcf:enumItem number="0x018" name="EXTERNAL_INT_0x08"><tcf:gui_name>External Interrupt 0x08</tcf:gui_name></tcf:enumItem>
+        <tcf:enumItem number="0x019" name="EXTERNAL_INT_0x09"><tcf:gui_name>External Interrupt 0x09</tcf:gui_name></tcf:enumItem>
+        <tcf:enumItem number="0x01A" name="EXTERNAL_INT_0x0A"><tcf:gui_name>External Interrupt 0x0A</tcf:gui_name></tcf:enumItem>
+        <tcf:enumItem number="0x01B" name="EXTERNAL_INT_0x0B"><tcf:gui_name>External Interrupt 0x0B</tcf:gui_name></tcf:enumItem>
+        <tcf:enumItem number="0x01C" name="EXTERNAL_INT_0x0C"><tcf:gui_name>External Interrupt 0x0C</tcf:gui_name></tcf:enumItem>
+        <tcf:enumItem number="0x01D" name="EXTERNAL_INT_0x0D"><tcf:gui_name>External Interrupt 0x0D</tcf:gui_name></tcf:enumItem>
+        <tcf:enumItem number="0x01E" name="EXTERNAL_INT_0x0E"><tcf:gui_name>External Interrupt 0x0E</tcf:gui_name></tcf:enumItem>
+        <tcf:enumItem number="0x01F" name="EXTERNAL_INT_0x0F"><tcf:gui_name>External Interrupt 0x0F</tcf:gui_name></tcf:enumItem>
+        <tcf:enumItem number="0x020" name="EXTERNAL_INT_0x10"><tcf:gui_name>External Interrupt 0x10</tcf:gui_name></tcf:enumItem>
+        <tcf:enumItem number="0x021" name="EXTERNAL_INT_0x11"><tcf:gui_name>External Interrupt 0x11</tcf:gui_name></tcf:enumItem>
+        <tcf:enumItem number="0x022" name="EXTERNAL_INT_0x12"><tcf:gui_name>External Interrupt 0x12</tcf:gui_name></tcf:enumItem>
+        <tcf:enumItem number="0x023" name="EXTERNAL_INT_0x13"><tcf:gui_name>External Interrupt 0x13</tcf:gui_name></tcf:enumItem>
+        <tcf:enumItem number="0x024" name="EXTERNAL_INT_0x14"><tcf:gui_name>External Interrupt 0x14</tcf:gui_name></tcf:enumItem>
+        <tcf:enumItem number="0x025" name="EXTERNAL_INT_0x15"><tcf:gui_name>External Interrupt 0x15</tcf:gui_name></tcf:enumItem>
+        <tcf:enumItem number="0x026" name="EXTERNAL_INT_0x16"><tcf:gui_name>External Interrupt 0x16</tcf:gui_name></tcf:enumItem>
+        <tcf:enumItem number="0x027" name="EXTERNAL_INT_0x17"><tcf:gui_name>External Interrupt 0x17</tcf:gui_name></tcf:enumItem>
+        <tcf:enumItem number="0x028" name="EXTERNAL_INT_0x18"><tcf:gui_name>External Interrupt 0x18</tcf:gui_name></tcf:enumItem>
+        <tcf:enumItem number="0x029" name="EXTERNAL_INT_0x19"><tcf:gui_name>External Interrupt 0x19</tcf:gui_name></tcf:enumItem>
+        <tcf:enumItem number="0x02A" name="EXTERNAL_INT_0x1A"><tcf:gui_name>External Interrupt 0x1A</tcf:gui_name></tcf:enumItem>
+        <tcf:enumItem number="0x02B" name="EXTERNAL_INT_0x1B"><tcf:gui_name>External Interrupt 0x1B</tcf:gui_name></tcf:enumItem>
+        <tcf:enumItem number="0x02C" name="EXTERNAL_INT_0x1C"><tcf:gui_name>External Interrupt 0x1C</tcf:gui_name></tcf:enumItem>
+        <tcf:enumItem number="0x02D" name="EXTERNAL_INT_0x1D"><tcf:gui_name>External Interrupt 0x1D</tcf:gui_name></tcf:enumItem>
+        <tcf:enumItem number="0x02E" name="EXTERNAL_INT_0x1E"><tcf:gui_name>External Interrupt 0x1E</tcf:gui_name></tcf:enumItem>
+        <tcf:enumItem number="0x02F" name="EXTERNAL_INT_0x1F"><tcf:gui_name>External Interrupt 0x1F</tcf:gui_name></tcf:enumItem>
+        <tcf:enumItem number="0x030" name="EXTERNAL_INT_0x20"><tcf:gui_name>External Interrupt 0x20</tcf:gui_name></tcf:enumItem>
+        <tcf:enumItem number="0x031" name="EXTERNAL_INT_0x21"><tcf:gui_name>External Interrupt 0x21</tcf:gui_name></tcf:enumItem>
+        <tcf:enumItem number="0x032" name="EXTERNAL_INT_0x22"><tcf:gui_name>External Interrupt 0x22</tcf:gui_name></tcf:enumItem>
+        <tcf:enumItem number="0x033" name="EXTERNAL_INT_0x23"><tcf:gui_name>External Interrupt 0x23</tcf:gui_name></tcf:enumItem>
+        <tcf:enumItem number="0x034" name="EXTERNAL_INT_0x24"><tcf:gui_name>External Interrupt 0x24</tcf:gui_name></tcf:enumItem>
+        <tcf:enumItem number="0x035" name="EXTERNAL_INT_0x25"><tcf:gui_name>External Interrupt 0x25</tcf:gui_name></tcf:enumItem>
+        <tcf:enumItem number="0x036" name="EXTERNAL_INT_0x26"><tcf:gui_name>External Interrupt 0x26</tcf:gui_name></tcf:enumItem>
+        <tcf:enumItem number="0x037" name="EXTERNAL_INT_0x27"><tcf:gui_name>External Interrupt 0x27</tcf:gui_name></tcf:enumItem>
+        <tcf:enumItem number="0x038" name="EXTERNAL_INT_0x28"><tcf:gui_name>External Interrupt 0x28</tcf:gui_name></tcf:enumItem>
+        <tcf:enumItem number="0x039" name="EXTERNAL_INT_0x29"><tcf:gui_name>External Interrupt 0x29</tcf:gui_name></tcf:enumItem>
+        <tcf:enumItem number="0x03A" name="EXTERNAL_INT_0x2A"><tcf:gui_name>External Interrupt 0x2A</tcf:gui_name></tcf:enumItem>
+        <tcf:enumItem number="0x03B" name="EXTERNAL_INT_0x2B"><tcf:gui_name>External Interrupt 0x2B</tcf:gui_name></tcf:enumItem>
+        <tcf:enumItem number="0x03C" name="EXTERNAL_INT_0x2C"><tcf:gui_name>External Interrupt 0x2C</tcf:gui_name></tcf:enumItem>
+        <tcf:enumItem number="0x03D" name="EXTERNAL_INT_0x2D"><tcf:gui_name>External Interrupt 0x2D</tcf:gui_name></tcf:enumItem>
+        <tcf:enumItem number="0x03E" name="EXTERNAL_INT_0x2E"><tcf:gui_name>External Interrupt 0x2E</tcf:gui_name></tcf:enumItem>
+        <tcf:enumItem number="0x03F" name="EXTERNAL_INT_0x2F"><tcf:gui_name>External Interrupt 0x2F</tcf:gui_name></tcf:enumItem>
+        <tcf:enumItem number="0x040" name="EXTERNAL_INT_0x30"><tcf:gui_name>External Interrupt 0x30</tcf:gui_name></tcf:enumItem>
+        <tcf:enumItem number="0x041" name="EXTERNAL_INT_0x31"><tcf:gui_name>External Interrupt 0x31</tcf:gui_name></tcf:enumItem>
+        <tcf:enumItem number="0x042" name="EXTERNAL_INT_0x32"><tcf:gui_name>External Interrupt 0x32</tcf:gui_name></tcf:enumItem>
+        <tcf:enumItem number="0x043" name="EXTERNAL_INT_0x33"><tcf:gui_name>External Interrupt 0x33</tcf:gui_name></tcf:enumItem>
+        <tcf:enumItem number="0x044" name="EXTERNAL_INT_0x34"><tcf:gui_name>External Interrupt 0x34</tcf:gui_name></tcf:enumItem>
+        <tcf:enumItem number="0x045" name="EXTERNAL_INT_0x35"><tcf:gui_name>External Interrupt 0x35</tcf:gui_name></tcf:enumItem>
+        <tcf:enumItem number="0x046" name="EXTERNAL_INT_0x36"><tcf:gui_name>External Interrupt 0x36</tcf:gui_name></tcf:enumItem>
+        <tcf:enumItem number="0x047" name="EXTERNAL_INT_0x37"><tcf:gui_name>External Interrupt 0x37</tcf:gui_name></tcf:enumItem>
+        <tcf:enumItem number="0x048" name="EXTERNAL_INT_0x38"><tcf:gui_name>External Interrupt 0x38</tcf:gui_name></tcf:enumItem>
+        <tcf:enumItem number="0x049" name="EXTERNAL_INT_0x39"><tcf:gui_name>External Interrupt 0x39</tcf:gui_name></tcf:enumItem>
+        <tcf:enumItem number="0x04A" name="EXTERNAL_INT_0x3A"><tcf:gui_name>External Interrupt 0x3A</tcf:gui_name></tcf:enumItem>
+        <tcf:enumItem number="0x04B" name="EXTERNAL_INT_0x3B"><tcf:gui_name>External Interrupt 0x3B</tcf:gui_name></tcf:enumItem>
+        <tcf:enumItem number="0x04C" name="EXTERNAL_INT_0x3C"><tcf:gui_name>External Interrupt 0x3C</tcf:gui_name></tcf:enumItem>
+        <tcf:enumItem number="0x04D" name="EXTERNAL_INT_0x3D"><tcf:gui_name>External Interrupt 0x3D</tcf:gui_name></tcf:enumItem>
+        <tcf:enumItem number="0x04E" name="EXTERNAL_INT_0x3E"><tcf:gui_name>External Interrupt 0x3E</tcf:gui_name></tcf:enumItem>
+        <tcf:enumItem number="0x04F" name="EXTERNAL_INT_0x3F"><tcf:gui_name>External Interrupt 0x3F</tcf:gui_name></tcf:enumItem>
+        <tcf:enumItem number="0x050" name="EXTERNAL_INT_0x40"><tcf:gui_name>External Interrupt 0x40</tcf:gui_name></tcf:enumItem>
+        <tcf:enumItem number="0x051" name="EXTERNAL_INT_0x41"><tcf:gui_name>External Interrupt 0x41</tcf:gui_name></tcf:enumItem>
+        <tcf:enumItem number="0x052" name="EXTERNAL_INT_0x42"><tcf:gui_name>External Interrupt 0x42</tcf:gui_name></tcf:enumItem>
+        <tcf:enumItem number="0x053" name="EXTERNAL_INT_0x43"><tcf:gui_name>External Interrupt 0x43</tcf:gui_name></tcf:enumItem>
+        <tcf:enumItem number="0x054" name="EXTERNAL_INT_0x44"><tcf:gui_name>External Interrupt 0x44</tcf:gui_name></tcf:enumItem>
+        <tcf:enumItem number="0x055" name="EXTERNAL_INT_0x45"><tcf:gui_name>External Interrupt 0x45</tcf:gui_name></tcf:enumItem>
+        <tcf:enumItem number="0x056" name="EXTERNAL_INT_0x46"><tcf:gui_name>External Interrupt 0x46</tcf:gui_name></tcf:enumItem>
+        <tcf:enumItem number="0x057" name="EXTERNAL_INT_0x47"><tcf:gui_name>External Interrupt 0x47</tcf:gui_name></tcf:enumItem>
+        <tcf:enumItem number="0x058" name="EXTERNAL_INT_0x48"><tcf:gui_name>External Interrupt 0x48</tcf:gui_name></tcf:enumItem>
+        <tcf:enumItem number="0x059" name="EXTERNAL_INT_0x49"><tcf:gui_name>External Interrupt 0x49</tcf:gui_name></tcf:enumItem>
+        <tcf:enumItem number="0x05A" name="EXTERNAL_INT_0x4A"><tcf:gui_name>External Interrupt 0x4A</tcf:gui_name></tcf:enumItem>
+        <tcf:enumItem number="0x05B" name="EXTERNAL_INT_0x4B"><tcf:gui_name>External Interrupt 0x4B</tcf:gui_name></tcf:enumItem>
+        <tcf:enumItem number="0x05C" name="EXTERNAL_INT_0x4C"><tcf:gui_name>External Interrupt 0x4C</tcf:gui_name></tcf:enumItem>
+        <tcf:enumItem number="0x05D" name="EXTERNAL_INT_0x4D"><tcf:gui_name>External Interrupt 0x4D</tcf:gui_name></tcf:enumItem>
+        <tcf:enumItem number="0x05E" name="EXTERNAL_INT_0x4E"><tcf:gui_name>External Interrupt 0x4E</tcf:gui_name></tcf:enumItem>
+        <tcf:enumItem number="0x05F" name="EXTERNAL_INT_0x4F"><tcf:gui_name>External Interrupt 0x4F</tcf:gui_name></tcf:enumItem>
+        <tcf:enumItem number="0x060" name="EXTERNAL_INT_0x50"><tcf:gui_name>External Interrupt 0x50</tcf:gui_name></tcf:enumItem>
+        <tcf:enumItem number="0x061" name="EXTERNAL_INT_0x51"><tcf:gui_name>External Interrupt 0x51</tcf:gui_name></tcf:enumItem>
+        <tcf:enumItem number="0x062" name="EXTERNAL_INT_0x52"><tcf:gui_name>External Interrupt 0x52</tcf:gui_name></tcf:enumItem>
+        <tcf:enumItem number="0x063" name="EXTERNAL_INT_0x53"><tcf:gui_name>External Interrupt 0x53</tcf:gui_name></tcf:enumItem>
+        <tcf:enumItem number="0x064" name="EXTERNAL_INT_0x54"><tcf:gui_name>External Interrupt 0x54</tcf:gui_name></tcf:enumItem>
+        <tcf:enumItem number="0x065" name="EXTERNAL_INT_0x55"><tcf:gui_name>External Interrupt 0x55</tcf:gui_name></tcf:enumItem>
+        <tcf:enumItem number="0x066" name="EXTERNAL_INT_0x56"><tcf:gui_name>External Interrupt 0x56</tcf:gui_name></tcf:enumItem>
+        <tcf:enumItem number="0x067" name="EXTERNAL_INT_0x57"><tcf:gui_name>External Interrupt 0x57</tcf:gui_name></tcf:enumItem>
+        <tcf:enumItem number="0x068" name="EXTERNAL_INT_0x58"><tcf:gui_name>External Interrupt 0x58</tcf:gui_name></tcf:enumItem>
+        <tcf:enumItem number="0x069" name="EXTERNAL_INT_0x59"><tcf:gui_name>External Interrupt 0x59</tcf:gui_name></tcf:enumItem>
+        <tcf:enumItem number="0x06A" name="EXTERNAL_INT_0x5A"><tcf:gui_name>External Interrupt 0x5A</tcf:gui_name></tcf:enumItem>
+        <tcf:enumItem number="0x06B" name="EXTERNAL_INT_0x5B"><tcf:gui_name>External Interrupt 0x5B</tcf:gui_name></tcf:enumItem>
+        <tcf:enumItem number="0x06C" name="EXTERNAL_INT_0x5C"><tcf:gui_name>External Interrupt 0x5C</tcf:gui_name></tcf:enumItem>
+        <tcf:enumItem number="0x06D" name="EXTERNAL_INT_0x5D"><tcf:gui_name>External Interrupt 0x5D</tcf:gui_name></tcf:enumItem>
+        <tcf:enumItem number="0x06E" name="EXTERNAL_INT_0x5E"><tcf:gui_name>External Interrupt 0x5E</tcf:gui_name></tcf:enumItem>
+        <tcf:enumItem number="0x06F" name="EXTERNAL_INT_0x5F"><tcf:gui_name>External Interrupt 0x5F</tcf:gui_name></tcf:enumItem>
+        <tcf:enumItem number="0x070" name="EXTERNAL_INT_0x60"><tcf:gui_name>External Interrupt 0x60</tcf:gui_name></tcf:enumItem>
+        <tcf:enumItem number="0x071" name="EXTERNAL_INT_0x61"><tcf:gui_name>External Interrupt 0x61</tcf:gui_name></tcf:enumItem>
+        <tcf:enumItem number="0x072" name="EXTERNAL_INT_0x62"><tcf:gui_name>External Interrupt 0x62</tcf:gui_name></tcf:enumItem>
+        <tcf:enumItem number="0x073" name="EXTERNAL_INT_0x63"><tcf:gui_name>External Interrupt 0x63</tcf:gui_name></tcf:enumItem>
+        <tcf:enumItem number="0x074" name="EXTERNAL_INT_0x64"><tcf:gui_name>External Interrupt 0x64</tcf:gui_name></tcf:enumItem>
+        <tcf:enumItem number="0x075" name="EXTERNAL_INT_0x65"><tcf:gui_name>External Interrupt 0x65</tcf:gui_name></tcf:enumItem>
+        <tcf:enumItem number="0x076" name="EXTERNAL_INT_0x66"><tcf:gui_name>External Interrupt 0x66</tcf:gui_name></tcf:enumItem>
+        <tcf:enumItem number="0x077" name="EXTERNAL_INT_0x67"><tcf:gui_name>External Interrupt 0x67</tcf:gui_name></tcf:enumItem>
+        <tcf:enumItem number="0x078" name="EXTERNAL_INT_0x68"><tcf:gui_name>External Interrupt 0x68</tcf:gui_name></tcf:enumItem>
+        <tcf:enumItem number="0x079" name="EXTERNAL_INT_0x69"><tcf:gui_name>External Interrupt 0x69</tcf:gui_name></tcf:enumItem>
+        <tcf:enumItem number="0x07A" name="EXTERNAL_INT_0x6A"><tcf:gui_name>External Interrupt 0x6A</tcf:gui_name></tcf:enumItem>
+        <tcf:enumItem number="0x07B" name="EXTERNAL_INT_0x6B"><tcf:gui_name>External Interrupt 0x6B</tcf:gui_name></tcf:enumItem>
+        <tcf:enumItem number="0x07C" name="EXTERNAL_INT_0x6C"><tcf:gui_name>External Interrupt 0x6C</tcf:gui_name></tcf:enumItem>
+        <tcf:enumItem number="0x07D" name="EXTERNAL_INT_0x6D"><tcf:gui_name>External Interrupt 0x6D</tcf:gui_name></tcf:enumItem>
+        <tcf:enumItem number="0x07E" name="EXTERNAL_INT_0x6E"><tcf:gui_name>External Interrupt 0x6E</tcf:gui_name></tcf:enumItem>
+        <tcf:enumItem number="0x07F" name="EXTERNAL_INT_0x6F"><tcf:gui_name>External Interrupt 0x6F</tcf:gui_name></tcf:enumItem>
+        <tcf:enumItem number="0x080" name="EXTERNAL_INT_0x70"><tcf:gui_name>External Interrupt 0x70</tcf:gui_name></tcf:enumItem>
+        <tcf:enumItem number="0x081" name="EXTERNAL_INT_0x71"><tcf:gui_name>External Interrupt 0x71</tcf:gui_name></tcf:enumItem>
+        <tcf:enumItem number="0x082" name="EXTERNAL_INT_0x72"><tcf:gui_name>External Interrupt 0x72</tcf:gui_name></tcf:enumItem>
+        <tcf:enumItem number="0x083" name="EXTERNAL_INT_0x73"><tcf:gui_name>External Interrupt 0x73</tcf:gui_name></tcf:enumItem>
+        <tcf:enumItem number="0x084" name="EXTERNAL_INT_0x74"><tcf:gui_name>External Interrupt 0x74</tcf:gui_name></tcf:enumItem>
+        <tcf:enumItem number="0x085" name="EXTERNAL_INT_0x75"><tcf:gui_name>External Interrupt 0x75</tcf:gui_name></tcf:enumItem>
+        <tcf:enumItem number="0x086" name="EXTERNAL_INT_0x76"><tcf:gui_name>External Interrupt 0x76</tcf:gui_name></tcf:enumItem>
+        <tcf:enumItem number="0x087" name="EXTERNAL_INT_0x77"><tcf:gui_name>External Interrupt 0x77</tcf:gui_name></tcf:enumItem>
+        <tcf:enumItem number="0x088" name="EXTERNAL_INT_0x78"><tcf:gui_name>External Interrupt 0x78</tcf:gui_name></tcf:enumItem>
+        <tcf:enumItem number="0x089" name="EXTERNAL_INT_0x79"><tcf:gui_name>External Interrupt 0x79</tcf:gui_name></tcf:enumItem>
+        <tcf:enumItem number="0x08A" name="EXTERNAL_INT_0x7A"><tcf:gui_name>External Interrupt 0x7A</tcf:gui_name></tcf:enumItem>
+        <tcf:enumItem number="0x08B" name="EXTERNAL_INT_0x7B"><tcf:gui_name>External Interrupt 0x7B</tcf:gui_name></tcf:enumItem>
+        <tcf:enumItem number="0x08C" name="EXTERNAL_INT_0x7C"><tcf:gui_name>External Interrupt 0x7C</tcf:gui_name></tcf:enumItem>
+        <tcf:enumItem number="0x08D" name="EXTERNAL_INT_0x7D"><tcf:gui_name>External Interrupt 0x7D</tcf:gui_name></tcf:enumItem>
+        <tcf:enumItem number="0x08E" name="EXTERNAL_INT_0x7E"><tcf:gui_name>External Interrupt 0x7E</tcf:gui_name></tcf:enumItem>
+        <tcf:enumItem number="0x08F" name="EXTERNAL_INT_0x7F"><tcf:gui_name>External Interrupt 0x7F</tcf:gui_name></tcf:enumItem>
+        <tcf:enumItem number="0x090" name="EXTERNAL_INT_0x80"><tcf:gui_name>External Interrupt 0x80</tcf:gui_name></tcf:enumItem>
+        <tcf:enumItem number="0x091" name="EXTERNAL_INT_0x81"><tcf:gui_name>External Interrupt 0x81</tcf:gui_name></tcf:enumItem>
+        <tcf:enumItem number="0x092" name="EXTERNAL_INT_0x82"><tcf:gui_name>External Interrupt 0x82</tcf:gui_name></tcf:enumItem>
+        <tcf:enumItem number="0x093" name="EXTERNAL_INT_0x83"><tcf:gui_name>External Interrupt 0x83</tcf:gui_name></tcf:enumItem>
+        <tcf:enumItem number="0x094" name="EXTERNAL_INT_0x84"><tcf:gui_name>External Interrupt 0x84</tcf:gui_name></tcf:enumItem>
+        <tcf:enumItem number="0x095" name="EXTERNAL_INT_0x85"><tcf:gui_name>External Interrupt 0x85</tcf:gui_name></tcf:enumItem>
+        <tcf:enumItem number="0x096" name="EXTERNAL_INT_0x86"><tcf:gui_name>External Interrupt 0x86</tcf:gui_name></tcf:enumItem>
+        <tcf:enumItem number="0x097" name="EXTERNAL_INT_0x87"><tcf:gui_name>External Interrupt 0x87</tcf:gui_name></tcf:enumItem>
+        <tcf:enumItem number="0x098" name="EXTERNAL_INT_0x88"><tcf:gui_name>External Interrupt 0x88</tcf:gui_name></tcf:enumItem>
+        <tcf:enumItem number="0x099" name="EXTERNAL_INT_0x89"><tcf:gui_name>External Interrupt 0x89</tcf:gui_name></tcf:enumItem>
+        <tcf:enumItem number="0x09A" name="EXTERNAL_INT_0x8A"><tcf:gui_name>External Interrupt 0x8A</tcf:gui_name></tcf:enumItem>
+        <tcf:enumItem number="0x09B" name="EXTERNAL_INT_0x8B"><tcf:gui_name>External Interrupt 0x8B</tcf:gui_name></tcf:enumItem>
+        <tcf:enumItem number="0x09C" name="EXTERNAL_INT_0x8C"><tcf:gui_name>External Interrupt 0x8C</tcf:gui_name></tcf:enumItem>
+        <tcf:enumItem number="0x09D" name="EXTERNAL_INT_0x8D"><tcf:gui_name>External Interrupt 0x8D</tcf:gui_name></tcf:enumItem>
+        <tcf:enumItem number="0x09E" name="EXTERNAL_INT_0x8E"><tcf:gui_name>External Interrupt 0x8E</tcf:gui_name></tcf:enumItem>
+        <tcf:enumItem number="0x09F" name="EXTERNAL_INT_0x8F"><tcf:gui_name>External Interrupt 0x8F</tcf:gui_name></tcf:enumItem>
+        <tcf:enumItem number="0x0A0" name="EXTERNAL_INT_0x90"><tcf:gui_name>External Interrupt 0x90</tcf:gui_name></tcf:enumItem>
+        <tcf:enumItem number="0x0A1" name="EXTERNAL_INT_0x91"><tcf:gui_name>External Interrupt 0x91</tcf:gui_name></tcf:enumItem>
+        <tcf:enumItem number="0x0A2" name="EXTERNAL_INT_0x92"><tcf:gui_name>External Interrupt 0x92</tcf:gui_name></tcf:enumItem>
+        <tcf:enumItem number="0x0A3" name="EXTERNAL_INT_0x93"><tcf:gui_name>External Interrupt 0x93</tcf:gui_name></tcf:enumItem>
+        <tcf:enumItem number="0x0A4" name="EXTERNAL_INT_0x94"><tcf:gui_name>External Interrupt 0x94</tcf:gui_name></tcf:enumItem>
+        <tcf:enumItem number="0x0A5" name="EXTERNAL_INT_0x95"><tcf:gui_name>External Interrupt 0x95</tcf:gui_name></tcf:enumItem>
+        <tcf:enumItem number="0x0A6" name="EXTERNAL_INT_0x96"><tcf:gui_name>External Interrupt 0x96</tcf:gui_name></tcf:enumItem>
+        <tcf:enumItem number="0x0A7" name="EXTERNAL_INT_0x97"><tcf:gui_name>External Interrupt 0x97</tcf:gui_name></tcf:enumItem>
+        <tcf:enumItem number="0x0A8" name="EXTERNAL_INT_0x98"><tcf:gui_name>External Interrupt 0x98</tcf:gui_name></tcf:enumItem>
+        <tcf:enumItem number="0x0A9" name="EXTERNAL_INT_0x99"><tcf:gui_name>External Interrupt 0x99</tcf:gui_name></tcf:enumItem>
+        <tcf:enumItem number="0x0AA" name="EXTERNAL_INT_0x9A"><tcf:gui_name>External Interrupt 0x9A</tcf:gui_name></tcf:enumItem>
+        <tcf:enumItem number="0x0AB" name="EXTERNAL_INT_0x9B"><tcf:gui_name>External Interrupt 0x9B</tcf:gui_name></tcf:enumItem>
+        <tcf:enumItem number="0x0AC" name="EXTERNAL_INT_0x9C"><tcf:gui_name>External Interrupt 0x9C</tcf:gui_name></tcf:enumItem>
+        <tcf:enumItem number="0x0AD" name="EXTERNAL_INT_0x9D"><tcf:gui_name>External Interrupt 0x9D</tcf:gui_name></tcf:enumItem>
+        <tcf:enumItem number="0x0AE" name="EXTERNAL_INT_0x9E"><tcf:gui_name>External Interrupt 0x9E</tcf:gui_name></tcf:enumItem>
+        <tcf:enumItem number="0x0AF" name="EXTERNAL_INT_0x9F"><tcf:gui_name>External Interrupt 0x9F</tcf:gui_name></tcf:enumItem>
+        <tcf:enumItem number="0x0B0" name="EXTERNAL_INT_0xA0"><tcf:gui_name>External Interrupt 0xA0</tcf:gui_name></tcf:enumItem>
+        <tcf:enumItem number="0x0B1" name="EXTERNAL_INT_0xA1"><tcf:gui_name>External Interrupt 0xA1</tcf:gui_name></tcf:enumItem>
+        <tcf:enumItem number="0x0B2" name="EXTERNAL_INT_0xA2"><tcf:gui_name>External Interrupt 0xA2</tcf:gui_name></tcf:enumItem>
+        <tcf:enumItem number="0x0B3" name="EXTERNAL_INT_0xA3"><tcf:gui_name>External Interrupt 0xA3</tcf:gui_name></tcf:enumItem>
+        <tcf:enumItem number="0x0B4" name="EXTERNAL_INT_0xA4"><tcf:gui_name>External Interrupt 0xA4</tcf:gui_name></tcf:enumItem>
+        <tcf:enumItem number="0x0B5" name="EXTERNAL_INT_0xA5"><tcf:gui_name>External Interrupt 0xA5</tcf:gui_name></tcf:enumItem>
+        <tcf:enumItem number="0x0B6" name="EXTERNAL_INT_0xA6"><tcf:gui_name>External Interrupt 0xA6</tcf:gui_name></tcf:enumItem>
+        <tcf:enumItem number="0x0B7" name="EXTERNAL_INT_0xA7"><tcf:gui_name>External Interrupt 0xA7</tcf:gui_name></tcf:enumItem>
+        <tcf:enumItem number="0x0B8" name="EXTERNAL_INT_0xA8"><tcf:gui_name>External Interrupt 0xA8</tcf:gui_name></tcf:enumItem>
+        <tcf:enumItem number="0x0B9" name="EXTERNAL_INT_0xA9"><tcf:gui_name>External Interrupt 0xA9</tcf:gui_name></tcf:enumItem>
+        <tcf:enumItem number="0x0BA" name="EXTERNAL_INT_0xAA"><tcf:gui_name>External Interrupt 0xAA</tcf:gui_name></tcf:enumItem>
+        <tcf:enumItem number="0x0BB" name="EXTERNAL_INT_0xAB"><tcf:gui_name>External Interrupt 0xAB</tcf:gui_name></tcf:enumItem>
+        <tcf:enumItem number="0x0BC" name="EXTERNAL_INT_0xAC"><tcf:gui_name>External Interrupt 0xAC</tcf:gui_name></tcf:enumItem>
+        <tcf:enumItem number="0x0BD" name="EXTERNAL_INT_0xAD"><tcf:gui_name>External Interrupt 0xAD</tcf:gui_name></tcf:enumItem>
+        <tcf:enumItem number="0x0BE" name="EXTERNAL_INT_0xAE"><tcf:gui_name>External Interrupt 0xAE</tcf:gui_name></tcf:enumItem>
+        <tcf:enumItem number="0x0BF" name="EXTERNAL_INT_0xAF"><tcf:gui_name>External Interrupt 0xAF</tcf:gui_name></tcf:enumItem>
+        <tcf:enumItem number="0x0C0" name="EXTERNAL_INT_0xB0"><tcf:gui_name>External Interrupt 0xB0</tcf:gui_name></tcf:enumItem>
+        <tcf:enumItem number="0x0C1" name="EXTERNAL_INT_0xB1"><tcf:gui_name>External Interrupt 0xB1</tcf:gui_name></tcf:enumItem>
+        <tcf:enumItem number="0x0C2" name="EXTERNAL_INT_0xB2"><tcf:gui_name>External Interrupt 0xB2</tcf:gui_name></tcf:enumItem>
+        <tcf:enumItem number="0x0C3" name="EXTERNAL_INT_0xB3"><tcf:gui_name>External Interrupt 0xB3</tcf:gui_name></tcf:enumItem>
+        <tcf:enumItem number="0x0C4" name="EXTERNAL_INT_0xB4"><tcf:gui_name>External Interrupt 0xB4</tcf:gui_name></tcf:enumItem>
+        <tcf:enumItem number="0x0C5" name="EXTERNAL_INT_0xB5"><tcf:gui_name>External Interrupt 0xB5</tcf:gui_name></tcf:enumItem>
+        <tcf:enumItem number="0x0C6" name="EXTERNAL_INT_0xB6"><tcf:gui_name>External Interrupt 0xB6</tcf:gui_name></tcf:enumItem>
+        <tcf:enumItem number="0x0C7" name="EXTERNAL_INT_0xB7"><tcf:gui_name>External Interrupt 0xB7</tcf:gui_name></tcf:enumItem>
+        <tcf:enumItem number="0x0C8" name="EXTERNAL_INT_0xB8"><tcf:gui_name>External Interrupt 0xB8</tcf:gui_name></tcf:enumItem>
+        <tcf:enumItem number="0x0C9" name="EXTERNAL_INT_0xB9"><tcf:gui_name>External Interrupt 0xB9</tcf:gui_name></tcf:enumItem>
+        <tcf:enumItem number="0x0CA" name="EXTERNAL_INT_0xBA"><tcf:gui_name>External Interrupt 0xBA</tcf:gui_name></tcf:enumItem>
+        <tcf:enumItem number="0x0CB" name="EXTERNAL_INT_0xBB"><tcf:gui_name>External Interrupt 0xBB</tcf:gui_name></tcf:enumItem>
+        <tcf:enumItem number="0x0CC" name="EXTERNAL_INT_0xBC"><tcf:gui_name>External Interrupt 0xBC</tcf:gui_name></tcf:enumItem>
+        <tcf:enumItem number="0x0CD" name="EXTERNAL_INT_0xBD"><tcf:gui_name>External Interrupt 0xBD</tcf:gui_name></tcf:enumItem>
+        <tcf:enumItem number="0x0CE" name="EXTERNAL_INT_0xBE"><tcf:gui_name>External Interrupt 0xBE</tcf:gui_name></tcf:enumItem>
+        <tcf:enumItem number="0x0CF" name="EXTERNAL_INT_0xBF"><tcf:gui_name>External Interrupt 0xBF</tcf:gui_name></tcf:enumItem>
+        <tcf:enumItem number="0x0D0" name="EXTERNAL_INT_0xC0"><tcf:gui_name>External Interrupt 0xC0</tcf:gui_name></tcf:enumItem>
+        <tcf:enumItem number="0x0D1" name="EXTERNAL_INT_0xC1"><tcf:gui_name>External Interrupt 0xC1</tcf:gui_name></tcf:enumItem>
+        <tcf:enumItem number="0x0D2" name="EXTERNAL_INT_0xC2"><tcf:gui_name>External Interrupt 0xC2</tcf:gui_name></tcf:enumItem>
+        <tcf:enumItem number="0x0D3" name="EXTERNAL_INT_0xC3"><tcf:gui_name>External Interrupt 0xC3</tcf:gui_name></tcf:enumItem>
+        <tcf:enumItem number="0x0D4" name="EXTERNAL_INT_0xC4"><tcf:gui_name>External Interrupt 0xC4</tcf:gui_name></tcf:enumItem>
+        <tcf:enumItem number="0x0D5" name="EXTERNAL_INT_0xC5"><tcf:gui_name>External Interrupt 0xC5</tcf:gui_name></tcf:enumItem>
+        <tcf:enumItem number="0x0D6" name="EXTERNAL_INT_0xC6"><tcf:gui_name>External Interrupt 0xC6</tcf:gui_name></tcf:enumItem>
+        <tcf:enumItem number="0x0D7" name="EXTERNAL_INT_0xC7"><tcf:gui_name>External Interrupt 0xC7</tcf:gui_name></tcf:enumItem>
+        <tcf:enumItem number="0x0D8" name="EXTERNAL_INT_0xC8"><tcf:gui_name>External Interrupt 0xC8</tcf:gui_name></tcf:enumItem>
+        <tcf:enumItem number="0x0D9" name="EXTERNAL_INT_0xC9"><tcf:gui_name>External Interrupt 0xC9</tcf:gui_name></tcf:enumItem>
+        <tcf:enumItem number="0x0DA" name="EXTERNAL_INT_0xCA"><tcf:gui_name>External Interrupt 0xCA</tcf:gui_name></tcf:enumItem>
+        <tcf:enumItem number="0x0DB" name="EXTERNAL_INT_0xCB"><tcf:gui_name>External Interrupt 0xCB</tcf:gui_name></tcf:enumItem>
+        <tcf:enumItem number="0x0DC" name="EXTERNAL_INT_0xCC"><tcf:gui_name>External Interrupt 0xCC</tcf:gui_name></tcf:enumItem>
+        <tcf:enumItem number="0x0DD" name="EXTERNAL_INT_0xCD"><tcf:gui_name>External Interrupt 0xCD</tcf:gui_name></tcf:enumItem>
+        <tcf:enumItem number="0x0DE" name="EXTERNAL_INT_0xCE"><tcf:gui_name>External Interrupt 0xCE</tcf:gui_name></tcf:enumItem>
+        <tcf:enumItem number="0x0DF" name="EXTERNAL_INT_0xCF"><tcf:gui_name>External Interrupt 0xCF</tcf:gui_name></tcf:enumItem>
+        <tcf:enumItem number="0x0E0" name="EXTERNAL_INT_0xD0"><tcf:gui_name>External Interrupt 0xD0</tcf:gui_name></tcf:enumItem>
+        <tcf:enumItem number="0x0E1" name="EXTERNAL_INT_0xD1"><tcf:gui_name>External Interrupt 0xD1</tcf:gui_name></tcf:enumItem>
+        <tcf:enumItem number="0x0E2" name="EXTERNAL_INT_0xD2"><tcf:gui_name>External Interrupt 0xD2</tcf:gui_name></tcf:enumItem>
+        <tcf:enumItem number="0x0E3" name="EXTERNAL_INT_0xD3"><tcf:gui_name>External Interrupt 0xD3</tcf:gui_name></tcf:enumItem>
+        <tcf:enumItem number="0x0E4" name="EXTERNAL_INT_0xD4"><tcf:gui_name>External Interrupt 0xD4</tcf:gui_name></tcf:enumItem>
+        <tcf:enumItem number="0x0E5" name="EXTERNAL_INT_0xD5"><tcf:gui_name>External Interrupt 0xD5</tcf:gui_name></tcf:enumItem>
+        <tcf:enumItem number="0x0E6" name="EXTERNAL_INT_0xD6"><tcf:gui_name>External Interrupt 0xD6</tcf:gui_name></tcf:enumItem>
+        <tcf:enumItem number="0x0E7" name="EXTERNAL_INT_0xD7"><tcf:gui_name>External Interrupt 0xD7</tcf:gui_name></tcf:enumItem>
+        <tcf:enumItem number="0x0E8" name="EXTERNAL_INT_0xD8"><tcf:gui_name>External Interrupt 0xD8</tcf:gui_name></tcf:enumItem>
+        <tcf:enumItem number="0x0E9" name="EXTERNAL_INT_0xD9"><tcf:gui_name>External Interrupt 0xD9</tcf:gui_name></tcf:enumItem>
+        <tcf:enumItem number="0x0EA" name="EXTERNAL_INT_0xDA"><tcf:gui_name>External Interrupt 0xDA</tcf:gui_name></tcf:enumItem>
+        <tcf:enumItem number="0x0EB" name="EXTERNAL_INT_0xDB"><tcf:gui_name>External Interrupt 0xDB</tcf:gui_name></tcf:enumItem>
+        <tcf:enumItem number="0x0EC" name="EXTERNAL_INT_0xDC"><tcf:gui_name>External Interrupt 0xDC</tcf:gui_name></tcf:enumItem>
+        <tcf:enumItem number="0x0ED" name="EXTERNAL_INT_0xDD"><tcf:gui_name>External Interrupt 0xDD</tcf:gui_name></tcf:enumItem>
+        <tcf:enumItem number="0x0EE" name="EXTERNAL_INT_0xDE"><tcf:gui_name>External Interrupt 0xDE</tcf:gui_name></tcf:enumItem>
+        <tcf:enumItem number="0x0EF" name="EXTERNAL_INT_0xDF"><tcf:gui_name>External Interrupt 0xDF</tcf:gui_name></tcf:enumItem>
+        <tcf:enumItem number="0x0F0" name="EXTERNAL_INT_0xE0"><tcf:gui_name>External Interrupt 0xE0</tcf:gui_name></tcf:enumItem>
+        <tcf:enumItem number="0x0F1" name="EXTERNAL_INT_0xE1"><tcf:gui_name>External Interrupt 0xE1</tcf:gui_name></tcf:enumItem>
+        <tcf:enumItem number="0x0F2" name="EXTERNAL_INT_0xE2"><tcf:gui_name>External Interrupt 0xE2</tcf:gui_name></tcf:enumItem>
+        <tcf:enumItem number="0x0F3" name="EXTERNAL_INT_0xE3"><tcf:gui_name>External Interrupt 0xE3</tcf:gui_name></tcf:enumItem>
+        <tcf:enumItem number="0x0F4" name="EXTERNAL_INT_0xE4"><tcf:gui_name>External Interrupt 0xE4</tcf:gui_name></tcf:enumItem>
+        <tcf:enumItem number="0x0F5" name="EXTERNAL_INT_0xE5"><tcf:gui_name>External Interrupt 0xE5</tcf:gui_name></tcf:enumItem>
+        <tcf:enumItem number="0x0F6" name="EXTERNAL_INT_0xE6"><tcf:gui_name>External Interrupt 0xE6</tcf:gui_name></tcf:enumItem>
+        <tcf:enumItem number="0x0F7" name="EXTERNAL_INT_0xE7"><tcf:gui_name>External Interrupt 0xE7</tcf:gui_name></tcf:enumItem>
+        <tcf:enumItem number="0x0F8" name="EXTERNAL_INT_0xE8"><tcf:gui_name>External Interrupt 0xE8</tcf:gui_name></tcf:enumItem>
+        <tcf:enumItem number="0x0F9" name="EXTERNAL_INT_0xE9"><tcf:gui_name>External Interrupt 0xE9</tcf:gui_name></tcf:enumItem>
+        <tcf:enumItem number="0x0FA" name="EXTERNAL_INT_0xEA"><tcf:gui_name>External Interrupt 0xEA</tcf:gui_name></tcf:enumItem>
+        <tcf:enumItem number="0x0FB" name="EXTERNAL_INT_0xEB"><tcf:gui_name>External Interrupt 0xEB</tcf:gui_name></tcf:enumItem>
+        <tcf:enumItem number="0x0FC" name="EXTERNAL_INT_0xEC"><tcf:gui_name>External Interrupt 0xEC</tcf:gui_name></tcf:enumItem>
+        <tcf:enumItem number="0x0FD" name="EXTERNAL_INT_0xED"><tcf:gui_name>External Interrupt 0xED</tcf:gui_name></tcf:enumItem>
+        <tcf:enumItem number="0x0FE" name="EXTERNAL_INT_0xEE"><tcf:gui_name>External Interrupt 0xEE</tcf:gui_name></tcf:enumItem>
+        <tcf:enumItem number="0x0FF" name="EXTERNAL_INT_0xEF"><tcf:gui_name>External Interrupt 0xEF</tcf:gui_name></tcf:enumItem>
+    </tcf:enumeration>
+    <tcf:enumeration name="CORE_CONTROL_FPCA">
+        <tcf:enumItem number="0" name="FP_extension_not_active"><tcf:gui_name>FP extension not active</tcf:gui_name></tcf:enumItem>
+        <tcf:enumItem number="1" name="FP_extension_is_active"><tcf:gui_name>FP extension is active</tcf:gui_name></tcf:enumItem>
+    </tcf:enumeration>
+    <tcf:enumeration name="CORE_CONTROL_SPSEL">
+        <tcf:enumItem number="0" name="SP_main_in_use"><tcf:gui_name>SP_main in use</tcf:gui_name></tcf:enumItem>
+        <tcf:enumItem number="1" name="SP_process_in_use"><tcf:gui_name>SP_process in use</tcf:gui_name></tcf:enumItem>
+    </tcf:enumeration>
+    <tcf:enumeration name="CORE_CONTROL_NPRIV">
+        <tcf:enumItem number="0" name="Privileged_access"><tcf:gui_name>Privileged access</tcf:gui_name></tcf:enumItem>
+        <tcf:enumItem number="1" name="Unprivileged_access"><tcf:gui_name>Unprivileged access</tcf:gui_name></tcf:enumItem>
+    </tcf:enumeration>
+</register_list>

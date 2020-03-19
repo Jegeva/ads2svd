@@ -1,0 +1,391 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>TCR_EL1</title>
+    <link href="insn.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body><table align="center"><tr><td><div class="topbar"><a href="AArch32-regindex.html">AArch32 Registers</a></div></td><td><div class="topbar"><a href="AArch64-regindex.html">AArch64 Registers</a></div></td><td><div class="topbar"><a href="AArch32-sysindex.html">AArch32 Instructions</a></div></td><td><div class="topbar"><a href="AArch64-sysindex.html">AArch64 Instructions</a></div></td><td><div class="topbar"><a href="enc_index.html">Index by Encoding</a></div></td><td><div class="topbar"><a href="ext_alpha_index.html">External Registers</a></div></td><td><div class="topbar"><a href="ext_enc_index.html">External Registers by Offset</a></div></td><td><div class="topbar"><a href="func_index.html">Registers by Functional Group</a></div></td></tr></table><hr /><h1 class="register-section">TCR_EL1, Translation Control Register (EL1)</h1><p>The TCR_EL1 characteristics are:</p><h2>Purpose</h2>
+          <p>The control register for stage 1 of the EL1&amp;0 translation regime.</p>
+        <p>This 
+        register
+       is part of the Virtual memory control registers functional group.</p><h2>Configuration</h2><p>AArch64 System register TCR_EL1 bits [31:0]
+        
+                are architecturally mapped to
+              AArch32 System register <a href="AArch32-ttbcr.html">TTBCR</a>.
+          </p><p>
+                RW fields in this register reset to architecturally <span class="arm-defined-word">UNKNOWN</span> values.
+              </p><h2>Attributes</h2>
+          <p>TCR_EL1 is a 64-bit register.</p>
+        <h2>Field descriptions</h2><p>The TCR_EL1 bit assignments are:</p><table class="regdiagram"><thead><tr><td>63</td><td>62</td><td>61</td><td>60</td><td>59</td><td>58</td><td>57</td><td>56</td><td>55</td><td>54</td><td>53</td><td>52</td><td>51</td><td>50</td><td>49</td><td>48</td><td>47</td><td>46</td><td>45</td><td>44</td><td>43</td><td>42</td><td>41</td><td>40</td><td>39</td><td>38</td><td>37</td><td>36</td><td>35</td><td>34</td><td>33</td><td>32</td></tr></thead><tbody><tr class="firstrow"><td class="l">0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td class="r">0</td><td class="lr" colspan="1"><a href="#HPD1">HPD1</a></td><td class="lr" colspan="1"><a href="#HPD0">HPD0</a></td><td class="lr" colspan="1"><a href="#HD">HD</a></td><td class="lr" colspan="1"><a href="#HA">HA</a></td><td class="lr" colspan="1"><a href="#TBI1">TBI1</a></td><td class="lr" colspan="1"><a href="#TBI0">TBI0</a></td><td class="lr" colspan="1"><a href="#AS">AS</a></td><td class="lr">0</td><td class="lr" colspan="3"><a href="#IPS">IPS</a></td></tr><tr class="firstrow"><td class="lr" colspan="2"><a href="#TG1">TG1</a></td><td class="lr" colspan="2"><a href="#SH1">SH1</a></td><td class="lr" colspan="2"><a href="#ORGN1">ORGN1</a></td><td class="lr" colspan="2"><a href="#IRGN1">IRGN1</a></td><td class="lr" colspan="1"><a href="#EPD1">EPD1</a></td><td class="lr" colspan="1"><a href="#A1">A1</a></td><td class="lr" colspan="6"><a href="#T1SZ">T1SZ</a></td><td class="lr" colspan="2"><a href="#TG0">TG0</a></td><td class="lr" colspan="2"><a href="#SH0">SH0</a></td><td class="lr" colspan="2"><a href="#ORGN0">ORGN0</a></td><td class="lr" colspan="2"><a href="#IRGN0">IRGN0</a></td><td class="lr" colspan="1"><a href="#EPD0">EPD0</a></td><td class="lr">0</td><td class="lr" colspan="6"><a href="#T0SZ">T0SZ</a></td></tr></tbody><tfoot><tr><td>31</td><td>30</td><td>29</td><td>28</td><td>27</td><td>26</td><td>25</td><td>24</td><td>23</td><td>22</td><td>21</td><td>20</td><td>19</td><td>18</td><td>17</td><td>16</td><td>15</td><td>14</td><td>13</td><td>12</td><td>11</td><td>10</td><td>9</td><td>8</td><td>7</td><td>6</td><td>5</td><td>4</td><td>3</td><td>2</td><td>1</td><td>0</td></tr></tfoot></table><div class="text_before_fields">
+            <p>Any of the bits in TCR_EL1 are permitted to be cached in a TLB.</p>
+          </div><h4 id="0">
+                Bits [63:43]
+              </h4>
+              <p>Reserved, <span class="arm-defined-word">RES0</span>.</p>
+            <h4 id="HPD1">HPD1, bit [42]
+              <font style="font-size:smaller;"><br />
+            In 
+            ARMv8.1:</font></h4>
+              <p>Hierarchical Permission Disables. This affects the hierarchical control bits, APTable, PXNTable, and UXNTable, except NSTable, in the translation tables pointed to by <a href="AArch64-ttbr1_el1.html">TTBR1_EL1</a>.</p>
+            
+              <p>Defined values are:</p>
+            <table class="valuetable"><tr><th>HPD1</th><th>Meaning</th></tr><tr><td class="bitfield">0</td><td>
+                  <p>Hierarchical permissions are enabled.</p>
+                </td></tr><tr><td class="bitfield">1</td><td>
+                  <p>Hierarchical permissions are disabled.</p>
+                </td></tr></table>
+              <p>When disabled, the permissions are treated as if the bits are zero.</p>
+            
+              <p>This bit is <span class="arm-defined-word">RES0</span> if <span class="xref">ARMv8.1-HPD</span> is not implemented.</p>
+            <h4 id="0"><font style="font-size:smaller;"><br />
+            In 
+            ARMv8.0:</font></h4>
+              <p>Reserved, <span class="arm-defined-word">RES0</span>.</p>
+            <h4 id="HPD0">HPD0, bit [41]
+              <font style="font-size:smaller;"><br />
+            In 
+            ARMv8.1:</font></h4>
+              <p>Hierarchical Permission Disables. This affects the hierarchical control bits, APTable, PXNTable, and UXNTable, except NSTable, in the translation tables pointed to by <a href="AArch64-ttbr0_el1.html">TTBR0_EL1</a>.</p>
+            
+              <p>Defined values are:</p>
+            <table class="valuetable"><tr><th>HPD0</th><th>Meaning</th></tr><tr><td class="bitfield">0</td><td>
+                  <p>Hierarchical permissions are enabled.</p>
+                </td></tr><tr><td class="bitfield">1</td><td>
+                  <p>Hierarchical permissions are disabled.</p>
+                </td></tr></table>
+              <p>When disabled, the permissions are treated as if the bits are zero.</p>
+            
+              <p>This bit is <span class="arm-defined-word">RES0</span> if <span class="xref">ARMv8.1-HPD</span> is not implemented.</p>
+            <h4 id="0"><font style="font-size:smaller;"><br />
+            In 
+            ARMv8.0:</font></h4>
+              <p>Reserved, <span class="arm-defined-word">RES0</span>.</p>
+            <h4 id="HD">HD, bit [40]
+              <font style="font-size:smaller;"><br />
+            In 
+            ARMv8.1:</font></h4>
+              <p>Hardware management of dirty state in stage 1 translations from EL0 and EL1.</p>
+            
+              <p>Defined values are:</p>
+            <table class="valuetable"><tr><th>HD</th><th>Meaning</th></tr><tr><td class="bitfield">0</td><td>
+                  <p>Stage 1 hardware management of dirty state disabled.</p>
+                </td></tr><tr><td class="bitfield">1</td><td>
+                  <p>Stage 1 hardware management of dirty state enabled, only if the HA bit is also set to 1.</p>
+                </td></tr></table>
+              <p>This bit is <span class="arm-defined-word">RES0</span> if <span class="xref">ARMv8.1-TTHM</span> is not implemented.</p>
+            <h4 id="0"><font style="font-size:smaller;"><br />
+            In 
+            ARMv8.0:</font></h4>
+              <p>Reserved, <span class="arm-defined-word">RES0</span>.</p>
+            <h4 id="HA">HA, bit [39]
+              <font style="font-size:smaller;"><br />
+            In 
+            ARMv8.1:</font></h4>
+              <p>Hardware Access flag update in stage 1 translations from EL0 and EL1.</p>
+            
+              <p>Defined values are:</p>
+            <table class="valuetable"><tr><th>HA</th><th>Meaning</th></tr><tr><td class="bitfield">0</td><td>
+                  <p>Stage 1 Access flag update disabled.</p>
+                </td></tr><tr><td class="bitfield">1</td><td>
+                  <p>Stage 1 Access flag update enabled.</p>
+                </td></tr></table>
+              <p>This bit is <span class="arm-defined-word">RES0</span> if <span class="xref">ARMv8.1-TTHM</span> is not implemented.</p>
+            <h4 id="0"><font style="font-size:smaller;"><br />
+            In 
+            ARMv8.0:</font></h4>
+              <p>Reserved, <span class="arm-defined-word">RES0</span>.</p>
+            <h4 id="TBI1">TBI1, bit [38]
+              </h4>
+              <p>Top Byte ignored - indicates whether the top byte of an address is used for address match for the <a href="AArch64-ttbr1_el1.html">TTBR1_EL1</a> region, or ignored and used for tagged addresses. Defined values are:</p>
+            <table class="valuetable"><tr><th>TBI1</th><th>Meaning</th></tr><tr><td class="bitfield">0</td><td>
+                  <p>Top Byte used in the address calculation.</p>
+                </td></tr><tr><td class="bitfield">1</td><td>
+                  <p>Top Byte ignored in the address calculation.</p>
+                </td></tr></table>
+              <p>This affects addresses generated in EL0 and EL1 using AArch64 where the address would be translated by tables pointed to by <a href="AArch64-ttbr1_el1.html">TTBR1_EL1</a>. It has an effect whether the EL1&amp;0 translation regime is enabled or not.</p>
+            
+              <p>Additionally, this affects changes to the program counter, when TBI1 is 1 and bit [55] of the target address is 1, caused by:</p>
+            
+              <ul>
+                <li>
+                  A branch or procedure return within EL0 or EL1.
+                </li>
+                <li>
+                  An exception taken to EL1.
+                </li>
+                <li>
+                  An exception return to EL0 or EL1.
+                </li>
+              </ul>
+            
+              <p>In these cases bits [63:56] of the address are also set to 1 before it is stored in the PC.</p>
+            <h4 id="TBI0">TBI0, bit [37]
+              </h4>
+              <p>Top Byte ignored - indicates whether the top byte of an address is used for address match for the <a href="AArch64-ttbr0_el1.html">TTBR0_EL1</a> region, or ignored and used for tagged addresses. Defined values are:</p>
+            <table class="valuetable"><tr><th>TBI0</th><th>Meaning</th></tr><tr><td class="bitfield">0</td><td>
+                  <p>Top Byte used in the address calculation.</p>
+                </td></tr><tr><td class="bitfield">1</td><td>
+                  <p>Top Byte ignored in the address calculation.</p>
+                </td></tr></table>
+              <p>This affects addresses generated in EL0 and EL1 using AArch64 where the address would be translated by tables pointed to by <a href="AArch64-ttbr0_el1.html">TTBR0_EL1</a>. It has an effect whether the EL1&amp;0 translation regime is enabled or not.</p>
+            
+              <p>Additionally, this affects changes to the program counter, when TBI0 is 1 and bit [55] of the target address is 0, caused by:</p>
+            
+              <ul>
+                <li>
+                  A branch or procedure return within EL0 or EL1.
+                </li>
+                <li>
+                  An exception taken to EL1.
+                </li>
+                <li>
+                  An exception return to EL0 or EL1.
+                </li>
+              </ul>
+            
+              <p>In these cases bits [63:56] of the address are also set to 0 before it is stored in the PC.</p>
+            <h4 id="AS">AS, bit [36]
+              </h4>
+              <p>ASID Size. Defined values are:</p>
+            <table class="valuetable"><tr><th>AS</th><th>Meaning</th></tr><tr><td class="bitfield">0</td><td>
+                  <p>8 bit - the upper 8 bits of <a href="AArch64-ttbr0_el1.html">TTBR0_EL1</a> and <a href="AArch64-ttbr1_el1.html">TTBR1_EL1</a> are ignored by hardware for every purpose except reading back the register, and are treated as if they are all zeros for when used for allocation and matching entries in the TLB.</p>
+                </td></tr><tr><td class="bitfield">1</td><td>
+                  <p>16 bit - the upper 16 bits of <a href="AArch64-ttbr0_el1.html">TTBR0_EL1</a> and <a href="AArch64-ttbr1_el1.html">TTBR1_EL1</a> are used for allocation and matching in the TLB.</p>
+                </td></tr></table>
+              <p>If the implementation has only 8 bits of ASID, this field is <span class="arm-defined-word">RES0</span>.</p>
+            <h4 id="0">
+                Bit [35]
+              </h4>
+              <p>Reserved, <span class="arm-defined-word">RES0</span>.</p>
+            <h4 id="IPS">IPS, bits [34:32]
+                  </h4>
+              <p>Intermediate Physical Address Size.</p>
+            <table class="valuetable"><tr><th>IPS</th><th>Meaning</th></tr><tr><td class="bitfield">000</td><td>
+                  <p>32 bits, 4GB.</p>
+                </td></tr><tr><td class="bitfield">001</td><td>
+                  <p>36 bits, 64GB.</p>
+                </td></tr><tr><td class="bitfield">010</td><td>
+                  <p>40 bits, 1TB.</p>
+                </td></tr><tr><td class="bitfield">011</td><td>
+                  <p>42 bits, 4TB.</p>
+                </td></tr><tr><td class="bitfield">100</td><td>
+                  <p>44 bits, 16TB.</p>
+                </td></tr><tr><td class="bitfield">101</td><td>
+                  <p>48 bits, 256TB.</p>
+                </td></tr></table>
+              <p>Other values are reserved.</p>
+            
+              <p>The reserved values behave in the same way as the <span class="binarynumber">101</span> encoding, but software must not rely on this property as the behavior of the reserved values might change in a future revision of the architecture.</p>
+            
+              <p>In an implementation that supports 52-bit PAs, if the value of this field is not <span class="binarynumber">110</span>, then bits[51:48] of every translation table base address for the stage of translation controlled by TCR_EL1 are <span class="binarynumber">0000</span>.</p>
+            <h4 id="TG1">TG1, bits [31:30]
+                  </h4>
+              <p>Granule size for the <a href="AArch64-ttbr1_el1.html">TTBR1_EL1</a>.</p>
+            <table class="valuetable"><tr><th>TG1</th><th>Meaning</th></tr><tr><td class="bitfield">01</td><td>
+                  <p>16KB</p>
+                </td></tr><tr><td class="bitfield">10</td><td>
+                  <p>4KB</p>
+                </td></tr><tr><td class="bitfield">11</td><td>
+                  <p>64KB</p>
+                </td></tr></table>
+              <p>Other values are reserved.</p>
+            
+              <p>If the value is programmed to either a reserved value, or a size that has not been implemented, then the hardware will treat the field as if it has been programmed to an <span class="arm-defined-word">IMPLEMENTATION DEFINED</span> choice of the sizes that has been implemented for all purposes other than the value read back from this register.</p>
+            
+              <p>It is <span class="arm-defined-word">IMPLEMENTATION DEFINED</span> whether the value read back is the value programmed or the value that corresponds to the size chosen.</p>
+            <h4 id="SH1">SH1, bits [29:28]
+                  </h4>
+              <p>Shareability attribute for memory associated with translation table walks using <a href="AArch64-ttbr1_el1.html">TTBR1_EL1</a>. Defined values are:</p>
+            <table class="valuetable"><tr><th>SH1</th><th>Meaning</th></tr><tr><td class="bitfield">00</td><td>
+                  <p>Non-shareable</p>
+                </td></tr><tr><td class="bitfield">10</td><td>
+                  <p>Outer Shareable</p>
+                </td></tr><tr><td class="bitfield">11</td><td>
+                  <p>Inner Shareable</p>
+                </td></tr></table>
+              <p>Other values are reserved. The effect of programming this field to a Reserved value is that behavior is <span class="arm-defined-word">CONSTRAINED UNPREDICTABLE</span>, as described in <span class="xref">'Reserved values in AArch64 System registers and translation table entries' in the ARM ARM, section K1.2.2</span>.</p>
+            <h4 id="ORGN1">ORGN1, bits [27:26]
+                  </h4>
+              <p>Outer cacheability attribute for memory associated with translation table walks using <a href="AArch64-ttbr1_el1.html">TTBR1_EL1</a>.</p>
+            <table class="valuetable"><tr><th>ORGN1</th><th>Meaning</th></tr><tr><td class="bitfield">00</td><td>
+                  <p>Normal memory, Outer Non-cacheable</p>
+                </td></tr><tr><td class="bitfield">01</td><td>
+                  <p>Normal memory, Outer Write-Back Read-Allocate Write-Allocate Cacheable</p>
+                </td></tr><tr><td class="bitfield">10</td><td>
+                  <p>Normal memory, Outer Write-Through Read-Allocate No Write-Allocate Cacheable</p>
+                </td></tr><tr><td class="bitfield">11</td><td>
+                  <p>Normal memory, Outer Write-Back Read-Allocate No Write-Allocate Cacheable</p>
+                </td></tr></table><h4 id="IRGN1">IRGN1, bits [25:24]
+                  </h4>
+              <p>Inner cacheability attribute for memory associated with translation table walks using <a href="AArch64-ttbr1_el1.html">TTBR1_EL1</a>.</p>
+            <table class="valuetable"><tr><th>IRGN1</th><th>Meaning</th></tr><tr><td class="bitfield">00</td><td>
+                  <p>Normal memory, Inner Non-cacheable</p>
+                </td></tr><tr><td class="bitfield">01</td><td>
+                  <p>Normal memory, Inner Write-Back Read-Allocate Write-Allocate Cacheable</p>
+                </td></tr><tr><td class="bitfield">10</td><td>
+                  <p>Normal memory, Inner Write-Through Read-Allocate No Write-Allocate Cacheable</p>
+                </td></tr><tr><td class="bitfield">11</td><td>
+                  <p>Normal memory, Inner Write-Back Read-Allocate No Write-Allocate Cacheable</p>
+                </td></tr></table><h4 id="EPD1">EPD1, bit [23]
+              </h4>
+              <p>Translation table walk disable for translations using <a href="AArch64-ttbr1_el1.html">TTBR1_EL1</a>. This bit controls whether a translation table walk is performed on a TLB miss, for an address that is translated using <a href="AArch64-ttbr1_el1.html">TTBR1_EL1</a>. The encoding of this bit is:</p>
+            <table class="valuetable"><tr><th>EPD1</th><th>Meaning</th></tr><tr><td class="bitfield">0</td><td>
+                  <p>Perform translation table walks using <a href="AArch64-ttbr1_el1.html">TTBR1_EL1</a>.</p>
+                </td></tr><tr><td class="bitfield">1</td><td>
+                  <p>A TLB miss on an address that is translated using <a href="AArch64-ttbr1_el1.html">TTBR1_EL1</a> generates a Translation fault. No translation table walk is performed.</p>
+                </td></tr></table><h4 id="A1">A1, bit [22]
+              </h4>
+              <p>Selects whether <a href="AArch64-ttbr0_el1.html">TTBR0_EL1</a> or <a href="AArch64-ttbr1_el1.html">TTBR1_EL1</a> defines the ASID. The encoding of this bit is:</p>
+            <table class="valuetable"><tr><th>A1</th><th>Meaning</th></tr><tr><td class="bitfield">0</td><td>
+                  <p><a href="AArch64-ttbr0_el1.html">TTBR0_EL1</a>.ASID defines the ASID.</p>
+                </td></tr><tr><td class="bitfield">1</td><td>
+                  <p><a href="AArch64-ttbr1_el1.html">TTBR1_EL1</a>.ASID defines the ASID.</p>
+                </td></tr></table><h4 id="T1SZ">T1SZ, bits [21:16]
+                  </h4>
+              <p>The size offset of the memory region addressed by <a href="AArch64-ttbr1_el1.html">TTBR1_EL1</a>. The region size is 2<sup>(64-T1SZ)</sup> bytes.</p>
+            
+              <p>The maximum and minimum possible values for T1SZ depend on the level of translation table and the memory translation granule size, as described in the AArch64 Virtual Memory System Architecture chapter.</p>
+            <h4 id="TG0">TG0, bits [15:14]
+                  </h4>
+              <p>Granule size for the <a href="AArch64-ttbr0_el1.html">TTBR0_EL1</a>.</p>
+            <table class="valuetable"><tr><th>TG0</th><th>Meaning</th></tr><tr><td class="bitfield">00</td><td>
+                  <p>4KB</p>
+                </td></tr><tr><td class="bitfield">01</td><td>
+                  <p>64KB</p>
+                </td></tr><tr><td class="bitfield">10</td><td>
+                  <p>16KB</p>
+                </td></tr></table>
+              <p>Other values are reserved.</p>
+            
+              <p>If the value is programmed to either a reserved value, or a size that has not been implemented, then the hardware will treat the field as if it has been programmed to an <span class="arm-defined-word">IMPLEMENTATION DEFINED</span> choice of the sizes that has been implemented for all purposes other than the value read back from this register.</p>
+            
+              <p>It is <span class="arm-defined-word">IMPLEMENTATION DEFINED</span> whether the value read back is the value programmed or the value that corresponds to the size chosen.</p>
+            <h4 id="SH0">SH0, bits [13:12]
+                  </h4>
+              <p>Shareability attribute for memory associated with translation table walks using <a href="AArch64-ttbr0_el1.html">TTBR0_EL1</a>.</p>
+            <table class="valuetable"><tr><th>SH0</th><th>Meaning</th></tr><tr><td class="bitfield">00</td><td>
+                  <p>Non-shareable</p>
+                </td></tr><tr><td class="bitfield">10</td><td>
+                  <p>Outer Shareable</p>
+                </td></tr><tr><td class="bitfield">11</td><td>
+                  <p>Inner Shareable</p>
+                </td></tr></table>
+              <p>Other values are reserved. The effect of programming this field to a Reserved value is that behavior is <span class="arm-defined-word">CONSTRAINED UNPREDICTABLE</span>, as described in <span class="xref">'Reserved values in AArch64 System registers and translation table entries' in the ARM ARM, section K1.2.2</span>.</p>
+            <h4 id="ORGN0">ORGN0, bits [11:10]
+                  </h4>
+              <p>Outer cacheability attribute for memory associated with translation table walks using <a href="AArch64-ttbr0_el1.html">TTBR0_EL1</a>.</p>
+            <table class="valuetable"><tr><th>ORGN0</th><th>Meaning</th></tr><tr><td class="bitfield">00</td><td>
+                  <p>Normal memory, Outer Non-cacheable</p>
+                </td></tr><tr><td class="bitfield">01</td><td>
+                  <p>Normal memory, Outer Write-Back Read-Allocate Write-Allocate Cacheable</p>
+                </td></tr><tr><td class="bitfield">10</td><td>
+                  <p>Normal memory, Outer Write-Through Read-Allocate No Write-Allocate Cacheable</p>
+                </td></tr><tr><td class="bitfield">11</td><td>
+                  <p>Normal memory, Outer Write-Back Read-Allocate No Write-Allocate Cacheable</p>
+                </td></tr></table><h4 id="IRGN0">IRGN0, bits [9:8]
+                  </h4>
+              <p>Inner cacheability attribute for memory associated with translation table walks using <a href="AArch64-ttbr0_el1.html">TTBR0_EL1</a>.</p>
+            <table class="valuetable"><tr><th>IRGN0</th><th>Meaning</th></tr><tr><td class="bitfield">00</td><td>
+                  <p>Normal memory, Inner Non-cacheable</p>
+                </td></tr><tr><td class="bitfield">01</td><td>
+                  <p>Normal memory, Inner Write-Back Read-Allocate Write-Allocate Cacheable</p>
+                </td></tr><tr><td class="bitfield">10</td><td>
+                  <p>Normal memory, Inner Write-Through Read-Allocate No Write-Allocate Cacheable</p>
+                </td></tr><tr><td class="bitfield">11</td><td>
+                  <p>Normal memory, Inner Write-Back Read-Allocate No Write-Allocate Cacheable</p>
+                </td></tr></table><h4 id="EPD0">EPD0, bit [7]
+              </h4>
+              <p>Translation table walk disable for translations using <a href="AArch64-ttbr0_el1.html">TTBR0_EL1</a>. This bit controls whether a translation table walk is performed on a TLB miss, for an address that is translated using <a href="AArch64-ttbr0_el1.html">TTBR0_EL1</a>. The encoding of this bit is:</p>
+            <table class="valuetable"><tr><th>EPD0</th><th>Meaning</th></tr><tr><td class="bitfield">0</td><td>
+                  <p>Perform translation table walks using <a href="AArch64-ttbr0_el1.html">TTBR0_EL1</a>.</p>
+                </td></tr><tr><td class="bitfield">1</td><td>
+                  <p>A TLB miss on an address that is translated using <a href="AArch64-ttbr0_el1.html">TTBR0_EL1</a> generates a Translation fault. No translation table walk is performed.</p>
+                </td></tr></table><h4 id="0">
+                Bit [6]
+              </h4>
+              <p>Reserved, <span class="arm-defined-word">RES0</span>.</p>
+            <h4 id="T0SZ">T0SZ, bits [5:0]
+                  </h4>
+              <p>The size offset of the memory region addressed by <a href="AArch64-ttbr0_el1.html">TTBR0_EL1</a>. The region size is 2<sup>(64-T0SZ)</sup> bytes.</p>
+            
+              <p>The maximum and minimum possible values for T0SZ depend on the level of translation table and the memory translation granule size, as described in the AArch64 Virtual Memory System Architecture chapter.</p>
+            <div class="access_mechanisms"><h2>Accessing the TCR_EL1</h2><div class="access_instructions"><div class="access_instruction"><p>This register can be read using MRS with the following syntax:</p><p class="asm-code">MRS  &lt;Xt&gt;, &lt;systemreg&gt;</p></div><div class="access_instruction"><p>This register can be written using MSR (register) with the following syntax:</p><p class="asm-code">MSR  &lt;systemreg&gt;, &lt;Xt&gt;</p></div><p>This syntax uses the following encoding in the System instruction encoding space:</p><table class="access_instructions"><tr><th rowspan="1">
+        &lt;systemreg&gt;
+      </th><th>op0</th><th>op1</th><th>CRn</th><th>CRm</th><th>op2</th></tr><tr><td>TCR_EL1</td><td>11</td><td>000</td><td>0010</td><td>0000</td><td>010</td></tr><tr><td>TCR_EL12</td><td>11</td><td>101</td><td>0010</td><td>0000</td><td>010</td></tr></table></div><h3>Accessibility</h3><p>The register is accessible as follows:</p><table class="accessibility"><tr><th rowspan="2">
+        &lt;systemreg&gt;
+      </th><th class="accessibility_control" colspan="3">
+            Control
+          </th><th colspan="4">
+          Accessibility
+        </th></tr><tr><th class="accessibility_control">E2H</th><th class="accessibility_control">TGE</th><th class="accessibility_control">NS</th><th>EL0</th><th>EL1</th><th>EL2</th><th>EL3</th></tr><tr><td>TCR_EL1</td><td class="accessibility_control">x</td><td class="accessibility_control">x</td><td class="accessibility_control">0</td><td>
+        -
+      </td><td>RW</td><td>
+        n/a
+      </td><td>RW</td></tr><tr><td>TCR_EL1</td><td class="accessibility_control">0</td><td class="accessibility_control">0</td><td class="accessibility_control">1</td><td>
+        -
+      </td><td>RW</td><td>RW</td><td>RW</td></tr><tr><td>TCR_EL1</td><td class="accessibility_control">0</td><td class="accessibility_control">1</td><td class="accessibility_control">1</td><td>
+        -
+      </td><td>
+        n/a
+      </td><td>RW</td><td>RW</td></tr><tr><td>TCR_EL1</td><td class="accessibility_control">1</td><td class="accessibility_control">0</td><td class="accessibility_control">1</td><td>
+        -
+      </td><td>RW</td><td><a href="AArch64-tcr_el2.html">
+                              TCR_EL2
+                              </a></td><td>RW</td></tr><tr><td>TCR_EL1</td><td class="accessibility_control">1</td><td class="accessibility_control">1</td><td class="accessibility_control">1</td><td>
+        -
+      </td><td>
+        n/a
+      </td><td><a href="AArch64-tcr_el2.html">
+                              TCR_EL2
+                              </a></td><td>RW</td></tr><tr><td>TCR_EL12</td><td class="accessibility_control">x</td><td class="accessibility_control">x</td><td class="accessibility_control">0</td><td>
+        -
+      </td><td>
+        -
+      </td><td>
+        n/a
+      </td><td>
+        -
+      </td></tr><tr><td>TCR_EL12</td><td class="accessibility_control">0</td><td class="accessibility_control">0</td><td class="accessibility_control">1</td><td>
+        -
+      </td><td>
+        -
+      </td><td>
+        -
+      </td><td>
+        -
+      </td></tr><tr><td>TCR_EL12</td><td class="accessibility_control">0</td><td class="accessibility_control">1</td><td class="accessibility_control">1</td><td>
+        -
+      </td><td>
+        n/a
+      </td><td>
+        -
+      </td><td>
+        -
+      </td></tr><tr><td>TCR_EL12</td><td class="accessibility_control">1</td><td class="accessibility_control">0</td><td class="accessibility_control">1</td><td>
+        -
+      </td><td>
+        -
+      </td><td>RW</td><td>RW</td></tr><tr><td>TCR_EL12</td><td class="accessibility_control">1</td><td class="accessibility_control">1</td><td class="accessibility_control">1</td><td>
+        -
+      </td><td>
+        n/a
+      </td><td>RW</td><td>RW</td></tr></table>
+            <p>When <a href="AArch64-hcr_el2.html">HCR_EL2</a>.E2H is 1, without explicit synchronization, access from EL3 using the mnemonic TCR_EL1 or TCR_EL12 are not guaranteed to be ordered with respect to accesses using the other mnemonic.</p>
+          <h3>Traps and enables</h3><div class="traps_intro"><p>For a description of the prioritization of any generated exceptions, see section D1.13.2 (Synchronous exception prioritization) in the <i>ARM<sup>®</sup> Architecture Reference Manual, ARMv8, for ARMv8-A architecture profile</i>. Subject to the prioritization rules, the following traps and enables are applicable when 
+            accessing this register.
+          </p></div><p>
+        When
+        EL2 is implemented and is using AArch64
+        and
+        SCR_EL3.NS==1 &amp;&amp; HCR_EL2.E2H==0
+        :
+      </p><ul><li><p>If <a href="AArch64-hcr_el2.html">HCR_EL2</a>.TRVM==1, Non-secure read accesses to this register from EL1 are trapped to EL2.</p></li><li><p>If <a href="AArch64-hcr_el2.html">HCR_EL2</a>.TVM==1, Non-secure write accesses to this register from EL1 are trapped to EL2.</p></li></ul><p>
+        When
+        EL2 is implemented and is using AArch64
+        and
+        SCR_EL3.NS==1 &amp;&amp; HCR_EL2.E2H==1 &amp;&amp; HCR_EL2.TGE==0
+        :
+      </p><ul><li><p>If <a href="AArch64-hcr_el2.html">HCR_EL2</a>.TRVM==1, Non-secure read accesses to this register from EL1 are trapped to EL2.</p></li><li><p>If <a href="AArch64-hcr_el2.html">HCR_EL2</a>.TVM==1, Non-secure write accesses to this register from EL1 are trapped to EL2.</p></li></ul></div><br /><br /><hr /><table align="center"><tr><td><div class="topbar"><a href="AArch32-regindex.html">AArch32 Registers</a></div></td><td><div class="topbar"><a href="AArch64-regindex.html">AArch64 Registers</a></div></td><td><div class="topbar"><a href="AArch32-sysindex.html">AArch32 Instructions</a></div></td><td><div class="topbar"><a href="AArch64-sysindex.html">AArch64 Instructions</a></div></td><td><div class="topbar"><a href="enc_index.html">Index by Encoding</a></div></td><td><div class="topbar"><a href="ext_alpha_index.html">External Registers</a></div></td><td><div class="topbar"><a href="ext_enc_index.html">External Registers by Offset</a></div></td><td><div class="topbar"><a href="func_index.html">Registers by Functional Group</a></div></td></tr></table><p class="versions">24/03/2017 16:41</p><p class="copyconf">Copyright © 2010-2017 ARM Limited or its affiliates. All rights reserved. This document is Confidential.</p></body>
+</html>

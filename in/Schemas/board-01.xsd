@@ -1,0 +1,750 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xs:schema targetNamespace="http://com.arm.targetconfigurationeditor" xmlns="http://com.arm.targetconfigurationeditor" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <!-- Definition root element of boards -->
+    <xs:element name="boards">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="include" minOccurs="0" maxOccurs="1"/>
+                <xs:element ref="board" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    
+    <!-- Definition include element -->
+    <xs:element name="include">
+        <xs:complexType mixed="true">
+            <xs:attribute name="file" type="xs:string" use="required"/>
+        </xs:complexType>
+    </xs:element>
+    
+    <!-- Definition supported enumeration-->
+    <xs:simpleType name="supportEnum">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="Unsupported"/>
+            <xs:enumeration value="Supported"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <!-- Definition boolean enumeration-->
+    <xs:simpleType name="booleanEnum">
+        <xs:restriction base="xs:string">
+             <xs:enumeration value="false"/>
+             <xs:enumeration value="true"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <!-- Definition width enumeration-->
+    <xs:simpleType name="widthEnum">
+        <xs:restriction base="xs:string">
+             <xs:enumeration value="8"/>
+             <xs:enumeration value="4"/>
+             <xs:enumeration value="2"/>
+             <xs:enumeration value="1"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <!-- Definition Address type enumeration-->
+    <xs:simpleType name="addrTypeEnum">
+        <xs:restriction base="xs:string">
+             <xs:enumeration value="Non-Secure"/>
+             <xs:enumeration value="Secure"/>
+        </xs:restriction>
+    </xs:simpleType>
+   
+   <!-- Definition Arm DS Name type -->
+   <xs:simpleType name="NameType">
+         <xs:restriction base="xs:string">
+           <xs:pattern value="[a-zA-Z_$][a-zA-Z0-9_$]*"/>
+      </xs:restriction>
+   </xs:simpleType>
+  
+    <!-- Definition board element -->
+    <xs:element name="board">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="import" minOccurs="0" maxOccurs="unbounded"/>
+                <xs:element ref="category" minOccurs="0"/>
+                <xs:element ref="description" minOccurs="0"/>
+                <xs:element ref="power_domain" minOccurs="0" maxOccurs="unbounded"/>
+                <xs:element ref="memory" minOccurs="0" maxOccurs="unbounded"/>
+                <xs:element ref="peripheral" minOccurs="0" maxOccurs="unbounded"/>
+                <xs:element ref="register" minOccurs="0" maxOccurs="unbounded"/>
+                <xs:element ref="enumeration" minOccurs="0" maxOccurs="unbounded"/>
+                <xs:element ref="concat_reg" minOccurs="0" maxOccurs="unbounded"/>
+                <xs:element ref="reg_window" minOccurs="0"/>
+                <xs:element ref="app_load" minOccurs="0"/>
+                <xs:element ref="arm_cfg" minOccurs="0"/>
+                <xs:element ref="cross_trigger" minOccurs="0"/>
+                <xs:element ref="rtos_cfg" minOccurs="0"/>
+                <xs:element ref="monitor" minOccurs="0"/>
+                <xs:element ref="cpu" minOccurs="0"/>
+                <xs:element ref="view" minOccurs="0"/> 
+            </xs:sequence>
+            <xs:attribute name="name" type="NameType" use="required"/>
+            <xs:attribute name="inheritsId" type="xs:string"/>
+            <xs:attribute name="endianess">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:enumeration value="big"/>
+                        <xs:enumeration value="little"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="type">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:enumeration value="BOARD"/>
+                        <xs:enumeration value="CHIP"/>
+                        <xs:enumeration value="COMPONENT"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="sw_bkpts">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:enumeration value="enabled"/>
+                        <xs:enumeration value="disabled"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="trustzone" type ="supportEnum" />
+                
+            <xs:attribute name="power_domain_support" type="supportEnum"/>
+                
+            <xs:attribute name="connect_mode">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:enumeration value="no_reset_and_no_stop"/>
+                        <xs:enumeration value="reset_and_no_stop"/>
+                        <xs:enumeration value="no_reset_and_stop"/>
+                        <xs:enumeration value="reset_and_stop"/>
+                        <xs:enumeration value="prompt"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="disconnect_mode">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:enumeration value="as_is_with_debug"/>
+                        <xs:enumeration value="as_is_without_debug"/>
+                        <xs:enumeration value="prompt"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="external_data" type="xs:string"/>
+        </xs:complexType>
+    </xs:element>
+    
+    <!-- Definition import element -->
+    <xs:element name="import">
+    <xs:complexType mixed="true">
+            <xs:attribute name="id" type="NameType" use="required"/>
+            <xs:attribute name="name" type="xs:string" use="optional"/>
+            <xs:attribute name="library" type="xs:string" use="required"/>
+            <xs:attribute name="base" type="xs:string" use="required"/>
+        </xs:complexType>
+    </xs:element>
+    
+    <!-- Definition category element -->
+    <xs:element name="category">
+        <xs:complexType mixed="true">
+            <xs:attribute name="language" type="xs:string"/>
+        </xs:complexType>
+    </xs:element>
+    
+    <!-- Definition description element -->
+    <xs:element name="description">
+        <xs:complexType mixed="true">
+            <xs:attribute name="language" type="xs:string"/>
+        </xs:complexType>
+    </xs:element>
+    
+    <!-- Definition gui_name element -->
+    <xs:element name="gui_name">
+        <xs:complexType mixed="true">
+            <xs:attribute name="language" type="xs:string"/>
+        </xs:complexType>
+    </xs:element>
+    
+    <!--Definition power_domain element -->
+    <xs:element name="power_domain">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="wakeup_condition" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+            <xs:attribute name="name" type="NameType" use="required"/>
+        </xs:complexType>
+    </xs:element>
+    
+    <!--Definition wakeup_condition element -->
+    <xs:element name="wakeup_condition">
+        <xs:complexType mixed="true">
+            <xs:attribute name="controlId" type="xs:string"/>
+            <xs:attribute name="mask" type="xs:string"/>
+            <xs:attribute name="value" type="xs:string"/>
+            <xs:attribute name="states" type="xs:string"/>
+        </xs:complexType>
+    </xs:element>
+    
+    <!-- Defintion memory element -->
+    <xs:element name="memory">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="gui_name" minOccurs="0"/>
+                <xs:element ref="description" minOccurs="0"/>
+                <xs:element ref="enable_rule" minOccurs="0"/>
+                <xs:element ref="parameters" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+            <xs:attribute name="name" type="NameType" use="required"/>
+            <xs:attribute name="base_addr" type="xs:string"/>
+            <xs:attribute name="offset" type="xs:string"/>
+            <xs:attribute name="size" type="xs:string"/>
+            <xs:attribute name="width" type="widthEnum"/>
+            <xs:attribute name="access">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:enumeration value="RAM"/>
+                        <xs:enumeration value="Prompt"/>
+                        <xs:enumeration value="ROM"/>
+                        <xs:enumeration value="WOM"/>
+                        <xs:enumeration value="Auto"/>
+                        <xs:enumeration value="Flash"/>
+                        <xs:enumeration value="NOMEM"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="wait_states" type="xs:string"/>
+            <xs:attribute name="volatile" type="booleanEnum"/>
+            <xs:attribute name="shared">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:enumeration value="none"/>
+                        <xs:enumeration value="direct"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="sharedId" type="xs:string"/>
+            <xs:attribute name="no_sw_bkpts" type="booleanEnum"/>        
+            <xs:attribute name="internal" type="booleanEnum"/>
+            <xs:attribute name="access_rule">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:enumeration value="dual-port"/>
+                        <xs:enumeration value="single"/>
+                        <xs:enumeration value="dual"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="access_size" type="xs:string"/>
+            <xs:attribute name="address_type" type="addrTypeEnum"/>
+            <xs:attribute name="power_domain_id" type="xs:string"/>
+            <xs:attribute name="tz_world" type="xs:string"/>
+            <xs:attribute name="conditional" type="booleanEnum"/>
+        </xs:complexType>
+    </xs:element>
+    
+    <!-- This is map rule element -->
+    <xs:element name="enable_rule">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="gui_name" minOccurs="0"/>
+            </xs:sequence>
+            <xs:attribute name="name" type="NameType" use="required"/>
+            <xs:attribute name="controlId" type="xs:string"/>
+            <xs:attribute name="mask" type="xs:string"/>
+            <xs:attribute name="value" type="xs:string"/>
+            <xs:attribute name="trigger" type="xs:string"/>
+        </xs:complexType>
+    </xs:element>
+    
+    <!-- Deifinition parameters element -->
+    <xs:element name="parameters">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="param" maxOccurs="unbounded"/>
+            </xs:sequence>
+            <xs:attribute name="contexts" type="xs:string"/>
+            <xs:attribute name="name" type="NameType"/>
+        </xs:complexType>
+    </xs:element>
+    
+    <!-- Definition param element -->
+    <xs:element name="param">
+        <xs:complexType mixed="true">
+            <xs:attribute name="name" type="xs:string"/>
+            <xs:attribute name="value" type="xs:string"/>
+        </xs:complexType>
+    </xs:element>
+    
+    <!-- Definition peripheral element -->
+    <xs:element name="peripheral">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="gui_name" minOccurs="0"/>
+                <xs:element ref="description" minOccurs="0"/>
+                <xs:element ref="register" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+            <xs:attribute name="name" type="NameType" use="required"/>
+            <xs:attribute name="base_addr" type="xs:string"/>
+            <xs:attribute name="offset" type="xs:string"/>
+            <xs:attribute name="disable_condition" type="xs:string"/>
+            <xs:attribute name="size" type="xs:string"/>
+            <xs:attribute name="width" type="widthEnum"/>
+            <xs:attribute name="access" type="xs:string"/>
+            <xs:attribute name="type">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:enumeration value="display"/>
+                        <xs:enumeration value="serial"/>
+                        <xs:enumeration value="block"/>
+                        <xs:enumeration value="other"/>
+                        <xs:enumeration value="network"/>
+                        <xs:enumeration value="parallel"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="address_type" type="addrTypeEnum"/>
+            <xs:attribute name="power_domain_id" type="xs:string"/>
+            <xs:attribute name="conditional" type="booleanEnum"/>
+        </xs:complexType>
+    </xs:element>
+    
+    <!-- Definition register element -->
+    <xs:element name="register">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="gui_name" minOccurs="0"/>
+                <xs:element ref="description" minOccurs="0"/>
+                <xs:element ref="bitField" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+            <xs:attribute name="name" type="NameType" use="required"/>
+            <xs:attribute name="base_addr" type="xs:string"/>
+            <xs:attribute name="offset" type="xs:string"/>
+            <xs:attribute name="size" type="xs:string"/>
+            <xs:attribute name="reset_value" type="xs:string" use="optional"/>
+            <xs:attribute name="reset_mask" type="xs:string" use="optional"/>
+            <xs:attribute name="access_size">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:enumeration value="1"/>
+                        <xs:enumeration value="2"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="access" type="xs:string"/>
+            <xs:attribute name="memory_type">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:enumeration value="Default"/>
+                        <xs:enumeration value="IO"/>
+                        <xs:enumeration value="Data"/>
+                        <xs:enumeration value="Program"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="enumerationId" type="xs:string"/>
+            <xs:attribute name="type">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:enumeration value="Float"/>
+                        <xs:enumeration value="Unsigned"/>
+                        <xs:enumeration value="Double"/>
+                        <xs:enumeration value="Label"/>
+                        <xs:enumeration value="Pointer"/>
+                        <xs:enumeration value="Signed"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="volatile">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:enumeration value="on_write"/>
+                        <xs:enumeration value="on_both"/>
+                        <xs:enumeration value="normal"/>
+                        <xs:enumeration value="on_read"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="power_domain_id" type="xs:string"/>
+            <xs:attribute name="conditional" type="booleanEnum"/>
+        </xs:complexType>
+    </xs:element>
+    
+    <!-- Definition bit field element -->
+    <xs:element name="bitField">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="gui_name" minOccurs="0"/>
+                <xs:element ref="description" minOccurs="0"/>
+            </xs:sequence>
+            <xs:attribute name="name" type="NameType" use="required"/>
+            <xs:attribute name="low_bit" type="xs:string"/>
+            <xs:attribute name="high_bit" type="xs:string"/>
+            <xs:attribute name="access" type="xs:string"/>
+            <xs:attribute name="enumerationId" type="xs:string"/>
+            <xs:attribute name="signed" type="booleanEnum"/>
+            <xs:attribute name="volatile">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:enumeration value="on_write"/>
+                        <xs:enumeration value="on_both"/>
+                        <xs:enumeration value="normal"/>
+                        <xs:enumeration value="on_read"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="conditional" type="booleanEnum"/>
+        </xs:complexType>
+    </xs:element>
+    
+    <!-- Definition enumeration element-->
+    <xs:element name="enumeration">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="description" minOccurs="0"/>
+                <xs:element ref="enumItem" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+            <xs:attribute name="name" type="NameType" use="required"/>
+            <xs:attribute name="values" type="xs:string"/>
+        </xs:complexType>
+    </xs:element>
+    
+    <!-- Definition enumeration item element-->
+    <xs:element name="enumItem">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="gui_name" minOccurs="0"/>
+            </xs:sequence>
+            <xs:attribute name="name" type="NameType" use="required"/>
+            <xs:attribute name="description" type="xs:string"/>
+            <xs:attribute name="number" type="xs:string"/>
+        </xs:complexType>
+    </xs:element>
+    
+    <!-- Definition concat register element -->
+    <xs:element name="concat_reg">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="description" minOccurs="0"/>
+            </xs:sequence>
+            <xs:attribute name="name" type="NameType" use="required"/>
+            <xs:attribute name="high_mask" type="xs:string"/>
+            <xs:attribute name="high_name" type="xs:string"/>
+            <xs:attribute name="high_shift" type="xs:string"/>
+            <xs:attribute name="length" type="xs:string"/>
+            <xs:attribute name="low_mask" type="xs:string"/>
+            <xs:attribute name="low_name" type="xs:string"/>
+            <xs:attribute name="low_shift" type="xs:string"/>
+            <xs:attribute name="type">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:enumeration value="float"/>
+                        <xs:enumeration value="label"/>
+                        <xs:enumeration value="signed"/>
+                        <xs:enumeration value="pointer"/>
+                        <xs:enumeration value="unsigned"/>
+                        <xs:enumeration value="double"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="enumerationId" type="xs:string"/>
+        </xs:complexType>
+    </xs:element>
+    
+    <!-- Definition register window element -->
+    <xs:element name="reg_window">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="line" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    
+    <!-- Definition line element -->
+    <xs:element name="line">
+        <xs:complexType mixed="true"/>
+    </xs:element>
+    
+    <!--Deifinition app_load element -->
+    <xs:element name="app_load">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="include_on_load" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+            <xs:attribute name="load_command" type="xs:string"/>
+            <xs:attribute name="load_set_pc">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:enumeration value="Normal"/>
+                        <xs:enumeration value="None"/>
+                        <xs:enumeration value="to_zero"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="load_using">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:enumeration value="Normal"/>
+                        <xs:enumeration value="Symbols_Only"/>
+                        <xs:enumeration value="Shell_Command"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:attribute>
+        </xs:complexType>
+    </xs:element>
+    
+    <!-- Definition include on load element -->
+    <xs:element name="include_on_load">
+        <xs:complexType mixed="true"/>
+    </xs:element>
+    
+    <!-- Definition arm_cfg element -->
+    <xs:element name="arm_cfg">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="stack_heap" minOccurs="0"/>
+                <xs:element ref="vectors" minOccurs="0"/>
+                <xs:element ref="semihosting" minOccurs="0"/>
+                <xs:element ref="properties" minOccurs="0"/>
+            </xs:sequence>
+            <xs:attribute name="top_memory" type="xs:string"/>
+            <xs:attribute name="vector_catch" type="booleanEnum"/>
+        </xs:complexType>
+    </xs:element>
+    
+    <!-- Definition stack heap element -->
+    <xs:element name="stack_heap">
+        <xs:complexType mixed="true">
+            <xs:attribute name="stack_bottom" type="xs:string"/>
+            <xs:attribute name="stack_size" type="xs:string"/>
+            <xs:attribute name="heap_base" type="xs:string"/>
+            <xs:attribute name="heap_size" type="xs:string"/>
+        </xs:complexType>
+    </xs:element>
+    
+    <!-- Defintion vectors element -->
+    <xs:element name="vectors">
+        <xs:complexType mixed="true">
+            <xs:attribute name="reset" type="booleanEnum"/>
+            <xs:attribute name="undefined" type="booleanEnum"/>
+            <xs:attribute name="svc" type="booleanEnum"/>
+            <xs:attribute name="p_abort" type="booleanEnum"/>
+            <xs:attribute name="d_abort" type="booleanEnum"/>
+            <xs:attribute name="address" type="booleanEnum"/>
+            <xs:attribute name="irq" type="booleanEnum"/>
+            <xs:attribute name="fiq" type="booleanEnum"/>
+            <xs:attribute name="error" type="booleanEnum"/>
+        </xs:complexType>
+    </xs:element>
+    
+    <!-- Defintion semihosting element -->
+    <xs:element name="semihosting">
+        <xs:complexType mixed="true">
+            <xs:attribute name="enabled" type="booleanEnum"/>
+            <xs:attribute name="vector" type="xs:string"/>
+            <xs:attribute name="arm_svc_num" type="xs:string"/>
+            <xs:attribute name="thumb_svc_num" type="xs:string"/>
+        </xs:complexType>
+    </xs:element>
+    
+    <!-- Definition properties -->
+    <xs:element name="properties">
+        <xs:complexType mixed="true"/>
+    </xs:element>
+    
+    <!-- Definition logic_analyzer -->
+    <xs:element name="logic_analyzer">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="sym_match" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+            <xs:attribute name="vendor" type="xs:string"/>
+            <xs:attribute name="machine" type="xs:string"/>
+            <xs:attribute name="config" type="xs:string"/>
+            <xs:attribute name="load_when">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:enumeration value="Symbol_Match"/>
+                        <xs:enumeration value="Connect"/>
+                        <xs:enumeration value="First_Use"/>
+                        <xs:enumeration value="Image_Load"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:attribute>
+        </xs:complexType>
+    </xs:element>
+    
+    <!-- Definition sym_match element -->
+    <xs:element name="sym_match">
+        <xs:complexType mixed="true"/>
+    </xs:element>
+    
+    <!-- Definition cross_trigger -->
+    <xs:element name="cross_trigger">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="trig_in_ena" minOccurs="0" maxOccurs="unbounded"/>
+                <xs:element ref="trig_in_dis" minOccurs="0" maxOccurs="unbounded"/>
+                <xs:element ref="trig_out_ena" minOccurs="0" maxOccurs="unbounded"/>
+                <xs:element ref="trig_out_dis" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    
+    <!-- Definition trig_in_ena -->
+    <xs:element name="trig_in_ena">
+        <xs:complexType mixed="true"/>
+    </xs:element>
+    
+    <!-- Definition trig_in_dis -->
+    <xs:element name="trig_in_dis">
+        <xs:complexType mixed="true"/>
+    </xs:element>
+    
+    <!-- Definition trig_out_ena -->
+    <xs:element name="trig_out_ena">
+        <xs:complexType mixed="true"/>
+    </xs:element>
+    
+    <!-- Definition trig_out_dis -->
+    <xs:element name="trig_out_dis">
+        <xs:complexType mixed="true"/>
+    </xs:element>
+    
+    <!-- Definition rtos_cfg -->
+    <xs:element name="rtos_cfg">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="events" minOccurs="0"/>
+            </xs:sequence>
+            <xs:attribute name="vendor" type="xs:string"/>
+            <xs:attribute name="base_addr" type="xs:string"/>
+            <xs:attribute name="cpu_id" type="xs:string"/>
+            <xs:attribute name="load_when">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:enumeration value="Image_load"/>
+                        <xs:enumeration value="connect"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="exit_options">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:enumeration value="End_on_Unload"/>
+                        <xs:enumeration value="End_RSD_on_Unload"/>
+                        <xs:enumeration value="Prompt_on_Unload"/>
+                        <xs:enumeration value="End_on_Disconnect"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="rsd">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:enumeration value="Enable"/>
+                        <xs:enumeration value="Disable"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="system_stop" type="xs:string"/>
+            <xs:attribute name="event_capture" type="booleanEnum"/>
+        </xs:complexType>
+    </xs:element>
+    
+    <!-- Definition events element -->
+    <xs:element name="events">
+        <xs:complexType mixed="true">
+            <xs:attribute name="event0" type="booleanEnum"/>
+            <xs:attribute name="event1" type="booleanEnum"/>
+            <xs:attribute name="event2" type="booleanEnum"/>
+            <xs:attribute name="event3" type="booleanEnum"/>
+            <xs:attribute name="event4" type="booleanEnum"/>
+            <xs:attribute name="event5" type="booleanEnum"/>
+            <xs:attribute name="event6" type="booleanEnum"/>
+            <xs:attribute name="event7" type="booleanEnum"/>
+        </xs:complexType>
+    </xs:element>
+    
+    <!-- Definition monitor element -->
+    <xs:element name="monitor">
+        <xs:complexType mixed="true">
+            <xs:attribute name="type">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:enumeration value="RealMonitor"/>
+                        <xs:enumeration value="None"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="option" type="xs:string"/>
+        </xs:complexType>
+    </xs:element>
+    
+    <!-- Definition cpu element -->
+    <xs:element name="cpu">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="tools" maxOccurs="unbounded"/>
+            </xs:sequence>
+            <xs:attribute name="allowed" type="xs:string"/>
+        </xs:complexType>
+    </xs:element>
+    
+    <!-- Definition tools element -->
+    <xs:element name="tools">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="tool" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    
+    <!-- Definition tool element -->
+    <xs:element name="tool">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="cmdline" maxOccurs="unbounded"/>
+            </xs:sequence>
+            <xs:attribute name="name" type="NameType"/>
+        </xs:complexType>
+    </xs:element>
+    
+    <!-- Definition cmdline element -->
+    <xs:element name="cmdline">
+        <xs:complexType mixed="true"/>
+    </xs:element>
+    
+    <!-- Definition view element -->
+    <xs:element name="view" type="view_type"/>
+
+    <xs:complexType name="view_type">
+        <xs:group ref="view_group" minOccurs="0" maxOccurs="unbounded"/>
+        <xs:attribute name="file" type="xs:string"/>
+    </xs:complexType>
+
+    <xs:group name="view_group">
+        <xs:choice>
+           <xs:element ref="group_view" minOccurs="0" maxOccurs="unbounded"/>
+           <xs:element ref="group_item" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:choice>
+    </xs:group>
+
+    <!-- Definition group_view element -->
+    <xs:element name="group_view">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:group ref="view_group" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+            <xs:attribute name="id" type="xs:string"/>
+            <xs:attribute name="name" type="NameType"/>
+        </xs:complexType>
+    </xs:element>
+    
+    <!-- Definition group_item element -->
+    <xs:element name="group_item">
+        <xs:complexType>
+            <xs:attribute name="peripheral" type="NameType"/>
+        </xs:complexType>
+    </xs:element>
+    
+</xs:schema>

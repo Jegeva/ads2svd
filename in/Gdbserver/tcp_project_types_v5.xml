@@ -1,0 +1,55 @@
+<project_type
+    type="GDB_SERVER"
+    xmlns:xi="http://www.w3.org/2001/XInclude"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns="http://www.arm.com/project_type"
+    xsi:schemaLocation="http://www.arm.com/project_type ../Schemas/platform_data-1.xsd">
+    <name language="en">Linux Application Debug</name>
+    <description language="en">This allows Linux application debug using gdbserver.</description>
+    <execution_environment
+        xmlns="http://www.arm.com/project_type"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.arm.com/project_type ../Schemas/platform_data-1.xsd"
+        id="gdb_tcp">
+        <name language="en">gdbserver (TCP)</name>
+        <description language="en">Connect to a platform running gdbserver using a TCP connection.</description>
+        <param type="string" default="" id="gdb_address" rvc_tag="host">
+            <name language="en">Address:</name>
+            <description language="en">Address of Target (TCP/IP).</description>
+        </param>
+        <param type="string" default="5000" id="gdb_port" rvc_tag="port">
+            <name language="en">Port:</name>
+            <description language="en">Debug Port on Target.</description>
+        </param>
+        <param type="string" default="True" id="gdb_disable_acks" visible="false"/>
+        <config_file>gdbserver.xml</config_file>
+        <xi:include href="symbols_glibc_2_10_1.xml"/>
+        <activity type="Debug" id="DOWNLOAD_DEBUG">
+            <name language="en">Download and debug application</name>
+            <description language="en">Arm Debugger will download your application to the target system and then start a new gdbserver session to debug the application. This configuration requires ssh and gdbserver on the target platform. </description>
+            <core connection_id="0">
+                <core_definition>GDBServerPseudoCore_v5</core_definition>
+            </core>
+            <setup_script>
+                <name language="en">RSE://</name>
+            </setup_script>
+        </activity>
+        <activity type="Debug" id="DEBUG_RESIDENT_APP">
+            <name language="en">Start gdbserver and debug target resident application</name>
+            <description language="en">Arm Debugger will connect to the target and start a new gdbserver session to debug an application already present on the target system. This configuration requires ssh and gdbserver on the target platform. </description>
+            <core connection_id="0">
+                <core_definition>GDBServerPseudoCore_v5</core_definition>
+            </core>
+            <setup_script>
+                <name language="en">RSE://</name>
+            </setup_script>
+        </activity>
+        <activity type="Debug" id="CONNECT_TO_GDB_SERVER">
+            <name language="en">Connect to already running gdbserver</name>
+            <description language="en">Arm Debugger will connect to an already running gdbserver on the target system.</description>
+            <core connection_id="0">
+                <core_definition>GDBServerPseudoCore_v5</core_definition>
+            </core>
+        </activity>
+    </execution_environment>
+</project_type>

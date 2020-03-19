@@ -1,0 +1,34 @@
+<!--
+Changes to ULINK Connections
+============================
+
+DS-5 version 5.24 made changes to the way it handles connections using
+ULINKpro, ULINKpro D and ULINK2 debug adapters in order to improve performance.
+
+Previously, a Python script had been invoked to start the debug server for
+a debug session, with parameters taken from a <script_script> tag (commented-out
+below). In order to improve performance, this has been replaced with the
+<rddi_dap_server> tag, which tells Arm DS the parameters needed to run the
+VSTREAM server directly.
+
+If you're experiencing connection problems with ULINKPro after upgrading
+Arm DS, or you have a need for a custom *_dap_debug_server.py script, you can
+revert to the old method by changing your <rddi_dap_server> tag back to a
+<setup_script> tag. Assuming you're using the default project types,
+un-commenting the <setup_script> below and commenting out the <rddi_dap_server>
+below should be sufficient to do this for ULINK2.
+-->
+
+<!--
+<setup_script xmlns="http://www.arm.com/project_type" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.arm.com/project_type ../../../Schemas/platform_data-1.xsd">
+    <name>CDB://Scripts/cmsis_dap_debug_server.py</name>
+    <arguments>CDB://rddi-dap_cfg-ulink2.txt</arguments>
+</setup_script>
+-->
+
+<rddi_dap_server xmlns="http://www.arm.com/project_type" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.arm.com/project_type ../../../Schemas/platform_data-1.xsd">
+    <rddi_dap_bin>rddidap_serverd</rddi_dap_bin>
+    <rddi_dap_ini>CDB://rddi-dap_cfg-ulink2.txt</rddi_dap_ini>
+    <rddi_dap_lib>rddi-dap_cmsis-dap</rddi_dap_lib>
+    <rddi_dap_arg>-pollrate 200</rddi_dap_arg>
+</rddi_dap_server>

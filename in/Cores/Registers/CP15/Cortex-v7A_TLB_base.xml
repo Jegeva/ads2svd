@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<register_list name="CP15"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns="http://www.arm.com/core_reg"
+    xsi:schemaLocation="http://www.arm.com/core_reg ../../../Schemas/core_register_definition.xsd"
+    xmlns:tcf="http://com.arm.targetconfigurationeditor">
+    <register_group name="TLB">
+        <gui_name language="en">TLB</gui_name>
+        <description language="en">TLB maintenance operations</description>
+        <register access="WO" name="ITLBIALL" size="4">
+            <gui_name language="en">ITLBIALL</gui_name>
+            <alias_name>CP15_ITLBIALL</alias_name>
+            <device_name type="rvi">CP15_ITLBIALL</device_name>
+            <device_name type="cadi">ITLBIALL</device_name>
+            <device_name type="rvi">CP15_ITLBIALL</device_name>
+            <device_name type="cadi">ITLBIALL</device_name>
+            <description language="en">Invalidate instruction TLB</description>
+        </register>
+        <register access="WO" name="ITLBIMVA" size="4">
+            <gui_name language="en">ITLBIMVA</gui_name>
+            <alias_name>CP15_ITLBIMVA</alias_name>
+            <device_name type="rvi">CP15_ITLBIMVA</device_name>
+            <device_name type="cadi">ITLBIMVA</device_name>
+            <device_name type="rvi">CP15_ITLBIMVA</device_name>
+            <device_name type="cadi">ITLBIMVA</device_name>
+            <description language="en">Invalidate instruction TLB entry by MVA</description>
+        </register>
+        <register access="WO" name="ITLBIASID" size="4">
+            <gui_name language="en">ITLBIASID</gui_name>
+            <alias_name>CP15_ITLBIASID</alias_name>
+            <device_name type="rvi">CP15_ITLBIASID</device_name>
+            <device_name type="cadi">ITLBIASID</device_name>
+            <device_name type="rvi">CP15_ITLBIASID</device_name>
+            <device_name type="cadi">ITLBIASID</device_name>
+            <description language="en">Invalidate instruction TLB by ASID match</description>
+        </register>
+        <register access="WO" name="DTLBIALL" size="4">
+            <gui_name language="en">DTLBIALL</gui_name>
+            <alias_name>CP15_DTLBIALL</alias_name>
+            <device_name type="rvi">CP15_DTLBIALL</device_name>
+            <device_name type="cadi">DTLBIALL</device_name>
+            <device_name type="rvi">CP15_DTLBIALL</device_name>
+            <device_name type="cadi">DTLBIALL</device_name>
+            <description language="en">Invalidate data TLB</description>
+        </register>
+        <register access="WO" name="DTLBIMVA" size="4">
+            <gui_name language="en">DTLBIMVA</gui_name>
+            <alias_name>CP15_DTLBIMVA</alias_name>
+            <device_name type="rvi">CP15_DTLBIMVA</device_name>
+            <device_name type="cadi">DTLBIMVA</device_name>
+            <device_name type="rvi">CP15_DTLBIMVA</device_name>
+            <device_name type="cadi">DTLBIMVA</device_name>
+            <description language="en">Invalidate data TLB entry by MVA</description>
+        </register>
+        <register access="WO" name="DTLBIASID" size="4">
+            <gui_name language="en">DTLBIASID</gui_name>
+            <alias_name>CP15_DTLBIASID</alias_name>
+            <device_name type="rvi">CP15_DTLBIASID</device_name>
+            <device_name type="cadi">DTLBIASID</device_name>
+            <device_name type="rvi">CP15_DTLBIASID</device_name>
+            <device_name type="cadi">DTLBIASID</device_name>
+            <description language="en">Invalidate data TLB by ASID match</description>
+        </register>
+        <register access="WO" name="TLBIALL" size="4">
+            <gui_name language="en">TLBIALL</gui_name>
+            <alias_name>CP15_TLBIALL</alias_name>
+            <device_name type="rvi">CP15_TLBIALL</device_name>
+            <device_name type="cadi">TLBIALL</device_name>
+            <device_name type="rvi">CP15_TLBIALL</device_name>
+            <device_name type="cadi">TLBIALL</device_name>
+            <description language="en">Invalidate unified TLB</description>
+        </register>
+        <register access="WO" name="TLBIMVA" size="4">
+            <gui_name language="en">TLBIMVA</gui_name>
+            <alias_name>CP15_TLBIMVA</alias_name>
+            <device_name type="rvi">CP15_TLBIMVA</device_name>
+            <device_name type="cadi">TLBIMVA</device_name>
+            <device_name type="rvi">CP15_TLBIMVA</device_name>
+            <device_name type="cadi">TLBIMVA</device_name>
+            <description language="en">Invalidate unified TLB entry by MVA</description>
+        </register>
+        <register access="WO" name="TLBIASID" size="4">
+            <gui_name language="en">TLBIASID</gui_name>
+            <alias_name>CP15_TLBIASID</alias_name>
+            <device_name type="rvi">CP15_TLBIASID</device_name>
+            <device_name type="cadi">TLBIASID</device_name>
+            <device_name type="rvi">CP15_TLBIASID</device_name>
+            <device_name type="cadi">TLBIASID</device_name>
+            <description language="en">Invalidate unified TLB by ASID match</description>
+        </register>
+    </register_group>
+</register_list>
+

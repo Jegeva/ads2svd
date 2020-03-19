@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+            targetNamespace="http://www.arm.com/os_extension"
+            xmlns="http://www.arm.com/os_extension"
+            elementFormDefault="qualified">
+            
+    <xsd:element name="os">
+        <xsd:complexType>
+            <xsd:attribute name="id" type="xsd:string" use="required"/>
+            <xsd:attribute name="version" type="xsd:string" use="required"/>
+            <xsd:sequence>
+                <xsd:element name="name" type="xs:string" minOccurs="1" maxOccurs="1"/>
+                <xsd:element name="description" type="xs:string" minOccurs="0" maxOccurs="1"/>
+                <xsd:element name="provider" type="xs:string"/>  
+                <xsd:element name="logo" type="xs:string" minOccurs="0" maxOccurs="1"/>  
+                <xsd:element name="match" minOccurs="0">
+                    <xsd:attribute name="platform" type="xs:string" use="optional"/>
+                    <xsd:attribute name="core"     type="xs:string" use="optional"/>
+                    <xsd:attribute name="arch"     type="xs:string" use="optional"/>
+                </xsd:element>
+                <xsd:element name="match_regexp" minOccurs="0">
+	                <xsd:attribute name="platform" type="xs:string" use="optional"/>
+	                <xsd:attribute name="core"     type="xs:string" use="optional"/>
+	                <xsd:attribute name="arch"     type="xs:string" use="optional"/>
+                </xsd:element>
+                <xsd:element name="parameter" minOccurs="0">
+	                <xsd:complexType>
+                        <xsd:attribute name="type"        type="xsd:string" use="required"/>
+	                    <xsd:attribute name="name"        type="xsd:string" use="required"/>
+                        <xsd:attribute name="description" type="xsd:string" use="optional"/>
+                        <xsd:attribute name="help"        type="xsd:string" use="optional"/>
+                        <xsd:attribute name="default"     type="xsd:string" use="optional"/>
+	                    <xsd:sequence>
+	                        <xsd:any minOccurs="0"/>
+	                    </xsd:sequence>
+	                </xsd:complexType>
+                </xsd:element>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+    
+</xsd:schema>

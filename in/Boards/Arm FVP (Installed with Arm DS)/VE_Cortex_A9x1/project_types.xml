@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<platform_data xmlns:xi="http://www.w3.org/2001/XInclude"
+                xmlns="http://www.arm.com/project_type"
+                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                xmlns:peripheral="http://com.arm.targetconfigurationeditor"
+                xsi:schemaLocation="http://www.arm.com/project_type ../../../Schemas/platform_data-1.xsd"
+                type="RTSM">
+    <project_type_list>
+    <project_type type="BARE_METAL">
+            <name language="en">Bare Metal Debug</name>
+            <description language="en">This allows a bare-metal debug connection.</description>
+            <execution_environment id="BARE_METAL">
+                <name language="en">Bare Metal Debug</name>
+                <description language="en">Connect to the simulation via the CADI interface</description>
+                <param default="CDB://cadi_config.xml" id="config_file" type="string" visible="false"/>
+                <!--The model_params param enables the model parameters field in the launch configuration. The parameters are passed to the setup_script.-->
+                <param default="" id="model_params" type="string" visible="true">
+                    <name>Model parameters</name>
+                    <description>Model parameters</description>
+                </param>
+                <!--The script below is used to launch the model, if its executable is known. It can be used as a basis for more specific scripts.-->
+                <setup_script>
+                    <name>CDB://../../../Scripts/rtsm_launcher.py</name>
+                    <arguments>FVP_VE_Cortex-A9x1</arguments>
+                </setup_script>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A9</name>
+                    <description language="en">Debug a bare metal application on the Cortex-A9 FVP</description>
+                    <core connection_id="ARM_Cortex-A9">
+                        <core_definition>Cortex-A9</core_definition>
+                    </core>
+                    <param default="CDB://dtsl_config_script.py" id="dtsl_config_script" type="string" visible="false"/>
+                    <param default="DtslScript" id="dtsl_config" type="string" visible="false"/>
+                    <param default="options.traceBuffer.traceCaptureDevice" id="dtsl_tracecapture_option" type="string" visible="false"/>
+                </activity>
+            </execution_environment>
+        </project_type>
+        <project_type os_abstraction="LINUX_KERNEL" type="BARE_METAL">
+            <name language="en">Linux Kernel Debug</name>
+            <description language="en">This allows a bare-metal debug connection for Linux kernel or Linux device driver debug.</description>
+            <execution_environment id="bare_metal_linux_kernel_debug">
+                <name language="en">Linux Kernel Debug</name>
+                <description language="en">Connect to the simulation via the CADI interface</description>
+                <param default="CDB://cadi_config.xml" id="config_file" type="string" visible="false"/>
+                <!--The model_params param enables the model parameters field in the launch configuration. The parameters are passed to the setup_script.-->
+                <param default="" id="model_params" type="string" visible="true">
+                    <name>Model parameters</name>
+                    <description>Model parameters</description>
+                </param>
+                <!--The script below is used to launch the model, if its executable is known. It can be used as a basis for more specific scripts.-->
+                <setup_script>
+                    <name>CDB://../../../Scripts/rtsm_launcher.py</name>
+                    <arguments>FVP_VE_Cortex-A9x1</arguments>
+                </setup_script>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A9</name>
+                    <description language="en">Debug a Linux Kernel on the Cortex-A9 FVP</description>
+                    <core connection_id="ARM_Cortex-A9">
+                        <core_definition>Cortex-A9</core_definition>
+                    </core>
+                    <param default="CDB://dtsl_config_script.py" id="dtsl_config_script" type="string" visible="false"/>
+                    <param default="DtslScript" id="dtsl_config" type="string" visible="false"/>
+                    <param default="options.traceBuffer.traceCaptureDevice" id="dtsl_tracecapture_option" type="string" visible="false"/>
+                </activity>
+            </execution_environment>
+        </project_type>
+  </project_type_list>
+
+</platform_data>
+

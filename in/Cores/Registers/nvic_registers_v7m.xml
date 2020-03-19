@@ -1,0 +1,1648 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<register_list
+    name="System"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns="http://www.arm.com/core_reg"
+    xsi:schemaLocation="http://www.arm.com/core_reg ../../Schemas/core_register_definition.xsd"
+    xmlns:tcf="http://com.arm.targetconfigurationeditor">
+    <peripheral name="NVIC" offset="0x00000000">
+        <gui_name language="en">NVIC</gui_name>
+        <description language="en">Nested Vectored Interrupt Controller registers</description>
+
+        <register access="RO" name="ICTR" size="4" offset="0xE000E004" display_by_default="false">
+            <gui_name language="en">Interrupt Control Type Register</gui_name>
+            <description language="en">Provides information about the interrupt controller</description>
+            <bitField conditional="false" name="INTLINESNUM">
+                <gui_name language="en">INTLINESNUM</gui_name>
+                <description language="en">The total number of interrupt lines supported n, defined in groups of
+32. That is, the total number of interrupt lines is up to (32*(INTLINESNUM+1)). However,
+the absolute maximum number of interrupts is 496, corresponding to the INTLINESNUM
+value 0b1111.</description>
+                <definition>[3:0]</definition>
+            </bitField>
+        </register>
+        <register access="RW" name="NVIC_ISER0" size="4" offset="0xE000E100">
+            <gui_name language="en">Interrupt Set-Enable 0</gui_name>
+            <description language="en">Enables, or reads the enable state of a group of interrupts</description>
+        </register>
+        <register access="RW" name="NVIC_ISER1" size="4" offset="0xE000E104">
+            <gui_name language="en">Interrupt Set-Enable 1</gui_name>
+            <description language="en">Enables, or reads the enable state of a group of interrupts</description>
+        </register>
+        <register access="RW" name="NVIC_ISER2" size="4" offset="0xE000E108">
+            <gui_name language="en">Interrupt Set-Enable 2</gui_name>
+            <description language="en">Enables, or reads the enable state of a group of interrupts</description>
+        </register>
+        <register access="RW" name="NVIC_ISER3" size="4" offset="0xE000E10C">
+            <gui_name language="en">Interrupt Set-Enable 3</gui_name>
+            <description language="en">Enables, or reads the enable state of a group of interrupts</description>
+        </register>
+        <register access="RW" name="NVIC_ISER4" size="4" offset="0xE000E110">
+            <gui_name language="en">Interrupt Set-Enable 4</gui_name>
+            <description language="en">Enables, or reads the enable state of a group of interrupts</description>
+        </register>
+        <register access="RW" name="NVIC_ISER5" size="4" offset="0xE000E114">
+            <gui_name language="en">Interrupt Set-Enable 5</gui_name>
+            <description language="en">Enables, or reads the enable state of a group of interrupts</description>
+        </register>
+        <register access="RW" name="NVIC_ISER6" size="4" offset="0xE000E118">
+            <gui_name language="en">Interrupt Set-Enable 6</gui_name>
+            <description language="en">Enables, or reads the enable state of a group of interrupts</description>
+        </register>
+        <register access="RW" name="NVIC_ISER7" size="4" offset="0xE000E11C">
+            <gui_name language="en">Interrupt Set-Enable 7</gui_name>
+            <description language="en">Enables, or reads the enable state of a group of interrupts</description>
+        </register>
+
+        <register access="RW" name="NVIC_ICER0" size="4" offset="0xE000E180">
+            <gui_name language="en">Interrupt Clear-Enable 0</gui_name>
+            <description language="en">Disables, or reads the enable state of a group of interrupts</description>
+        </register>
+        <register access="RW" name="NVIC_ICER1" size="4" offset="0xE000E184">
+            <gui_name language="en">Interrupt Clear-Enable 1</gui_name>
+            <description language="en">Disables, or reads the enable state of a group of interrupts</description>
+        </register>
+        <register access="RW" name="NVIC_ICER2" size="4" offset="0xE000E188">
+            <gui_name language="en">Interrupt Clear-Enable 2</gui_name>
+            <description language="en">Disables, or reads the enable state of a group of interrupts</description>
+        </register>
+        <register access="RW" name="NVIC_ICER3" size="4" offset="0xE000E18C">
+            <gui_name language="en">Interrupt Clear-Enable 3</gui_name>
+            <description language="en">Disables, or reads the enable state of a group of interrupts</description>
+        </register>
+        <register access="RW" name="NVIC_ICER4" size="4" offset="0xE000E190">
+            <gui_name language="en">Interrupt Clear-Enable 4</gui_name>
+            <description language="en">Disables, or reads the enable state of a group of interrupts</description>
+        </register>
+        <register access="RW" name="NVIC_ICER5" size="4" offset="0xE000E194">
+            <gui_name language="en">Interrupt Clear-Enable 5</gui_name>
+            <description language="en">Disables, or reads the enable state of a group of interrupts</description>
+        </register>
+        <register access="RW" name="NVIC_ICER6" size="4" offset="0xE000E198">
+            <gui_name language="en">Interrupt Clear-Enable 6</gui_name>
+            <description language="en">Disables, or reads the enable state of a group of interrupts</description>
+        </register>
+        <register access="RW" name="NVIC_ICER7" size="4" offset="0xE000E19C">
+            <gui_name language="en">Interrupt Clear-Enable 7</gui_name>
+            <description language="en">Disables, or reads the enable state of a group of interrupts</description>
+        </register>
+
+        <register access="RW" name="NVIC_ISPR0" size="4" offset="0xE000E200">
+            <gui_name language="en">Interrupt Set-Pending 0</gui_name>
+            <description language="en">For a group of interrupts, changes interrupt status to pending, or shows the current pending
+status</description>
+        </register>
+        <register access="RW" name="NVIC_ISPR1" size="4" offset="0xE000E204">
+            <gui_name language="en">Interrupt Set-Pending 1</gui_name>
+            <description language="en">For a group of interrupts, changes interrupt status to pending, or shows the current pending
+status</description>
+        </register>
+        <register access="RW" name="NVIC_ISPR2" size="4" offset="0xE000E208">
+            <gui_name language="en">Interrupt Set-Pending 2</gui_name>
+            <description language="en">For a group of interrupts, changes interrupt status to pending, or shows the current pending
+status</description>
+        </register>
+        <register access="RW" name="NVIC_ISPR3" size="4" offset="0xE000E20C">
+            <gui_name language="en">Interrupt Set-Pending 3</gui_name>
+            <description language="en">For a group of interrupts, changes interrupt status to pending, or shows the current pending
+status</description>
+        </register>
+        <register access="RW" name="NVIC_ISPR4" size="4" offset="0xE000E210">
+            <gui_name language="en">Interrupt Set-Pending 4</gui_name>
+            <description language="en">For a group of interrupts, changes interrupt status to pending, or shows the current pending
+status</description>
+        </register>
+        <register access="RW" name="NVIC_ISPR5" size="4" offset="0xE000E214">
+            <gui_name language="en">Interrupt Set-Pending 5</gui_name>
+            <description language="en">For a group of interrupts, changes interrupt status to pending, or shows the current pending
+status</description>
+        </register>
+        <register access="RW" name="NVIC_ISPR6" size="4" offset="0xE000E218">
+            <gui_name language="en">Interrupt Set-Pending 6</gui_name>
+            <description language="en">For a group of interrupts, changes interrupt status to pending, or shows the current pending
+status</description>
+        </register>
+        <register access="RW" name="NVIC_ISPR7" size="4" offset="0xE000E21C">
+            <gui_name language="en">Interrupt Set-Pending 7</gui_name>
+            <description language="en">For a group of interrupts, changes interrupt status to pending, or shows the current pending
+status</description>
+        </register>
+
+        <register access="RW" name="NVIC_ICPR0" size="4" offset="0xE000E280">
+            <gui_name language="en">Interrupt Set-Pending 0</gui_name>
+            <description language="en">For a group of interrupts, clears the interrupt pending status, or shows the current pending
+status</description>
+        </register>
+        <register access="RW" name="NVIC_ICPR1" size="4" offset="0xE000E284">
+            <gui_name language="en">Interrupt Set-Pending 1</gui_name>
+            <description language="en">For a group of interrupts, clears the interrupt pending status, or shows the current pending
+status</description>
+        </register>
+        <register access="RW" name="NVIC_ICPR2" size="4" offset="0xE000E288">
+            <gui_name language="en">Interrupt Set-Pending 2</gui_name>
+            <description language="en">For a group of interrupts, clears the interrupt pending status, or shows the current pending
+status</description>
+        </register>
+        <register access="RW" name="NVIC_ICPR3" size="4" offset="0xE000E28C">
+            <gui_name language="en">Interrupt Set-Pending 3</gui_name>
+            <description language="en">For a group of interrupts, clears the interrupt pending status, or shows the current pending
+status</description>
+        </register>
+        <register access="RW" name="NVIC_ICPR4" size="4" offset="0xE000E290">
+            <gui_name language="en">Interrupt Set-Pending 4</gui_name>
+            <description language="en">For a group of interrupts, clears the interrupt pending status, or shows the current pending
+status</description>
+        </register>
+        <register access="RW" name="NVIC_ICPR5" size="4" offset="0xE000E294">
+            <gui_name language="en">Interrupt Set-Pending 5</gui_name>
+            <description language="en">For a group of interrupts, clears the interrupt pending status, or shows the current pending
+status</description>
+        </register>
+        <register access="RW" name="NVIC_ICPR6" size="4" offset="0xE000E298">
+            <gui_name language="en">Interrupt Set-Pending 6</gui_name>
+            <description language="en">For a group of interrupts, clears the interrupt pending status, or shows the current pending
+status</description>
+        </register>
+        <register access="RW" name="NVIC_ICPR7" size="4" offset="0xE000E29C">
+            <gui_name language="en">Interrupt Set-Pending 7</gui_name>
+            <description language="en">For a group of interrupts, clears the interrupt pending status, or shows the current pending
+status</description>
+        </register>
+
+        <register access="RW" name="NVIC_IABR0" size="4" offset="0xE000E300">
+            <gui_name language="en">Interrupt Active Bit 0</gui_name>
+            <description language="en">For a group of 32 interrupts, shows whether each interrupt is active</description>
+        </register>
+        <register access="RW" name="NVIC_IABR1" size="4" offset="0xE000E304">
+            <gui_name language="en">Interrupt Active Bit 1</gui_name>
+            <description language="en">For a group of 32 interrupts, shows whether each interrupt is active</description>
+        </register>
+        <register access="RW" name="NVIC_IABR2" size="4" offset="0xE000E308">
+            <gui_name language="en">Interrupt Active Bit 2</gui_name>
+            <description language="en">For a group of 32 interrupts, shows whether each interrupt is active</description>
+        </register>
+        <register access="RW" name="NVIC_IABR3" size="4" offset="0xE000E30C">
+            <gui_name language="en">Interrupt Active Bit 3</gui_name>
+            <description language="en">For a group of 32 interrupts, shows whether each interrupt is active</description>
+        </register>
+        <register access="RW" name="NVIC_IABR4" size="4" offset="0xE000E310">
+            <gui_name language="en">Interrupt Active Bit 4</gui_name>
+            <description language="en">For a group of 32 interrupts, shows whether each interrupt is active</description>
+        </register>
+        <register access="RW" name="NVIC_IABR5" size="4" offset="0xE000E314">
+            <gui_name language="en">Interrupt Active Bit 5</gui_name>
+            <description language="en">For a group of 32 interrupts, shows whether each interrupt is active</description>
+        </register>
+        <register access="RW" name="NVIC_IABR6" size="4" offset="0xE000E318">
+            <gui_name language="en">Interrupt Active Bit 6</gui_name>
+            <description language="en">For a group of 32 interrupts, shows whether each interrupt is active</description>
+        </register>
+        <register access="RW" name="NVIC_IABR7" size="4" offset="0xE000E31C">
+            <gui_name language="en">Interrupt Active Bit 7</gui_name>
+            <description language="en">For a group of 32 interrupts, shows whether each interrupt is active</description>
+        </register>
+
+        <register access="RW" name="NVIC_IPR0" size="4" offset="0xE000E400">
+            <gui_name language="en">Interrupt Priority Register 0</gui_name>
+            <description language="en">Sets or reads interrupt priorities</description>
+            <bitField conditional="false" name="PRI_N3">
+                <gui_name language="en">PRI_N3</gui_name>
+                <description language="en">Priority of interrupt 3</description>
+                <definition>[31:24]</definition>
+            </bitField>
+            <bitField conditional="false" name="PRI_N2">
+                <gui_name language="en">PRI_N2</gui_name>
+                <description language="en">Priority of interrupt 2</description>
+                <definition>[23:16]</definition>
+            </bitField>
+            <bitField conditional="false" name="PRI_N1">
+                <gui_name language="en">PRI_N1</gui_name>
+                <description language="en">Priority of interrupt 1</description>
+                <definition>[15:8]</definition>
+            </bitField>
+            <bitField conditional="false" name="PRI_N0">
+                <gui_name language="en">PRI_N0</gui_name>
+                <description language="en">Priority of interrupt 0</description>
+                <definition>[7:0]</definition>
+            </bitField>
+        </register>
+        <register access="RW" name="NVIC_IPR1" size="4" offset="0xE000E404">
+            <gui_name language="en">Interrupt Priority Register 1</gui_name>
+            <description language="en">Sets or reads interrupt priorities</description>
+            <bitField conditional="false" name="PRI_N3">
+                <gui_name language="en">PRI_N3</gui_name>
+                <description language="en">Priority of interrupt 7</description>
+                <definition>[31:24]</definition>
+            </bitField>
+            <bitField conditional="false" name="PRI_N2">
+                <gui_name language="en">PRI_N2</gui_name>
+                <description language="en">Priority of interrupt 6</description>
+                <definition>[23:16]</definition>
+            </bitField>
+            <bitField conditional="false" name="PRI_N1">
+                <gui_name language="en">PRI_N1</gui_name>
+                <description language="en">Priority of interrupt 5</description>
+                <definition>[15:8]</definition>
+            </bitField>
+            <bitField conditional="false" name="PRI_N0">
+                <gui_name language="en">PRI_N0</gui_name>
+                <description language="en">Priority of interrupt 4</description>
+                <definition>[7:0]</definition>
+            </bitField>
+        </register>
+        <register access="RW" name="NVIC_IPR2" size="4" offset="0xE000E408">
+            <gui_name language="en">Interrupt Priority Register 2</gui_name>
+            <description language="en">Sets or reads interrupt priorities</description>
+            <bitField conditional="false" name="PRI_N3">
+                <gui_name language="en">PRI_N3</gui_name>
+                <description language="en">Priority of interrupt 11</description>
+                <definition>[31:24]</definition>
+            </bitField>
+            <bitField conditional="false" name="PRI_N2">
+                <gui_name language="en">PRI_N2</gui_name>
+                <description language="en">Priority of interrupt 10</description>
+                <definition>[23:16]</definition>
+            </bitField>
+            <bitField conditional="false" name="PRI_N1">
+                <gui_name language="en">PRI_N1</gui_name>
+                <description language="en">Priority of interrupt 9</description>
+                <definition>[15:8]</definition>
+            </bitField>
+            <bitField conditional="false" name="PRI_N0">
+                <gui_name language="en">PRI_N0</gui_name>
+                <description language="en">Priority of interrupt 8</description>
+                <definition>[7:0]</definition>
+            </bitField>
+        </register>
+        <register access="RW" name="NVIC_IPR3" size="4" offset="0xE000E40C">
+            <gui_name language="en">Interrupt Priority Register 3</gui_name>
+            <description language="en">Sets or reads interrupt priorities</description>
+            <bitField conditional="false" name="PRI_N3">
+                <gui_name language="en">PRI_N3</gui_name>
+                <description language="en">Priority of interrupt 15</description>
+                <definition>[31:24]</definition>
+            </bitField>
+            <bitField conditional="false" name="PRI_N2">
+                <gui_name language="en">PRI_N2</gui_name>
+                <description language="en">Priority of interrupt 14</description>
+                <definition>[23:16]</definition>
+            </bitField>
+            <bitField conditional="false" name="PRI_N1">
+                <gui_name language="en">PRI_N1</gui_name>
+                <description language="en">Priority of interrupt 13</description>
+                <definition>[15:8]</definition>
+            </bitField>
+            <bitField conditional="false" name="PRI_N0">
+                <gui_name language="en">PRI_N0</gui_name>
+                <description language="en">Priority of interrupt 12</description>
+                <definition>[7:0]</definition>
+            </bitField>
+        </register>
+        <register access="RW" name="NVIC_IPR4" size="4" offset="0xE000E410">
+            <gui_name language="en">Interrupt Priority Register 4</gui_name>
+            <description language="en">Sets or reads interrupt priorities</description>
+            <bitField conditional="false" name="PRI_N3">
+                <gui_name language="en">PRI_N3</gui_name>
+                <description language="en">Priority of interrupt 19</description>
+                <definition>[31:24]</definition>
+            </bitField>
+            <bitField conditional="false" name="PRI_N2">
+                <gui_name language="en">PRI_N2</gui_name>
+                <description language="en">Priority of interrupt 18</description>
+                <definition>[23:16]</definition>
+            </bitField>
+            <bitField conditional="false" name="PRI_N1">
+                <gui_name language="en">PRI_N1</gui_name>
+                <description language="en">Priority of interrupt 17</description>
+                <definition>[15:8]</definition>
+            </bitField>
+            <bitField conditional="false" name="PRI_N0">
+                <gui_name language="en">PRI_N0</gui_name>
+                <description language="en">Priority of interrupt 16</description>
+                <definition>[7:0]</definition>
+            </bitField>
+        </register>
+        <register access="RW" name="NVIC_IPR5" size="4" offset="0xE000E414">
+            <gui_name language="en">Interrupt Priority Register 5</gui_name>
+            <description language="en">Sets or reads interrupt priorities</description>
+            <bitField conditional="false" name="PRI_N3">
+                <gui_name language="en">PRI_N3</gui_name>
+                <description language="en">Priority of interrupt 23</description>
+                <definition>[31:24]</definition>
+            </bitField>
+            <bitField conditional="false" name="PRI_N2">
+                <gui_name language="en">PRI_N2</gui_name>
+                <description language="en">Priority of interrupt 22</description>
+                <definition>[23:16]</definition>
+            </bitField>
+            <bitField conditional="false" name="PRI_N1">
+                <gui_name language="en">PRI_N1</gui_name>
+                <description language="en">Priority of interrupt 21</description>
+                <definition>[15:8]</definition>
+            </bitField>
+            <bitField conditional="false" name="PRI_N0">
+                <gui_name language="en">PRI_N0</gui_name>
+                <description language="en">Priority of interrupt 20</description>
+                <definition>[7:0]</definition>
+            </bitField>
+        </register>
+        <register access="RW" name="NVIC_IPR6" size="4" offset="0xE000E418">
+            <gui_name language="en">Interrupt Priority Register 6</gui_name>
+            <description language="en">Sets or reads interrupt priorities</description>
+            <bitField conditional="false" name="PRI_N3">
+                <gui_name language="en">PRI_N3</gui_name>
+                <description language="en">Priority of interrupt 27</description>
+                <definition>[31:24]</definition>
+            </bitField>
+            <bitField conditional="false" name="PRI_N2">
+                <gui_name language="en">PRI_N2</gui_name>
+                <description language="en">Priority of interrupt 26</description>
+                <definition>[23:16]</definition>
+            </bitField>
+            <bitField conditional="false" name="PRI_N1">
+                <gui_name language="en">PRI_N1</gui_name>
+                <description language="en">Priority of interrupt 25</description>
+                <definition>[15:8]</definition>
+            </bitField>
+            <bitField conditional="false" name="PRI_N0">
+                <gui_name language="en">PRI_N0</gui_name>
+                <description language="en">Priority of interrupt 24</description>
+                <definition>[7:0]</definition>
+            </bitField>
+        </register>
+        <register access="RW" name="NVIC_IPR7" size="4" offset="0xE000E41C">
+            <gui_name language="en">Interrupt Priority Register 7</gui_name>
+            <description language="en">Sets or reads interrupt priorities</description>
+            <bitField conditional="false" name="PRI_N3">
+                <gui_name language="en">PRI_N3</gui_name>
+                <description language="en">Priority of interrupt 31</description>
+                <definition>[31:24]</definition>
+            </bitField>
+            <bitField conditional="false" name="PRI_N2">
+                <gui_name language="en">PRI_N2</gui_name>
+                <description language="en">Priority of interrupt 30</description>
+                <definition>[23:16]</definition>
+            </bitField>
+            <bitField conditional="false" name="PRI_N1">
+                <gui_name language="en">PRI_N1</gui_name>
+                <description language="en">Priority of interrupt 29</description>
+                <definition>[15:8]</definition>
+            </bitField>
+            <bitField conditional="false" name="PRI_N0">
+                <gui_name language="en">PRI_N0</gui_name>
+                <description language="en">Priority of interrupt 28</description>
+                <definition>[7:0]</definition>
+            </bitField>
+        </register>
+        <register access="RW" name="NVIC_IPR8" size="4" offset="0xE000E420">
+            <gui_name language="en">Interrupt Priority Register 8</gui_name>
+            <description language="en">Sets or reads interrupt priorities</description>
+            <bitField conditional="false" name="PRI_N3">
+                <gui_name language="en">PRI_N3</gui_name>
+                <description language="en">Priority of interrupt 35</description>
+                <definition>[31:24]</definition>
+            </bitField>
+            <bitField conditional="false" name="PRI_N2">
+                <gui_name language="en">PRI_N2</gui_name>
+                <description language="en">Priority of interrupt 34</description>
+                <definition>[23:16]</definition>
+            </bitField>
+            <bitField conditional="false" name="PRI_N1">
+                <gui_name language="en">PRI_N1</gui_name>
+                <description language="en">Priority of interrupt 33</description>
+                <definition>[15:8]</definition>
+            </bitField>
+            <bitField conditional="false" name="PRI_N0">
+                <gui_name language="en">PRI_N0</gui_name>
+                <description language="en">Priority of interrupt 32</description>
+                <definition>[7:0]</definition>
+            </bitField>
+        </register>
+        <register access="RW" name="NVIC_IPR9" size="4" offset="0xE000E424">
+            <gui_name language="en">Interrupt Priority Register 9</gui_name>
+            <description language="en">Sets or reads interrupt priorities</description>
+            <bitField conditional="false" name="PRI_N3">
+                <gui_name language="en">PRI_N3</gui_name>
+                <description language="en">Priority of interrupt 39</description>
+                <definition>[31:24]</definition>
+            </bitField>
+            <bitField conditional="false" name="PRI_N2">
+                <gui_name language="en">PRI_N2</gui_name>
+                <description language="en">Priority of interrupt 38</description>
+                <definition>[23:16]</definition>
+            </bitField>
+            <bitField conditional="false" name="PRI_N1">
+                <gui_name language="en">PRI_N1</gui_name>
+                <description language="en">Priority of interrupt 37</description>
+                <definition>[15:8]</definition>
+            </bitField>
+            <bitField conditional="false" name="PRI_N0">
+                <gui_name language="en">PRI_N0</gui_name>
+                <description language="en">Priority of interrupt 36</description>
+                <definition>[7:0]</definition>
+            </bitField>
+        </register>
+        <register access="RW" name="NVIC_IPR10" size="4" offset="0xE000E428">
+            <gui_name language="en">Interrupt Priority Register 10</gui_name>
+            <description language="en">Sets or reads interrupt priorities</description>
+            <bitField conditional="false" name="PRI_N3">
+                <gui_name language="en">PRI_N3</gui_name>
+                <description language="en">Priority of interrupt 43</description>
+                <definition>[31:24]</definition>
+            </bitField>
+            <bitField conditional="false" name="PRI_N2">
+                <gui_name language="en">PRI_N2</gui_name>
+                <description language="en">Priority of interrupt 42</description>
+                <definition>[23:16]</definition>
+            </bitField>
+            <bitField conditional="false" name="PRI_N1">
+                <gui_name language="en">PRI_N1</gui_name>
+                <description language="en">Priority of interrupt 41</description>
+                <definition>[15:8]</definition>
+            </bitField>
+            <bitField conditional="false" name="PRI_N0">
+                <gui_name language="en">PRI_N0</gui_name>
+                <description language="en">Priority of interrupt 40</description>
+                <definition>[7:0]</definition>
+            </bitField>
+        </register>
+        <register access="RW" name="NVIC_IPR11" size="4" offset="0xE000E42C">
+            <gui_name language="en">Interrupt Priority Register 11</gui_name>
+            <description language="en">Sets or reads interrupt priorities</description>
+            <bitField conditional="false" name="PRI_N3">
+                <gui_name language="en">PRI_N3</gui_name>
+                <description language="en">Priority of interrupt 47</description>
+                <definition>[31:24]</definition>
+            </bitField>
+            <bitField conditional="false" name="PRI_N2">
+                <gui_name language="en">PRI_N2</gui_name>
+                <description language="en">Priority of interrupt 46</description>
+                <definition>[23:16]</definition>
+            </bitField>
+            <bitField conditional="false" name="PRI_N1">
+                <gui_name language="en">PRI_N1</gui_name>
+                <description language="en">Priority of interrupt 45</description>
+                <definition>[15:8]</definition>
+            </bitField>
+            <bitField conditional="false" name="PRI_N0">
+                <gui_name language="en">PRI_N0</gui_name>
+                <description language="en">Priority of interrupt 44</description>
+                <definition>[7:0]</definition>
+            </bitField>
+        </register>
+        <register access="RW" name="NVIC_IPR12" size="4" offset="0xE000E430">
+            <gui_name language="en">Interrupt Priority Register 12</gui_name>
+            <description language="en">Sets or reads interrupt priorities</description>
+            <bitField conditional="false" name="PRI_N3">
+                <gui_name language="en">PRI_N3</gui_name>
+                <description language="en">Priority of interrupt 51</description>
+                <definition>[31:24]</definition>
+            </bitField>
+            <bitField conditional="false" name="PRI_N2">
+                <gui_name language="en">PRI_N2</gui_name>
+                <description language="en">Priority of interrupt 50</description>
+                <definition>[23:16]</definition>
+            </bitField>
+            <bitField conditional="false" name="PRI_N1">
+                <gui_name language="en">PRI_N1</gui_name>
+                <description language="en">Priority of interrupt 49</description>
+                <definition>[15:8]</definition>
+            </bitField>
+            <bitField conditional="false" name="PRI_N0">
+                <gui_name language="en">PRI_N0</gui_name>
+                <description language="en">Priority of interrupt 48</description>
+                <definition>[7:0]</definition>
+            </bitField>
+        </register>
+        <register access="RW" name="NVIC_IPR13" size="4" offset="0xE000E434">
+            <gui_name language="en">Interrupt Priority Register 13</gui_name>
+            <description language="en">Sets or reads interrupt priorities</description>
+            <bitField conditional="false" name="PRI_N3">
+                <gui_name language="en">PRI_N3</gui_name>
+                <description language="en">Priority of interrupt 55</description>
+                <definition>[31:24]</definition>
+            </bitField>
+            <bitField conditional="false" name="PRI_N2">
+                <gui_name language="en">PRI_N2</gui_name>
+                <description language="en">Priority of interrupt 54</description>
+                <definition>[23:16]</definition>
+            </bitField>
+            <bitField conditional="false" name="PRI_N1">
+                <gui_name language="en">PRI_N1</gui_name>
+                <description language="en">Priority of interrupt 53</description>
+                <definition>[15:8]</definition>
+            </bitField>
+            <bitField conditional="false" name="PRI_N0">
+                <gui_name language="en">PRI_N0</gui_name>
+                <description language="en">Priority of interrupt 52</description>
+                <definition>[7:0]</definition>
+            </bitField>
+        </register>
+        <register access="RW" name="NVIC_IPR14" size="4" offset="0xE000E438">
+            <gui_name language="en">Interrupt Priority Register 14</gui_name>
+            <description language="en">Sets or reads interrupt priorities</description>
+            <bitField conditional="false" name="PRI_N3">
+                <gui_name language="en">PRI_N3</gui_name>
+                <description language="en">Priority of interrupt 59</description>
+                <definition>[31:24]</definition>
+            </bitField>
+            <bitField conditional="false" name="PRI_N2">
+                <gui_name language="en">PRI_N2</gui_name>
+                <description language="en">Priority of interrupt 58</description>
+                <definition>[23:16]</definition>
+            </bitField>
+            <bitField conditional="false" name="PRI_N1">
+                <gui_name language="en">PRI_N1</gui_name>
+                <description language="en">Priority of interrupt 57</description>
+                <definition>[15:8]</definition>
+            </bitField>
+            <bitField conditional="false" name="PRI_N0">
+                <gui_name language="en">PRI_N0</gui_name>
+                <description language="en">Priority of interrupt 56</description>
+                <definition>[7:0]</definition>
+            </bitField>
+        </register>
+        <register access="RW" name="NVIC_IPR15" size="4" offset="0xE000E43C">
+            <gui_name language="en">Interrupt Priority Register 15</gui_name>
+            <description language="en">Sets or reads interrupt priorities</description>
+            <bitField conditional="false" name="PRI_N3">
+                <gui_name language="en">PRI_N3</gui_name>
+                <description language="en">Priority of interrupt 63</description>
+                <definition>[31:24]</definition>
+            </bitField>
+            <bitField conditional="false" name="PRI_N2">
+                <gui_name language="en">PRI_N2</gui_name>
+                <description language="en">Priority of interrupt 62</description>
+                <definition>[23:16]</definition>
+            </bitField>
+            <bitField conditional="false" name="PRI_N1">
+                <gui_name language="en">PRI_N1</gui_name>
+                <description language="en">Priority of interrupt 61</description>
+                <definition>[15:8]</definition>
+            </bitField>
+            <bitField conditional="false" name="PRI_N0">
+                <gui_name language="en">PRI_N0</gui_name>
+                <description language="en">Priority of interrupt 60</description>
+                <definition>[7:0]</definition>
+            </bitField>
+        </register>
+        <register access="RW" name="NVIC_IPR16" size="4" offset="0xE000E440">
+            <gui_name language="en">Interrupt Priority Register 16</gui_name>
+            <description language="en">Sets or reads interrupt priorities</description>
+            <bitField conditional="false" name="PRI_N3">
+                <gui_name language="en">PRI_N3</gui_name>
+                <description language="en">Priority of interrupt 67</description>
+                <definition>[31:24]</definition>
+            </bitField>
+            <bitField conditional="false" name="PRI_N2">
+                <gui_name language="en">PRI_N2</gui_name>
+                <description language="en">Priority of interrupt 66</description>
+                <definition>[23:16]</definition>
+            </bitField>
+            <bitField conditional="false" name="PRI_N1">
+                <gui_name language="en">PRI_N1</gui_name>
+                <description language="en">Priority of interrupt 65</description>
+                <definition>[15:8]</definition>
+            </bitField>
+            <bitField conditional="false" name="PRI_N0">
+                <gui_name language="en">PRI_N0</gui_name>
+                <description language="en">Priority of interrupt 64</description>
+                <definition>[7:0]</definition>
+            </bitField>
+        </register>
+        <register access="RW" name="NVIC_IPR17" size="4" offset="0xE000E444">
+            <gui_name language="en">Interrupt Priority Register 17</gui_name>
+            <description language="en">Sets or reads interrupt priorities</description>
+            <bitField conditional="false" name="PRI_N3">
+                <gui_name language="en">PRI_N3</gui_name>
+                <description language="en">Priority of interrupt 71</description>
+                <definition>[31:24]</definition>
+            </bitField>
+            <bitField conditional="false" name="PRI_N2">
+                <gui_name language="en">PRI_N2</gui_name>
+                <description language="en">Priority of interrupt 70</description>
+                <definition>[23:16]</definition>
+            </bitField>
+            <bitField conditional="false" name="PRI_N1">
+                <gui_name language="en">PRI_N1</gui_name>
+                <description language="en">Priority of interrupt 69</description>
+                <definition>[15:8]</definition>
+            </bitField>
+            <bitField conditional="false" name="PRI_N0">
+                <gui_name language="en">PRI_N0</gui_name>
+                <description language="en">Priority of interrupt 68</description>
+                <definition>[7:0]</definition>
+            </bitField>
+        </register>
+        <register access="RW" name="NVIC_IPR18" size="4" offset="0xE000E448">
+            <gui_name language="en">Interrupt Priority Register 18</gui_name>
+            <description language="en">Sets or reads interrupt priorities</description>
+            <bitField conditional="false" name="PRI_N3">
+                <gui_name language="en">PRI_N3</gui_name>
+                <description language="en">Priority of interrupt 75</description>
+                <definition>[31:24]</definition>
+            </bitField>
+            <bitField conditional="false" name="PRI_N2">
+                <gui_name language="en">PRI_N2</gui_name>
+                <description language="en">Priority of interrupt 74</description>
+                <definition>[23:16]</definition>
+            </bitField>
+            <bitField conditional="false" name="PRI_N1">
+                <gui_name language="en">PRI_N1</gui_name>
+                <description language="en">Priority of interrupt 73</description>
+                <definition>[15:8]</definition>
+            </bitField>
+            <bitField conditional="false" name="PRI_N0">
+                <gui_name language="en">PRI_N0</gui_name>
+                <description language="en">Priority of interrupt 72</description>
+                <definition>[7:0]</definition>
+            </bitField>
+        </register>
+        <register access="RW" name="NVIC_IPR19" size="4" offset="0xE000E44C">
+            <gui_name language="en">Interrupt Priority Register 19</gui_name>
+            <description language="en">Sets or reads interrupt priorities</description>
+            <bitField conditional="false" name="PRI_N3">
+                <gui_name language="en">PRI_N3</gui_name>
+                <description language="en">Priority of interrupt 79</description>
+                <definition>[31:24]</definition>
+            </bitField>
+            <bitField conditional="false" name="PRI_N2">
+                <gui_name language="en">PRI_N2</gui_name>
+                <description language="en">Priority of interrupt 78</description>
+                <definition>[23:16]</definition>
+            </bitField>
+            <bitField conditional="false" name="PRI_N1">
+                <gui_name language="en">PRI_N1</gui_name>
+                <description language="en">Priority of interrupt 77</description>
+                <definition>[15:8]</definition>
+            </bitField>
+            <bitField conditional="false" name="PRI_N0">
+                <gui_name language="en">PRI_N0</gui_name>
+                <description language="en">Priority of interrupt 76</description>
+                <definition>[7:0]</definition>
+            </bitField>
+        </register>
+        <register access="RW" name="NVIC_IPR20" size="4" offset="0xE000E450">
+            <gui_name language="en">Interrupt Priority Register 20</gui_name>
+            <description language="en">Sets or reads interrupt priorities</description>
+            <bitField conditional="false" name="PRI_N3">
+                <gui_name language="en">PRI_N3</gui_name>
+                <description language="en">Priority of interrupt 83</description>
+                <definition>[31:24]</definition>
+            </bitField>
+            <bitField conditional="false" name="PRI_N2">
+                <gui_name language="en">PRI_N2</gui_name>
+                <description language="en">Priority of interrupt 82</description>
+                <definition>[23:16]</definition>
+            </bitField>
+            <bitField conditional="false" name="PRI_N1">
+                <gui_name language="en">PRI_N1</gui_name>
+                <description language="en">Priority of interrupt 81</description>
+                <definition>[15:8]</definition>
+            </bitField>
+            <bitField conditional="false" name="PRI_N0">
+                <gui_name language="en">PRI_N0</gui_name>
+                <description language="en">Priority of interrupt 80</description>
+                <definition>[7:0]</definition>
+            </bitField>
+        </register>
+        <register access="RW" name="NVIC_IPR21" size="4" offset="0xE000E454">
+            <gui_name language="en">Interrupt Priority Register 21</gui_name>
+            <description language="en">Sets or reads interrupt priorities</description>
+            <bitField conditional="false" name="PRI_N3">
+                <gui_name language="en">PRI_N3</gui_name>
+                <description language="en">Priority of interrupt 87</description>
+                <definition>[31:24]</definition>
+            </bitField>
+            <bitField conditional="false" name="PRI_N2">
+                <gui_name language="en">PRI_N2</gui_name>
+                <description language="en">Priority of interrupt 86</description>
+                <definition>[23:16]</definition>
+            </bitField>
+            <bitField conditional="false" name="PRI_N1">
+                <gui_name language="en">PRI_N1</gui_name>
+                <description language="en">Priority of interrupt 85</description>
+                <definition>[15:8]</definition>
+            </bitField>
+            <bitField conditional="false" name="PRI_N0">
+                <gui_name language="en">PRI_N0</gui_name>
+                <description language="en">Priority of interrupt 84</description>
+                <definition>[7:0]</definition>
+            </bitField>
+        </register>
+        <register access="RW" name="NVIC_IPR22" size="4" offset="0xE000E458">
+            <gui_name language="en">Interrupt Priority Register 22</gui_name>
+            <description language="en">Sets or reads interrupt priorities</description>
+            <bitField conditional="false" name="PRI_N3">
+                <gui_name language="en">PRI_N3</gui_name>
+                <description language="en">Priority of interrupt 91</description>
+                <definition>[31:24]</definition>
+            </bitField>
+            <bitField conditional="false" name="PRI_N2">
+                <gui_name language="en">PRI_N2</gui_name>
+                <description language="en">Priority of interrupt 90</description>
+                <definition>[23:16]</definition>
+            </bitField>
+            <bitField conditional="false" name="PRI_N1">
+                <gui_name language="en">PRI_N1</gui_name>
+                <description language="en">Priority of interrupt 89</description>
+                <definition>[15:8]</definition>
+            </bitField>
+            <bitField conditional="false" name="PRI_N0">
+                <gui_name language="en">PRI_N0</gui_name>
+                <description language="en">Priority of interrupt 88</description>
+                <definition>[7:0]</definition>
+            </bitField>
+        </register>
+        <register access="RW" name="NVIC_IPR23" size="4" offset="0xE000E45C">
+            <gui_name language="en">Interrupt Priority Register 23</gui_name>
+            <description language="en">Sets or reads interrupt priorities</description>
+            <bitField conditional="false" name="PRI_N3">
+                <gui_name language="en">PRI_N3</gui_name>
+                <description language="en">Priority of interrupt 95</description>
+                <definition>[31:24]</definition>
+            </bitField>
+            <bitField conditional="false" name="PRI_N2">
+                <gui_name language="en">PRI_N2</gui_name>
+                <description language="en">Priority of interrupt 94</description>
+                <definition>[23:16]</definition>
+            </bitField>
+            <bitField conditional="false" name="PRI_N1">
+                <gui_name language="en">PRI_N1</gui_name>
+                <description language="en">Priority of interrupt 93</description>
+                <definition>[15:8]</definition>
+            </bitField>
+            <bitField conditional="false" name="PRI_N0">
+                <gui_name language="en">PRI_N0</gui_name>
+                <description language="en">Priority of interrupt 92</description>
+                <definition>[7:0]</definition>
+            </bitField>
+        </register>
+        <register access="RW" name="NVIC_IPR24" size="4" offset="0xE000E460">
+            <gui_name language="en">Interrupt Priority Register 24</gui_name>
+            <description language="en">Sets or reads interrupt priorities</description>
+            <bitField conditional="false" name="PRI_N3">
+                <gui_name language="en">PRI_N3</gui_name>
+                <description language="en">Priority of interrupt 99</description>
+                <definition>[31:24]</definition>
+            </bitField>
+            <bitField conditional="false" name="PRI_N2">
+                <gui_name language="en">PRI_N2</gui_name>
+                <description language="en">Priority of interrupt 98</description>
+                <definition>[23:16]</definition>
+            </bitField>
+            <bitField conditional="false" name="PRI_N1">
+                <gui_name language="en">PRI_N1</gui_name>
+                <description language="en">Priority of interrupt 97</description>
+                <definition>[15:8]</definition>
+            </bitField>
+            <bitField conditional="false" name="PRI_N0">
+                <gui_name language="en">PRI_N0</gui_name>
+                <description language="en">Priority of interrupt 96</description>
+                <definition>[7:0]</definition>
+            </bitField>
+        </register>
+        <register access="RW" name="NVIC_IPR25" size="4" offset="0xE000E464">
+            <gui_name language="en">Interrupt Priority Register 25</gui_name>
+            <description language="en">Sets or reads interrupt priorities</description>
+            <bitField conditional="false" name="PRI_N3">
+                <gui_name language="en">PRI_N3</gui_name>
+                <description language="en">Priority of interrupt 103</description>
+                <definition>[31:24]</definition>
+            </bitField>
+            <bitField conditional="false" name="PRI_N2">
+                <gui_name language="en">PRI_N2</gui_name>
+                <description language="en">Priority of interrupt 102</description>
+                <definition>[23:16]</definition>
+            </bitField>
+            <bitField conditional="false" name="PRI_N1">
+                <gui_name language="en">PRI_N1</gui_name>
+                <description language="en">Priority of interrupt 101</description>
+                <definition>[15:8]</definition>
+            </bitField>
+            <bitField conditional="false" name="PRI_N0">
+                <gui_name language="en">PRI_N0</gui_name>
+                <description language="en">Priority of interrupt 100</description>
+                <definition>[7:0]</definition>
+            </bitField>
+        </register>
+        <register access="RW" name="NVIC_IPR26" size="4" offset="0xE000E468">
+            <gui_name language="en">Interrupt Priority Register 26</gui_name>
+            <description language="en">Sets or reads interrupt priorities</description>
+            <bitField conditional="false" name="PRI_N3">
+                <gui_name language="en">PRI_N3</gui_name>
+                <description language="en">Priority of interrupt 107</description>
+                <definition>[31:24]</definition>
+            </bitField>
+            <bitField conditional="false" name="PRI_N2">
+                <gui_name language="en">PRI_N2</gui_name>
+                <description language="en">Priority of interrupt 106</description>
+                <definition>[23:16]</definition>
+            </bitField>
+            <bitField conditional="false" name="PRI_N1">
+                <gui_name language="en">PRI_N1</gui_name>
+                <description language="en">Priority of interrupt 105</description>
+                <definition>[15:8]</definition>
+            </bitField>
+            <bitField conditional="false" name="PRI_N0">
+                <gui_name language="en">PRI_N0</gui_name>
+                <description language="en">Priority of interrupt 104</description>
+                <definition>[7:0]</definition>
+            </bitField>
+        </register>
+        <register access="RW" name="NVIC_IPR27" size="4" offset="0xE000E46C">
+            <gui_name language="en">Interrupt Priority Register 27</gui_name>
+            <description language="en">Sets or reads interrupt priorities</description>
+            <bitField conditional="false" name="PRI_N3">
+                <gui_name language="en">PRI_N3</gui_name>
+                <description language="en">Priority of interrupt 111</description>
+                <definition>[31:24]</definition>
+            </bitField>
+            <bitField conditional="false" name="PRI_N2">
+                <gui_name language="en">PRI_N2</gui_name>
+                <description language="en">Priority of interrupt 110</description>
+                <definition>[23:16]</definition>
+            </bitField>
+            <bitField conditional="false" name="PRI_N1">
+                <gui_name language="en">PRI_N1</gui_name>
+                <description language="en">Priority of interrupt 109</description>
+                <definition>[15:8]</definition>
+            </bitField>
+            <bitField conditional="false" name="PRI_N0">
+                <gui_name language="en">PRI_N0</gui_name>
+                <description language="en">Priority of interrupt 108</description>
+                <definition>[7:0]</definition>
+            </bitField>
+        </register>
+        <register access="RW" name="NVIC_IPR28" size="4" offset="0xE000E470">
+            <gui_name language="en">Interrupt Priority Register 28</gui_name>
+            <description language="en">Sets or reads interrupt priorities</description>
+            <bitField conditional="false" name="PRI_N3">
+                <gui_name language="en">PRI_N3</gui_name>
+                <description language="en">Priority of interrupt 115</description>
+                <definition>[31:24]</definition>
+            </bitField>
+            <bitField conditional="false" name="PRI_N2">
+                <gui_name language="en">PRI_N2</gui_name>
+                <description language="en">Priority of interrupt 114</description>
+                <definition>[23:16]</definition>
+            </bitField>
+            <bitField conditional="false" name="PRI_N1">
+                <gui_name language="en">PRI_N1</gui_name>
+                <description language="en">Priority of interrupt 113</description>
+                <definition>[15:8]</definition>
+            </bitField>
+            <bitField conditional="false" name="PRI_N0">
+                <gui_name language="en">PRI_N0</gui_name>
+                <description language="en">Priority of interrupt 112</description>
+                <definition>[7:0]</definition>
+            </bitField>
+        </register>
+        <register access="RW" name="NVIC_IPR29" size="4" offset="0xE000E474">
+            <gui_name language="en">Interrupt Priority Register 29</gui_name>
+            <description language="en">Sets or reads interrupt priorities</description>
+            <bitField conditional="false" name="PRI_N3">
+                <gui_name language="en">PRI_N3</gui_name>
+                <description language="en">Priority of interrupt 119</description>
+                <definition>[31:24]</definition>
+            </bitField>
+            <bitField conditional="false" name="PRI_N2">
+                <gui_name language="en">PRI_N2</gui_name>
+                <description language="en">Priority of interrupt 118</description>
+                <definition>[23:16]</definition>
+            </bitField>
+            <bitField conditional="false" name="PRI_N1">
+                <gui_name language="en">PRI_N1</gui_name>
+                <description language="en">Priority of interrupt 117</description>
+                <definition>[15:8]</definition>
+            </bitField>
+            <bitField conditional="false" name="PRI_N0">
+                <gui_name language="en">PRI_N0</gui_name>
+                <description language="en">Priority of interrupt 116</description>
+                <definition>[7:0]</definition>
+            </bitField>
+        </register>
+        <register access="RW" name="NVIC_IPR30" size="4" offset="0xE000E478">
+            <gui_name language="en">Interrupt Priority Register 30</gui_name>
+            <description language="en">Sets or reads interrupt priorities</description>
+            <bitField conditional="false" name="PRI_N3">
+                <gui_name language="en">PRI_N3</gui_name>
+                <description language="en">Priority of interrupt 123</description>
+                <definition>[31:24]</definition>
+            </bitField>
+            <bitField conditional="false" name="PRI_N2">
+                <gui_name language="en">PRI_N2</gui_name>
+                <description language="en">Priority of interrupt 122</description>
+                <definition>[23:16]</definition>
+            </bitField>
+            <bitField conditional="false" name="PRI_N1">
+                <gui_name language="en">PRI_N1</gui_name>
+                <description language="en">Priority of interrupt 121</description>
+                <definition>[15:8]</definition>
+            </bitField>
+            <bitField conditional="false" name="PRI_N0">
+                <gui_name language="en">PRI_N0</gui_name>
+                <description language="en">Priority of interrupt 120</description>
+                <definition>[7:0]</definition>
+            </bitField>
+        </register>
+        <register access="RW" name="NVIC_IPR31" size="4" offset="0xE000E47C">
+            <gui_name language="en">Interrupt Priority Register 31</gui_name>
+            <description language="en">Sets or reads interrupt priorities</description>
+            <bitField conditional="false" name="PRI_N3">
+                <gui_name language="en">PRI_N3</gui_name>
+                <description language="en">Priority of interrupt 127</description>
+                <definition>[31:24]</definition>
+            </bitField>
+            <bitField conditional="false" name="PRI_N2">
+                <gui_name language="en">PRI_N2</gui_name>
+                <description language="en">Priority of interrupt 126</description>
+                <definition>[23:16]</definition>
+            </bitField>
+            <bitField conditional="false" name="PRI_N1">
+                <gui_name language="en">PRI_N1</gui_name>
+                <description language="en">Priority of interrupt 125</description>
+                <definition>[15:8]</definition>
+            </bitField>
+            <bitField conditional="false" name="PRI_N0">
+                <gui_name language="en">PRI_N0</gui_name>
+                <description language="en">Priority of interrupt 124</description>
+                <definition>[7:0]</definition>
+            </bitField>
+        </register>
+        <register access="RW" name="NVIC_IPR32" size="4" offset="0xE000E480">
+            <gui_name language="en">Interrupt Priority Register 32</gui_name>
+            <description language="en">Sets or reads interrupt priorities</description>
+            <bitField conditional="false" name="PRI_N3">
+                <gui_name language="en">PRI_N3</gui_name>
+                <description language="en">Priority of interrupt 131</description>
+                <definition>[31:24]</definition>
+            </bitField>
+            <bitField conditional="false" name="PRI_N2">
+                <gui_name language="en">PRI_N2</gui_name>
+                <description language="en">Priority of interrupt 130</description>
+                <definition>[23:16]</definition>
+            </bitField>
+            <bitField conditional="false" name="PRI_N1">
+                <gui_name language="en">PRI_N1</gui_name>
+                <description language="en">Priority of interrupt 129</description>
+                <definition>[15:8]</definition>
+            </bitField>
+            <bitField conditional="false" name="PRI_N0">
+                <gui_name language="en">PRI_N0</gui_name>
+                <description language="en">Priority of interrupt 128</description>
+                <definition>[7:0]</definition>
+            </bitField>
+        </register>
+        <register access="RW" name="NVIC_IPR33" size="4" offset="0xE000E484">
+            <gui_name language="en">Interrupt Priority Register 33</gui_name>
+            <description language="en">Sets or reads interrupt priorities</description>
+            <bitField conditional="false" name="PRI_N3">
+                <gui_name language="en">PRI_N3</gui_name>
+                <description language="en">Priority of interrupt 135</description>
+                <definition>[31:24]</definition>
+            </bitField>
+            <bitField conditional="false" name="PRI_N2">
+                <gui_name language="en">PRI_N2</gui_name>
+                <description language="en">Priority of interrupt 134</description>
+                <definition>[23:16]</definition>
+            </bitField>
+            <bitField conditional="false" name="PRI_N1">
+                <gui_name language="en">PRI_N1</gui_name>
+                <description language="en">Priority of interrupt 133</description>
+                <definition>[15:8]</definition>
+            </bitField>
+            <bitField conditional="false" name="PRI_N0">
+                <gui_name language="en">PRI_N0</gui_name>
+                <description language="en">Priority of interrupt 132</description>
+                <definition>[7:0]</definition>
+            </bitField>
+        </register>
+        <register access="RW" name="NVIC_IPR34" size="4" offset="0xE000E488">
+            <gui_name language="en">Interrupt Priority Register 34</gui_name>
+            <description language="en">Sets or reads interrupt priorities</description>
+            <bitField conditional="false" name="PRI_N3">
+                <gui_name language="en">PRI_N3</gui_name>
+                <description language="en">Priority of interrupt 139</description>
+                <definition>[31:24]</definition>
+            </bitField>
+            <bitField conditional="false" name="PRI_N2">
+                <gui_name language="en">PRI_N2</gui_name>
+                <description language="en">Priority of interrupt 138</description>
+                <definition>[23:16]</definition>
+            </bitField>
+            <bitField conditional="false" name="PRI_N1">
+                <gui_name language="en">PRI_N1</gui_name>
+                <description language="en">Priority of interrupt 137</description>
+                <definition>[15:8]</definition>
+            </bitField>
+            <bitField conditional="false" name="PRI_N0">
+                <gui_name language="en">PRI_N0</gui_name>
+                <description language="en">Priority of interrupt 136</description>
+                <definition>[7:0]</definition>
+            </bitField>
+        </register>
+        <register access="RW" name="NVIC_IPR35" size="4" offset="0xE000E48C">
+            <gui_name language="en">Interrupt Priority Register 35</gui_name>
+            <description language="en">Sets or reads interrupt priorities</description>
+            <bitField conditional="false" name="PRI_N3">
+                <gui_name language="en">PRI_N3</gui_name>
+                <description language="en">Priority of interrupt 143</description>
+                <definition>[31:24]</definition>
+            </bitField>
+            <bitField conditional="false" name="PRI_N2">
+                <gui_name language="en">PRI_N2</gui_name>
+                <description language="en">Priority of interrupt 142</description>
+                <definition>[23:16]</definition>
+            </bitField>
+            <bitField conditional="false" name="PRI_N1">
+                <gui_name language="en">PRI_N1</gui_name>
+                <description language="en">Priority of interrupt 141</description>
+                <definition>[15:8]</definition>
+            </bitField>
+            <bitField conditional="false" name="PRI_N0">
+                <gui_name language="en">PRI_N0</gui_name>
+                <description language="en">Priority of interrupt 140</description>
+                <definition>[7:0]</definition>
+            </bitField>
+        </register>
+        <register access="RW" name="NVIC_IPR36" size="4" offset="0xE000E490">
+            <gui_name language="en">Interrupt Priority Register 36</gui_name>
+            <description language="en">Sets or reads interrupt priorities</description>
+            <bitField conditional="false" name="PRI_N3">
+                <gui_name language="en">PRI_N3</gui_name>
+                <description language="en">Priority of interrupt 147</description>
+                <definition>[31:24]</definition>
+            </bitField>
+            <bitField conditional="false" name="PRI_N2">
+                <gui_name language="en">PRI_N2</gui_name>
+                <description language="en">Priority of interrupt 146</description>
+                <definition>[23:16]</definition>
+            </bitField>
+            <bitField conditional="false" name="PRI_N1">
+                <gui_name language="en">PRI_N1</gui_name>
+                <description language="en">Priority of interrupt 145</description>
+                <definition>[15:8]</definition>
+            </bitField>
+            <bitField conditional="false" name="PRI_N0">
+                <gui_name language="en">PRI_N0</gui_name>
+                <description language="en">Priority of interrupt 144</description>
+                <definition>[7:0]</definition>
+            </bitField>
+        </register>
+        <register access="RW" name="NVIC_IPR37" size="4" offset="0xE000E494">
+            <gui_name language="en">Interrupt Priority Register 37</gui_name>
+            <description language="en">Sets or reads interrupt priorities</description>
+            <bitField conditional="false" name="PRI_N3">
+                <gui_name language="en">PRI_N3</gui_name>
+                <description language="en">Priority of interrupt 151</description>
+                <definition>[31:24]</definition>
+            </bitField>
+            <bitField conditional="false" name="PRI_N2">
+                <gui_name language="en">PRI_N2</gui_name>
+                <description language="en">Priority of interrupt 150</description>
+                <definition>[23:16]</definition>
+            </bitField>
+            <bitField conditional="false" name="PRI_N1">
+                <gui_name language="en">PRI_N1</gui_name>
+                <description language="en">Priority of interrupt 149</description>
+                <definition>[15:8]</definition>
+            </bitField>
+            <bitField conditional="false" name="PRI_N0">
+                <gui_name language="en">PRI_N0</gui_name>
+                <description language="en">Priority of interrupt 148</description>
+                <definition>[7:0]</definition>
+            </bitField>
+        </register>
+        <register access="RW" name="NVIC_IPR38" size="4" offset="0xE000E498">
+            <gui_name language="en">Interrupt Priority Register 38</gui_name>
+            <description language="en">Sets or reads interrupt priorities</description>
+            <bitField conditional="false" name="PRI_N3">
+                <gui_name language="en">PRI_N3</gui_name>
+                <description language="en">Priority of interrupt 155</description>
+                <definition>[31:24]</definition>
+            </bitField>
+            <bitField conditional="false" name="PRI_N2">
+                <gui_name language="en">PRI_N2</gui_name>
+                <description language="en">Priority of interrupt 154</description>
+                <definition>[23:16]</definition>
+            </bitField>
+            <bitField conditional="false" name="PRI_N1">
+                <gui_name language="en">PRI_N1</gui_name>
+                <description language="en">Priority of interrupt 153</description>
+                <definition>[15:8]</definition>
+            </bitField>
+            <bitField conditional="false" name="PRI_N0">
+                <gui_name language="en">PRI_N0</gui_name>
+                <description language="en">Priority of interrupt 152</description>
+                <definition>[7:0]</definition>
+            </bitField>
+        </register>
+        <register access="RW" name="NVIC_IPR39" size="4" offset="0xE000E49C">
+            <gui_name language="en">Interrupt Priority Register 39</gui_name>
+            <description language="en">Sets or reads interrupt priorities</description>
+            <bitField conditional="false" name="PRI_N3">
+                <gui_name language="en">PRI_N3</gui_name>
+                <description language="en">Priority of interrupt 159</description>
+                <definition>[31:24]</definition>
+            </bitField>
+            <bitField conditional="false" name="PRI_N2">
+                <gui_name language="en">PRI_N2</gui_name>
+                <description language="en">Priority of interrupt 158</description>
+                <definition>[23:16]</definition>
+            </bitField>
+            <bitField conditional="false" name="PRI_N1">
+                <gui_name language="en">PRI_N1</gui_name>
+                <description language="en">Priority of interrupt 157</description>
+                <definition>[15:8]</definition>
+            </bitField>
+            <bitField conditional="false" name="PRI_N0">
+                <gui_name language="en">PRI_N0</gui_name>
+                <description language="en">Priority of interrupt 156</description>
+                <definition>[7:0]</definition>
+            </bitField>
+        </register>
+        <register access="RW" name="NVIC_IPR40" size="4" offset="0xE000E4A0">
+            <gui_name language="en">Interrupt Priority Register 40</gui_name>
+            <description language="en">Sets or reads interrupt priorities</description>
+            <bitField conditional="false" name="PRI_N3">
+                <gui_name language="en">PRI_N3</gui_name>
+                <description language="en">Priority of interrupt 163</description>
+                <definition>[31:24]</definition>
+            </bitField>
+            <bitField conditional="false" name="PRI_N2">
+                <gui_name language="en">PRI_N2</gui_name>
+                <description language="en">Priority of interrupt 162</description>
+                <definition>[23:16]</definition>
+            </bitField>
+            <bitField conditional="false" name="PRI_N1">
+                <gui_name language="en">PRI_N1</gui_name>
+                <description language="en">Priority of interrupt 161</description>
+                <definition>[15:8]</definition>
+            </bitField>
+            <bitField conditional="false" name="PRI_N0">
+                <gui_name language="en">PRI_N0</gui_name>
+                <description language="en">Priority of interrupt 160</description>
+                <definition>[7:0]</definition>
+            </bitField>
+        </register>
+        <register access="RW" name="NVIC_IPR41" size="4" offset="0xE000E4A4">
+            <gui_name language="en">Interrupt Priority Register 41</gui_name>
+            <description language="en">Sets or reads interrupt priorities</description>
+            <bitField conditional="false" name="PRI_N3">
+                <gui_name language="en">PRI_N3</gui_name>
+                <description language="en">Priority of interrupt 167</description>
+                <definition>[31:24]</definition>
+            </bitField>
+            <bitField conditional="false" name="PRI_N2">
+                <gui_name language="en">PRI_N2</gui_name>
+                <description language="en">Priority of interrupt 166</description>
+                <definition>[23:16]</definition>
+            </bitField>
+            <bitField conditional="false" name="PRI_N1">
+                <gui_name language="en">PRI_N1</gui_name>
+                <description language="en">Priority of interrupt 165</description>
+                <definition>[15:8]</definition>
+            </bitField>
+            <bitField conditional="false" name="PRI_N0">
+                <gui_name language="en">PRI_N0</gui_name>
+                <description language="en">Priority of interrupt 164</description>
+                <definition>[7:0]</definition>
+            </bitField>
+        </register>
+        <register access="RW" name="NVIC_IPR42" size="4" offset="0xE000E4A8">
+            <gui_name language="en">Interrupt Priority Register 42</gui_name>
+            <description language="en">Sets or reads interrupt priorities</description>
+            <bitField conditional="false" name="PRI_N3">
+                <gui_name language="en">PRI_N3</gui_name>
+                <description language="en">Priority of interrupt 171</description>
+                <definition>[31:24]</definition>
+            </bitField>
+            <bitField conditional="false" name="PRI_N2">
+                <gui_name language="en">PRI_N2</gui_name>
+                <description language="en">Priority of interrupt 170</description>
+                <definition>[23:16]</definition>
+            </bitField>
+            <bitField conditional="false" name="PRI_N1">
+                <gui_name language="en">PRI_N1</gui_name>
+                <description language="en">Priority of interrupt 169</description>
+                <definition>[15:8]</definition>
+            </bitField>
+            <bitField conditional="false" name="PRI_N0">
+                <gui_name language="en">PRI_N0</gui_name>
+                <description language="en">Priority of interrupt 168</description>
+                <definition>[7:0]</definition>
+            </bitField>
+        </register>
+        <register access="RW" name="NVIC_IPR43" size="4" offset="0xE000E4AC">
+            <gui_name language="en">Interrupt Priority Register 43</gui_name>
+            <description language="en">Sets or reads interrupt priorities</description>
+            <bitField conditional="false" name="PRI_N3">
+                <gui_name language="en">PRI_N3</gui_name>
+                <description language="en">Priority of interrupt 175</description>
+                <definition>[31:24]</definition>
+            </bitField>
+            <bitField conditional="false" name="PRI_N2">
+                <gui_name language="en">PRI_N2</gui_name>
+                <description language="en">Priority of interrupt 174</description>
+                <definition>[23:16]</definition>
+            </bitField>
+            <bitField conditional="false" name="PRI_N1">
+                <gui_name language="en">PRI_N1</gui_name>
+                <description language="en">Priority of interrupt 173</description>
+                <definition>[15:8]</definition>
+            </bitField>
+            <bitField conditional="false" name="PRI_N0">
+                <gui_name language="en">PRI_N0</gui_name>
+                <description language="en">Priority of interrupt 172</description>
+                <definition>[7:0]</definition>
+            </bitField>
+        </register>
+        <register access="RW" name="NVIC_IPR44" size="4" offset="0xE000E4B0">
+            <gui_name language="en">Interrupt Priority Register 44</gui_name>
+            <description language="en">Sets or reads interrupt priorities</description>
+            <bitField conditional="false" name="PRI_N3">
+                <gui_name language="en">PRI_N3</gui_name>
+                <description language="en">Priority of interrupt 179</description>
+                <definition>[31:24]</definition>
+            </bitField>
+            <bitField conditional="false" name="PRI_N2">
+                <gui_name language="en">PRI_N2</gui_name>
+                <description language="en">Priority of interrupt 178</description>
+                <definition>[23:16]</definition>
+            </bitField>
+            <bitField conditional="false" name="PRI_N1">
+                <gui_name language="en">PRI_N1</gui_name>
+                <description language="en">Priority of interrupt 177</description>
+                <definition>[15:8]</definition>
+            </bitField>
+            <bitField conditional="false" name="PRI_N0">
+                <gui_name language="en">PRI_N0</gui_name>
+                <description language="en">Priority of interrupt 176</description>
+                <definition>[7:0]</definition>
+            </bitField>
+        </register>
+        <register access="RW" name="NVIC_IPR45" size="4" offset="0xE000E4B4">
+            <gui_name language="en">Interrupt Priority Register 45</gui_name>
+            <description language="en">Sets or reads interrupt priorities</description>
+            <bitField conditional="false" name="PRI_N3">
+                <gui_name language="en">PRI_N3</gui_name>
+                <description language="en">Priority of interrupt 183</description>
+                <definition>[31:24]</definition>
+            </bitField>
+            <bitField conditional="false" name="PRI_N2">
+                <gui_name language="en">PRI_N2</gui_name>
+                <description language="en">Priority of interrupt 182</description>
+                <definition>[23:16]</definition>
+            </bitField>
+            <bitField conditional="false" name="PRI_N1">
+                <gui_name language="en">PRI_N1</gui_name>
+                <description language="en">Priority of interrupt 181</description>
+                <definition>[15:8]</definition>
+            </bitField>
+            <bitField conditional="false" name="PRI_N0">
+                <gui_name language="en">PRI_N0</gui_name>
+                <description language="en">Priority of interrupt 180</description>
+                <definition>[7:0]</definition>
+            </bitField>
+        </register>
+        <register access="RW" name="NVIC_IPR46" size="4" offset="0xE000E4B8">
+            <gui_name language="en">Interrupt Priority Register 46</gui_name>
+            <description language="en">Sets or reads interrupt priorities</description>
+            <bitField conditional="false" name="PRI_N3">
+                <gui_name language="en">PRI_N3</gui_name>
+                <description language="en">Priority of interrupt 187</description>
+                <definition>[31:24]</definition>
+            </bitField>
+            <bitField conditional="false" name="PRI_N2">
+                <gui_name language="en">PRI_N2</gui_name>
+                <description language="en">Priority of interrupt 186</description>
+                <definition>[23:16]</definition>
+            </bitField>
+            <bitField conditional="false" name="PRI_N1">
+                <gui_name language="en">PRI_N1</gui_name>
+                <description language="en">Priority of interrupt 185</description>
+                <definition>[15:8]</definition>
+            </bitField>
+            <bitField conditional="false" name="PRI_N0">
+                <gui_name language="en">PRI_N0</gui_name>
+                <description language="en">Priority of interrupt 184</description>
+                <definition>[7:0]</definition>
+            </bitField>
+        </register>
+        <register access="RW" name="NVIC_IPR47" size="4" offset="0xE000E4BC">
+            <gui_name language="en">Interrupt Priority Register 47</gui_name>
+            <description language="en">Sets or reads interrupt priorities</description>
+            <bitField conditional="false" name="PRI_N3">
+                <gui_name language="en">PRI_N3</gui_name>
+                <description language="en">Priority of interrupt 191</description>
+                <definition>[31:24]</definition>
+            </bitField>
+            <bitField conditional="false" name="PRI_N2">
+                <gui_name language="en">PRI_N2</gui_name>
+                <description language="en">Priority of interrupt 190</description>
+                <definition>[23:16]</definition>
+            </bitField>
+            <bitField conditional="false" name="PRI_N1">
+                <gui_name language="en">PRI_N1</gui_name>
+                <description language="en">Priority of interrupt 189</description>
+                <definition>[15:8]</definition>
+            </bitField>
+            <bitField conditional="false" name="PRI_N0">
+                <gui_name language="en">PRI_N0</gui_name>
+                <description language="en">Priority of interrupt 188</description>
+                <definition>[7:0]</definition>
+            </bitField>
+        </register>
+        <register access="RW" name="NVIC_IPR48" size="4" offset="0xE000E4C0">
+            <gui_name language="en">Interrupt Priority Register 48</gui_name>
+            <description language="en">Sets or reads interrupt priorities</description>
+            <bitField conditional="false" name="PRI_N3">
+                <gui_name language="en">PRI_N3</gui_name>
+                <description language="en">Priority of interrupt 195</description>
+                <definition>[31:24]</definition>
+            </bitField>
+            <bitField conditional="false" name="PRI_N2">
+                <gui_name language="en">PRI_N2</gui_name>
+                <description language="en">Priority of interrupt 194</description>
+                <definition>[23:16]</definition>
+            </bitField>
+            <bitField conditional="false" name="PRI_N1">
+                <gui_name language="en">PRI_N1</gui_name>
+                <description language="en">Priority of interrupt 193</description>
+                <definition>[15:8]</definition>
+            </bitField>
+            <bitField conditional="false" name="PRI_N0">
+                <gui_name language="en">PRI_N0</gui_name>
+                <description language="en">Priority of interrupt 192</description>
+                <definition>[7:0]</definition>
+            </bitField>
+        </register>
+        <register access="RW" name="NVIC_IPR49" size="4" offset="0xE000E4C4">
+            <gui_name language="en">Interrupt Priority Register 49</gui_name>
+            <description language="en">Sets or reads interrupt priorities</description>
+            <bitField conditional="false" name="PRI_N3">
+                <gui_name language="en">PRI_N3</gui_name>
+                <description language="en">Priority of interrupt 199</description>
+                <definition>[31:24]</definition>
+            </bitField>
+            <bitField conditional="false" name="PRI_N2">
+                <gui_name language="en">PRI_N2</gui_name>
+                <description language="en">Priority of interrupt 198</description>
+                <definition>[23:16]</definition>
+            </bitField>
+            <bitField conditional="false" name="PRI_N1">
+                <gui_name language="en">PRI_N1</gui_name>
+                <description language="en">Priority of interrupt 197</description>
+                <definition>[15:8]</definition>
+            </bitField>
+            <bitField conditional="false" name="PRI_N0">
+                <gui_name language="en">PRI_N0</gui_name>
+                <description language="en">Priority of interrupt 196</description>
+                <definition>[7:0]</definition>
+            </bitField>
+        </register>
+        <register access="RW" name="NVIC_IPR50" size="4" offset="0xE000E4C8">
+            <gui_name language="en">Interrupt Priority Register 50</gui_name>
+            <description language="en">Sets or reads interrupt priorities</description>
+            <bitField conditional="false" name="PRI_N3">
+                <gui_name language="en">PRI_N3</gui_name>
+                <description language="en">Priority of interrupt 203</description>
+                <definition>[31:24]</definition>
+            </bitField>
+            <bitField conditional="false" name="PRI_N2">
+                <gui_name language="en">PRI_N2</gui_name>
+                <description language="en">Priority of interrupt 202</description>
+                <definition>[23:16]</definition>
+            </bitField>
+            <bitField conditional="false" name="PRI_N1">
+                <gui_name language="en">PRI_N1</gui_name>
+                <description language="en">Priority of interrupt 201</description>
+                <definition>[15:8]</definition>
+            </bitField>
+            <bitField conditional="false" name="PRI_N0">
+                <gui_name language="en">PRI_N0</gui_name>
+                <description language="en">Priority of interrupt 200</description>
+                <definition>[7:0]</definition>
+            </bitField>
+        </register>
+        <register access="RW" name="NVIC_IPR51" size="4" offset="0xE000E4CC">
+            <gui_name language="en">Interrupt Priority Register 51</gui_name>
+            <description language="en">Sets or reads interrupt priorities</description>
+            <bitField conditional="false" name="PRI_N3">
+                <gui_name language="en">PRI_N3</gui_name>
+                <description language="en">Priority of interrupt 207</description>
+                <definition>[31:24]</definition>
+            </bitField>
+            <bitField conditional="false" name="PRI_N2">
+                <gui_name language="en">PRI_N2</gui_name>
+                <description language="en">Priority of interrupt 206</description>
+                <definition>[23:16]</definition>
+            </bitField>
+            <bitField conditional="false" name="PRI_N1">
+                <gui_name language="en">PRI_N1</gui_name>
+                <description language="en">Priority of interrupt 205</description>
+                <definition>[15:8]</definition>
+            </bitField>
+            <bitField conditional="false" name="PRI_N0">
+                <gui_name language="en">PRI_N0</gui_name>
+                <description language="en">Priority of interrupt 204</description>
+                <definition>[7:0]</definition>
+            </bitField>
+        </register>
+        <register access="RW" name="NVIC_IPR52" size="4" offset="0xE000E4D0">
+            <gui_name language="en">Interrupt Priority Register 52</gui_name>
+            <description language="en">Sets or reads interrupt priorities</description>
+            <bitField conditional="false" name="PRI_N3">
+                <gui_name language="en">PRI_N3</gui_name>
+                <description language="en">Priority of interrupt 211</description>
+                <definition>[31:24]</definition>
+            </bitField>
+            <bitField conditional="false" name="PRI_N2">
+                <gui_name language="en">PRI_N2</gui_name>
+                <description language="en">Priority of interrupt 210</description>
+                <definition>[23:16]</definition>
+            </bitField>
+            <bitField conditional="false" name="PRI_N1">
+                <gui_name language="en">PRI_N1</gui_name>
+                <description language="en">Priority of interrupt 209</description>
+                <definition>[15:8]</definition>
+            </bitField>
+            <bitField conditional="false" name="PRI_N0">
+                <gui_name language="en">PRI_N0</gui_name>
+                <description language="en">Priority of interrupt 208</description>
+                <definition>[7:0]</definition>
+            </bitField>
+        </register>
+        <register access="RW" name="NVIC_IPR53" size="4" offset="0xE000E4D4">
+            <gui_name language="en">Interrupt Priority Register 53</gui_name>
+            <description language="en">Sets or reads interrupt priorities</description>
+            <bitField conditional="false" name="PRI_N3">
+                <gui_name language="en">PRI_N3</gui_name>
+                <description language="en">Priority of interrupt 215</description>
+                <definition>[31:24]</definition>
+            </bitField>
+            <bitField conditional="false" name="PRI_N2">
+                <gui_name language="en">PRI_N2</gui_name>
+                <description language="en">Priority of interrupt 214</description>
+                <definition>[23:16]</definition>
+            </bitField>
+            <bitField conditional="false" name="PRI_N1">
+                <gui_name language="en">PRI_N1</gui_name>
+                <description language="en">Priority of interrupt 213</description>
+                <definition>[15:8]</definition>
+            </bitField>
+            <bitField conditional="false" name="PRI_N0">
+                <gui_name language="en">PRI_N0</gui_name>
+                <description language="en">Priority of interrupt 212</description>
+                <definition>[7:0]</definition>
+            </bitField>
+        </register>
+        <register access="RW" name="NVIC_IPR54" size="4" offset="0xE000E4D8">
+            <gui_name language="en">Interrupt Priority Register 54</gui_name>
+            <description language="en">Sets or reads interrupt priorities</description>
+            <bitField conditional="false" name="PRI_N3">
+                <gui_name language="en">PRI_N3</gui_name>
+                <description language="en">Priority of interrupt 219</description>
+                <definition>[31:24]</definition>
+            </bitField>
+            <bitField conditional="false" name="PRI_N2">
+                <gui_name language="en">PRI_N2</gui_name>
+                <description language="en">Priority of interrupt 218</description>
+                <definition>[23:16]</definition>
+            </bitField>
+            <bitField conditional="false" name="PRI_N1">
+                <gui_name language="en">PRI_N1</gui_name>
+                <description language="en">Priority of interrupt 217</description>
+                <definition>[15:8]</definition>
+            </bitField>
+            <bitField conditional="false" name="PRI_N0">
+                <gui_name language="en">PRI_N0</gui_name>
+                <description language="en">Priority of interrupt 216</description>
+                <definition>[7:0]</definition>
+            </bitField>
+        </register>
+        <register access="RW" name="NVIC_IPR55" size="4" offset="0xE000E4DC">
+            <gui_name language="en">Interrupt Priority Register 55</gui_name>
+            <description language="en">Sets or reads interrupt priorities</description>
+            <bitField conditional="false" name="PRI_N3">
+                <gui_name language="en">PRI_N3</gui_name>
+                <description language="en">Priority of interrupt 223</description>
+                <definition>[31:24]</definition>
+            </bitField>
+            <bitField conditional="false" name="PRI_N2">
+                <gui_name language="en">PRI_N2</gui_name>
+                <description language="en">Priority of interrupt 222</description>
+                <definition>[23:16]</definition>
+            </bitField>
+            <bitField conditional="false" name="PRI_N1">
+                <gui_name language="en">PRI_N1</gui_name>
+                <description language="en">Priority of interrupt 221</description>
+                <definition>[15:8]</definition>
+            </bitField>
+            <bitField conditional="false" name="PRI_N0">
+                <gui_name language="en">PRI_N0</gui_name>
+                <description language="en">Priority of interrupt 220</description>
+                <definition>[7:0]</definition>
+            </bitField>
+        </register>
+        <register access="RW" name="NVIC_IPR56" size="4" offset="0xE000E4E0">
+            <gui_name language="en">Interrupt Priority Register 56</gui_name>
+            <description language="en">Sets or reads interrupt priorities</description>
+            <bitField conditional="false" name="PRI_N3">
+                <gui_name language="en">PRI_N3</gui_name>
+                <description language="en">Priority of interrupt 227</description>
+                <definition>[31:24]</definition>
+            </bitField>
+            <bitField conditional="false" name="PRI_N2">
+                <gui_name language="en">PRI_N2</gui_name>
+                <description language="en">Priority of interrupt 226</description>
+                <definition>[23:16]</definition>
+            </bitField>
+            <bitField conditional="false" name="PRI_N1">
+                <gui_name language="en">PRI_N1</gui_name>
+                <description language="en">Priority of interrupt 225</description>
+                <definition>[15:8]</definition>
+            </bitField>
+            <bitField conditional="false" name="PRI_N0">
+                <gui_name language="en">PRI_N0</gui_name>
+                <description language="en">Priority of interrupt 224</description>
+                <definition>[7:0]</definition>
+            </bitField>
+        </register>
+        <register access="RW" name="NVIC_IPR57" size="4" offset="0xE000E4E4">
+            <gui_name language="en">Interrupt Priority Register 57</gui_name>
+            <description language="en">Sets or reads interrupt priorities</description>
+            <bitField conditional="false" name="PRI_N3">
+                <gui_name language="en">PRI_N3</gui_name>
+                <description language="en">Priority of interrupt 231</description>
+                <definition>[31:24]</definition>
+            </bitField>
+            <bitField conditional="false" name="PRI_N2">
+                <gui_name language="en">PRI_N2</gui_name>
+                <description language="en">Priority of interrupt 230</description>
+                <definition>[23:16]</definition>
+            </bitField>
+            <bitField conditional="false" name="PRI_N1">
+                <gui_name language="en">PRI_N1</gui_name>
+                <description language="en">Priority of interrupt 229</description>
+                <definition>[15:8]</definition>
+            </bitField>
+            <bitField conditional="false" name="PRI_N0">
+                <gui_name language="en">PRI_N0</gui_name>
+                <description language="en">Priority of interrupt 228</description>
+                <definition>[7:0]</definition>
+            </bitField>
+        </register>
+        <register access="RW" name="NVIC_IPR58" size="4" offset="0xE000E4E8">
+            <gui_name language="en">Interrupt Priority Register 58</gui_name>
+            <description language="en">Sets or reads interrupt priorities</description>
+            <bitField conditional="false" name="PRI_N3">
+                <gui_name language="en">PRI_N3</gui_name>
+                <description language="en">Priority of interrupt 235</description>
+                <definition>[31:24]</definition>
+            </bitField>
+            <bitField conditional="false" name="PRI_N2">
+                <gui_name language="en">PRI_N2</gui_name>
+                <description language="en">Priority of interrupt 234</description>
+                <definition>[23:16]</definition>
+            </bitField>
+            <bitField conditional="false" name="PRI_N1">
+                <gui_name language="en">PRI_N1</gui_name>
+                <description language="en">Priority of interrupt 233</description>
+                <definition>[15:8]</definition>
+            </bitField>
+            <bitField conditional="false" name="PRI_N0">
+                <gui_name language="en">PRI_N0</gui_name>
+                <description language="en">Priority of interrupt 232</description>
+                <definition>[7:0]</definition>
+            </bitField>
+        </register>
+        <register access="RW" name="NVIC_IPR59" size="4" offset="0xE000E4EC">
+            <gui_name language="en">Interrupt Priority Register 59</gui_name>
+            <description language="en">Sets or reads interrupt priorities</description>
+            <bitField conditional="false" name="PRI_N3">
+                <gui_name language="en">PRI_N3</gui_name>
+                <description language="en">Priority of interrupt 239</description>
+                <definition>[31:24]</definition>
+            </bitField>
+            <bitField conditional="false" name="PRI_N2">
+                <gui_name language="en">PRI_N2</gui_name>
+                <description language="en">Priority of interrupt 238</description>
+                <definition>[23:16]</definition>
+            </bitField>
+            <bitField conditional="false" name="PRI_N1">
+                <gui_name language="en">PRI_N1</gui_name>
+                <description language="en">Priority of interrupt 237</description>
+                <definition>[15:8]</definition>
+            </bitField>
+            <bitField conditional="false" name="PRI_N0">
+                <gui_name language="en">PRI_N0</gui_name>
+                <description language="en">Priority of interrupt 236</description>
+                <definition>[7:0]</definition>
+            </bitField>
+        </register>
+
+    </peripheral>
+
+</register_list>

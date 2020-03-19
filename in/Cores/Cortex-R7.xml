@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<core_definition
+    xmlns="http://www.arm.com/core_definition"
+    xmlns:cr="http://www.arm.com/core_reg"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:xi="http://www.w3.org/2001/XInclude"
+    xmlns:tcf="http://com.arm.targetconfigurationeditor"
+    xsi:schemaLocation="http://www.arm.com/core_definition ../Schemas/core_definition.xsd"
+    architecture="ARMv7R">
+
+    <name>Cortex-R7</name>
+    <internal_name>Cortex-R7</internal_name>
+    <series>R</series>
+
+    <cr:register_list name="Core" display_by_default="true">
+        <xi:include href="Registers/core_registers.xml" xpointer="xmlns(reg_group=http://www.arm.com/core_reg)xpointer(//reg_group:register)"/>
+        <xi:include href="Registers/CPSR/V6_7.xml" xpointer="xmlns(reg_group=http://www.arm.com/core_reg)xpointer(//reg_group:register)"/>
+        <xi:include href="Registers/banked_registers_V6_7.xml" xpointer="xmlns(reg_group=http://www.arm.com/core_reg)xpointer(//reg_group:register_group)"/>
+        <!-- Mode enum vals -->
+        <xi:include href="Registers/CPSR/V6_7.xml" xpointer="xmlns(tcf=http://com.arm.targetconfigurationeditor)xpointer(//tcf:enumeration)"/>
+    </cr:register_list>
+
+    <cr:register_list name="CP15">
+        <xi:include href="Registers/CP15/Cortex-R7_ID.xml" xpointer="xmlns(reg_group=http://www.arm.com/core_reg)xpointer(//reg_group:register_group)"/>
+        <xi:include href="Registers/CP15/Cortex-R7_Control.xml" xpointer="xmlns(reg_group=http://www.arm.com/core_reg)xpointer(//reg_group:register_group)"/>
+        <xi:include href="Registers/CP15/Cortex-R7_Cache.xml" xpointer="xmlns(reg_group=http://www.arm.com/core_reg)xpointer(//reg_group:register_group)"/>
+        <xi:include href="Registers/CP15/Cortex-R7_MPU.xml" xpointer="xmlns(reg_group=http://www.arm.com/core_reg)xpointer(//reg_group:register_group)"/>
+        <xi:include href="Registers/CP15/Cortex-R7_TCM.xml" xpointer="xmlns(reg_group=http://www.arm.com/core_reg)xpointer(//reg_group:register_group)"/>
+        <xi:include href="Registers/CP15/Cortex-R7_Performance.xml" xpointer="xmlns(reg_group=http://www.arm.com/core_reg)xpointer(//reg_group:register_group)"/>
+        <!-- CP15 enum vals -->
+        <xi:include href="Registers/CP15/Cortex-R7_Enums.xml" xpointer="xmlns(tcf=http://com.arm.targetconfigurationeditor)xpointer(//tcf:enumeration)"/>
+    </cr:register_list>
+
+    <cr:register_list name="VFP">
+        <xi:include href="Registers/VFP/VFPv3.xml" xpointer="xmlns(reg_group=http://www.arm.com/core_reg)xpointer(//reg_group:register_group)"/>
+        <xi:include href="Registers/VFP/VFPv3.xml" xpointer="xmlns(tcf=http://com.arm.targetconfigurationeditor)xpointer(//tcf:enumeration)"/>
+    </cr:register_list>
+
+</core_definition>
+

@@ -1,0 +1,559 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<register_list name="System" xmlns="http://www.arm.com/core_reg" xmlns:tcf="http://com.arm.targetconfigurationeditor" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.arm.com/core_reg ../../../Schemas/core_register_definition.xsd">
+  <register_group name="PMSA">
+    <gui_name language="en">PMSA</gui_name>
+    <description language="en">PMSA</description>
+    <register access="RW" name="VSCTLR" size="4">
+      <gui_name language="en">VSCTLR</gui_name>
+      <description language="en">VSCTLR</description>
+    </register>
+    <register access="RO" name="HMPUIR" size="4">
+      <gui_name language="en">HMPUIR</gui_name>
+      <description language="en">HMPUIR</description>
+    </register>
+    <register access="RW" name="HPRENR" size="4">
+      <gui_name language="en">HPRENR</gui_name>
+      <description language="en">HPRENR</description>
+    </register>
+    <register access="RW" name="HPRSELR" size="4">
+      <gui_name language="en">HPRSELR</gui_name>
+      <description language="en">HPRSELR</description>
+    </register>
+    <register access="RW" name="HPRBAR" size="4">
+      <gui_name language="en">HPRBAR</gui_name>
+      <description language="en">HPRBAR</description>
+    </register>
+    <register access="RW" name="HPRLAR" size="4">
+      <gui_name language="en">HPRLAR</gui_name>
+      <description language="en">HPRLAR</description>
+    </register>
+    <register access="RW" name="HPRBAR0" size="4">
+      <gui_name language="en">HPRBAR0</gui_name>
+      <description language="en">HPRBAR0</description>
+    </register>
+    <register access="RW" name="HPRLAR0" size="4">
+      <gui_name language="en">HPRLAR0</gui_name>
+      <description language="en">HPRLAR0</description>
+    </register>
+    <register access="RW" name="HPRBAR1" size="4">
+      <gui_name language="en">HPRBAR1</gui_name>
+      <description language="en">HPRBAR1</description>
+    </register>
+    <register access="RW" name="HPRLAR1" size="4">
+      <gui_name language="en">HPRLAR1</gui_name>
+      <description language="en">HPRLAR1</description>
+    </register>
+    <register access="RW" name="HPRBAR2" size="4">
+      <gui_name language="en">HPRBAR2</gui_name>
+      <description language="en">HPRBAR2</description>
+    </register>
+    <register access="RW" name="HPRLAR2" size="4">
+      <gui_name language="en">HPRLAR2</gui_name>
+      <description language="en">HPRLAR2</description>
+    </register>
+    <register access="RW" name="HPRBAR3" size="4">
+      <gui_name language="en">HPRBAR3</gui_name>
+      <description language="en">HPRBAR3</description>
+    </register>
+    <register access="RW" name="HPRLAR3" size="4">
+      <gui_name language="en">HPRLAR3</gui_name>
+      <description language="en">HPRLAR3</description>
+    </register>
+    <register access="RW" name="HPRBAR4" size="4">
+      <gui_name language="en">HPRBAR4</gui_name>
+      <description language="en">HPRBAR4</description>
+    </register>
+    <register access="RW" name="HPRLAR4" size="4">
+      <gui_name language="en">HPRLAR4</gui_name>
+      <description language="en">HPRLAR4</description>
+    </register>
+    <register access="RW" name="HPRBAR5" size="4">
+      <gui_name language="en">HPRBAR5</gui_name>
+      <description language="en">HPRBAR5</description>
+    </register>
+    <register access="RW" name="HPRLAR5" size="4">
+      <gui_name language="en">HPRLAR5</gui_name>
+      <description language="en">HPRLAR5</description>
+    </register>
+    <register access="RW" name="HPRBAR6" size="4">
+      <gui_name language="en">HPRBAR6</gui_name>
+      <description language="en">HPRBAR6</description>
+    </register>
+    <register access="RW" name="HPRLAR6" size="4">
+      <gui_name language="en">HPRLAR6</gui_name>
+      <description language="en">HPRLAR6</description>
+    </register>
+    <register access="RW" name="HPRBAR7" size="4">
+      <gui_name language="en">HPRBAR7</gui_name>
+      <description language="en">HPRBAR7</description>
+    </register>
+    <register access="RW" name="HPRLAR7" size="4">
+      <gui_name language="en">HPRLAR7</gui_name>
+      <description language="en">HPRLAR7</description>
+    </register>
+    <register access="RW" name="HPRBAR8" size="4">
+      <gui_name language="en">HPRBAR8</gui_name>
+      <description language="en">HPRBAR8</description>
+    </register>
+    <register access="RW" name="HPRLAR8" size="4">
+      <gui_name language="en">HPRLAR8</gui_name>
+      <description language="en">HPRLAR8</description>
+    </register>
+    <register access="RW" name="HPRBAR9" size="4">
+      <gui_name language="en">HPRBAR9</gui_name>
+      <description language="en">HPRBAR9</description>
+    </register>
+    <register access="RW" name="HPRLAR9" size="4">
+      <gui_name language="en">HPRLAR9</gui_name>
+      <description language="en">HPRLAR9</description>
+    </register>
+    <register access="RW" name="HPRBAR10" size="4">
+      <gui_name language="en">HPRBAR10</gui_name>
+      <description language="en">HPRBAR10</description>
+    </register>
+    <register access="RW" name="HPRLAR10" size="4">
+      <gui_name language="en">HPRLAR10</gui_name>
+      <description language="en">HPRLAR10</description>
+    </register>
+    <register access="RW" name="HPRBAR11" size="4">
+      <gui_name language="en">HPRBAR11</gui_name>
+      <description language="en">HPRBAR11</description>
+    </register>
+    <register access="RW" name="HPRLAR11" size="4">
+      <gui_name language="en">HPRLAR11</gui_name>
+      <description language="en">HPRLAR11</description>
+    </register>
+    <register access="RW" name="HPRBAR12" size="4">
+      <gui_name language="en">HPRBAR12</gui_name>
+      <description language="en">HPRBAR12</description>
+    </register>
+    <register access="RW" name="HPRLAR12" size="4">
+      <gui_name language="en">HPRLAR12</gui_name>
+      <description language="en">HPRLAR12</description>
+    </register>
+    <register access="RW" name="HPRBAR13" size="4">
+      <gui_name language="en">HPRBAR13</gui_name>
+      <description language="en">HPRBAR13</description>
+    </register>
+    <register access="RW" name="HPRLAR13" size="4">
+      <gui_name language="en">HPRLAR13</gui_name>
+      <description language="en">HPRLAR13</description>
+    </register>
+    <register access="RW" name="HPRBAR14" size="4">
+      <gui_name language="en">HPRBAR14</gui_name>
+      <description language="en">HPRBAR14</description>
+    </register>
+    <register access="RW" name="HPRLAR14" size="4">
+      <gui_name language="en">HPRLAR14</gui_name>
+      <description language="en">HPRLAR14</description>
+    </register>
+    <register access="RW" name="HPRBAR15" size="4">
+      <gui_name language="en">HPRBAR15</gui_name>
+      <description language="en">HPRBAR15</description>
+    </register>
+    <register access="RW" name="HPRLAR15" size="4">
+      <gui_name language="en">HPRLAR15</gui_name>
+      <description language="en">HPRLAR15</description>
+    </register>
+    <register access="RW" name="HPRBAR16" size="4">
+      <gui_name language="en">HPRBAR16</gui_name>
+      <description language="en">HPRBAR16</description>
+    </register>
+    <register access="RW" name="HPRLAR16" size="4">
+      <gui_name language="en">HPRLAR16</gui_name>
+      <description language="en">HPRLAR16</description>
+    </register>
+    <register access="RW" name="HPRBAR17" size="4">
+      <gui_name language="en">HPRBAR17</gui_name>
+      <description language="en">HPRBAR17</description>
+    </register>
+    <register access="RW" name="HPRLAR17" size="4">
+      <gui_name language="en">HPRLAR17</gui_name>
+      <description language="en">HPRLAR17</description>
+    </register>
+    <register access="RW" name="HPRBAR18" size="4">
+      <gui_name language="en">HPRBAR18</gui_name>
+      <description language="en">HPRBAR18</description>
+    </register>
+    <register access="RW" name="HPRLAR18" size="4">
+      <gui_name language="en">HPRLAR18</gui_name>
+      <description language="en">HPRLAR18</description>
+    </register>
+    <register access="RW" name="HPRBAR19" size="4">
+      <gui_name language="en">HPRBAR19</gui_name>
+      <description language="en">HPRBAR19</description>
+    </register>
+    <register access="RW" name="HPRLAR19" size="4">
+      <gui_name language="en">HPRLAR19</gui_name>
+      <description language="en">HPRLAR19</description>
+    </register>
+    <register access="RW" name="HPRBAR20" size="4">
+      <gui_name language="en">HPRBAR20</gui_name>
+      <description language="en">HPRBAR20</description>
+    </register>
+    <register access="RW" name="HPRLAR20" size="4">
+      <gui_name language="en">HPRLAR20</gui_name>
+      <description language="en">HPRLAR20</description>
+    </register>
+    <register access="RW" name="HPRBAR21" size="4">
+      <gui_name language="en">HPRBAR21</gui_name>
+      <description language="en">HPRBAR21</description>
+    </register>
+    <register access="RW" name="HPRLAR21" size="4">
+      <gui_name language="en">HPRLAR21</gui_name>
+      <description language="en">HPRLAR21</description>
+    </register>
+    <register access="RW" name="HPRBAR22" size="4">
+      <gui_name language="en">HPRBAR22</gui_name>
+      <description language="en">HPRBAR22</description>
+    </register>
+    <register access="RW" name="HPRLAR22" size="4">
+      <gui_name language="en">HPRLAR22</gui_name>
+      <description language="en">HPRLAR22</description>
+    </register>
+    <register access="RW" name="HPRBAR23" size="4">
+      <gui_name language="en">HPRBAR23</gui_name>
+      <description language="en">HPRBAR23</description>
+    </register>
+    <register access="RW" name="HPRLAR23" size="4">
+      <gui_name language="en">HPRLAR23</gui_name>
+      <description language="en">HPRLAR23</description>
+    </register>
+    <register access="RW" name="HPRBAR24" size="4">
+      <gui_name language="en">HPRBAR24</gui_name>
+      <description language="en">HPRBAR24</description>
+    </register>
+    <register access="RW" name="HPRLAR24" size="4">
+      <gui_name language="en">HPRLAR24</gui_name>
+      <description language="en">HPRLAR24</description>
+    </register>
+    <register access="RW" name="HPRBAR25" size="4">
+      <gui_name language="en">HPRBAR25</gui_name>
+      <description language="en">HPRBAR25</description>
+    </register>
+    <register access="RW" name="HPRLAR25" size="4">
+      <gui_name language="en">HPRLAR25</gui_name>
+      <description language="en">HPRLAR25</description>
+    </register>
+    <register access="RW" name="HPRBAR26" size="4">
+      <gui_name language="en">HPRBAR26</gui_name>
+      <description language="en">HPRBAR26</description>
+    </register>
+    <register access="RW" name="HPRLAR26" size="4">
+      <gui_name language="en">HPRLAR26</gui_name>
+      <description language="en">HPRLAR26</description>
+    </register>
+    <register access="RW" name="HPRBAR27" size="4">
+      <gui_name language="en">HPRBAR27</gui_name>
+      <description language="en">HPRBAR27</description>
+    </register>
+    <register access="RW" name="HPRLAR27" size="4">
+      <gui_name language="en">HPRLAR27</gui_name>
+      <description language="en">HPRLAR27</description>
+    </register>
+    <register access="RW" name="HPRBAR28" size="4">
+      <gui_name language="en">HPRBAR28</gui_name>
+      <description language="en">HPRBAR28</description>
+    </register>
+    <register access="RW" name="HPRLAR28" size="4">
+      <gui_name language="en">HPRLAR28</gui_name>
+      <description language="en">HPRLAR28</description>
+    </register>
+    <register access="RW" name="HPRBAR29" size="4">
+      <gui_name language="en">HPRBAR29</gui_name>
+      <description language="en">HPRBAR29</description>
+    </register>
+    <register access="RW" name="HPRLAR29" size="4">
+      <gui_name language="en">HPRLAR29</gui_name>
+      <description language="en">HPRLAR29</description>
+    </register>
+    <register access="RW" name="HPRBAR30" size="4">
+      <gui_name language="en">HPRBAR30</gui_name>
+      <description language="en">HPRBAR30</description>
+    </register>
+    <register access="RW" name="HPRLAR30" size="4">
+      <gui_name language="en">HPRLAR30</gui_name>
+      <description language="en">HPRLAR30</description>
+    </register>
+    <register access="RW" name="HPRBAR31" size="4">
+      <gui_name language="en">HPRBAR31</gui_name>
+      <description language="en">HPRBAR31</description>
+    </register>
+    <register access="RW" name="HPRLAR31" size="4">
+      <gui_name language="en">HPRLAR31</gui_name>
+      <description language="en">HPRLAR31</description>
+    </register>
+    <register access="RO" name="MPUIR" size="4">
+      <gui_name language="en">MPUIR</gui_name>
+      <description language="en">MPUIR</description>
+    </register>
+    <register access="RW" name="PRSELR" size="4">
+      <gui_name language="en">PRSELR</gui_name>
+      <description language="en">PRSELR</description>
+    </register>
+    <register access="RW" name="PRBAR" size="4">
+      <gui_name language="en">PRBAR</gui_name>
+      <description language="en">PRBAR</description>
+    </register>
+    <register access="RW" name="PRLAR" size="4">
+      <gui_name language="en">PRLAR</gui_name>
+      <description language="en">PRLAR</description>
+    </register>
+    <register access="RW" name="PRBAR0" size="4">
+      <gui_name language="en">PRBAR0</gui_name>
+      <description language="en">PRBAR0</description>
+    </register>
+    <register access="RW" name="PRLAR0" size="4">
+      <gui_name language="en">PRLAR0</gui_name>
+      <description language="en">PRLAR0</description>
+    </register>
+    <register access="RW" name="PRBAR1" size="4">
+      <gui_name language="en">PRBAR1</gui_name>
+      <description language="en">PRBAR1</description>
+    </register>
+    <register access="RW" name="PRLAR1" size="4">
+      <gui_name language="en">PRLAR1</gui_name>
+      <description language="en">PRLAR1</description>
+    </register>
+    <register access="RW" name="PRBAR2" size="4">
+      <gui_name language="en">PRBAR2</gui_name>
+      <description language="en">PRBAR2</description>
+    </register>
+    <register access="RW" name="PRLAR2" size="4">
+      <gui_name language="en">PRLAR2</gui_name>
+      <description language="en">PRLAR2</description>
+    </register>
+    <register access="RW" name="PRBAR3" size="4">
+      <gui_name language="en">PRBAR3</gui_name>
+      <description language="en">PRBAR3</description>
+    </register>
+    <register access="RW" name="PRLAR3" size="4">
+      <gui_name language="en">PRLAR3</gui_name>
+      <description language="en">PRLAR3</description>
+    </register>
+    <register access="RW" name="PRBAR4" size="4">
+      <gui_name language="en">PRBAR4</gui_name>
+      <description language="en">PRBAR4</description>
+    </register>
+    <register access="RW" name="PRLAR4" size="4">
+      <gui_name language="en">PRLAR4</gui_name>
+      <description language="en">PRLAR4</description>
+    </register>
+    <register access="RW" name="PRBAR5" size="4">
+      <gui_name language="en">PRBAR5</gui_name>
+      <description language="en">PRBAR5</description>
+    </register>
+    <register access="RW" name="PRLAR5" size="4">
+      <gui_name language="en">PRLAR5</gui_name>
+      <description language="en">PRLAR5</description>
+    </register>
+    <register access="RW" name="PRBAR6" size="4">
+      <gui_name language="en">PRBAR6</gui_name>
+      <description language="en">PRBAR6</description>
+    </register>
+    <register access="RW" name="PRLAR6" size="4">
+      <gui_name language="en">PRLAR6</gui_name>
+      <description language="en">PRLAR6</description>
+    </register>
+    <register access="RW" name="PRBAR7" size="4">
+      <gui_name language="en">PRBAR7</gui_name>
+      <description language="en">PRBAR7</description>
+    </register>
+    <register access="RW" name="PRLAR7" size="4">
+      <gui_name language="en">PRLAR7</gui_name>
+      <description language="en">PRLAR7</description>
+    </register>
+    <register access="RW" name="PRBAR8" size="4">
+      <gui_name language="en">PRBAR8</gui_name>
+      <description language="en">PRBAR8</description>
+    </register>
+    <register access="RW" name="PRLAR8" size="4">
+      <gui_name language="en">PRLAR8</gui_name>
+      <description language="en">PRLAR8</description>
+    </register>
+    <register access="RW" name="PRBAR9" size="4">
+      <gui_name language="en">PRBAR9</gui_name>
+      <description language="en">PRBAR9</description>
+    </register>
+    <register access="RW" name="PRLAR9" size="4">
+      <gui_name language="en">PRLAR9</gui_name>
+      <description language="en">PRLAR9</description>
+    </register>
+    <register access="RW" name="PRBAR10" size="4">
+      <gui_name language="en">PRBAR10</gui_name>
+      <description language="en">PRBAR10</description>
+    </register>
+    <register access="RW" name="PRLAR10" size="4">
+      <gui_name language="en">PRLAR10</gui_name>
+      <description language="en">PRLAR10</description>
+    </register>
+    <register access="RW" name="PRBAR11" size="4">
+      <gui_name language="en">PRBAR11</gui_name>
+      <description language="en">PRBAR11</description>
+    </register>
+    <register access="RW" name="PRLAR11" size="4">
+      <gui_name language="en">PRLAR11</gui_name>
+      <description language="en">PRLAR11</description>
+    </register>
+    <register access="RW" name="PRBAR12" size="4">
+      <gui_name language="en">PRBAR12</gui_name>
+      <description language="en">PRBAR12</description>
+    </register>
+    <register access="RW" name="PRLAR12" size="4">
+      <gui_name language="en">PRLAR12</gui_name>
+      <description language="en">PRLAR12</description>
+    </register>
+    <register access="RW" name="PRBAR13" size="4">
+      <gui_name language="en">PRBAR13</gui_name>
+      <description language="en">PRBAR13</description>
+    </register>
+    <register access="RW" name="PRLAR13" size="4">
+      <gui_name language="en">PRLAR13</gui_name>
+      <description language="en">PRLAR13</description>
+    </register>
+    <register access="RW" name="PRBAR14" size="4">
+      <gui_name language="en">PRBAR14</gui_name>
+      <description language="en">PRBAR14</description>
+    </register>
+    <register access="RW" name="PRLAR14" size="4">
+      <gui_name language="en">PRLAR14</gui_name>
+      <description language="en">PRLAR14</description>
+    </register>
+    <register access="RW" name="PRBAR15" size="4">
+      <gui_name language="en">PRBAR15</gui_name>
+      <description language="en">PRBAR15</description>
+    </register>
+    <register access="RW" name="PRLAR15" size="4">
+      <gui_name language="en">PRLAR15</gui_name>
+      <description language="en">PRLAR15</description>
+    </register>
+    <register access="RW" name="PRBAR16" size="4">
+      <gui_name language="en">PRBAR16</gui_name>
+      <description language="en">PRBAR16</description>
+    </register>
+    <register access="RW" name="PRLAR16" size="4">
+      <gui_name language="en">PRLAR16</gui_name>
+      <description language="en">PRLAR16</description>
+    </register>
+    <register access="RW" name="PRBAR17" size="4">
+      <gui_name language="en">PRBAR17</gui_name>
+      <description language="en">PRBAR17</description>
+    </register>
+    <register access="RW" name="PRLAR17" size="4">
+      <gui_name language="en">PRLAR17</gui_name>
+      <description language="en">PRLAR17</description>
+    </register>
+    <register access="RW" name="PRBAR18" size="4">
+      <gui_name language="en">PRBAR18</gui_name>
+      <description language="en">PRBAR18</description>
+    </register>
+    <register access="RW" name="PRLAR18" size="4">
+      <gui_name language="en">PRLAR18</gui_name>
+      <description language="en">PRLAR18</description>
+    </register>
+    <register access="RW" name="PRBAR19" size="4">
+      <gui_name language="en">PRBAR19</gui_name>
+      <description language="en">PRBAR19</description>
+    </register>
+    <register access="RW" name="PRLAR19" size="4">
+      <gui_name language="en">PRLAR19</gui_name>
+      <description language="en">PRLAR19</description>
+    </register>
+    <register access="RW" name="PRBAR20" size="4">
+      <gui_name language="en">PRBAR20</gui_name>
+      <description language="en">PRBAR20</description>
+    </register>
+    <register access="RW" name="PRLAR20" size="4">
+      <gui_name language="en">PRLAR20</gui_name>
+      <description language="en">PRLAR20</description>
+    </register>
+    <register access="RW" name="PRBAR21" size="4">
+      <gui_name language="en">PRBAR21</gui_name>
+      <description language="en">PRBAR21</description>
+    </register>
+    <register access="RW" name="PRLAR21" size="4">
+      <gui_name language="en">PRLAR21</gui_name>
+      <description language="en">PRLAR21</description>
+    </register>
+    <register access="RW" name="PRBAR22" size="4">
+      <gui_name language="en">PRBAR22</gui_name>
+      <description language="en">PRBAR22</description>
+    </register>
+    <register access="RW" name="PRLAR22" size="4">
+      <gui_name language="en">PRLAR22</gui_name>
+      <description language="en">PRLAR22</description>
+    </register>
+    <register access="RW" name="PRBAR23" size="4">
+      <gui_name language="en">PRBAR23</gui_name>
+      <description language="en">PRBAR23</description>
+    </register>
+    <register access="RW" name="PRLAR23" size="4">
+      <gui_name language="en">PRLAR23</gui_name>
+      <description language="en">PRLAR23</description>
+    </register>
+    <register access="RW" name="PRBAR24" size="4">
+      <gui_name language="en">PRBAR24</gui_name>
+      <description language="en">PRBAR24</description>
+    </register>
+    <register access="RW" name="PRLAR24" size="4">
+      <gui_name language="en">PRLAR24</gui_name>
+      <description language="en">PRLAR24</description>
+    </register>
+    <register access="RW" name="PRBAR25" size="4">
+      <gui_name language="en">PRBAR25</gui_name>
+      <description language="en">PRBAR25</description>
+    </register>
+    <register access="RW" name="PRLAR25" size="4">
+      <gui_name language="en">PRLAR25</gui_name>
+      <description language="en">PRLAR25</description>
+    </register>
+    <register access="RW" name="PRBAR26" size="4">
+      <gui_name language="en">PRBAR26</gui_name>
+      <description language="en">PRBAR26</description>
+    </register>
+    <register access="RW" name="PRLAR26" size="4">
+      <gui_name language="en">PRLAR26</gui_name>
+      <description language="en">PRLAR26</description>
+    </register>
+    <register access="RW" name="PRBAR27" size="4">
+      <gui_name language="en">PRBAR27</gui_name>
+      <description language="en">PRBAR27</description>
+    </register>
+    <register access="RW" name="PRLAR27" size="4">
+      <gui_name language="en">PRLAR27</gui_name>
+      <description language="en">PRLAR27</description>
+    </register>
+    <register access="RW" name="PRBAR28" size="4">
+      <gui_name language="en">PRBAR28</gui_name>
+      <description language="en">PRBAR28</description>
+    </register>
+    <register access="RW" name="PRLAR28" size="4">
+      <gui_name language="en">PRLAR28</gui_name>
+      <description language="en">PRLAR28</description>
+    </register>
+    <register access="RW" name="PRBAR29" size="4">
+      <gui_name language="en">PRBAR29</gui_name>
+      <description language="en">PRBAR29</description>
+    </register>
+    <register access="RW" name="PRLAR29" size="4">
+      <gui_name language="en">PRLAR29</gui_name>
+      <description language="en">PRLAR29</description>
+    </register>
+    <register access="RW" name="PRBAR30" size="4">
+      <gui_name language="en">PRBAR30</gui_name>
+      <description language="en">PRBAR30</description>
+    </register>
+    <register access="RW" name="PRLAR30" size="4">
+      <gui_name language="en">PRLAR30</gui_name>
+      <description language="en">PRLAR30</description>
+    </register>
+    <register access="RW" name="PRBAR31" size="4">
+      <gui_name language="en">PRBAR31</gui_name>
+      <description language="en">PRBAR31</description>
+    </register>
+    <register access="RW" name="PRLAR31" size="4">
+      <gui_name language="en">PRLAR31</gui_name>
+      <description language="en">PRLAR31</description>
+    </register>
+  </register_group>
+</register_list>

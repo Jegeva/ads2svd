@@ -1,0 +1,795 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!--Copyright (C) 2009-2019 Arm Limited (or its affiliates). All rights reserved.--><platform_data xmlns="http://www.arm.com/project_type" xmlns:peripheral="http://com.arm.targetconfigurationeditor" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" info_url="" type="HARDWARE" xsi:schemaLocation="http://www.arm.com/project_type ../../../Schemas/platform_data-1.xsd">
+    <project_type_list>
+        <project_type type="BARE_METAL">
+            <name language="en">Bare Metal Debug</name>
+            <description language="en">This allows a bare-metal debug connection.</description>
+            <execution_environment id="BARE_METAL">
+                <name language="en">Bare Metal Debug</name>
+                <description language="en">Connect to a platform using a DSTREAM/RVI</description>
+                <xi:include href="../../../Include/hardware_address.xml"/>
+                <param default="CDB://Agilex.sdf" id="config_file" type="string" visible="false"/>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Cortex-A53_0</name>
+                    <xi:include href="../../../Include/dstream_activity_description_bm.xml"/>
+                    <xi:include href="../../../Include/dstream_connection_type.xml"/>
+                    <core connection_id="Cortex-A53_0" core_ref="Cortex-A53" soc="Intel_FPGA/Agilex"/>
+                    <param default="CDB://dtsl_config_script.py" id="dtsl_config_script" type="string" visible="false"/>
+                    <param default="DtslScript" id="dtsl_config" type="string" visible="false"/>
+                    <param default="options.trace.traceCapture" id="dtsl_tracecapture_option" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Cortex-A53_0</name>
+                    <xi:include href="../../../Include/dstream_st_activity_description_bm.xml"/>
+                    <xi:include href="../../../Include/dstream_st_connection_type.xml"/>
+                    <core connection_id="Cortex-A53_0" core_ref="Cortex-A53" soc="Intel_FPGA/Agilex"/>
+                    <param default="CDB://dtsl_config_script.py" id="dtsl_config_script" type="string" visible="false"/>
+                    <param default="DtslScript_DSTREAM_ST" id="dtsl_config" type="string" visible="false"/>
+                    <param default="options.trace.traceCapture" id="dtsl_tracecapture_option" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Cortex-A53_0</name>
+                    <xi:include href="../../../Include/dstream_pt_activity_description_bm.xml"/>
+                    <xi:include href="../../../Include/dstream_pt_connection_type.xml"/>
+                    <core connection_id="Cortex-A53_0" core_ref="Cortex-A53" soc="Intel_FPGA/Agilex"/>
+                    <param default="CDB://dtsl_config_script.py" id="dtsl_config_script" type="string" visible="false"/>
+                    <param default="DtslScript_DSTREAM_PT" id="dtsl_config" type="string" visible="false"/>
+                    <param default="options.trace.traceCapture" id="dtsl_tracecapture_option" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Cortex-A53_0</name>
+                    <xi:include href="../../../Include/ulinkpro_activity_description.xml"/>
+                    <xi:include href="../../../Include/ulinkpro_connection_type.xml"/>
+                    <core connection_id="Cortex-A53_0" core_ref="Cortex-A53" soc="Intel_FPGA/Agilex"/>
+                    <param default="CDB://dtsl_config_script.py" id="dtsl_config_script" type="string" visible="false"/>
+                    <param default="DtslScript_DebugAndOnChipTrace" id="dtsl_config" type="string" visible="false"/>
+                    <param default="options.trace.traceCapture" id="dtsl_tracecapture_option" type="string" visible="false"/>
+                    <xi:include href="../../../Include/ulinkpro_browse_script.xml"/>
+                    <xi:include href="../../../Include/ulinkpro_setup_script.xml"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Cortex-A53_0</name>
+                    <xi:include href="../../../Include/ulinkprod_activity_description.xml"/>
+                    <xi:include href="../../../Include/ulinkprod_connection_type.xml"/>
+                    <core connection_id="Cortex-A53_0" core_ref="Cortex-A53" soc="Intel_FPGA/Agilex"/>
+                    <param default="CDB://dtsl_config_script.py" id="dtsl_config_script" type="string" visible="false"/>
+                    <param default="DtslScript_DebugAndOnChipTrace" id="dtsl_config" type="string" visible="false"/>
+                    <param default="options.trace.traceCapture" id="dtsl_tracecapture_option" type="string" visible="false"/>
+                    <xi:include href="../../../Include/ulinkprod_browse_script.xml"/>
+                    <xi:include href="../../../Include/ulinkprod_setup_script.xml"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Cortex-A53_0</name>
+                    <xi:include href="../../../Include/ulink2_activity_description_bm.xml"/>
+                    <xi:include href="../../../Include/ulink2_connection_type.xml"/>
+                    <core connection_id="Cortex-A53_0" core_ref="Cortex-A53" soc="Intel_FPGA/Agilex"/>
+                    <param default="CDB://dtsl_config_script.py" id="dtsl_config_script" type="string" visible="false"/>
+                    <param default="DtslScript_DebugAndOnChipTrace" id="dtsl_config" type="string" visible="false"/>
+                    <param default="options.trace.traceCapture" id="dtsl_tracecapture_option" type="string" visible="false"/>
+                    <xi:include href="../../../Include/ulink2_browse_script.xml"/>
+                    <xi:include href="../../../Include/ulink2_setup_script.xml"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Cortex-A53_0</name>
+                    <description language="en">Arm Debugger will connect to a Intel FPGA Download Cable to debug a bare metal application.</description>
+                    <connection_type language="en">Intel FPGA Download Cable</connection_type>
+                    <core connection_id="Cortex-A53_0" core_ref="Cortex-A53" soc="Intel_FPGA/Agilex"/>
+                    <param default="CDB://dtsl_config_script.py" id="dtsl_config_script" type="string" visible="false"/>
+                    <param default="DtslScript_DebugAndOnChipTrace" id="dtsl_config" type="string" visible="false"/>
+                    <param default="options.trace.traceCapture" id="dtsl_tracecapture_option" type="string" visible="false"/>
+                    <browse_script>
+                        <name language="en">CDB://../../../Scripts/device_browser.py</name>
+                        <arguments>--app=browse_usb_blaster</arguments>
+                    </browse_script>
+                    <setup_script>
+                        <name>CDB://../../../Scripts/altera_debug_server.py</name>
+                        <arguments>CDB://rddi-dap_cfg-altera.txt rddi-dap_altera</arguments>
+                    </setup_script>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Cortex-A53_1</name>
+                    <xi:include href="../../../Include/dstream_activity_description_bm.xml"/>
+                    <xi:include href="../../../Include/dstream_connection_type.xml"/>
+                    <core connection_id="Cortex-A53_1" core_ref="Cortex-A53" soc="Intel_FPGA/Agilex"/>
+                    <param default="CDB://dtsl_config_script.py" id="dtsl_config_script" type="string" visible="false"/>
+                    <param default="DtslScript" id="dtsl_config" type="string" visible="false"/>
+                    <param default="options.trace.traceCapture" id="dtsl_tracecapture_option" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Cortex-A53_1</name>
+                    <xi:include href="../../../Include/dstream_st_activity_description_bm.xml"/>
+                    <xi:include href="../../../Include/dstream_st_connection_type.xml"/>
+                    <core connection_id="Cortex-A53_1" core_ref="Cortex-A53" soc="Intel_FPGA/Agilex"/>
+                    <param default="CDB://dtsl_config_script.py" id="dtsl_config_script" type="string" visible="false"/>
+                    <param default="DtslScript_DSTREAM_ST" id="dtsl_config" type="string" visible="false"/>
+                    <param default="options.trace.traceCapture" id="dtsl_tracecapture_option" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Cortex-A53_1</name>
+                    <xi:include href="../../../Include/dstream_pt_activity_description_bm.xml"/>
+                    <xi:include href="../../../Include/dstream_pt_connection_type.xml"/>
+                    <core connection_id="Cortex-A53_1" core_ref="Cortex-A53" soc="Intel_FPGA/Agilex"/>
+                    <param default="CDB://dtsl_config_script.py" id="dtsl_config_script" type="string" visible="false"/>
+                    <param default="DtslScript_DSTREAM_PT" id="dtsl_config" type="string" visible="false"/>
+                    <param default="options.trace.traceCapture" id="dtsl_tracecapture_option" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Cortex-A53_1</name>
+                    <xi:include href="../../../Include/ulinkpro_activity_description.xml"/>
+                    <xi:include href="../../../Include/ulinkpro_connection_type.xml"/>
+                    <core connection_id="Cortex-A53_1" core_ref="Cortex-A53" soc="Intel_FPGA/Agilex"/>
+                    <param default="CDB://dtsl_config_script.py" id="dtsl_config_script" type="string" visible="false"/>
+                    <param default="DtslScript_DebugAndOnChipTrace" id="dtsl_config" type="string" visible="false"/>
+                    <param default="options.trace.traceCapture" id="dtsl_tracecapture_option" type="string" visible="false"/>
+                    <xi:include href="../../../Include/ulinkpro_browse_script.xml"/>
+                    <xi:include href="../../../Include/ulinkpro_setup_script.xml"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Cortex-A53_1</name>
+                    <xi:include href="../../../Include/ulinkprod_activity_description.xml"/>
+                    <xi:include href="../../../Include/ulinkprod_connection_type.xml"/>
+                    <core connection_id="Cortex-A53_1" core_ref="Cortex-A53" soc="Intel_FPGA/Agilex"/>
+                    <param default="CDB://dtsl_config_script.py" id="dtsl_config_script" type="string" visible="false"/>
+                    <param default="DtslScript_DebugAndOnChipTrace" id="dtsl_config" type="string" visible="false"/>
+                    <param default="options.trace.traceCapture" id="dtsl_tracecapture_option" type="string" visible="false"/>
+                    <xi:include href="../../../Include/ulinkprod_browse_script.xml"/>
+                    <xi:include href="../../../Include/ulinkprod_setup_script.xml"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Cortex-A53_1</name>
+                    <xi:include href="../../../Include/ulink2_activity_description_bm.xml"/>
+                    <xi:include href="../../../Include/ulink2_connection_type.xml"/>
+                    <core connection_id="Cortex-A53_1" core_ref="Cortex-A53" soc="Intel_FPGA/Agilex"/>
+                    <param default="CDB://dtsl_config_script.py" id="dtsl_config_script" type="string" visible="false"/>
+                    <param default="DtslScript_DebugAndOnChipTrace" id="dtsl_config" type="string" visible="false"/>
+                    <param default="options.trace.traceCapture" id="dtsl_tracecapture_option" type="string" visible="false"/>
+                    <xi:include href="../../../Include/ulink2_browse_script.xml"/>
+                    <xi:include href="../../../Include/ulink2_setup_script.xml"/>
+        </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Cortex-A53_1</name>
+                    <description language="en">Arm Debugger will connect to a Intel FPGA Download Cable to debug a bare metal application.</description>
+                    <connection_type language="en">Intel FPGA Download Cable</connection_type>
+                    <core connection_id="Cortex-A53_1" core_ref="Cortex-A53" soc="Intel_FPGA/Agilex"/>
+                    <param default="CDB://dtsl_config_script.py" id="dtsl_config_script" type="string" visible="false"/>
+                    <param default="DtslScript_DebugAndOnChipTrace" id="dtsl_config" type="string" visible="false"/>
+                    <param default="options.trace.traceCapture" id="dtsl_tracecapture_option" type="string" visible="false"/>
+                    <browse_script>
+                        <name language="en">CDB://../../../Scripts/device_browser.py</name>
+                        <arguments>--app=browse_usb_blaster</arguments>
+                    </browse_script>
+                    <setup_script>
+                        <name>CDB://../../../Scripts/altera_debug_server.py</name>
+                        <arguments>CDB://rddi-dap_cfg-altera.txt rddi-dap_altera</arguments>
+                    </setup_script>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Cortex-A53_2</name>
+                    <xi:include href="../../../Include/dstream_activity_description_bm.xml"/>
+                    <xi:include href="../../../Include/dstream_connection_type.xml"/>
+                    <core connection_id="Cortex-A53_2" core_ref="Cortex-A53" soc="Intel_FPGA/Agilex"/>
+                    <param default="CDB://dtsl_config_script.py" id="dtsl_config_script" type="string" visible="false"/>
+                    <param default="DtslScript" id="dtsl_config" type="string" visible="false"/>
+                    <param default="options.trace.traceCapture" id="dtsl_tracecapture_option" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Cortex-A53_2</name>
+                    <xi:include href="../../../Include/dstream_st_activity_description_bm.xml"/>
+                    <xi:include href="../../../Include/dstream_st_connection_type.xml"/>
+                    <core connection_id="Cortex-A53_2" core_ref="Cortex-A53" soc="Intel_FPGA/Agilex"/>
+                    <param default="CDB://dtsl_config_script.py" id="dtsl_config_script" type="string" visible="false"/>
+                    <param default="DtslScript_DSTREAM_ST" id="dtsl_config" type="string" visible="false"/>
+                    <param default="options.trace.traceCapture" id="dtsl_tracecapture_option" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Cortex-A53_2</name>
+                    <xi:include href="../../../Include/dstream_pt_activity_description_bm.xml"/>
+                    <xi:include href="../../../Include/dstream_pt_connection_type.xml"/>
+                    <core connection_id="Cortex-A53_2" core_ref="Cortex-A53" soc="Intel_FPGA/Agilex"/>
+                    <param default="CDB://dtsl_config_script.py" id="dtsl_config_script" type="string" visible="false"/>
+                    <param default="DtslScript_DSTREAM_PT" id="dtsl_config" type="string" visible="false"/>
+                    <param default="options.trace.traceCapture" id="dtsl_tracecapture_option" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Cortex-A53_2</name>
+                    <xi:include href="../../../Include/ulinkpro_activity_description.xml"/>
+                    <xi:include href="../../../Include/ulinkpro_connection_type.xml"/>
+                    <core connection_id="Cortex-A53_2" core_ref="Cortex-A53" soc="Intel_FPGA/Agilex"/>
+                    <param default="CDB://dtsl_config_script.py" id="dtsl_config_script" type="string" visible="false"/>
+                    <param default="DtslScript_DebugAndOnChipTrace" id="dtsl_config" type="string" visible="false"/>
+                    <param default="options.trace.traceCapture" id="dtsl_tracecapture_option" type="string" visible="false"/>
+                    <xi:include href="../../../Include/ulinkpro_browse_script.xml"/>
+                    <xi:include href="../../../Include/ulinkpro_setup_script.xml"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Cortex-A53_2</name>
+                    <xi:include href="../../../Include/ulinkprod_activity_description.xml"/>
+                    <xi:include href="../../../Include/ulinkprod_connection_type.xml"/>
+                    <core connection_id="Cortex-A53_2" core_ref="Cortex-A53" soc="Intel_FPGA/Agilex"/>
+                    <param default="CDB://dtsl_config_script.py" id="dtsl_config_script" type="string" visible="false"/>
+                    <param default="DtslScript_DebugAndOnChipTrace" id="dtsl_config" type="string" visible="false"/>
+                    <param default="options.trace.traceCapture" id="dtsl_tracecapture_option" type="string" visible="false"/>
+                    <xi:include href="../../../Include/ulinkprod_browse_script.xml"/>
+                    <xi:include href="../../../Include/ulinkprod_setup_script.xml"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Cortex-A53_2</name>
+                    <xi:include href="../../../Include/ulink2_activity_description_bm.xml"/>
+                    <xi:include href="../../../Include/ulink2_connection_type.xml"/>
+                    <core connection_id="Cortex-A53_2" core_ref="Cortex-A53" soc="Intel_FPGA/Agilex"/>
+                    <param default="CDB://dtsl_config_script.py" id="dtsl_config_script" type="string" visible="false"/>
+                    <param default="DtslScript_DebugAndOnChipTrace" id="dtsl_config" type="string" visible="false"/>
+                    <param default="options.trace.traceCapture" id="dtsl_tracecapture_option" type="string" visible="false"/>
+                    <xi:include href="../../../Include/ulink2_browse_script.xml"/>
+                    <xi:include href="../../../Include/ulink2_setup_script.xml"/>
+            </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Cortex-A53_2</name>
+                    <description language="en">Arm Debugger will connect to a Intel FPGA Download Cable to debug a bare metal application.</description>
+                    <connection_type language="en">Intel FPGA Download Cable</connection_type>
+                    <core connection_id="Cortex-A53_2" core_ref="Cortex-A53" soc="Intel_FPGA/Agilex"/>
+                    <param default="CDB://dtsl_config_script.py" id="dtsl_config_script" type="string" visible="false"/>
+                    <param default="DtslScript_DebugAndOnChipTrace" id="dtsl_config" type="string" visible="false"/>
+                    <param default="options.trace.traceCapture" id="dtsl_tracecapture_option" type="string" visible="false"/>
+                    <browse_script>
+                        <name language="en">CDB://../../../Scripts/device_browser.py</name>
+                        <arguments>--app=browse_usb_blaster</arguments>
+                    </browse_script>
+                    <setup_script>
+                        <name>CDB://../../../Scripts/altera_debug_server.py</name>
+                        <arguments>CDB://rddi-dap_cfg-altera.txt rddi-dap_altera</arguments>
+                    </setup_script>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Cortex-A53_3</name>
+                    <xi:include href="../../../Include/dstream_activity_description_bm.xml"/>
+                    <xi:include href="../../../Include/dstream_connection_type.xml"/>
+                    <core connection_id="Cortex-A53_3" core_ref="Cortex-A53" soc="Intel_FPGA/Agilex"/>
+                    <param default="CDB://dtsl_config_script.py" id="dtsl_config_script" type="string" visible="false"/>
+                    <param default="DtslScript" id="dtsl_config" type="string" visible="false"/>
+                    <param default="options.trace.traceCapture" id="dtsl_tracecapture_option" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Cortex-A53_3</name>
+                    <xi:include href="../../../Include/dstream_st_activity_description_bm.xml"/>
+                    <xi:include href="../../../Include/dstream_st_connection_type.xml"/>
+                    <core connection_id="Cortex-A53_3" core_ref="Cortex-A53" soc="Intel_FPGA/Agilex"/>
+                    <param default="CDB://dtsl_config_script.py" id="dtsl_config_script" type="string" visible="false"/>
+                    <param default="DtslScript_DSTREAM_ST" id="dtsl_config" type="string" visible="false"/>
+                    <param default="options.trace.traceCapture" id="dtsl_tracecapture_option" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Cortex-A53_3</name>
+                    <xi:include href="../../../Include/dstream_pt_activity_description_bm.xml"/>
+                    <xi:include href="../../../Include/dstream_pt_connection_type.xml"/>
+                    <core connection_id="Cortex-A53_3" core_ref="Cortex-A53" soc="Intel_FPGA/Agilex"/>
+                    <param default="CDB://dtsl_config_script.py" id="dtsl_config_script" type="string" visible="false"/>
+                    <param default="DtslScript_DSTREAM_PT" id="dtsl_config" type="string" visible="false"/>
+                    <param default="options.trace.traceCapture" id="dtsl_tracecapture_option" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Cortex-A53_3</name>
+                    <xi:include href="../../../Include/ulinkpro_activity_description.xml"/>
+                    <xi:include href="../../../Include/ulinkpro_connection_type.xml"/>
+                    <core connection_id="Cortex-A53_3" core_ref="Cortex-A53" soc="Intel_FPGA/Agilex"/>
+                    <param default="CDB://dtsl_config_script.py" id="dtsl_config_script" type="string" visible="false"/>
+                    <param default="DtslScript_DebugAndOnChipTrace" id="dtsl_config" type="string" visible="false"/>
+                    <param default="options.trace.traceCapture" id="dtsl_tracecapture_option" type="string" visible="false"/>
+                    <xi:include href="../../../Include/ulinkpro_browse_script.xml"/>
+                    <xi:include href="../../../Include/ulinkpro_setup_script.xml"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Cortex-A53_3</name>
+                    <xi:include href="../../../Include/ulinkprod_activity_description.xml"/>
+                    <xi:include href="../../../Include/ulinkprod_connection_type.xml"/>
+                    <core connection_id="Cortex-A53_3" core_ref="Cortex-A53" soc="Intel_FPGA/Agilex"/>
+                    <param default="CDB://dtsl_config_script.py" id="dtsl_config_script" type="string" visible="false"/>
+                    <param default="DtslScript_DebugAndOnChipTrace" id="dtsl_config" type="string" visible="false"/>
+                    <param default="options.trace.traceCapture" id="dtsl_tracecapture_option" type="string" visible="false"/>
+                    <xi:include href="../../../Include/ulinkprod_browse_script.xml"/>
+                    <xi:include href="../../../Include/ulinkprod_setup_script.xml"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Cortex-A53_3</name>
+                    <xi:include href="../../../Include/ulink2_activity_description_bm.xml"/>
+                    <xi:include href="../../../Include/ulink2_connection_type.xml"/>
+                    <core connection_id="Cortex-A53_3" core_ref="Cortex-A53" soc="Intel_FPGA/Agilex"/>
+                    <param default="CDB://dtsl_config_script.py" id="dtsl_config_script" type="string" visible="false"/>
+                    <param default="DtslScript_DebugAndOnChipTrace" id="dtsl_config" type="string" visible="false"/>
+                    <param default="options.trace.traceCapture" id="dtsl_tracecapture_option" type="string" visible="false"/>
+                    <xi:include href="../../../Include/ulink2_browse_script.xml"/>
+                    <xi:include href="../../../Include/ulink2_setup_script.xml"/>
+            </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Cortex-A53_3</name>
+                    <description language="en">Arm Debugger will connect to a Intel FPGA Download Cable to debug a bare metal application.</description>
+                    <connection_type language="en">Intel FPGA Download Cable</connection_type>
+                    <core connection_id="Cortex-A53_3" core_ref="Cortex-A53" soc="Intel_FPGA/Agilex"/>
+                    <param default="CDB://dtsl_config_script.py" id="dtsl_config_script" type="string" visible="false"/>
+                    <param default="DtslScript_DebugAndOnChipTrace" id="dtsl_config" type="string" visible="false"/>
+                    <param default="options.trace.traceCapture" id="dtsl_tracecapture_option" type="string" visible="false"/>
+                    <browse_script>
+                        <name language="en">CDB://../../../Scripts/device_browser.py</name>
+                        <arguments>--app=browse_usb_blaster</arguments>
+                    </browse_script>
+                    <setup_script>
+                        <name>CDB://../../../Scripts/altera_debug_server.py</name>
+                        <arguments>CDB://rddi-dap_cfg-altera.txt rddi-dap_altera</arguments>
+                    </setup_script>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Cortex-A53x4 SMP</name>
+                    <xi:include href="../../../Include/dstream_activity_description_bm.xml"/>
+                    <xi:include href="../../../Include/dstream_connection_type.xml"/>
+                    <core connection_id="Cortex-A53_SMP_0" core_ref="Cortex-A53" soc="Intel_FPGA/Agilex"/>
+                    <param default="CDB://dtsl_config_script.py" id="dtsl_config_script" type="string" visible="false"/>
+                    <param default="DtslScript" id="dtsl_config" type="string" visible="false"/>
+                    <param default="options.trace.traceCapture" id="dtsl_tracecapture_option" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Cortex-A53x4 SMP</name>
+                    <xi:include href="../../../Include/dstream_st_activity_description_bm.xml"/>
+                    <xi:include href="../../../Include/dstream_st_connection_type.xml"/>
+                    <core connection_id="Cortex-A53_SMP_0" core_ref="Cortex-A53" soc="Intel_FPGA/Agilex"/>
+                    <param default="CDB://dtsl_config_script.py" id="dtsl_config_script" type="string" visible="false"/>
+                    <param default="DtslScript_DSTREAM_ST" id="dtsl_config" type="string" visible="false"/>
+                    <param default="options.trace.traceCapture" id="dtsl_tracecapture_option" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Cortex-A53x4 SMP</name>
+                    <xi:include href="../../../Include/dstream_pt_activity_description_bm.xml"/>
+                    <xi:include href="../../../Include/dstream_pt_connection_type.xml"/>
+                    <core connection_id="Cortex-A53_SMP_0" core_ref="Cortex-A53" soc="Intel_FPGA/Agilex"/>
+                    <param default="CDB://dtsl_config_script.py" id="dtsl_config_script" type="string" visible="false"/>
+                    <param default="DtslScript_DSTREAM_PT" id="dtsl_config" type="string" visible="false"/>
+                    <param default="options.trace.traceCapture" id="dtsl_tracecapture_option" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Cortex-A53x4 SMP</name>
+                    <xi:include href="../../../Include/ulinkpro_activity_description.xml"/>
+                    <xi:include href="../../../Include/ulinkpro_connection_type.xml"/>
+                    <core connection_id="Cortex-A53_SMP_0" core_ref="Cortex-A53" soc="Intel_FPGA/Agilex"/>
+                    <param default="CDB://dtsl_config_script.py" id="dtsl_config_script" type="string" visible="false"/>
+                    <param default="DtslScript_DebugAndOnChipTrace" id="dtsl_config" type="string" visible="false"/>
+                    <param default="options.trace.traceCapture" id="dtsl_tracecapture_option" type="string" visible="false"/>
+                    <xi:include href="../../../Include/ulinkpro_browse_script.xml"/>
+                    <xi:include href="../../../Include/ulinkpro_setup_script.xml"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Cortex-A53x4 SMP</name>
+                    <xi:include href="../../../Include/ulinkprod_activity_description.xml"/>
+                    <xi:include href="../../../Include/ulinkprod_connection_type.xml"/>
+                    <core connection_id="Cortex-A53_SMP_0" core_ref="Cortex-A53" soc="Intel_FPGA/Agilex"/>
+                    <param default="CDB://dtsl_config_script.py" id="dtsl_config_script" type="string" visible="false"/>
+                    <param default="DtslScript_DebugAndOnChipTrace" id="dtsl_config" type="string" visible="false"/>
+                    <param default="options.trace.traceCapture" id="dtsl_tracecapture_option" type="string" visible="false"/>
+                    <xi:include href="../../../Include/ulinkprod_browse_script.xml"/>
+                    <xi:include href="../../../Include/ulinkprod_setup_script.xml"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Cortex-A53x4 SMP</name>
+                    <xi:include href="../../../Include/ulink2_activity_description_bm.xml"/>
+                    <xi:include href="../../../Include/ulink2_connection_type.xml"/>
+                    <core connection_id="Cortex-A53_SMP_0" core_ref="Cortex-A53" soc="Intel_FPGA/Agilex"/>
+                    <param default="CDB://dtsl_config_script.py" id="dtsl_config_script" type="string" visible="false"/>
+                    <param default="DtslScript_DebugAndOnChipTrace" id="dtsl_config" type="string" visible="false"/>
+                    <param default="options.trace.traceCapture" id="dtsl_tracecapture_option" type="string" visible="false"/>
+                    <xi:include href="../../../Include/ulink2_browse_script.xml"/>
+                    <xi:include href="../../../Include/ulink2_setup_script.xml"/>
+            </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Cortex-A53x4 SMP</name>
+                    <description language="en">Arm Debugger will connect to a Intel FPGA Download Cable to debug a bare metal application.</description>
+                    <connection_type language="en">Intel FPGA Download Cable</connection_type>
+                    <core connection_id="Cortex-A53_SMP_0" core_ref="Cortex-A53" soc="Intel_FPGA/Agilex"/>
+                    <param default="CDB://dtsl_config_script.py" id="dtsl_config_script" type="string" visible="false"/>
+                    <param default="DtslScript_DebugAndOnChipTrace" id="dtsl_config" type="string" visible="false"/>
+                    <param default="options.trace.traceCapture" id="dtsl_tracecapture_option" type="string" visible="false"/>
+                    <browse_script>
+                        <name language="en">CDB://../../../Scripts/device_browser.py</name>
+                        <arguments>--app=browse_usb_blaster</arguments>
+                    </browse_script>
+                    <setup_script>
+                        <name>CDB://../../../Scripts/altera_debug_server.py</name>
+                        <arguments>CDB://rddi-dap_cfg-altera.txt rddi-dap_altera</arguments>
+                    </setup_script>
+                </activity>
+            </execution_environment>
+        </project_type>
+        <project_type os_abstraction="LINUX_KERNEL" type="BARE_METAL">
+            <name language="en">Linux Kernel Debug</name>
+            <description language="en">Linux Kernel and/or Device Driver Debug</description>
+            <execution_environment id="LINUX_KERNEL">
+                <name language="en">Linux Kernel Debug</name>
+                <description language="en">Connect to a platform using a DSTREAM/RVI</description>
+                <xi:include href="../../../Include/hardware_address.xml"/>
+                <param default="CDB://Agilex.sdf" id="config_file" type="string" visible="false"/>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Cortex-A53_0</name>
+                    <xi:include href="../../../Include/dstream_activity_description_lk.xml"/>
+                    <xi:include href="../../../Include/dstream_connection_type.xml"/>
+                    <core connection_id="Cortex-A53_0" core_ref="Cortex-A53" soc="Intel_FPGA/Agilex"/>
+                    <param default="CDB://dtsl_config_script.py" id="dtsl_config_script" type="string" visible="false"/>
+                    <param default="DtslScript" id="dtsl_config" type="string" visible="false"/>
+                    <param default="options.trace.traceCapture" id="dtsl_tracecapture_option" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Cortex-A53_0</name>
+                    <xi:include href="../../../Include/dstream_st_activity_description_lk.xml"/>
+                    <xi:include href="../../../Include/dstream_st_connection_type.xml"/>
+                    <core connection_id="Cortex-A53_0" core_ref="Cortex-A53" soc="Intel_FPGA/Agilex"/>
+                    <param default="CDB://dtsl_config_script.py" id="dtsl_config_script" type="string" visible="false"/>
+                    <param default="DtslScript_DSTREAM_ST" id="dtsl_config" type="string" visible="false"/>
+                    <param default="options.trace.traceCapture" id="dtsl_tracecapture_option" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Cortex-A53_0</name>
+                    <xi:include href="../../../Include/dstream_pt_activity_description_lk.xml"/>
+                    <xi:include href="../../../Include/dstream_pt_connection_type.xml"/>
+                    <core connection_id="Cortex-A53_0" core_ref="Cortex-A53" soc="Intel_FPGA/Agilex"/>
+                    <param default="CDB://dtsl_config_script.py" id="dtsl_config_script" type="string" visible="false"/>
+                    <param default="DtslScript_DSTREAM_PT" id="dtsl_config" type="string" visible="false"/>
+                    <param default="options.trace.traceCapture" id="dtsl_tracecapture_option" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Cortex-A53_0</name>
+                    <xi:include href="../../../Include/ulinkpro_activity_description_lk.xml"/>
+                    <xi:include href="../../../Include/ulinkpro_connection_type.xml"/>
+                    <core connection_id="Cortex-A53_0" core_ref="Cortex-A53" soc="Intel_FPGA/Agilex"/>
+                    <param default="CDB://dtsl_config_script.py" id="dtsl_config_script" type="string" visible="false"/>
+                    <param default="DtslScript_DebugAndOnChipTrace" id="dtsl_config" type="string" visible="false"/>
+                    <param default="options.trace.traceCapture" id="dtsl_tracecapture_option" type="string" visible="false"/>
+                    <xi:include href="../../../Include/ulinkpro_browse_script.xml"/>
+                    <xi:include href="../../../Include/ulinkpro_setup_script.xml"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Cortex-A53_0</name>
+                    <xi:include href="../../../Include/ulinkprod_activity_description_lk.xml"/>
+                    <xi:include href="../../../Include/ulinkprod_connection_type.xml"/>
+                    <core connection_id="Cortex-A53_0" core_ref="Cortex-A53" soc="Intel_FPGA/Agilex"/>
+                    <param default="CDB://dtsl_config_script.py" id="dtsl_config_script" type="string" visible="false"/>
+                    <param default="DtslScript_DebugAndOnChipTrace" id="dtsl_config" type="string" visible="false"/>
+                    <param default="options.trace.traceCapture" id="dtsl_tracecapture_option" type="string" visible="false"/>
+                    <xi:include href="../../../Include/ulinkprod_browse_script.xml"/>
+                    <xi:include href="../../../Include/ulinkprod_setup_script.xml"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Cortex-A53_0</name>
+                    <xi:include href="../../../Include/ulink2_activity_description_lk.xml"/>
+                    <xi:include href="../../../Include/ulink2_connection_type.xml"/>
+                    <core connection_id="Cortex-A53_0" core_ref="Cortex-A53" soc="Intel_FPGA/Agilex"/>
+                    <param default="CDB://dtsl_config_script.py" id="dtsl_config_script" type="string" visible="false"/>
+                    <param default="DtslScript_DebugAndOnChipTrace" id="dtsl_config" type="string" visible="false"/>
+                    <param default="options.trace.traceCapture" id="dtsl_tracecapture_option" type="string" visible="false"/>
+                    <xi:include href="../../../Include/ulink2_browse_script.xml"/>
+                    <xi:include href="../../../Include/ulink2_setup_script.xml"/>
+            </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Cortex-A53_0</name>
+                    <description language="en">Arm Debugger will connect to a Intel FPGA Download Cable to debug a bare metal application.</description>
+                    <connection_type language="en">Intel FPGA Download Cable</connection_type>
+                    <core connection_id="Cortex-A53_0" core_ref="Cortex-A53" soc="Intel_FPGA/Agilex"/>
+                    <param default="CDB://dtsl_config_script.py" id="dtsl_config_script" type="string" visible="false"/>
+                    <param default="DtslScript_DebugAndOnChipTrace" id="dtsl_config" type="string" visible="false"/>
+                    <param default="options.trace.traceCapture" id="dtsl_tracecapture_option" type="string" visible="false"/>
+                    <browse_script>
+                        <name language="en">CDB://../../../Scripts/device_browser.py</name>
+                        <arguments>--app=browse_usb_blaster</arguments>
+                    </browse_script>
+                    <setup_script>
+                        <name>CDB://../../../Scripts/altera_debug_server.py</name>
+                        <arguments>CDB://rddi-dap_cfg-altera.txt rddi-dap_altera</arguments>
+                    </setup_script>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Cortex-A53_1</name>
+                    <xi:include href="../../../Include/dstream_activity_description_lk.xml"/>
+                    <xi:include href="../../../Include/dstream_connection_type.xml"/>
+                    <core connection_id="Cortex-A53_1" core_ref="Cortex-A53" soc="Intel_FPGA/Agilex"/>
+                    <param default="CDB://dtsl_config_script.py" id="dtsl_config_script" type="string" visible="false"/>
+                    <param default="DtslScript" id="dtsl_config" type="string" visible="false"/>
+                    <param default="options.trace.traceCapture" id="dtsl_tracecapture_option" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Cortex-A53_1</name>
+                    <xi:include href="../../../Include/dstream_st_activity_description_lk.xml"/>
+                    <xi:include href="../../../Include/dstream_st_connection_type.xml"/>
+                    <core connection_id="Cortex-A53_1" core_ref="Cortex-A53" soc="Intel_FPGA/Agilex"/>
+                    <param default="CDB://dtsl_config_script.py" id="dtsl_config_script" type="string" visible="false"/>
+                    <param default="DtslScript_DSTREAM_ST" id="dtsl_config" type="string" visible="false"/>
+                    <param default="options.trace.traceCapture" id="dtsl_tracecapture_option" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Cortex-A53_1</name>
+                    <xi:include href="../../../Include/dstream_pt_activity_description_lk.xml"/>
+                    <xi:include href="../../../Include/dstream_pt_connection_type.xml"/>
+                    <core connection_id="Cortex-A53_1" core_ref="Cortex-A53" soc="Intel_FPGA/Agilex"/>
+                    <param default="CDB://dtsl_config_script.py" id="dtsl_config_script" type="string" visible="false"/>
+                    <param default="DtslScript_DSTREAM_PT" id="dtsl_config" type="string" visible="false"/>
+                    <param default="options.trace.traceCapture" id="dtsl_tracecapture_option" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Cortex-A53_1</name>
+                    <xi:include href="../../../Include/ulinkpro_activity_description_lk.xml"/>
+                    <xi:include href="../../../Include/ulinkpro_connection_type.xml"/>
+                    <core connection_id="Cortex-A53_1" core_ref="Cortex-A53" soc="Intel_FPGA/Agilex"/>
+                    <param default="CDB://dtsl_config_script.py" id="dtsl_config_script" type="string" visible="false"/>
+                    <param default="DtslScript_DebugAndOnChipTrace" id="dtsl_config" type="string" visible="false"/>
+                    <param default="options.trace.traceCapture" id="dtsl_tracecapture_option" type="string" visible="false"/>
+                    <xi:include href="../../../Include/ulinkpro_browse_script.xml"/>
+                    <xi:include href="../../../Include/ulinkpro_setup_script.xml"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Cortex-A53_1</name>
+                    <xi:include href="../../../Include/ulinkprod_activity_description_lk.xml"/>
+                    <xi:include href="../../../Include/ulinkprod_connection_type.xml"/>
+                    <core connection_id="Cortex-A53_1" core_ref="Cortex-A53" soc="Intel_FPGA/Agilex"/>
+                    <param default="CDB://dtsl_config_script.py" id="dtsl_config_script" type="string" visible="false"/>
+                    <param default="DtslScript_DebugAndOnChipTrace" id="dtsl_config" type="string" visible="false"/>
+                    <param default="options.trace.traceCapture" id="dtsl_tracecapture_option" type="string" visible="false"/>
+                    <xi:include href="../../../Include/ulinkprod_browse_script.xml"/>
+                    <xi:include href="../../../Include/ulinkprod_setup_script.xml"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Cortex-A53_1</name>
+                    <xi:include href="../../../Include/ulink2_activity_description_lk.xml"/>
+                    <xi:include href="../../../Include/ulink2_connection_type.xml"/>
+                    <core connection_id="Cortex-A53_1" core_ref="Cortex-A53" soc="Intel_FPGA/Agilex"/>
+                    <param default="CDB://dtsl_config_script.py" id="dtsl_config_script" type="string" visible="false"/>
+                    <param default="DtslScript_DebugAndOnChipTrace" id="dtsl_config" type="string" visible="false"/>
+                    <param default="options.trace.traceCapture" id="dtsl_tracecapture_option" type="string" visible="false"/>
+                    <xi:include href="../../../Include/ulink2_browse_script.xml"/>
+                    <xi:include href="../../../Include/ulink2_setup_script.xml"/>
+            </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Cortex-A53_1</name>
+                    <description language="en">Arm Debugger will connect to a Intel FPGA Download Cable to debug a bare metal application.</description>
+                    <connection_type language="en">Intel FPGA Download Cable</connection_type>
+                    <core connection_id="Cortex-A53_1" core_ref="Cortex-A53" soc="Intel_FPGA/Agilex"/>
+                    <param default="CDB://dtsl_config_script.py" id="dtsl_config_script" type="string" visible="false"/>
+                    <param default="DtslScript_DebugAndOnChipTrace" id="dtsl_config" type="string" visible="false"/>
+                    <param default="options.trace.traceCapture" id="dtsl_tracecapture_option" type="string" visible="false"/>
+                    <browse_script>
+                        <name language="en">CDB://../../../Scripts/device_browser.py</name>
+                        <arguments>--app=browse_usb_blaster</arguments>
+                    </browse_script>
+                    <setup_script>
+                        <name>CDB://../../../Scripts/altera_debug_server.py</name>
+                        <arguments>CDB://rddi-dap_cfg-altera.txt rddi-dap_altera</arguments>
+                    </setup_script>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Cortex-A53_2</name>
+                    <xi:include href="../../../Include/dstream_activity_description_lk.xml"/>
+                    <xi:include href="../../../Include/dstream_connection_type.xml"/>
+                    <core connection_id="Cortex-A53_2" core_ref="Cortex-A53" soc="Intel_FPGA/Agilex"/>
+                    <param default="CDB://dtsl_config_script.py" id="dtsl_config_script" type="string" visible="false"/>
+                    <param default="DtslScript" id="dtsl_config" type="string" visible="false"/>
+                    <param default="options.trace.traceCapture" id="dtsl_tracecapture_option" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Cortex-A53_2</name>
+                    <xi:include href="../../../Include/dstream_st_activity_description_lk.xml"/>
+                    <xi:include href="../../../Include/dstream_st_connection_type.xml"/>
+                    <core connection_id="Cortex-A53_2" core_ref="Cortex-A53" soc="Intel_FPGA/Agilex"/>
+                    <param default="CDB://dtsl_config_script.py" id="dtsl_config_script" type="string" visible="false"/>
+                    <param default="DtslScript_DSTREAM_ST" id="dtsl_config" type="string" visible="false"/>
+                    <param default="options.trace.traceCapture" id="dtsl_tracecapture_option" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Cortex-A53_2</name>
+                    <xi:include href="../../../Include/dstream_pt_activity_description_lk.xml"/>
+                    <xi:include href="../../../Include/dstream_pt_connection_type.xml"/>
+                    <core connection_id="Cortex-A53_2" core_ref="Cortex-A53" soc="Intel_FPGA/Agilex"/>
+                    <param default="CDB://dtsl_config_script.py" id="dtsl_config_script" type="string" visible="false"/>
+                    <param default="DtslScript_DSTREAM_PT" id="dtsl_config" type="string" visible="false"/>
+                    <param default="options.trace.traceCapture" id="dtsl_tracecapture_option" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Cortex-A53_2</name>
+                    <xi:include href="../../../Include/ulinkpro_activity_description_lk.xml"/>
+                    <xi:include href="../../../Include/ulinkpro_connection_type.xml"/>
+                    <core connection_id="Cortex-A53_2" core_ref="Cortex-A53" soc="Intel_FPGA/Agilex"/>
+                    <param default="CDB://dtsl_config_script.py" id="dtsl_config_script" type="string" visible="false"/>
+                    <param default="DtslScript_DebugAndOnChipTrace" id="dtsl_config" type="string" visible="false"/>
+                    <param default="options.trace.traceCapture" id="dtsl_tracecapture_option" type="string" visible="false"/>
+                    <xi:include href="../../../Include/ulinkpro_browse_script.xml"/>
+                    <xi:include href="../../../Include/ulinkpro_setup_script.xml"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Cortex-A53_2</name>
+                    <xi:include href="../../../Include/ulinkprod_activity_description_lk.xml"/>
+                    <xi:include href="../../../Include/ulinkprod_connection_type.xml"/>
+                    <core connection_id="Cortex-A53_2" core_ref="Cortex-A53" soc="Intel_FPGA/Agilex"/>
+                    <param default="CDB://dtsl_config_script.py" id="dtsl_config_script" type="string" visible="false"/>
+                    <param default="DtslScript_DebugAndOnChipTrace" id="dtsl_config" type="string" visible="false"/>
+                    <param default="options.trace.traceCapture" id="dtsl_tracecapture_option" type="string" visible="false"/>
+                    <xi:include href="../../../Include/ulinkprod_browse_script.xml"/>
+                    <xi:include href="../../../Include/ulinkprod_setup_script.xml"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Cortex-A53_2</name>
+                    <xi:include href="../../../Include/ulink2_activity_description_lk.xml"/>
+                    <xi:include href="../../../Include/ulink2_connection_type.xml"/>
+                    <core connection_id="Cortex-A53_2" core_ref="Cortex-A53" soc="Intel_FPGA/Agilex"/>
+                    <param default="CDB://dtsl_config_script.py" id="dtsl_config_script" type="string" visible="false"/>
+                    <param default="DtslScript_DebugAndOnChipTrace" id="dtsl_config" type="string" visible="false"/>
+                    <param default="options.trace.traceCapture" id="dtsl_tracecapture_option" type="string" visible="false"/>
+                    <xi:include href="../../../Include/ulink2_browse_script.xml"/>
+                    <xi:include href="../../../Include/ulink2_setup_script.xml"/>
+            </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Cortex-A53_2</name>
+                    <description language="en">Arm Debugger will connect to a Intel FPGA Download Cable to debug a bare metal application.</description>
+                    <connection_type language="en">Intel FPGA Download Cable</connection_type>
+                    <core connection_id="Cortex-A53_2" core_ref="Cortex-A53" soc="Intel_FPGA/Agilex"/>
+                    <param default="CDB://dtsl_config_script.py" id="dtsl_config_script" type="string" visible="false"/>
+                    <param default="DtslScript_DebugAndOnChipTrace" id="dtsl_config" type="string" visible="false"/>
+                    <param default="options.trace.traceCapture" id="dtsl_tracecapture_option" type="string" visible="false"/>
+                    <browse_script>
+                        <name language="en">CDB://../../../Scripts/device_browser.py</name>
+                        <arguments>--app=browse_usb_blaster</arguments>
+                    </browse_script>
+                    <setup_script>
+                        <name>CDB://../../../Scripts/altera_debug_server.py</name>
+                        <arguments>CDB://rddi-dap_cfg-altera.txt rddi-dap_altera</arguments>
+                    </setup_script>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Cortex-A53_3</name>
+                    <xi:include href="../../../Include/dstream_activity_description_lk.xml"/>
+                    <xi:include href="../../../Include/dstream_connection_type.xml"/>
+                    <core connection_id="Cortex-A53_3" core_ref="Cortex-A53" soc="Intel_FPGA/Agilex"/>
+                    <param default="CDB://dtsl_config_script.py" id="dtsl_config_script" type="string" visible="false"/>
+                    <param default="DtslScript" id="dtsl_config" type="string" visible="false"/>
+                    <param default="options.trace.traceCapture" id="dtsl_tracecapture_option" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Cortex-A53_3</name>
+                    <xi:include href="../../../Include/dstream_st_activity_description_lk.xml"/>
+                    <xi:include href="../../../Include/dstream_st_connection_type.xml"/>
+                    <core connection_id="Cortex-A53_3" core_ref="Cortex-A53" soc="Intel_FPGA/Agilex"/>
+                    <param default="CDB://dtsl_config_script.py" id="dtsl_config_script" type="string" visible="false"/>
+                    <param default="DtslScript_DSTREAM_ST" id="dtsl_config" type="string" visible="false"/>
+                    <param default="options.trace.traceCapture" id="dtsl_tracecapture_option" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Cortex-A53_3</name>
+                    <xi:include href="../../../Include/dstream_pt_activity_description_lk.xml"/>
+                    <xi:include href="../../../Include/dstream_pt_connection_type.xml"/>
+                    <core connection_id="Cortex-A53_3" core_ref="Cortex-A53" soc="Intel_FPGA/Agilex"/>
+                    <param default="CDB://dtsl_config_script.py" id="dtsl_config_script" type="string" visible="false"/>
+                    <param default="DtslScript_DSTREAM_PT" id="dtsl_config" type="string" visible="false"/>
+                    <param default="options.trace.traceCapture" id="dtsl_tracecapture_option" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Cortex-A53_3</name>
+                    <xi:include href="../../../Include/ulinkpro_activity_description_lk.xml"/>
+                    <xi:include href="../../../Include/ulinkpro_connection_type.xml"/>
+                    <core connection_id="Cortex-A53_3" core_ref="Cortex-A53" soc="Intel_FPGA/Agilex"/>
+                    <param default="CDB://dtsl_config_script.py" id="dtsl_config_script" type="string" visible="false"/>
+                    <param default="DtslScript_DebugAndOnChipTrace" id="dtsl_config" type="string" visible="false"/>
+                    <param default="options.trace.traceCapture" id="dtsl_tracecapture_option" type="string" visible="false"/>
+                    <xi:include href="../../../Include/ulinkpro_browse_script.xml"/>
+                    <xi:include href="../../../Include/ulinkpro_setup_script.xml"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Cortex-A53_3</name>
+                    <xi:include href="../../../Include/ulinkprod_activity_description_lk.xml"/>
+                    <xi:include href="../../../Include/ulinkprod_connection_type.xml"/>
+                    <core connection_id="Cortex-A53_3" core_ref="Cortex-A53" soc="Intel_FPGA/Agilex"/>
+                    <param default="CDB://dtsl_config_script.py" id="dtsl_config_script" type="string" visible="false"/>
+                    <param default="DtslScript_DebugAndOnChipTrace" id="dtsl_config" type="string" visible="false"/>
+                    <param default="options.trace.traceCapture" id="dtsl_tracecapture_option" type="string" visible="false"/>
+                    <xi:include href="../../../Include/ulinkprod_browse_script.xml"/>
+                    <xi:include href="../../../Include/ulinkprod_setup_script.xml"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Cortex-A53_3</name>
+                    <xi:include href="../../../Include/ulink2_activity_description_lk.xml"/>
+                    <xi:include href="../../../Include/ulink2_connection_type.xml"/>
+                    <core connection_id="Cortex-A53_3" core_ref="Cortex-A53" soc="Intel_FPGA/Agilex"/>
+                    <param default="CDB://dtsl_config_script.py" id="dtsl_config_script" type="string" visible="false"/>
+                    <param default="DtslScript_DebugAndOnChipTrace" id="dtsl_config" type="string" visible="false"/>
+                    <param default="options.trace.traceCapture" id="dtsl_tracecapture_option" type="string" visible="false"/>
+                    <xi:include href="../../../Include/ulink2_browse_script.xml"/>
+                    <xi:include href="../../../Include/ulink2_setup_script.xml"/>
+            </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Cortex-A53_3</name>
+                    <description language="en">Arm Debugger will connect to a Intel FPGA Download Cable to debug a bare metal application.</description>
+                    <connection_type language="en">Intel FPGA Download Cable</connection_type>
+                    <core connection_id="Cortex-A53_3" core_ref="Cortex-A53" soc="Intel_FPGA/Agilex"/>
+                    <param default="CDB://dtsl_config_script.py" id="dtsl_config_script" type="string" visible="false"/>
+                    <param default="DtslScript_DebugAndOnChipTrace" id="dtsl_config" type="string" visible="false"/>
+                    <param default="options.trace.traceCapture" id="dtsl_tracecapture_option" type="string" visible="false"/>
+                    <browse_script>
+                        <name language="en">CDB://../../../Scripts/device_browser.py</name>
+                        <arguments>--app=browse_usb_blaster</arguments>
+                    </browse_script>
+                    <setup_script>
+                        <name>CDB://../../../Scripts/altera_debug_server.py</name>
+                        <arguments>CDB://rddi-dap_cfg-altera.txt rddi-dap_altera</arguments>
+                    </setup_script>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Cortex-A53x4 SMP</name>
+                    <xi:include href="../../../Include/dstream_activity_description_lk.xml"/>
+                    <xi:include href="../../../Include/dstream_connection_type.xml"/>
+                    <core connection_id="Cortex-A53_SMP_0" core_ref="Cortex-A53" soc="Intel_FPGA/Agilex"/>
+                    <param default="CDB://dtsl_config_script.py" id="dtsl_config_script" type="string" visible="false"/>
+                    <param default="DtslScript" id="dtsl_config" type="string" visible="false"/>
+                    <param default="options.trace.traceCapture" id="dtsl_tracecapture_option" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Cortex-A53x4 SMP</name>
+                    <xi:include href="../../../Include/dstream_st_activity_description_lk.xml"/>
+                    <xi:include href="../../../Include/dstream_st_connection_type.xml"/>
+                    <core connection_id="Cortex-A53_SMP_0" core_ref="Cortex-A53" soc="Intel_FPGA/Agilex"/>
+                    <param default="CDB://dtsl_config_script.py" id="dtsl_config_script" type="string" visible="false"/>
+                    <param default="DtslScript_DSTREAM_ST" id="dtsl_config" type="string" visible="false"/>
+                    <param default="options.trace.traceCapture" id="dtsl_tracecapture_option" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Cortex-A53x4 SMP</name>
+                    <xi:include href="../../../Include/dstream_pt_activity_description_lk.xml"/>
+                    <xi:include href="../../../Include/dstream_pt_connection_type.xml"/>
+                    <core connection_id="Cortex-A53_SMP_0" core_ref="Cortex-A53" soc="Intel_FPGA/Agilex"/>
+                    <param default="CDB://dtsl_config_script.py" id="dtsl_config_script" type="string" visible="false"/>
+                    <param default="DtslScript_DSTREAM_PT" id="dtsl_config" type="string" visible="false"/>
+                    <param default="options.trace.traceCapture" id="dtsl_tracecapture_option" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Cortex-A53x4 SMP</name>
+                    <xi:include href="../../../Include/ulinkpro_activity_description_lk.xml"/>
+                    <xi:include href="../../../Include/ulinkpro_connection_type.xml"/>
+                    <core connection_id="Cortex-A53_SMP_0" core_ref="Cortex-A53" soc="Intel_FPGA/Agilex"/>
+                    <param default="CDB://dtsl_config_script.py" id="dtsl_config_script" type="string" visible="false"/>
+                    <param default="DtslScript_DebugAndOnChipTrace" id="dtsl_config" type="string" visible="false"/>
+                    <param default="options.trace.traceCapture" id="dtsl_tracecapture_option" type="string" visible="false"/>
+                    <xi:include href="../../../Include/ulinkpro_browse_script.xml"/>
+                    <xi:include href="../../../Include/ulinkpro_setup_script.xml"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Cortex-A53x4 SMP</name>
+                    <xi:include href="../../../Include/ulinkprod_activity_description_lk.xml"/>
+                    <xi:include href="../../../Include/ulinkprod_connection_type.xml"/>
+                    <core connection_id="Cortex-A53_SMP_0" core_ref="Cortex-A53" soc="Intel_FPGA/Agilex"/>
+                    <param default="CDB://dtsl_config_script.py" id="dtsl_config_script" type="string" visible="false"/>
+                    <param default="DtslScript_DebugAndOnChipTrace" id="dtsl_config" type="string" visible="false"/>
+                    <param default="options.trace.traceCapture" id="dtsl_tracecapture_option" type="string" visible="false"/>
+                    <xi:include href="../../../Include/ulinkprod_browse_script.xml"/>
+                    <xi:include href="../../../Include/ulinkprod_setup_script.xml"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Cortex-A53x4 SMP</name>
+                    <xi:include href="../../../Include/ulink2_activity_description_lk.xml"/>
+                    <xi:include href="../../../Include/ulink2_connection_type.xml"/>
+                    <core connection_id="Cortex-A53_SMP_0" core_ref="Cortex-A53" soc="Intel_FPGA/Agilex"/>
+                    <param default="CDB://dtsl_config_script.py" id="dtsl_config_script" type="string" visible="false"/>
+                    <param default="DtslScript_DebugAndOnChipTrace" id="dtsl_config" type="string" visible="false"/>
+                    <param default="options.trace.traceCapture" id="dtsl_tracecapture_option" type="string" visible="false"/>
+                    <xi:include href="../../../Include/ulink2_browse_script.xml"/>
+                    <xi:include href="../../../Include/ulink2_setup_script.xml"/>
+            </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Cortex-A53x4 SMP</name>
+                    <description language="en">Arm Debugger will connect to a Intel FPGA Download Cable to debug a bare metal application.</description>
+                    <connection_type language="en">Intel FPGA Download Cable</connection_type>
+                    <core connection_id="Cortex-A53_SMP_0" core_ref="Cortex-A53" soc="Intel_FPGA/Agilex"/>
+                    <param default="CDB://dtsl_config_script.py" id="dtsl_config_script" type="string" visible="false"/>
+                    <param default="DtslScript_DebugAndOnChipTrace" id="dtsl_config" type="string" visible="false"/>
+                    <param default="options.trace.traceCapture" id="dtsl_tracecapture_option" type="string" visible="false"/>
+                    <browse_script>
+                        <name language="en">CDB://../../../Scripts/device_browser.py</name>
+                        <arguments>--app=browse_usb_blaster</arguments>
+                    </browse_script>
+                    <setup_script>
+                        <name>CDB://../../../Scripts/altera_debug_server.py</name>
+                        <arguments>CDB://rddi-dap_cfg-altera.txt rddi-dap_altera</arguments>
+                    </setup_script>
+                </activity>
+            </execution_environment>
+        </project_type>
+    </project_type_list>
+</platform_data>

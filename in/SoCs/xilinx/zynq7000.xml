@@ -1,0 +1,52 @@
+<!-- This file describes the Xilinx Zynq-7000 SoC to the Arm Debugger.  The
+     SoC provides two Cortex-A9 cores each with the same selection of
+     peripherals (described in a TCF).  A pseudo-core is also provided for an
+     SMP connection again with the same list of peripherals.
+
+     It is not strictly necessary to define all three here but, it is provided
+     as an example.
+
+
+     The name of the file (excluding the extension) is a unique key used to
+     identify this SoC by, the database uses this to locate SoC definitions.
+     This should be lower case.  The name is used in a core element in an
+     activity in the project_types.xml to link the activity to this SoC.
+
+     An example of this SoC being used by a platform can be found in
+     Boards/Xilinx/Zynq-7000_EK/project_types.xml -->
+<soc
+    xmlns="http://www.arm.com/soc_definition"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:tcf="http://com.arm.targetconfigurationeditor"
+    xsi:schemaLocation="http://www.arm.com/soc_definition ../../Schemas/soc_definition.xsd">
+
+   <!-- The core element is used to collect together all of the core specific
+        information for the debugger.  This information currently consists of
+        details of the core, core registers, memory mapped registers and
+        the devices view of the memory system.
+
+        The following names the core 'Cortex-A9_0' and it is defined by the
+        'Cortex-A9'. The name attribute will be referenced by an activity in
+        the project_types.xml file (this is stored in a platform specific folder
+        within the Boards folder) and the core_definition attribute matches the
+        'name' element of a core definition (an XML file in the Cores folder of
+        the database)-->
+   <core name="Cortex-A9_0" core_definition="Cortex-A9">
+      <tcf board_id="zynq7000_ahb" address_prefix="AHB_0"/>
+      <tcf board_id="zynq7000_core"/>
+   </core>
+
+   <!--  Defines a core named Cortex-A9_1 that is based on a Cortex-A9 and
+         includes peripherals and memory maps for the 'Zynq-7000' -->
+   <core name="Cortex-A9_1" core_definition="Cortex-A9">
+      <tcf board_id="zynq7000_ahb" address_prefix="AHB_0"/>
+      <tcf board_id="zynq7000_core"/>
+   </core>
+
+   <!--  Defines a pseudo-core named Cortex-A9_SMP that is based on a Cortex-A9
+         and includes peripherals and memory maps for the 'Zynq-7000' -->
+   <core name="Cortex-A9_SMP" core_definition="Cortex-A9">
+      <tcf board_id="zynq7000_ahb" address_prefix="AHB_0"/>
+      <tcf board_id="zynq7000_core"/>
+   </core>
+</soc>

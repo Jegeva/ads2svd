@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+     targetNamespace="http://www.arm.com/project_type" 
+     xmlns="http://www.arm.com/project_type" 
+     xmlns:reg_group="http://www.arm.com/Core_CP15" 
+     xmlns:peripheral="http://com.arm.targetconfigurationeditor">
+     
+    <!-- Include CPSR register schema and CP15 and Core Registers and board schema's -->
+    <xs:import namespace="http://www.arm.com/Core_CP15" schemaLocation="Core_CP15_Regs.xsd"/>
+    <xs:import namespace="http://com.arm.targetconfigurationeditor" schemaLocation="board.xsd"/>
+    <xs:import namespace="http://www.w3.org/XML/1998/namespace" schemaLocation="http://www.w3.org/2009/01/xml.xsd"/>
+
+    <!-- Define parent element project_data -->
+    <xs:element name="platform_data">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="taxonomyId" minOccurs="0" maxOccurs="1" type="xs:string"/>
+                <xs:element ref="description"/>
+                <xs:element name="image" minOccurs="0" maxOccurs="1" type="xs:string"/>
+                <xs:element ref="connection_type" minOccurs="1" maxOccurs="unbounded"/>
+                <xs:element ref="project_type_list" minOccurs="1" maxOccurs="1"/>
+            </xs:sequence>
+            <xs:attribute name="type" type="platformType" use="required"/>
+        </xs:complexType>
+    </xs:element>
+    
+    <xs:element name="connection_type" type="connectionType" />
+    
+    <!-- Define project_list element -->
+    <xs:element name="project_type_list">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="project_type" minOccurs="1" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    
+    <!-- Define project_type element -->
+    <xs:element name="project_type">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="name" minOccurs="1" maxOccurs="1"/>
+                <xs:element ref="description" minOccurs="1" maxOccurs="1"/>
+                <xs:element ref="reg_group:register_list" maxOccurs="unbounded"/>
+                <xs:element ref="peripheral:boards" minOccurs="0" maxOccurs="unbounded"/>
+                <xs:element ref="execution_environment" minOccurs="1" maxOccurs="unbounded"/>
+                <xs:element ref="tool" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+            <xs:attribute name="type" type="projectTypes" use="required"/>
+            <xs:attribute name="os_abstraction" type="osAbstractionType" use="optional"></xs:attribute>
+            <xs:attribute ref="xml:base"/>
+        </xs:complexType>
+    </xs:element>
+    
+    <xs:group name="ui_strings">
+        <xs:sequence>
+            <xs:element ref="name" minOccurs="0" maxOccurs="1"/>
+            <xs:element ref="description" minOccurs="0" maxOccurs="1"/>
+        </xs:sequence>
+    </xs:group>
+
+    <!-- Define Description Element -->
+    <xs:element name="description">
+        <xs:complexType mixed="true">
+            <xs:attribute name="language" type="xs:language" use="optional" default="en"/> 
+        </xs:complexType>
+    </xs:element>
+    
+    <!-- Define name element -->
+    <xs:element name="name">
+        <xs:complexType mixed="true">
+            <xs:attribute name="language" type="xs:language" use="optional" default="en"/> 
+        </xs:complexType>
+    </xs:element>
+    
+    <!-- Define Tool element -->
+    <xs:element name="tool">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="name" minOccurs="1" maxOccurs="1"/>
+                <xs:element ref="cmd_line" minOccurs="1" maxOccurs="1"/>
+                <xs:element ref="param" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+            <xs:attribute name="id" type="xs:string" use="required"></xs:attribute>
+        </xs:complexType>
+    </xs:element>
+    
+    <!-- Define cmd_line element-->
+    <xs:element name="cmd_line" type="xs:string" />
+
+    <!-- Define element param -->
+    <xs:element name="param">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:group ref="ui_strings"/>
+                <xs:element ref="option" minOccurs="0" maxOccurs="unbounded"/>
+                <xs:element ref="ds5_validator" minOccurs="0" maxOccurs="unbounded"/>
+                <xs:element ref="default_value" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+            <xs:attribute name="type" type="xs:string" use="required"/>
+            <xs:attribute name="default" type="xs:string" use="optional"/>
+            <xs:attribute name="id" type="xs:string" use="required"/>
+            <xs:attribute name="visible" type="booleanEnum" use="optional" default="true"/>
+            <xs:attribute name="rvc_tag" type="xs:string" use="optional"/>
+        </xs:complexType>
+    </xs:element>
+
+    <!-- Define element option -->
+    <xs:element name="option">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="name" minOccurs="1" maxOccurs="1"/>
+                <xs:element ref="value" minOccurs="1" maxOccurs="1"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    
+    <xs:element name="default_value">
+        <xs:complexType>
+            <xs:simpleContent>
+                <xs:extension base="xs:string">
+                    <xs:attribute name="os" type="operating_system_type"/>
+                </xs:extension>
+            </xs:simpleContent>
+        </xs:complexType>
+    </xs:element>
+    
+    <!--Define ds5 validator element-->
+    <xs:element name="ds5_validator" type="xs:string"/>
+    
+    <!-- Define cmdLineOptionPattern-->
+    <xs:element name="value" type="cmdLineOptionPattern"/>
+    
+    <!-- Define element execution_environment -->
+    <xs:element name="execution_environment">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="name" minOccurs="1" maxOccurs="1"/>
+                <xs:element ref="description" minOccurs="1" maxOccurs="1"/>
+                <xs:element ref="param" minOccurs="1" maxOccurs="unbounded"/>
+                <xs:element ref="symbol_list" minOccurs="0" maxOccurs="1"/>
+                <xs:element ref="config_file" minOccurs="0" maxOccurs="1"/>
+                <xs:element ref="activity" minOccurs="1" maxOccurs="unbounded"/>
+            </xs:sequence>
+            <xs:attribute name="id" type="xs:ID" use="required"/>
+        </xs:complexType>
+    </xs:element>
+    
+    <xs:element name="activity">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="name" minOccurs="1" maxOccurs="1"/>
+                <xs:element ref="description" minOccurs="1" maxOccurs="1"/>
+                <xs:element ref="param" minOccurs="0" maxOccurs="unbounded"/>
+                <xs:element ref="setup_script" minOccurs="0" maxOccurs="1"/>
+                <xs:element ref="eclipse_launch_script" minOccurs="0" maxOccurs="1"/>
+                <xs:element ref="rddi_info" minOccurs="0" maxOccurs="1"/>
+            </xs:sequence>
+            <xs:attribute name="type" type="xs:string" use="required"/>
+            <xs:attribute name="id" type="activity_id_type" use="required"/>
+        </xs:complexType>
+    </xs:element>
+    
+    <xs:element name="rddi_info" type="rddi_info_type"/>
+    
+    <xs:element name="config_file">
+        <xs:simpleType>
+            <xs:restriction base="xs:string"/>
+        </xs:simpleType>
+    </xs:element>
+    
+    <xs:complexType name="script_type">
+        <xs:sequence>
+            <xs:element ref="name" minOccurs="1" maxOccurs="1"/>
+            <xs:element ref="arguments" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+    
+    <xs:element name="setup_script" type="script_type"/>
+    <xs:element name="eclipse_launch_script" type="script_type"/>
+    
+    <xs:element name="arguments">
+        <xs:simpleType>
+            <xs:restriction base="xs:string"/>
+        </xs:simpleType>
+    </xs:element>
+
+    <!--Define symbol_list element - need the xml:base attribute as will be included from
+        a separate file, which seems to mean it needs a complexType, leading to a seemingly
+        over complex definition :( -->
+    <xs:element name="symbol" type="xs:string" />
+
+    <xs:element name="symbol_list">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="symbol" minOccurs="1" maxOccurs="unbounded"/>
+            </xs:sequence>
+            <xs:attribute ref="xml:base"/>
+        </xs:complexType>
+    </xs:element>
+    
+    <!-- User defined types -->
+    
+    <!-- Define Command line option pattern -->
+    <xs:simpleType name="cmdLineOptionPattern">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="-+[a-zA-Z]+_*"></xs:pattern>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <!--  Define Project types -->
+    <xs:simpleType name="projectTypes">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="BARE_METAL"/>
+            <xs:enumeration value="GDB_SERVER"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="booleanEnum">
+        <xs:restriction base="xs:string">
+             <xs:enumeration value="false"/>
+             <xs:enumeration value="true"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="operating_system_type">
+        <xs:restriction base="xs:string">
+             <xs:enumeration value="linux"/>
+             <xs:enumeration value="windows"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="platformType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="RTSM"/>
+            <xs:enumeration value="HARDWARE"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="connectionType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="SERIAL"/>
+            <xs:enumeration value="SSH"/>
+            <!-- xs:enumeration value="TELNET"/-->
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <xs:complexType name="rddi_info_type">
+        <xs:sequence>
+            <xs:element ref="lib" minOccurs="0" maxOccurs="1"/>
+            <xs:element ref="searchPath" minOccurs="0" maxOccurs="1"/>
+        </xs:sequence>
+    </xs:complexType>
+    
+    <xs:element name="lib" type="xs:string"/>
+    <xs:element name="searchPath" type="xs:string"/>
+    
+    <xs:simpleType name="activity_id_type">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="DOWNLOAD_AND_DEBUG"/>
+            <xs:enumeration value="DOWNLOAD_DEBUG"/>
+            <xs:enumeration value="DEBUG_RESIDENT_APP"/>
+            <xs:enumeration value="CONNECT_TO_GDB_SERVER"/>
+            <xs:enumeration value="ICE_DEBUG"/>
+            <xs:enumeration value="ICE_DEBUG_WITH_ETB_TRACE"/>
+            <xs:enumeration value="ICE_DEBUG_WITH_TRACE"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="osAbstractionType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="LINUX"/>        <!-- Linux OS awareness for app. debug -->
+            <xs:enumeration value="LINUX_KERNEL"/> <!-- Linux kernel awareness for kernel/driver development -->
+            <xs:enumeration value="BARE_METAL"/>   <!-- No OS, bare metal support, requested by JPS -->
+        </xs:restriction>
+    </xs:simpleType>
+</xs:schema>

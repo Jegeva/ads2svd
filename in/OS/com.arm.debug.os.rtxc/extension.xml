@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<os id="com.arm.debug.os.rtxc" version="5.15" xmlns='http://www.arm.com/os_extension'>
+  <name>rtxc.title</name>
+  <implementer>Arm</implementer>
+  <logo>rtxc_logo.jpg</logo>
+  <description>rtxc.desc</description>
+  <provider>provider.py</provider>
+  <match arch="ARMv5"/>
+  <match arch="ARMv5T"/>
+  <match arch="ARMv5TE"/>
+  <match arch="ARMv5TEJ"/>
+  <match arch="ARMv7M"/>
+  <match arch="ARMv7R"/>
+  <match arch="ARMv7A"/>
+  <match arch="ARMv7AV"/>
+</os>

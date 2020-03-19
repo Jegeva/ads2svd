@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>HDCR</title>
+    <link href="insn.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body><table align="center"><tr><td><div class="topbar"><a href="AArch32-regindex.html">AArch32 Registers</a></div></td><td><div class="topbar"><a href="AArch64-regindex.html">AArch64 Registers</a></div></td><td><div class="topbar"><a href="AArch32-sysindex.html">AArch32 Instructions</a></div></td><td><div class="topbar"><a href="AArch64-sysindex.html">AArch64 Instructions</a></div></td><td><div class="topbar"><a href="enc_index.html">Index by Encoding</a></div></td><td><div class="topbar"><a href="ext_alpha_index.html">External Registers</a></div></td><td><div class="topbar"><a href="ext_enc_index.html">External Registers by Offset</a></div></td><td><div class="topbar"><a href="func_index.html">Registers by Functional Group</a></div></td></tr></table><hr /><h1 class="register-section">HDCR, Hyp Debug Control Register</h1><p>The HDCR characteristics are:</p><h2>Purpose</h2>
+          <p>Controls the trapping to Hyp mode of Non-secure accesses, at EL1 or lower, to functions provided by the debug and trace architectures and the Performance Monitors Extension.</p>
+        <p>This 
+        register
+       is part of:</p><ul><li>The Debug registers functional group.</li><li>The Virtualization registers functional group.</li></ul><h2>Configuration</h2><p>AArch32 System register HDCR
+                is architecturally mapped to
+              AArch64 System register <a href="AArch64-mdcr_el2.html">MDCR_EL2</a>.
+          </p>
+          <p>If EL2 is not implemented, this register is <span class="arm-defined-word">RES0</span> from EL3.</p>
+        <p>This register is in the Warm reset domain.
+                Some or all RW fields of this register have defined reset values. 
+                
+        On a Warm or Cold reset these apply
+      
+                  only if the PE resets into an Exception level that is using AArch32.
+                
+                Otherwise,
+                
+                  on a Warm or Cold reset
+                RW fields in this register reset to architecturally <span class="arm-defined-word">UNKNOWN</span> values.
+              </p><h2>Attributes</h2>
+          <p>HDCR is a 32-bit register.</p>
+        <h2>Field descriptions</h2><p>The HDCR bit assignments are:</p><table class="regdiagram"><thead><tr><td>31</td><td>30</td><td>29</td><td>28</td><td>27</td><td>26</td><td>25</td><td>24</td><td>23</td><td>22</td><td>21</td><td>20</td><td>19</td><td>18</td><td>17</td><td>16</td><td>15</td><td>14</td><td>13</td><td>12</td><td>11</td><td>10</td><td>9</td><td>8</td><td>7</td><td>6</td><td>5</td><td>4</td><td>3</td><td>2</td><td>1</td><td>0</td></tr></thead><tbody><tr class="firstrow"><td class="l">0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td class="r">0</td><td class="lr" colspan="1"><a href="#HPMD">HPMD</a></td><td class="l">0</td><td>0</td><td>0</td><td>0</td><td class="r">0</td><td class="lr" colspan="1"><a href="#TDRA">TDRA</a></td><td class="lr" colspan="1"><a href="#TDOSA">TDOSA</a></td><td class="lr" colspan="1"><a href="#TDA">TDA</a></td><td class="lr" colspan="1"><a href="#TDE">TDE</a></td><td class="lr" colspan="1"><a href="#HPME">HPME</a></td><td class="lr" colspan="1"><a href="#TPM">TPM</a></td><td class="lr" colspan="1"><a href="#TPMCR">TPMCR</a></td><td class="lr" colspan="5"><a href="#HPMN">HPMN</a></td></tr></tbody></table><h4 id="0">
+                Bits [31:18]
+              </h4>
+              <p>Reserved, <span class="arm-defined-word">RES0</span>.</p>
+            <h4 id="HPMD">HPMD, bit [17]
+              <font style="font-size:smaller;"><br />
+            In 
+            ARMv8.1:</font></h4>
+              <p>Guest Performance Monitors Disable. This control prohibits event counting at EL2. Permitted values are:</p>
+            <table class="valuetable"><tr><th>HPMD</th><th>Meaning</th></tr><tr><td class="bitfield">0</td><td>
+                  <p>Event counting allowed in Hyp mode.</p>
+                </td></tr><tr><td class="bitfield">1</td><td>
+                  <p>Event counting prohibited in Hyp mode, unless enabled by the <span class="arm-defined-word">IMPLEMENTATION DEFINED</span> authentication interface ExternalSecureNoninvasiveDebugEnabled().</p>
+                </td></tr></table>
+              <p>This control applies only to:</p>
+            
+              <ul>
+                <li>
+                  The event counters in the range [0..(HPMN-1)].
+                </li>
+                <li>
+                  If <a href="AArch32-pmcr.html">PMCR</a>.DP is set to 1, <a href="AArch32-pmccntr.html">PMCCNTR</a>.
+                </li>
+              </ul>
+            
+              <p>The other event counters are unaffected. When <a href="AArch32-pmcr.html">PMCR</a>.DP is set to 0, <a href="AArch32-pmccntr.html">PMCCNTR</a> is unaffected.</p>
+            <p>When this register has an architecturally-defined reset value, this field resets to <span class="binarynumber">0</span>.</p><h4 id="0"><font style="font-size:smaller;"><br />
+            In 
+            ARMv8.0:</font></h4>
+              <p>Reserved, <span class="arm-defined-word">RES0</span>.</p>
+            <h4 id="0">
+                Bits [16:12]
+              </h4>
+              <p>Reserved, <span class="arm-defined-word">RES0</span>.</p>
+            <h4 id="TDRA">TDRA, bit [11]
+              </h4>
+              <p>Trap Debug ROM Address register access. Traps Non-secure EL0 and EL1 System register accesses to the Debug ROM registers to Hyp mode.</p>
+            <table class="valuetable"><tr><th>TDRA</th><th>Meaning</th></tr><tr><td class="bitfield">0</td><td>
+                  <p>This control does not cause any instructions to be trapped.</p>
+                </td></tr><tr><td class="bitfield">1</td><td>
+                  <p>Non-secure EL0 and EL1 System register accesses to the <a href="AArch32-dbgdrar.html">DBGDRAR</a> or <a href="AArch32-dbgdsar.html">DBGDSAR</a> are trapped to Hyp mode, unless it is trapped by <a href="AArch32-dbgdscrext.html">DBGDSCRext</a>.UDCCdis.</p>
+                </td></tr></table>
+              <p>If <a href="AArch32-hcr.html">HCR</a>.TGE or HDCR.TDE is 1, behavior is as if this bit is 1 other than for the purpose of a direct read.</p>
+            <p>When this register has an architecturally-defined reset value, this field resets to <span class="binarynumber">0</span>.</p><h4 id="TDOSA">TDOSA, bit [10]
+              </h4>
+              <p>Trap debug OS-related register access. Traps Non-secure EL1 System register accesses to the powerdown debug registers to Hyp mode.</p>
+            <table class="valuetable"><tr><th>TDOSA</th><th>Meaning</th></tr><tr><td class="bitfield">0</td><td>
+                  <p>This control does not cause any instructions to be trapped.</p>
+                </td></tr><tr><td class="bitfield">1</td><td>
+                  <p>Non-secure EL1 System register accesses to the powerdown debug registers are trapped to Hyp mode.</p>
+                </td></tr></table>
+              <p>The registers for which accesses are trapped are as follows:</p>
+            
+              <ul>
+                <li>
+                  <a href="AArch32-dbgoslsr.html">DBGOSLSR</a>, <a href="AArch32-dbgoslar.html">DBGOSLAR</a>, <a href="AArch32-dbgosdlr.html">DBGOSDLR</a>, and the <a href="AArch32-dbgprcr.html">DBGPRCR</a>.
+                </li>
+                <li>
+                  Any <span class="arm-defined-word">IMPLEMENTATION DEFINED</span> register with similar functionality that the implementation specifies as trapped by this bit.
+                </li>
+              </ul>
+            
+              <div class="note"><span class="note-header">Note</span>
+                <p>These registers are not accessible at EL0.</p>
+              </div>
+            
+              <p>If <a href="AArch32-hcr.html">HCR</a>.TGE or HDCR.TDE is 1, behavior is as if this bit is 1 other than for the purpose of a direct read.</p>
+            <p>When this register has an architecturally-defined reset value, this field resets to <span class="binarynumber">0</span>.</p><h4 id="TDA">TDA, bit [9]
+              </h4>
+              <p>Trap debug access. Traps Non-secure EL0 and EL1 System register accesses to those debug System registers in the (coproc==<span class="binarynumber">1110</span>) encoding space that are not trapped by either of the following:</p>
+            
+              <ul>
+                <li>
+                  <a href="AArch32-hdcr.html">HDCR</a>.TDRA.
+                </li>
+                <li>
+                  <a href="AArch32-hdcr.html">HDCR</a>.TDOSA.
+                </li>
+              </ul>
+            <table class="valuetable"><tr><th>TDA</th><th>Meaning</th></tr><tr><td class="bitfield">0</td><td>
+                  <p>This control does not cause any instructions to be trapped.</p>
+                </td></tr><tr><td class="bitfield">1</td><td>
+                  <p>Non-secure EL0 or EL1 System register accesses to the debug registers, other than the registers trapped by HDCR.TDRA and HDCR.TDOSA, are trapped to Hyp mode, unless it is trapped by <a href="AArch32-dbgdscrext.html">DBGDSCRext</a>.UDCCdis.</p>
+                </td></tr></table>
+              <p>Traps of AArch32 accesses to <a href="AArch32-dbgdtrrxint.html">DBGDTRRXint</a> and <a href="AArch32-dbgdtrtxint.html">DBGDTRTXint</a> are ignored in Debug state.</p>
+            
+              <p>If <a href="AArch32-hcr.html">HCR</a>.TGE or HDCR.TDE is 1, behavior is as if this bit is 1 other than for the purpose of a direct read.</p>
+            <p>When this register has an architecturally-defined reset value, this field resets to <span class="binarynumber">0</span>.</p><h4 id="TDE">TDE, bit [8]
+              </h4>
+              <p>Trap Debug exceptions. The possible values of this bit are:</p>
+            <table class="valuetable"><tr><th>TDE</th><th>Meaning</th></tr><tr><td class="bitfield">0</td><td>
+                  <p>This control has no effect on the routing of debug exceptions, and has no effect on Non-secure accesses to debug registers.</p>
+                </td></tr><tr><td class="bitfield">1</td><td>
+                  <p>In Non-secure state:</p>
+                
+                  <ul>
+                    <li>
+                      Debug exceptions generated at EL1 or EL0 are routed to EL2.
+                    </li>
+                    <li>
+                      The HDCR.{TDRA, TDOSA, TDA} fields are treated as being 1 for all purposes other than returning the result of a direct read of the register.
+                    </li>
+                  </ul>
+                </td></tr></table>
+              <p>When <a href="AArch32-hcr.html">HCR</a>.TGE == 1, the PE behaves as if the value of this field is 1 for all purposes other than returning the value of a direct read of the register.</p>
+            <p>When this register has an architecturally-defined reset value, this field resets to <span class="binarynumber">0</span>.</p><h4 id="HPME">HPME, bit [7]
+              </h4>
+              <p>Hypervisor Performance Monitors Counters Enable. The possible values of this bit are:</p>
+            <table class="valuetable"><tr><th>HPME</th><th>Meaning</th></tr><tr><td class="bitfield">0</td><td>
+                  <p>Hyp mode Performance Monitors counters disabled.</p>
+                </td></tr><tr><td class="bitfield">1</td><td>
+                  <p>Hyp mode Performance Monitors counters enabled.</p>
+                </td></tr></table>
+              <p>When the value of this bit is 1, the Performance Monitors counters that are reserved for use from Hyp mode or Secure state are enabled. For more information see the description of the HPMN field.</p>
+            
+              <p>If the Performance Monitors Extension is not implemented, this field is <span class="arm-defined-word">RES0</span>.</p>
+            <p>When this register has an architecturally-defined reset value, if this field is implemented as an RW field, it resets to a value that is architecturally <span class="arm-defined-word">UNKNOWN</span>.</p><h4 id="TPM">TPM, bit [6]
+              </h4>
+              <p>Trap Performance Monitors accesses. Traps Non-secure EL0 and EL1 accesses to all Performance Monitors registers to Hyp mode.</p>
+            <table class="valuetable"><tr><th>TPM</th><th>Meaning</th></tr><tr><td class="bitfield">0</td><td>
+                  <p>This control does not cause any instructions to be trapped.</p>
+                </td></tr><tr><td class="bitfield">1</td><td>
+                  <p>Non-secure EL0 and EL1 accesses to all Performance Monitors registers are trapped to Hyp mode.</p>
+                </td></tr></table>
+              <div class="note"><span class="note-header">Note</span>
+                <p>EL2 does not provide traps on Performance Monitor register accesses through the optional memory-mapped external debug interface.</p>
+              </div>
+            
+              <p>If the Performance Monitors Extension is not implemented, this field is <span class="arm-defined-word">RES0</span>.</p>
+            <p>When this register has an architecturally-defined reset value, if this field is implemented as an RW field, it resets to <span class="binarynumber">0</span>.</p><h4 id="TPMCR">TPMCR, bit [5]
+              </h4>
+              <p>Trap <a href="AArch32-pmcr.html">PMCR</a> accesses. Traps Non-secure EL0 and EL1 accesses to the <a href="AArch32-pmcr.html">PMCR</a> to Hyp mode.</p>
+            <table class="valuetable"><tr><th>TPMCR</th><th>Meaning</th></tr><tr><td class="bitfield">0</td><td>
+                  <p>This control does not cause any instructions to be trapped.</p>
+                </td></tr><tr><td class="bitfield">1</td><td>
+                  <p>Non-secure EL0 and EL1 accesses to the <a href="AArch32-pmcr.html">PMCR</a> are trapped to Hyp mode, unless it is trapped by <a href="AArch32-pmuserenr.html">PMUSERENR</a>.EN.</p>
+                </td></tr></table>
+              <div class="note"><span class="note-header">Note</span>
+                <p>EL2 does not provide traps on Performance Monitor register accesses through the optional memory-mapped external debug interface.</p>
+              </div>
+            
+              <p>If the Performance Monitors Extension is not implemented, this field is <span class="arm-defined-word">RES0</span>.</p>
+            <p>When this register has an architecturally-defined reset value, if this field is implemented as an RW field, it resets to <span class="binarynumber">0</span>.</p><h4 id="HPMN">HPMN, bits [4:0]
+                  </h4>
+              <p>Defines the number of Performance Monitors counters that are accessible from Non-secure EL1 modes, and from Non-secure EL0 modes if unprivileged access is enabled.</p>
+            
+              <p>If the Performance Monitors Extension is not implemented, this field is <span class="arm-defined-word">RES0</span>.</p>
+            
+              <p>In Non-secure state, HPMN divides the Performance Monitors counters as follows. If software is accessing Performance Monitors counter n then, in Non-secure state:</p>
+            
+              <ul>
+                <li>
+                  If n is in the range 0&lt;=n&lt;HPMN, the counter is accessible from EL1 and EL2, and from EL0 if unprivileged access to the counters is enabled. <a href="AArch32-pmcr.html">PMCR</a>.E enables the operation of counters in this range.
+                </li>
+                <li>
+                  If n is in the range HPMN&lt;=n&lt;<a href="AArch32-pmcr.html">PMCR</a>.N, the counter is accessible only from EL2 and from Secure state. HDCR.HPME enables the operation of counters in this range.
+                </li>
+              </ul>
+            
+              <p>If this field is set to 0, or to a value larger than <a href="AArch32-pmcr.html">PMCR</a>.N, then the following <span class="arm-defined-word">CONSTRAINED UNPREDICTABLE</span> behavior applies:</p>
+            
+              <ul>
+                <li>
+                  The value returned by a direct read of HDCR.HPMN is <span class="arm-defined-word">UNKNOWN</span>.
+                </li>
+                <li>
+                  Either:<ul><li>An <span class="arm-defined-word">UNKNOWN</span> number of counters are reserved for EL2 use. That is, the PE behaves as if HDCR.HPMN is set to an <span class="arm-defined-word">UNKNOWN</span> non-zero value less than <a href="AArch32-pmcr.html">PMCR</a>.N.</li><li>All counters are reserved for EL2 use, meaning no counters are accessible from Non-secure EL1 and Non-secure EL0.</li></ul>
+                </li>
+              </ul>
+            <p>When this register has an architecturally-defined reset value, if this field is implemented as an RW field, it resets to the value of <a href="AArch32-pmcr.html&#10;        ">PMCR</a>.N.</p><div class="access_mechanisms"><h2>Accessing the HDCR</h2><div class="access_instructions"><div class="access_instruction"><p>This register can be read using MRC with the following syntax:</p><p class="asm-code">MRC  &lt;syntax&gt;</p></div><div class="access_instruction"><p>This register can be written using MCR with the following syntax:</p><p class="asm-code">MCR  &lt;syntax&gt;</p></div><p>This syntax uses the following encoding in the System instruction encoding space:</p><table class="access_instructions"><tr><th rowspan="1">
+        &lt;syntax&gt;
+      </th><th>opc1</th><th>opc2</th><th>CRn</th><th>coproc</th><th>CRm</th></tr><tr><td>p15, 4, 
+                &lt;Rt&gt;, c1, c1, 1</td><td>100</td><td>001</td><td>0001</td><td>1111</td><td>0001</td></tr></table><ul></ul></div><h3>Accessibility</h3><p>The register is accessible as follows:</p><table class="accessibility"><tr><th class="accessibility_control" colspan="3">
+            Control
+          </th><th colspan="4">
+          Accessibility
+        </th></tr><tr><th class="accessibility_control">E2H</th><th class="accessibility_control">TGE</th><th class="accessibility_control">NS</th><th>EL0</th><th>EL1</th><th>EL2</th><th>EL3</th></tr><tr><td class="accessibility_control">x</td><td class="accessibility_control">x</td><td class="accessibility_control">0</td><td>
+        -
+      </td><td>
+        -
+      </td><td>
+        n/a
+      </td><td>
+        -
+      </td></tr><tr><td class="accessibility_control">x</td><td class="accessibility_control">0</td><td class="accessibility_control">1</td><td>
+        -
+      </td><td>
+        -
+      </td><td>RW</td><td>RW</td></tr><tr><td class="accessibility_control">x</td><td class="accessibility_control">1</td><td class="accessibility_control">1</td><td>
+        -
+      </td><td>
+        n/a
+      </td><td>RW</td><td>RW</td></tr></table><p><p>This table applies to all instructions that can access this register.</p></p><h3>Traps and enables</h3><div class="traps_intro"><p>For a description of the prioritization of any generated exceptions, see section G1.11.2 (Exception priority order) in the <i>ARM<sup>®</sup> Architecture Reference Manual, ARMv8, for ARMv8-A architecture profile</i> for exceptions taken to AArch32 state, and section D1.13.2 (Synchronous exception prioritization) for exceptions taken to AArch64 state. Subject to the prioritization rules, the following traps and enables are applicable when 
+            accessing this register.
+          </p></div><p>
+        When
+        EL2 is implemented and is using AArch64
+        and
+        SCR_EL3.NS==1 &amp;&amp; HCR_EL2.E2H==0
+        :
+      </p><ul><li><p>If <a href="AArch64-hstr_el2.html">HSTR_EL2</a>.T1==1, Non-secure accesses to this register from EL1 are trapped to EL2.</p></li></ul><p>
+        When
+        EL2 is implemented and is using AArch64
+        and
+        SCR_EL3.NS==1 &amp;&amp; HCR_EL2.E2H==1 &amp;&amp; HCR_EL2.TGE==0
+        :
+      </p><ul><li><p>If <a href="AArch64-hstr_el2.html">HSTR_EL2</a>.T1==1, Non-secure accesses to this register from EL1 are trapped to EL2.</p></li></ul><p>
+        When
+        EL2 is implemented and is using AArch32
+        and
+        SCR_EL3.NS==1
+        :
+      </p><ul><li><p>If <a href="AArch32-hstr.html">HSTR</a>.T1==1, Non-secure accesses to this register from EL1 are trapped to Hyp mode.</p></li></ul><p>
+        When
+        EL3 is implemented and is using AArch64
+        :
+      </p><ul><li><p>If <a href="AArch64-mdcr_el3.html">MDCR_EL3</a>.TDA==1, accesses to this register from EL2 are trapped to EL3 using AArch64.</p></li></ul></div><br /><br /><hr /><table align="center"><tr><td><div class="topbar"><a href="AArch32-regindex.html">AArch32 Registers</a></div></td><td><div class="topbar"><a href="AArch64-regindex.html">AArch64 Registers</a></div></td><td><div class="topbar"><a href="AArch32-sysindex.html">AArch32 Instructions</a></div></td><td><div class="topbar"><a href="AArch64-sysindex.html">AArch64 Instructions</a></div></td><td><div class="topbar"><a href="enc_index.html">Index by Encoding</a></div></td><td><div class="topbar"><a href="ext_alpha_index.html">External Registers</a></div></td><td><div class="topbar"><a href="ext_enc_index.html">External Registers by Offset</a></div></td><td><div class="topbar"><a href="func_index.html">Registers by Functional Group</a></div></td></tr></table><p class="versions">24/03/2017 16:41</p><p class="copyconf">Copyright © 2010-2017 ARM Limited or its affiliates. All rights reserved. This document is Confidential.</p></body>
+</html>

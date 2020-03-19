@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<os id="com.arm.debug.os.vxworks" version="5.23" xmlns='http://www.arm.com/os_extension'>
+  <name>vxworks.title</name>
+  <implementer>Arm</implementer>
+  <logo>vxworks_logo.png</logo>
+  <description>vxworks.desc</description>
+  <provider>provider.py</provider>
+  <match arch="ARMv7A"/>
+  <match arch="ARMv7R"/>
+  <match arch="ARMv7AV"/>
+  <match_regexp arch="ARMv8.*A"/>
+</os>

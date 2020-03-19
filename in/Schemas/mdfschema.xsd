@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xs:schema
+    xmlns="http://www.arm.com/model_desc_file"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    targetNamespace="http://www.arm.com/model_desc_file"
+    elementFormDefault="qualified">
+
+
+    <xs:element name="MODEL">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="Version" type="version"/>
+                <xs:element name="ModelInfo" type="modelinfo"/>
+                <xs:element name="DeviceTree" type="devicetree"/>
+                <xs:element name="DebugActivities" type="debugactivities"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:complexType name="version">
+        <xs:attribute name="MajorVersion" type="xs:nonNegativeInteger" use="required"/>
+        <xs:attribute name="MinorVersion" type="xs:nonNegativeInteger" use="required"/>
+        <xs:attribute name="PatchVersion" type="xs:nonNegativeInteger" use="required"/>
+    </xs:complexType>
+
+    <xs:complexType name="modelinfo">
+        <xs:sequence>
+            <xs:element name="SimName" type="xs:string"/>
+            <xs:element name="Manufacturer" type="xs:string"/>
+            <xs:element name="PlatformName" type="xs:string"/>
+            <xs:element name="ModelPath" type="xs:string" minOccurs="0"/>
+            <xs:element name="Server" type="xs:string" minOccurs="0"/>
+            <xs:element name="Port" type="xs:positiveInteger" minOccurs="0"/>
+            <xs:element name="ModelParam" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element name="ModelLaunchScript" type="xs:string" minOccurs="0"/>
+            <xs:element name="RDDILogFile" type="xs:string" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+
+
+    <xs:complexType name="devicetree">
+        <xs:sequence>
+            <xs:element name="CLUSTER" type="cluster" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+
+    <xs:complexType name="cluster">
+        <xs:sequence>
+            <xs:element name="CORE" type="core" maxOccurs="unbounded"/>
+            <xs:element name="CACHE" type="cache" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+        <xs:attribute name="ClusterID" type="xs:nonNegativeInteger" use="required"/>
+    </xs:complexType>
+
+
+    <xs:complexType name="core">
+        <xs:sequence>
+            <xs:element name="InstanceName" type="xs:string"/>
+            <xs:element name="CoreName" type="xs:string"/>
+            <xs:element name="CoreType" type="xs:string"/>
+            <xs:element name="PowerStatePollInterval" type="xs:nonNegativeInteger" minOccurs="0"/>
+            <xs:element name="MemSpace" type="memspace" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element name="CACHE" type="cache" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element name="TLB" type="tlb" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+        <xs:attribute name="CoreID" type="xs:nonNegativeInteger" use="required"/>
+    </xs:complexType>
+
+
+    <xs:complexType name="memspace">
+        <xs:simpleContent>
+            <xs:extension base="xs:nonNegativeInteger">
+                <xs:attribute name="Type" type="memspacetype" use="required"/>
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
+
+
+    <xs:simpleType name="memspacetype">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="Hypervisor"/>
+            <xs:enumeration value="Monitor"/>
+            <xs:enumeration value="NonSecure"/>
+            <xs:enumeration value="Secure"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+
+    <xs:complexType name="cache">
+        <xs:sequence>
+            <xs:element name="InstanceName" type="xs:string"/>
+            <xs:element name="CacheType" type="cachetype"/>
+        </xs:sequence>
+    </xs:complexType>
+
+
+    <xs:simpleType name="cachetype">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="L1D"/>
+            <xs:enumeration value="L1I"/>
+            <xs:enumeration value="L2"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+
+    <xs:complexType name="tlb">
+        <xs:sequence>
+            <xs:element name="InstanceName" type="xs:string"/>
+            <xs:element name="TLBType" type="tlbtype"/>
+        </xs:sequence>
+    </xs:complexType>
+
+
+    <xs:simpleType name="tlbtype">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="D"/>
+            <xs:enumeration value="I"/>
+            <xs:enumeration value="U"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+
+    <xs:complexType name="debugactivities">
+        <xs:sequence>
+            <xs:element name="ConnectionDefinitions" type="conndefs"/>
+            <xs:element name="BareMetal" type="connlist"/>
+            <xs:element name="LinuxKernel" type="connlist"/>
+            <xs:element name="LinuxApp" type="linuxapp"/>
+        </xs:sequence>
+    </xs:complexType>
+
+
+    <xs:complexType name="conndefs">
+        <xs:sequence>
+            <xs:element name="Connection" type="conndef" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+
+    <xs:complexType name="conndef">
+        <xs:sequence>
+            <xs:choice>
+                <xs:element name="CoreID" type="xs:nonNegativeInteger"/>
+                <xs:element name="Group" type="group"/>
+            </xs:choice>
+        </xs:sequence>
+        <xs:attribute name="ConnectionID" type="xs:nonNegativeInteger" use="required"/>
+        <xs:attribute name="Name" type="xs:string" use="required"/>
+    </xs:complexType>
+
+
+    <xs:complexType name="group">
+        <xs:sequence>
+            <xs:choice>
+                <xs:sequence>
+                    <xs:element name="CoreID" type="xs:nonNegativeInteger" maxOccurs="unbounded"/>
+                    <xs:element name="Group" type="group" minOccurs="0" maxOccurs="unbounded"/>
+                </xs:sequence>
+                <xs:sequence>
+                    <xs:element name="ClusterID" type="xs:nonNegativeInteger" maxOccurs="unbounded"/>
+                    <xs:element name="Group" type="group" minOccurs="0" maxOccurs="unbounded"/>
+                </xs:sequence>
+                <xs:sequence>
+                    <xs:element name="Group" type="group" maxOccurs="unbounded"/>
+                </xs:sequence>
+            </xs:choice>
+        </xs:sequence>
+        <xs:attribute name="Type" type="grouptype" use="required"/>
+    </xs:complexType>
+
+
+    <xs:simpleType name="grouptype">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="AMP"/>
+            <xs:enumeration value="SMP"/>
+            <xs:enumeration value="BigLittle"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+
+    <xs:complexType name="connlist">
+        <xs:sequence>
+            <xs:element name="ConnectionID" type="xs:nonNegativeInteger" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+
+    <xs:complexType name="linuxapp">
+        <xs:attribute name="Enabled" type="xs:boolean" use="required"/>
+    </xs:complexType>
+
+
+</xs:schema>

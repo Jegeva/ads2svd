@@ -1,0 +1,11 @@
+#Tue Oct 30 10:00:01 GMT 2012
+cortexA9coreTrace.traceRange.end=0xFFFFFFFF
+cortexA9coreTrace=true
+cortexA9coreTrace.traceRange=true
+cortexA9coreTrace.traceRange.start=0xBF000000
+cortexA9coreTrace.Cortex_A9_1=false
+cortexA9coreTrace.Cortex_A9_0=true
+cortexA9coreTrace.cycleAccurate=false
+wake=false
+useCtiSync=false
+traceCapture=ETB

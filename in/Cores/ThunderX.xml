@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<core_definition xmlns="http://www.arm.com/core_definition"
+     xmlns:cr="http://www.arm.com/core_reg"
+     xmlns:tcf="http://com.arm.targetconfigurationeditor"
+     xmlns:xi="http://www.w3.org/2001/XInclude"
+     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+     architecture="ARMv8"
+     xsi:schemaLocation="http://www.arm.com/core_definition ../Schemas/core_definition.xsd">
+    <name>ThunderX</name>
+    <internal_name>ThunderX</internal_name>
+    <series>A</series>
+    <reg_filter id="AARCH64" gui_name="AArch64" core_state="AArch64"/>
+    <cr:register_list filter="AARCH64" name="Core" display_by_default="true">
+        <xi:include href="Registers/V8_AARCH64_Core.xml" xpointer="xmlns(namespace=http://www.arm.com/core_reg)xpointer(//namespace:register)"/>
+        <xi:include href="Registers/V8_AARCH64_Core.xml" xpointer="xmlns(namespace=http://com.arm.targetconfigurationeditor)xpointer(//namespace:enumeration)"/>
+    </cr:register_list>
+    <cr:register_list filter="AARCH64" name="SIMD">
+        <xi:include href="Registers/SIMD/V8_AARCH64_SIMD.xml" xpointer="xmlns(namespace=http://www.arm.com/core_reg)xpointer(//namespace:register)"/>
+        <!-- <xi:include href="Registers/SIMD/V8_AARCH64_SIMD.xml" xpointer="xmlns(namespace=http://com.arm.targetconfigurationeditor)xpointer(//namespace:enumeration)"/> -->
+    </cr:register_list>
+<!--
+    <cr:register_list filter="AARCH64" name="System">
+        <xi:include href="Registers/System/A53_AARCH64_ImpDef.xml" xpointer="xmlns(namespace=http://www.arm.com/core_reg)xpointer(//namespace:register_group)"/>
+        <xi:include href="Registers/System/A53_AARCH64_ImpDef.xml" xpointer="xmlns(namespace=http://com.arm.targetconfigurationeditor)xpointer(//namespace:enumeration)"/>
+    </cr:register_list>
+    -->
+    <cr:register_list filter="AARCH32" name="System">
+        <xi:include href="V8_AARCH32_ArchitecturalSystemRegisters.inc" xpointer="xmlns(namespace=http://www.arm.com/core_reg)xpointer(//namespace:register_group)"/>
+    </cr:register_list>
+    <cr:register_list filter="AARCH64" name="System">
+        <xi:include href="V8_AARCH64_ArchitecturalSystemRegisters.inc" xpointer="xmlns(namespace=http://www.arm.com/core_reg)xpointer(//namespace:register_group)"/>
+        <xi:include href="Registers/System/ThunderX_AARCH64_ImpDef.xml" xpointer="xmlns(namespace=http://www.arm.com/core_reg)xpointer(//namespace:register_group)"/>
+        <!-- <xi:include href="Registers/System/ThunderX_AARCH64_ImpDef.xml" xpointer="xmlns(namespace=http://com.arm.targetconfigurationeditor)xpointer(//namespace:enumeration)"/> -->
+    </cr:register_list>
+    <cr:register_list filter="AARCH64" name="GIC">
+        <xi:include href="Registers/GIC/Cortex-A15_GICH.xml" xpointer="xmlns(namespace=http://www.arm.com/core_reg)xpointer(//namespace:register_group)" />
+        <xi:include href="Registers/GIC/Cortex-A15_GICC.xml" xpointer="xmlns(namespace=http://www.arm.com/core_reg)xpointer(//namespace:register_group)" />
+        <xi:include href="Registers/GIC/Cortex-A15_GICV.xml" xpointer="xmlns(namespace=http://www.arm.com/core_reg)xpointer(//namespace:register_group)" />
+        <xi:include href="Registers/GIC/Cortex-A15_GICD.xml" xpointer="xmlns(namespace=http://www.arm.com/core_reg)xpointer(//namespace:register_group)" />
+    </cr:register_list>
+
+</core_definition>

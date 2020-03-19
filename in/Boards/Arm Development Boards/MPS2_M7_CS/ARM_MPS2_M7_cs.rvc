@@ -1,0 +1,453 @@
+<?xml version="1.0"?>
+
+<?RVConfigUtility MajorVersion = "0" MinorVersion = "0" PatchVersion = "0"?>
+<RVConfigUtility>
+   <redistributable value="true"/>
+   <RVConfigModule>
+      <?RVConfig DLL_NAME = "connection" MajorVersion = "1" MinorVersion = "0" PatchVersion = "0" Expanded = "true" Active = "false" Enabled = "true" UserLabel = ""?>
+      <ScanChainNames Type = "Str">?</ScanChainNames>
+      <ConnectionManager Type = "User" Inherited = "true">0x01F6082C</ConnectionManager>
+      <TemplateManager Type = "User" Inherited = "true">0x01F60848</TemplateManager>
+      <BrokerCoreList Type = "User" Inherited = "true">0x01F6087C</BrokerCoreList>
+      <PlatformName Type = "Str" Inherited = "true"></PlatformName>
+      <NoOfScanChains Type = "Int32" Inherited = "true">1</NoOfScanChains>
+      <FirmwareVersion Type = "Str">4.17.0</FirmwareVersion>
+      <VehicleType Type = "Str">DSTREAM</VehicleType>
+      <ConnectionName Type = "Str" Inherited = "true"></ConnectionName>
+      <ChildModuleName Type = "Str" Inherited = "true">Devices</ChildModuleName>
+      <JtagClockFreq Type = "UInt32" Inherited = "true">10000000</JtagClockFreq>
+      <JtagClockType Type = "UInt32" Inherited = "true">0</JtagClockType>
+      <LVDSProbeMode Type = "UInt32" Inherited = "true">1</LVDSProbeMode>
+      <SWJEnable Type = "Int32" Inherited = "true">1</SWJEnable>
+      <UseDeprecatedSWJ Type = "Int32" Inherited = "true">0</UseDeprecatedSWJ>
+      <RVConfigModule>
+         <?RVConfig DLL_NAME = "scanchain" Expanded = "true" Active = "false" Enabled = "true" UserLabel = ""?>
+         <ModuleName Type = "Str">Devices</ModuleName>
+         <TemplateName Type = "Str" Inherited = "true">/real-ice/jtag-templates/arm/cs_memap/V1.0</TemplateName>
+         <ChildModuleName Type = "Str" Inherited = "true">CSMEMAP</ChildModuleName>
+         <TAPPosUpdateInProgress Type = "Str" Inherited = "true">FALSE</TAPPosUpdateInProgress>
+         <CurrentTAPPos Type = "Str" Inherited = "true">_9_</CurrentTAPPos>
+         <NewTAPPos Type = "Str" Inherited = "true">_9_</NewTAPPos>
+         <DeviceOptions Type = "Str" Inherited = "true"></DeviceOptions>
+         <IRLength Type = "Str" Inherited = "true">0</IRLength>
+         <RVConfigModule>
+            <?RVConfig DLL_NAME = "dynamiccore" Expanded = "true" Active = "false" Enabled = "true" UserLabel = ""?>
+            <TemplateName Type = "Str">/real-ice/jtag-templates/arm/cs_arm_dap/V1.0</TemplateName>
+            <ModuleName Type = "Str">ARMCS-DP</ModuleName>
+            <IRLength Type = "Str">4</IRLength>
+            <DeviceOptions Type = "Str"></DeviceOptions>
+            <CanonicalName Type = "Str">ARMCS-DP</CanonicalName>
+            <Class Type = "Str">DebugPort</Class>
+            <DataList Type = "Branch">
+               <DataListUID Type = "User">0x00000011</DataListUID>
+               <MEMORY_ACCESS_AP Type = "Str">0x00000000</MEMORY_ACCESS_AP>
+            </DataList>
+            <ExtendedTypeInfo Type = "Branch"/>
+         </RVConfigModule>
+         <RVConfigModule>
+            <?RVConfig DLL_NAME = "dynamiccore" Expanded = "true" Active = "false" Enabled = "true" UserLabel = ""?>
+            <TemplateName Type = "Str">/real-ice/jtag-templates/arm/cs_tf/V1.0</TemplateName>
+            <ModuleName Type = "Str">CSTFunnel</ModuleName>
+            <IRLength Type = "Str">0</IRLength>
+            <DeviceOptions Type = "Str"></DeviceOptions>
+            <CanonicalName Type = "Str">CSTFunnel</CanonicalName>
+            <Class Type = "Str">Link</Class>
+            <DataList Type = "Branch">
+               <DataListUID Type = "User">0x00000012</DataListUID>
+               <CORESIGHT_AP_INDEX Type = "Str">0x00000000</CORESIGHT_AP_INDEX>
+               <CORESIGHT_BASE_ADDRESS Type = "Str">0xE00F1000</CORESIGHT_BASE_ADDRESS>
+            </DataList>
+            <ExtendedTypeInfo Type = "Branch"/>
+         </RVConfigModule>
+         <RVConfigModule>
+            <?RVConfig DLL_NAME = "dynamiccore" Expanded = "true" Active = "false" Enabled = "true" UserLabel = ""?>
+            <TemplateName Type = "Str">/real-ice/jtag-templates/arm/cs_tpiu/V1.0</TemplateName>
+            <ModuleName Type = "Str">CSTPIU</ModuleName>
+            <IRLength Type = "Str">0</IRLength>
+            <DeviceOptions Type = "Str"></DeviceOptions>
+            <CanonicalName Type = "Str">CSTPIU</CanonicalName>
+            <Class Type = "Str">TraceSink</Class>
+            <DataList Type = "Branch">
+               <DataListUID Type = "User">0x00000013</DataListUID>
+               <CORESIGHT_AP_INDEX Type = "Str">0x00000000</CORESIGHT_AP_INDEX>
+               <CORESIGHT_BASE_ADDRESS Type = "Str">0xE00F2000</CORESIGHT_BASE_ADDRESS>
+            </DataList>
+            <ExtendedTypeInfo Type = "Branch"/>
+         </RVConfigModule>
+         <RVConfigModule>
+            <?RVConfig DLL_NAME = "dynamiccore" Expanded = "false" Active = "false" Enabled = "true" UserLabel = ""?>
+            <TemplateName Type = "Str">/real-ice/jtag-templates/arm/cs_tf/V1.0</TemplateName>
+            <ModuleName Type = "Str">CSTFunnel</ModuleName>
+            <IRLength Type = "Str">0</IRLength>
+            <DeviceOptions Type = "Str"></DeviceOptions>
+            <CanonicalName Type = "Str">CSTFunnel</CanonicalName>
+            <Class Type = "Str">Link</Class>
+            <DataList Type = "Branch">
+               <DataListUID Type = "User">0x00000014</DataListUID>
+               <CORESIGHT_AP_INDEX Type = "Str">0x00000000</CORESIGHT_AP_INDEX>
+               <CORESIGHT_BASE_ADDRESS Type = "Str">0xE00F3000</CORESIGHT_BASE_ADDRESS>
+            </DataList>
+            <ExtendedTypeInfo Type = "Branch"/>
+         </RVConfigModule>
+         <RVConfigModule>
+            <?RVConfig DLL_NAME = "dynamiccore" Expanded = "true" Active = "false" Enabled = "true" UserLabel = ""?>
+            <TemplateName Type = "Str">/real-ice/jtag-templates/arm/cs_tmc/V1.0</TemplateName>
+            <ModuleName Type = "Str">CSTMC</ModuleName>
+            <IRLength Type = "Str">0</IRLength>
+            <DeviceOptions Type = "Str"></DeviceOptions>
+            <CanonicalName Type = "Str">CSTMC</CanonicalName>
+            <Class Type = "Str">TraceSink</Class>
+            <DataList Type = "Branch">
+               <DataListUID Type = "User">0x00000015</DataListUID>
+               <CORESIGHT_AP_INDEX Type = "Str">0x00000000</CORESIGHT_AP_INDEX>
+               <CORESIGHT_BASE_ADDRESS Type = "Str">0xE00F4000</CORESIGHT_BASE_ADDRESS>
+            </DataList>
+            <ExtendedTypeInfo Type = "Branch"/>
+         </RVConfigModule>
+         <RVConfigModule>
+            <?RVConfig DLL_NAME = "dynamiccore" Expanded = "true" Active = "false" Enabled = "true" UserLabel = ""?>
+            <TemplateName Type = "Str">/real-ice/jtag-templates/arm/cs_cti/V1.0</TemplateName>
+            <ModuleName Type = "Str">CSCTI</ModuleName>
+            <IRLength Type = "Str">0</IRLength>
+            <DeviceOptions Type = "Str"></DeviceOptions>
+            <CanonicalName Type = "Str">CSCTI</CanonicalName>
+            <Class Type = "Str">Link</Class>
+            <DataList Type = "Branch">
+               <DataListUID Type = "User">0x00000016</DataListUID>
+               <CORESIGHT_AP_INDEX Type = "Str">0x00000000</CORESIGHT_AP_INDEX>
+               <CORESIGHT_BASE_ADDRESS Type = "Str">0xE00F5000</CORESIGHT_BASE_ADDRESS>
+               <SYNCH_START_ENABLE Type = "Str">false</SYNCH_START_ENABLE>
+               <SYNCH_START_CHANNEL Type = "Str">0</SYNCH_START_CHANNEL>
+            </DataList>
+            <ExtendedTypeInfo Type = "Branch"/>
+         </RVConfigModule>
+         <RVConfigModule>
+            <?RVConfig DLL_NAME = "dynamiccore" Expanded = "false" Active = "false" Enabled = "true" UserLabel = ""?>
+            <TemplateName Type = "Str">/real-ice/jtag-templates/arm/cortexm7/V1.0</TemplateName>
+            <ModuleName Type = "Str">Cortex-M7</ModuleName>
+            <IRLength Type = "Str">0</IRLength>
+            <DeviceOptions Type = "Str">ETM,FPv4-SP</DeviceOptions>
+            <CanonicalName Type = "Str">Cortex-M7</CanonicalName>
+            <Class Type = "Str">CoreExecutable</Class>
+            <DataList Type = "Branch">
+               <DataListUID Type = "User">0x00000017</DataListUID>
+               <CORESIGHT_AP_INDEX Type = "Str">0x00000000</CORESIGHT_AP_INDEX>
+               <JTAG_TIMEOUTS_ENABLED Type = "Str">True</JTAG_TIMEOUTS_ENABLED>
+               <ALLOW_EXECUTION_WITHOUT_T_BIT Type = "Str">False</ALLOW_EXECUTION_WITHOUT_T_BIT>
+               <POST_RESET_STATE Type = "Str">1</POST_RESET_STATE>
+               <CTI_SYNCH_START Type = "Str">False</CTI_SYNCH_START>
+               <FORCE_CACHE_MAINTENANCE Type = "Str">False</FORCE_CACHE_MAINTENANCE>
+               <CLEAR_BRKHW Type = "Str">True</CLEAR_BRKHW>
+            </DataList>
+            <ExtendedTypeInfo Type = "Branch"/>
+         </RVConfigModule>
+         <RVConfigModule>
+            <?RVConfig DLL_NAME = "dynamiccore" Expanded = "true" Active = "false" Enabled = "true" UserLabel = ""?>
+            <TemplateName Type = "Str">/real-ice/jtag-templates/arm/cs_itm/V1.0</TemplateName>
+            <ModuleName Type = "Str">CSITM</ModuleName>
+            <IRLength Type = "Str">0</IRLength>
+            <DeviceOptions Type = "Str"></DeviceOptions>
+            <CanonicalName Type = "Str">CSITM</CanonicalName>
+            <Class Type = "Str">TraceSource</Class>
+            <DataList Type = "Branch">
+               <DataListUID Type = "User">0x00000018</DataListUID>
+               <CORESIGHT_AP_INDEX Type = "Str">0x00000000</CORESIGHT_AP_INDEX>
+               <CORESIGHT_BASE_ADDRESS Type = "Str">0xE0000000</CORESIGHT_BASE_ADDRESS>
+            </DataList>
+            <ExtendedTypeInfo Type = "Branch"/>
+         </RVConfigModule>
+         <RVConfigModule>
+            <?RVConfig DLL_NAME = "dynamiccore" Expanded = "false" Active = "true" Enabled = "true" UserLabel = ""?>
+            <TemplateName Type = "Str">/real-ice/jtag-templates/arm/cs_etm/V1.0</TemplateName>
+            <ModuleName Type = "Str">CSETM</ModuleName>
+            <IRLength Type = "Str">0</IRLength>
+            <DeviceOptions Type = "Str"></DeviceOptions>
+            <CanonicalName Type = "Str">CSETM</CanonicalName>
+            <Class Type = "Str">TraceSource</Class>
+            <DataList Type = "Branch">
+               <DataListUID Type = "User">0x00000019</DataListUID>
+               <CORESIGHT_AP_INDEX Type = "Str">0x00000000</CORESIGHT_AP_INDEX>
+               <CORESIGHT_BASE_ADDRESS Type = "Str">0xE0041000</CORESIGHT_BASE_ADDRESS>
+               <POWERUP_ON_CONNECT Type = "Str">true</POWERUP_ON_CONNECT>
+            </DataList>
+            <ExtendedTypeInfo Type = "Branch"/>
+         </RVConfigModule>
+         <RVConfigModule>
+            <?RVConfig DLL_NAME = "dynamiccore" Expanded = "false" Active = "false" Enabled = "true" UserLabel = ""?>
+            <TemplateName Type = "Str">/real-ice/jtag-templates/arm/cs_memap/V1.0</TemplateName>
+            <ModuleName Type = "Str">CSMEMAP</ModuleName>
+            <IRLength Type = "Str">0</IRLength>
+            <DeviceOptions Type = "Str"></DeviceOptions>
+            <CanonicalName Type = "Str">CSMEMAP</CanonicalName>
+            <Class Type = "Str">AccessPort</Class>
+            <DataList Type = "Branch">
+               <DataListUID Type = "User">0x0000001A</DataListUID>
+               <CORESIGHT_AP_INDEX Type = "Str">0x00000000</CORESIGHT_AP_INDEX>
+            </DataList>
+            <ExtendedTypeInfo Type = "Branch"/>
+         </RVConfigModule>
+         <DataList Type = "Branch">
+            <DataListUID Type = "User">0x0000000E</DataListUID>
+            <ClockType Type = "Int32">7</ClockType>
+            <ClockSpeed Type = "Str">10000000</ClockSpeed>
+            <OtherSpeed Type = "Str">10.000 MHz</OtherSpeed>
+            <Tap_Count Type = "UInt32">10</Tap_Count>
+            <Tap_0 Type = "Branch">
+               <DataListUID Type = "User">0x00000011</DataListUID>
+               <CoreName Type = "Str">ARMCS-DP</CoreName>
+               <FamilyName Type = "Str">CoreSight</FamilyName>
+               <DllName Type = "Str">dynamiccore</DllName>
+               <TemplateVersion Type = "Str">1:0:0</TemplateVersion>
+               <DllVersion Type = "Str">rvi.dynamic.core</DllVersion>
+               <Description Type = "Str">ARMCS-DP</Description>
+               <IRLength Type = "Str">4</IRLength>
+               <TemplateName Type = "Str">/real-ice/jtag-templates/arm/cs_arm_dap/V1.0</TemplateName>
+               <DeviceID Type = "Str"></DeviceID>
+               <Manufacturer Type = "Str"></Manufacturer>
+               <DeviceOptions Type = "Str"></DeviceOptions>
+               <Class Type = "Str">DebugPort</Class>
+               <CanonicalName Type = "Str">ARMCS-DP</CanonicalName>
+            </Tap_0>
+            <Tap_1 Type = "Branch">
+               <DataListUID Type = "User">0x00000012</DataListUID>
+               <CoreName Type = "Str">CSTFunnel</CoreName>
+               <FamilyName Type = "Str">CoreSight</FamilyName>
+               <DllName Type = "Str">dynamiccore</DllName>
+               <TemplateVersion Type = "Str">1:0:0</TemplateVersion>
+               <DllVersion Type = "Str">rvi.dynamic.core</DllVersion>
+               <Description Type = "Str">CSTFunnel</Description>
+               <IRLength Type = "Str">0</IRLength>
+               <TemplateName Type = "Str">/real-ice/jtag-templates/arm/cs_tf/V1.0</TemplateName>
+               <DeviceID Type = "Str"></DeviceID>
+               <Manufacturer Type = "Str"></Manufacturer>
+               <DeviceOptions Type = "Str"></DeviceOptions>
+               <Class Type = "Str">Link</Class>
+               <CanonicalName Type = "Str">CSTFunnel</CanonicalName>
+            </Tap_1>
+            <Tap_2 Type = "Branch">
+               <DataListUID Type = "User">0x00000013</DataListUID>
+               <CoreName Type = "Str">CSTPIU</CoreName>
+               <FamilyName Type = "Str">CoreSight</FamilyName>
+               <DllName Type = "Str">dynamiccore</DllName>
+               <TemplateVersion Type = "Str">1:0:0</TemplateVersion>
+               <DllVersion Type = "Str">rvi.dynamic.core</DllVersion>
+               <Description Type = "Str">CSTPIU</Description>
+               <IRLength Type = "Str">0</IRLength>
+               <TemplateName Type = "Str">/real-ice/jtag-templates/arm/cs_tpiu/V1.0</TemplateName>
+               <DeviceID Type = "Str"></DeviceID>
+               <Manufacturer Type = "Str"></Manufacturer>
+               <DeviceOptions Type = "Str"></DeviceOptions>
+               <Class Type = "Str">TraceSink</Class>
+               <CanonicalName Type = "Str">CSTPIU</CanonicalName>
+            </Tap_2>
+            <Tap_3 Type = "Branch">
+               <DataListUID Type = "User">0x00000014</DataListUID>
+               <CoreName Type = "Str">CSTFunnel</CoreName>
+               <FamilyName Type = "Str">CoreSight</FamilyName>
+               <DllName Type = "Str">dynamiccore</DllName>
+               <TemplateVersion Type = "Str">1:0:0</TemplateVersion>
+               <DllVersion Type = "Str">rvi.dynamic.core</DllVersion>
+               <Description Type = "Str">CSTFunnel</Description>
+               <IRLength Type = "Str">0</IRLength>
+               <TemplateName Type = "Str">/real-ice/jtag-templates/arm/cs_tf/V1.0</TemplateName>
+               <DeviceID Type = "Str"></DeviceID>
+               <Manufacturer Type = "Str"></Manufacturer>
+               <DeviceOptions Type = "Str"></DeviceOptions>
+               <Class Type = "Str">Link</Class>
+               <CanonicalName Type = "Str">CSTFunnel</CanonicalName>
+            </Tap_3>
+            <Tap_4 Type = "Branch">
+               <DataListUID Type = "User">0x00000015</DataListUID>
+               <CoreName Type = "Str">CSTMC</CoreName>
+               <FamilyName Type = "Str">CoreSight</FamilyName>
+               <DllName Type = "Str">dynamiccore</DllName>
+               <TemplateVersion Type = "Str">1:0:0</TemplateVersion>
+               <DllVersion Type = "Str">rvi.dynamic.core</DllVersion>
+               <Description Type = "Str">CSTMC</Description>
+               <IRLength Type = "Str">0</IRLength>
+               <TemplateName Type = "Str">/real-ice/jtag-templates/arm/cs_tmc/V1.0</TemplateName>
+               <DeviceID Type = "Str"></DeviceID>
+               <Manufacturer Type = "Str"></Manufacturer>
+               <DeviceOptions Type = "Str"></DeviceOptions>
+               <Class Type = "Str">TraceSink</Class>
+               <CanonicalName Type = "Str">CSTMC</CanonicalName>
+            </Tap_4>
+            <Tap_5 Type = "Branch">
+               <DataListUID Type = "User">0x00000016</DataListUID>
+               <CoreName Type = "Str">CSCTI</CoreName>
+               <FamilyName Type = "Str">CoreSight</FamilyName>
+               <DllName Type = "Str">dynamiccore</DllName>
+               <TemplateVersion Type = "Str">1:0:0</TemplateVersion>
+               <DllVersion Type = "Str">rvi.dynamic.core</DllVersion>
+               <Description Type = "Str">CSCTI</Description>
+               <IRLength Type = "Str">0</IRLength>
+               <TemplateName Type = "Str">/real-ice/jtag-templates/arm/cs_cti/V1.0</TemplateName>
+               <DeviceID Type = "Str"></DeviceID>
+               <Manufacturer Type = "Str"></Manufacturer>
+               <DeviceOptions Type = "Str"></DeviceOptions>
+               <Class Type = "Str">Link</Class>
+               <CanonicalName Type = "Str">CSCTI</CanonicalName>
+            </Tap_5>
+            <Tap_6 Type = "Branch">
+               <DataListUID Type = "User">0x00000017</DataListUID>
+               <CoreName Type = "Str">Cortex-M7</CoreName>
+               <FamilyName Type = "Str">Cortex</FamilyName>
+               <DllName Type = "Str">dynamiccore</DllName>
+               <TemplateVersion Type = "Str">1:0:0</TemplateVersion>
+               <DllVersion Type = "Str">rvi.dynamic.core</DllVersion>
+               <Description Type = "Str">Cortex-M7</Description>
+               <IRLength Type = "Str">0</IRLength>
+               <TemplateName Type = "Str">/real-ice/jtag-templates/arm/cortexm7/V1.0</TemplateName>
+               <DeviceID Type = "Str"></DeviceID>
+               <Manufacturer Type = "Str"></Manufacturer>
+               <DeviceOptions Type = "Str">ETM,FPv4-SP</DeviceOptions>
+               <Class Type = "Str">CoreExecutable</Class>
+               <CanonicalName Type = "Str">Cortex-M7</CanonicalName>
+            </Tap_6>
+            <Tap_7 Type = "Branch">
+               <DataListUID Type = "User">0x00000018</DataListUID>
+               <CoreName Type = "Str">CSITM</CoreName>
+               <FamilyName Type = "Str">CoreSight</FamilyName>
+               <DllName Type = "Str">dynamiccore</DllName>
+               <TemplateVersion Type = "Str">1:0:0</TemplateVersion>
+               <DllVersion Type = "Str">rvi.dynamic.core</DllVersion>
+               <Description Type = "Str">CSITM</Description>
+               <IRLength Type = "Str">0</IRLength>
+               <TemplateName Type = "Str">/real-ice/jtag-templates/arm/cs_itm/V1.0</TemplateName>
+               <DeviceID Type = "Str"></DeviceID>
+               <Manufacturer Type = "Str"></Manufacturer>
+               <DeviceOptions Type = "Str"></DeviceOptions>
+               <Class Type = "Str">TraceSource</Class>
+               <CanonicalName Type = "Str">CSITM</CanonicalName>
+            </Tap_7>
+            <Tap_8 Type = "Branch">
+               <DataListUID Type = "User">0x00000019</DataListUID>
+               <CoreName Type = "Str">CSETM</CoreName>
+               <FamilyName Type = "Str">CoreSight</FamilyName>
+               <DllName Type = "Str">dynamiccore</DllName>
+               <TemplateVersion Type = "Str">1:0:0</TemplateVersion>
+               <DllVersion Type = "Str">rvi.dynamic.core</DllVersion>
+               <Description Type = "Str">CSETM</Description>
+               <IRLength Type = "Str">0</IRLength>
+               <TemplateName Type = "Str">/real-ice/jtag-templates/arm/cs_etm/V1.0</TemplateName>
+               <DeviceID Type = "Str"></DeviceID>
+               <Manufacturer Type = "Str"></Manufacturer>
+               <DeviceOptions Type = "Str"></DeviceOptions>
+               <Class Type = "Str">TraceSource</Class>
+               <CanonicalName Type = "Str">CSETM</CanonicalName>
+            </Tap_8>
+            <Tap_9 Type = "Branch">
+               <DataListUID Type = "User">0x0000001A</DataListUID>
+               <CoreName Type = "Str">CSMEMAP</CoreName>
+               <FamilyName Type = "Str">CoreSight</FamilyName>
+               <DllName Type = "Str">dynamiccore</DllName>
+               <TemplateVersion Type = "Str">1:0:0</TemplateVersion>
+               <DllVersion Type = "Str">rvi.dynamic.core</DllVersion>
+               <Description Type = "Str">CSMEMAP</Description>
+               <IRLength Type = "Str">0</IRLength>
+               <TemplateName Type = "Str">/real-ice/jtag-templates/arm/cs_memap/V1.0</TemplateName>
+               <DeviceID Type = "Str"></DeviceID>
+               <Manufacturer Type = "Str"></Manufacturer>
+               <DeviceOptions Type = "Str"></DeviceOptions>
+               <Class Type = "Str">AccessPort</Class>
+               <CanonicalName Type = "Str">CSMEMAP</CanonicalName>
+            </Tap_9>
+         </DataList>
+      </RVConfigModule>
+      <RVConfigModule>
+         <?RVConfig DLL_NAME = "advanced" Expanded = "true" Active = "false" Enabled = "true" UserLabel = ""?>
+         <ModuleName Type = "Str">Advanced</ModuleName>
+         <ScanChain0BitPattern Type = "Int32">0</ScanChain0BitPattern>
+         <DataList Type = "Branch">
+            <ResetOperation Type = "UInt32">0</ResetOperation>
+            <TResetOnInitConnect Type = "UInt32">1</TResetOnInitConnect>
+            <SResetOnInitConnect Type = "UInt32">0</SResetOnInitConnect>
+            <ResetHoldTime Type = "UInt32">100</ResetHoldTime>
+            <PostResetDelay Type = "UInt32">1000</PostResetDelay>
+            <nTRSTHoldTime Type = "UInt32">10</nTRSTHoldTime>
+            <nTRSTPostResetTime Type = "UInt32">10</nTRSTPostResetTime>
+            <DoSoftTAPReset Type = "UInt32">1</DoSoftTAPReset>
+            <Linked_SRST_TRST Type = "UInt32">0</Linked_SRST_TRST>
+            <AllowICETAPReset Type = "UInt32">1</AllowICETAPReset>
+            <AllowICELatchSysRst Type = "UInt32">1</AllowICELatchSysRst>
+            <nTRSTHighMode Type = "UInt32">0</nTRSTHighMode>
+            <nTRSTLowMode Type = "UInt32">0</nTRSTLowMode>
+            <nSRSTHighMode Type = "UInt32">1</nSRSTHighMode>
+            <nSRSTLowMode Type = "UInt32">0</nSRSTLowMode>
+            <LVDSProbeMode Type = "UInt32">1</LVDSProbeMode>
+            <SWJEnable Type = "UInt32">1</SWJEnable>
+            <UseDeprecatedSWJ Type = "UInt32">0</UseDeprecatedSWJ>
+            <UserOut_P1 Type = "UInt32">0</UserOut_P1>
+            <UserOut_P2 Type = "UInt32">0</UserOut_P2>
+            <UserOut_P3 Type = "UInt32">0</UserOut_P3>
+            <UserOut_P4 Type = "UInt32">0</UserOut_P4>
+            <UserOut_P5 Type = "UInt32">0</UserOut_P5>
+            <UserOut_P6_COAX Type = "UInt32">0</UserOut_P6_COAX>
+            <UserOut_DBGRQ Type = "UInt32">0</UserOut_DBGRQ>
+            <PROBE Type = "UInt32">0</PROBE>
+            <VCC Type = "UInt32">0</VCC>
+            <CONNECTOR Type = "Str"></CONNECTOR>
+            <SWOMode Type = "UInt32">0</SWOMode>
+            <SWOBaudRate Type = "UInt32">0</SWOBaudRate>
+            <PythonScript Type = "Str">import LDDI&#x0A;def HandleExeReset(flags):&#x0A;    if flags &amp; 0x20:&#x0A;        flags = (flags &amp; ~0x20) | 0x08&#x0A;    return LDDI.handleExeReset(flags)&#x0A;</PythonScript>            
+            <PowerFilterTime Type = "UInt32">100</PowerFilterTime>
+            <DSTREAMCS20 Type = "UInt32">0</DSTREAMCS20>
+         </DataList>
+      </RVConfigModule>
+      <RVConfigModule>
+         <?RVConfig DLL_NAME = "trace" Expanded = "true" Active = "false" Enabled = "true" UserLabel = ""?>
+         <DataList Type = "Branch">
+            <DELAY_TRACE_CLOCK Type = "Int32">2325</DELAY_TRACE_CLOCK>
+            <DELAY_TRACE_SIGNAL_1 Type = "Int32">-600</DELAY_TRACE_SIGNAL_1>
+            <DELAY_TRACE_SIGNAL_2 Type = "Int32">-600</DELAY_TRACE_SIGNAL_2>
+            <DELAY_TRACE_SIGNAL_3 Type = "Int32">-600</DELAY_TRACE_SIGNAL_3>
+            <DELAY_TRACE_SIGNAL_4 Type = "Int32">-600</DELAY_TRACE_SIGNAL_4>
+            <DELAY_TRACE_SIGNAL_5 Type = "Int32">-600</DELAY_TRACE_SIGNAL_5>
+            <DELAY_TRACE_SIGNAL_6 Type = "Int32">-600</DELAY_TRACE_SIGNAL_6>
+            <DELAY_TRACE_SIGNAL_7 Type = "Int32">-600</DELAY_TRACE_SIGNAL_7>
+            <DELAY_TRACE_SIGNAL_8 Type = "Int32">-600</DELAY_TRACE_SIGNAL_8>
+            <DELAY_TRACE_SIGNAL_9 Type = "Int32">-600</DELAY_TRACE_SIGNAL_9>
+            <DELAY_TRACE_SIGNAL_10 Type = "Int32">-600</DELAY_TRACE_SIGNAL_10>
+            <DELAY_TRACE_SIGNAL_11 Type = "Int32">-600</DELAY_TRACE_SIGNAL_11>
+            <DELAY_TRACE_SIGNAL_12 Type = "Int32">-600</DELAY_TRACE_SIGNAL_12>
+            <DELAY_TRACE_SIGNAL_13 Type = "Int32">-600</DELAY_TRACE_SIGNAL_13>
+            <DELAY_TRACE_SIGNAL_14 Type = "Int32">-600</DELAY_TRACE_SIGNAL_14>
+            <DELAY_TRACE_SIGNAL_15 Type = "Int32">-600</DELAY_TRACE_SIGNAL_15>
+            <DELAY_TRACE_SIGNAL_16 Type = "Int32">-600</DELAY_TRACE_SIGNAL_16>
+            <DELAY_TRACE_SIGNAL_17 Type = "Int32">-600</DELAY_TRACE_SIGNAL_17>
+            <DELAY_TRACE_SIGNAL_18 Type = "Int32">-600</DELAY_TRACE_SIGNAL_18>
+            <DELAY_TRACE_SIGNAL_19 Type = "Int32">-600</DELAY_TRACE_SIGNAL_19>
+            <DELAY_TRACE_SIGNAL_20 Type = "Int32">-600</DELAY_TRACE_SIGNAL_20>
+            <DELAY_TRACE_SIGNAL_21 Type = "Int32">0</DELAY_TRACE_SIGNAL_21>
+            <DELAY_TRACE_SIGNAL_22 Type = "Int32">0</DELAY_TRACE_SIGNAL_22>
+            <DELAY_TRACE_SIGNAL_23 Type = "Int32">0</DELAY_TRACE_SIGNAL_23>
+            <DELAY_TRACE_SIGNAL_24 Type = "Int32">0</DELAY_TRACE_SIGNAL_24>
+            <DELAY_TRACE_SIGNAL_25 Type = "Int32">0</DELAY_TRACE_SIGNAL_25>
+            <DELAY_TRACE_SIGNAL_26 Type = "Int32">0</DELAY_TRACE_SIGNAL_26>
+            <DELAY_TRACE_SIGNAL_27 Type = "Int32">0</DELAY_TRACE_SIGNAL_27>
+            <DELAY_TRACE_SIGNAL_28 Type = "Int32">0</DELAY_TRACE_SIGNAL_28>
+            <DELAY_TRACE_SIGNAL_29 Type = "Int32">0</DELAY_TRACE_SIGNAL_29>
+            <DELAY_TRACE_SIGNAL_30 Type = "Int32">0</DELAY_TRACE_SIGNAL_30>
+            <DELAY_TRACE_SIGNAL_31 Type = "Int32">0</DELAY_TRACE_SIGNAL_31>
+            <DELAY_TRACE_SIGNAL_32 Type = "Int32">0</DELAY_TRACE_SIGNAL_32>
+            <DELAY_TRACE_SIGNAL_33 Type = "Int32">0</DELAY_TRACE_SIGNAL_33>
+            <DELAY_TRACE_SIGNAL_34 Type = "Int32">0</DELAY_TRACE_SIGNAL_34>
+            <DELAY_TRACE_SIGNAL_35 Type = "Int32">0</DELAY_TRACE_SIGNAL_35>
+            <DELAY_TRACE_SIGNAL_36 Type = "Int32">0</DELAY_TRACE_SIGNAL_36>
+         </DataList>
+      </RVConfigModule>
+      <ConnectionType Type = "Str">TCP/IP</ConnectionType>
+      <CoresightAssociations Type = "Branch">
+         <Device Type = "EnumStr">Name=ARMCS-DP_0;Type=ARMCS-DP</Device>
+         <Device Type = "EnumStr">Name=CSTFunnel_0;Type=CSTFunnel</Device>
+         <Device Type = "EnumStr">Name=CSTPIU_0;Type=CSTPIU</Device>
+         <Device Type = "EnumStr">Name=CSTFunnel_1;Type=CSTFunnel</Device>
+         <Device Type = "EnumStr">Name=CSTMC_0;Type=CSTMC</Device>
+         <Device Type = "EnumStr">Name=CSCTI_0;Type=CSCTI</Device>
+         <Device Type = "EnumStr">Name=Cortex-M7_0;Type=Cortex-M7</Device>
+         <Device Type = "EnumStr">Name=CSITM_0;Type=CSITM</Device>
+         <Device Type = "EnumStr">Name=CSETM_0;Type=CSETM</Device>
+         <Device Type = "EnumStr">Name=CSMEMAP_0;Type=CSMEMAP</Device>
+      </CoresightAssociations>
+   </RVConfigModule>
+</RVConfigUtility>

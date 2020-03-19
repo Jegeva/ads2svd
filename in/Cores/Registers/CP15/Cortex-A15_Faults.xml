@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<register_list name="CP15"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns="http://www.arm.com/core_reg"
+    xsi:schemaLocation="http://www.arm.com/core_reg ../../../Schemas/core_register_definition.xsd"
+    xmlns:xi="http://www.w3.org/2001/XInclude"
+    xmlns:tcf="http://com.arm.targetconfigurationeditor">
+    <register_group name="FaultHandling">
+        <gui_name language="en">Fault Handling</gui_name>
+        <description language="en">PL1 Fault-Handling Registers</description>
+        <xi:include href="Cortex-v7A_Faults.xml" xpointer="xmlns(reg_group=http://www.arm.com/core_reg)xpointer(//reg_group:register)"/>
+        <register access="RW" name="ADFSR" size="4">
+            <gui_name language="en">ADFSR</gui_name>
+            <alias_name>CP15_ADFSR</alias_name>
+            <device_name type="rvi">CP15_ADFSR</device_name>
+            <device_name type="cadi">ADFSR</device_name>
+            <device_name type="rvi">CP15_ADFSR</device_name>
+            <device_name type="cadi">ADFSR</device_name>
+            <description language="en">Auxiliary Data Fault Status Register</description>
+            <bitField conditional="false" name="VALID">
+                <gui_name language="en">VALID</gui_name>
+                <description language="en">Valid</description>
+                <definition>[31]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="HADFSR_RAMID" name="RAM_ID">
+                <gui_name language="en">RAM_ID</gui_name>
+                <description language="en">RAM Identifier</description>
+                <definition>[30:24]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="HADFSR_L2ERR" name="L2ERR">
+                <gui_name language="en">L2ERR</gui_name>
+                <description language="en">L2 Error</description>
+                <definition>[23]</definition>
+            </bitField>
+            <bitField conditional="false" name="BANK_WAY">
+                <gui_name language="en">BANK_WAY</gui_name>
+                <description language="en">L1 ECC Double-Bit Error Bank/Way</description>
+                <definition>[22:18]</definition>
+            </bitField>
+            <bitField conditional="false" name="INDEX">
+                <gui_name language="en">INDEX</gui_name>
+                <description language="en">L1 ECC Double-Bit Error Index Address</description>
+                <definition>[17:0]</definition>
+            </bitField>
+            <!-- Cortex-A7 and A12 (but not A15) do not implement ADFSR, so this register is always UNK/SBZP for those cores. -->
+        </register>
+        <register access="RW" name="S_ADFSR" size="4"> <!-- Secure variant -->
+            <gui_name language="en">S_ADFSR</gui_name>
+            <alias_name>CP15_S_ADFSR</alias_name>
+            <device_name type="rvi">CP15_S_ADFSR</device_name>
+            <device_name type="cadi">S_ADFSR</device_name>
+            <device_name type="rvi">CP15_S_ADFSR</device_name>
+            <device_name type="cadi">S_ADFSR</device_name>
+            <description language="en">[S] Auxiliary Data Fault Status Register</description>
+            <!-- Cortex-A7 and A12 (but not A15) do not implement ADFSR, so this register is always UNK/SBZP for those cores. -->
+            <bitField conditional="false" name="VALID">
+                <gui_name language="en">VALID</gui_name>
+                <description language="en">Valid</description>
+                <definition>[31]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="HADFSR_RAMID" name="RAM_ID">
+                <gui_name language="en">RAM_ID</gui_name>
+                <description language="en">RAM Identifier</description>
+                <definition>[30:24]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="HADFSR_L2ERR" name="L2ERR">
+                <gui_name language="en">L2ERR</gui_name>
+                <description language="en">L2 Error</description>
+                <definition>[23]</definition>
+            </bitField>
+            <bitField conditional="false" name="BANK_WAY">
+                <gui_name language="en">BANK_WAY</gui_name>
+                <description language="en">L1 ECC Double-Bit Error Bank/Way</description>
+                <definition>[22:18]</definition>
+            </bitField>
+            <bitField conditional="false" name="INDEX">
+                <gui_name language="en">INDEX</gui_name>
+                <description language="en">L1 ECC Double-Bit Error Index Address</description>
+                <definition>[17:0]</definition>
+            </bitField>
+        </register>
+        <register access="RW" name="N_ADFSR" size="4"> <!-- Non-secure variant -->
+            <gui_name language="en">N_ADFSR</gui_name>
+            <alias_name>CP15_N_ADFSR</alias_name>
+            <device_name type="rvi">CP15_N_ADFSR</device_name>
+            <device_name type="cadi">N_ADFSR</device_name>
+            <device_name type="rvi">CP15_N_ADFSR</device_name>
+            <device_name type="cadi">N_ADFSR</device_name>
+            <description language="en">[N] Auxiliary Data Fault Status Register</description>
+            <!-- Cortex-A7 and A12 (but not A15) do not implement ADFSR, so this register is always UNK/SBZP for those cores. -->
+            <bitField conditional="false" name="VALID">
+                <gui_name language="en">VALID</gui_name>
+                <description language="en">Valid</description>
+                <definition>[31]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="HADFSR_RAMID" name="RAM_ID">
+                <gui_name language="en">RAM_ID</gui_name>
+                <description language="en">RAM Identifier</description>
+                <definition>[30:24]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="HADFSR_L2ERR" name="L2ERR">
+                <gui_name language="en">L2ERR</gui_name>
+                <description language="en">L2 Error</description>
+                <definition>[23]</definition>
+            </bitField>
+            <bitField conditional="false" name="BANK_WAY">
+                <gui_name language="en">BANK_WAY</gui_name>
+                <description language="en">L1 ECC Double-Bit Error Bank/Way</description>
+                <definition>[22:18]</definition>
+            </bitField>
+            <bitField conditional="false" name="INDEX">
+                <gui_name language="en">INDEX</gui_name>
+                <description language="en">L1 ECC Double-Bit Error Index Address</description>
+                <definition>[17:0]</definition>
+            </bitField>
+        </register>
+    </register_group>
+</register_list>
+

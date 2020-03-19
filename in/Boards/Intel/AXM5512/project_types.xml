@@ -1,0 +1,1193 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><!--Copyright (C) 2009-2014 ARM Limited. All rights reserved.--><platform_data xmlns="http://www.arm.com/project_type" xmlns:peripheral="http://com.arm.targetconfigurationeditor" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="HARDWARE" xsi:schemaLocation="http://www.arm.com/project_type ../../../Schemas/platform_data-1.xsd">
+    <project_type_list>
+        <xi:include href="../../../Gdbserver/tcp_project_types.xml"/>
+        <project_type type="BARE_METAL">
+            <name language="en">Bare Metal Debug</name>
+            <description language="en">This allows a bare-metal debug connection.</description>
+            <execution_environment id="BARE_METAL">
+                <name language="en">Bare Metal Debug</name>
+                <description language="en">Connect to a platform using a DSTREAM/RVI</description>
+                <xi:include href="../../../Include/hardware_address.xml"/>
+                <param default="CDB://../AXM5516/AXM5500.rvc" id="config_file" type="string" visible="false"/>
+                <param default="CDB://../AXM5516/dtsl_config_script.py" id="dtsl_config_script" type="string" visible="false"/>
+                <param default="DtslScript_AXM5512" id="dtsl_config" type="string" visible="false"/>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A15_0_0</name>
+                    <xi:include href="../../../Include/dstream_activity_description_bm.xml"/>
+                    <xi:include href="../../../Include/dstream_connection_type.xml"/>
+                    <core connection_id="Cortex-A15_0_0" core_ref="Cortex-A15" soc="lsi/axxia_5500"/>
+                    <param default="options.trace_0.traceCapture" id="dtsl_tracecapture_option" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A15_0_0</name>
+                    <xi:include href="../../../Include/rvi_activity_description_bm.xml"/>
+                    <xi:include href="../../../Include/rvi_connection_type.xml"/>
+                    <core connection_id="Cortex-A15_0_0" core_ref="Cortex-A15" soc="lsi/axxia_5500"/>
+                    <param default="options.trace_0.traceCapture" id="dtsl_tracecapture_option" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A15_0_0</name>
+                    <xi:include href="../../../Include/dstream_st_activity_description_bm.xml"/>
+                    <xi:include href="../../../Include/dstream_st_connection_type.xml"/>
+                    <core connection_id="Cortex-A15_0_0" core_ref="Cortex-A15" soc="lsi/axxia_5500"/>
+                    <param default="options.trace_0.traceCapture" id="dtsl_tracecapture_option" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A15_0_0</name>
+                    <xi:include href="../../../Include/dstream_pt_activity_description_bm.xml"/>
+                    <xi:include href="../../../Include/dstream_pt_connection_type.xml"/>
+                    <core connection_id="Cortex-A15_0_0" core_ref="Cortex-A15" soc="lsi/axxia_5500"/>
+                    <param default="options.trace_0.traceCapture" id="dtsl_tracecapture_option" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A15_0_1</name>
+                    <xi:include href="../../../Include/dstream_activity_description_bm.xml"/>
+                    <xi:include href="../../../Include/dstream_connection_type.xml"/>
+                    <core connection_id="Cortex-A15_0_1">
+                        <core_definition>Cortex-A15</core_definition>
+                    </core>
+                    <param default="options.trace_0.traceCapture" id="dtsl_tracecapture_option" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A15_0_1</name>
+                    <xi:include href="../../../Include/rvi_activity_description_bm.xml"/>
+                    <xi:include href="../../../Include/rvi_connection_type.xml"/>
+                    <core connection_id="Cortex-A15_0_1">
+                        <core_definition>Cortex-A15</core_definition>
+                    </core>
+                    <param default="options.trace_0.traceCapture" id="dtsl_tracecapture_option" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A15_0_1</name>
+                    <xi:include href="../../../Include/dstream_st_activity_description_bm.xml"/>
+                    <xi:include href="../../../Include/dstream_st_connection_type.xml"/>
+                    <core connection_id="Cortex-A15_0_1">
+                        <core_definition>Cortex-A15</core_definition>
+                    </core>
+                    <param default="options.trace_0.traceCapture" id="dtsl_tracecapture_option" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A15_0_1</name>
+                    <xi:include href="../../../Include/dstream_pt_activity_description_bm.xml"/>
+                    <xi:include href="../../../Include/dstream_pt_connection_type.xml"/>
+                    <core connection_id="Cortex-A15_0_1">
+                        <core_definition>Cortex-A15</core_definition>
+                    </core>
+                    <param default="options.trace_0.traceCapture" id="dtsl_tracecapture_option" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A15_0_2</name>
+                    <xi:include href="../../../Include/dstream_activity_description_bm.xml"/>
+                    <xi:include href="../../../Include/dstream_connection_type.xml"/>
+                    <core connection_id="Cortex-A15_0_2">
+                        <core_definition>Cortex-A15</core_definition>
+                    </core>
+                    <param default="options.trace_0.traceCapture" id="dtsl_tracecapture_option" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A15_0_2</name>
+                    <xi:include href="../../../Include/rvi_activity_description_bm.xml"/>
+                    <xi:include href="../../../Include/rvi_connection_type.xml"/>
+                    <core connection_id="Cortex-A15_0_2">
+                        <core_definition>Cortex-A15</core_definition>
+                    </core>
+                    <param default="options.trace_0.traceCapture" id="dtsl_tracecapture_option" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A15_0_2</name>
+                    <xi:include href="../../../Include/dstream_st_activity_description_bm.xml"/>
+                    <xi:include href="../../../Include/dstream_st_connection_type.xml"/>
+                    <core connection_id="Cortex-A15_0_2">
+                        <core_definition>Cortex-A15</core_definition>
+                    </core>
+                    <param default="options.trace_0.traceCapture" id="dtsl_tracecapture_option" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A15_0_2</name>
+                    <xi:include href="../../../Include/dstream_pt_activity_description_bm.xml"/>
+                    <xi:include href="../../../Include/dstream_pt_connection_type.xml"/>
+                    <core connection_id="Cortex-A15_0_2">
+                        <core_definition>Cortex-A15</core_definition>
+                    </core>
+                    <param default="options.trace_0.traceCapture" id="dtsl_tracecapture_option" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A15_0_3</name>
+                    <xi:include href="../../../Include/dstream_activity_description_bm.xml"/>
+                    <xi:include href="../../../Include/dstream_connection_type.xml"/>
+                    <core connection_id="Cortex-A15_0_3">
+                        <core_definition>Cortex-A15</core_definition>
+                    </core>
+                    <param default="options.trace_0.traceCapture" id="dtsl_tracecapture_option" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A15_0_3</name>
+                    <xi:include href="../../../Include/rvi_activity_description_bm.xml"/>
+                    <xi:include href="../../../Include/rvi_connection_type.xml"/>
+                    <core connection_id="Cortex-A15_0_3">
+                        <core_definition>Cortex-A15</core_definition>
+                    </core>
+                    <param default="options.trace_0.traceCapture" id="dtsl_tracecapture_option" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A15_0_3</name>
+                    <xi:include href="../../../Include/dstream_st_activity_description_bm.xml"/>
+                    <xi:include href="../../../Include/dstream_st_connection_type.xml"/>
+                    <core connection_id="Cortex-A15_0_3">
+                        <core_definition>Cortex-A15</core_definition>
+                    </core>
+                    <param default="options.trace_0.traceCapture" id="dtsl_tracecapture_option" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A15_0_3</name>
+                    <xi:include href="../../../Include/dstream_pt_activity_description_bm.xml"/>
+                    <xi:include href="../../../Include/dstream_pt_connection_type.xml"/>
+                    <core connection_id="Cortex-A15_0_3">
+                        <core_definition>Cortex-A15</core_definition>
+                    </core>
+                    <param default="options.trace_0.traceCapture" id="dtsl_tracecapture_option" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A15_1_0</name>
+                    <xi:include href="../../../Include/dstream_activity_description_bm.xml"/>
+                    <xi:include href="../../../Include/dstream_connection_type.xml"/>
+                    <core connection_id="Cortex-A15_1_0">
+                        <core_definition>Cortex-A15</core_definition>
+                    </core>
+                    <param default="options.trace_1.traceCapture" id="dtsl_tracecapture_option" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A15_1_0</name>
+                    <xi:include href="../../../Include/rvi_activity_description_bm.xml"/>
+                    <xi:include href="../../../Include/rvi_connection_type.xml"/>
+                    <core connection_id="Cortex-A15_1_0">
+                        <core_definition>Cortex-A15</core_definition>
+                    </core>
+                    <param default="options.trace_1.traceCapture" id="dtsl_tracecapture_option" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A15_1_0</name>
+                    <xi:include href="../../../Include/dstream_st_activity_description_bm.xml"/>
+                    <xi:include href="../../../Include/dstream_st_connection_type.xml"/>
+                    <core connection_id="Cortex-A15_1_0">
+                        <core_definition>Cortex-A15</core_definition>
+                    </core>
+                    <param default="options.trace_1.traceCapture" id="dtsl_tracecapture_option" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A15_1_0</name>
+                    <xi:include href="../../../Include/dstream_pt_activity_description_bm.xml"/>
+                    <xi:include href="../../../Include/dstream_pt_connection_type.xml"/>
+                    <core connection_id="Cortex-A15_1_0">
+                        <core_definition>Cortex-A15</core_definition>
+                    </core>
+                    <param default="options.trace_1.traceCapture" id="dtsl_tracecapture_option" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A15_1_1</name>
+                    <xi:include href="../../../Include/dstream_activity_description_bm.xml"/>
+                    <xi:include href="../../../Include/dstream_connection_type.xml"/>
+                    <core connection_id="Cortex-A15_1_1">
+                        <core_definition>Cortex-A15</core_definition>
+                    </core>
+                    <param default="options.trace_1.traceCapture" id="dtsl_tracecapture_option" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A15_1_1</name>
+                    <xi:include href="../../../Include/rvi_activity_description_bm.xml"/>
+                    <xi:include href="../../../Include/rvi_connection_type.xml"/>
+                    <core connection_id="Cortex-A15_1_1">
+                        <core_definition>Cortex-A15</core_definition>
+                    </core>
+                    <param default="options.trace_1.traceCapture" id="dtsl_tracecapture_option" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A15_1_1</name>
+                    <xi:include href="../../../Include/dstream_st_activity_description_bm.xml"/>
+                    <xi:include href="../../../Include/dstream_st_connection_type.xml"/>
+                    <core connection_id="Cortex-A15_1_1">
+                        <core_definition>Cortex-A15</core_definition>
+                    </core>
+                    <param default="options.trace_1.traceCapture" id="dtsl_tracecapture_option" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A15_1_1</name>
+                    <xi:include href="../../../Include/dstream_pt_activity_description_bm.xml"/>
+                    <xi:include href="../../../Include/dstream_pt_connection_type.xml"/>
+                    <core connection_id="Cortex-A15_1_1">
+                        <core_definition>Cortex-A15</core_definition>
+                    </core>
+                    <param default="options.trace_1.traceCapture" id="dtsl_tracecapture_option" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A15_1_2</name>
+                    <xi:include href="../../../Include/dstream_activity_description_bm.xml"/>
+                    <xi:include href="../../../Include/dstream_connection_type.xml"/>
+                    <core connection_id="Cortex-A15_1_2">
+                        <core_definition>Cortex-A15</core_definition>
+                    </core>
+                    <param default="options.trace_1.traceCapture" id="dtsl_tracecapture_option" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A15_1_2</name>
+                    <xi:include href="../../../Include/rvi_activity_description_bm.xml"/>
+                    <xi:include href="../../../Include/rvi_connection_type.xml"/>
+                    <core connection_id="Cortex-A15_1_2">
+                        <core_definition>Cortex-A15</core_definition>
+                    </core>
+                    <param default="options.trace_1.traceCapture" id="dtsl_tracecapture_option" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A15_1_2</name>
+                    <xi:include href="../../../Include/dstream_st_activity_description_bm.xml"/>
+                    <xi:include href="../../../Include/dstream_st_connection_type.xml"/>
+                    <core connection_id="Cortex-A15_1_2">
+                        <core_definition>Cortex-A15</core_definition>
+                    </core>
+                    <param default="options.trace_1.traceCapture" id="dtsl_tracecapture_option" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A15_1_2</name>
+                    <xi:include href="../../../Include/dstream_pt_activity_description_bm.xml"/>
+                    <xi:include href="../../../Include/dstream_pt_connection_type.xml"/>
+                    <core connection_id="Cortex-A15_1_2">
+                        <core_definition>Cortex-A15</core_definition>
+                    </core>
+                    <param default="options.trace_1.traceCapture" id="dtsl_tracecapture_option" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A15_1_3</name>
+                    <xi:include href="../../../Include/dstream_activity_description_bm.xml"/>
+                    <xi:include href="../../../Include/dstream_connection_type.xml"/>
+                    <core connection_id="Cortex-A15_1_3">
+                        <core_definition>Cortex-A15</core_definition>
+                    </core>
+                    <param default="options.trace_1.traceCapture" id="dtsl_tracecapture_option" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A15_1_3</name>
+                    <xi:include href="../../../Include/rvi_activity_description_bm.xml"/>
+                    <xi:include href="../../../Include/rvi_connection_type.xml"/>
+                    <core connection_id="Cortex-A15_1_3">
+                        <core_definition>Cortex-A15</core_definition>
+                    </core>
+                    <param default="options.trace_1.traceCapture" id="dtsl_tracecapture_option" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A15_1_3</name>
+                    <xi:include href="../../../Include/dstream_st_activity_description_bm.xml"/>
+                    <xi:include href="../../../Include/dstream_st_connection_type.xml"/>
+                    <core connection_id="Cortex-A15_1_3">
+                        <core_definition>Cortex-A15</core_definition>
+                    </core>
+                    <param default="options.trace_1.traceCapture" id="dtsl_tracecapture_option" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A15_1_3</name>
+                    <xi:include href="../../../Include/dstream_pt_activity_description_bm.xml"/>
+                    <xi:include href="../../../Include/dstream_pt_connection_type.xml"/>
+                    <core connection_id="Cortex-A15_1_3">
+                        <core_definition>Cortex-A15</core_definition>
+                    </core>
+                    <param default="options.trace_1.traceCapture" id="dtsl_tracecapture_option" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A15_2_0</name>
+                    <xi:include href="../../../Include/dstream_activity_description_bm.xml"/>
+                    <xi:include href="../../../Include/dstream_connection_type.xml"/>
+                    <core connection_id="Cortex-A15_2_0">
+                        <core_definition>Cortex-A15</core_definition>
+                    </core>
+                    <param default="options.trace_2.traceCapture" id="dtsl_tracecapture_option" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A15_2_0</name>
+                    <xi:include href="../../../Include/rvi_activity_description_bm.xml"/>
+                    <xi:include href="../../../Include/rvi_connection_type.xml"/>
+                    <core connection_id="Cortex-A15_2_0">
+                        <core_definition>Cortex-A15</core_definition>
+                    </core>
+                    <param default="options.trace_2.traceCapture" id="dtsl_tracecapture_option" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A15_2_0</name>
+                    <xi:include href="../../../Include/dstream_st_activity_description_bm.xml"/>
+                    <xi:include href="../../../Include/dstream_st_connection_type.xml"/>
+                    <core connection_id="Cortex-A15_2_0">
+                        <core_definition>Cortex-A15</core_definition>
+                    </core>
+                    <param default="options.trace_2.traceCapture" id="dtsl_tracecapture_option" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A15_2_0</name>
+                    <xi:include href="../../../Include/dstream_pt_activity_description_bm.xml"/>
+                    <xi:include href="../../../Include/dstream_pt_connection_type.xml"/>
+                    <core connection_id="Cortex-A15_2_0">
+                        <core_definition>Cortex-A15</core_definition>
+                    </core>
+                    <param default="options.trace_2.traceCapture" id="dtsl_tracecapture_option" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A15_2_1</name>
+                    <xi:include href="../../../Include/dstream_activity_description_bm.xml"/>
+                    <xi:include href="../../../Include/dstream_connection_type.xml"/>
+                    <core connection_id="Cortex-A15_2_1">
+                        <core_definition>Cortex-A15</core_definition>
+                    </core>
+                    <param default="options.trace_2.traceCapture" id="dtsl_tracecapture_option" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A15_2_1</name>
+                    <xi:include href="../../../Include/rvi_activity_description_bm.xml"/>
+                    <xi:include href="../../../Include/rvi_connection_type.xml"/>
+                    <core connection_id="Cortex-A15_2_1">
+                        <core_definition>Cortex-A15</core_definition>
+                    </core>
+                    <param default="options.trace_2.traceCapture" id="dtsl_tracecapture_option" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A15_2_1</name>
+                    <xi:include href="../../../Include/dstream_st_activity_description_bm.xml"/>
+                    <xi:include href="../../../Include/dstream_st_connection_type.xml"/>
+                    <core connection_id="Cortex-A15_2_1">
+                        <core_definition>Cortex-A15</core_definition>
+                    </core>
+                    <param default="options.trace_2.traceCapture" id="dtsl_tracecapture_option" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A15_2_1</name>
+                    <xi:include href="../../../Include/dstream_pt_activity_description_bm.xml"/>
+                    <xi:include href="../../../Include/dstream_pt_connection_type.xml"/>
+                    <core connection_id="Cortex-A15_2_1">
+                        <core_definition>Cortex-A15</core_definition>
+                    </core>
+                    <param default="options.trace_2.traceCapture" id="dtsl_tracecapture_option" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A15_2_2</name>
+                    <xi:include href="../../../Include/dstream_activity_description_bm.xml"/>
+                    <xi:include href="../../../Include/dstream_connection_type.xml"/>
+                    <core connection_id="Cortex-A15_2_2">
+                        <core_definition>Cortex-A15</core_definition>
+                    </core>
+                    <param default="options.trace_2.traceCapture" id="dtsl_tracecapture_option" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A15_2_2</name>
+                    <xi:include href="../../../Include/rvi_activity_description_bm.xml"/>
+                    <xi:include href="../../../Include/rvi_connection_type.xml"/>
+                    <core connection_id="Cortex-A15_2_2">
+                        <core_definition>Cortex-A15</core_definition>
+                    </core>
+                    <param default="options.trace_2.traceCapture" id="dtsl_tracecapture_option" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A15_2_2</name>
+                    <xi:include href="../../../Include/dstream_st_activity_description_bm.xml"/>
+                    <xi:include href="../../../Include/dstream_st_connection_type.xml"/>
+                    <core connection_id="Cortex-A15_2_2">
+                        <core_definition>Cortex-A15</core_definition>
+                    </core>
+                    <param default="options.trace_2.traceCapture" id="dtsl_tracecapture_option" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A15_2_2</name>
+                    <xi:include href="../../../Include/dstream_pt_activity_description_bm.xml"/>
+                    <xi:include href="../../../Include/dstream_pt_connection_type.xml"/>
+                    <core connection_id="Cortex-A15_2_2">
+                        <core_definition>Cortex-A15</core_definition>
+                    </core>
+                    <param default="options.trace_2.traceCapture" id="dtsl_tracecapture_option" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A15_2_3</name>
+                    <xi:include href="../../../Include/dstream_activity_description_bm.xml"/>
+                    <xi:include href="../../../Include/dstream_connection_type.xml"/>
+                    <core connection_id="Cortex-A15_2_3">
+                        <core_definition>Cortex-A15</core_definition>
+                    </core>
+                    <param default="options.trace_2.traceCapture" id="dtsl_tracecapture_option" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A15_2_3</name>
+                    <xi:include href="../../../Include/rvi_activity_description_bm.xml"/>
+                    <xi:include href="../../../Include/rvi_connection_type.xml"/>
+                    <core connection_id="Cortex-A15_2_3">
+                        <core_definition>Cortex-A15</core_definition>
+                    </core>
+                    <param default="options.trace_2.traceCapture" id="dtsl_tracecapture_option" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A15_2_3</name>
+                    <xi:include href="../../../Include/dstream_st_activity_description_bm.xml"/>
+                    <xi:include href="../../../Include/dstream_st_connection_type.xml"/>
+                    <core connection_id="Cortex-A15_2_3">
+                        <core_definition>Cortex-A15</core_definition>
+                    </core>
+                    <param default="options.trace_2.traceCapture" id="dtsl_tracecapture_option" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A15_2_3</name>
+                    <xi:include href="../../../Include/dstream_pt_activity_description_bm.xml"/>
+                    <xi:include href="../../../Include/dstream_pt_connection_type.xml"/>
+                    <core connection_id="Cortex-A15_2_3">
+                        <core_definition>Cortex-A15</core_definition>
+                    </core>
+                    <param default="options.trace_2.traceCapture" id="dtsl_tracecapture_option" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A15 Cluster 0 SMP</name>
+                    <xi:include href="../../../Include/dstream_activity_description_bm.xml"/>
+                    <xi:include href="../../../Include/dstream_connection_type.xml"/>
+                    <core connection_id="Cortex-A15_0">
+                        <core_definition>Cortex-A15</core_definition>
+                    </core>
+                    <param default="options.trace_0.traceCapture" id="dtsl_tracecapture_option" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A15 Cluster 0 SMP</name>
+                    <xi:include href="../../../Include/rvi_activity_description_bm.xml"/>
+                    <xi:include href="../../../Include/rvi_connection_type.xml"/>
+                    <core connection_id="Cortex-A15_0">
+                        <core_definition>Cortex-A15</core_definition>
+                    </core>
+                    <param default="options.trace_0.traceCapture" id="dtsl_tracecapture_option" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A15 Cluster 0 SMP</name>
+                    <xi:include href="../../../Include/dstream_st_activity_description_bm.xml"/>
+                    <xi:include href="../../../Include/dstream_st_connection_type.xml"/>
+                    <core connection_id="Cortex-A15_0">
+                        <core_definition>Cortex-A15</core_definition>
+                    </core>
+                    <param default="options.trace_0.traceCapture" id="dtsl_tracecapture_option" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A15 Cluster 0 SMP</name>
+                    <xi:include href="../../../Include/dstream_pt_activity_description_bm.xml"/>
+                    <xi:include href="../../../Include/dstream_pt_connection_type.xml"/>
+                    <core connection_id="Cortex-A15_0">
+                        <core_definition>Cortex-A15</core_definition>
+                    </core>
+                    <param default="options.trace_0.traceCapture" id="dtsl_tracecapture_option" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A15 Cluster 1 SMP</name>
+                    <xi:include href="../../../Include/dstream_activity_description_bm.xml"/>
+                    <xi:include href="../../../Include/dstream_connection_type.xml"/>
+                    <core connection_id="Cortex-A15_1">
+                        <core_definition>Cortex-A15</core_definition>
+                    </core>
+                    <param default="options.trace_1.traceCapture" id="dtsl_tracecapture_option" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A15 Cluster 1 SMP</name>
+                    <xi:include href="../../../Include/rvi_activity_description_bm.xml"/>
+                    <xi:include href="../../../Include/rvi_connection_type.xml"/>
+                    <core connection_id="Cortex-A15_1">
+                        <core_definition>Cortex-A15</core_definition>
+                    </core>
+                    <param default="options.trace_1.traceCapture" id="dtsl_tracecapture_option" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A15 Cluster 1 SMP</name>
+                    <xi:include href="../../../Include/dstream_st_activity_description_bm.xml"/>
+                    <xi:include href="../../../Include/dstream_st_connection_type.xml"/>
+                    <core connection_id="Cortex-A15_1">
+                        <core_definition>Cortex-A15</core_definition>
+                    </core>
+                    <param default="options.trace_1.traceCapture" id="dtsl_tracecapture_option" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A15 Cluster 1 SMP</name>
+                    <xi:include href="../../../Include/dstream_pt_activity_description_bm.xml"/>
+                    <xi:include href="../../../Include/dstream_pt_connection_type.xml"/>
+                    <core connection_id="Cortex-A15_1">
+                        <core_definition>Cortex-A15</core_definition>
+                    </core>
+                    <param default="options.trace_1.traceCapture" id="dtsl_tracecapture_option" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A15 Cluster 2 SMP</name>
+                    <xi:include href="../../../Include/dstream_activity_description_bm.xml"/>
+                    <xi:include href="../../../Include/dstream_connection_type.xml"/>
+                    <core connection_id="Cortex-A15_2">
+                        <core_definition>Cortex-A15</core_definition>
+                    </core>
+                    <param default="options.trace_2.traceCapture" id="dtsl_tracecapture_option" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A15 Cluster 2 SMP</name>
+                    <xi:include href="../../../Include/rvi_activity_description_bm.xml"/>
+                    <xi:include href="../../../Include/rvi_connection_type.xml"/>
+                    <core connection_id="Cortex-A15_2">
+                        <core_definition>Cortex-A15</core_definition>
+                    </core>
+                    <param default="options.trace_2.traceCapture" id="dtsl_tracecapture_option" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A15 Cluster 2 SMP</name>
+                    <xi:include href="../../../Include/dstream_st_activity_description_bm.xml"/>
+                    <xi:include href="../../../Include/dstream_st_connection_type.xml"/>
+                    <core connection_id="Cortex-A15_2">
+                        <core_definition>Cortex-A15</core_definition>
+                    </core>
+                    <param default="options.trace_2.traceCapture" id="dtsl_tracecapture_option" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A15 Cluster 2 SMP</name>
+                    <xi:include href="../../../Include/dstream_pt_activity_description_bm.xml"/>
+                    <xi:include href="../../../Include/dstream_pt_connection_type.xml"/>
+                    <core connection_id="Cortex-A15_2">
+                        <core_definition>Cortex-A15</core_definition>
+                    </core>
+                    <param default="options.trace_2.traceCapture" id="dtsl_tracecapture_option" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A15 All Clusters SMP</name>
+                    <xi:include href="../../../Include/dstream_activity_description_bm.xml"/>
+                    <xi:include href="../../../Include/dstream_connection_type.xml"/>
+                    <core connection_id="Cortex-A15_all">
+                        <core_definition>Cortex-A15</core_definition>
+                    </core>
+                    <param default="options.trace_0.traceCapture" id="dtsl_tracecapture_option" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A15 All Clusters SMP</name>
+                    <xi:include href="../../../Include/rvi_activity_description_bm.xml"/>
+                    <xi:include href="../../../Include/rvi_connection_type.xml"/>
+                    <core connection_id="Cortex-A15_all">
+                        <core_definition>Cortex-A15</core_definition>
+                    </core>
+                    <param default="options.trace_0.traceCapture" id="dtsl_tracecapture_option" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A15 All Clusters SMP</name>
+                    <xi:include href="../../../Include/dstream_st_activity_description_bm.xml"/>
+                    <xi:include href="../../../Include/dstream_st_connection_type.xml"/>
+                    <core connection_id="Cortex-A15_all">
+                        <core_definition>Cortex-A15</core_definition>
+                    </core>
+                    <param default="options.trace_0.traceCapture" id="dtsl_tracecapture_option" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A15 All Clusters SMP</name>
+                    <xi:include href="../../../Include/dstream_pt_activity_description_bm.xml"/>
+                    <xi:include href="../../../Include/dstream_pt_connection_type.xml"/>
+                    <core connection_id="Cortex-A15_all">
+                        <core_definition>Cortex-A15</core_definition>
+                    </core>
+                    <param default="options.trace_0.traceCapture" id="dtsl_tracecapture_option" type="string" visible="false"/>
+                </activity>
+            </execution_environment>
+        </project_type>
+        <project_type os_abstraction="LINUX_KERNEL" type="BARE_METAL">
+            <name language="en">Linux Kernel and/or Device Driver Debug</name>
+            <description language="en">This allows a bare metal debug connection for Linux kernel or Linux device driver debug.</description>
+            <execution_environment id="bare_metal_linux_kernel_debug">
+                <name language="en">Linux Kernel Debug</name>
+                <description language="en">Connect to a platform using a DSTREAM/RVI</description>
+                <xi:include href="../../../Include/hardware_address.xml"/>
+                <param default="CDB://../AXM5516/AXM5500.rvc" id="config_file" type="string" visible="false"/>
+                <param default="CDB://../AXM5516/dtsl_config_script.py" id="dtsl_config_script" type="string" visible="false"/>
+                <param default="DtslScript_AXM5512" id="dtsl_config" type="string" visible="false"/>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A15_0_0</name>
+                    <xi:include href="../../../Include/dstream_activity_description_lk.xml"/>
+                    <xi:include href="../../../Include/dstream_connection_type.xml"/>
+                    <core connection_id="Cortex-A15_0_0">
+                        <core_definition>Cortex-A15</core_definition>
+                    </core>
+                    <param default="options.trace_0.traceCapture" id="dtsl_tracecapture_option" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A15_0_0</name>
+                    <xi:include href="../../../Include/rvi_activity_description_lk.xml"/>
+                    <xi:include href="../../../Include/rvi_connection_type.xml"/>
+                    <core connection_id="Cortex-A15_0_0">
+                        <core_definition>Cortex-A15</core_definition>
+                    </core>
+                    <param default="options.trace_0.traceCapture" id="dtsl_tracecapture_option" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A15_0_0</name>
+                    <xi:include href="../../../Include/dstream_st_activity_description_lk.xml"/>
+                    <xi:include href="../../../Include/dstream_st_connection_type.xml"/>
+                    <core connection_id="Cortex-A15_0_0">
+                        <core_definition>Cortex-A15</core_definition>
+                    </core>
+                    <param default="options.trace_0.traceCapture" id="dtsl_tracecapture_option" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A15_0_0</name>
+                    <xi:include href="../../../Include/dstream_pt_activity_description_lk.xml"/>
+                    <xi:include href="../../../Include/dstream_pt_connection_type.xml"/>
+                    <core connection_id="Cortex-A15_0_0">
+                        <core_definition>Cortex-A15</core_definition>
+                    </core>
+                    <param default="options.trace_0.traceCapture" id="dtsl_tracecapture_option" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A15_0_1</name>
+                    <xi:include href="../../../Include/dstream_activity_description_lk.xml"/>
+                    <xi:include href="../../../Include/dstream_connection_type.xml"/>
+                    <core connection_id="Cortex-A15_0_1">
+                        <core_definition>Cortex-A15</core_definition>
+                    </core>
+                    <param default="options.trace_0.traceCapture" id="dtsl_tracecapture_option" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A15_0_1</name>
+                    <xi:include href="../../../Include/rvi_activity_description_lk.xml"/>
+                    <xi:include href="../../../Include/rvi_connection_type.xml"/>
+                    <core connection_id="Cortex-A15_0_1">
+                        <core_definition>Cortex-A15</core_definition>
+                    </core>
+                    <param default="options.trace_0.traceCapture" id="dtsl_tracecapture_option" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A15_0_1</name>
+                    <xi:include href="../../../Include/dstream_st_activity_description_lk.xml"/>
+                    <xi:include href="../../../Include/dstream_st_connection_type.xml"/>
+                    <core connection_id="Cortex-A15_0_1">
+                        <core_definition>Cortex-A15</core_definition>
+                    </core>
+                    <param default="options.trace_0.traceCapture" id="dtsl_tracecapture_option" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A15_0_1</name>
+                    <xi:include href="../../../Include/dstream_pt_activity_description_lk.xml"/>
+                    <xi:include href="../../../Include/dstream_pt_connection_type.xml"/>
+                    <core connection_id="Cortex-A15_0_1">
+                        <core_definition>Cortex-A15</core_definition>
+                    </core>
+                    <param default="options.trace_0.traceCapture" id="dtsl_tracecapture_option" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A15_0_2</name>
+                    <xi:include href="../../../Include/dstream_activity_description_lk.xml"/>
+                    <xi:include href="../../../Include/dstream_connection_type.xml"/>
+                    <core connection_id="Cortex-A15_0_2">
+                        <core_definition>Cortex-A15</core_definition>
+                    </core>
+                    <param default="options.trace_0.traceCapture" id="dtsl_tracecapture_option" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A15_0_2</name>
+                    <xi:include href="../../../Include/rvi_activity_description_lk.xml"/>
+                    <xi:include href="../../../Include/rvi_connection_type.xml"/>
+                    <core connection_id="Cortex-A15_0_2">
+                        <core_definition>Cortex-A15</core_definition>
+                    </core>
+                    <param default="options.trace_0.traceCapture" id="dtsl_tracecapture_option" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A15_0_2</name>
+                    <xi:include href="../../../Include/dstream_st_activity_description_lk.xml"/>
+                    <xi:include href="../../../Include/dstream_st_connection_type.xml"/>
+                    <core connection_id="Cortex-A15_0_2">
+                        <core_definition>Cortex-A15</core_definition>
+                    </core>
+                    <param default="options.trace_0.traceCapture" id="dtsl_tracecapture_option" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A15_0_2</name>
+                    <xi:include href="../../../Include/dstream_pt_activity_description_lk.xml"/>
+                    <xi:include href="../../../Include/dstream_pt_connection_type.xml"/>
+                    <core connection_id="Cortex-A15_0_2">
+                        <core_definition>Cortex-A15</core_definition>
+                    </core>
+                    <param default="options.trace_0.traceCapture" id="dtsl_tracecapture_option" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A15_0_3</name>
+                    <xi:include href="../../../Include/dstream_activity_description_lk.xml"/>
+                    <xi:include href="../../../Include/dstream_connection_type.xml"/>
+                    <core connection_id="Cortex-A15_0_3">
+                        <core_definition>Cortex-A15</core_definition>
+                    </core>
+                    <param default="options.trace_0.traceCapture" id="dtsl_tracecapture_option" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A15_0_3</name>
+                    <xi:include href="../../../Include/rvi_activity_description_lk.xml"/>
+                    <xi:include href="../../../Include/rvi_connection_type.xml"/>
+                    <core connection_id="Cortex-A15_0_3">
+                        <core_definition>Cortex-A15</core_definition>
+                    </core>
+                    <param default="options.trace_0.traceCapture" id="dtsl_tracecapture_option" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A15_0_3</name>
+                    <xi:include href="../../../Include/dstream_st_activity_description_lk.xml"/>
+                    <xi:include href="../../../Include/dstream_st_connection_type.xml"/>
+                    <core connection_id="Cortex-A15_0_3">
+                        <core_definition>Cortex-A15</core_definition>
+                    </core>
+                    <param default="options.trace_0.traceCapture" id="dtsl_tracecapture_option" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A15_0_3</name>
+                    <xi:include href="../../../Include/dstream_pt_activity_description_lk.xml"/>
+                    <xi:include href="../../../Include/dstream_pt_connection_type.xml"/>
+                    <core connection_id="Cortex-A15_0_3">
+                        <core_definition>Cortex-A15</core_definition>
+                    </core>
+                    <param default="options.trace_0.traceCapture" id="dtsl_tracecapture_option" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A15_1_0</name>
+                    <xi:include href="../../../Include/dstream_activity_description_lk.xml"/>
+                    <xi:include href="../../../Include/dstream_connection_type.xml"/>
+                    <core connection_id="Cortex-A15_1_0">
+                        <core_definition>Cortex-A15</core_definition>
+                    </core>
+                    <param default="options.trace_1.traceCapture" id="dtsl_tracecapture_option" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A15_1_0</name>
+                    <xi:include href="../../../Include/rvi_activity_description_lk.xml"/>
+                    <xi:include href="../../../Include/rvi_connection_type.xml"/>
+                    <core connection_id="Cortex-A15_1_0">
+                        <core_definition>Cortex-A15</core_definition>
+                    </core>
+                    <param default="options.trace_1.traceCapture" id="dtsl_tracecapture_option" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A15_1_0</name>
+                    <xi:include href="../../../Include/dstream_st_activity_description_lk.xml"/>
+                    <xi:include href="../../../Include/dstream_st_connection_type.xml"/>
+                    <core connection_id="Cortex-A15_1_0">
+                        <core_definition>Cortex-A15</core_definition>
+                    </core>
+                    <param default="options.trace_1.traceCapture" id="dtsl_tracecapture_option" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A15_1_0</name>
+                    <xi:include href="../../../Include/dstream_pt_activity_description_lk.xml"/>
+                    <xi:include href="../../../Include/dstream_pt_connection_type.xml"/>
+                    <core connection_id="Cortex-A15_1_0">
+                        <core_definition>Cortex-A15</core_definition>
+                    </core>
+                    <param default="options.trace_1.traceCapture" id="dtsl_tracecapture_option" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A15_1_1</name>
+                    <xi:include href="../../../Include/dstream_activity_description_lk.xml"/>
+                    <xi:include href="../../../Include/dstream_connection_type.xml"/>
+                    <core connection_id="Cortex-A15_1_1">
+                        <core_definition>Cortex-A15</core_definition>
+                    </core>
+                    <param default="options.trace_1.traceCapture" id="dtsl_tracecapture_option" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A15_1_1</name>
+                    <xi:include href="../../../Include/rvi_activity_description_lk.xml"/>
+                    <xi:include href="../../../Include/rvi_connection_type.xml"/>
+                    <core connection_id="Cortex-A15_1_1">
+                        <core_definition>Cortex-A15</core_definition>
+                    </core>
+                    <param default="options.trace_1.traceCapture" id="dtsl_tracecapture_option" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A15_1_1</name>
+                    <xi:include href="../../../Include/dstream_st_activity_description_lk.xml"/>
+                    <xi:include href="../../../Include/dstream_st_connection_type.xml"/>
+                    <core connection_id="Cortex-A15_1_1">
+                        <core_definition>Cortex-A15</core_definition>
+                    </core>
+                    <param default="options.trace_1.traceCapture" id="dtsl_tracecapture_option" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A15_1_1</name>
+                    <xi:include href="../../../Include/dstream_pt_activity_description_lk.xml"/>
+                    <xi:include href="../../../Include/dstream_pt_connection_type.xml"/>
+                    <core connection_id="Cortex-A15_1_1">
+                        <core_definition>Cortex-A15</core_definition>
+                    </core>
+                    <param default="options.trace_1.traceCapture" id="dtsl_tracecapture_option" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A15_1_2</name>
+                    <xi:include href="../../../Include/dstream_activity_description_lk.xml"/>
+                    <xi:include href="../../../Include/dstream_connection_type.xml"/>
+                    <core connection_id="Cortex-A15_1_2">
+                        <core_definition>Cortex-A15</core_definition>
+                    </core>
+                    <param default="options.trace_1.traceCapture" id="dtsl_tracecapture_option" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A15_1_2</name>
+                    <xi:include href="../../../Include/rvi_activity_description_lk.xml"/>
+                    <xi:include href="../../../Include/rvi_connection_type.xml"/>
+                    <core connection_id="Cortex-A15_1_2">
+                        <core_definition>Cortex-A15</core_definition>
+                    </core>
+                    <param default="options.trace_1.traceCapture" id="dtsl_tracecapture_option" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A15_1_2</name>
+                    <xi:include href="../../../Include/dstream_st_activity_description_lk.xml"/>
+                    <xi:include href="../../../Include/dstream_st_connection_type.xml"/>
+                    <core connection_id="Cortex-A15_1_2">
+                        <core_definition>Cortex-A15</core_definition>
+                    </core>
+                    <param default="options.trace_1.traceCapture" id="dtsl_tracecapture_option" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A15_1_2</name>
+                    <xi:include href="../../../Include/dstream_pt_activity_description_lk.xml"/>
+                    <xi:include href="../../../Include/dstream_pt_connection_type.xml"/>
+                    <core connection_id="Cortex-A15_1_2">
+                        <core_definition>Cortex-A15</core_definition>
+                    </core>
+                    <param default="options.trace_1.traceCapture" id="dtsl_tracecapture_option" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A15_1_3</name>
+                    <xi:include href="../../../Include/dstream_activity_description_lk.xml"/>
+                    <xi:include href="../../../Include/dstream_connection_type.xml"/>
+                    <core connection_id="Cortex-A15_1_3">
+                        <core_definition>Cortex-A15</core_definition>
+                    </core>
+                    <param default="options.trace_1.traceCapture" id="dtsl_tracecapture_option" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A15_1_3</name>
+                    <xi:include href="../../../Include/rvi_activity_description_lk.xml"/>
+                    <xi:include href="../../../Include/rvi_connection_type.xml"/>
+                    <core connection_id="Cortex-A15_1_3">
+                        <core_definition>Cortex-A15</core_definition>
+                    </core>
+                    <param default="options.trace_1.traceCapture" id="dtsl_tracecapture_option" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A15_1_3</name>
+                    <xi:include href="../../../Include/dstream_st_activity_description_lk.xml"/>
+                    <xi:include href="../../../Include/dstream_st_connection_type.xml"/>
+                    <core connection_id="Cortex-A15_1_3">
+                        <core_definition>Cortex-A15</core_definition>
+                    </core>
+                    <param default="options.trace_1.traceCapture" id="dtsl_tracecapture_option" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A15_1_3</name>
+                    <xi:include href="../../../Include/dstream_pt_activity_description_lk.xml"/>
+                    <xi:include href="../../../Include/dstream_pt_connection_type.xml"/>
+                    <core connection_id="Cortex-A15_1_3">
+                        <core_definition>Cortex-A15</core_definition>
+                    </core>
+                    <param default="options.trace_1.traceCapture" id="dtsl_tracecapture_option" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A15_2_0</name>
+                    <xi:include href="../../../Include/dstream_activity_description_lk.xml"/>
+                    <xi:include href="../../../Include/dstream_connection_type.xml"/>
+                    <core connection_id="Cortex-A15_2_0">
+                        <core_definition>Cortex-A15</core_definition>
+                    </core>
+                    <param default="options.trace_2.traceCapture" id="dtsl_tracecapture_option" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A15_2_0</name>
+                    <xi:include href="../../../Include/rvi_activity_description_lk.xml"/>
+                    <xi:include href="../../../Include/rvi_connection_type.xml"/>
+                    <core connection_id="Cortex-A15_2_0">
+                        <core_definition>Cortex-A15</core_definition>
+                    </core>
+                    <param default="options.trace_2.traceCapture" id="dtsl_tracecapture_option" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A15_2_0</name>
+                    <xi:include href="../../../Include/dstream_st_activity_description_lk.xml"/>
+                    <xi:include href="../../../Include/dstream_st_connection_type.xml"/>
+                    <core connection_id="Cortex-A15_2_0">
+                        <core_definition>Cortex-A15</core_definition>
+                    </core>
+                    <param default="options.trace_2.traceCapture" id="dtsl_tracecapture_option" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A15_2_0</name>
+                    <xi:include href="../../../Include/dstream_pt_activity_description_lk.xml"/>
+                    <xi:include href="../../../Include/dstream_pt_connection_type.xml"/>
+                    <core connection_id="Cortex-A15_2_0">
+                        <core_definition>Cortex-A15</core_definition>
+                    </core>
+                    <param default="options.trace_2.traceCapture" id="dtsl_tracecapture_option" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A15_2_1</name>
+                    <xi:include href="../../../Include/dstream_activity_description_lk.xml"/>
+                    <xi:include href="../../../Include/dstream_connection_type.xml"/>
+                    <core connection_id="Cortex-A15_2_1">
+                        <core_definition>Cortex-A15</core_definition>
+                    </core>
+                    <param default="options.trace_2.traceCapture" id="dtsl_tracecapture_option" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A15_2_1</name>
+                    <xi:include href="../../../Include/rvi_activity_description_lk.xml"/>
+                    <xi:include href="../../../Include/rvi_connection_type.xml"/>
+                    <core connection_id="Cortex-A15_2_1">
+                        <core_definition>Cortex-A15</core_definition>
+                    </core>
+                    <param default="options.trace_2.traceCapture" id="dtsl_tracecapture_option" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A15_2_1</name>
+                    <xi:include href="../../../Include/dstream_st_activity_description_lk.xml"/>
+                    <xi:include href="../../../Include/dstream_st_connection_type.xml"/>
+                    <core connection_id="Cortex-A15_2_1">
+                        <core_definition>Cortex-A15</core_definition>
+                    </core>
+                    <param default="options.trace_2.traceCapture" id="dtsl_tracecapture_option" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A15_2_1</name>
+                    <xi:include href="../../../Include/dstream_pt_activity_description_lk.xml"/>
+                    <xi:include href="../../../Include/dstream_pt_connection_type.xml"/>
+                    <core connection_id="Cortex-A15_2_1">
+                        <core_definition>Cortex-A15</core_definition>
+                    </core>
+                    <param default="options.trace_2.traceCapture" id="dtsl_tracecapture_option" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A15_2_2</name>
+                    <xi:include href="../../../Include/dstream_activity_description_lk.xml"/>
+                    <xi:include href="../../../Include/dstream_connection_type.xml"/>
+                    <core connection_id="Cortex-A15_2_2">
+                        <core_definition>Cortex-A15</core_definition>
+                    </core>
+                    <param default="options.trace_2.traceCapture" id="dtsl_tracecapture_option" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A15_2_2</name>
+                    <xi:include href="../../../Include/rvi_activity_description_lk.xml"/>
+                    <xi:include href="../../../Include/rvi_connection_type.xml"/>
+                    <core connection_id="Cortex-A15_2_2">
+                        <core_definition>Cortex-A15</core_definition>
+                    </core>
+                    <param default="options.trace_2.traceCapture" id="dtsl_tracecapture_option" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A15_2_2</name>
+                    <xi:include href="../../../Include/dstream_st_activity_description_lk.xml"/>
+                    <xi:include href="../../../Include/dstream_st_connection_type.xml"/>
+                    <core connection_id="Cortex-A15_2_2">
+                        <core_definition>Cortex-A15</core_definition>
+                    </core>
+                    <param default="options.trace_2.traceCapture" id="dtsl_tracecapture_option" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A15_2_2</name>
+                    <xi:include href="../../../Include/dstream_pt_activity_description_lk.xml"/>
+                    <xi:include href="../../../Include/dstream_pt_connection_type.xml"/>
+                    <core connection_id="Cortex-A15_2_2">
+                        <core_definition>Cortex-A15</core_definition>
+                    </core>
+                    <param default="options.trace_2.traceCapture" id="dtsl_tracecapture_option" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A15_2_3</name>
+                    <xi:include href="../../../Include/dstream_activity_description_lk.xml"/>
+                    <xi:include href="../../../Include/dstream_connection_type.xml"/>
+                    <core connection_id="Cortex-A15_2_3">
+                        <core_definition>Cortex-A15</core_definition>
+                    </core>
+                    <param default="options.trace_2.traceCapture" id="dtsl_tracecapture_option" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A15_2_3</name>
+                    <xi:include href="../../../Include/rvi_activity_description_lk.xml"/>
+                    <xi:include href="../../../Include/rvi_connection_type.xml"/>
+                    <core connection_id="Cortex-A15_2_3">
+                        <core_definition>Cortex-A15</core_definition>
+                    </core>
+                    <param default="options.trace_2.traceCapture" id="dtsl_tracecapture_option" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A15_2_3</name>
+                    <xi:include href="../../../Include/dstream_st_activity_description_lk.xml"/>
+                    <xi:include href="../../../Include/dstream_st_connection_type.xml"/>
+                    <core connection_id="Cortex-A15_2_3">
+                        <core_definition>Cortex-A15</core_definition>
+                    </core>
+                    <param default="options.trace_2.traceCapture" id="dtsl_tracecapture_option" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A15_2_3</name>
+                    <xi:include href="../../../Include/dstream_pt_activity_description_lk.xml"/>
+                    <xi:include href="../../../Include/dstream_pt_connection_type.xml"/>
+                    <core connection_id="Cortex-A15_2_3">
+                        <core_definition>Cortex-A15</core_definition>
+                    </core>
+                    <param default="options.trace_2.traceCapture" id="dtsl_tracecapture_option" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A15 Cluster 0 SMP</name>
+                    <xi:include href="../../../Include/dstream_activity_description_lk.xml"/>
+                    <xi:include href="../../../Include/dstream_connection_type.xml"/>
+                    <core connection_id="Cortex-A15_0">
+                        <core_definition>Cortex-A15</core_definition>
+                    </core>
+                    <param default="options.trace_0.traceCapture" id="dtsl_tracecapture_option" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A15 Cluster 0 SMP</name>
+                    <xi:include href="../../../Include/rvi_activity_description_lk.xml"/>
+                    <xi:include href="../../../Include/rvi_connection_type.xml"/>
+                    <core connection_id="Cortex-A15_0">
+                        <core_definition>Cortex-A15</core_definition>
+                    </core>
+                    <param default="options.trace_0.traceCapture" id="dtsl_tracecapture_option" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A15 Cluster 0 SMP</name>
+                    <xi:include href="../../../Include/dstream_st_activity_description_lk.xml"/>
+                    <xi:include href="../../../Include/dstream_st_connection_type.xml"/>
+                    <core connection_id="Cortex-A15_0">
+                        <core_definition>Cortex-A15</core_definition>
+                    </core>
+                    <param default="options.trace_0.traceCapture" id="dtsl_tracecapture_option" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A15 Cluster 0 SMP</name>
+                    <xi:include href="../../../Include/dstream_pt_activity_description_lk.xml"/>
+                    <xi:include href="../../../Include/dstream_pt_connection_type.xml"/>
+                    <core connection_id="Cortex-A15_0">
+                        <core_definition>Cortex-A15</core_definition>
+                    </core>
+                    <param default="options.trace_0.traceCapture" id="dtsl_tracecapture_option" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A15 Cluster 1 SMP</name>
+                    <xi:include href="../../../Include/dstream_activity_description_lk.xml"/>
+                    <xi:include href="../../../Include/dstream_connection_type.xml"/>
+                    <core connection_id="Cortex-A15_1">
+                        <core_definition>Cortex-A15</core_definition>
+                    </core>
+                    <param default="options.trace_1.traceCapture" id="dtsl_tracecapture_option" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A15 Cluster 1 SMP</name>
+                    <xi:include href="../../../Include/rvi_activity_description_lk.xml"/>
+                    <xi:include href="../../../Include/rvi_connection_type.xml"/>
+                    <core connection_id="Cortex-A15_1">
+                        <core_definition>Cortex-A15</core_definition>
+                    </core>
+                    <param default="options.trace_1.traceCapture" id="dtsl_tracecapture_option" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A15 Cluster 1 SMP</name>
+                    <xi:include href="../../../Include/dstream_st_activity_description_lk.xml"/>
+                    <xi:include href="../../../Include/dstream_st_connection_type.xml"/>
+                    <core connection_id="Cortex-A15_1">
+                        <core_definition>Cortex-A15</core_definition>
+                    </core>
+                    <param default="options.trace_1.traceCapture" id="dtsl_tracecapture_option" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A15 Cluster 1 SMP</name>
+                    <xi:include href="../../../Include/dstream_pt_activity_description_lk.xml"/>
+                    <xi:include href="../../../Include/dstream_pt_connection_type.xml"/>
+                    <core connection_id="Cortex-A15_1">
+                        <core_definition>Cortex-A15</core_definition>
+                    </core>
+                    <param default="options.trace_1.traceCapture" id="dtsl_tracecapture_option" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A15 Cluster 2 SMP</name>
+                    <xi:include href="../../../Include/dstream_activity_description_lk.xml"/>
+                    <xi:include href="../../../Include/dstream_connection_type.xml"/>
+                    <core connection_id="Cortex-A15_2">
+                        <core_definition>Cortex-A15</core_definition>
+                    </core>
+                    <param default="options.trace_2.traceCapture" id="dtsl_tracecapture_option" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A15 Cluster 2 SMP</name>
+                    <xi:include href="../../../Include/rvi_activity_description_lk.xml"/>
+                    <xi:include href="../../../Include/rvi_connection_type.xml"/>
+                    <core connection_id="Cortex-A15_2">
+                        <core_definition>Cortex-A15</core_definition>
+                    </core>
+                    <param default="options.trace_2.traceCapture" id="dtsl_tracecapture_option" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A15 Cluster 2 SMP</name>
+                    <xi:include href="../../../Include/dstream_st_activity_description_lk.xml"/>
+                    <xi:include href="../../../Include/dstream_st_connection_type.xml"/>
+                    <core connection_id="Cortex-A15_2">
+                        <core_definition>Cortex-A15</core_definition>
+                    </core>
+                    <param default="options.trace_2.traceCapture" id="dtsl_tracecapture_option" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A15 Cluster 2 SMP</name>
+                    <xi:include href="../../../Include/dstream_pt_activity_description_lk.xml"/>
+                    <xi:include href="../../../Include/dstream_pt_connection_type.xml"/>
+                    <core connection_id="Cortex-A15_2">
+                        <core_definition>Cortex-A15</core_definition>
+                    </core>
+                    <param default="options.trace_2.traceCapture" id="dtsl_tracecapture_option" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A15 All Clusters SMP</name>
+                    <xi:include href="../../../Include/dstream_activity_description_lk.xml"/>
+                    <xi:include href="../../../Include/dstream_connection_type.xml"/>
+                    <core connection_id="Cortex-A15_all">
+                        <core_definition>Cortex-A15</core_definition>
+                    </core>
+                    <param default="options.trace_0.traceCapture" id="dtsl_tracecapture_option" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A15 All Clusters SMP</name>
+                    <xi:include href="../../../Include/rvi_activity_description_lk.xml"/>
+                    <xi:include href="../../../Include/rvi_connection_type.xml"/>
+                    <core connection_id="Cortex-A15_all">
+                        <core_definition>Cortex-A15</core_definition>
+                    </core>
+                    <param default="options.trace_0.traceCapture" id="dtsl_tracecapture_option" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A15 All Clusters SMP</name>
+                    <xi:include href="../../../Include/dstream_st_activity_description_lk.xml"/>
+                    <xi:include href="../../../Include/dstream_st_connection_type.xml"/>
+                    <core connection_id="Cortex-A15_all">
+                        <core_definition>Cortex-A15</core_definition>
+                    </core>
+                    <param default="options.trace_0.traceCapture" id="dtsl_tracecapture_option" type="string" visible="false"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A15 All Clusters SMP</name>
+                    <xi:include href="../../../Include/dstream_pt_activity_description_lk.xml"/>
+                    <xi:include href="../../../Include/dstream_pt_connection_type.xml"/>
+                    <core connection_id="Cortex-A15_all">
+                        <core_definition>Cortex-A15</core_definition>
+                    </core>
+                    <param default="options.trace_0.traceCapture" id="dtsl_tracecapture_option" type="string" visible="false"/>
+                </activity>
+            </execution_environment>
+        </project_type>
+        <project_type type="BARE_METAL">
+            <name language="en">Snapshot View</name>
+            <description language="en">This allows a snapshot connection.</description>
+            <execution_environment id="COREDUMP">
+                <name language="en">Snapshot View</name>
+                <description language="en">Connect to a snapshot image</description>
+                <xi:include href="../../../Include/coredump_location.xml"/>
+                <param default="CDB://../AXM5516/coredump.xml" id="config_file" type="string" visible="false"/>
+                <param default="CDB://../AXM5516/coredump.py" id="dtsl_config_script" type="string" visible="false"/>
+                <param default="Coredump" id="dtsl_config" type="string" visible="false"/>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">View Cortex-A15</name>
+                    <xi:include href="../../../Include/coredump_activity_description.xml"/>
+                    <xi:include href="../../../Include/coredump_connection_type.xml"/>
+                    <core connection_id="cpu">
+                        <core_definition>Cortex-A15</core_definition>
+                    </core>
+                </activity>
+            </execution_environment>
+        </project_type>
+    </project_type_list>
+</platform_data>

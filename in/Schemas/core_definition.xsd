@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    targetNamespace="http://www.arm.com/core_definition" xmlns="http://www.arm.com/core_definition"
+    elementFormDefault="qualified" xmlns:cr="http://www.arm.com/core_reg"
+    xmlns:xi="http://www.w3.org/2001/XInclude">
+
+    <xsd:import namespace="http://www.arm.com/core_reg"
+        schemaLocation="core_register_definition.xsd" />
+    <xsd:import namespace="http://www.w3.org/2001/XInclude"
+        schemaLocation="http://www.w3.org/2001/XInclude.xsd" />
+
+    <xsd:element name="core_definition">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="name" type="xsd:string" />
+                <xsd:element name="internal_name" type="xsd:string" />
+                <xsd:element ref="description" minOccurs="0" maxOccurs="1" />
+                <xsd:element name="series" type="series_type" />
+                <xsd:element name="reg_filter" minOccurs="0" maxOccurs="unbounded">
+                    <xsd:complexType>
+                        <xsd:attribute name="id" use="required">
+                          <xsd:simpleType>
+                                <xsd:restriction base="xsd:string">
+                                    <xsd:pattern value="[A-Z][A-Z0-9_]*"/>
+                                </xsd:restriction>
+                            </xsd:simpleType>
+                        </xsd:attribute>
+                        <xsd:attribute name="gui_name" use="required">
+                            <xsd:simpleType>
+                                <xsd:restriction base="xsd:string">
+                                    <xsd:pattern value="[A-Za-z][A-Za-z0-9_]*"/>
+                                </xsd:restriction>
+                            </xsd:simpleType>
+                        </xsd:attribute>
+                        <xsd:attribute name="core_state" use="optional"/>
+                    </xsd:complexType>
+                </xsd:element>
+                <xsd:choice maxOccurs="unbounded">
+                    <xsd:element ref="cr:register_list" minOccurs="1"
+                        maxOccurs="unbounded" />
+                    <xsd:element ref="xi:include" minOccurs="0" maxOccurs="unbounded" />
+                </xsd:choice>
+                <xsd:element name="cache_awareness_list" type="cache_awareness_list" minOccurs="0" maxOccurs="unbounded"/>
+            </xsd:sequence>
+            <xsd:attribute name="architecture" type="architecture_type"
+                use="required" />
+            <xsd:attribute name="taxonomyId" type="xsd:string" use="optional" />
+            <xsd:attribute name="image" type="xsd:string" use="optional" />
+            <xsd:attribute name="inherits" type="xsd:string" use="optional" />
+        </xsd:complexType>
+    </xsd:element>
+
+    <xsd:simpleType name="architecture_type">
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="ARMv4" />
+            <xsd:enumeration value="ARMv4T" />
+            <xsd:enumeration value="ARMv5T" />
+            <xsd:enumeration value="ARMv5TE" />
+            <xsd:enumeration value="ARMv5TEJ" />
+            <xsd:enumeration value="ARMv6" />
+            <xsd:enumeration value="ARMv6K" />
+            <xsd:enumeration value="ARMv6KZ" />
+            <xsd:enumeration value="ARMv6M" />
+            <xsd:enumeration value="ARMv6T2" />
+            <xsd:enumeration value="ARMv7A" />
+            <xsd:enumeration value="ARMv7AV" />
+            <xsd:enumeration value="ARMv7M" />
+            <xsd:enumeration value="ARMv7R" />
+            <xsd:enumeration value="GDBServer" />
+            <xsd:enumeration value="GDBServer64" />
+            <xsd:enumeration value="ARMv8" />
+            <xsd:enumeration value="ARMv8_1A" />
+            <xsd:enumeration value="ARMv8_2A" />
+            <xsd:enumeration value="ARMv8_3A" />
+            <xsd:enumeration value="ARMv8_4A" />
+            <xsd:enumeration value="ARMv8A_Latest" />
+            <xsd:enumeration value="ARMv8A_AArch32" />
+            <xsd:enumeration value="ARMv8R" />
+            <xsd:enumeration value="ARMv8M" />
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="series_type">
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="A" />
+            <xsd:enumeration value="R" />
+            <xsd:enumeration value="M" />
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:complexType name="cache_awareness_list">
+        <xsd:sequence>
+            <xsd:choice maxOccurs="unbounded">
+                <xsd:element ref="cache_awareness" minOccurs="0" maxOccurs="unbounded" />
+                <xsd:element ref="memory_view" minOccurs="0" maxOccurs="1" />
+               </xsd:choice>
+        </xsd:sequence>
+        <xsd:attribute name="type" type="xsd:string" use="required"></xsd:attribute>
+        <xsd:attribute name="core" type="xsd:string" use="optional"></xsd:attribute>
+        <xsd:attribute name="cache_preservation_mode_available" type="xsd:string" use="optional"></xsd:attribute>
+    </xsd:complexType>
+
+    <xsd:element name="cache_awareness">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:choice maxOccurs="unbounded">
+                    <xsd:element ref="associated_cache" minOccurs="0" maxOccurs="1" />
+                    <xsd:element ref="memory_view" minOccurs="0" maxOccurs="1" />
+                </xsd:choice>
+            </xsd:sequence>
+            <xsd:attribute name="id" type="xsd:string" use="required"></xsd:attribute>
+            <xsd:attribute name="class"  type="xsd:string" use="optional"></xsd:attribute>
+            <xsd:attribute name="script" type="xsd:string" use="optional"></xsd:attribute>
+        </xsd:complexType>
+    </xsd:element>
+
+    <xsd:element name="associated_cache">
+        <xsd:complexType>
+            <xsd:attribute name="id" type="xsd:string" use="required"></xsd:attribute>
+            <xsd:attribute name="scope" type="xsd:string" use="optional"></xsd:attribute>
+        </xsd:complexType>
+    </xsd:element>
+
+    <xsd:element name="memory_view">
+        <xsd:complexType>
+            <xsd:attribute name="name" type="xsd:string" use="required"></xsd:attribute>
+            <xsd:attribute name="layered_on" type="xsd:string" use="optional"></xsd:attribute>
+        </xsd:complexType>
+    </xsd:element>
+
+
+    <!-- Define Description Element -->
+    <xsd:element name="description">
+        <xsd:complexType mixed="true">
+            <xsd:attribute name="language" type="xsd:language" use="optional"
+                default="en" />
+        </xsd:complexType>
+    </xsd:element>
+</xsd:schema>

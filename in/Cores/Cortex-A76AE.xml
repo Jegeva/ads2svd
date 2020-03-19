@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<core_definition xmlns="http://www.arm.com/core_definition" xmlns:cr="http://www.arm.com/core_reg" xmlns:tcf="http://com.arm.targetconfigurationeditor" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" architecture="ARMv8A_Latest" xsi:schemaLocation="http://www.arm.com/core_definition ../Schemas/core_definition.xsd">
+    <name>Cortex-A76AE</name>
+    <internal_name>Cortex-A76AE</internal_name>
+    <series>A</series>
+    <reg_filter id="A76AE_AARCH64" gui_name="AArch64" core_state="AArch64"/>
+    <reg_filter id="A76AE_AARCH32" gui_name="AArch32" core_state="AArch32"/>
+    <cr:register_list filter="A76AE_AARCH32" name="Core" display_by_default="true">
+        <xi:include href="Registers/V8_AARCH32_Core.xml" xpointer="xmlns(reg_group=http://www.arm.com/core_reg)xpointer(//reg_group:register)"/>
+        <xi:include href="Registers/banked_registers_V8_aarch32.xml" xpointer="xmlns(reg_group=http://www.arm.com/core_reg)xpointer(//reg_group:register_group)"/>
+        <xi:include href="Registers/V8_AARCH32_Core.xml" xpointer="xmlns(namespace=http://com.arm.targetconfigurationeditor)xpointer(//namespace:enumeration)"/>
+    </cr:register_list>
+    <cr:register_list filter="A76AE_AARCH64" name="Core" display_by_default="true">
+        <xi:include href="Registers/V8_AARCH64_Core.xml" xpointer="xmlns(namespace=http://www.arm.com/core_reg)xpointer(//namespace:register)"/>
+        <xi:include href="Registers/V8_AARCH64_Core.xml" xpointer="xmlns(namespace=http://com.arm.targetconfigurationeditor)xpointer(//namespace:enumeration)"/>
+    </cr:register_list>
+    <cr:register_list filter="A76AE_AARCH32" name="SIMD">
+        <xi:include href="Registers/SIMD/V8_AARCH32_SIMD_FP16.xml" xpointer="xmlns(namespace=http://www.arm.com/core_reg)xpointer(//namespace:register_group)"/>
+        <!-- <xi:include href="Registers/SIMD/V8_AARCH32_SIMD_FP16.xml" xpointer="xmlns(namespace=http://com.arm.targetconfigurationeditor)xpointer(//namespace:enumeration)"/> -->
+    </cr:register_list>
+    <cr:register_list filter="A76AE_AARCH64" name="SIMD">
+        <xi:include href="Registers/SIMD/V8_AARCH64_SIMD.xml" xpointer="xmlns(namespace=http://www.arm.com/core_reg)xpointer(//namespace:register_group)"/>
+        <!-- <xi:include href="Registers/SIMD/V8_AARCH64_SIMD.xml" xpointer="xmlns(namespace=http://com.arm.targetconfigurationeditor)xpointer(//namespace:enumeration)"/> -->
+    </cr:register_list>
+    <cr:register_list filter="A76AE_AARCH64" name="V8_2">
+        <xi:include href="Registers/System/V8_2_Extensions_AARCH64.xml" xpointer="xmlns(namespace=http://www.arm.com/core_reg)xpointer(//namespace:register)"/>
+    </cr:register_list>
+    <cr:register_list filter="A76AE_AARCH32" name="V8_2">
+        <xi:include href="Registers/System/V8_2_Extensions_AARCH32.xml" xpointer="xmlns(namespace=http://www.arm.com/core_reg)xpointer(//namespace:register)"/>
+    </cr:register_list>
+    <cr:register_list filter="A76AE_AARCH64" name="System">
+        <xi:include href="Registers/System/A76_AARCH64_ImpDef.xml" xpointer="xmlns(namespace=http://www.arm.com/core_reg)xpointer(//namespace:register_group)"/>
+        <!-- <xi:include href="Registers/System/A76_AARCH64_ImpDef.xml" xpointer="xmlns(namespace=http://com.arm.targetconfigurationeditor)xpointer(//namespace:enumeration)"/> -->
+        <xi:include href="V8_1_AARCH64_ArchitecturalSystemRegisters.inc" xpointer="xmlns(namespace=http://www.arm.com/core_reg)xpointer(//namespace:register_group)"/>
+        <xi:include href="Registers/System/FlexibleClusterMicroArchitecture_AARCH64_ImpDef.xml" xpointer="xmlns(namespace=http://www.arm.com/core_reg)xpointer(//namespace:register_group)"/>
+        <!-- <xi:include href="Registers/System/FlexibleClusterMicroArchitecture_AARCH64_ImpDef.xml" xpointer="xmlns(namespace=http://com.arm.targetconfigurationeditor)xpointer(//namespace:enumeration)"/> -->
+    </cr:register_list>
+    <cr:register_list filter="A76AE_AARCH32" name="System">
+        <xi:include href="V8_1_AARCH32_ArchitecturalSystemRegisters.inc" xpointer="xmlns(namespace=http://www.arm.com/core_reg)xpointer(//namespace:register_group)"/>
+    </cr:register_list>
+
+    <!-- ARMv8.4-A extensions -->
+    <cr:register_list filter="A76AE_AARCH64" name="System" override="true">
+        <xi:include href="Registers/System/V8_4_Extensions_AARCH64.xml" xpointer="xmlns(namespace=http://www.arm.com/core_reg)xpointer(//namespace:register_group)"/>
+        <xi:include href="Registers/System/V8_4_Extensions_AARCH64.xml" xpointer="xmlns(namespace=http://com.arm.targetconfigurationeditor)xpointer(//namespace:enumeration)"/>
+    </cr:register_list>
+    <cr:register_list filter="A76AE_AARCH64" name="V8_2" override="true">
+        <xi:include href="Registers/System/V8_4_Extensions_RAS_AARCH64.xml" xpointer="xmlns(namespace=http://www.arm.com/core_reg)xpointer(//namespace:register)"/>
+    </cr:register_list>
+    <cr:register_list filter="A76AE_AARCH32" name="System" override="true">
+        <xi:include href="Registers/System/V8_4_Extensions_AARCH32.xml" xpointer="xmlns(namespace=http://www.arm.com/core_reg)xpointer(//namespace:register_group)"/>
+        <xi:include href="Registers/System/V8_4_Extensions_AARCH32.xml" xpointer="xmlns(namespace=http://com.arm.targetconfigurationeditor)xpointer(//namespace:enumeration)"/>
+    </cr:register_list>
+    <cr:register_list filter="A76AE_AARCH32" name="V8_2" override="true">
+        <xi:include href="Registers/System/V8_4_Extensions_RAS_AARCH32.xml" xpointer="xmlns(namespace=http://www.arm.com/core_reg)xpointer(//namespace:register)"/>
+    </cr:register_list>
+
+    <cache_awareness_list type="HARDWARE" cache_preservation_mode_available="false">
+        <cache_awareness id="L1I" class="com.arm.debug.targetaccess.targetabstraction.cache.arm.v8a.a76.hw.L1ICache">
+        </cache_awareness>
+        <cache_awareness id="L1D" class="com.arm.debug.targetaccess.targetabstraction.cache.arm.v8a.a76.hw.L1DCache">
+            <associated_cache id="L1D" scope="cluster"/>
+            <associated_cache id="L2"/>
+        </cache_awareness>
+        <cache_awareness id="L2" class="com.arm.debug.targetaccess.targetabstraction.cache.arm.v8a.a76.hw.L2Cache">
+        </cache_awareness>
+    </cache_awareness_list>
+
+    <cache_awareness_list type="FVP">
+        <cache_awareness id="L1I" class="com.arm.debug.targetaccess.targetabstraction.cache.arm.v8a.fvp.L1ICache">
+           <associated_cache id="L2"/>
+        </cache_awareness>
+        <cache_awareness id="L1D" class="com.arm.debug.targetaccess.targetabstraction.cache.arm.v8a.fvp.L1DCache">
+           <associated_cache id="L1D" scope="cluster"/>
+           <associated_cache id="L2"/>
+        </cache_awareness>
+        <cache_awareness id="L2" class="com.arm.debug.targetaccess.targetabstraction.cache.arm.v8a.fvp.L2Cache"/>
+    </cache_awareness_list>
+
+</core_definition>

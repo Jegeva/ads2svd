@@ -1,0 +1,58 @@
+<?xml version="1.0"?>
+<core_definition
+    xmlns="http://www.arm.com/core_definition"
+    xmlns:cr="http://www.arm.com/core_reg"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:xi="http://www.w3.org/2001/XInclude"
+    xmlns:tcf="http://com.arm.targetconfigurationeditor"
+    xsi:schemaLocation="http://www.arm.com/core_definition ../Schemas/core_definition.xsd"
+    architecture="ARMv7AV">
+
+    <name>Cortex-A17</name>
+    <internal_name>Cortex-A17</internal_name>
+    <series>A</series>
+    <reg_filter id="A17_AARCH32" gui_name="AArch32"/>
+    <cr:register_list filter="A17_AARCH32" name="Core" display_by_default="true">
+        <xi:include href="Registers/core_registers.xml"        xpointer="xmlns(reg_group=http://www.arm.com/core_reg)xpointer(//reg_group:register)"/>
+        <xi:include href="Registers/CPSR/V7_virt.xml"          xpointer="xmlns(reg_group=http://www.arm.com/core_reg)xpointer(//reg_group:register)"/>
+        <xi:include href="Registers/banked_registers_V6_7.xml" xpointer="xmlns(reg_group=http://www.arm.com/core_reg)xpointer(//reg_group:register_group)"/>
+        <xi:include href="Registers/tz_registers.xml"          xpointer="xmlns(reg_group=http://www.arm.com/core_reg)xpointer(//reg_group:register_group)"/>
+        <xi:include href="Registers/hyp_registers.xml"         xpointer="xmlns(reg_group=http://www.arm.com/core_reg)xpointer(//reg_group:register_group)"/>
+        <xi:include href="Registers/CPSR/V7_virt.xml"          xpointer="xmlns(tcf=http://com.arm.targetconfigurationeditor)xpointer(//tcf:enumeration)"/>
+    </cr:register_list>
+
+    <cr:register_list filter="A17_AARCH32" name="CP15">
+        <xi:include href="Registers/CP15/Cortex-v7A_ID.xml"       xpointer="xmlns(reg_group=http://www.arm.com/core_reg)xpointer(//reg_group:register_group)"/>
+        <xi:include href="Registers/CP15/Cortex-v7A_VirtMem.xml"  xpointer="xmlns(reg_group=http://www.arm.com/core_reg)xpointer(//reg_group:register_group)"/>
+        <xi:include href="Registers/CP15/Cortex-v7A_Faults.xml"   xpointer="xmlns(reg_group=http://www.arm.com/core_reg)xpointer(//reg_group:register_group)"/>
+        <xi:include href="Registers/CP15/Cortex-A12_OtherCtl.xml" xpointer="xmlns(reg_group=http://www.arm.com/core_reg)xpointer(//reg_group:register_group)"/>
+        <xi:include href="Registers/CP15/Cortex-A12_Cache.xml"    xpointer="xmlns(reg_group=http://www.arm.com/core_reg)xpointer(//reg_group:register_group)"/>
+        <xi:include href="Registers/CP15/Cortex-v7A_TLB.xml"      xpointer="xmlns(reg_group=http://www.arm.com/core_reg)xpointer(//reg_group:register_group)"/>
+        <xi:include href="Registers/CP15/Cortex-v7A_VA2PA.xml"    xpointer="xmlns(reg_group=http://www.arm.com/core_reg)xpointer(//reg_group:register_group)"/>
+        <xi:include href="Registers/CP15/Cortex-v7A_MiscOp.xml"   xpointer="xmlns(reg_group=http://www.arm.com/core_reg)xpointer(//reg_group:register_group)"/>
+        <xi:include href="Registers/CP15/Cortex-v7A_Perf.xml"     xpointer="xmlns(reg_group=http://www.arm.com/core_reg)xpointer(//reg_group:register_group)"/>
+        <xi:include href="Registers/CP15/Cortex-A12_SecExt.xml"   xpointer="xmlns(reg_group=http://www.arm.com/core_reg)xpointer(//reg_group:register_group)"/>
+        <xi:include href="Registers/CP15/Cortex-v7A_VirtExt.xml"  xpointer="xmlns(reg_group=http://www.arm.com/core_reg)xpointer(//reg_group:register_group)"/>
+        <xi:include href="Registers/CP15/Cortex-v7A_Timer.xml"    xpointer="xmlns(reg_group=http://www.arm.com/core_reg)xpointer(//reg_group:register_group)"/>
+        <xi:include href="Registers/CP15/Cortex-v7A_NonSec.xml"   xpointer="xmlns(reg_group=http://www.arm.com/core_reg)xpointer(//reg_group:register_group)"/>
+        <xi:include href="Registers/CP15/Cortex-v7A_Secure.xml"   xpointer="xmlns(reg_group=http://www.arm.com/core_reg)xpointer(//reg_group:register_group)"/>
+        <xi:include href="Registers/CP15/Cortex-A12_Impl.xml"     xpointer="xmlns(reg_group=http://www.arm.com/core_reg)xpointer(//reg_group:register_group)"/>
+        <xi:include href="Registers/CP15/Cortex-v7A_Enums.xml"    xpointer="xmlns(tcf=http://com.arm.targetconfigurationeditor)xpointer(//tcf:enumeration)"/>
+    </cr:register_list>
+
+    <cr:register_list filter="A17_AARCH32" name="VFP">
+        <xi:include href="Registers/VFP/VFPv3-SIMD.xml" xpointer="xmlns(reg_group=http://www.arm.com/core_reg)xpointer(//reg_group:register_group)"/>
+        <xi:include href="Registers/VFP/VFPv3-SIMD.xml" xpointer="xmlns(tcf=http://com.arm.targetconfigurationeditor)xpointer(//tcf:enumeration)"/>
+    </cr:register_list>
+
+    <cr:register_list filter="A17_AARCH32" name="SIMD">
+        <xi:include href="Registers/VFP/SIMD.xml" xpointer="xmlns(reg_group=http://www.arm.com/core_reg)xpointer(//reg_group:register_group)"/>
+    </cr:register_list>
+
+    <cr:register_list filter="A17_AARCH32" name="GIC">
+          <xi:include href="Registers/GIC/Cortex-A15_GICH.xml" xpointer="xmlns(reg_group=http://www.arm.com/core_reg)xpointer(//reg_group:register_group)"/>
+          <xi:include href="Registers/GIC/Cortex-A15_GICC.xml" xpointer="xmlns(reg_group=http://www.arm.com/core_reg)xpointer(//reg_group:register_group)"/>
+          <xi:include href="Registers/GIC/Cortex-A15_GICV.xml" xpointer="xmlns(reg_group=http://www.arm.com/core_reg)xpointer(//reg_group:register_group)"/>
+          <xi:include href="Registers/GIC/Cortex-A15_GICD.xml" xpointer="xmlns(reg_group=http://www.arm.com/core_reg)xpointer(//reg_group:register_group)"/>
+    </cr:register_list>
+</core_definition>

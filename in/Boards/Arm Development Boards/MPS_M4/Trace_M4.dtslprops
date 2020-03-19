@@ -1,0 +1,5 @@
+# Tue Sept 03 16:59:40 BST 2013
+options.trace.traceCapture=DSTREAM
+options.coreTrace.cortexM4coreTrace=true
+options.coreTrace.cortexM4coreTrace.Cortex_M4_0=true
+options.itm.itm=false

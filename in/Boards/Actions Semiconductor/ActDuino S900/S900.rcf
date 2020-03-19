@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<debug_and_trace_config>
+    <redistributable value="true"/>
+    <rcf_version value="1.0"/>
+    <debug_vehicle_config>
+        <connection address=""/>
+        <jtag_clock adaptive="false" speed="10000000"/>
+        <scctimeout value="30000"/>
+        <trace>
+        
+            <trace_capture type="parallel">
+            
+                <config_item name="DELAY_TRACE_CLOCK">0</config_item>
+                <config_item name="DELAY_TRACE_SIGNAL_1">0</config_item>
+                <config_item name="DELAY_TRACE_SIGNAL_2">0</config_item>
+                <config_item name="DELAY_TRACE_SIGNAL_3">0</config_item>
+                <config_item name="DELAY_TRACE_SIGNAL_4">0</config_item>
+                <config_item name="DELAY_TRACE_SIGNAL_5">0</config_item>
+                <config_item name="DELAY_TRACE_SIGNAL_6">0</config_item>
+                <config_item name="DELAY_TRACE_SIGNAL_7">0</config_item>
+                <config_item name="DELAY_TRACE_SIGNAL_8">0</config_item>
+                <config_item name="DELAY_TRACE_SIGNAL_9">0</config_item>
+                <config_item name="DELAY_TRACE_SIGNAL_10">0</config_item>
+                <config_item name="DELAY_TRACE_SIGNAL_11">0</config_item>
+                <config_item name="DELAY_TRACE_SIGNAL_12">0</config_item>
+                <config_item name="DELAY_TRACE_SIGNAL_13">0</config_item>
+                <config_item name="DELAY_TRACE_SIGNAL_14">0</config_item>
+                <config_item name="DELAY_TRACE_SIGNAL_15">0</config_item>
+                <config_item name="DELAY_TRACE_SIGNAL_16">0</config_item>
+                <config_item name="DELAY_TRACE_SIGNAL_17">0</config_item>
+                <config_item name="DELAY_TRACE_SIGNAL_18">0</config_item>
+                <config_item name="DELAY_TRACE_SIGNAL_19">0</config_item>
+                <config_item name="DELAY_TRACE_SIGNAL_20">0</config_item>
+                <config_item name="DELAY_TRACE_SIGNAL_21">0</config_item>
+                <config_item name="DELAY_TRACE_SIGNAL_22">0</config_item>
+                <config_item name="DELAY_TRACE_SIGNAL_23">0</config_item>
+                <config_item name="DELAY_TRACE_SIGNAL_24">0</config_item>
+                <config_item name="DELAY_TRACE_SIGNAL_25">0</config_item>
+                <config_item name="DELAY_TRACE_SIGNAL_26">0</config_item>
+                <config_item name="DELAY_TRACE_SIGNAL_27">0</config_item>
+                <config_item name="DELAY_TRACE_SIGNAL_28">0</config_item>
+                <config_item name="DELAY_TRACE_SIGNAL_29">0</config_item>
+                <config_item name="DELAY_TRACE_SIGNAL_30">0</config_item>
+                <config_item name="DELAY_TRACE_SIGNAL_31">0</config_item>
+                <config_item name="DELAY_TRACE_SIGNAL_32">0</config_item>
+                <config_item name="DELAY_TRACE_SIGNAL_33">0</config_item>
+                <config_item name="DELAY_TRACE_SIGNAL_34">0</config_item>
+                <config_item name="DELAY_TRACE_SIGNAL_35">0</config_item>
+                <config_item name="DELAY_TRACE_SIGNAL_36">0</config_item>
+</trace_capture>
+</trace>
+        <debug_vehicle_connection type="DSTREAM/RVI" version="4.23.0.36">
+            <connection_config>
+                <config_item name="TResetOnInitConnect">1</config_item>
+                <config_item name="SResetOnInitConnect">0</config_item>
+                <config_item name="AllowICELatchSysRst">1</config_item>
+                <config_item name="AllowICETAPReset">1</config_item>
+                <config_item name="DoSoftTAPReset">1</config_item>
+                <config_item name="nTRSTHoldTime">10</config_item>
+                <config_item name="nTRSTPostResetTime">10</config_item>
+                <config_item name="ResetHoldTime">100</config_item>
+                <config_item name="PostResetDelay">1000</config_item>
+                <config_item name="nTRSTHighMode">0</config_item>
+                <config_item name="nTRSTLowMode">0</config_item>
+                <config_item name="nSRSTHighMode">1</config_item>
+                <config_item name="nSRSTLowMode">0</config_item>
+                <config_item name="Linked_SRST_TRST">0</config_item>
+                <config_item name="SWOBaudRate">0</config_item>
+                <config_item name="SWOMode">0</config_item>
+                <config_item name="LVDSProbeMode">1</config_item>
+                <config_item name="SWJEnable">0</config_item>
+                <config_item name="UseDeprecatedSWJ">0</config_item>
+                <config_item name="UserOut_P1">0</config_item>
+                <config_item name="UserOut_P2">0</config_item>
+                <config_item name="UserOut_P3">0</config_item>
+                <config_item name="UserOut_P4">0</config_item>
+                <config_item name="UserOut_P5">0</config_item>
+                <config_item name="UserOut_P6_COAX">0</config_item>
+                <config_item name="UserOut_DBGRQ">0</config_item>
+                <config_item name="PythonScript"/>
+                <config_item name="PowerFilterTime">100</config_item>
+                <config_item name="DSTREAMCS20">0</config_item>
+            </connection_config>
+        </debug_vehicle_connection>
+    </debug_vehicle_config>
+    <platform info_url="http://www.actions-semi.com" manufacturer="Actions" title="S900">
+        <scanchain>
+            <dap name="ARMCS-DP_0" type="ARMCS-DP">
+                <device name="CSMEMAP_0" type="CSMEMAP">
+                    <config_items>
+                        <config_item name="CORESIGHT_AP_INDEX">0</config_item>
+                    </config_items>
+                </device>
+                <device name="Cortex-A53_0" type="Cortex-A53">
+                    <config_items>
+                        <config_item name="CORESIGHT_BASE_ADDRESS">0xE0810000</config_item>
+                        <config_item name="CORESIGHT_AP_INDEX">0</config_item>
+                        <config_item name="CTI_CORESIGHT_BASE_ADDRESS">0xE0820000</config_item>
+                    </config_items>
+                </device>
+                <device name="CSCTI_0" type="CSCTI">
+                    <config_items>
+                        <config_item name="CORESIGHT_BASE_ADDRESS">0xE0820000</config_item>
+                        <config_item name="CORESIGHT_AP_INDEX">0</config_item>
+                    </config_items>
+                </device>
+                <device name="CSPMU_0" type="CSPMU">
+                    <config_items>
+                        <config_item name="CORESIGHT_BASE_ADDRESS">0xE0830000</config_item>
+                        <config_item name="CORESIGHT_AP_INDEX">0</config_item>
+                    </config_items>
+                </device>
+                <device name="CSETM_0" type="CSETM">
+                    <config_items>
+                        <config_item name="CORESIGHT_BASE_ADDRESS">0xE0840000</config_item>
+                        <config_item name="CORESIGHT_AP_INDEX">0</config_item>
+                    </config_items>
+                </device>
+                <device name="Cortex-A53_1" type="Cortex-A53">
+                    <config_items>
+                        <config_item name="CORESIGHT_BASE_ADDRESS">0xE0910000</config_item>
+                        <config_item name="CORESIGHT_AP_INDEX">0</config_item>
+                        <config_item name="CTI_CORESIGHT_BASE_ADDRESS">0xE0920000</config_item>
+                    </config_items>
+                </device>
+                <device name="CSCTI_1" type="CSCTI">
+                    <config_items>
+                        <config_item name="CORESIGHT_BASE_ADDRESS">0xE0920000</config_item>
+                        <config_item name="CORESIGHT_AP_INDEX">0</config_item>
+                    </config_items>
+                </device>
+                <device name="CSPMU_1" type="CSPMU">
+                    <config_items>
+                        <config_item name="CORESIGHT_BASE_ADDRESS">0xE0930000</config_item>
+                        <config_item name="CORESIGHT_AP_INDEX">0</config_item>
+                    </config_items>
+                </device>
+                <device name="CSETM_1" type="CSETM">
+                    <config_items>
+                        <config_item name="CORESIGHT_BASE_ADDRESS">0xE0940000</config_item>
+                        <config_item name="CORESIGHT_AP_INDEX">0</config_item>
+                    </config_items>
+                </device>
+                <device name="Cortex-A53_2" type="Cortex-A53">
+                    <config_items>
+                        <config_item name="CORESIGHT_BASE_ADDRESS">0xE0A10000</config_item>
+                        <config_item name="CORESIGHT_AP_INDEX">0</config_item>
+                        <config_item name="CTI_CORESIGHT_BASE_ADDRESS">0xE0A20000</config_item>
+                    </config_items>
+                </device>
+                <device name="CSCTI_2" type="CSCTI">
+                    <config_items>
+                        <config_item name="CORESIGHT_BASE_ADDRESS">0xE0A20000</config_item>
+                        <config_item name="CORESIGHT_AP_INDEX">0</config_item>
+                    </config_items>
+                </device>
+                <device name="CSPMU_2" type="CSPMU">
+                    <config_items>
+                        <config_item name="CORESIGHT_BASE_ADDRESS">0xE0A30000</config_item>
+                        <config_item name="CORESIGHT_AP_INDEX">0</config_item>
+                    </config_items>
+                </device>
+                <device name="CSETM_2" type="CSETM">
+                    <config_items>
+                        <config_item name="CORESIGHT_BASE_ADDRESS">0xE0A40000</config_item>
+                        <config_item name="CORESIGHT_AP_INDEX">0</config_item>
+                    </config_items>
+                </device>
+                <device name="Cortex-A53_3" type="Cortex-A53">
+                    <config_items>
+                        <config_item name="CORESIGHT_BASE_ADDRESS">0xE0B10000</config_item>
+                        <config_item name="CORESIGHT_AP_INDEX">0</config_item>
+                        <config_item name="CTI_CORESIGHT_BASE_ADDRESS">0xE0B20000</config_item>
+                    </config_items>
+                </device>
+                <device name="CSCTI_3" type="CSCTI">
+                    <config_items>
+                        <config_item name="CORESIGHT_BASE_ADDRESS">0xE0B20000</config_item>
+                        <config_item name="CORESIGHT_AP_INDEX">0</config_item>
+                    </config_items>
+                </device>
+                <device name="CSPMU_3" type="CSPMU">
+                    <config_items>
+                        <config_item name="CORESIGHT_BASE_ADDRESS">0xE0B30000</config_item>
+                        <config_item name="CORESIGHT_AP_INDEX">0</config_item>
+                    </config_items>
+                </device>
+                <device name="CSETM_3" type="CSETM">
+                    <config_items>
+                        <config_item name="CORESIGHT_BASE_ADDRESS">0xE0B40000</config_item>
+                        <config_item name="CORESIGHT_AP_INDEX">0</config_item>
+                    </config_items>
+                </device>
+                <device name="CSMEMAP_1" type="CSMEMAP">
+                    <config_items>
+                        <config_item name="CORESIGHT_AP_INDEX">1</config_item>
+                    </config_items>
+                </device>
+            </dap>
+        </scanchain>
+    </platform>
+</debug_and_trace_config>

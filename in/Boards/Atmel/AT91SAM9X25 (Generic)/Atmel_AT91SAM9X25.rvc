@@ -1,0 +1,162 @@
+<?xml version="1.0"?>
+<?RVConfigUtility MajorVersion = "0" MinorVersion = "0" PatchVersion = "0"?>
+<RVConfigUtility>
+   <redistributable value="true"/>
+   <RVConfigModule>
+      <?RVConfig DLL_NAME = "connection" MajorVersion = "1" MinorVersion = "0" PatchVersion = "0" Expanded = "true" Active = "false" Enabled = "true" UserLabel = ""?>
+      <ScanChainNames Type = "Str">?</ScanChainNames>
+      <ConnectionManager Type = "User" Inherited = "true">0x00AE673C</ConnectionManager>
+      <TemplateManager Type = "User" Inherited = "true">0x00AE6758</TemplateManager>
+      <BrokerCoreList Type = "User" Inherited = "true">0x00AE678C</BrokerCoreList>
+      <PlatformName Type = "Str" Inherited = "true"/>
+      <NoOfScanChains Type = "Int32" Inherited = "true">1</NoOfScanChains>
+      <FirmwareVersion Type = "Str">4.2.0</FirmwareVersion>
+      <ConnectionName Type = "Str" Inherited = "true"/>
+      <ChildModuleName Type = "Str" Inherited = "true">Devices</ChildModuleName>
+      <RVConfigModule>
+         <?RVConfig DLL_NAME = "scanchain" Expanded = "true" Active = "true" Enabled = "true" UserLabel = ""?>
+         <TemplateName Type = "Str" Inherited = "true">/real-ice/jtag-templates/arm/arm926ejs/V1.0</TemplateName>
+         <ChildModuleName Type = "Str" Inherited = "true">ARM926EJ-S</ChildModuleName>
+         <Class Type = "Str">CoreExecutable</Class>
+         <CanonicalName Type = "Str">ARM926EJ-S</CanonicalName>
+         <DeviceOptions Type = "Str" Inherited = "true"/>
+         <IRLength Type = "Str" Inherited = "true">4</IRLength>
+         <RVConfigModule>
+            <?RVConfig DLL_NAME = "dynamiccore" Expanded = "true" Active = "false" Enabled = "true" UserLabel = ""?>
+            <TemplateName Type = "Str">/real-ice/jtag-templates/arm/arm926ejs/V1.0</TemplateName>
+            <ModuleName Type = "Str">ARM926EJ-S</ModuleName>
+            <IRLength Type = "Str">4</IRLength>
+            <DeviceOptions Type = "Str"/>
+            <CanonicalName Type = "Str">ARM926EJ-S</CanonicalName>
+            <Class Type = "Str">CoreExecutable</Class>
+            <DataList Type = "Branch">
+               <DataListUID Type = "User">0x00000005</DataListUID>
+               <CODESEQ_ENABLED Type = "Str">False</CODESEQ_ENABLED>
+               <CODESEQ_CODE_ADDR Type = "Str">0x0007FF80</CODESEQ_CODE_ADDR>
+               <CODESEQ_CODE_SIZE Type = "Str">0x80</CODESEQ_CODE_SIZE>
+               <CODESEQ_TIMEOUT Type = "Str">100</CODESEQ_TIMEOUT>
+               <BYPASS_MEMPROT_IN_DBG Type = "Str">True</BYPASS_MEMPROT_IN_DBG>
+               <IGNORE_BAD_JTAG_IDCODE Type = "Str">False</IGNORE_BAD_JTAG_IDCODE>
+               <ALLOW_LDM_STM Type = "Str">True</ALLOW_LDM_STM>
+               <JTAG_TIMEOUTS_ENABLED Type = "Str">True</JTAG_TIMEOUTS_ENABLED>
+               <SOFTWARE_BREAKPOINT_MODE Type = "Str">0</SOFTWARE_BREAKPOINT_MODE>
+               <SOFT_TAP_RESET_ON_JTAG_SYNC_LOSS Type = "Str">False</SOFT_TAP_RESET_ON_JTAG_SYNC_LOSS>
+               <POST_RESET_STATE Type = "Str">1</POST_RESET_STATE>
+               <dcc__IP_ADDRESS Type = "Str">0.0.0.0</dcc__IP_ADDRESS>
+               <dcc__NET_MASK Type = "Str">255.255.255.255</dcc__NET_MASK>
+               <dcc__DEFAULT_GATEWAY Type = "Str">0.0.0.0</dcc__DEFAULT_GATEWAY>
+            </DataList>
+            <ExtendedTypeInfo Type = "Branch"/>
+         </RVConfigModule>
+         <ModuleName Type = "Str">Devices</ModuleName>
+         <DataList Type = "Branch">
+            <DataListUID Type = "User">0x00000002</DataListUID>
+            <ClockType Type = "Int32">0</ClockType>
+            <ClockSpeed Type = "Str">50000000A</ClockSpeed>
+            <OtherSpeed Type = "Str"/>
+            <Tap_Count Type = "UInt32">1</Tap_Count>
+            <Tap_0 Type = "Branch">
+               <DataListUID Type = "User">0x00000005</DataListUID>
+               <CoreName Type = "Str">ARM926EJ-S</CoreName>
+               <FamilyName Type = "Str">ARM9</FamilyName>
+               <DllName Type = "Str">dynamiccore</DllName>
+               <TemplateVersion Type = "Str">1:0:0</TemplateVersion>
+               <DllVersion Type = "Str">rvi.dynamic.core</DllVersion>
+               <Description Type = "Str">ARM926EJ-S</Description>
+               <IRLength Type = "Str">4</IRLength>
+               <TemplateName Type = "Str">/real-ice/jtag-templates/arm/arm926ejs/V1.0</TemplateName>
+               <DeviceID Type = "Str">0x0792603F</DeviceID>
+               <Manufacturer Type = "Str">Atmel</Manufacturer>
+               <DeviceOptions Type = "Str"/>
+               <Class Type = "Str">CoreExecutable</Class>
+               <CanonicalName Type = "Str">ARM926EJ-S</CanonicalName>
+            </Tap_0>
+         </DataList>
+      </RVConfigModule>
+      <RVConfigModule>
+         <?RVConfig DLL_NAME = "advanced" Expanded = "true" Active = "false" Enabled = "true" UserLabel = ""?>
+         <ModuleName Type = "Str">Advanced</ModuleName>
+         <ScanChain0BitPattern Type = "Int32">0</ScanChain0BitPattern>
+         <DataList Type = "Branch">
+            <ResetOperation Type = "UInt32">0</ResetOperation>
+            <TResetOnInitConnect Type = "UInt32">1</TResetOnInitConnect>
+            <SResetOnInitConnect Type = "UInt32">0</SResetOnInitConnect>
+            <ResetHoldTime Type = "UInt32">100</ResetHoldTime>
+            <PostResetDelay Type = "UInt32">1000</PostResetDelay>
+            <nTRSTHoldTime Type = "UInt32">10</nTRSTHoldTime>
+            <nTRSTPostResetTime Type = "UInt32">10</nTRSTPostResetTime>
+            <DoSoftTAPReset Type = "UInt32">1</DoSoftTAPReset>
+            <Linked_SRST_TRST Type = "UInt32">0</Linked_SRST_TRST>
+            <AllowICETAPReset Type = "UInt32">1</AllowICETAPReset>
+            <AllowICELatchSysRst Type = "UInt32">1</AllowICELatchSysRst>
+            <nTRSTHighMode Type = "UInt32">0</nTRSTHighMode>
+            <nTRSTLowMode Type = "UInt32">0</nTRSTLowMode>
+            <nSRSTHighMode Type = "UInt32">1</nSRSTHighMode>
+            <nSRSTLowMode Type = "UInt32">0</nSRSTLowMode>
+            <LVDSProbeMode Type = "UInt32">1</LVDSProbeMode>
+            <SWJEnable Type = "UInt32">0</SWJEnable>
+            <UseDeprecatedSWJ Type = "UInt32">0</UseDeprecatedSWJ>
+            <UserOut_P1 Type = "UInt32">0</UserOut_P1>
+            <UserOut_P2 Type = "UInt32">0</UserOut_P2>
+            <UserOut_P3 Type = "UInt32">0</UserOut_P3>
+            <UserOut_P4 Type = "UInt32">0</UserOut_P4>
+            <UserOut_P5 Type = "UInt32">0</UserOut_P5>
+            <UserOut_P6_COAX Type = "UInt32">0</UserOut_P6_COAX>
+            <SWOMode Type = "UInt32">0</SWOMode>
+            <SWOBaudRate Type = "UInt32">0</SWOBaudRate>
+            <PythonScript Type = "Str">import rvi&#x0A;def HandleExeReset(flags):&#x0A;    return GeneralLegacyFakeReset(1)&#x0A;</PythonScript>
+         </DataList>
+      </RVConfigModule>
+      <JtagClockFreq Type = "UInt32" Inherited = "true">10000000</JtagClockFreq>
+      <JtagClockType Type = "UInt32" Inherited = "true">1</JtagClockType>
+      <LVDSProbeMode Type = "UInt32" Inherited = "true">1</LVDSProbeMode>
+      <SWJEnable Type = "Int32" Inherited = "true">0</SWJEnable>
+      <UseDeprecatedSWJ Type = "Int32" Inherited = "true">0</UseDeprecatedSWJ>
+      <RVConfigModule>
+         <?RVConfig DLL_NAME = "trace" Expanded = "true" Active = "false" Enabled = "true" UserLabel = ""?>
+         <DataList Type = "Branch">
+            <DELAY_TRACE_CLOCK Type = "Int32">0</DELAY_TRACE_CLOCK>
+            <DELAY_TRACE_SIGNAL_1 Type = "Int32">0</DELAY_TRACE_SIGNAL_1>
+            <DELAY_TRACE_SIGNAL_2 Type = "Int32">0</DELAY_TRACE_SIGNAL_2>
+            <DELAY_TRACE_SIGNAL_3 Type = "Int32">0</DELAY_TRACE_SIGNAL_3>
+            <DELAY_TRACE_SIGNAL_4 Type = "Int32">0</DELAY_TRACE_SIGNAL_4>
+            <DELAY_TRACE_SIGNAL_5 Type = "Int32">0</DELAY_TRACE_SIGNAL_5>
+            <DELAY_TRACE_SIGNAL_6 Type = "Int32">0</DELAY_TRACE_SIGNAL_6>
+            <DELAY_TRACE_SIGNAL_7 Type = "Int32">0</DELAY_TRACE_SIGNAL_7>
+            <DELAY_TRACE_SIGNAL_8 Type = "Int32">0</DELAY_TRACE_SIGNAL_8>
+            <DELAY_TRACE_SIGNAL_9 Type = "Int32">0</DELAY_TRACE_SIGNAL_9>
+            <DELAY_TRACE_SIGNAL_10 Type = "Int32">0</DELAY_TRACE_SIGNAL_10>
+            <DELAY_TRACE_SIGNAL_11 Type = "Int32">0</DELAY_TRACE_SIGNAL_11>
+            <DELAY_TRACE_SIGNAL_12 Type = "Int32">0</DELAY_TRACE_SIGNAL_12>
+            <DELAY_TRACE_SIGNAL_13 Type = "Int32">0</DELAY_TRACE_SIGNAL_13>
+            <DELAY_TRACE_SIGNAL_14 Type = "Int32">0</DELAY_TRACE_SIGNAL_14>
+            <DELAY_TRACE_SIGNAL_15 Type = "Int32">0</DELAY_TRACE_SIGNAL_15>
+            <DELAY_TRACE_SIGNAL_16 Type = "Int32">0</DELAY_TRACE_SIGNAL_16>
+            <DELAY_TRACE_SIGNAL_17 Type = "Int32">0</DELAY_TRACE_SIGNAL_17>
+            <DELAY_TRACE_SIGNAL_18 Type = "Int32">0</DELAY_TRACE_SIGNAL_18>
+            <DELAY_TRACE_SIGNAL_19 Type = "Int32">0</DELAY_TRACE_SIGNAL_19>
+            <DELAY_TRACE_SIGNAL_20 Type = "Int32">0</DELAY_TRACE_SIGNAL_20>
+            <DELAY_TRACE_SIGNAL_21 Type = "Int32">0</DELAY_TRACE_SIGNAL_21>
+            <DELAY_TRACE_SIGNAL_22 Type = "Int32">0</DELAY_TRACE_SIGNAL_22>
+            <DELAY_TRACE_SIGNAL_23 Type = "Int32">0</DELAY_TRACE_SIGNAL_23>
+            <DELAY_TRACE_SIGNAL_24 Type = "Int32">0</DELAY_TRACE_SIGNAL_24>
+            <DELAY_TRACE_SIGNAL_25 Type = "Int32">0</DELAY_TRACE_SIGNAL_25>
+            <DELAY_TRACE_SIGNAL_26 Type = "Int32">0</DELAY_TRACE_SIGNAL_26>
+            <DELAY_TRACE_SIGNAL_27 Type = "Int32">0</DELAY_TRACE_SIGNAL_27>
+            <DELAY_TRACE_SIGNAL_28 Type = "Int32">0</DELAY_TRACE_SIGNAL_28>
+            <DELAY_TRACE_SIGNAL_29 Type = "Int32">0</DELAY_TRACE_SIGNAL_29>
+            <DELAY_TRACE_SIGNAL_30 Type = "Int32">0</DELAY_TRACE_SIGNAL_30>
+            <DELAY_TRACE_SIGNAL_31 Type = "Int32">0</DELAY_TRACE_SIGNAL_31>
+            <DELAY_TRACE_SIGNAL_32 Type = "Int32">0</DELAY_TRACE_SIGNAL_32>
+            <DELAY_TRACE_SIGNAL_33 Type = "Int32">0</DELAY_TRACE_SIGNAL_33>
+            <DELAY_TRACE_SIGNAL_34 Type = "Int32">0</DELAY_TRACE_SIGNAL_34>
+            <DELAY_TRACE_SIGNAL_35 Type = "Int32">0</DELAY_TRACE_SIGNAL_35>
+            <DELAY_TRACE_SIGNAL_36 Type = "Int32">0</DELAY_TRACE_SIGNAL_36>
+         </DataList>
+      </RVConfigModule>
+      <ConnectionType Type = "Str">TCP/IP</ConnectionType>
+      <CoresightAssociations Type = "Branch">
+         <Device Type = "EnumStr">Name=ARM926EJ-S_0;Type=ARM926EJ-S</Device>
+      </CoresightAssociations>
+   </RVConfigModule>
+</RVConfigUtility>

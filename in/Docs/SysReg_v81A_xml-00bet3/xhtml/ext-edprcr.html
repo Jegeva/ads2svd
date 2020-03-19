@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>EDPRCR</title>
+    <link href="insn.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body><table align="center"><tr><td><div class="topbar"><a href="AArch32-regindex.html">AArch32 Registers</a></div></td><td><div class="topbar"><a href="AArch64-regindex.html">AArch64 Registers</a></div></td><td><div class="topbar"><a href="AArch32-sysindex.html">AArch32 Instructions</a></div></td><td><div class="topbar"><a href="AArch64-sysindex.html">AArch64 Instructions</a></div></td><td><div class="topbar"><a href="enc_index.html">Index by Encoding</a></div></td><td><div class="topbar"><a href="ext_alpha_index.html">External Registers</a></div></td><td><div class="topbar"><a href="ext_enc_index.html">External Registers by Offset</a></div></td><td><div class="topbar"><a href="func_index.html">Registers by Functional Group</a></div></td></tr></table><hr /><h1 class="register-section">EDPRCR, External Debug Power/Reset Control Register</h1><p>The EDPRCR characteristics are:</p><h2>Purpose</h2>
+          <p>Controls the PE functionality related to powerup, reset, and powerdown.</p>
+        <p>This 
+        register
+       is part of the Debug registers functional group.</p><h2>Usage constraints</h2><p>This register is accessible as follows:</p><table class="register_access"><tr><th>SLK</th><th>Default</th></tr><tr><td>RO</td><td>RW</td></tr></table>
+          <p>On permitted accesses to the register, other access controls affect the behavior of some fields. See the field descriptions for more information.</p>
+        <h2>Configuration</h2><p>EDPRCR contains fields that are in the Core power domain and fields that are in the Debug power domain.
+      </p>
+          <p>For RW fields see the field description for a description of the behavior of the field on a reset that applies to its power domain. However:</p>
+          <ul>
+            <li>
+              Fields that are in the Core power domain are not affected by a warm reset and are not affected by an External debug reset. 
+            </li>
+            <li>
+              Fields that are in the Debug power domain reset to their defined reset values on an External debug reset, and are not affected by a Warm reset and are not affected by a Cold reset.
+            </li>
+          </ul>
+        
+          <p>CORENPDRQ is the only field that is mapped between the EDPRCR and DBGPRCR and DBGPRCR_EL1.</p>
+        <h2>Attributes</h2>
+          <p>EDPRCR is a 32-bit register.</p>
+        <h2>Field descriptions</h2><p>The EDPRCR bit assignments are:</p><table class="regdiagram"><thead><tr><td>31</td><td>30</td><td>29</td><td>28</td><td>27</td><td>26</td><td>25</td><td>24</td><td>23</td><td>22</td><td>21</td><td>20</td><td>19</td><td>18</td><td>17</td><td>16</td><td>15</td><td>14</td><td>13</td><td>12</td><td>11</td><td>10</td><td>9</td><td>8</td><td>7</td><td>6</td><td>5</td><td>4</td><td>3</td><td>2</td><td>1</td><td>0</td></tr></thead><tbody><tr class="firstrow"><td class="l">0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td class="r">0</td><td class="lr" colspan="1"><a href="#COREPURQ">COREPURQ</a></td><td class="lr">0</td><td class="lr" colspan="1"><a href="#CWRR">CWRR</a></td><td class="lr" colspan="1"><a href="#CORENPDRQ">CORENPDRQ</a></td></tr></tbody></table><h4 id="0">
+                Bits [31:4]
+              </h4>
+              <p>Reserved, <span class="arm-defined-word">RES0</span>.</p>
+            <h4 id="COREPURQ">COREPURQ, bit [3]
+              </h4>
+              <p>Core powerup request. Allows a debugger to request that the power controller power up the core, enabling access to the debug register in the Core power domain. The actions on writing to this bit are:</p>
+            <table class="valuetable"><tr><th>COREPURQ</th><th>Meaning</th></tr><tr><td class="bitfield">0</td><td>
+                  <p>Do not request power up of the Core power domain.</p>
+                </td></tr><tr><td class="bitfield">1</td><td>
+                  <p>Request power up of the Core power domain, and emulation of powerdown.</p>
+                </td></tr></table>
+              <p>In an implementation that includes the recommended external debug interface, this bit drives the DBGPWRUPREQ signal.</p>
+            
+              <p>Typically, this request is passed to an external power controller. This means that whether a request causes power up is dependent on the <span class="arm-defined-word">IMPLEMENTATION DEFINED</span> nature of the system.</p>
+            
+              <p>This field is in the Debug power domain and can be read and written when the Core power domain is powered off. On an External debug reset this field resets to 0.</p>
+            
+              <p>The power controller must not allow the Core power domain to switch off while this bit is 1. </p>
+            <p>When this register has an architecturally-defined reset value, this field resets to <span class="binarynumber">0</span>.</p><p>This field resets to its defined reset value on External debug reset.</p><p>This table summarizes the effect of the register access controls on the behavior of this field:</p><table class="info"><tr><th>SLK</th><th>Default</th></tr><tr><td>RO</td><td>RW</td></tr></table><p>'Access permissions for the External debug interface registers' in the <i>ARM<sup>®</sup> Architecture Reference Manual, ARMv8, for ARMv8-A architecture profile</i>, section H8.6.1 describes the conditions shown in this table. These conditions are prioritized, with the leftmost condition having the highest priority and priority decreasing from left to right.</p><h4 id="0">
+                Bit [2]
+              </h4>
+              <p>Reserved, <span class="arm-defined-word">RES0</span>.</p>
+            <h4 id="CWRR">CWRR, bit [1]
+              </h4>
+              <p>Warm reset request. Write only bit that reads as zero. The actions on writing to this bit are:</p>
+            <table class="valuetable"><tr><th>CWRR</th><th>Meaning</th></tr><tr><td class="bitfield">0</td><td>
+                  <p>No action.</p>
+                </td></tr><tr><td class="bitfield">1</td><td>
+                  <p>Request Warm reset.</p>
+                </td></tr></table>
+              <p>The PE ignores writes to this bit if any of the following are true:</p>
+            
+              <ul>
+                <li>
+                  ExternalInvasiveDebugEnabled() == FALSE, EL3 is not implemented, and the implemented Security state is Non-Secure state.
+                </li>
+                <li>
+                  ExternalSecureInvasiveDebugEnabled() == FALSE and one of the following is true:<ul><li>EL3 is implemented.</li><li>The implemented Security state is Secure state.</li></ul>
+                </li>
+                <li>
+                  The Core power domain is either off or in a low-power state where the Core power domain registers cannot be accessed.
+                </li>
+                <li>
+                  DoubleLockStatus() == TRUE (OS Double Lock is set).
+                </li>
+                <li>
+                  OSLSR.OSLK == 1 (OS lock is locked).
+                </li>
+              </ul>
+            
+              <p>In an implementation that includes the recommended external debug interface, this bit drives the DBGRSTREQ signal.</p>
+            
+              <p>The extent of the reset is <span class="arm-defined-word">IMPLEMENTATION DEFINED</span>, but must be one of:</p>
+            
+              <ul>
+                <li>
+                  The request is ignored.
+                </li>
+                <li>
+                  Only this PE is Warm reset.
+                </li>
+                <li>
+                  This PE and other components of the system, possibly including other PEs, are Warm reset.
+                </li>
+              </ul>
+            
+              <div class="note"><span class="note-header">Note</span>
+                <p>Although the ARM architecture permits the first option from the above list, ARM recommends that either of the other options is implemented.</p>
+              </div>
+            <p>When this register has an architecturally-defined reset value, this field resets to <span class="binarynumber">0</span>.</p><p>This field resets to its defined reset value on Warm reset.</p><p>This table summarizes the effect of the register access controls on the behavior of this field:</p><table class="info"><tr><th>Off</th><th>DLK</th><th>OSLK</th><th>SLK</th><th>Default</th></tr><tr><td>WI</td><td>WI</td><td>WI</td><td>WI</td><td>WO</td></tr></table><p>'Access permissions for the External debug interface registers' in the <i>ARM<sup>®</sup> Architecture Reference Manual, ARMv8, for ARMv8-A architecture profile</i>, section H8.6.1 describes the conditions shown in this table. These conditions are prioritized, with the leftmost condition having the highest priority and priority decreasing from left to right.</p><h4 id="CORENPDRQ">CORENPDRQ, bit [0]
+              </h4>
+              <p>Core no powerdown request. Requests emulation of powerdown. Possible values of this bit are:</p>
+            <table class="valuetable"><tr><th>CORENPDRQ</th><th>Meaning</th></tr><tr><td class="bitfield">0</td><td>
+                  <p>If the system responds to a powerdown request, it powers down Core power domain.</p>
+                </td></tr><tr><td class="bitfield">1</td><td>
+                  <p>If the system responds to a powerdown request, it does not powerdown the Core power domain, but instead emulates a powerdown of that domain.</p>
+                </td></tr></table>
+              <p>This bit is <span class="arm-defined-word">UNKNOWN</span>, and the PE ignores writes to this bit if any of the following are true:</p>
+            
+              <ul>
+                <li>
+                  The Core power domain is either off or in a low-power state where the Core power domain registers cannot be accessed.
+                </li>
+                <li>
+                  DoubleLockStatus() == TRUE (OS Double Lock is set).
+                </li>
+                <li>
+                  OSLSR.OSLK == 1 (OS lock is locked).
+                </li>
+              </ul>
+            
+              <p>Permitted accesses to this field map to the <a href="AArch32-dbgprcr.html">DBGPRCR</a>.CORENPDRQ and <a href="AArch64-dbgprcr_el1.html">DBGPRCR_EL1</a>.CORENPDRQ fields.</p>
+            
+              <p>This field is in the Core reset domain. See the descriptions of the <a href="AArch32-dbgprcr.html">DBGPRCR</a>.CORENPDRQ and <a href="AArch64-dbgprcr_el1.html">DBGPRCR_EL1</a>.CORENPDRQ fields for information about the effect of a Cold reset on the value returned by a permitted read of this field.</p>
+            <p>This table summarizes the effect of the register access controls on the behavior of this field:</p><table class="info"><tr><th>Off</th><th>DLK</th><th>OSLK</th><th>SLK</th><th>Default</th></tr><tr><td>WI</td><td>WI</td><td>WI</td><td>RO</td><td>RW</td></tr></table><p>'Access permissions for the External debug interface registers' in the <i>ARM<sup>®</sup> Architecture Reference Manual, ARMv8, for ARMv8-A architecture profile</i>, section H8.6.1 describes the conditions shown in this table. These conditions are prioritized, with the leftmost condition having the highest priority and priority decreasing from left to right.</p><h2>Accessing the EDPRCR</h2><p>EDPRCR can be accessed through the external debug interface:</p><table class="info"><tr><th>Component</th><th>Offset</th></tr><tr><td>Debug</td><td>
+          <span class="hexnumber">0x310</span>
+        </td></tr></table><br /><br /><hr /><table align="center"><tr><td><div class="topbar"><a href="AArch32-regindex.html">AArch32 Registers</a></div></td><td><div class="topbar"><a href="AArch64-regindex.html">AArch64 Registers</a></div></td><td><div class="topbar"><a href="AArch32-sysindex.html">AArch32 Instructions</a></div></td><td><div class="topbar"><a href="AArch64-sysindex.html">AArch64 Instructions</a></div></td><td><div class="topbar"><a href="enc_index.html">Index by Encoding</a></div></td><td><div class="topbar"><a href="ext_alpha_index.html">External Registers</a></div></td><td><div class="topbar"><a href="ext_enc_index.html">External Registers by Offset</a></div></td><td><div class="topbar"><a href="func_index.html">Registers by Functional Group</a></div></td></tr></table><p class="versions">24/03/2017 16:41</p><p class="copyconf">Copyright © 2010-2017 ARM Limited or its affiliates. All rights reserved. This document is Confidential.</p></body>
+</html>

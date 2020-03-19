@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+            targetNamespace="http://www.arm.com/soc_definition"
+            xmlns="http://www.arm.com/soc_definition"
+            elementFormDefault="qualified"
+            xmlns:pd="http://www.arm.com/project_type"
+            xmlns:xi="http://www.w3.org/2001/XInclude">
+
+    <xsd:import namespace="http://www.arm.com/project_type" schemaLocation="platform_data-1.xsd"/>
+    
+    <xsd:element name="soc">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="core" minOccurs="1" maxOccurs="unbounded"/>  
+            </xsd:sequence>
+            <xsd:attribute name="name" type="xsd:string"/>
+            <xsd:attribute name="coreDefinition" type="xsd:string"/>
+        </xsd:complexType>
+    </xsd:element>
+</xsd:schema>

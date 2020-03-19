@@ -1,0 +1,714 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<container xmlns:cr="http://www.arm.com/core_reg" xmlns="http://www.arm.com/core_reg" xmlns:tcf="http://com.arm.targetconfigurationeditor" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.arm.com/core_reg ../../../Schemas/core_register_definition.xsd">
+  <cr:register_list name="System" override="true">
+    <register_group name="Virt">
+    <gui_name language="en">Virt</gui_name>
+    <description language="en">Virt</description>
+
+    <register access="RW" name="VSTCR_EL2" size="4">
+      <gui_name language="en">Virtual Secure Translation Control Register</gui_name>
+      <description language="en">Secure Translation Control register for the Secure Second Stage.</description>
+    </register>
+    <register access="RW" name="VSTTBR_EL2" size="8">
+      <gui_name language="en">Virtual Secure Translation Table Base Register</gui_name>
+      <description language="en">Secure Translation Table Base Register for the Secure Second Stage.</description>
+    </register>
+    <register access="RW" name="VNCR_EL2" size="8">
+      <gui_name language="en">Virtual Nested Control Register</gui_name>
+      <description language="en">Nested virtualization configuration register.</description>
+    </register>
+    </register_group>
+
+    <register_group name="TLB">
+    <gui_name language="en">TLB</gui_name>
+    <description language="en">TLB</description>
+
+    <register access="WO" name="TLBI_RVAE1" size="8">
+      <gui_name language="en">TLBI_RVAE1</gui_name>
+      <device_name type="cadi">TLBI RVAE1</device_name>
+      <description language="en">TLBI_RVAE1</description>
+    </register>
+    <register access="WO" name="TLBI_RVAAE1" size="8">
+      <gui_name language="en">TLBI_RVAAE1</gui_name>
+      <device_name type="cadi">TLBI RVAAE1</device_name>
+      <description language="en">TLBI_RVAAE1</description>
+    </register>
+    <register access="WO" name="TLBI_RVALE1" size="8">
+      <gui_name language="en">TLBI_RVALE1</gui_name>
+      <device_name type="cadi">TLBI RVALE1</device_name>
+      <description language="en">TLBI_RVALE1</description>
+    </register>
+    <register access="WO" name="TLBI_RVAALE1" size="8">
+      <gui_name language="en">TLBI_RVAALE1</gui_name>
+      <device_name type="cadi">TLBI RVAALE1</device_name>
+      <description language="en">TLBI_RVAALE1</description>
+    </register>
+    <register access="WO" name="TLBI_RVAE1IS" size="8">
+      <gui_name language="en">TLBI_RVAE1IS</gui_name>
+      <device_name type="cadi">TLBI RVAE1IS</device_name>
+      <description language="en">TLBI_RVAE1IS</description>
+    </register>
+    <register access="WO" name="TLBI_RVAAE1IS" size="8">
+      <gui_name language="en">TLBI_RVAAE1IS</gui_name>
+      <device_name type="cadi">TLBI RVAAE1IS</device_name>
+      <description language="en">TLBI_RVAAE1IS</description>
+    </register>
+    <register access="WO" name="TLBI_RVALE1IS" size="8">
+    <gui_name language="en">TLBI_RVALE1IS</gui_name>
+      <device_name type="cadi">TLBI RVALE1IS</device_name>
+    <description language="en">TLBI_RVALE1IS</description>
+    </register>
+    <register access="WO" name="TLBI_RVAALE1IS" size="8">
+      <gui_name language="en">TLBI_RVAALE1IS</gui_name>
+      <device_name type="cadi">TLBI RVAALE1IS</device_name>
+      <description language="en">TLBI_RVAALE1IS</description>
+    </register>
+    <register access="WO" name="TLBI_RVAE1OS" size="8">
+      <gui_name language="en">TLBI_RVAE1OS</gui_name>
+      <device_name type="cadi">TLBI RVAE1OS</device_name>
+      <description language="en">TLBI_RVAE1OS</description>
+    </register>
+    <register access="WO" name="TLBI_RVAAE1OS" size="8">
+      <gui_name language="en">TLBI_RVAAE1OS</gui_name>
+      <device_name type="cadi">TLBI RVAAE1OS</device_name>
+      <description language="en">TLBI_RVAAE1OS</description>
+    </register>
+    <register access="WO" name="TLBI_RVALE1OS" size="8">
+      <gui_name language="en">TLBI_RVALE1OS</gui_name>
+      <device_name type="cadi">TLBI RVALE1OS</device_name>
+      <description language="en">TLBI_RVALE1OS</description>
+    </register>
+    <register access="WO" name="TLBI_RVAALE1OS" size="8">
+      <gui_name language="en">TLBI_RVAALE1OS</gui_name>
+      <device_name type="cadi">TLBI RVAALE1OS</device_name>
+      <description language="en">TLBI_RVAALE1OS</description>
+    </register>
+    <register access="WO" name="TLBI_RIPAS2E1IS" size="8">
+      <gui_name language="en">TLBI_RIPAS2E1IS</gui_name>
+      <device_name type="cadi">TLBI RIPAS2E1IS</device_name>
+      <description language="en">TLBI_RIPAS2E1IS</description>
+    </register>
+    <register access="WO" name="TLBI_RIPAS2LE1IS" size="8">
+      <gui_name language="en">TLBI_RIPAS2LE1IS</gui_name>
+      <device_name type="cadi">TLBI RIPAS2LE1IS</device_name>
+      <description language="en">TLBI_RIPAS2LE1IS</description>
+    </register>
+    <register access="WO" name="TLBI_RIPAS2E1" size="8">
+      <gui_name language="en">TLBI_RIPAS2E1</gui_name>
+      <device_name type="cadi">TLBI RIPAS2E1</device_name>
+      <description language="en">TLBI_RIPAS2E1</description>
+    </register>
+    <register access="WO" name="TLBI_RIPAS2LE1" size="8">
+      <gui_name language="en">TLBI_RIPAS2LE1</gui_name>
+      <device_name type="cadi">TLBI RIPAS2LE1</device_name>
+      <description language="en">TLBI_RIPAS2LE1</description>
+    </register>
+    <register access="WO" name="TLBI_RIPAS2E1OS" size="8">
+      <gui_name language="en">TLBI_RIPAS2E1OS</gui_name>
+      <device_name type="cadi">TLBI RIPAS2E1OS</device_name>
+      <description language="en">TLBI_RIPAS2E1OS</description>
+    </register>
+    <register access="WO" name="TLBI_RIPAS2LE1OS" size="8">
+      <gui_name language="en">TLBI_RIPAS2LE1OS</gui_name>
+      <device_name type="cadi">TLBI RIPAS2LE1OS</device_name>
+      <description language="en">TLBI_RIPAS2LE1OS</description>
+    </register>
+    <register access="WO" name="TLBI_RVAE2" size="8">
+      <gui_name language="en">TLBI_RVAE2</gui_name>
+      <device_name type="cadi">TLBI RVAE2</device_name>
+      <description language="en">TLBI_RVAE2</description>
+    </register>
+    <register access="WO" name="TLBI_RVALE2" size="8">
+      <gui_name language="en">TLBI_RVALE2</gui_name>
+      <device_name type="cadi">TLBI RVALE2</device_name>
+      <description language="en">TLBI_RVALE2</description>
+    </register>
+    <register access="WO" name="TLBI_RVAE2IS" size="8">
+      <gui_name language="en">TLBI_RVAE2IS</gui_name>
+      <device_name type="cadi">TLBI RVAE2IS</device_name>
+      <description language="en">TLBI_RVAE2IS</description>
+    </register>
+    <register access="WO" name="TLBI_RVALE2IS" size="8">
+      <gui_name language="en">TLBI_RVALE2IS</gui_name>
+      <device_name type="cadi">TLBI RVALE2IS</device_name>
+      <description language="en">TLBI_RVALE2IS</description>
+    </register>
+    <register access="WO" name="TLBI_RVAE2OS" size="8">
+      <gui_name language="en">TLBI_RVAE2OS</gui_name>
+      <device_name type="cadi">TLBI RVAE2OS</device_name>
+      <description language="en">TLBI_RVAE2OS</description>
+    </register>
+    <register access="WO" name="TLBI_RVALE2OS" size="8">
+      <gui_name language="en">TLBI_RVALE2OS</gui_name>
+      <device_name type="cadi">TLBI RVALE2OS</device_name>
+      <description language="en">TLBI_RVALE2OS</description>
+    </register>
+    <register access="WO" name="TLBI_RVAE3" size="8">
+      <gui_name language="en">TLBI_RVAE3</gui_name>
+      <device_name type="cadi">TLBI RVAE3</device_name>
+      <description language="en">TLBI_RVAE3</description>
+    </register>
+    <register access="WO" name="TLBI_RVALE3" size="8">
+      <gui_name language="en">TLBI_RVALE3</gui_name>
+      <device_name type="cadi">TLBI RVALE3</device_name>
+      <description language="en">TLBI_RVALE3</description>
+    </register>
+    <register access="WO" name="TLBI_RVAE3IS" size="8">
+      <gui_name language="en">TLBI_RVAE3IS</gui_name>
+      <device_name type="cadi">TLBI RVAE3IS</device_name>
+      <description language="en">TLBI_RVAE3IS</description>
+    </register>
+    <register access="WO" name="TLBI_RVALE3IS" size="8">
+      <gui_name language="en">TLBI_RVALE3IS</gui_name>
+      <device_name type="cadi">TLBI RVALE3IS</device_name>
+      <description language="en">TLBI_RVALE3IS</description>
+    </register>
+    <register access="WO" name="TLBI_RVAE3OS" size="8">
+      <gui_name language="en">TLBI_RVAE3OS</gui_name>
+      <device_name type="cadi">TLBI RVAE3OS</device_name>
+      <description language="en">TLBI_RVAE3OS</description>
+    </register>
+    <register access="WO" name="TLBI_RVALE3OS" size="8">
+      <gui_name language="en">TLBI_RVALE3OS</gui_name>
+      <device_name type="cadi">TLBI RVALE3OS</device_name>
+      <description language="en">TLBI_RVALE3OS</description>
+    </register>
+    <register access="WO" name="TLBI_VMALLE1OS" size="8">
+      <gui_name language="en">TLBI_VMALLE1OS</gui_name>
+      <device_name type="cadi">TLBI VMALLE1OS</device_name>
+      <description language="en">TLBI_VMALLE1OS</description>
+    </register>
+    <register access="WO" name="TLBI_VAE1OS" size="8">
+      <gui_name language="en">TLBI_VAE1OS</gui_name>
+      <device_name type="cadi">TLBI VAE1OS</device_name>
+      <description language="en">TLBI_VAE1OS</description>
+    </register>
+    <register access="WO" name="TLBI_ASIDE1OS" size="8">
+      <gui_name language="en">TLBI_ASIDE1OS</gui_name>
+      <device_name type="cadi">TLBI ASIDE1OS</device_name>
+      <description language="en">TLBI_ASIDE1OS</description>
+    </register>
+    <register access="WO" name="TLBI_VAAE1OS" size="8">
+      <gui_name language="en">TLBI_VAAE1OS</gui_name>
+      <device_name type="cadi">TLBI VAAE1OS</device_name>
+      <description language="en">TLBI_VAAE1OS</description>
+    </register>
+    <register access="WO" name="TLBI_VALE1OS" size="8">
+      <gui_name language="en">TLBI_VALE1OS</gui_name>
+      <device_name type="cadi">TLBI VALE1OS</device_name>
+      <description language="en">TLBI_VALE1OS</description>
+    </register>
+    <register access="WO" name="TLBI_VAALE1OS" size="8">
+      <gui_name language="en">TLBI_VAALE1OS</gui_name>
+      <device_name type="cadi">TLBI VAALE1OS</device_name>
+      <description language="en">TLBI_VAALE1OS</description>
+    </register>
+    <register access="WO" name="TLBI_IPAS2E1OS" size="8">
+      <gui_name language="en">TLBI_IPAS2E1OS</gui_name>
+      <device_name type="cadi">TLBI IPAS2E1OS</device_name>
+      <description language="en">TLBI_IPAS2E1OS</description>
+    </register>
+    <register access="WO" name="TLBI_IPAS2LE1OS" size="8">
+      <gui_name language="en">TLBI_IPAS2LE1OS</gui_name>
+      <device_name type="cadi">TLBI IPAS2LE1OS</device_name>
+      <description language="en">TLBI_IPAS2LE1OS</description>
+    </register>
+    <register access="WO" name="TLBI_VAE2OS" size="8">
+      <gui_name language="en">TLBI_VAE2OS</gui_name>
+      <device_name type="cadi">TLBI VAE2OS</device_name>
+      <description language="en">TLBI_VAE2OS</description>
+    </register>
+    <register access="WO" name="TLBI_VALE2OS" size="8">
+      <gui_name language="en">TLBI_VALE2OS</gui_name>
+      <device_name type="cadi">TLBI VALE2OS</device_name>
+      <description language="en">TLBI_VALE2OS</description>
+    </register>
+    <register access="WO" name="TLBI_VMALLS12E1OS" size="8">
+      <gui_name language="en">TLBI_VMALLS12E1OS</gui_name>
+      <device_name type="cadi">TLBI VMALLS12E1OS</device_name>
+      <description language="en">TLBI_VMALLS12E1OS</description>
+    </register>
+    <register access="WO" name="TLBI_VAE3OS" size="8">
+      <gui_name language="en">TLBI_VAE3OS</gui_name>
+      <device_name type="cadi">TLBI VAE3OS</device_name>
+      <description language="en">TLBI_VAE3OS</description>
+    </register>
+    <register access="WO" name="TLBI_VALE3OS" size="8">
+      <gui_name language="en">TLBI_VALE3OS</gui_name>
+      <device_name type="cadi">TLBI VALE3OS</device_name>
+      <description language="en">TLBI_VALE3OS</description>
+    </register>
+    <register access="WO" name="TLBI_ALLE2OS" size="8">
+      <gui_name language="en">TLBI_ALLE2OS</gui_name>
+      <device_name type="cadi">TLBI ALLE2OS</device_name>
+      <description language="en">TLBI_ALLE2OS</description>
+    </register>
+    <register access="WO" name="TLBI_ALLE1OS" size="8">
+      <gui_name language="en">TLBI_ALLE1OS</gui_name>
+      <device_name type="cadi">TLBI ALLE1OS</device_name>
+      <description language="en">TLBI_ALLE1OS</description>
+    </register>
+    <register access="WO" name="TLBI_ALLE3OS" size="8">
+      <gui_name language="en">TLBI_ALLE3OS</gui_name>
+      <device_name type="cadi">TLBI ALLE3OS</device_name>
+      <description language="en">TLBI_ALLE3OS</description>
+    </register>
+    </register_group>
+
+    <register_group name="AMU">
+    <gui_name language="en">AMU</gui_name>
+    <description language="en">AMU</description>
+    <register access="RW" name="AMCR_EL0" size="4">
+      <gui_name language="en">AMCR_EL0</gui_name>
+      <description language="en">AMCR_EL0</description>
+    </register>
+    <register access="RO" name="AMCFGR_EL0" size="4">
+      <gui_name language="en">AMCFGR_EL0</gui_name>
+      <description language="en">AMCFGR_EL0</description>
+    </register>
+    <register access="RO" name="AMCGCR_EL0" size="4">
+      <gui_name language="en">AMCGCR_EL0</gui_name>
+      <description language="en">AMCGCR_EL0</description>
+    </register>
+    <register access="RW" name="AMUSERENR_EL0" size="4">
+      <gui_name language="en">AMUSERENR_EL0</gui_name>
+      <description language="en">AMUSERENR_EL0</description>
+    </register>
+    <register access="RW" name="AMCNTENCLR0_EL0" size="4">
+      <gui_name language="en">AMCNTENCLR0_EL0</gui_name>
+      <description language="en">AMCNTENCLR0_EL0</description>
+    </register>
+    <register access="RW" name="AMCNTENSET0_EL0" size="4">
+      <gui_name language="en">AMCNTENSET0_EL0</gui_name>
+      <description language="en">AMCNTENSET0_EL0</description>
+    </register>
+    <register access="RW" name="AMEVCNTR0_0_EL0" size="8">
+      <gui_name language="en">AMEVCNTR0_0_EL0</gui_name>
+      <description language="en">AMEVCNTR0_0_EL0</description>
+    </register>
+    <register access="RW" name="AMEVCNTR0_1_EL0" size="8">
+      <gui_name language="en">AMEVCNTR0_1_EL0</gui_name>
+      <description language="en">AMEVCNTR0_1_EL0</description>
+    </register>
+    <register access="RW" name="AMEVCNTR0_2_EL0" size="8">
+      <gui_name language="en">AMEVCNTR0_2_EL0</gui_name>
+      <description language="en">AMEVCNTR0_2_EL0</description>
+    </register>
+    <register access="RW" name="AMEVCNTR0_3_EL0" size="8">
+      <gui_name language="en">AMEVCNTR0_3_EL0</gui_name>
+      <description language="en">AMEVCNTR0_3_EL0</description>
+    </register>
+    <register access="RO" name="AMEVTYPER0_0_EL0" size="4">
+      <gui_name language="en">AMEVTYPER0_0_EL0</gui_name>
+      <description language="en">AMEVTYPER0_0_EL0</description>
+    </register>
+     <register access="RO" name="AMEVTYPER0_1_EL0" size="4">
+      <gui_name language="en">AMEVTYPER0_1_EL0</gui_name>
+      <description language="en">AMEVTYPER0_1_EL0</description>
+    </register>
+    <register access="RO" name="AMEVTYPER0_2_EL0" size="4">
+      <gui_name language="en">AMEVTYPER0_2_EL0</gui_name>
+      <description language="en">AMEVTYPER0_2_EL0</description>
+    </register>
+    <register access="RO" name="AMEVTYPER0_3_EL0" size="4">
+      <gui_name language="en">AMEVTYPER0_3_EL0</gui_name>
+      <description language="en">AMEVTYPER0_3_EL0</description>
+    </register>
+    <register access="RW" name="AMCNTENCLR1_EL0" size="4">
+      <gui_name language="en">AMCNTENCLR1_EL0</gui_name>
+      <description language="en">AMCNTENCLR1_EL0</description>
+    </register>
+    <register access="RW" name="AMCNTENSET1_EL0" size="4">
+      <gui_name language="en">AMCNTENSET1_EL0</gui_name>
+      <description language="en">AMCNTENSET1_EL0</description>
+    </register>
+    <register access="RW" name="AMEVCNTR1_0_EL0" size="8">
+      <gui_name language="en">AMEVCNTR1_0_EL0</gui_name>
+      <description language="en">AMEVCNTR1_0_EL0</description>
+    </register>
+    <register access="RW" name="AMEVCNTR1_1_EL0" size="8">
+      <gui_name language="en">AMEVCNTR1_1_EL0</gui_name>
+      <description language="en">AMEVCNTR1_1_EL0</description>
+    </register>
+    <register access="RW" name="AMEVCNTR1_2_EL0" size="8">
+      <gui_name language="en">AMEVCNTR1_2_EL0</gui_name>
+      <description language="en">AMEVCNTR1_2_EL0</description>
+    </register>
+    <register access="RW" name="AMEVCNTR1_3_EL0" size="8">
+      <gui_name language="en">AMEVCNTR1_3_EL0</gui_name>
+      <description language="en">AMEVCNTR1_3_EL0</description>
+    </register>
+    <register access="RW" name="AMEVCNTR1_4_EL0" size="8">
+      <gui_name language="en">AMEVCNTR1_4_EL0</gui_name>
+      <description language="en">AMEVCNTR1_4_EL0</description>
+    </register>
+    <register access="RW" name="AMEVCNTR1_5_EL0" size="8">
+      <gui_name language="en">AMEVCNTR1_5_EL0</gui_name>
+      <description language="en">AMEVCNTR1_5_EL0</description>
+    </register>
+    <register access="RW" name="AMEVCNTR1_6_EL0" size="8">
+      <gui_name language="en">AMEVCNTR1_6_EL0</gui_name>
+      <description language="en">AMEVCNTR1_6_EL0</description>
+    </register>
+    <register access="RW" name="AMEVCNTR1_7_EL0" size="8">
+      <gui_name language="en">AMEVCNTR1_7_EL0</gui_name>
+      <description language="en">AMEVCNTR1_7_EL0</description>
+    </register>
+    <register access="RW" name="AMEVCNTR1_8_EL0" size="8">
+      <gui_name language="en">AMEVCNTR1_8_EL0</gui_name>
+      <description language="en">AMEVCNTR1_8_EL0</description>
+    </register>
+    <register access="RW" name="AMEVCNTR1_9_EL0" size="8">
+      <gui_name language="en">AMEVCNTR1_9_EL0</gui_name>
+      <description language="en">AMEVCNTR1_9_EL0</description>
+    </register>
+    <register access="RW" name="AMEVCNTR1_10_EL0" size="8">
+      <gui_name language="en">AMEVCNTR1_10_EL0</gui_name>
+      <description language="en">AMEVCNTR1_10_EL0</description>
+    </register>
+    <register access="RW" name="AMEVCNTR1_11_EL0" size="8">
+      <gui_name language="en">AMEVCNTR1_11_EL0</gui_name>
+      <description language="en">AMEVCNTR1_11_EL0</description>
+    </register>
+    <register access="RW" name="AMEVCNTR1_12_EL0" size="8">
+      <gui_name language="en">AMEVCNTR1_12_EL0</gui_name>
+      <description language="en">AMEVCNTR1_12_EL0</description>
+    </register>
+    <register access="RW" name="AMEVCNTR1_13_EL0" size="8">
+      <gui_name language="en">AMEVCNTR1_13_EL0</gui_name>
+      <description language="en">AMEVCNTR1_13_EL0</description>
+    </register>
+    <register access="RW" name="AMEVCNTR1_14_EL0" size="8">
+      <gui_name language="en">AMEVCNTR1_14_EL0</gui_name>
+      <description language="en">AMEVCNTR1_14_EL0</description>
+    </register>
+    <register access="RW" name="AMEVCNTR1_15_EL0" size="8">
+      <gui_name language="en">AMEVCNTR1_15_EL0</gui_name>
+      <description language="en">AMEVCNTR1_15_EL0</description>
+    </register>
+    <register access="RW" name="AMEVTYPER1_0_EL0" size="4">
+      <gui_name language="en">AMEVTYPER1_0_EL0</gui_name>
+      <description language="en">AMEVTYPER1_0_EL0</description>
+    </register>
+    <register access="RW" name="AMEVTYPER1_1_EL0" size="4">
+      <gui_name language="en">AMEVTYPER1_1_EL0</gui_name>
+      <description language="en">AMEVTYPER1_1_EL0</description>
+    </register>
+    <register access="RW" name="AMEVTYPER1_2_EL0" size="4">
+      <gui_name language="en">AMEVTYPER1_2_EL0</gui_name>
+      <description language="en">AMEVTYPER1_2_EL0</description>
+    </register>
+    <register access="RW" name="AMEVTYPER1_3_EL0" size="4">
+      <gui_name language="en">AMEVTYPER1_3_EL0</gui_name>
+      <description language="en">AMEVTYPER1_3_EL0</description>
+    </register>
+    <register access="RW" name="AMEVTYPER1_4_EL0" size="4">
+      <gui_name language="en">AMEVTYPER1_4_EL0</gui_name>
+      <description language="en">AMEVTYPER1_4_EL0</description>
+    </register>
+    <register access="RW" name="AMEVTYPER1_5_EL0" size="4">
+      <gui_name language="en">AMEVTYPER1_5_EL0</gui_name>
+      <description language="en">AMEVTYPER1_5_EL0</description>
+    </register>
+    <register access="RW" name="AMEVTYPER1_6_EL0" size="4">
+      <gui_name language="en">AMEVTYPER1_6_EL0</gui_name>
+      <description language="en">AMEVTYPER1_6_EL0</description>
+    </register>
+    <register access="RW" name="AMEVTYPER1_7_EL0" size="4">
+      <gui_name language="en">AMEVTYPER1_7_EL0</gui_name>
+      <description language="en">AMEVTYPER1_7_EL0</description>
+    </register>
+    <register access="RW" name="AMEVTYPER1_8_EL0" size="4">
+      <gui_name language="en">AMEVTYPER1_8_EL0</gui_name>
+      <description language="en">AMEVTYPER1_8_EL0</description>
+    </register>
+    <register access="RW" name="AMEVTYPER1_9_EL0" size="4">
+      <gui_name language="en">AMEVTYPER1_9_EL0</gui_name>
+      <description language="en">AMEVTYPER1_9_EL0</description>
+    </register>
+    <register access="RW" name="AMEVTYPER1_10_EL0" size="4">
+      <gui_name language="en">AMEVTYPER1_10_EL0</gui_name>
+      <description language="en">AMEVTYPER1_10_EL0</description>
+    </register>
+    <register access="RW" name="AMEVTYPER1_11_EL0" size="4">
+      <gui_name language="en">AMEVTYPER1_11_EL0</gui_name>
+      <description language="en">AMEVTYPER1_11_EL0</description>
+    </register>
+    <register access="RW" name="AMEVTYPER1_12_EL0" size="4">
+      <gui_name language="en">AMEVTYPER1_12_EL0</gui_name>
+      <description language="en">AMEVTYPER1_12_EL0</description>
+    </register>
+    <register access="RW" name="AMEVTYPER1_13_EL0" size="4">
+      <gui_name language="en">AMEVTYPER1_13_EL0</gui_name>
+      <description language="en">AMEVTYPER1_13_EL0</description>
+    </register>
+    <register access="RW" name="AMEVTYPER1_14_EL0" size="4">
+      <gui_name language="en">AMEVTYPER1_14_EL0</gui_name>
+      <description language="en">AMEVTYPER1_14_EL0</description>
+    </register>
+    <register access="RW" name="AMEVTYPER1_15_EL0" size="4">
+      <gui_name language="en">AMEVTYPER1_15_EL0</gui_name>
+      <description language="en">AMEVTYPER1_15_EL0</description>
+    </register>
+    </register_group>
+
+    <register_group name="MPAM">
+    <gui_name language="en">MPAM</gui_name>
+    <description language="en">MPAM</description>
+    <register access="RW" name="MPAM0_EL1" size="4">
+      <gui_name language="en">MPAM0_EL1</gui_name>
+      <description language="en">MPAM0_EL1</description>
+    </register>
+    <register access="RW" name="MPAM1_EL1" size="4">
+      <gui_name language="en">MPAM1_EL1</gui_name>
+      <description language="en">MPAM1_EL1</description>
+    </register>
+        <register access="RW" name="MPAM2_EL2" size="4">
+      <gui_name language="en">MPAM2_EL1</gui_name>
+      <description language="en">MPAM2_EL1</description>
+    </register>
+    <register access="RW" name="MPAM3_EL3" size="4">
+      <gui_name language="en">MPAM3_EL3</gui_name>
+      <description language="en">MPAM3_EL3</description>
+    </register>
+    <register access="RW" name="MPAMHCR_EL2" size="8">
+      <gui_name language="en">MPAMHCR_EL2</gui_name>
+      <description language="en">MPAMHCR_EL2</description>
+    </register>
+    <register access="RW" name="MPAMVPMV_EL2" size="8">
+      <gui_name language="en">MPAMVPMV_EL2</gui_name>
+      <description language="en">MPAMVPMV_EL2</description>
+    </register>
+    <register access="RW" name="MPAMVPM0_EL2" size="8">
+      <gui_name language="en">MPAMVPM0_EL2</gui_name>
+      <description language="en">MPAMVPM0_EL2</description>
+    </register>
+    <register access="RW" name="MPAMVPM1_EL2" size="8">
+      <gui_name language="en">MPAMVPM1_EL2</gui_name>
+      <description language="en">MPAMVPM1_EL2</description>
+    </register>
+    <register access="RW" name="MPAMVPM2_EL2" size="8">
+      <gui_name language="en">MPAMVPM2_EL2</gui_name>
+      <description language="en">MPAMVPM2_EL2</description>
+    </register>
+    <register access="RW" name="MPAMVPM3_EL2" size="8">
+      <gui_name language="en">MPAMVPM3_EL2</gui_name>
+      <description language="en">MPAMVPM3_EL2</description>
+    </register>
+    <register access="RW" name="MPAMVPM4_EL2" size="8">
+      <gui_name language="en">MPAMVPM4_EL2</gui_name>
+      <description language="en">MPAMVPM4_EL2</description>
+    </register>
+    <register access="RW" name="MPAMVPM5_EL2" size="8">
+      <gui_name language="en">MPAMVPM5_EL2</gui_name>
+      <description language="en">MPAMVPM5_EL2</description>
+    </register>
+    <register access="RW" name="MPAMVPM6_EL2" size="8">
+      <gui_name language="en">MPAMVPM6_EL2</gui_name>
+      <description language="en">MPAMVPM6_EL2</description>
+    </register>
+    <register access="RW" name="MPAMVPM7_EL2" size="8">
+      <gui_name language="en">MPAMVPM7_EL2</gui_name>
+      <description language="en">MPAMVPM7_EL2</description>
+    </register>
+    <register access="RO" name="MPAMIDR_EL1" size="8">
+      <gui_name language="en">MPAMIDR_EL1</gui_name>
+      <description language="en">MPAMIDR_EL1</description>
+    </register>
+    </register_group>
+
+    <register_group name="PMU">
+    <gui_name language="en">PMU</gui_name>
+    <description language="en">PMU</description>
+
+  <!-- Temporary fix until register is renamed in firmware (DSCORE-1967) -->
+    <register access="RO" name="PMMIR_EL1" size="4">
+      <gui_name language="en">PMMIR_EL1</gui_name>
+      <device_name type="rvi">PMMIDR_EL1</device_name>
+      <device_name type="cadi">PMMIDR_EL1</device_name>
+      <description language="en">PMMIR_EL1</description>
+    </register>
+    </register_group>
+
+    <register_group name="ID">
+    <gui_name language="en">ID</gui_name>
+    <description language="en">ID</description>
+    <register access="RO" name="ID_AA64ISAR0_EL1" size="8">
+      <gui_name language="en">AArch64 Instruction Set Attribute Register 0</gui_name>
+      <description language="en">Provides information about the instructions implemented in AArch64 state...</description>
+      <bitField enumerationId="ID_AA64ISAR0_EL1_TLB" name="TLB">
+        <gui_name language="en">TLB</gui_name>
+        <description language="en">Indicates support for Outer shareable and TLB range maintenance instructions.</description>
+        <definition>[59:56]</definition>
+      </bitField>
+      <bitField enumerationId="ID_AA64ISAR0_EL1_TS" name="TS">
+        <gui_name language="en">TS</gui_name>
+        <description language="en">Indicates support for flag manipulation instructions.</description>
+        <definition>[55:52]</definition>
+      </bitField>
+      <bitField enumerationId="ID_AA64ISAR0_EL1_FHM" name="FHM">
+        <gui_name language="en">FHM</gui_name>
+        <description language="en">Indicates whether FMLAL and FMLSL instructions are implemented.</description>
+        <definition>[51:48]</definition>
+      </bitField>
+      <bitField enumerationId="ID_AA64ISAR0_EL1_DP" name="DP">
+        <gui_name language="en">DP</gui_name>
+        <description language="en">Dot Product instructions implemented in AArch64 state.</description>
+        <definition>[47:44]</definition>
+      </bitField>
+      <bitField enumerationId="ID_AA64ISAR0_EL1_SM4" name="SM4">
+        <gui_name language="en">SM4</gui_name>
+        <description language="en">SM4 instructions implemented in AArch64 state.</description>
+        <definition>[43:40]</definition>
+      </bitField>
+      <bitField enumerationId="ID_AA64ISAR0_EL1_SM3" name="SM3">
+        <gui_name language="en">SM3</gui_name>
+        <description language="en">SM3 instructions implemented in AArch64 state.</description>
+        <definition>[39:36]</definition>
+      </bitField>
+      <bitField enumerationId="ID_AA64ISAR0_EL1_SHA3" name="SHA3">
+        <gui_name language="en">SHA3</gui_name>
+        <description language="en">SHA3 instructions implemented in AArch64 state.</description>
+        <definition>[35:32]</definition>
+      </bitField>
+      <bitField enumerationId="ID_AA64ISAR0_EL1_RDM" name="RDM">
+        <gui_name language="en">RDM</gui_name>
+        <description language="en">SQRDMLAH and SQRDMLSH instructions implemented in AArch64 state.</description>
+        <definition>[31:28]</definition>
+      </bitField>
+      <bitField enumerationId="ID_AA64ISAR0_EL1_Atomic" name="Atomic">
+        <gui_name language="en">Atomic</gui_name>
+        <description language="en">Atomic instructions implemented in AArch64 state.</description>
+        <definition>[23:20]</definition>
+      </bitField>
+      <bitField enumerationId="ID_AA64ISAR0_EL1_CRC32" name="CRC32">
+        <gui_name language="en">CRC32</gui_name>
+        <description language="en">CRC32 instructions implemented in AArch64 state.</description>
+        <definition>[19:16]</definition>
+      </bitField>
+      <bitField enumerationId="ID_AA64ISAR0_EL1_SHA2" name="SHA2">
+        <gui_name language="en">SHA2</gui_name>
+        <description language="en">SHA2 instructions implemented in AArch64 state.</description>
+        <definition>[15:12]</definition>
+      </bitField>
+      <bitField enumerationId="ID_AA64ISAR0_EL1_SHA1" name="SHA1">
+        <gui_name language="en">SHA1</gui_name>
+        <description language="en">SHA1 instructions implemented in AArch64 state.</description>
+        <definition>[11:8]</definition>
+      </bitField>
+      <bitField enumerationId="ID_AA64ISAR0_EL1_AES" name="AES">
+        <gui_name language="en">AES</gui_name>
+        <description language="en">AES instructions implemented in AArch64 state.</description>
+        <definition>[7:4]</definition>
+      </bitField>
+    </register>
+    <register access="RO" name="ID_ISAR6_EL1" size="8">
+      <gui_name language="en">Instruction Set Attribute Register 6</gui_name>
+      <description language="en">Provides information about the instruction sets implemented by the PE in AArch32 state...</description>
+      <bitField enumerationId="ID_ISAR6_EL1_SPECRES" name="SPECRES">
+        <gui_name language="en">SPECRES</gui_name>
+        <description language="en">Speculation invalidation instruction support in AArch32 state.</description>
+        <definition>[19:16]</definition>
+      </bitField>
+      <bitField enumerationId="ID_ISAR6_EL1_SB" name="SB">
+        <gui_name language="en">SB</gui_name>
+        <description language="en">SB instruction support in AArch32 state.</description>
+        <definition>[15:12]</definition>
+      </bitField>
+      <bitField enumerationId="ID_ISAR6_EL1_FHM" name="FHM">
+        <gui_name language="en">FHM</gui_name>
+        <description language="en">Indicates whether VFMAL and VFMSL instructions are implemented.</description>
+        <definition>[11:8]</definition>
+      </bitField>
+      <bitField enumerationId="ID_ISAR6_EL1_DP" name="DP">
+        <gui_name language="en">DP</gui_name>
+        <description language="en">Indicates the support for dot product instructions in AArch32 state.</description>
+        <definition>[7:4]</definition>
+      </bitField>
+      <bitField enumerationId="ID_ISAR6_EL1_JSCVT" name="JSCVT">
+        <gui_name language="en">JSCVT</gui_name>
+        <description language="en">Indicates whether the Javascript conversion instruction is implemented in AArch32 state.</description>
+        <definition>[3:0]</definition>
+      </bitField>
+    </register>
+  </register_group>
+  <tcf:enumeration name="ID_AA64ISAR0_EL1_TLB">
+    <tcf:enumItem description="Outer shareable and TLB range maintenance instructions are not implemented." name="Outer_shareable_and_TLB_range_maintenance_instructions_are_not_implemented" number="0"/>
+    <tcf:enumItem description="Outer shareable TLB maintenance instructions are implemented." name="Outer_shareable_TLB_maintenance_instructions_are_implemented" number="1"/>
+    <tcf:enumItem description="Outer shareable and TLB range maintenance instructions are implemented." name="Outer_shareable_and_TLB_range_maintenance_instructions_are_implemented" number="2"/>
+  </tcf:enumeration>
+  <tcf:enumeration name="ID_AA64ISAR0_EL1_TS">
+    <tcf:enumItem description="No flag manipulation instructions are implemented." name="No_flag_manipulation_instructions_are_implemented" number="0"/>
+    <tcf:enumItem description="CFINV, RMIF, SETF16, and SETF8 instructions are implemented." name="CFINV_RMIF_SETF16_and_SETF8_instructions_are_implemented" number="1"/>
+    <tcf:enumItem description="CFINV, RMIF, SETF16, SETF8, AXFlag, and XAFlag instructions are implemented." name="CFINV_RMIF_SETF16_SETF8_AXFlag_and_XAFlag_instructions_are_implemented" number="2"/>
+  </tcf:enumeration>
+  <tcf:enumeration name="ID_AA64ISAR0_EL1_FHM">
+    <tcf:enumItem description="FMLAL and FMLSL instructions are not implemented." name="FMLAL_and_FMLSL_instructions_are_not_implemented" number="0"/>
+    <tcf:enumItem description="FMLAL and FMLSL instructions are implemented." name="FMLAL_and_FMLSL_instructions_are_implemented" number="1"/>
+  </tcf:enumeration>
+  <tcf:enumeration name="ID_AA64ISAR0_EL1_DP">
+    <tcf:enumItem description="No Dot Product instructions implemented." name="No_Dot_Product_instructions_implemented" number="0"/>
+    <tcf:enumItem description="UDOT and SDOT instructions implemented." name="UDOT_and_SDOT_instructions_implemented" number="1"/>
+  </tcf:enumeration>
+  <tcf:enumeration name="ID_AA64ISAR0_EL1_SM4">
+    <tcf:enumItem description="No SM4 instructions implemented." name="No_SM4_instructions_implemented" number="0"/>
+    <tcf:enumItem description="SM4E and SM4EKEY instructions implemented." name="SM4E_and_SM4EKEY_instructions_implemented" number="1"/>
+  </tcf:enumeration>
+  <tcf:enumeration name="ID_AA64ISAR0_EL1_SM3">
+    <tcf:enumItem description="No SM3 instructions implemented." name="No_SM3_instructions_implemented" number="0"/>
+    <tcf:enumItem description="SM3SS1, SM3TT1A, SM3TT1B, SM3TT2A, SM3TT2B, SM3PARTW1, and SM3PARTW2 instructions implemented." name="SM3SS1_SM3TT1A_SM3TT1B_SM3TT2A_SM3TT2B_SM3PARTW1_and_SM3PARTW2_instructions_implemented" number="1"/>
+  </tcf:enumeration>
+  <tcf:enumeration name="ID_AA64ISAR0_EL1_SHA3">
+    <tcf:enumItem description="No SHA3 instructions implemented." name="No_SHA3_instructions_implemented" number="0"/>
+    <tcf:enumItem description="EOR3, RAX1, XAR, and BCAX instructions implemented." name="EOR3_RAX1_XAR_and_BCAX_instructions_implemented" number="1"/>
+  </tcf:enumeration>
+  <tcf:enumeration name="ID_AA64ISAR0_EL1_RDM">
+    <tcf:enumItem description="No SQRDMLAH and SQRDMLSH instructions implemented." name="No_SQRDMLAH_and_SQRDMLSH_instructions_implemented" number="0"/>
+    <tcf:enumItem description="SQRDMLAH and SQRDMLSH instructions implemented." name="SQRDMLAH_and_SQRDMLSH_instructions_implemented" number="1"/>
+  </tcf:enumeration>
+  <tcf:enumeration name="ID_AA64ISAR0_EL1_Atomic">
+    <tcf:enumItem description="No Atomic instructions implemented." name="No_Atomic_instructions_implemented" number="0"/>
+    <tcf:enumItem description="LDADD, LDCLR, LDEOR, LDSET, LDSMAX, LDSMIN, LDUMAX, LDUMIN, CAS, CASP, and SWP instructions implemented." name="LDADD_LDCLR_LDEOR_LDSET_LDSMAX_LDSMIN_LDUMAX_LDUMIN_CAS_CASP_and_SWP_instructions_implemented" number="2"/>
+  </tcf:enumeration>
+  <tcf:enumeration name="ID_AA64ISAR0_EL1_CRC32">
+    <tcf:enumItem description="No CRC32 instructions implemented." name="No_CRC32_instructions_implemented" number="0"/>
+    <tcf:enumItem description="CRC32B, CRC32H, CRC32W, CRC32X, CRC32CB, CRC32CH, CRC32CW, and CRC32CX instructions implemented." name="CRC32B_CRC32H_CRC32W_CRC32X_CRC32CB_CRC32CH_CRC32CW_and_CRC32CX_instructions_implemented" number="1"/>
+  </tcf:enumeration>
+  <tcf:enumeration name="ID_AA64ISAR0_EL1_SHA2">
+    <tcf:enumItem description="No SHA2 instructions implemented." name="No_SHA2_instructions_implemented" number="0"/>
+    <tcf:enumItem description="SHA256H, SHA256H2, SHA256SU0, and SHA256SU1 instructions implemented." name="SHA256H_SHA256H2_SHA256SU0_and_SHA256SU1_instructions_implemented" number="1"/>
+  </tcf:enumeration>
+  <tcf:enumeration name="ID_AA64ISAR0_EL1_SHA1">
+    <tcf:enumItem description="No SHA1 instructions implemented." name="No_SHA1_instructions_implemented" number="0"/>
+    <tcf:enumItem description="SHA1C, SHA1P, SHA1M, SHA1H, SHA1SU0, and SHA1SU1 instructions implemented." name="SHA1C_SHA1P_SHA1M_SHA1H_SHA1SU0_and_SHA1SU1_instructions_implemented" number="1"/>
+  </tcf:enumeration>
+  <tcf:enumeration name="ID_AA64ISAR0_EL1_AES">
+    <tcf:enumItem description="No AES instructions implemented." name="No_AES_instructions_implemented" number="0"/>
+    <tcf:enumItem description="AESE, AESD, AESMC, and AESIMC instructions implemented." name="AESE_AESD_AESMC_and_AESIMC_instructions_implemented" number="1"/>
+    <tcf:enumItem description="As for 0001, plus PMULL/PMULL2 instructions operating on 64-bit data quantities." name="As_for_0001_plus_PMULL_PMULL2_instructions_operating_on_64_bit_data_quantities" number="2"/>
+  </tcf:enumeration>
+  <tcf:enumeration name="ID_ISAR6_EL1_SPECRES">
+    <tcf:enumItem description="CFPRCTX, DVPRCTX, and CPPRCTX instructions are not implemented." name="CFPRCTX_DVPRCTX_and_CPPRCTX_instructions_are_not_implemented" number="0"/>
+    <tcf:enumItem description="CFPRCTX, DVPRCTX, and CPPRCTX instructions are implemented." name="CFPRCTX_DVPRCTX_and_CPPRCTX_instructions_are_implemented" number="1"/>
+  </tcf:enumeration>
+  <tcf:enumeration name="ID_ISAR6_EL1_SB">
+    <tcf:enumItem description="SB instruction is not implemented." name="SB_instruction_is_not_implemented" number="0"/>
+    <tcf:enumItem description="SB instruction is implemented." name="SB_instruction_is_implemented" number="1"/>
+  </tcf:enumeration>
+  <tcf:enumeration name="ID_ISAR6_EL1_FHM">
+    <tcf:enumItem description="VFMAL and VMFSL instructions not implemented." name="VFMAL_and_VMFSL_instructions_not_implemented" number="0"/>
+    <tcf:enumItem description="VFMAL and VMFSL instructions implemented." name="VFMAL_and_VMFSL_instructions_implemented" number="1"/>
+  </tcf:enumeration>
+  <tcf:enumeration name="ID_ISAR6_EL1_DP">
+    <tcf:enumItem description="No dot Product instructions implemented." name="No_dot_Product_instructions_implemented" number="0"/>
+    <tcf:enumItem description="VUDOT and VSDOT instructions implemented." name="VUDOT_and_VSDOT_instructions_implemented" number="1"/>
+  </tcf:enumeration>
+  <tcf:enumeration name="ID_ISAR6_EL1_JSCVT">
+    <tcf:enumItem description="The VJCVT instruction is not implemented." name="The_VJCVT_instruction_is_not_implemented" number="0"/>
+    <tcf:enumItem description="The VJCVT instruction is implemented." name="The_VJCVT_instruction_is_implemented" number="1"/>
+  </tcf:enumeration>
+
+  </cr:register_list>
+
+
+</container>

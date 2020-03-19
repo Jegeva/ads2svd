@@ -1,0 +1,14 @@
+######################################
+# Initialize TCM
+######################################
+#  1) To enable ECC function, set ACTLR register [26]bit (B0TCMPCEN) and [25] bit(ATCMPCEN) to 1.
+set var $CP15::$System::$AUXILIARY_CONTROL.ATCMPCEN = 1  # Set ACTLR register [25]bit (ATCMPCEN) to 1.
+set var $CP15::$System::$AUXILIARY_CONTROL.B0TCMPCEN = 1 # Set ACTLR register [26]bit (B0TCMPCEN) to 1.
+#wait 1.0s
+
+#  2) To initialize the all area of ATCM and BTCM, 32bit write all area of ATCM and BTCM to zero.
+#memory 0x00000000 0x0007FFFF noverify
+#memory 0x00800000 0x00807FFF noverify
+#wait 1.0s
+memory fill 0x00000000 0x0007FFFF 8 0     # ATCM : Address(0x00000000 - 0x0007FFFF) 32bit width
+memory fill 0x00800000 0x00807FFF 8 0     # BTCM : Address(0x00800000 - 0x00807FFF) 32bit width

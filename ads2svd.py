@@ -9,13 +9,19 @@ import copy
 import re
 import pprint
 
-rows, columns = os.popen('stty size', 'r').read().split()
-pp = pprint.PrettyPrinter(indent=4)#,width=columns)
+#rows, columns = os.popen('stty size', 'r').read().split()
+#pp = pprint.PrettyPrinter(indent=4)#,width=columns)
 
 config={}
-config["base_path"]="/home/jg/developmentstudio-2019.1/"
-config["configdb_path"]= config["base_path"] + "sw/debugger/configdb/"
-config["configdb_cores_path"]= config["configdb_path"] + "Cores/"   
+
+#config["base_path"]="/home/jg/developmentstudio-2019.1/"
+#config["configdb_path"]= config["base_path"] + "sw/debugger/configdb/"
+#config["configdb_cores_path"]= config["configdb_path"] + "Cores/"
+
+config["base_path"]= os.getcwd() +"/in"
+config["configdb_path"]= config["base_path"] + "/"
+config["configdb_cores_path"]= config["configdb_path"] + "Cores/"
+
 config["configdb_schemas_path"]= config["configdb_path"] + "Schemas/"
 config["xinclude_error_log"] = './xinclude_error.log'
 config["out_dir"] =  './out/'
@@ -47,7 +53,7 @@ def loadxml(p):
     curr_path = '/'.join(p.split("/")[:-1])
     root = etree.parse(p,parser)
     error_log = open(config["xinclude_error_log"],"a")
-    out_file = config["out_dir"] + p[len(config["configdb_cores_path"]):]
+    out_file = config["out_dir"] + p.split("/")[-1]
     out_file = open(out_file,"w")
     nfail = 0;  
     incls = [i for i in root.xpath("//xi:include", namespaces={'xi':'http://www.w3.org/2001/XInclude'})]
@@ -83,10 +89,17 @@ def get_dev():
 def get_all():
     error_log = open(config["xinclude_error_log"],"w+")
     error_log.close()
-    xmls_cores = [ x for x in glob.glob(  config["configdb_cores_path"] + "*.xml")]
+    xmls_cores = [ x for x in sorted(glob.glob(  config["configdb_cores_path"] + "*.xml"))]
     for x in xmls_cores:
         loadxml(x)     
 
+def get_one(x):
+
+    loadxml(x)     
+
+        
 build_schema_wrapper()
 #get_dev()
-get_all()
+#get_all()
+get_one(sys.argv[1])
+

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<os id="com.arm.debug.os.ucosii" version="5.15" xmlns='http://www.arm.com/os_extension'>
+  <name>ucosii.title</name>
+  <implementer>Arm</implementer>
+  <logo>ucosii_logo.png</logo>
+  <description>ucosii.desc</description>
+  <provider>provider.py</provider>
+  <match arch="ARMv6M"/>
+  <match arch="ARMv7M"/>
+  <match arch="ARMv7R"/>
+  <match arch="ARMv7A"/>
+  <match arch="ARMv7AV"/>
+</os>

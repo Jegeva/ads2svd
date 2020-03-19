@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<register_list
+    name="CP15"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns="http://www.arm.com/core_reg"
+    xsi:schemaLocation="http://www.arm.com/core_reg ../../../Schemas/core_register_definition.xsd"
+    xmlns:tcf="http://com.arm.targetconfigurationeditor">
+    <register_group name="System">
+        <gui_name language="en">System</gui_name>
+        <description language="en">System control and configuration</description>
+        <register access="RW" name="CONTROL" size="4">
+            <gui_name language="en">Control</gui_name>
+            <alias_name>CP15_CONTROL</alias_name>
+            <device_name type="rvi">CP15_CONTROL</device_name>
+            <device_name type="cadi">CP15_CONTROL</device_name>
+            <description language="en">Provides control and configuration information for:&#x0A;- memory alignment, endianness, protection, and fault behavior&#x0A;- MPU and cache enables and cache replacement strategy&#x0A;- interrupts and the behavior of interrupt latency&#x0A;- the location for exception vectors&#x0A;- program flow prediction</description>
+            <bitField conditional="false" name="TE" enumerationId="CP15_CONTROL_TE">
+                <gui_name language="en">TE</gui_name>
+                <description language="en">Thumb exception enable</description>
+                <definition>[30]</definition>
+            </bitField>
+            <bitField conditional="false" name="NMI" enumerationId="CP15_CONTROL_NMI" access="RO">
+                <gui_name language="en">NMI</gui_name>
+                <description language="en">Determines the state of the non-maskable bit that is set by a configuration pin FIQISNMI</description>
+                <definition>[27]</definition>
+            </bitField>
+            <bitField conditional="false" name="EE" enumerationId="GENERIC_CLEARED_SET">
+                <gui_name language="en">EE</gui_name>
+                <description language="en">Determines the state of the CPSR E bit on an exception</description>
+                <definition>[25]</definition>
+            </bitField>
+            <bitField conditional="false" name="VE" enumerationId="CP15_CONTROL_VE">
+                <gui_name language="en">VE</gui_name>
+                <description language="en">Configures vectored interrupt</description>
+                <definition>[24]</definition>
+            </bitField>
+            <bitField conditional="false" name="U" enumerationId="GENERIC_DISABLED_ENABLED">
+                <gui_name language="en">U</gui_name>
+                <description language="en">Enables unaligned data access operations for mixed little-endian and big-endian operation:</description>
+                <definition>[22]</definition>
+            </bitField>
+            <bitField conditional="false" name="FI" enumerationId="GENERIC_DISABLED_ENABLED">
+                <gui_name language="en">FI</gui_name>
+                <description language="en">Configures low latency features for fast interrupts</description>
+                <definition>[21]</definition>
+            </bitField>
+            <bitField conditional="false" name="L4" enumerationId="CP15_CONTROL_L4">
+                <gui_name language="en">L4</gui_name>
+                <description language="en">Determines if the T bit is set for PC load instructions</description>
+                <definition>[15]</definition>
+            </bitField>
+            <bitField conditional="false" name="RR" enumerationId="CP15_CONTROL_RR">
+                <gui_name language="en">RR</gui_name>
+                <description language="en">Determines the replacement strategy for the cache</description>
+                <definition>[14]</definition>
+            </bitField>
+            <bitField conditional="false" name="V" enumerationId="CP15_CONTROL_V">
+                <gui_name language="en">V</gui_name>
+                <description language="en">Determines the location of exception vectors</description>
+                <definition>[13]</definition>
+            </bitField>
+            <bitField conditional="false" name="I" enumerationId="GENERIC_DISABLED_ENABLED">
+                <gui_name language="en">I</gui_name>
+                <description language="en">Enables L1 instruction cache</description>
+                <definition>[12]</definition>
+            </bitField>
+            <bitField conditional="false" name="Z" enumerationId="GENERIC_DISABLED_ENABLED">
+                <gui_name language="en">Z</gui_name>
+                <description language="en">Enables program flow prediction</description>
+                <definition>[11]</definition>
+            </bitField>
+            <bitField conditional="false" name="B" enumerationId="CP15_CONTROL_B">
+                <gui_name language="en">B</gui_name>
+                <description language="en">Determines operation as little-endian or big-endian memory system and the names of the low four-byte addresses within a 32-bit word</description>
+                <definition>[7]</definition>
+            </bitField>
+            <bitField conditional="false" name="C" enumerationId="GENERIC_DISABLED_ENABLED">
+                <gui_name language="en">C</gui_name>
+                <description language="en">Enables L1 data cache</description>
+                <definition>[2]</definition>
+            </bitField>
+            <bitField conditional="false" name="A" enumerationId="GENERIC_DISABLED_ENABLED">
+                <gui_name language="en">A</gui_name>
+                <description language="en">Enables strict alignment of data to detect alignment faults in data accesses</description>
+                <definition>[1]</definition>
+            </bitField>
+            <bitField conditional="false" name="M" enumerationId="GENERIC_DISABLED_ENABLED">
+                <gui_name language="en">M</gui_name>
+                <description language="en">Enables the MPU</description>
+                <definition>[0]</definition>
+            </bitField>
+        </register>
+        <register access="RW" name="AUXILIARY_CONTROL" size="4">
+            <gui_name language="en">Auxiliary Control</gui_name>
+            <alias_name>CP15_AUXILIARY_CONTROL</alias_name>
+            <device_name type="rvi">CP15_AUXILIARY_CONTROL</device_name>
+            <device_name type="cadi">CP15_AUXILIARY_CONTROL</device_name>
+            <description language="en">The Auxiliary Control Register controls:&#x0A;- program flow&#x0A;- fast interrupt control&#x0A;- cache cleaning</description>
+            <bitField conditional="false" name="NS" enumerationId="CP15_AUXILIARY_CONTROL_NS">
+                <gui_name language="en">NS</gui_name>
+                <description language="en">Override Shared attribute in Normal, Non-cacheable data regions when the MPU is disabled or not present</description>
+                <definition>[9]</definition>
+            </bitField>
+            <bitField conditional="false" name="BC" enumerationId="GENERIC_DISABLED_ENABLED">
+                <gui_name language="en">BC</gui_name>
+                <description language="en">Enables or disables the dynamic branch pattern cache, if program flow prediction is enabled by Z bit</description>
+                <definition>[8]</definition>
+            </bitField>
+            <bitField conditional="false" name="BL" enumerationId="GENERIC_DISABLED_ENABLED">
+                <gui_name language="en">BL</gui_name>
+                <description language="en">Enables or disables the dynamic branch predictor loop cache, if program flow prediction is enabled by Z bit</description>
+                <definition>[7]</definition>
+            </bitField>
+            <bitField conditional="false" name="IR" enumerationId="GENERIC_DISABLED_ENABLED">
+                <gui_name language="en">IR</gui_name>
+                <description language="en">Enables or disables instruction cache reload on a parity error if PE is set</description>
+                <definition>[6]</definition>
+            </bitField>
+            <bitField conditional="false" name="RV" enumerationId="GENERIC_ENABLED_DISABLED">
+                <gui_name language="en">RV</gui_name>
+                <description language="en">Enables or disables block transfer cache operations</description>
+                <definition>[5]</definition>
+            </bitField>
+            <bitField conditional="false" name="RA" enumerationId="GENERIC_ENABLED_DISABLED">
+                <gui_name language="en">RA</gui_name>
+                <description language="en">Enables or disables clean entire data cache</description>
+                <definition>[4]</definition>
+            </bitField>
+            <bitField conditional="false" name="FE" enumerationId="GENERIC_DISABLED_ENABLED">
+                <gui_name language="en">FE</gui_name>
+                <description language="en">Enables or disables branch folding within the prefetch unit, if program flow prediction is enabled by Z bit</description>
+                <definition>[3]</definition>
+            </bitField>
+            <bitField conditional="false" name="PE" enumerationId="GENERIC_DISABLED_ENABLED">
+                <gui_name language="en">PE</gui_name>
+                <description language="en">Enables or disables the generation and checking of parity information for the Instruction and Data caches, and the Instruction and Data TCMs</description>
+                <definition>[2]</definition>
+            </bitField>
+            <bitField conditional="false" name="DB" enumerationId="GENERIC_DISABLED_ENABLED">
+                <gui_name language="en">DB</gui_name>
+                <description language="en">Enables or disables the use of the Dynamic Predictor, if program flow prediction is enabled by Z bit</description>
+                <definition>[1]</definition>
+            </bitField>
+            <bitField conditional="false" name="RS" enumerationId="GENERIC_DISABLED_ENABLED">
+                <gui_name language="en">RS</gui_name>
+                <description language="en">Enables or disables the use of the return stack if program flow prediction is enabled by Z bit</description>
+                <definition>[0]</definition>
+            </bitField>
+        </register>
+        <register access="RW" name="COPROCESSOR_ACCESS_CONTROL" size="4">
+            <gui_name language="en">Coprocessor Access Control</gui_name>
+            <alias_name>CP15_COPROCESSOR_ACCESS_CONTROL</alias_name>
+            <device_name type="rvi">CP15_COPROCESSOR_ACCESS_CONTROL</device_name>
+            <device_name type="cadi">CP15_COPROCESSOR_ACCESS_CONTROL</device_name>
+            <description language="en">Sets access rights for coprocessors CP0-CP13</description>
+            <bitField conditional="false" name="CP13" enumerationId="CP15_COPROCESSOR_ACCESS_CONTROL">
+                <gui_name language="en">CP13</gui_name>
+                <description language="en">Access permissions for coprocessor 13</description>
+                <definition>[27:26]</definition>
+            </bitField>
+            <bitField conditional="false" name="CP12" enumerationId="CP15_COPROCESSOR_ACCESS_CONTROL">
+                <gui_name language="en">CP12</gui_name>
+                <description language="en">Access permissions for coprocessor 12</description>
+                <definition>[25:24]</definition>
+            </bitField>
+            <bitField conditional="false" name="CP11" enumerationId="CP15_COPROCESSOR_ACCESS_CONTROL">
+                <gui_name language="en">CP11</gui_name>
+                <description language="en">Access permissions for coprocessor 11</description>
+                <definition>[23:22]</definition>
+            </bitField>
+            <bitField conditional="false" name="CP10" enumerationId="CP15_COPROCESSOR_ACCESS_CONTROL">
+                <gui_name language="en">CP10</gui_name>
+                <description language="en">Access permissions for coprocessor 10</description>
+                <definition>[21:20]</definition>
+            </bitField>
+            <bitField conditional="false" name="CP9" enumerationId="CP15_COPROCESSOR_ACCESS_CONTROL">
+                <gui_name language="en">CP9</gui_name>
+                <description language="en">Access permissions for coprocessor 9</description>
+                <definition>[19:18]</definition>
+            </bitField>
+            <bitField conditional="false" name="CP8" enumerationId="CP15_COPROCESSOR_ACCESS_CONTROL">
+                <gui_name language="en">CP8</gui_name>
+                <description language="en">Access permissions for coprocessor 8</description>
+                <definition>[17:16]</definition>
+            </bitField>
+            <bitField conditional="false" name="CP7" enumerationId="CP15_COPROCESSOR_ACCESS_CONTROL">
+                <gui_name language="en">CP7</gui_name>
+                <description language="en">Access permissions for coprocessor 7</description>
+                <definition>[15:14]</definition>
+            </bitField>
+            <bitField conditional="false" name="CP6" enumerationId="CP15_COPROCESSOR_ACCESS_CONTROL">
+                <gui_name language="en">CP6</gui_name>
+                <description language="en">Access permissions for coprocessor 6</description>
+                <definition>[13:12]</definition>
+            </bitField>
+            <bitField conditional="false" name="CP5" enumerationId="CP15_COPROCESSOR_ACCESS_CONTROL">
+                <gui_name language="en">CP5</gui_name>
+                <description language="en">Access permissions for coprocessor 5</description>
+                <definition>[11:10]</definition>
+            </bitField>
+            <bitField conditional="false" name="CP4" enumerationId="CP15_COPROCESSOR_ACCESS_CONTROL">
+                <gui_name language="en">CP4</gui_name>
+                <description language="en">Access permissions for coprocessor 4</description>
+                <definition>[9:8]</definition>
+            </bitField>
+            <bitField conditional="false" name="CP3" enumerationId="CP15_COPROCESSOR_ACCESS_CONTROL">
+                <gui_name language="en">CP3</gui_name>
+                <description language="en">Access permissions for coprocessor 3</description>
+                <definition>[7:6]</definition>
+            </bitField>
+            <bitField conditional="false" name="CP2" enumerationId="CP15_COPROCESSOR_ACCESS_CONTROL">
+                <gui_name language="en">CP2</gui_name>
+                <description language="en">Access permissions for coprocessor 2</description>
+                <definition>[5:4]</definition>
+            </bitField>
+            <bitField conditional="false" name="CP1" enumerationId="CP15_COPROCESSOR_ACCESS_CONTROL">
+                <gui_name language="en">CP1</gui_name>
+                <description language="en">Access permissions for coprocessor 1</description>
+                <definition>[3:2]</definition>
+            </bitField>
+            <bitField conditional="false" name="CP0" enumerationId="CP15_COPROCESSOR_ACCESS_CONTROL">
+                <gui_name language="en">CP0</gui_name>
+                <description language="en">Access permissions for coprocessor 0</description>
+                <definition>[1:0]</definition>
+            </bitField>
+        </register>
+        <register access="RW" name="CID" size="4">
+            <gui_name language="en">Process ID</gui_name>
+            <alias_name>CP15_CID</alias_name>
+            <device_name type="rvi">CP15_CID</device_name>
+            <device_name type="cadi">CP15_CID</device_name>
+            <description language="en">Holds a process IDentification (ID) value for the process running currently</description>
+        </register>
+    </register_group>
+</register_list>
+

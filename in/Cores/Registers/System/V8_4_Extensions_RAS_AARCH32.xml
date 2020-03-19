@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<container xmlns:cr="http://www.arm.com/core_reg" xmlns="http://www.arm.com/core_reg" xmlns:tcf="http://com.arm.targetconfigurationeditor" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.arm.com/core_reg ../../../Schemas/core_register_definition.xsd">
+  <cr:register_list name="V8_2" override="true">
+    <register_group name="V8_2_Extensions">
+    <gui_name language="en">V8.2 Extensions</gui_name>
+    <description language="en">V8.2 Extensions</description>
+
+    <register access="RW" name="ERXMISC4" size="4">
+      <gui_name language="en">ERXMISC4</gui_name>
+      <description language="en">ERXMISC4</description>
+    </register>
+    <register access="RW" name="ERXMISC5" size="4">
+      <gui_name language="en">ERXMISC5</gui_name>
+      <description language="en">ERXMISC5</description>
+    </register>
+        <register access="RW" name="ERXMISC6" size="4">
+      <gui_name language="en">ERXMISC6</gui_name>
+      <description language="en">ERXMISC6</description>
+    </register>
+    <register access="RW" name="ERXMISC7" size="4">
+      <gui_name language="en">ERXMISC7</gui_name>
+      <description language="en">ERXMISC7</description>
+    </register>
+    </register_group>
+
+</cr:register_list>
+</container>

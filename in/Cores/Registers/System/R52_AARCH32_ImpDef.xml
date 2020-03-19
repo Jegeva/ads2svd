@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<register_list xmlns="http://www.arm.com/core_reg" xmlns:tcf="http://com.arm.targetconfigurationeditor" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="System" xsi:schemaLocation="http://www.arm.com/core_reg ../../../Schemas/core_register_definition.xsd">
+    <register_group name="ImplementationDefined">
+        <gui_name language="en">Implementation Defined</gui_name>
+        <description language="en">Implementation Defined</description>
+        <register access="RW" name="CPUACTLR" size="8">
+            <gui_name language="en">CPU Auxiliary Control Register</gui_name>
+            <description language="en">CPU Auxiliary Control Register.</description>
+        </register>
+        <register access="RW" name="ATCMREGIONR" size="4">
+            <gui_name language="en">TCM Region Register A</gui_name>
+            <description language="en">TCM Region Register A.</description>
+        </register>
+        <register access="RW" name="BTCMREGIONR" size="4">
+            <gui_name language="en">TCM Region Register B</gui_name>
+            <description language="en">TCM Region Register B.</description>
+        </register>
+        <register access="RW" name="CTCMREGIONR" size="4">
+            <gui_name language="en">TCM Region Register C</gui_name>
+            <description language="en">TCM Region Register C.</description>
+        </register>
+        <register access="RW" name="CSCTLR" size="4">
+            <gui_name language="en">Cache Segregation Control Register</gui_name>
+            <description language="en">Cache Segregation Control Register.</description>
+        </register>
+        <register access="RW" name="BPCTLR" size="4">
+            <gui_name language="en">Branch Predictor Control Register</gui_name>
+            <description language="en">Branch Predictor Control Register.</description>
+        </register>
+        <register access="RW" name="MEMPROTCLR" size="4">
+            <gui_name language="en">Memory Protection Control Register</gui_name>
+            <description language="en">Memory Protection Control Register.</description>
+        </register>
+        <register access="RW" name="SLAVEPCTLR" size="4">
+            <gui_name language="en">Slave Port Control Register</gui_name>
+            <description language="en">Slave Port Control Register</description>
+        </register>
+        <register access="RW" name="PERIPHPREGIONR" size="4">
+            <gui_name language="en">Peripheral Port Region Register</gui_name>
+            <description language="en">Peripheral Port Region Register.</description>
+        </register>
+        <register access="RW" name="FLASHIFREGIONR" size="4">
+            <gui_name language="en">Flash Interface Region Register</gui_name>
+            <description language="en">Flash Interface Region Register.</description>
+        </register>
+        <register access="RO" name="BUILDOPTR" size="4">
+            <gui_name language="en">Build Options Register</gui_name>
+            <description language="en">Build Options Register.</description>
+        </register>
+        <register access="RO" name="PINOPTR" size="4">
+            <gui_name language="en">Pin Options Register</gui_name>
+            <description language="en">Pin Options Register.</description>
+        </register>
+        <register access="RO" name="CBAR" size="4">
+            <gui_name language="en">Configuration Base Address Register</gui_name>
+            <description language="en">Configuration Base Address Register.</description>
+        </register>
+        <register access="RW" name="QOSR" size="4">
+            <gui_name language="en">Quality Of Service Register</gui_name>
+            <description language="en">Quality Of Service Register.</description>
+        </register>
+        <register access="RW" name="BUSTIMEOUTR" size="4">
+            <gui_name language="en">Bus Timeout Register</gui_name>
+            <description language="en">Bus Timeout Register.</description>
+        </register>
+        <register access="RW" name="INTMONR" size="4">
+            <gui_name language="en">Interrupt Monitoring Register</gui_name>
+            <description language="en">Interrupt Monitoring Register.</description>
+        </register>
+        <register access="RW" name="ICERR0" size="4">
+            <gui_name language="en">Instruction Cache Error Record Register 0</gui_name>
+            <description language="en">Instruction Cache Error Record Register 0.</description>
+        </register>
+        <register access="RW" name="ICERR1" size="4">
+            <gui_name language="en">Instruction Cache Error Record Registers 1</gui_name>
+            <description language="en">Instruction Cache Error Record Registers 1.</description>
+        </register>
+        <register access="RW" name="DCERR0" size="4">
+            <gui_name language="en">Data Cache Error Record Register 0</gui_name>
+            <description language="en">Data Cache Error Record Register 0.</description>
+        </register>
+        <register access="RW" name="DCERR1" size="4">
+            <gui_name language="en">Data Cache Error Record Registers 1</gui_name>
+            <description language="en">Data Cache Error Record Registers 1.</description>
+        </register>
+        <register access="RW" name="TCMERR0" size="4">
+            <gui_name language="en">TCM Error Record Register 0</gui_name>
+            <description language="en">TCM Error Record Register 0.</description>
+        </register>
+        <register access="RW" name="TCMERR1" size="4">
+            <gui_name language="en">TCM Error Record Register 1</gui_name>
+            <description language="en">TCM Error Record Register 1.</description>
+        </register>
+        <register access="RO" name="TCMSYNDR0" size="4">
+            <gui_name language="en">TCM Syndrome Register 0</gui_name>
+            <description language="en">TCM Syndrome Register 0.</description>
+        </register>
+        <register access="RO" name="TCMSYNDR1" size="4">
+            <gui_name language="en">TCM Syndrome Register 1</gui_name>
+            <description language="en">TCM Syndrome Register 1.</description>
+        </register>
+        <register access="RW" name="FLASHERR0" size="4">
+            <gui_name language="en">Flash Error Record Registers 0</gui_name>
+            <description language="en">Flash Error Record Registers 0.</description>
+        </register>
+        <register access="RW" name="FLASHERR1" size="4">
+            <gui_name language="en">Flash Error Record Registers 1</gui_name>
+            <description language="en">Flash Error Record Registers 1.</description>
+        </register>
+        <register access="RO" name="TESTR0" size="4">
+            <gui_name language="en">Test Register 0</gui_name>
+            <description language="en">Test Register 0.</description>
+        </register>
+        <register access="WO" name="TESTR1" size="4">
+            <gui_name language="en">Test Register 1</gui_name>
+            <description language="en">Test Register 1.</description>
+        </register>
+    </register_group>
+</register_list>

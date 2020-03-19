@@ -1,0 +1,60 @@
+# CSAT script Script to erase device protection locked Spansion Traveo part
+# run from Arm DS command prompt using: 
+# csat EraseDeviceLockedPart.txt
+
+echo Ensure device is in non-user mode (switch S2 1-ON on evaluation board)
+echo and board is powered and connected to a DSTREAM
+rviscan
+echo Change script to specify DSTREAM and remove exit command in script
+exit
+
+con TCP:xxxxxxx   # Change xxxxx to name of DSTREAM connected to board
+
+chain dev=UNKNOWN_5,ARMCS-DP
+# Open DAP
+dvo 1 
+# Enumerate APs - APB-AP is AP 1
+dpe
+
+# Write unlock key to SCCFG_UNLCK
+dmw 1 0xC01A4 0x5ECACCE5
+
+# Write C_KEY0 to SCCFG_GPREG0
+dmw 1 0xC01A8 0xC0356EA5
+
+# Write C_KEY1 to SCCFG_GPREG1
+dmw 1 0xC01AC 0x2E830596
+
+# Write C_KEY2 to SCCFG_GPREG0
+dmw 1 0xC01A8 0x01A00000
+
+# Write C_KEY3 to SCCFG_GPREG1
+dmw 1 0xC01AC 0xF3A033ED
+
+# Write C_KEY4 to SCCFG_GPREG0
+dmw 1 0xC01A8 0x370E6A51
+
+# Write C_KEY5 to SCCFG_GPREG1
+dmw 1 0xC01AC 0xB0412000
+
+# Write C_KEY6 to SCCFG_GPREG0
+dmw 1 0xC01A8 0x00000002
+
+# Write C_KEY7 to SCCFG_GPREG1
+dmw 1 0xC01AC 0xAA805510
+
+# Write lock key to SCCFG_UNLCK
+dmw 1 0xC01A4 0xA135331A
+
+echo Wait until 0xC01AC reads 0x12345678...
+echo execute: dmr 1 0xC01AC 1
+echo should output: 0x000C01AC : 0x12345678
+echo when erase complete
+
+
+
+
+
+
+
+

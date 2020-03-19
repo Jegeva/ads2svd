@@ -1,0 +1,410 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>EDPRSR</title>
+    <link href="insn.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body><table align="center"><tr><td><div class="topbar"><a href="AArch32-regindex.html">AArch32 Registers</a></div></td><td><div class="topbar"><a href="AArch64-regindex.html">AArch64 Registers</a></div></td><td><div class="topbar"><a href="AArch32-sysindex.html">AArch32 Instructions</a></div></td><td><div class="topbar"><a href="AArch64-sysindex.html">AArch64 Instructions</a></div></td><td><div class="topbar"><a href="enc_index.html">Index by Encoding</a></div></td><td><div class="topbar"><a href="ext_alpha_index.html">External Registers</a></div></td><td><div class="topbar"><a href="ext_enc_index.html">External Registers by Offset</a></div></td><td><div class="topbar"><a href="func_index.html">Registers by Functional Group</a></div></td></tr></table><hr /><h1 class="register-section">EDPRSR, External Debug Processor Status Register</h1><p>The EDPRSR characteristics are:</p><h2>Purpose</h2>
+          <p>Holds information about the reset and powerdown state of the PE.</p>
+        <p>This 
+        register
+       is part of the Debug registers functional group.</p><h2>Usage constraints</h2><p>This register is accessible as follows:</p><table class="register_access"><tr><th>SLK</th><th>Default</th></tr><tr><td>RO</td><td>RO</td></tr></table>
+          <p>On permitted accesses to the register, other access controls affect the behavior of some fields. See the field descriptions for more information.</p>
+        
+          <p>If the Core power domain is powered up (EDPRSR.PU == 1), then following a read of EDPRSR:</p>
+        
+          <ul>
+            <li>
+              If DoubleLockStatus() == FALSE, then:<ul><li>EDPRSR.{SDR, SPMAD, SDAD, SPD} are cleared to 0.</li><li>EDPRSR.SR is cleared to 0 if the non-debug logic of the PE is not in reset state (EDPRSR.R == 0).</li></ul>
+            </li>
+            <li>
+              Otherwise it is <span class="arm-defined-word">CONSTRAINED UNPREDICTABLE</span> whether or not this clearing occurs.
+            </li>
+          </ul>
+        
+          <p>If the Core power domain is powered down (EDPRSR.PU == 0), then:</p>
+        
+          <ul>
+            <li>
+              EDPRSR.{SDR, SPMAD, SDAD, SR} are all <span class="arm-defined-word">UNKNOWN</span>, and are either reset or restored on being powered up.
+            </li>
+            <li>
+              EDPRSR.SPD is not cleared following a read of EDPRSR. See the SPD bit description for more information.
+            </li>
+          </ul>
+        
+          <p>The clearing of bits is an indirect write to EDPRSR.</p>
+        <h2>Configuration</h2><p>EDPRSR contains fields that are in the Core power domain and fields that are in the Debug power domain.
+      </p>
+          <p>Some of the fields in the Core power domain are in the Cold reset domain and others are in the Warm reset domain. See the field descriptions for more information. However:</p>
+          <ul>
+            <li>
+              Fields that are in the Cold reset domain are not affected by a warm reset and are not affected by an External debug reset.
+            </li>
+            <li>
+              Fields in the Warm reset domain are also reset by a Cold reset but are not affected by an External debug reset.
+            </li>
+            <li>
+              Fields in the Debug power domain are not affected by a Warm reset and are not affected by a Cold reset.
+            </li>
+          </ul>
+        <h2>Attributes</h2>
+          <p>EDPRSR is a 32-bit register.</p>
+        <h2>Field descriptions</h2><p>The EDPRSR bit assignments are:</p><table class="regdiagram"><thead><tr><td>31</td><td>30</td><td>29</td><td>28</td><td>27</td><td>26</td><td>25</td><td>24</td><td>23</td><td>22</td><td>21</td><td>20</td><td>19</td><td>18</td><td>17</td><td>16</td><td>15</td><td>14</td><td>13</td><td>12</td><td>11</td><td>10</td><td>9</td><td>8</td><td>7</td><td>6</td><td>5</td><td>4</td><td>3</td><td>2</td><td>1</td><td>0</td></tr></thead><tbody><tr class="firstrow"><td class="l">0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td class="r">0</td><td class="lr" colspan="1"><a href="#SDR">SDR</a></td><td class="lr" colspan="1"><a href="#SPMAD">SPMAD</a></td><td class="lr" colspan="1"><a href="#EPMAD">EPMAD</a></td><td class="lr" colspan="1"><a href="#SDAD">SDAD</a></td><td class="lr" colspan="1"><a href="#EDAD">EDAD</a></td><td class="lr" colspan="1"><a href="#DLK">DLK</a></td><td class="lr" colspan="1"><a href="#OSLK">OSLK</a></td><td class="lr" colspan="1"><a href="#HALTED">HALTED</a></td><td class="lr" colspan="1"><a href="#SR">SR</a></td><td class="lr" colspan="1"><a href="#R">R</a></td><td class="lr" colspan="1"><a href="#SPD">SPD</a></td><td class="lr" colspan="1"><a href="#PU">PU</a></td></tr></tbody></table><h4 id="0">
+                Bits [31:12]
+              </h4>
+              <p>Reserved, <span class="arm-defined-word">RES0</span>.</p>
+            <h4 id="SDR">SDR, bit [11]
+              </h4>
+              <p>Sticky debug restart. Set to 1 when the PE exits Debug state.</p>
+            
+              <p>This bit is <span class="arm-defined-word">UNKNOWN</span> on reads if any of the following are true:</p>
+            
+              <ul>
+                <li>
+                  DoubleLockStatus() == TRUE. The OS double-lock is locked.
+                </li>
+                <li>
+                  EDPRSR.R == 1. The PE is in Reset state.
+                </li>
+                <li>
+                  EDPRSR.PU == 0. The Core power domain is powered down.
+                </li>
+              </ul>
+            
+              <p>Otherwise permitted values are:</p>
+            <table class="valuetable"><tr><th>SDR</th><th>Meaning</th></tr><tr><td class="bitfield">0</td><td>
+                  <p>The PE has not restarted since EDPRSR was last read.</p>
+                </td></tr><tr><td class="bitfield">1</td><td>
+                  <p>The PE has restarted since EDPRSR was last read.</p>
+                </td></tr></table>
+              <div class="note"><span class="note-header">Note</span>
+                <p>If a reset occurs when the PE is in Debug state, the PE exits Debug state. SDR is <span class="arm-defined-word">UNKNOWN</span> on Warm reset, meaning a debugger must also use the SR bit to determine whether the PE has left Debug state.</p>
+              </div>
+            
+              <p>If EDPRSR.PU reads as 1, which means that the Core power domain is in a powerup state, then following a read of EDPRSR:</p>
+            
+              <ul>
+                <li>
+                  If DoubleLockStatus() == FALSE this bit clears to 0.
+                </li>
+                <li>
+                  If DoubleLockStatus() == TRUE, it is <span class="arm-defined-word">CONSTRAINED UNPREDICTABLE</span> whether this bit clears to 0 or is unchanged.
+                </li>
+              </ul>
+            
+              <p>This field is in the Core power domain and the Warm reset domain. On a Warm or Cold reset it resets to an <span class="arm-defined-word">UNKNOWN</span> value.</p>
+            <p>When this register has an architecturally-defined reset value, this field resets to a value that is architecturally <span class="arm-defined-word">UNKNOWN</span>.</p><p>This field resets to its defined reset value on Warm reset.</p><p>This table summarizes the effect of the register access controls on the behavior of this field:</p><table class="info"><tr><th>Off</th><th>DLK</th><th>SLK</th><th>Default</th></tr><tr><td>UNK</td><td>UNK</td><td>RO</td><td>RC</td></tr></table><p>'Access permissions for the External debug interface registers' in the <i>ARM<sup>®</sup> Architecture Reference Manual, ARMv8, for ARMv8-A architecture profile</i>, section H8.6.1 describes the conditions shown in this table. These conditions are prioritized, with the leftmost condition having the highest priority and priority decreasing from left to right.</p><h4 id="SPMAD">SPMAD, bit [10]
+              </h4>
+              <p>Sticky EPMAD error. Set to 1 if an external debug interface access to a Performance Monitors register returns an error because AllowExternalPMUAccess() == FALSE.</p>
+            
+              <p>This bit is <span class="arm-defined-word">UNKNOWN</span> on reads if any of the following are true:</p>
+            
+              <ul>
+                <li>
+                  DoubleLockStatus() == TRUE
+                </li>
+                <li>
+                  EDPRSR.{OSLK, R} is 1.
+                </li>
+                <li>
+                  EDPRSR.PU is 0.
+                </li>
+              </ul>
+            
+              <p>Otherwise permitted values are:</p>
+            <table class="valuetable"><tr><th>SPMAD</th><th>Meaning</th></tr><tr><td class="bitfield">0</td><td>
+                  <p>No accesses to the external Performance Monitors registers have failed since EDPRSR was last read.</p>
+                </td></tr><tr><td class="bitfield">1</td><td>
+                  <p>At least one access to the external Performance Monitors registers has failed since EDPRSR was last read.</p>
+                </td></tr></table>
+              <p>If the Core power domain is powered up, then, following a read of EDPRSR:</p>
+            
+              <ul>
+                <li>
+                  If DoubleLockStatus() == FALSE this bit clears to 0.
+                </li>
+                <li>
+                  If DoubleLockStatus() == TRUE, it is <span class="arm-defined-word">CONSTRAINED UNPREDICTABLE</span> whether this bit clears to 0 or is unchanged.
+                </li>
+              </ul>
+            
+              <p>The write to SPMAD is an indirect write to EDPRSR that is a side effect of the access. The indirect write might not occur for a memory-mapped access to the external debug interface.</p>
+            
+              <p>This field is in the Core power domain and the Cold reset domain. On a Cold reset it resets to 0.</p>
+            <p>When this register has an architecturally-defined reset value, this field resets to <span class="binarynumber">0</span>.</p><p>This field resets to its defined reset value on Cold reset.</p><p>This table summarizes the effect of the register access controls on the behavior of this field:</p><table class="info"><tr><th>Off</th><th>DLK</th><th>OSLK</th><th>SLK</th><th>Default</th></tr><tr><td>UNK</td><td>UNK</td><td>UNK</td><td>RO</td><td>RC</td></tr></table><p>'Access permissions for the External debug interface registers' in the <i>ARM<sup>®</sup> Architecture Reference Manual, ARMv8, for ARMv8-A architecture profile</i>, section H8.6.1 describes the conditions shown in this table. These conditions are prioritized, with the leftmost condition having the highest priority and priority decreasing from left to right.</p><h4 id="EPMAD">EPMAD, bit [9]
+              </h4>
+              <p>External Performance Monitors access disable status.</p>
+            
+              <p>This bit is <span class="arm-defined-word">UNKNOWN</span> on reads if any of the following is true:</p>
+            
+              <ul>
+                <li>
+                  DoubleLockStatus() == TRUE
+                </li>
+                <li>
+                  EDPRSR.{OSLK, R} is 1.
+                </li>
+                <li>
+                  EDPRSR.PU is 0.
+                </li>
+              </ul>
+            
+              <p>Otherwise permitted values are:</p>
+            <table class="valuetable"><tr><th>EPMAD</th><th>Meaning</th></tr><tr><td class="bitfield">0</td><td>
+                  <p>External Performance Monitors access enabled. AllowExternalPMUAccess() == TRUE.</p>
+                </td></tr><tr><td class="bitfield">1</td><td>
+                  <p>External Performance Monitors access disabled. AllowExternalPMUAccess() == FALSE.</p>
+                </td></tr></table>
+              <p>If external performance monitors access is not implemented, EPMAD is RAO.</p>
+            
+              <p>This field is in the Core power domain.</p>
+            <p>This table summarizes the effect of the register access controls on the behavior of this field:</p><table class="info"><tr><th>Off</th><th>DLK</th><th>OSLK</th><th>EPMAD</th><th>Default</th></tr><tr><td>UNK</td><td>UNK</td><td>UNK</td><td>RAO</td><td>RO</td></tr></table><p>'Access permissions for the External debug interface registers' in the <i>ARM<sup>®</sup> Architecture Reference Manual, ARMv8, for ARMv8-A architecture profile</i>, section H8.6.1 describes the conditions shown in this table. These conditions are prioritized, with the leftmost condition having the highest priority and priority decreasing from left to right.</p><h4 id="SDAD">SDAD, bit [8]
+              </h4>
+              <p>Sticky EDAD error. Set to 1 if an external debug interface access to a debug register returns an error because AllowExternalDebugAccess() == FALSE.</p>
+            
+              <p>This bit is <span class="arm-defined-word">UNKNOWN</span> on reads if any of the following are true:</p>
+            
+              <ul>
+                <li>
+                  DoubleLockStatus() == TRUE
+                </li>
+                <li>
+                  EDPRSR.R is 1.
+                </li>
+                <li>
+                  EDPRSR.PU is 0.
+                </li>
+                <li>
+                  EDPRSR.OSLK is 1 and external debug writes to <a href="ext-oslar_el1.html">OSLAR_EL1</a> do not return an error when AllowExternalDebugAccess() == FALSE.
+                </li>
+              </ul>
+            
+              <p>Otherwise permitted values are:</p>
+            <table class="valuetable"><tr><th>SDAD</th><th>Meaning</th></tr><tr><td class="bitfield">0</td><td>
+                  <p>No accesses to the external debug registers have failed since EDPRSR was last read.</p>
+                </td></tr><tr><td class="bitfield">1</td><td>
+                  <p>At least one access to the external debug registers has failed since EDPRSR was last read.</p>
+                </td></tr></table>
+              <p>If the Core power domain is powered up, then, following a read of EDPRSR:</p>
+            
+              <ul>
+                <li>
+                  If DoubleLockStatus() == FALSE this bit clears to 0.
+                </li>
+                <li>
+                  If DoubleLockStatus() == TRUE, it is <span class="arm-defined-word">CONSTRAINED UNPREDICTABLE</span> whether this bit clears to 0 or is unchanged.
+                </li>
+              </ul>
+            
+              <p>The write to SDAD is an indirect write to EDPRSR that is a side effect of the access. The indirect write might not occur for a memory-mapped access to the external debug interface.</p>
+            
+              <p>This field is in the Core power domain and the Cold reset domain. On a Cold reset it resets to 0.</p>
+            <p>When this register has an architecturally-defined reset value, this field resets to <span class="binarynumber">0</span>.</p><p>This field resets to its defined reset value on Cold reset.</p><p>This table summarizes the effect of the register access controls on the behavior of this field:</p><table class="info"><tr><th>Off</th><th>DLK</th><th>OSLK</th><th>SLK</th><th>Default</th></tr><tr><td>UNK</td><td>UNK</td><td>See text</td><td>RO</td><td>RC</td></tr></table><p>'Access permissions for the External debug interface registers' in the <i>ARM<sup>®</sup> Architecture Reference Manual, ARMv8, for ARMv8-A architecture profile</i>, section H8.6.1 describes the conditions shown in this table. These conditions are prioritized, with the leftmost condition having the highest priority and priority decreasing from left to right.</p><h4 id="EDAD">EDAD, bit [7]
+              </h4>
+              <p>External debug access disable status.</p>
+            
+              <p>This bit is <span class="arm-defined-word">UNKNOWN</span> on reads if any of the following are true:</p>
+            
+              <ul>
+                <li>
+                  DoubleLockStatus() == TRUE
+                </li>
+                <li>
+                  EDPRSR.R is 1.
+                </li>
+                <li>
+                  EDPRSR.PU is 0.
+                </li>
+                <li>
+                  EDPRSR.OSLK is 1 and external debug writes to <a href="ext-oslar_el1.html">OSLAR_EL1</a> do not return an error when AllowExternalDebugAccess() == FALSE.
+                </li>
+              </ul>
+            
+              <p>Otherwise permitted values are:</p>
+            <table class="valuetable"><tr><th>EDAD</th><th>Meaning</th></tr><tr><td class="bitfield">0</td><td>
+                  <p>External debug access enabled. AllowExternalDebugAccess() == TRUE.</p>
+                </td></tr><tr><td class="bitfield">1</td><td>
+                  <p>External debug access disabled. AllowExternalDebugAccess() == FALSE.</p>
+                </td></tr></table>
+              <p>This field is in the Core power domain.</p>
+            <p>This table summarizes the effect of the register access controls on the behavior of this field:</p><table class="info"><tr><th>Off</th><th>DLK</th><th>OSLK</th><th>EDAD</th><th>Default</th></tr><tr><td>UNK</td><td>UNK</td><td>See text</td><td>RAO</td><td>RAZ</td></tr></table><p>'Access permissions for the External debug interface registers' in the <i>ARM<sup>®</sup> Architecture Reference Manual, ARMv8, for ARMv8-A architecture profile</i>, section H8.6.1 describes the conditions shown in this table. These conditions are prioritized, with the leftmost condition having the highest priority and priority decreasing from left to right.</p><h4 id="DLK">DLK, bit [6]
+              </h4>
+              <p>OS Double Lock status bit. Returns the result of the pseudocode function DoubleLockStatus().</p>
+            
+              <p>This bit is <span class="arm-defined-word">UNKNOWN</span> on reads if EDPRSR.PU is 0.</p>
+            
+              <p>Otherwise reads as zero if any of the following are true, that is when DoubleLockStatus() == FALSE:</p>
+            
+              <ul>
+                <li>
+                  <a href="AArch64-osdlr_el1.html">OSDLR_EL1</a>.DLK == 0.
+                </li>
+                <li>
+                  <a href="AArch64-dbgprcr_el1.html">DBGPRCR_EL1</a>.CORENPDRQ == 1.
+                </li>
+                <li>
+                  The PE is in Debug state.
+                </li>
+              </ul>
+            
+              <p>If the Core power domain is powered up and DoubleLockStatus() == TRUE, it is <span class="arm-defined-word">IMPLEMENTATION DEFINED</span> whether:</p>
+            
+              <ul>
+                <li>
+                  EDPRSR.PU reads as 1, EDPRSR.DLK reads as 1, and EDPRSR.SPD is <span class="arm-defined-word">UNKNOWN</span>.
+                </li>
+                <li>
+                  EDPRSR.PU reads as 0, EDPRSR.DLK is <span class="arm-defined-word">UNKNOWN</span>, and EDPRSR.SPD reads as 0.
+                </li>
+              </ul>
+            
+              <p>If the Core power domain is powered up and entered reset state with the OS double-lock locked this bit has a <span class="arm-defined-word">CONSTRAINED UNPREDICTABLE</span> value, for more information see <span class="xref">'EDPRSR.{DLK, R} and reset state' in the ARMv8 ARM, section H6 (Debug Reset and Powerdown Support)</span></p>
+            
+              <p>EDPRSR.{DLK, SPD, PU} describe whether registers in the Core power domain can be accessed, and whether their state has been lost since the last time the register was read. For more information, see <span class="xref">'EDPRSR.{DLK, SPD, PU} bits record accessibility and lost of state in Core power domain' in the ARMv8 ARM, section H6 (Debug Reset and Powerdown Support)</span></p>
+            
+              <p>This field is in the Core power domain.</p>
+            <p>This table summarizes the effect of the register access controls on the behavior of this field:</p><table class="info"><tr><th>Off</th><th>DLK</th><th>Default</th></tr><tr><td>UNK</td><td>See text</td><td>RAZ</td></tr></table><p>'Access permissions for the External debug interface registers' in the <i>ARM<sup>®</sup> Architecture Reference Manual, ARMv8, for ARMv8-A architecture profile</i>, section H8.6.1 describes the conditions shown in this table. These conditions are prioritized, with the leftmost condition having the highest priority and priority decreasing from left to right.</p><h4 id="OSLK">OSLK, bit [5]
+              </h4>
+              <p>OS lock status bit.</p>
+            
+              <p>This bit is <span class="arm-defined-word">UNKNOWN</span> on reads if either:</p>
+            
+              <ul>
+                <li>
+                  DoubleLockStatus() == TRUE
+                </li>
+                <li>
+                  EDPRSR.R is 1.
+                </li>
+                <li>
+                  EDPRSR.PU is 0.
+                </li>
+              </ul>
+            
+              <p>A read of this bit returns the value of <a href="AArch64-oslsr_el1.html">OSLSR_EL1</a>.OSLK.</p>
+            
+              <p>This field is in the Core power domain.</p>
+            <p>This table summarizes the effect of the register access controls on the behavior of this field:</p><table class="info"><tr><th>Off</th><th>DLK</th><th>OSLK</th><th>Default</th></tr><tr><td>UNK</td><td>UNK</td><td>RAO</td><td>RAZ</td></tr></table><p>'Access permissions for the External debug interface registers' in the <i>ARM<sup>®</sup> Architecture Reference Manual, ARMv8, for ARMv8-A architecture profile</i>, section H8.6.1 describes the conditions shown in this table. These conditions are prioritized, with the leftmost condition having the highest priority and priority decreasing from left to right.</p><h4 id="HALTED">HALTED, bit [4]
+              </h4>
+              <p>Halted status bit.</p>
+            
+              <p>This bit is <span class="arm-defined-word">UNKNOWN</span> on reads if EDPRSR.PU is 0. </p>
+            
+              <p>Otherwise permitted values are:</p>
+            <table class="valuetable"><tr><th>HALTED</th><th>Meaning</th></tr><tr><td class="bitfield">0</td><td>
+                  <p>PE is in Non-debug state.</p>
+                </td></tr><tr><td class="bitfield">1</td><td>
+                  <p>PE is in Debug state.</p>
+                </td></tr></table>
+              <p>Because the OS Double Lock is never set when the PE is in Debug state, this bit is always RAZ when DoubleLockStatus() == TRUE.</p>
+            
+              <p>This field is in the Core power domain.</p>
+            <p>This table summarizes the effect of the register access controls on the behavior of this field:</p><table class="info"><tr><th>Off</th><th>DLK</th><th>Default</th></tr><tr><td>UNK</td><td>See text</td><td>RO</td></tr></table><p>'Access permissions for the External debug interface registers' in the <i>ARM<sup>®</sup> Architecture Reference Manual, ARMv8, for ARMv8-A architecture profile</i>, section H8.6.1 describes the conditions shown in this table. These conditions are prioritized, with the leftmost condition having the highest priority and priority decreasing from left to right.</p><h4 id="SR">SR, bit [3]
+              </h4>
+              <p>Sticky core reset status bit.</p>
+            
+              <p>This bit is <span class="arm-defined-word">UNKNOWN</span> on reads if either:</p>
+            
+              <ul>
+                <li>
+                  DoubleLockStatus() == TRUE
+                </li>
+                <li>
+                  EDPRSR.PU is 0.
+                </li>
+              </ul>
+            
+              <p>Otherwise permitted values are:</p>
+            <table class="valuetable"><tr><th>SR</th><th>Meaning</th></tr><tr><td class="bitfield">0</td><td>
+                  <p>The non-debug logic of the PE is not in reset state and has not been reset since the last time EDPRSR was read.</p>
+                </td></tr><tr><td class="bitfield">1</td><td>
+                  <p>The non-debug logic of the PE is in reset state or has been reset since the last time EDPRSR was read.</p>
+                </td></tr></table>
+              <p>If EDPRSR.PU reads as 1 and EDPRSR.R reads as 0, which means that the Core power domain is in a powerup state and that the non-debug logic of the PE is not in reset state, then following a read of EDPRSR:</p>
+            
+              <ul>
+                <li>
+                  If DoubleLockStatus() == FALSE this bit clears to 0.
+                </li>
+                <li>
+                  If DoubleLockStatus() == TRUE, it is <span class="arm-defined-word">UNPREDICTABLE</span> whether this bit clears to 0 or is unchanged.
+                </li>
+              </ul>
+            
+              <p>This field is in the Core power domain and the Warm reset domain. On a Warm or Cold reset it resets to 1.</p>
+            <p>When this register has an architecturally-defined reset value, this field resets to <span class="binarynumber">1</span>.</p><p>This field resets to its defined reset value on Warm reset.</p><p>This table summarizes the effect of the register access controls on the behavior of this field:</p><table class="info"><tr><th>Off</th><th>DLK</th><th>SLK</th><th>Default</th></tr><tr><td>UNK</td><td>UNK</td><td>RO</td><td>RC</td></tr></table><p>'Access permissions for the External debug interface registers' in the <i>ARM<sup>®</sup> Architecture Reference Manual, ARMv8, for ARMv8-A architecture profile</i>, section H8.6.1 describes the conditions shown in this table. These conditions are prioritized, with the leftmost condition having the highest priority and priority decreasing from left to right.</p><h4 id="R">R, bit [2]
+              </h4>
+              <p>PE reset status bit.</p>
+            
+              <p>This bit is <span class="arm-defined-word">UNKNOWN</span> on reads if either:</p>
+            
+              <ul>
+                <li>
+                  DoubleLockStatus() == TRUE
+                </li>
+                <li>
+                  EDPRSR.PU is 0.
+                </li>
+              </ul>
+            
+              <p>Otherwise permitted values are:</p>
+            <table class="valuetable"><tr><th>R</th><th>Meaning</th></tr><tr><td class="bitfield">0</td><td>
+                  <p>The non-debug logic of the PE is not in reset state.</p>
+                </td></tr><tr><td class="bitfield">1</td><td>
+                  <p>The non-debug logic of the PE is in reset state.</p>
+                </td></tr></table>
+              <p>If the Core power domain is powered up and entered reset state with the OS double-lock locked this bit has a <span class="arm-defined-word">CONSTRAINED UNPREDICTABLE</span> value, for more information see <span class="xref">'EDPRSR.{DLK, R} and reset state' in the ARMv8 ARM, section H6 (Debug Reset and Powerdown Support)</span></p>
+            
+              <p>This field is in the Core power domain.</p>
+            <p>This table summarizes the effect of the register access controls on the behavior of this field:</p><table class="info"><tr><th>Off</th><th>DLK</th><th>Default</th></tr><tr><td>UNK</td><td>UNK</td><td>RO</td></tr></table><p>'Access permissions for the External debug interface registers' in the <i>ARM<sup>®</sup> Architecture Reference Manual, ARMv8, for ARMv8-A architecture profile</i>, section H8.6.1 describes the conditions shown in this table. These conditions are prioritized, with the leftmost condition having the highest priority and priority decreasing from left to right.</p><h4 id="SPD">SPD, bit [1]
+              </h4>
+              <p>Sticky core powerdown status bit.</p>
+            
+              <p>This bit is <span class="arm-defined-word">UNKNOWN</span> on reads if EDPRSR.PU is 1 and DoubleLockStatus() == TRUE .</p>
+            
+              <p>Otherwise, permitted values are:</p>
+            <table class="valuetable"><tr><th>SPD</th><th>Meaning</th></tr><tr><td class="bitfield">0</td><td>
+                  <p>If EDPRSR.PU is 0, it is not known whether the state of the debug registers in the Core power domain is lost.</p>
+                
+                  <p>If EDPRSR.PU is 1, the state of the debug registers in the Core power domain has not been lost.</p>
+                </td></tr><tr><td class="bitfield">1</td><td>
+                  <p>The state of the debug registers in the Core power domain has been lost.</p>
+                </td></tr></table>
+              <p>If the Core power domain is powered up, then, following a read of EDPRSR:</p>
+            
+              <ul>
+                <li>
+                  If DoubleLockStatus() == FALSE this bit clears to 0.
+                </li>
+                <li>
+                  If DoubleLockStatus() == TRUE, it is <span class="arm-defined-word">CONSTRAINED UNPREDICTABLE</span> whether this bit clears to 0 or is unchanged.
+                </li>
+              </ul>
+            
+              <p>When the value of EDPRSR.PU is 0 indicating that the Core power domain is in either retention or powerdown state, EDPRSR.SPD is not cleared following a read of EDPRSR, for the <span class="arm-defined-word">IMPLEMENTATION DEFINED</span> behavior see <span class="xref">'EDPRSR.SPD when the Core domain is in either retention or powerdown state' in the ARMv8 ARM, section H6 (Debug Reset and Powerdown Support)</span>.</p>
+            
+              <p>EDPRSR.{DLK, SPD, PU} describe whether registers in the Core power domain can be accessed, and whether their state has been lost since the last time the register was read. For more information, see <span class="xref">'EDPRSR.{DLK, SPD, PU} bits record accessibility and lost of state in Core power domain' in the ARMv8 ARM, section H6 (Debug Reset and Powerdown Support)</span>.</p>
+            
+              <p>This field is in the Core power domain and the Cold reset domain. On a Cold reset it resets to 1.</p>
+            <p>When this register has an architecturally-defined reset value, this field resets to <span class="binarynumber">1</span>.</p><p>This field resets to its defined reset value on Cold reset.</p><p>This table summarizes the effect of the register access controls on the behavior of this field:</p><table class="info"><tr><th>Off</th><th>DLK</th><th>SLK</th><th>Default</th></tr><tr><td>RO</td><td>UNK</td><td>RO</td><td>RC</td></tr></table><p>'Access permissions for the External debug interface registers' in the <i>ARM<sup>®</sup> Architecture Reference Manual, ARMv8, for ARMv8-A architecture profile</i>, section H8.6.1 describes the conditions shown in this table. These conditions are prioritized, with the leftmost condition having the highest priority and priority decreasing from left to right.</p><h4 id="PU">PU, bit [0]
+              </h4>
+              <p>Core powerup status bit. Indicates whether the Core power domain debug registers can be accessed.</p>
+            
+              <p>The value of EDPRSR.PU is <span class="arm-defined-word">IMPLEMENTATION DEFINED</span> when the Core power domain is powered up and OS double-lock is locked. See the description of DLK for more information.</p>
+            
+              <p>Otherwise, permitted values are:</p>
+            <table class="valuetable"><tr><th>PU</th><th>Meaning</th></tr><tr><td class="bitfield">0</td><td>
+                  <p>Core is in a low-power or powerdown state where the debug registers cannot be accessed.</p>
+                </td></tr><tr><td class="bitfield">1</td><td>
+                  <p>Core is in a powerup state where the debug registers can be accessed.</p>
+                </td></tr></table>
+              <p>If the Core power domain is powered up and entered reset state with the OS double-lock locked this bit has a <span class="arm-defined-word">CONSTRAINED UNPREDICTABLE</span> value, for more information see <span class="xref">'EDPRSR.{DLK, R} and reset state' in the ARMv8 ARM, section H6 (Debug Reset and Powerdown Support)</span></p>
+            
+              <p>EDPRSR.{DLK, SPD, PU} describe whether registers in the Core power domain can be accessed, and whether their state has been lost since the last time the register was read. For more information, see <span class="xref">'EDPRSR.{DLK, SPD, PU} bits record accessibility and lost of state in Core power domain' in the ARMv8 ARM, section H6 (Debug Reset and Powerdown Support)</span></p>
+            <p>This table summarizes the effect of the register access controls on the behavior of this field:</p><table class="info"><tr><th>Off</th><th>DLK</th><th>Default</th></tr><tr><td>RAZ</td><td>See text</td><td>RAO</td></tr></table><p>'Access permissions for the External debug interface registers' in the <i>ARM<sup>®</sup> Architecture Reference Manual, ARMv8, for ARMv8-A architecture profile</i>, section H8.6.1 describes the conditions shown in this table. These conditions are prioritized, with the leftmost condition having the highest priority and priority decreasing from left to right.</p><h2>Accessing the EDPRSR</h2><p>EDPRSR can be accessed through the external debug interface:</p><table class="info"><tr><th>Component</th><th>Offset</th></tr><tr><td>Debug</td><td>
+          <span class="hexnumber">0x314</span>
+        </td></tr></table><br /><br /><hr /><table align="center"><tr><td><div class="topbar"><a href="AArch32-regindex.html">AArch32 Registers</a></div></td><td><div class="topbar"><a href="AArch64-regindex.html">AArch64 Registers</a></div></td><td><div class="topbar"><a href="AArch32-sysindex.html">AArch32 Instructions</a></div></td><td><div class="topbar"><a href="AArch64-sysindex.html">AArch64 Instructions</a></div></td><td><div class="topbar"><a href="enc_index.html">Index by Encoding</a></div></td><td><div class="topbar"><a href="ext_alpha_index.html">External Registers</a></div></td><td><div class="topbar"><a href="ext_enc_index.html">External Registers by Offset</a></div></td><td><div class="topbar"><a href="func_index.html">Registers by Functional Group</a></div></td></tr></table><p class="versions">24/03/2017 16:41</p><p class="copyconf">Copyright © 2010-2017 ARM Limited or its affiliates. All rights reserved. This document is Confidential.</p></body>
+</html>

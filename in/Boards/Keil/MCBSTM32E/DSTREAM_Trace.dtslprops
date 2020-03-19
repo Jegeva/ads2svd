@@ -1,0 +1,3 @@
+# Thu Sep 19 16:20:33 BST 2013
+options.traceBuffer.traceCaptureDevice=DSTREAM
+options.ETM.cortexM3coreTraceEnabled=true

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<register_list
+    name="CP15"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns="http://www.arm.com/core_reg"
+    xsi:schemaLocation="http://www.arm.com/core_reg ../../../Schemas/core_register_definition.xsd"
+    xmlns:tcf="http://com.arm.targetconfigurationeditor">
+
+    <!-- This register has been included for validation only -->
+    <register access="RW" name="DUMMY_REGISTER" size="4">
+        <gui_name language="en"/>
+        <description language="en"/>
+    </register>
+
+    <tcf:enumeration name="E_MULTI_PROCESSOR" values="Part_of_MPCore_cluster=0,Uniprocessor=1"/>
+    <tcf:enumeration name="E_FEATURE_SUPPORT" values="Not_Supported=0,Supported=1"/>
+    <tcf:enumeration name="E_DISABLED_ENABLED" values="Disabled=0,Enabled=1"/>
+    <tcf:enumeration name="E_TLB_SIZE" values="Entries_64=0,Entries_128=1"/>
+    <tcf:enumeration name="E_DOMAIN_ACC_CTRL" values="No_Access=0,Client=1,Reserved=2,Manager=3"/>
+    <tcf:enumeration name="E_CP_ACC_PERMISSION" values="Access_denied=0,Privileged_only=1,Privileged_User=3"/>
+
+    <tcf:enumeration name="CP15_SCTLR_BANKED" values="Full_access_permissions=0,Simplified_access_permissions=1"/>
+    <tcf:enumeration name="CP15_SCTLR_V" values="Normal_vectors=0,High_vectors=1"/>
+    <tcf:enumeration name="CP15_MPIDR_CPUID" values="CPU_0=0,CPU_1=1,CPU_2=2,CPU_3=3"/>
+    <tcf:enumeration name="CP15_ID_PFR0_STATE2" values="Not_supported=0,Supported_without_clearing_JOSCR_CV_on_exception=1,Supported_with_clearing_JOSCR_CV_on_exception=2"/>
+    <tcf:enumeration name="CP15_ID_PFR0_STATE1" values="No_Thumb_support=0,Thumb_support=1,Thumb2_support=3"/>
+    <tcf:enumeration name="CP15_ID_PFR1_MPPM" values="Not_supported=0,Two_stack_model_supported=2"/>
+    <tcf:enumeration name="CP15_ID_PFR1_SE" values="Not_supported=0,Supported=1,Supported_with_NSACR_RFR=2"/>
+    <tcf:enumeration name="CP15_ID_DFR0_MMDMARP" values="Not_supported_or_pre_ARMv6=0,Memory_mapped_v7_Debug_support=4"/>
+    <tcf:enumeration name="CP15_ID_DFR0_CSDM" values="Not_supported=0,v6_1_Debug_support=3,v7_Debug_support=4"/>
+    <tcf:enumeration name="CP15_ID_DFR0_CDM" values="Not_supported=0,v6_Debug_support=2,v6_1_Debug_support=3,v7_Debug_support=4"/>
+    <tcf:enumeration name="CP15_ID_MMFR0_IS" values="Non_cacheable=0,HW_coherency_support=1,Shareability_ignored=15"/>
+    <tcf:enumeration name="CP15_ID_MMFR0_AR" values="None_supported=0,ACTLR_only=1,ACTLR_AIFSR_ADFSR_supported=2"/>
+    <tcf:enumeration name="E_CP15_WNR">
+        <tcf:enumItem name="Read" number="0"/>
+        <tcf:enumItem name="Write" number="1"/>
+    </tcf:enumeration>
+</register_list>

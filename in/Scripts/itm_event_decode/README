@@ -1,0 +1,40 @@
+This directory contains custom decoders for ITM software instrumentation trace.
+You can add custom decoders here or in an itm_event_decode directory at the
+same relative position in an extension configuration database.
+
+
+A custom decoder
+
+- has com.arm.debug.trace.events.itm.ITMCustomDecoder as a base class
+
+- implements __init__(self, sink). The sink object is provided by Arm DS and has
+  one method, accept(s).  The accept method takes a unicode string s as its
+  argument.  Arm DS will emit a record containing the string s to the event
+  view each time your decoder calls accept.
+
+- implements the following callback methods for processing software 
+  instrumentation packets and other events from Arm DS:
+
+  notifyStart(self)
+    indicates the start of trace.
+
+  notifyEnd(self)
+    indicates the end of trace.
+  
+  notifyByte(self, b)
+    indicates a software instrumentation packet with a byte payload b.
+
+  notifyShort(self, s)
+    indicates a software instrumentation packet with a halfword payload s.
+
+  notifyInt(self, i)
+    indicates a software instrumentation packet with a word payload i.
+
+
+Custom decoders will be found by Arm DS and used to populate the drop-down
+Encoding list in the event settings dialog.  You can also name a custom decoder
+in the DECODERS option of the trace report command.
+
+
+
+

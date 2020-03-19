@@ -1,0 +1,400 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+     targetNamespace="http://www.arm.com/project_type" 
+     xmlns="http://www.arm.com/project_type"
+     xmlns:xi="http://www.w3.org/2001/XInclude"
+     elementFormDefault="qualified">
+     
+    <!-- Include CPSR register schema and CP15 and Core Registers and board schema's -->
+    <xs:import namespace="http://www.w3.org/XML/1998/namespace" schemaLocation="http://www.w3.org/2009/01/xml.xsd"/>
+    <xs:import namespace="http://www.w3.org/2001/XInclude" schemaLocation="http://www.w3.org/2001/XInclude.xsd"/>
+
+    <!-- Define parent element project_data -->
+    <xs:element name="platform_data" type="platform_type"/>
+    <xs:element name="platform_extension" type="platform_type"/>
+    
+    <xs:complexType name="platform_type">
+        <xs:sequence>
+            <xs:element name="taxonomyId" minOccurs="0" maxOccurs="1" type="xs:string"/>
+            <xs:element ref="description" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element name="image" minOccurs="0" maxOccurs="1" type="xs:string"/>
+            <xs:element name="toolkit" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element name="flash_config" type="xs:string" minOccurs="0" maxOccurs="1"/>
+            <xs:element ref="project_type_list"/>
+        </xs:sequence>
+        <xs:attribute name="type" type="platformType" use="required"/>
+		<xs:attribute name="info_url" type="xs:string" use="optional"/>
+    </xs:complexType>
+    
+    <!-- Define project_list element -->
+    <xs:element name="project_type_list">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:choice minOccurs="1" maxOccurs="unbounded">
+                    <xs:element ref="project_type"/>
+                    <xs:element ref="xi:include"/>
+                </xs:choice>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <!-- Define project_type element -->
+    <xs:element name="project_type">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:group ref="default_header"/>
+                <xs:element ref="execution_environment" minOccurs="1" maxOccurs="unbounded"/>
+            </xs:sequence>
+            <xs:attribute name="type" type="projectTypes" use="required"/>
+            <xs:attribute name="os_abstraction" type="osAbstractionType" use="optional" default="BARE_METAL"></xs:attribute>
+        </xs:complexType>
+    </xs:element>
+       
+    <!-- Define description Element -->
+    <xs:element name="description">
+        <xs:complexType mixed="true">
+            <xs:attribute name="language" type="xs:language" use="optional" default="en"/>
+        </xs:complexType>
+    </xs:element>
+
+    <!-- Define name element -->
+    <xs:element name="name">
+        <xs:complexType mixed="true">
+            <xs:attribute name="language" type="xs:language" use="optional" default="en"/>
+        </xs:complexType>
+    </xs:element>
+    
+    <!-- Define elements for rddi_dap_server elements. -->
+    <xs:element name="rddi_dap_bin" />
+    <xs:element name="rddi_dap_ini" />
+    <xs:element name="rddi_dap_lib" />
+    <xs:element name="rddi_dap_arg" />
+
+    <xs:group name="default_header">
+        <xs:sequence>
+            <xs:element ref="name"/>
+            <xs:choice>
+                <xs:element ref="description"/>
+                <xs:element ref="xi:include"/>
+            </xs:choice>
+        </xs:sequence>
+    </xs:group>
+    
+    <!-- Define cmd_line element-->
+    <xs:element name="cmd_line" type="xs:string" />
+
+    <!-- Define element param -->
+    <xs:element name="param">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:group ref="default_header" minOccurs="0" maxOccurs="1"/>
+                <xs:element ref="option" minOccurs="0" maxOccurs="unbounded"/>
+                <xs:element ref="field_validator" minOccurs="0" maxOccurs="unbounded"/>
+                <xs:element ref="default_value" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+            <xs:attribute name="type" type="xs:string" use="required"/>
+            <xs:attribute name="default" type="xs:string" use="optional"/>
+            <xs:attribute name="id" type="xs:string" use="required"/>
+            <xs:attribute name="visible" type="booleanEnum" use="optional"/>
+            <xs:attribute name="rvc_tag" type="xs:string" use="optional"/>
+        </xs:complexType>
+    </xs:element>
+
+    <!-- Define element option -->
+    <xs:element name="option">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="name" minOccurs="1" maxOccurs="1"/>
+                <xs:element ref="value" minOccurs="1" maxOccurs="1"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="default_value">
+        <xs:complexType>
+            <xs:simpleContent>
+                <xs:extension base="xs:string">
+                    <xs:attribute name="os" type="operating_system_type"/>
+                </xs:extension>
+            </xs:simpleContent>
+        </xs:complexType>
+    </xs:element>
+
+    <!--Define Arm DS validator element (and old DS-5 validator alias) -->
+    <xs:element name="field_validator" type="xs:string"/>
+    <xs:element name="ds5_validator" substitutionGroup="field_validator"/>
+
+    <!-- Define cmdLineOptionPattern-->
+    <xs:element name="value" type="cmdLineOptionPattern"/>
+
+    <!-- Define element execution_environment -->
+    <xs:element name="execution_environment">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:group ref="default_header"/>
+                
+                <xs:choice minOccurs="1" maxOccurs="unbounded">
+                    <xs:element ref="param"/>
+                    <xs:element ref="xi:include"/>
+                    <xs:element ref="setup_script" minOccurs="0" maxOccurs="1"/>
+                    <xs:element ref="rddi_dap_server" minOccurs="0" maxOccurs="1"/>
+                    <xs:element ref="config_file" maxOccurs="1"/>
+                    <xs:element ref="symbol_list"/>
+                    <xs:element ref="activity" minOccurs="1"/>
+                </xs:choice>
+            </xs:sequence>
+            <xs:attribute name="id" type="xs:ID" use="required"/>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="activity">
+        <xs:complexType>
+            <xs:sequence>
+            	<xs:element ref="setup_script" minOccurs="0" maxOccurs="1"/>
+            	<xs:element ref="rddi_dap_server" minOccurs="0" maxOccurs="1"/>
+                <xs:element name="filter" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+                <xs:group ref="default_header"/>
+                <xs:choice minOccurs="0" maxOccurs="1">
+                    <xs:element ref="connection_type"/>
+                    <xs:element ref="xi:include"/>
+                </xs:choice>
+                <xs:element ref="core" minOccurs="1"/>
+                <xs:element ref="param" minOccurs="0" maxOccurs="unbounded"/>
+                <xs:element ref="browse_script" minOccurs="0" maxOccurs="1"/>
+                <xs:element ref="browse_details_script" minOccurs="0" maxOccurs="1"/>
+                <xs:element ref="setup_script" minOccurs="0" maxOccurs="1"/>
+                <xs:element ref="android_setup_script" minOccurs="0" maxOccurs="1"/>
+                <xs:element ref="android_connect_script" minOccurs="0" maxOccurs="1"/>
+                <xs:element ref="android_package_query_script" minOccurs="0" maxOccurs="1"/>
+                <xs:element ref="android_push_file_script" minOccurs="0" maxOccurs="1"/>
+                <xs:element ref="android_pull_file_script" minOccurs="0" maxOccurs="1"/>
+                <xs:element ref="eclipse_launch_script" minOccurs="0" maxOccurs="1"/>
+                <xs:element ref="streamline_setup_script" minOccurs="0" maxOccurs="1"/>
+                <xs:choice minOccurs="0" maxOccurs="16">
+                    <xs:element ref="rddi_info"/>
+                    <xs:element ref="xi:include"/>
+                </xs:choice>
+                <xs:element ref="remote_debug_server" minOccurs="0" maxOccurs="1"/>
+                <xs:element name="features" type="xs:string" minOccurs="0" maxOccurs="1"/>
+            </xs:sequence>
+            <xs:attribute name="type" type="xs:string" use="required"/>
+            <xs:attribute name="id" type="activity_id_type" use="required"/>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="core_definition" type="xs:string">
+        <xs:annotation>
+            <xs:documentation>Set this element's value to the 'name' element in the core definition file (e.g. 'Cortex-A9').</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    
+    <xs:element name="tcf">
+        <xs:complexType>
+            <xs:attribute type="xs:string" name="board_id" use="required">
+                <xs:annotation>
+                    <xs:documentation>The name of the board definitions to load this is the 'name' element in the tcf 'board' element.</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="replaceable" type="booleanEnum" use="optional"/>
+            <xs:attribute name="address_prefix" type="xs:string" use="optional"/>
+        </xs:complexType>
+    </xs:element>
+       
+    <xs:element name="core">
+        <xs:annotation>
+            <xs:documentation>This element is used to instantiate a core from the standard definitions found in the 'Cores' folder of the configuration database.  There are 2 ways to define a core, either define a core inline or reference a core in an existing SoC definition.</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="tcf" maxOccurs="unbounded" minOccurs="0"/>
+                <xs:element ref="core_definition" maxOccurs="unbounded" minOccurs="0"/>
+            </xs:sequence>
+            <!--- Old project_types.xml files have core_definition as an attribute rather than a child element -->
+            <xs:attribute name="core_definition" type="xs:string" use="optional">
+                <xs:annotation>
+                    <xs:documentation>Set this attribute to the value of the 'name' element in the core definition file (e.g. 'Cortex-A9').</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="connection_id" type="xs:string" use="required">
+                <xs:annotation>
+                    <xs:documentation>Set this attribute to id used by the connection.  This is generally defined in the platforms associated DTSL script or a may be a connection specific default.</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="core_ref" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>Set this attribute to the value of the 'name' attribute of a 'core' element in a SoC definition file (e.g. 'Cortex-A9')</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="soc" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>Set this attribute to the value of the 'name' attribute on the 'soc' element in a SoC definition file (e.g. 'OMAP3530')</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="rddi_info" type="rddi_info_type"/>
+
+    <!-- Define connection_type element -->
+    <xs:element name="connection_type">
+        <xs:complexType mixed="true">
+            <xs:attribute name="language" type="xs:language" use="optional" default="en"/>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="config_file">
+        <xs:simpleType>
+            <xs:restriction base="xs:string"/>
+        </xs:simpleType>
+    </xs:element>
+
+    <xs:complexType name="script_type">
+        <xs:sequence>
+            <xs:element ref="name" minOccurs="1" maxOccurs="1"/>
+            <xs:element ref="arguments" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="rddi_dap_server_type">
+        <xs:sequence>
+            <xs:element ref="rddi_dap_bin" minOccurs="1" maxOccurs="1"/>
+            <xs:element ref="rddi_dap_ini" minOccurs="1" maxOccurs="1"/>
+            <xs:element ref="rddi_dap_lib" minOccurs="1" maxOccurs="1"/>
+            <xs:element ref="rddi_dap_arg" minOccurs="1" maxOccurs="1"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:element name="browse_script" type="script_type"/>
+    <xs:element name="browse_details_script" type="script_type"/>
+    <xs:element name="setup_script" type="script_type"/>
+    <xs:element name="rddi_dap_server" type="rddi_dap_server_type"/>
+    <xs:element name="android_setup_script" type="script_type"/>
+    <xs:element name="android_connect_script" type="script_type"/>
+    <xs:element name="android_package_query_script" type="script_type"/>
+    <xs:element name="android_push_file_script" type="script_type"/>
+    <xs:element name="android_pull_file_script" type="script_type"/>
+    <xs:element name="eclipse_launch_script" type="script_type"/>
+    <xs:element name="streamline_setup_script" type="script_type"/>
+
+    <xs:element name="arguments">
+        <xs:simpleType>
+            <xs:restriction base="xs:string"/>
+        </xs:simpleType>
+    </xs:element>
+
+    <!--Define symbol_list element - need the xml:base attribute as will be included from
+        a separate file, which seems to mean it needs a complexType, leading to a seemingly
+        over complex definition :( -->
+    <xs:element name="symbol" type="xs:string" />
+
+    <xs:element name="symbol_list">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="symbol" minOccurs="1" maxOccurs="unbounded"/>
+            </xs:sequence>
+            <xs:attribute ref="xml:base"/>
+        </xs:complexType>
+    </xs:element>
+
+    <!-- Currently a simple string. May need expanding to local path and remote path -->
+    <xs:element name="remote_debug_server">
+        <xs:simpleType>
+            <xs:restriction base="xs:string"/>
+        </xs:simpleType>
+    </xs:element>
+
+    <!-- User defined types -->
+
+    <!-- Define Command line option pattern -->
+    <xs:simpleType name="cmdLineOptionPattern">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="-+[a-zA-Z]+_*"></xs:pattern>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <!--  Define Project types -->
+    <xs:simpleType name="projectTypes">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="BARE_METAL"/>
+            <xs:enumeration value="GDB_SERVER"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="booleanEnum">
+        <xs:restriction base="xs:string">
+             <xs:enumeration value="false"/>
+             <xs:enumeration value="true"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="operating_system_type">
+        <xs:restriction base="xs:string">
+             <xs:enumeration value="linux"/>
+             <xs:enumeration value="windows"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="platformType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="RTSM"/>
+            <xs:enumeration value="HARDWARE"/>
+            <xs:enumeration value="ANDROID"/>
+            <xs:enumeration value="SNAPSHOT"/>
+            <xs:enumeration value="LINUXAPP"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:complexType name="rddi_info_type">
+        <xs:sequence>
+            <xs:element ref="lib" minOccurs="0" maxOccurs="1"/>
+            <xs:element ref="searchPath" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="searchPathType">
+        <xs:simpleContent>
+            <xs:extension base="xs:string">
+                <xs:attribute name="os" type="xs:string" use="required"/>
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
+    
+    <xs:element name="lib" type="xs:string"/>
+    <xs:element name="searchPath" type="searchPathType"/>
+
+    <xs:simpleType name="activity_id_type">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="DOWNLOAD_AND_DEBUG">
+                <xs:annotation>
+                    <xs:documentation>This has been kept for backward compatibility and is equivelant to DOWNLOAD_DEBUG. Use DOWNLOAD_DEBUG instead.</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="DOWNLOAD_DEBUG"/>
+            <xs:enumeration value="DOWNLOAD_DEBUG_ANDROID"/>
+            <xs:enumeration value="DEBUG_EXISTING_ANDROID"/>
+            <xs:enumeration value="DEBUG_RESIDENT_APP"/>
+            <xs:enumeration value="CONNECT_TO_GDB_SERVER"/>
+            <xs:enumeration value="ICE_DEBUG"/>
+            <xs:enumeration value="ICE_DEBUG_WITH_ETB_TRACE"/>
+            <xs:enumeration value="ICE_DEBUG_WITH_TRACE"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <xs:simpleType name="osAbstractionType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="LINUX">
+                <xs:annotation>
+                    <xs:documentation>Enables Linux OS awareness for application debug</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="LINUX_KERNEL">
+                <xs:annotation>
+                    <xs:documentation>Enables Linux kernel awareness for kernel/driver development</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="BARE_METAL">
+                <xs:annotation>
+                    <xs:documentation>Disables OS awareness</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="RTX"/>
+        </xs:restriction>
+    </xs:simpleType>
+</xs:schema>

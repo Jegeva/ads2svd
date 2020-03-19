@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<register_list xmlns="http://www.arm.com/core_reg" xmlns:tcf="http://com.arm.targetconfigurationeditor" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="V8_2" xsi:schemaLocation="http://www.arm.com/core_reg ../../../Schemas/core_register_definition.xsd">
+    <register_group name="V8_2_Extensions">
+        <gui_name language="en">V8.2 Extensions</gui_name>
+        <description language="en">V8.2 Extensions</description>
+        <register access="RW" name="TTBCR2" size="4">
+          <gui_name language="en">TTBCR2</gui_name>
+          <description language="en">TTBCR2</description>
+        </register>
+        <register access="RO" name="ERRIDR" size="4">
+            <gui_name language="en">Error Record ID Register</gui_name>
+            <description language="en">Defines the number of error records that can be accessed through the Error Record system registers.</description>
+        </register>
+        <register access="RW" name="ERRSELR" size="4">
+            <gui_name language="en">Error Record Select Register</gui_name>
+            <description language="en">Selects an error record to be accessed through the Error Record system registers.</description>
+        </register>
+        <register access="RO" name="ERXFR" size="4">
+            <gui_name language="en">Selected Error Record Feature Register</gui_name>
+            <description language="en">Accesses bits[31:0] of the ERR&lt;n&gt;FR feature register for the error record selected by ERRSELR.SEL.</description>
+        </register>
+        <register access="RW" name="ERXCTLR" size="4">
+            <gui_name language="en">Selected Error Record Control Register</gui_name>
+            <description language="en">Accesses bits[31:0] of the ERR&lt;n&gt;CTLR control register for the error record selected by ERRSELR.SEL.</description>
+        </register>
+        <register access="RW" name="ERXSTATUS" size="4">
+            <gui_name language="en">Selected Error Record Primary Status Register</gui_name>
+            <description language="en">Accesses bits[31:0] of the ERR&lt;n&gt;STATUS primary status register for the error record selected by ERRSELR.SEL.</description>
+        </register>
+        <register access="RW" name="ERXADDR" size="4">
+            <gui_name language="en">Selected Error Record Address Register</gui_name>
+            <description language="en">Accesses bits[31:0] of the ERR&lt;n&gt;ADDR address register for the error record selected by ERRSELR.SEL.</description>
+        </register>
+        <register access="RO" name="ERXFR2" size="4">
+            <gui_name language="en">Selected Error Record Feature Register</gui_name>
+            <description language="en">Accesses bits[63:32] of the ERR&lt;n&gt;FR feature register for the error record selected by ERRSELR.SEL.</description>
+        </register>
+        <register access="RW" name="ERXCTLR2" size="4">
+            <gui_name language="en">Selected Error Record Control Register</gui_name>
+            <description language="en">Accesses bits[63:32] of the ERR&lt;n&gt;CTLR control register for the error record selected by ERRSELR.SEL.</description>
+        </register>
+        <register access="RW" name="ERXADDR2" size="4">
+            <gui_name language="en">Selected Error Record Address Register</gui_name>
+            <description language="en">Accesses bits[63:32] of the ERR&lt;n&gt;ADDR address register for the error record selected by ERRSELR.SEL.</description>
+        </register>
+        <register access="RW" name="ERXMISC0" size="4">
+            <gui_name language="en">Selected Error Record Miscellaneous Register 0</gui_name>
+            <description language="en">Accesses bits[31:0] of the ERR&lt;n&gt;MISC0 miscellaneous register 0 for the error record selected by ERRSELR.SEL.</description>
+        </register>
+        <register access="RW" name="ERXMISC1" size="4">
+            <gui_name language="en">Selected Error Record Miscellaneous Register 1</gui_name>
+            <description language="en">Accesses bits[63:32] of the ERR&lt;n&gt;MISC0 miscellaneous register 0 for the error record selected by ERRSELR.SEL.</description>
+        </register>
+        <register access="RW" name="ERXMISC2" size="4">
+            <gui_name language="en">Selected Error Record Miscellaneous Register 2</gui_name>
+            <description language="en">Accesses bits[31:0] of the ERR&lt;n&gt;MISC1 miscellaneous register 1 for the error record selected by ERRSELR.SEL.</description>
+        </register>
+        <register access="RW" name="ERXMISC3" size="4">
+            <gui_name language="en">Selected Error Record Miscellaneous Register 3</gui_name>
+            <description language="en">Accesses bits[63:32] of the ERR&lt;n&gt;MISC1 miscellaneous register 1 for the error record selected by ERRSELR.SEL.</description>
+        </register>
+        <register access="RW" name="DISR" size="4">
+            <gui_name language="en">Deferred Interrupt Status Register</gui_name>
+            <description language="en">Records that an SError interrupt has been consumed by an ESB instruction.</description>
+        </register>
+        <register access="RW" name="VDFSR" size="4">
+            <gui_name language="en">Virtual SError Exception Syndrome Register</gui_name>
+            <description language="en">Provides the syndrome value reported to software in DFSR.{AET, ExT} on taking a virtual SError interrupt exception. The remainder of the DFSR is set as defined by VMSAv8-32.</description>
+        </register>
+        <register access="RW" name="VDISR" size="4">
+            <gui_name language="en">Virtual Deferred Interrupt Status Register</gui_name>
+            <description language="en">Records that a virtual SError interrupt has been consumed by an ESB instruction executed at Non-secure EL1.</description>
+        </register>
+    </register_group>
+</register_list>

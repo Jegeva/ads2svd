@@ -1,0 +1,74 @@
+######################################
+# Initialize BSC 32bit bus
+######################################
+# Low power setting
+mem set <verify=0>:0xA00B0B00 32 0x0000A502               # PRCR
+mem set <verify=0>:0xA00B0308 32 0x00007E7E               # MSTPCRC
+mem set <verify=0>:0xA00B0B00 32 0x0000A500               # PRCR
+mem set <verify=0>:0xA0002004 32 0x36DB0E00               # CS0BCR
+# MPC setting
+mem set <verify=1>:0xA00002FF 8 {(unsigned char)0x00}     # MPC.PWPR
+mem set <verify=1>:0xA00002FF 8 {(unsigned char)0x40}
+mem set <verify=0>:0xA0000200 8 {(unsigned char)0x22}     # MPC.P00PFS
+mem set <verify=0>:0xA0000201 8 {(unsigned char)0x22}     # MPC.P01PFS
+mem set <verify=0>:0xA0000202 8 {(unsigned char)0x22}     # MPC.P02PFS
+mem set <verify=0>:0xA0000203 8 {(unsigned char)0x22}     # MPC.P03PFS
+mem set <verify=0>:0xA0000204 8 {(unsigned char)0x22}     # MPC.P04PFS
+mem set <verify=0>:0xA0000205 8 {(unsigned char)0x22}     # MPC.P05PFS
+mem set <verify=0>:0xA0000206 8 {(unsigned char)0x22}     # MPC.P06PFS
+mem set <verify=0>:0xA0000207 8 {(unsigned char)0x22}     # MPC.P07PFS
+mem set <verify=0>:0xA0000210 8 {(unsigned char)0x22}     # MPC.P20PFS
+mem set <verify=0>:0xA0000211 8 {(unsigned char)0x22}     # MPC.P21PFS
+mem set <verify=0>:0xA0000212 8 {(unsigned char)0x22}     # MPC.P22PFS
+mem set <verify=0>:0xA0000215 8 {(unsigned char)0x22}     # MPC.P25PFS
+mem set <verify=0>:0xA0000216 8 {(unsigned char)0x22}     # MPC.P26PFS
+mem set <verify=0>:0xA0000217 8 {(unsigned char)0x22}     # MPC.P27PFS
+mem set <verify=0>:0xA0000238 8 {(unsigned char)0x22}     # MPC.P70PFS
+mem set <verify=0>:0xA0000239 8 {(unsigned char)0x22}     # MPC.P71PFS
+mem set <verify=0>:0xA000023A 8 {(unsigned char)0x22}     # MPC.P72PFS
+mem set <verify=0>:0xA000023B 8 {(unsigned char)0x22}     # MPC.P73PFS
+mem set <verify=0>:0xA000023C 8 {(unsigned char)0x22}     # MPC.P74PFS
+mem set <verify=0>:0xA000023D 8 {(unsigned char)0x22}     # MPC.P75PFS
+mem set <verify=0>:0xA000023E 8 {(unsigned char)0x22}     # MPC.P76PFS
+mem set <verify=0>:0xA000023F 8 {(unsigned char)0x22}     # MPC.P77PFS
+mem set <verify=0>:0xA0000250 8 {(unsigned char)0x22}     # MPC.PA0PFS
+mem set <verify=0>:0xA0000251 8 {(unsigned char)0x22}     # MPC.PA1PFS
+mem set <verify=0>:0xA0000252 8 {(unsigned char)0x22}     # MPC.PA2PFS
+mem set <verify=0>:0xA0000253 8 {(unsigned char)0x22}     # MPC.PA3PFS
+mem set <verify=0>:0xA0000254 8 {(unsigned char)0x22}     # MPC.PA4PFS
+mem set <verify=0>:0xA0000255 8 {(unsigned char)0x22}     # MPC.PA5PFS
+mem set <verify=0>:0xA0000256 8 {(unsigned char)0x22}     # MPC.PA6PFS
+mem set <verify=0>:0xA0000257 8 {(unsigned char)0x22}     # MPC.PA7PFS
+mem set <verify=0>:0xA0000270 8 {(unsigned char)0x22}     # MPC.PE0PFS
+mem set <verify=0>:0xA0000271 8 {(unsigned char)0x22}     # MPC.PE1PFS
+mem set <verify=0>:0xA0000272 8 {(unsigned char)0x22}     # MPC.PE2PFS
+mem set <verify=0>:0xA0000273 8 {(unsigned char)0x22}     # MPC.PE3PFS
+mem set <verify=0>:0xA0000274 8 {(unsigned char)0x22}     # MPC.PE4PFS
+mem set <verify=0>:0xA0000275 8 {(unsigned char)0x22}     # MPC.PE5PFS
+mem set <verify=0>:0xA0000276 8 {(unsigned char)0x22}     # MPC.PE6PFS
+mem set <verify=0>:0xA0000277 8 {(unsigned char)0x22}     # MPC.PE7PFS
+mem set <verify=0>:0xA0000281 8 {(unsigned char)0x22}     # MPC.PG1PFS
+mem set <verify=0>:0xA0000282 8 {(unsigned char)0x22}     # MPC.PG2PFS
+mem set <verify=0>:0xA0000283 8 {(unsigned char)0x22}     # MPC.PG3PFS
+mem set <verify=0>:0xA0000284 8 {(unsigned char)0x22}     # MPC.PG4PFS
+mem set <verify=0>:0xA0000285 8 {(unsigned char)0x22}     # MPC.PG5PFS
+mem set <verify=0>:0xA0000286 8 {(unsigned char)0x22}     # MPC.PG6PFS
+mem set <verify=0>:0xA0000287 8 {(unsigned char)0x22}     # MPC.PG7PFS
+mem set <verify=0>:0xA0000288 8 {(unsigned char)0x22}     # MPC.PH0PFS
+mem set <verify=0>:0xA0000289 8 {(unsigned char)0x22}     # MPC.PH1PFS
+mem set <verify=0>:0xA000028A 8 {(unsigned char)0x22}     # MPC.PH2PFS
+mem set <verify=0>:0xA000028B 8 {(unsigned char)0x22}     # MPC.PH3PFS
+mem set <verify=0>:0xA000028C 8 {(unsigned char)0x22}     # MPC.PH4PFS
+mem set <verify=0>:0xA000028D 8 {(unsigned char)0x22}     # MPC.PH5PFS
+mem set <verify=0>:0xA000028E 8 {(unsigned char)0x22}     # MPC.PH6PFS
+mem set <verify=0>:0xA000028F 8 {(unsigned char)0x22}     # MPC.PH6PFS
+mem set <verify=1>:0xA00002FF 8 {(unsigned char)0x80}     # MPC.PWPR
+
+# PORT setting
+mem set <verify=0>:0xA0000080 8 {(unsigned char)0xff}     # PORT0.PMR
+mem set <verify=0>:0xA0000082 8 {(unsigned char)0xe7}     # PORT2.PMR
+mem set <verify=0>:0xA0000087 8 {(unsigned char)0xff}     # PORT7.PMR
+mem set <verify=0>:0xA000008A 8 {(unsigned char)0xff}     # PORTA.PMR
+mem set <verify=0>:0xA000008E 8 {(unsigned char)0xff}     # PORTE.PMR
+mem set <verify=0>:0xA0000090 8 {(unsigned char)0xfe}     # PORTG.PMR
+mem set <verify=0>:0xA0000091 8 {(unsigned char)0xff}     # PORTH.PMR

@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<register_list
+    name="CP15"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns="http://www.arm.com/core_reg"
+    xsi:schemaLocation="http://www.arm.com/core_reg ../../../Schemas/core_register_definition.xsd"
+    xmlns:tcf="http://com.arm.targetconfigurationeditor">
+    <register_group name="CP15">
+        <gui_name language="en">CP15</gui_name>
+        <description language="en">CP15 Registers</description>
+        <register access="RO" name="ID" size="4">
+            <gui_name language="en">ID Code</gui_name>
+            <alias_name>CP15_ID</alias_name>
+            <device_name type="rvi">CP15_ID</device_name>
+            <device_name type="cadi">CP15_ID</device_name>
+            <description language="en">Returns a 32-bit device ID code</description>
+            <bitField conditional="false" name="Implementer">
+                <gui_name language="en">Implementer</gui_name>
+                <description language="en">Indicates the Implementer of the processor</description>
+                <definition>[31:24]</definition>
+            </bitField>
+            <bitField conditional="false" name="Major_revision">
+                <gui_name language="en">Major revision</gui_name>
+                <description language="en">Indicates the major specification revision of the processor</description>
+                <definition>[23:20]</definition>
+            </bitField>
+            <bitField conditional="false" name="Architecture">
+                <gui_name language="en">Architecture</gui_name>
+                <description language="en">Indicates the architecture of the processor</description>
+                <definition>[19:16]</definition>
+            </bitField>
+            <bitField conditional="false" name="Part_number">
+                <gui_name language="en">Part number</gui_name>
+                <description language="en">Indicates the part number of the processor</description>
+                <definition>[15:4]</definition>
+            </bitField>
+            <bitField conditional="false" name="Minor_revision">
+                <gui_name language="en">Minor revision</gui_name>
+                <description language="en">Indicates the minor revision of the processor</description>
+                <definition>[3:0]</definition>
+            </bitField>
+        </register>
+        <register access="RW" name="CONTROL" size="4">
+            <gui_name language="en">Control</gui_name>
+            <alias_name>CP15_CONTROL</alias_name>
+            <device_name type="rvi">CP15_CONTROL</device_name>
+            <device_name type="cadi">CP15_CONTROL</device_name>
+            <description language="en">Contains the control bits of the processor</description>
+            <bitField conditional="false" enumerationId="CP15_CONTROL_LT" name="LT">
+                <gui_name language="en">LT</gui_name>
+                <description language="en">Determines if the T bit is set when load instructions change the PC</description>
+                <definition>[15]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="CP15_CONTROL_V" name="V">
+                <gui_name language="en">V</gui_name>
+                <description language="en">Location of exception vectors</description>
+                <definition>[13]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="GENERIC_DISABLED_ENABLED" name="I">
+                <gui_name language="en">I</gui_name>
+                <description language="en">Instruction TCM enable</description>
+                <definition>[12]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="CP15_CONTROL_B" name="B">
+                <gui_name language="en">B</gui_name>
+                <description language="en">Endianness</description>
+                <definition>[7]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="GENERIC_DISABLED_ENABLED" name="W">
+                <gui_name language="en">W</gui_name>
+                <description language="en">BIU write buffer enable</description>
+                <definition>[3]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="GENERIC_DISABLED_ENABLED" name="D">
+                <gui_name language="en">D</gui_name>
+                <description language="en">Data TCM enable</description>
+                <definition>[2]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="GENERIC_DISABLED_ENABLED" name="A">
+                <gui_name language="en">A</gui_name>
+                <description language="en">Address alignment fault checking enable</description>
+                <definition>[1]</definition>
+            </bitField>
+        </register>
+        <!-- Not accessible yet, need code sequences to be implemented
+        <register access="RW" name="CONFIGURATION_CONTROL" size="4">
+            <gui_name language="en">Configuration Control</gui_name>
+            <alias_name>CP15_CONFIGURATION_CONTROL</alias_name>
+            <device_name type="rvi">CP15_CONFIGURATION_CONTROL</device_name>
+            <device_name type="cadi">CP15_CONFIGURATION_CONTROL</device_name>
+            <description language="en">Enables modification of the default behavior of the processor</description>
+        </register>
+        <register access="RW" name="ETM_CONTEXTID" size="4">
+            <gui_name language="en">Trace Process ID</gui_name>
+            <alias_name>CP15_ETM_CONTEXTID</alias_name>
+            <device_name type="rvi">CP15_ETM_CONTEXTID</device_name>
+            <device_name type="cadi">CP15_ETM_CONTEXTID</device_name>
+            <description language="en">Identifies the currently executing process in multitasking environments</description>
+        </register>
+        -->
+    </register_group>
+    <!-- Not accessible yet, need code sequences to be implemented
+    <register_group name="TCM">
+        <gui_name language="en">TCM</gui_name>
+        <description language="en">TCM Registers</description>
+        <register access="RO" name="TCM_SIZE" size="4">
+            <gui_name language="en">TCM Size</gui_name>
+            <alias_name>CP15_TCM_SIZE</alias_name>
+            <device_name type="rvi">CP15_TCM_SIZE</device_name>
+            <device_name type="cadi">CP15_TCM_SIZE</device_name>
+            <description language="en">Returns the size of the Instruction and Data TCM attached to the processor</description>
+        </register>
+        <register access="RW" name="WAIT" size="4">
+            <gui_name language="en">Wait for interrupt</gui_name>
+            <alias_name>CP15_WAIT</alias_name>
+            <device_name type="rvi">CP15_WAIT</device_name>
+            <device_name type="cadi">CP15_WAIT</device_name>
+            <description language="en">Enables the processor to enter a low-power standby mode</description>
+        </register>
+        <register access="RW" name="DRAIN" size="4">
+            <gui_name language="en">Drain write buffers</gui_name>
+            <alias_name>CP15_DRAIN</alias_name>
+            <device_name type="rvi">CP15_DRAIN</device_name>
+            <device_name type="cadi">CP15_DRAIN</device_name>
+            <description language="en">Causes instruction execution to be stalled until the AHB and TCM write buffers are emptied</description>
+        </register>
+    </register_group>
+    -->
+    <tcf:enumeration name="GENERIC_DISABLED_ENABLED" values="Disabled=0,Enabled=1"/>
+    <tcf:enumeration name="CP15_CONTROL_LT" values="Loading_PC_sets_T_Bit=0,Loading_PC_ignores_T_bit=1"/>
+    <tcf:enumeration name="CP15_CONTROL_V" values="Normal_exception_vectors=0,High_exception_vectors=1"/>
+    <tcf:enumeration name="CP15_CONTROL_B" values="Little_endian_operation=0,Big_endian_operation=1"/>
+</register_list>
+

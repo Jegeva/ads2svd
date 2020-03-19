@@ -1,0 +1,354 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<register_list name="VGIC" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.arm.com/core_reg"
+    xsi:schemaLocation="http://www.arm.com/core_reg ../../../Schemas/core_register_definition.xsd">
+
+    <register_group name="GIC_D">
+        <gui_name language="en">GIC_Dist</gui_name>
+        <description language="en">GIC_Dist</description>
+
+        <register name="GIC_D_EN" size="4" access="RW">
+            <gui_name language="en">GIC_D_EN</gui_name>
+            <description language="en">Distributor Enable Register</description>
+        </register>
+        <register name="GIC_D_INT_CTRL_TP" size="4" access="RW">
+            <gui_name language="en">GIC_D_INT_CTRL_TP</gui_name>
+            <description language="en">Interrupt Controller Type</description>
+        </register>
+        <register name="GIC_D_IMPL_ID" size="4" access="RW">
+            <gui_name language="en">GIC_D_IMPL_ID</gui_name>
+            <description language="en">Distributor Implementer ID</description>
+        </register>
+        <register name="GIC_D_INT_SEU_0_31" size="4" access="RW">
+            <gui_name language="en">GIC_D_INT_SEU_0_31</gui_name>
+            <description language="en">Interrupt Security 0-31</description>
+        </register>
+        <register name="GIC_D_INT_SEU_32_63" size="4" access="RW">
+            <gui_name language="en">GIC_D_INT_SEU_32_63</gui_name>
+            <description language="en">Interrupt Security 32-63</description>
+        </register>
+        <register name="GIC_D_INT_SEU_64_95" size="4" access="RW">
+            <gui_name language="en">GIC_D_INT_SEU_64_95</gui_name>
+            <description language="en">Interrupt Security 64-95</description>
+        </register>
+        <register name="GIC_D_EN_SET_0_31" size="4" access="RW">
+            <gui_name language="en">GIC_D_EN_SET_0_31</gui_name>
+            <description language="en">Enable Set Register 0-31</description>
+        </register>
+        <register name="GIC_D_EN_SET_32_63" size="4" access="RW">
+            <gui_name language="en">GIC_D_EN_SET_32_63</gui_name>
+            <description language="en">Enable Set Register 32-63</description>
+        </register>
+        <register name="GIC_D_EN_SET_64_95" size="4" access="RW">
+            <gui_name language="en">GIC_D_EN_SET_64_95</gui_name>
+            <description language="en">Enable Set Register 64-95</description>
+        </register>
+        <register name="GIC_D_EN_CLR_0_31" size="4" access="RW">
+            <gui_name language="en">GIC_D_EN_CLR_0_31</gui_name>
+            <description language="en">Enable Clear Register 0-31</description>
+        </register>
+        <register name="GIC_D_EN_CLR_32_63" size="4" access="RW">
+            <gui_name language="en">GIC_D_EN_CLR_32_63</gui_name>
+            <description language="en">Enable Clear Register 32-63</description>
+        </register>
+        <register name="GIC_D_EN_CLR_64_95" size="4" access="RW">
+            <gui_name language="en">GIC_D_EN_CLR_64_95</gui_name>
+            <description language="en">Enable Clear Register 64-95</description>
+        </register>
+        <register name="GIC_D_PEND_SET_0_31" size="4" access="RW">
+            <gui_name language="en">GIC_D_PEND_SET_0_31</gui_name>
+            <description language="en">Pending Set Register 0-31</description>
+        </register>
+        <register name="GIC_D_PEND_SET_32_63" size="4" access="RW">
+            <gui_name language="en">GIC_D_PEND_SET_32_63</gui_name>
+            <description language="en">Pending Set Register 32-63</description>
+        </register>
+        <register name="GIC_D_PEND_SET_64_95" size="4" access="RW">
+            <gui_name language="en">GIC_D_PEND_SET_64_95</gui_name>
+            <description language="en">Pending Set Register 64-95</description>
+        </register>
+        <register name="GIC_D_PEND_CLR_0_31" size="4" access="RW">
+            <gui_name language="en">GIC_D_PEND_CLR_0_31</gui_name>
+            <description language="en">Pending Clear Register 0-31</description>
+        </register>
+        <register name="GIC_D_PEND_CLR_32_63" size="4" access="RW">
+            <gui_name language="en">GIC_D_PEND_CLR_32_63</gui_name>
+            <description language="en">Pending Clear Register 32-63</description>
+        </register>
+        <register name="GIC_D_PEND_CLR_64_95" size="4" access="RW">
+            <gui_name language="en">GIC_D_PEND_CLR_64_95</gui_name>
+            <description language="en">Pending Clear Register 64-95</description>
+        </register>
+        <register name="GIC_D_ACT_ST_0_31" size="4" access="RW">
+            <gui_name language="en">GIC_D_ACT_ST_0_31</gui_name>
+            <description language="en">Active Status Register 0-31</description>
+        </register>
+        <register name="GIC_D_ACT_ST_32_63" size="4" access="RW">
+            <gui_name language="en">GIC_D_ACT_ST_32_63</gui_name>
+            <description language="en">Active Status Register 32-63</description>
+        </register>
+        <register name="GIC_D_ACT_ST_64_95" size="4" access="RW">
+            <gui_name language="en">GIC_D_ACT_ST_64_95</gui_name>
+            <description language="en">Active Status Register 64-95</description>
+        </register>
+        <register name="GIC_D_PRI_LEV_STI_0_3" size="4" access="RW">
+            <gui_name language="en">GIC_D_PRI_LEV_STI_0_3</gui_name>
+            <description language="en">Priority level STI 0-3</description>
+        </register>
+        <register name="GIC_D_PRI_LEV_STI_4_7" size="4" access="RW">
+            <gui_name language="en">GIC_D_PRI_LEV_STI_4_7</gui_name>
+            <description language="en">Priority level STI 4-7</description>
+        </register>
+        <register name="GIC_D_PRI_LEV_STI_8_11" size="4" access="RW">
+            <gui_name language="en">GIC_D_PRI_LEV_STI_8_11</gui_name>
+            <description language="en">Priority level STI 8-11</description>
+        </register>
+        <register name="GIC_D_PRI_LEV_STI_12_15" size="4" access="RW">
+            <gui_name language="en">GIC_D_PRI_LEV_STI_12_15</gui_name>
+            <description language="en">Priority level STI 12-15</description>
+        </register>
+        <register name="GIC_D_PRI_LEV_PPI_4" size="4" access="RW">
+            <gui_name language="en">GIC_D_PRI_LEV_PPI_4</gui_name>
+            <description language="en">Priority level PPI 4</description>
+        </register>
+        <register name="GIC_D_PRI_LEV_PPI_0_3" size="4" access="RW">
+            <gui_name language="en">GIC_D_PRI_LEV_PPI_0_3</gui_name>
+            <description language="en">Priority level PPI 0-3</description>
+        </register>
+        <register name="GIC_D_PRI_LEV_SPI_32_35" size="4" access="RW">
+            <gui_name language="en">GIC_D_PRI_LEV_SPI_32_35</gui_name>
+            <description language="en">Priority level SPI 32-35</description>
+        </register>
+        <register name="GIC_D_PRI_LEV_SPI_36_39" size="4" access="RW">
+            <gui_name language="en">GIC_D_PRI_LEV_SPI_36_39</gui_name>
+            <description language="en">Priority level SPI 36-39</description>
+        </register>
+        <register name="GIC_D_PRI_LEV_SPI_40_43" size="4" access="RW">
+            <gui_name language="en">GIC_D_PRI_LEV_SPI_40_43</gui_name>
+            <description language="en">Priority level SPI 40-43</description>
+        </register>
+        <register name="GIC_D_PRI_LEV_SPI_44_47" size="4" access="RW">
+            <gui_name language="en">GIC_D_PRI_LEV_SPI_44_47</gui_name>
+            <description language="en">Priority level SPI 44-47</description>
+        </register>
+        <register name="GIC_D_PRI_LEV_SPI_48_51" size="4" access="RW">
+            <gui_name language="en">GIC_D_PRI_LEV_SPI_48_51</gui_name>
+            <description language="en">Priority level SPI 48-51</description>
+        </register>
+        <register name="GIC_D_PRI_LEV_SPI_52_55" size="4" access="RW">
+            <gui_name language="en">GIC_D_PRI_LEV_SPI_52_55</gui_name>
+            <description language="en">Priority level SPI 52-55</description>
+        </register>
+        <register name="GIC_D_PRI_LEV_SPI_56_59" size="4" access="RW">
+            <gui_name language="en">GIC_D_PRI_LEV_SPI_56_59</gui_name>
+            <description language="en">Priority level SPI 56-59</description>
+        </register>
+        <register name="GIC_D_PRI_LEV_SPI_60_63" size="4" access="RW">
+            <gui_name language="en">GIC_D_PRI_LEV_SPI_60_63</gui_name>
+            <description language="en">Priority level SPI 60-63</description>
+        </register>
+        <register name="GIC_D_PRI_LEV_SPI_64_67" size="4" access="RW">
+            <gui_name language="en">GIC_D_PRI_LEV_SPI_64_67</gui_name>
+            <description language="en">Priority level SPI 64-67</description>
+        </register>
+        <register name="GIC_D_PRI_LEV_SPI_68_71" size="4" access="RW">
+            <gui_name language="en">GIC_D_PRI_LEV_SPI_68_71</gui_name>
+            <description language="en">Priority level SPI 68-71</description>
+        </register>
+        <register name="GIC_D_PRI_LEV_SPI_72_75" size="4" access="RW">
+            <gui_name language="en">GIC_D_PRI_LEV_SPI_72_75</gui_name>
+            <description language="en">Priority level SPI 72-75</description>
+        </register>
+        <register name="GIC_D_PRI_LEV_SPI_76_79" size="4" access="RW">
+            <gui_name language="en">GIC_D_PRI_LEV_SPI_76_79</gui_name>
+            <description language="en">Priority level SPI 76-79</description>
+        </register>
+        <register name="GIC_D_PRI_LEV_SPI_80_83" size="4" access="RW">
+            <gui_name language="en">GIC_D_PRI_LEV_SPI_80_83</gui_name>
+            <description language="en">Priority level SPI 80-83</description>
+        </register>
+        <register name="GIC_D_PRI_LEV_SPI_84_87" size="4" access="RW">
+            <gui_name language="en">GIC_D_PRI_LEV_SPI_84_87</gui_name>
+            <description language="en">Priority level SPI 84-87</description>
+        </register>
+        <register name="GIC_D_PRI_LEV_SPI_88_91" size="4" access="RW">
+            <gui_name language="en">GIC_D_PRI_LEV_SPI_88_91</gui_name>
+            <description language="en">Priority level SPI 88-91</description>
+        </register>
+        <register name="GIC_D_PRI_LEV_SPI_92_95" size="4" access="RW">
+            <gui_name language="en">GIC_D_PRI_LEV_SPI_92_95</gui_name>
+            <description language="en">Priority level SPI 92-95</description>
+        </register>
+        <register name="GIC_D_SPI_TARGET_0_3" size="4" access="RW">
+            <gui_name language="en">GIC_D_SPI_TARGET_0_3</gui_name>
+            <description language="en">SPI Target 0-3</description>
+        </register>
+        <register name="GIC_D_SPI_TARGET_4_7" size="4" access="RW">
+            <gui_name language="en">GIC_D_SPI_TARGET_4_7</gui_name>
+            <description language="en">SPI Target 4-7</description>
+        </register>
+        <register name="GIC_D_SPI_TARGET_8_11" size="4" access="RW">
+            <gui_name language="en">GIC_D_SPI_TARGET_8_11</gui_name>
+            <description language="en">SPI Target 8-11</description>
+        </register>
+        <register name="GIC_D_SPI_TARGET_12_15" size="4" access="RW">
+            <gui_name language="en">GIC_D_SPI_TARGET_12_15</gui_name>
+            <description language="en">SPI Target 12-15</description>
+        </register>
+        <register name="GIC_D_SPI_TARGET_16_19" size="4" access="RW">
+            <gui_name language="en">GIC_D_SPI_TARGET_16_19</gui_name>
+            <description language="en">SPI Target 16-19</description>
+        </register>
+        <register name="GIC_D_SPI_TARGET_20_23" size="4" access="RW">
+            <gui_name language="en">GIC_D_SPI_TARGET_20_23</gui_name>
+            <description language="en">SPI Target 20-23</description>
+        </register>
+        <register name="GIC_D_SPI_TARGET_24_27" size="4" access="RW">
+            <gui_name language="en">GIC_D_SPI_TARGET_24_27</gui_name>
+            <description language="en">SPI Target 24-27</description>
+        </register>
+        <register name="GIC_D_SPI_TARGET_28_31" size="4" access="RW">
+            <gui_name language="en">GIC_D_SPI_TARGET_28_31</gui_name>
+            <description language="en">SPI Target 28-31</description>
+        </register>
+        <register name="GIC_D_SPI_TARGET_32_35" size="4" access="RW">
+            <gui_name language="en">GIC_D_SPI_TARGET_32_35</gui_name>
+            <description language="en">SPI Target 32-35</description>
+        </register>
+        <register name="GIC_D_SPI_TARGET_36_39" size="4" access="RW">
+            <gui_name language="en">GIC_D_SPI_TARGET_36_39</gui_name>
+            <description language="en">SPI Target 36-39</description>
+        </register>
+        <register name="GIC_D_SPI_TARGET_40_43" size="4" access="RW">
+            <gui_name language="en">GIC_D_SPI_TARGET_40_43</gui_name>
+            <description language="en">SPI Target 40-43</description>
+        </register>
+        <register name="GIC_D_SPI_TARGET_44_47" size="4" access="RW">
+            <gui_name language="en">GIC_D_SPI_TARGET_44_47</gui_name>
+            <description language="en">SPI Target 44-47</description>
+        </register>
+        <register name="GIC_D_SPI_TARGET_48_51" size="4" access="RW">
+            <gui_name language="en">GIC_D_SPI_TARGET_48_51</gui_name>
+            <description language="en">SPI Target 48-51</description>
+        </register>
+        <register name="GIC_D_SPI_TARGET_52_55" size="4" access="RW">
+            <gui_name language="en">GIC_D_SPI_TARGET_52_55</gui_name>
+            <description language="en">SPI Target 52-55</description>
+        </register>
+        <register name="GIC_D_SPI_TARGET_56_59" size="4" access="RW">
+            <gui_name language="en">GIC_D_SPI_TARGET_56_59</gui_name>
+            <description language="en">SPI Target 56-59</description>
+        </register>
+        <register name="GIC_D_SPI_TARGET_60_63" size="4" access="RW">
+            <gui_name language="en">GIC_D_SPI_TARGET_60_63</gui_name>
+            <description language="en">SPI Target 60-63</description>
+        </register>
+        <register name="GIC_D_SPI_TARGET_64_67" size="4" access="RW">
+            <gui_name language="en">GIC_D_SPI_TARGET_64_67</gui_name>
+            <description language="en">SPI Target 64-67</description>
+        </register>
+        <register name="GIC_D_SPI_TARGET_68_71" size="4" access="RW">
+            <gui_name language="en">GIC_D_SPI_TARGET_68_71</gui_name>
+            <description language="en">SPI Target 68-71</description>
+        </register>
+        <register name="GIC_D_SPI_TARGET_72_75" size="4" access="RW">
+            <gui_name language="en">GIC_D_SPI_TARGET_72_75</gui_name>
+            <description language="en">SPI Target 72-75</description>
+        </register>
+        <register name="GIC_D_SPI_TARGET_76_79" size="4" access="RW">
+            <gui_name language="en">GIC_D_SPI_TARGET_76_79</gui_name>
+            <description language="en">SPI Target 76-79</description>
+        </register>
+        <register name="GIC_D_SPI_TARGET_80_83" size="4" access="RW">
+            <gui_name language="en">GIC_D_SPI_TARGET_80_83</gui_name>
+            <description language="en">SPI Target 80-83</description>
+        </register>
+        <register name="GIC_D_SPI_TARGET_84_87" size="4" access="RW">
+            <gui_name language="en">GIC_D_SPI_TARGET_84_87</gui_name>
+            <description language="en">SPI Target 84-87</description>
+        </register>
+        <register name="GIC_D_SPI_TARGET_88_91" size="4" access="RW">
+            <gui_name language="en">GIC_D_SPI_TARGET_88_91</gui_name>
+            <description language="en">SPI Target 88-91</description>
+        </register>
+        <register name="GIC_D_SPI_TARGET_92_95" size="4" access="RW">
+            <gui_name language="en">GIC_D_SPI_TARGET_92_95</gui_name>
+            <description language="en">SPI Target 92-95</description>
+        </register>
+        <register name="GIC_D_INT_CONF_0_15" size="4" access="RW">
+            <gui_name language="en">GIC_D_INT_CONF_0_15</gui_name>
+            <description language="en">Interrupt Configuration 0-15</description>
+        </register>
+        <register name="GIC_D_INT_CONF_16_31" size="4" access="RW">
+            <gui_name language="en">GIC_D_INT_CONF_16_31</gui_name>
+            <description language="en">Interrupt Configuration 16-31</description>
+        </register>
+        <register name="GIC_D_INT_CONF_32_47" size="4" access="RW">
+            <gui_name language="en">GIC_D_INT_CONF_32_47</gui_name>
+            <description language="en">Interrupt Configuration 32-47</description>
+        </register>
+        <register name="GIC_D_INT_CONF_48_63" size="4" access="RW">
+            <gui_name language="en">GIC_D_INT_CONF_48_63</gui_name>
+            <description language="en">Interrupt Configuration 48-63</description>
+        </register>
+        <register name="GIC_D_INT_CONF_64_79" size="4" access="RW">
+            <gui_name language="en">GIC_D_INT_CONF_64_79</gui_name>
+            <description language="en">Interrupt Configuration 64-79</description>
+        </register>
+        <register name="GIC_D_INT_CONF_80_95" size="4" access="RW">
+            <gui_name language="en">GIC_D_INT_CONF_80_95</gui_name>
+            <description language="en">Interrupt Configuration 80-95</description>
+        </register>
+        <register name="GIC_D_PPI_ST" size="4" access="RW">
+            <gui_name language="en">GIC_D_PPI_ST</gui_name>
+            <description language="en">PPI Status Register</description>
+        </register>
+        <register name="GIC_D_SPI_ST_0_31" size="4" access="RW">
+            <gui_name language="en">GIC_D_SPI_ST_0_31</gui_name>
+            <description language="en">SPI Status 0-31</description>
+        </register>
+        <register name="GIC_D_SPI_ST_32_63" size="4" access="RW">
+            <gui_name language="en">GIC_D_SPI_ST_32_63</gui_name>
+            <description language="en">SPI Status 32-63</description>
+        </register>
+        <register name="GIC_D_SW_INT" size="4" access="RW">
+            <gui_name language="en">GIC_D_SW_INT</gui_name>
+            <description language="en">Software Triggered Interrupt</description>
+        </register>
+        <register name="GIC_D_PERH_ID_0" size="4" access="RW">
+            <gui_name language="en">GIC_D_PERH_ID_0</gui_name>
+            <description language="en">Peripheral ID 0</description>
+        </register>
+        <register name="GIC_D_PERH_ID_1" size="4" access="RW">
+            <gui_name language="en">GIC_D_PERH_ID_1</gui_name>
+            <description language="en">Peripheral ID 1</description>
+        </register>
+        <register name="GIC_D_PERH_ID_2" size="4" access="RW">
+            <gui_name language="en">GIC_D_PERH_ID_2</gui_name>
+            <description language="en">Peripheral ID 2</description>
+        </register>
+        <register name="GIC_D_PERH_ID_3" size="4" access="RW">
+            <gui_name language="en">GIC_D_PERH_ID_3</gui_name>
+            <description language="en">Peripheral ID 3</description>
+        </register>
+        <register name="GIC_D_PERH_ID_4" size="4" access="RW">
+            <gui_name language="en">GIC_D_PERH_ID_4</gui_name>
+            <description language="en">Peripheral ID 4</description>
+        </register>
+        <register name="GIC_D_PRIM_ID_0" size="4" access="RW">
+            <gui_name language="en">GIC_D_PRIM_ID_0</gui_name>
+            <description language="en">PrimeCell ID 0</description>
+        </register>
+        <register name="GIC_D_PRIM_ID_1" size="4" access="RW">
+            <gui_name language="en">GIC_D_PRIM_ID_1</gui_name>
+            <description language="en">PrimeCell ID 1</description>
+        </register>
+        <register name="GIC_D_PRIM_ID_2" size="4" access="RW">
+            <gui_name language="en">GIC_D_PRIM_ID_2</gui_name>
+            <description language="en">PrimeCell ID 2</description>
+        </register>
+        <register name="GIC_D_PRIM_ID_3" size="4" access="RW">
+            <gui_name language="en">GIC_D_PRIM_ID_3</gui_name>
+            <description language="en">PrimeCell ID 3</description>
+        </register>
+    </register_group>
+</register_list>

@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>PMEVTYPER&lt;n&gt;_EL0</title>
+    <link href="insn.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body><table align="center"><tr><td><div class="topbar"><a href="AArch32-regindex.html">AArch32 Registers</a></div></td><td><div class="topbar"><a href="AArch64-regindex.html">AArch64 Registers</a></div></td><td><div class="topbar"><a href="AArch32-sysindex.html">AArch32 Instructions</a></div></td><td><div class="topbar"><a href="AArch64-sysindex.html">AArch64 Instructions</a></div></td><td><div class="topbar"><a href="enc_index.html">Index by Encoding</a></div></td><td><div class="topbar"><a href="ext_alpha_index.html">External Registers</a></div></td><td><div class="topbar"><a href="ext_enc_index.html">External Registers by Offset</a></div></td><td><div class="topbar"><a href="func_index.html">Registers by Functional Group</a></div></td></tr></table><hr /><h1 class="register-section">PMEVTYPER&lt;n&gt;_EL0, Performance Monitors Event Type Registers, n =
+      0 - 30</h1><p>The PMEVTYPER&lt;n&gt;_EL0 characteristics are:</p><h2>Purpose</h2>
+          <p>Configures event counter n, where n is 0 to 30.</p>
+        <p>This 
+        register
+       is part of the Performance Monitors registers functional group.</p><h2>Configuration</h2><p>AArch64 System register PMEVTYPER&lt;n&gt;_EL0
+                is architecturally mapped to
+              AArch32 System register <a href="AArch32-pmevtypern.html">PMEVTYPER&lt;n&gt;</a>.
+          </p><p>AArch64 System register PMEVTYPER&lt;n&gt;_EL0
+                is architecturally mapped to
+              External register <a href="ext-pmevtypern_el0.html">PMEVTYPER&lt;n&gt;_EL0</a>.
+          </p><p>This register is in the Warm reset domain.
+                  On a Warm or Cold reset
+                RW fields in this register reset to architecturally <span class="arm-defined-word">UNKNOWN</span> values.
+              </p><h2>Attributes</h2>
+          <p>PMEVTYPER&lt;n&gt;_EL0 is a 32-bit register.</p>
+        <h2>Field descriptions</h2><p>The PMEVTYPER&lt;n&gt;_EL0 bit assignments are:</p><table class="regdiagram"><thead><tr><td>31</td><td>30</td><td>29</td><td>28</td><td>27</td><td>26</td><td>25</td><td>24</td><td>23</td><td>22</td><td>21</td><td>20</td><td>19</td><td>18</td><td>17</td><td>16</td><td>15</td><td>14</td><td>13</td><td>12</td><td>11</td><td>10</td><td>9</td><td>8</td><td>7</td><td>6</td><td>5</td><td>4</td><td>3</td><td>2</td><td>1</td><td>0</td></tr></thead><tbody><tr class="firstrow"><td class="lr" colspan="1"><a href="#P">P</a></td><td class="lr" colspan="1"><a href="#U">U</a></td><td class="lr" colspan="1"><a href="#NSK">NSK</a></td><td class="lr" colspan="1"><a href="#NSU">NSU</a></td><td class="lr" colspan="1"><a href="#NSH">NSH</a></td><td class="lr" colspan="1"><a href="#M">M</a></td><td class="lr" colspan="1"><a href="#MT">MT</a></td><td class="l">0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td class="r">0</td><td class="lr" colspan="6"><a href="#evtCount[15:10]">evtCount[15:10]</a></td><td class="lr" colspan="10"><a href="#evtCount[9:0]">evtCount[9:0]</a></td></tr></tbody></table><h4 id="P">P, bit [31]
+              </h4>
+              <p>Privileged filtering bit. Controls counting in EL1. If EL3 is implemented, then counting in Non-secure EL1 is further controlled by the NSK bit. The possible values of this bit are:</p>
+            <table class="valuetable"><tr><th>P</th><th>Meaning</th></tr><tr><td class="bitfield">0</td><td>
+                  <p>Count events in EL1.</p>
+                </td></tr><tr><td class="bitfield">1</td><td>
+                  <p>Do not count events in EL1.</p>
+                </td></tr></table><h4 id="U">U, bit [30]
+              </h4>
+              <p>User filtering bit. Controls counting in EL0. If EL3 is implemented, then counting in Non-secure EL0 is further controlled by the NSU bit. The possible values of this bit are:</p>
+            <table class="valuetable"><tr><th>U</th><th>Meaning</th></tr><tr><td class="bitfield">0</td><td>
+                  <p>Count events in EL0.</p>
+                </td></tr><tr><td class="bitfield">1</td><td>
+                  <p>Do not count events in EL0.</p>
+                </td></tr></table><h4 id="NSK">NSK, bit [29]
+              </h4>
+              <p>Non-secure EL1 (kernel) modes filtering bit. Controls counting in Non-secure EL1. If EL3 is not implemented, this bit is <span class="arm-defined-word">RES0</span>.</p>
+            
+              <p>If the value of this bit is equal to the value of P, events in Non-secure EL1 are counted.</p>
+            
+              <p>Otherwise, events in Non-secure EL1 are not counted.</p>
+            <h4 id="NSU">NSU, bit [28]
+              </h4>
+              <p>Non-secure EL0 (Unprivileged) filtering. Controls counting in Non-secure EL0. If EL3 is not implemented, this bit is <span class="arm-defined-word">RES0</span>.</p>
+            
+              <p>If the value of this bit is equal to the value of U, events in Non-secure EL0 are counted.</p>
+            
+              <p>Otherwise, events in Non-secure EL0 are not counted.</p>
+            <h4 id="NSH">NSH, bit [27]
+              </h4>
+              <p>Non-secure EL2 (Hypervisor) filtering. Controls counting in Non-secure EL2. If EL2 is not implemented, this bit is <span class="arm-defined-word">RES0</span>.</p>
+            <table class="valuetable"><tr><th>NSH</th><th>Meaning</th></tr><tr><td class="bitfield">0</td><td>
+                  <p>Do not count events in EL2.</p>
+                </td></tr><tr><td class="bitfield">1</td><td>
+                  <p>Count events in EL2.</p>
+                </td></tr></table><h4 id="M">M, bit [26]
+              </h4>
+              <p>Secure EL3 filtering bit. If EL3 is not implemented, this bit is <span class="arm-defined-word">RES0</span>.</p>
+            
+              <p>If the value of this bit is equal to the value of P, cycles in Secure EL3 are counted.</p>
+            
+              <p>Otherwise, cycles in Secure EL3 are not counted.</p>
+            
+              <p>Most applications can ignore this field and set its value to 0.</p>
+            
+              <div class="note"><span class="note-header">Note</span>
+                <p>This field is not visible in the AArch32 PMEVTYPER System register.</p>
+              </div>
+            <h4 id="MT">MT, bit [25]
+              </h4>
+              <p>Multithreading. When the implementation is multi-threaded, the valid values for this bit are:</p>
+            <table class="valuetable"><tr><th>MT</th><th>Meaning</th></tr><tr><td class="bitfield">0</td><td>
+                  <p>Count events only on controlling PE.</p>
+                </td></tr><tr><td class="bitfield">1</td><td>
+                  <p>Count events from any PE with the same affinity at level 1 and above as this PE.</p>
+                </td></tr></table>
+              <p>When the implementation is not multi-threaded, this bit is <span class="arm-defined-word">RES0</span>.</p>
+            
+              <div class="note"><span class="note-header">Note</span>
+                <ul>
+                  <li>
+                    An implementation is described as multi-threaded when the lowest level of affinity consists of logical PEs that are implemented using a multi-threading type approach. That is, the performance of PEs at the lowest affinity level is highly interdependent. On such an implementation, the value of MPIDR_EL1.MT, when read at the highest implemented Exception level, is 1.
+                  </li>
+                  <li>
+                    Events from a different thread of a multithreaded implementation are not Attributable to the thread counting the event.
+                  </li>
+                </ul>
+              </div>
+            <h4 id="0">
+                Bits [24:16]
+              </h4>
+              <p>Reserved, <span class="arm-defined-word">RES0</span>.</p>
+            <h4 id="evtCount[15:10]">evtCount[15:10], bits [15:10]
+                  <font style="font-size:smaller;"><br />
+            In 
+            ARMv8.1:</font></h4>
+              <p>Extension to evtCount[9:0]. See evtCount[9:0] for more details.</p>
+            <h4 id="0"><font style="font-size:smaller;"><br />
+            In 
+            ARMv8.0:</font></h4>
+              <p>Reserved, <span class="arm-defined-word">RES0</span>.</p>
+            <h4 id="evtCount[9:0]">evtCount[9:0], bits [9:0]
+                  </h4>
+              <p>Event to count. The event number of the event that is counted by event counter <a href="AArch64-pmevcntrn_el0.html">PMEVCNTR&lt;n&gt;_EL0</a>.</p>
+            
+              <p>Software must program this field with an event that is supported by the PE being programmed.</p>
+            
+              <p>There are three ranges of event numbers:</p>
+            
+              <ul>
+                <li>
+                  Event numbers in the range <span class="hexnumber">0x000</span> to <span class="hexnumber">0x03F</span> are common architectural and microarchitectural events.
+                </li>
+                <li>
+                  Event numbers in the range <span class="hexnumber">0x040</span> to <span class="hexnumber">0x0BF</span> are ARM recommended common architectural and microarchitectural events.
+                </li>
+                <li>
+                  Event numbers in the range <span class="hexnumber">0x0C0</span> to <span class="hexnumber">0x3FF</span> are <span class="arm-defined-word">IMPLEMENTATION DEFINED</span> events.
+                </li>
+              </ul>
+            
+              <p>If evtCount is programmed to an event that is reserved or not supported by the PE, the behavior depends on the event type:</p>
+            
+              <ul>
+                <li>
+                  For the range <span class="hexnumber">0x000</span> to <span class="hexnumber">0x03F</span>, no events are counted, and the value returned by a direct or external read of the evtCount field is the value written to the field.
+                </li>
+                <li>
+                  For <span class="arm-defined-word">IMPLEMENTATION DEFINED</span> events, it is <span class="arm-defined-word">UNPREDICTABLE</span> what event, if any, is counted, and the value returned by a direct or external read of the evtCount field is <span class="arm-defined-word">UNKNOWN</span>.
+                </li>
+              </ul>
+            
+              <div class="note"><span class="note-header">Note</span>
+                <p><span class="arm-defined-word">UNPREDICTABLE</span> means the event must not expose privileged information.</p>
+              </div>
+            
+              <p>ARM recommends that the behavior across a family of implementations is defined such that if a given implementation does not include an event from a set of common <span class="arm-defined-word">IMPLEMENTATION DEFINED</span> events, then no event is counted and the value read back on evtCount is the value written.</p>
+            <div class="access_mechanisms"><h2>Accessing the PMEVTYPER&lt;n&gt;_EL0</h2><div class="access_instructions"><div class="access_instruction"><p>This register can be read using MRS with the following syntax:</p><p class="asm-code">MRS  &lt;Xt&gt;, &lt;systemreg&gt;</p></div><div class="access_instruction"><p>This register can be written using MSR (register) with the following syntax:</p><p class="asm-code">MSR  &lt;systemreg&gt;, &lt;Xt&gt;</p></div><p>This syntax uses the following encoding in the System instruction encoding space:</p><table class="access_instructions"><tr><th rowspan="1">
+        &lt;systemreg&gt;
+      </th><th>op0</th><th>op1</th><th>CRn</th><th>CRm</th><th>op2</th></tr><tr><td>PMEVTYPER&lt;n&gt;_EL0</td><td>11</td><td>011</td><td>1110</td><td>11:n&lt;4:3&gt;
+          </td><td>n&lt;2:0&gt;
+      </td></tr></table></div><h3>Accessibility</h3><p>The register is accessible as follows:</p><table class="accessibility"><tr><th class="accessibility_control" colspan="3">
+            Control
+          </th><th colspan="4">
+          Accessibility
+        </th></tr><tr><th class="accessibility_control">E2H</th><th class="accessibility_control">TGE</th><th class="accessibility_control">NS</th><th>EL0</th><th>EL1</th><th>EL2</th><th>EL3</th></tr><tr><td class="accessibility_control">x</td><td class="accessibility_control">x</td><td class="accessibility_control">0</td><td>RW</td><td>RW</td><td>
+        n/a
+      </td><td>RW</td></tr><tr><td class="accessibility_control">x</td><td class="accessibility_control">0</td><td class="accessibility_control">1</td><td>RW</td><td>RW</td><td>RW</td><td>RW</td></tr><tr><td class="accessibility_control">x</td><td class="accessibility_control">1</td><td class="accessibility_control">1</td><td>RW</td><td>
+        n/a
+      </td><td>RW</td><td>RW</td></tr></table><p><p>This table applies to all instructions that can access this register.</p></p>
+            <p>PMEVTYPER&lt;n&gt;_EL0 can also be accessed by using <a href="AArch64-pmxevtyper_el0.html">PMXEVTYPER_EL0</a> with <a href="AArch64-pmselr_el0.html">PMSELR_EL0</a>.SEL set to n.</p>
+          
+            <p>If &lt;n&gt; is greater than or equal to the number of accessible counters, reads and writes of PMEVTYPER&lt;n&gt;_EL0 are <span class="arm-defined-word">CONSTRAINED UNPREDICTABLE</span>, and the following behaviors are permitted:</p>
+          
+            <ul>
+              <li>
+                Accesses to the register are <span class="arm-defined-word">UNDEFINED</span>.
+              </li>
+              <li>
+                Accesses to the register behave as RAZ/WI.
+              </li>
+              <li>
+                Accesses to the register execute as a NOP.
+              </li>
+              <li>
+                For an access from Non-secure EL1, or an access from Non-secure EL0 when the value of <a href="AArch64-pmuserenr_el0.html">PMUSERENR_EL0</a>.EN is 1, if <a href="AArch64-pmselr_el0.html">PMSELR_EL0</a>.SEL is greater than or equal to the number of accessible counters but is less than the number of implemented counters, the register access is trapped to EL2.
+              </li>
+            </ul>
+          
+            <div class="note"><span class="note-header">Note</span>
+              <p>In an implementation that includes EL2, in Non-secure state at EL0 and EL1, <a href="AArch64-mdcr_el2.html">MDCR_EL2</a>.HPMN identifies the number of accessible counters. Otherwise, the number of accessible counters is the number of implemented counters.</p>
+            </div>
+          <h3>Traps and enables</h3><div class="traps_intro"><p>For a description of the prioritization of any generated exceptions, see section D1.13.2 (Synchronous exception prioritization) in the <i>ARM<sup>®</sup> Architecture Reference Manual, ARMv8, for ARMv8-A architecture profile</i>. Subject to the prioritization rules, the following traps and enables are applicable when 
+            accessing this register.
+          </p></div><p>
+            In both Security states, and not dependent on other configuration bits:
+          </p><ul><li><p>If <a href="AArch64-pmuserenr_el0.html">PMUSERENR_EL0</a>.EN==0, accesses to this register from EL0 are trapped to EL1.</p></li></ul><p>
+        When
+        EL2 is implemented and is using AArch64
+        and
+        SCR_EL3.NS==1
+        :
+      </p><ul><li><p>If <a href="AArch64-mdcr_el2.html">MDCR_EL2</a>.TPM==1, Non-secure accesses to this register from EL0 and EL1 are trapped to EL2.</p></li></ul><p>
+        When
+        EL3 is implemented and is using AArch64
+        :
+      </p><ul><li><p>If <a href="AArch64-mdcr_el3.html">MDCR_EL3</a>.TPM==1, accesses to this register from EL0, EL1, and EL2 are trapped to EL3.</p></li></ul></div><br /><br /><hr /><table align="center"><tr><td><div class="topbar"><a href="AArch32-regindex.html">AArch32 Registers</a></div></td><td><div class="topbar"><a href="AArch64-regindex.html">AArch64 Registers</a></div></td><td><div class="topbar"><a href="AArch32-sysindex.html">AArch32 Instructions</a></div></td><td><div class="topbar"><a href="AArch64-sysindex.html">AArch64 Instructions</a></div></td><td><div class="topbar"><a href="enc_index.html">Index by Encoding</a></div></td><td><div class="topbar"><a href="ext_alpha_index.html">External Registers</a></div></td><td><div class="topbar"><a href="ext_enc_index.html">External Registers by Offset</a></div></td><td><div class="topbar"><a href="func_index.html">Registers by Functional Group</a></div></td></tr></table><p class="versions">24/03/2017 16:41</p><p class="copyconf">Copyright © 2010-2017 ARM Limited or its affiliates. All rights reserved. This document is Confidential.</p></body>
+</html>

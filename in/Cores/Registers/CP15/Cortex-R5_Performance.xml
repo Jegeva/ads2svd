@@ -1,0 +1,488 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<register_list
+    name="CP15"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns="http://www.arm.com/core_reg"
+    xsi:schemaLocation="http://www.arm.com/core_reg ../../../Schemas/core_register_definition.xsd"
+    xmlns:tcf="http://com.arm.targetconfigurationeditor">
+    <register_group name="Performance">
+        <gui_name language="en">Performance</gui_name>
+        <description language="en">Performance Monitor</description>
+        <register access="RW" name="PMCR" size="4">
+            <gui_name language="en">Performance Monitor Control</gui_name>
+            <alias_name>CP15_PMCR</alias_name>
+            <device_name type="rvi">CP15_PMCR</device_name>
+            <device_name type="cadi">PMCR</device_name>
+            <description language="en">The Performance Monitor Control Register controls the operation of the three count registers, and the CCNT Register</description>
+            <bitField conditional="false" name="IMP">
+                <gui_name language="en">IMP</gui_name>
+                <description language="en">Implementor Code</description>
+                <definition>[31:24]</definition>
+            </bitField>
+            <bitField conditional="false" name="IDCODE">
+                <gui_name language="en">IDCODE</gui_name>
+                <description language="en">Identification Code</description>
+                <definition>[23:16]</definition>
+            </bitField>
+            <bitField conditional="false" name="N">
+                <gui_name language="en">N</gui_name>
+                <description language="en">Specifies the number of counters implemented</description>
+                <definition>[15:11]</definition>
+            </bitField>
+            <bitField conditional="false" name="DP" enumerationId="GENERIC_ENABLED_DISABLED">
+                <gui_name language="en">DP</gui_name>
+                <description language="en">Disable CCNT when prohibited, that is, when non-invasive debug is not enabled</description>
+                <definition>[5]</definition>
+            </bitField>
+            <bitField conditional="false" name="X" enumerationId="GENERIC_DISABLED_ENABLED">
+                <gui_name language="en">X</gui_name>
+                <description language="en">Enable export of the events to the event bus for an external monitoring block</description>
+                <definition>[4]</definition>
+            </bitField>
+            <bitField conditional="false" name="D" enumerationId="CP15_PMNC_D">
+                <gui_name language="en">D</gui_name>
+                <description language="en">Cycle counter divider</description>
+                <definition>[3]</definition>
+            </bitField>
+            <bitField conditional="false" name="C">
+                <gui_name language="en">C</gui_name>
+                <description language="en">Cycle counter reset</description>
+                <definition>[2]</definition>
+            </bitField>
+            <bitField conditional="false" name="P">
+                <gui_name language="en">P</gui_name>
+                <description language="en">Performance counter reset</description>
+                <definition>[1]</definition>
+            </bitField>
+            <bitField conditional="false" name="E" enumerationId="GENERIC_DISABLED_ENABLED">
+                <gui_name language="en">E</gui_name>
+                <description language="en">Enable</description>
+                <definition>[0]</definition>
+            </bitField>
+        </register>
+        <register access="RW" name="PMCNTENSET" size="4">
+            <gui_name language="en">Count Enable Set</gui_name>
+            <alias_name>CP15_PMCNTENSET</alias_name>
+            <device_name type="rvi">CP15_PMCNTENSET</device_name>
+            <device_name type="cadi">PMCNTENSET</device_name>
+            <description language="en">The Count Enable Set Register enables any of the performance monitor count registers</description>
+            <bitField conditional="false" name="C" enumerationId="GENERIC_DISABLED_ENABLED">
+                <gui_name language="en">C</gui_name>
+                <description language="en">Cycle counter enable set</description>
+                <definition>[31]</definition>
+            </bitField>
+            <bitField conditional="false" name="P2">
+                <gui_name language="en">P2</gui_name>
+                <description language="en">Counter 2 Enable</description>
+                <definition>[2]</definition>
+            </bitField>
+            <bitField conditional="false" name="P1">
+                <gui_name language="en">P1</gui_name>
+                <description language="en">Counter 1 Enable</description>
+                <definition>[1]</definition>
+            </bitField>
+            <bitField conditional="false" name="P0">
+                <gui_name language="en">P0</gui_name>
+                <description language="en">Counter 0 Enable</description>
+                <definition>[0]</definition>
+            </bitField>
+        </register>
+        <register access="RW" name="PMCNTENCLR" size="4">
+            <gui_name language="en">Count Enable Clear</gui_name>
+            <alias_name>CP15_PMCNTENCLR</alias_name>
+            <device_name type="rvi">CP15_PMCNTENCLR</device_name>
+            <device_name type="cadi">PMCNTENCLR</device_name>
+            <description language="en">The Count Enable Clear Register disables any of the Performance Monitor Count Registers</description>
+            <bitField conditional="false" name="C" enumerationId="GENERIC_DISABLED_ENABLED">
+                <gui_name language="en">C</gui_name>
+                <description language="en">Cycle counter enable clear</description>
+                <definition>[31]</definition>
+            </bitField>
+            <bitField conditional="false" name="P2">
+                <gui_name language="en">P2</gui_name>
+                <description language="en">Counter 2 Enable</description>
+                <definition>[2]</definition>
+            </bitField>
+            <bitField conditional="false" name="P1">
+                <gui_name language="en">P1</gui_name>
+                <description language="en">Counter 1 Enable</description>
+                <definition>[1]</definition>
+            </bitField>
+            <bitField conditional="false" name="P0">
+                <gui_name language="en">P0</gui_name>
+                <description language="en">Counter 0 Enable</description>
+                <definition>[0]</definition>
+            </bitField>
+        </register>
+        <register access="RW" name="PMOVSR" size="4">
+            <gui_name language="en">Overflow Flag Status</gui_name>
+            <alias_name>CP15_PMOVSR</alias_name>
+            <device_name type="rvi">CP15_PMOVSR</device_name>
+            <device_name type="cadi">PMOVSR</device_name>
+            <description language="en">The overflow FLAG status Register indicates if performance monitor counters have overflowed</description>
+            <bitField conditional="false" name="C" enumerationId="GENERIC_DISABLED_ENABLED">
+                <gui_name language="en">C</gui_name>
+                <description language="en">Cycle counter overflow flag</description>
+                <definition>[31]</definition>
+            </bitField>
+            <bitField conditional="false" name="P2">
+                <gui_name language="en">P2</gui_name>
+                <description language="en">Counter 2 Overflow Flag</description>
+                <definition>[2]</definition>
+            </bitField>
+            <bitField conditional="false" name="P1">
+                <gui_name language="en">P1</gui_name>
+                <description language="en">Counter 1 Overflow Flag</description>
+                <definition>[1]</definition>
+            </bitField>
+            <bitField conditional="false" name="P0">
+                <gui_name language="en">P0</gui_name>
+                <description language="en">Counter 0 Overflow Flag</description>
+                <definition>[0]</definition>
+            </bitField>
+        </register>
+        <register access="WO" name="PMSWINC" size="4">
+            <gui_name language="en">Software Increment Register</gui_name>
+            <alias_name>CP15_PMSWINC</alias_name>
+            <device_name type="rvi">CP15_PMSWINC</device_name>
+            <device_name type="cadi">PMSWINC</device_name>
+            <description language="en">The Software Increment Register increments the count of a Performance Monitor Count Register</description>
+            <bitField conditional="false" name="P2">
+                <gui_name language="en">P2</gui_name>
+                <description language="en">Increment Counter 2</description>
+                <definition>[2]</definition>
+            </bitField>
+            <bitField conditional="false" name="P1">
+                <gui_name language="en">P1</gui_name>
+                <description language="en">Increment Counter 1</description>
+                <definition>[1]</definition>
+            </bitField>
+            <bitField conditional="false" name="P0">
+                <gui_name language="en">P0</gui_name>
+                <description language="en">Increment Counter 0</description>
+                <definition>[0]</definition>
+            </bitField>
+        </register>
+        <register access="RW" name="PMSELR" size="4">
+            <gui_name language="en">Performance Counter Selection</gui_name>
+            <alias_name>CP15_PMSELR</alias_name>
+            <device_name type="rvi">CP15_PMSELR</device_name>
+            <device_name type="cadi">PMSELR</device_name>
+            <description language="en">The Performance Counter Selection Register selects a Performance Monitor Count Register</description>
+            <bitField conditional="false" name="SEL">
+                <gui_name language="en">SEL</gui_name>
+                <description language="en">Counter select</description>
+                <definition>[4:0]</definition>
+            </bitField>
+        </register>
+        <register access="RW" name="PMCCNTR" size="4">
+            <gui_name language="en">Cycle Count</gui_name>
+            <alias_name>CP15_PMCCNTR</alias_name>
+            <device_name type="rvi">CP15_PMCCNTR</device_name>
+            <device_name type="cadi">PMCCNTR</device_name>
+            <description language="en">The Cycle Count Register counts clock cycles</description>
+        </register>
+        <register access="RW" name="PMXEVTYPER" size="4">
+            <gui_name language="en">Event Select</gui_name>
+            <alias_name>CP15_PMXEVTYPER</alias_name>
+            <device_name type="rvi">CP15_PMXEVTYPER</device_name>
+            <device_name type="cadi">PMXEVTYPER</device_name>
+            <description language="en">Selects the events you want a PMC Register to count</description>
+            <bitField conditional="false" name="SEL" enumerationId="CP15_EVTSELX_SEL">
+                <gui_name language="en">SEL</gui_name>
+                <description language="en">Event Number</description>
+                <definition>[7:0]</definition>
+            </bitField>
+        </register>
+        <register access="RW" name="PMXEVCNTR" size="4">
+            <gui_name language="en">Performance Count</gui_name>
+            <alias_name>CP15_PMXEVCNTR</alias_name>
+            <device_name type="rvi">CP15_PMXEVCNTR</device_name>
+            <device_name type="cadi">PMXEVCNTR</device_name>
+            <description language="en">Counts instances of an event selected by the Event Select Register</description>
+        </register>
+        <register access="RW" name="PMUSERENR" size="4">
+            <gui_name language="en">User Enable</gui_name>
+            <alias_name>CP15_PMUSERENR</alias_name>
+            <device_name type="rvi">CP15_PMUSERENR</device_name>
+            <device_name type="cadi">PMUSERENR</device_name>
+            <description language="en">The User Enable Register enables User mode to have access to</description>
+            <bitField conditional="false" name="EN" enumerationId="GENERIC_DISABLED_ENABLED">
+                <gui_name language="en">EN</gui_name>
+                <description language="en">User mode access to performance monitor and validation registers</description>
+                <definition>[0]</definition>
+            </bitField>
+        </register>
+        <register access="RW" name="PMINTENSET" size="4">
+            <gui_name language="en">Interrupt Enable Set</gui_name>
+            <alias_name>CP15_PMINTENSET</alias_name>
+            <device_name type="rvi">CP15_PMINTENSET</device_name>
+            <device_name type="cadi">PMINTENSET</device_name>
+            <description language="en">The Interrupt Enable Set Register determines if any of the PMC Registers generate an interrupt request on overflow</description>
+            <bitField conditional="false" name="C">
+                <gui_name language="en">C</gui_name>
+                <description language="en">CCNT overflow interrupt enable</description>
+                <definition>[31]</definition>
+            </bitField>
+            <bitField conditional="false" name="P2">
+                <gui_name language="en">P2</gui_name>
+                <description language="en">PMC2 overflow interrupt enable</description>
+                <definition>[2]</definition>
+            </bitField>
+            <bitField conditional="false" name="P1">
+                <gui_name language="en">P1</gui_name>
+                <description language="en">PMC1 overflow interrupt enable</description>
+                <definition>[1]</definition>
+            </bitField>
+            <bitField conditional="false" name="P0">
+                <gui_name language="en">P0</gui_name>
+                <description language="en">PMC0 overflow interrupt enable</description>
+                <definition>[0]</definition>
+            </bitField>
+        </register>
+        <register access="RW" name="PMINTENCLR" size="4">
+            <gui_name language="en">Interrupt Enable Clear</gui_name>
+            <alias_name>CP15_PMINTENCLR</alias_name>
+            <device_name type="rvi">CP15_PMINTENCLR</device_name>
+            <device_name type="cadi">PMINTENCLR</device_name>
+            <description language="en">The INTerrupt ENable Clear Register determines if any of the PMC Registers generate an interrupt request on overflow</description>
+            <bitField conditional="false" name="C">
+                <gui_name language="en">C</gui_name>
+                <description language="en">CCNT overflow interrupt enable bit</description>
+                <definition>[31]</definition>
+            </bitField>
+            <bitField conditional="false" name="P2">
+                <gui_name language="en">P2</gui_name>
+                <description language="en">Interrupt on PMC2 overflow when enabled</description>
+                <definition>[2]</definition>
+            </bitField>
+            <bitField conditional="false" name="P1">
+                <gui_name language="en">P1</gui_name>
+                <description language="en">Interrupt on PMC1 overflow when enabled</description>
+                <definition>[1]</definition>
+            </bitField>
+            <bitField conditional="false" name="P0">
+                <gui_name language="en">P0</gui_name>
+                <description language="en">Interrupt on PMC0 overflow when enabled</description>
+                <definition>[0]</definition>
+            </bitField>
+        </register>
+        <register access="RW" name="IRQ_ENABLE" size="4">
+            <gui_name language="en">IRQ Enable</gui_name>
+            <alias_name>CP15_IRQ_ENABLE</alias_name>
+            <device_name type="rvi">CP15_IRQ_ENABLE</device_name>
+            <device_name type="cadi">IRQ_ENABLE</device_name>
+            <description language="en">Enables any of the PMC Registers, PMC0-PMC2, and CCNT, to generate an interrupt request on overflow</description>
+            <bitField conditional="false" name="C">
+                <gui_name language="en">C</gui_name>
+                <description language="en">CCNT overflow IRQ request</description>
+                <definition>[31]</definition>
+            </bitField>
+            <bitField conditional="false" name="P2">
+                <gui_name language="en">P2</gui_name>
+                <description language="en">PMC2 overflow IRQ request</description>
+                <definition>[2]</definition>
+            </bitField>
+            <bitField conditional="false" name="P1">
+                <gui_name language="en">P1</gui_name>
+                <description language="en">PMC1 overflow IRQ request</description>
+                <definition>[1]</definition>
+            </bitField>
+            <bitField conditional="false" name="P0">
+                <gui_name language="en">P0</gui_name>
+                <description language="en">PMC0 overflow IRQ request</description>
+                <definition>[0]</definition>
+            </bitField>
+        </register>
+        <register access="RW" name="FIQ_ENABLE" size="4">
+            <gui_name language="en">FIQ Enable</gui_name>
+            <alias_name>CP15_FIQ_ENABLE</alias_name>
+            <device_name type="rvi">CP15_FIQ_ENABLE</device_name>
+            <device_name type="cadi">FIQ_ENABLE</device_name>
+            <description language="en">Enables any of the PMC Registers, PMC0-PMC2, and CCNT, to generate an fast interrupt request on overflow</description>
+            <bitField conditional="false" name="C">
+                <gui_name language="en">C</gui_name>
+                <description language="en">CCNT overflow FIQ request</description>
+                <definition>[31]</definition>
+            </bitField>
+            <bitField conditional="false" name="P2">
+                <gui_name language="en">P2</gui_name>
+                <description language="en">PMC2 overflow FIQ request</description>
+                <definition>[2]</definition>
+            </bitField>
+            <bitField conditional="false" name="P1">
+                <gui_name language="en">P1</gui_name>
+                <description language="en">PMC1 overflow FIQ request</description>
+                <definition>[1]</definition>
+            </bitField>
+            <bitField conditional="false" name="P0">
+                <gui_name language="en">P0</gui_name>
+                <description language="en">PMC0 overflow FIQ request</description>
+                <definition>[0]</definition>
+            </bitField>
+        </register>
+        <register access="RW" name="RESET_ENABLE" size="4">
+            <gui_name language="en">Reset Enable</gui_name>
+            <alias_name>CP15_RESET_ENABLE</alias_name>
+            <device_name type="rvi">CP15_RESET_ENABLE</device_name>
+            <device_name type="cadi">RESET_ENABLE</device_name>
+            <description language="en">Enables any of the PMC Registers, PMC0-PMC2, and CCNT, to generate a reset request on overflow</description>
+            <bitField conditional="false" name="C">
+                <gui_name language="en">C</gui_name>
+                <description language="en">CCNT overflow reset request</description>
+                <definition>[31]</definition>
+            </bitField>
+            <bitField conditional="false" name="P2">
+                <gui_name language="en">P2</gui_name>
+                <description language="en">PMC2 overflow reset request</description>
+                <definition>[2]</definition>
+            </bitField>
+            <bitField conditional="false" name="P1">
+                <gui_name language="en">P1</gui_name>
+                <description language="en">PMC1 overflow reset request</description>
+                <definition>[1]</definition>
+            </bitField>
+            <bitField conditional="false" name="P0">
+                <gui_name language="en">P0</gui_name>
+                <description language="en">PMC0 overflow reset request</description>
+                <definition>[0]</definition>
+            </bitField>
+        </register>
+        <register access="RW" name="DBG_REQ_ENABLE" size="4">
+            <gui_name language="en">Debug Request Enable</gui_name>
+            <alias_name>CP15_DBG_REQ_ENABLE</alias_name>
+            <device_name type="rvi">CP15_DBG_REQ_ENABLE</device_name>
+            <device_name type="cadi">DBG_REQ_ENABLE</device_name>
+            <description language="en">Enables any of the PMC Registers, PMC0-PMC2, and CCNT, to generate a debug request on overflow</description>
+            <bitField conditional="false" name="C">
+                <gui_name language="en">C</gui_name>
+                <description language="en">CCNT overflow debug request</description>
+                <definition>[31]</definition>
+            </bitField>
+            <bitField conditional="false" name="P2">
+                <gui_name language="en">P2</gui_name>
+                <description language="en">PMC2 overflow debug request</description>
+                <definition>[2]</definition>
+            </bitField>
+            <bitField conditional="false" name="P1">
+                <gui_name language="en">P1</gui_name>
+                <description language="en">PMC1 overflow debug request</description>
+                <definition>[1]</definition>
+            </bitField>
+            <bitField conditional="false" name="P0">
+                <gui_name language="en">P0</gui_name>
+                <description language="en">PMC0 overflow debug request</description>
+                <definition>[0]</definition>
+            </bitField>
+        </register>
+        <register access="RW" name="IRQ_ENABLE_CLEAR" size="4">
+            <gui_name language="en">IRQ Enable Clear</gui_name>
+            <alias_name>CP15_IRQ_ENABLE_CLEAR</alias_name>
+            <device_name type="rvi">CP15_IRQ_ENABLE_CLEAR</device_name>
+            <device_name type="cadi">IRQ_ENABLE_CLEAR</device_name>
+            <description language="en">Disables overflow IRQ requests from any of the PMC Registers, PMC0-PMC2, and CCNT, for which they have been enabled</description>
+            <bitField conditional="false" name="C">
+                <gui_name language="en">C</gui_name>
+                <description language="en">CCNT overflow IRQ request</description>
+                <definition>[31]</definition>
+            </bitField>
+            <bitField conditional="false" name="P2">
+                <gui_name language="en">P2</gui_name>
+                <description language="en">PMC2 overflow IRQ request</description>
+                <definition>[2]</definition>
+            </bitField>
+            <bitField conditional="false" name="P1">
+                <gui_name language="en">P1</gui_name>
+                <description language="en">PMC1 overflow IRQ request</description>
+                <definition>[1]</definition>
+            </bitField>
+            <bitField conditional="false" name="P0">
+                <gui_name language="en">P0</gui_name>
+                <description language="en">PMC0 overflow IRQ request</description>
+                <definition>[0]</definition>
+            </bitField>
+        </register>
+        <register access="RW" name="FIQ_ENABLE_CLEAR" size="4">
+            <gui_name language="en">FIQ Enable Clear</gui_name>
+            <alias_name>CP15_FIQ_ENABLE_CLEAR</alias_name>
+            <device_name type="rvi">CP15_FIQ_ENABLE_CLEAR</device_name>
+            <device_name type="cadi">FIQ_ENABLE_CLEAR</device_name>
+            <description language="en">Disables overflow FIQ requests from any of the PMC Registers, PMC0-PMC2, and CCNT, that are enabled</description>
+            <bitField conditional="false" name="C">
+                <gui_name language="en">C</gui_name>
+                <description language="en">CCNT overflow FIQ request</description>
+                <definition>[31]</definition>
+            </bitField>
+            <bitField conditional="false" name="P2">
+                <gui_name language="en">P2</gui_name>
+                <description language="en">PMC2 overflow FIQ request</description>
+                <definition>[2]</definition>
+            </bitField>
+            <bitField conditional="false" name="P1">
+                <gui_name language="en">P1</gui_name>
+                <description language="en">PMC1 overflow FIQ request</description>
+                <definition>[1]</definition>
+            </bitField>
+            <bitField conditional="false" name="P0">
+                <gui_name language="en">P0</gui_name>
+                <description language="en">PMC0 overflow FIQ request</description>
+                <definition>[0]</definition>
+            </bitField>
+        </register>
+        <register access="RW" name="RESET_ENABLE_CLEAR" size="4">
+            <gui_name language="en">Reset Enable Clear</gui_name>
+            <alias_name>CP15_RESET_ENABLE_CLEAR</alias_name>
+            <device_name type="rvi">CP15_RESET_ENABLE_CLEAR</device_name>
+            <device_name type="cadi">RESET_ENABLE_CLEAR</device_name>
+            <description language="en">Disables overflow reset requests from any of the PMC Registers, PMC0-PMC2, and CCNT, that are enabled</description>
+            <bitField conditional="false" name="C">
+                <gui_name language="en">C</gui_name>
+                <description language="en">CCNT overflow reset request</description>
+                <definition>[31]</definition>
+            </bitField>
+            <bitField conditional="false" name="P2">
+                <gui_name language="en">P2</gui_name>
+                <description language="en">PMC2 overflow reset request</description>
+                <definition>[2]</definition>
+            </bitField>
+            <bitField conditional="false" name="P1">
+                <gui_name language="en">P1</gui_name>
+                <description language="en">PMC1 overflow reset request</description>
+                <definition>[1]</definition>
+            </bitField>
+            <bitField conditional="false" name="P0">
+                <gui_name language="en">P0</gui_name>
+                <description language="en">PMC0 overflow reset request</description>
+                <definition>[0]</definition>
+            </bitField>
+        </register>
+        <register access="RW" name="DBG_REQ_ENABLE_CLEAR" size="4">
+            <gui_name language="en">Debug Request Enable Clear</gui_name>
+            <alias_name>CP15_DBG_REQ_ENABLE_CLEAR</alias_name>
+            <device_name type="rvi">CP15_DBG_REQ_ENABLE_CLEAR</device_name>
+            <device_name type="cadi">DBG_REQ_ENABLE_CLEAR</device_name>
+            <description language="en">Disables overflow debug requests from any of the PMC Registers, PMC0-PMC2, and CCNT, that are enabled</description>
+            <bitField conditional="false" name="C">
+                <gui_name language="en">C</gui_name>
+                <description language="en">CCNT overflow debug request</description>
+                <definition>[31]</definition>
+            </bitField>
+            <bitField conditional="false" name="P2">
+                <gui_name language="en">P2</gui_name>
+                <description language="en">PMC2 overflow debug request</description>
+                <definition>[2]</definition>
+            </bitField>
+            <bitField conditional="false" name="P1">
+                <gui_name language="en">P1</gui_name>
+                <description language="en">PMC1 overflow debug request</description>
+                <definition>[1]</definition>
+            </bitField>
+            <bitField conditional="false" name="P0">
+                <gui_name language="en">P0</gui_name>
+                <description language="en">PMC0 overflow debug request</description>
+                <definition>[0]</definition>
+            </bitField>
+        </register>
+    </register_group>
+</register_list>
+

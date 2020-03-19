@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<register_list name="CP15"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns="http://www.arm.com/core_reg"
+    xsi:schemaLocation="http://www.arm.com/core_reg ../../../Schemas/core_register_definition.xsd"
+    xmlns:tcf="http://com.arm.targetconfigurationeditor">
+    <register_group name="TLB_ME">
+        <gui_name language="en">TLB_ME</gui_name>
+        <description language="en">TLB maintenance operations - Multiprocessing Extensions</description>
+        <register access="WO" name="TLBIALLIS" size="4">
+            <gui_name language="en">TLBIALLIS</gui_name>
+            <alias_name>CP15_TLBIALLIS</alias_name>
+            <device_name type="rvi">CP15_TLBIALLIS</device_name>
+            <device_name type="cadi">TLBIALLIS</device_name>
+            <device_name type="rvi">CP15_TLBIALLIS</device_name>
+            <device_name type="cadi">TLBIALLIS</device_name>
+            <description language="en">Invalidate entire Unified TLB Inner Shareable</description>
+        </register>
+        <register access="WO" name="TLBIMVAIS" size="4">
+            <gui_name language="en">TLBIMVAIS</gui_name>
+            <alias_name>CP15_TLBIMVAIS</alias_name>
+            <device_name type="rvi">CP15_TLBIMVAIS</device_name>
+            <device_name type="cadi">TLBIMVAIS</device_name>
+            <device_name type="rvi">CP15_TLBIMVAIS</device_name>
+            <device_name type="cadi">TLBIMVAIS</device_name>
+            <description language="en">Invalidate unified TLB entry by MVA Inner Shareable</description>
+        </register>
+        <register access="WO" name="TLBIASIDIS" size="4">
+            <gui_name language="en">TLBIASIDIS</gui_name>
+            <alias_name>CP15_TLBIASIDIS</alias_name>
+            <device_name type="rvi">CP15_TLBIASIDIS</device_name>
+            <device_name type="cadi">TLBIASIDIS</device_name>
+            <device_name type="rvi">CP15_TLBIASIDIS</device_name>
+            <device_name type="cadi">TLBIASIDIS</device_name>
+            <description language="en">Invalidate unified TLB entry by ASID match Inner Shareable</description>
+        </register>
+        <register access="WO" name="TLBIMVAAIS" size="4">
+            <gui_name language="en">TLBIMVAAIS</gui_name>
+            <alias_name>CP15_TLBIMVAAIS</alias_name>
+            <device_name type="rvi">CP15_TLBIMVAAIS</device_name>
+            <device_name type="cadi">TLBIMVAAIS</device_name>
+            <device_name type="rvi">CP15_TLBIMVAAIS</device_name>
+            <device_name type="cadi">TLBIMVAAIS</device_name>
+            <description language="en">Invalidate unified TLB entry by MVA all ASID Inner Shareable</description>
+        </register>
+        <register access="WO" name="TLBIMVAA" size="4">
+            <gui_name language="en">TLBIMVAA</gui_name>
+            <alias_name>CP15_TLBIMVAA</alias_name>
+            <device_name type="rvi">CP15_TLBIMVAA</device_name>
+            <device_name type="cadi">TLBIMVAA</device_name>
+            <device_name type="rvi">CP15_TLBIMVAA</device_name>
+            <device_name type="cadi">TLBIMVAA</device_name>
+            <description language="en">Invalidate unified TLB by MVA all ASID</description>
+        </register>
+    </register_group>
+</register_list>

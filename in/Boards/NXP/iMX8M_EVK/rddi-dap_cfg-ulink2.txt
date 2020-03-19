@@ -1,0 +1,12 @@
+[cmsis-dap-dev]
+SERNUM=*
+
+[cmsis-dap-cfg]
+Port=JTAG
+Clock=1000000
+SWJ=N
+
+[rddi-dap]
+NUM_DAPS=1
+DAP_ID0=0
+

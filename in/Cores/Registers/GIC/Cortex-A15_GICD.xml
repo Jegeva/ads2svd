@@ -1,0 +1,413 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<register_list name="VGIC" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.arm.com/core_reg"
+    xsi:schemaLocation="http://www.arm.com/core_reg ../../../Schemas/core_register_definition.xsd">
+
+    <register_group name="GICD">
+        <gui_name language="en">VGIC Distributor</gui_name>
+        <description language="en">VGIC Distributor</description>
+        <register name="GICD_CTLR" size="4" access="RW">
+            <gui_name language="en">GICD_CTLR</gui_name>
+            <description language="en">Distributor Control Register</description>
+        </register>
+        <register name="GICD_CTLR_S" size="4" access="RW">
+            <gui_name language="en">GICD_CTLR_S</gui_name>
+            <description language="en">[S] Distributor Control Register</description>
+        </register>
+        <register name="GICD_CTLR_NS" size="4" access="RW">
+            <gui_name language="en">GICD_CTLR_NS</gui_name>
+            <description language="en">[N] Distributor Control Register</description>
+        </register>
+        <register name="GICD_TYPER" size="4" access="RW">
+            <gui_name language="en">GICD_TYPER</gui_name>
+            <description language="en">Interrupt Controller Type</description>
+        </register>
+        <register name="GICD_IIDR" size="4" access="RW">
+            <gui_name language="en">GICD_IIDR</gui_name>
+            <description language="en">Distributor Implementer ID</description>
+        </register>
+        <register name="GICD_IGROUPR0" size="4" access="RW">
+            <gui_name language="en">GICD_IGROUPR0</gui_name>
+            <description language="en">Interrupt Security 0</description>
+        </register>
+        <register name="GICD_IGROUPR1" size="4" access="RW">
+            <gui_name language="en">GICD_IGROUPR1</gui_name>
+            <description language="en">Interrupt Security 1</description>
+        </register>
+        <register name="GICD_IGROUPR2" size="4" access="RW">
+            <gui_name language="en">GICD_IGROUPR2</gui_name>
+            <description language="en">Interrupt Security 2</description>
+        </register>
+        <register name="GICD_ISENABLER0" size="4" access="RW">
+            <gui_name language="en">GICD_ISENABLER0</gui_name>
+            <description language="en">Interrupt Enable Set Register 0</description>
+        </register>
+        <register name="GICD_ISENABLER1" size="4" access="RW">
+            <gui_name language="en">GICD_ISENABLER1</gui_name>
+            <description language="en">Interrupt Enable Set Register 1</description>
+        </register>
+        <register name="GICD_ISENABLER2" size="4" access="RW">
+            <gui_name language="en">GICD_ISENABLER2</gui_name>
+            <description language="en">Interrupt Enable Set Register 2</description>
+        </register>
+        <register name="GICD_ICENABLER0" size="4" access="RW">
+            <gui_name language="en">GICD_ICENABLER0</gui_name>
+            <description language="en">Interrupt Enable Clear Register 0</description>
+        </register>
+        <register name="GICD_ICENABLER1" size="4" access="RW">
+            <gui_name language="en">GICD_ICENABLER1</gui_name>
+            <description language="en">Interrupt Enable Clear Register 1</description>
+        </register>
+        <register name="GICD_ICENABLER2" size="4" access="RW">
+            <gui_name language="en">GICD_ICENABLER2</gui_name>
+            <description language="en">Interrupt Enable Clear Register 2</description>
+        </register>
+        <register name="GICD_ISPENDR0" size="4" access="RW">
+            <gui_name language="en">GICD_ISPENDR0</gui_name>
+            <description language="en">Interrupt Pending Set Register 0</description>
+        </register>
+        <register name="GICD_ISPENDR1" size="4" access="RW">
+            <gui_name language="en">GICD_ISPENDR1</gui_name>
+            <description language="en">Interrupt Pending Set Register 1</description>
+        </register>
+        <register name="GICD_ISPENDR2" size="4" access="RW">
+            <gui_name language="en">GICD_ISPENDR2</gui_name>
+            <description language="en">Interrupt Pending Set Register 2</description>
+        </register>
+        <register name="GICD_ICPENDR0" size="4" access="RW">
+            <gui_name language="en">GICD_ICPENDR0</gui_name>
+            <description language="en">Interrupt Pending Clear Register 0</description>
+        </register>
+        <register name="GICD_ICPENDR1" size="4" access="RW">
+            <gui_name language="en">GICD_ICPENDR1</gui_name>
+            <description language="en">Interrupt Pending Clear Register 1</description>
+        </register>
+        <register name="GICD_ICPENDR2" size="4" access="RW">
+            <gui_name language="en">GICD_ICPENDR2</gui_name>
+            <description language="en">Interrupt Pending Clear Register 2</description>
+        </register>
+        <register name="GICD_ISACTIVER0" size="4" access="RW">
+            <gui_name language="en">GICD_ISACTIVER0</gui_name>
+            <description language="en">Interrupt Set-Active Registers 0</description>
+        </register>
+        <register name="GICD_ISACTIVER1" size="4" access="RW">
+            <gui_name language="en">GICD_ISACTIVER1</gui_name>
+            <description language="en">Interrupt Set-Active Registers 1</description>
+        </register>
+        <register name="GICD_ISACTIVER2" size="4" access="RW">
+            <gui_name language="en">GICD_ISACTIVER2</gui_name>
+            <description language="en">Interrupt Set-Active Registers 2</description>
+        </register>
+        <register name="GICD_ICACTIVER0" size="4" access="RW">
+            <gui_name language="en">GICD_ICACTIVER0</gui_name>
+            <description language="en">Interrupt Clear-Active Registers 0</description>
+        </register>
+        <register name="GICD_ICACTIVER1" size="4" access="RW">
+            <gui_name language="en">GICD_ICACTIVER1</gui_name>
+            <description language="en">Interrupt Clear-Active Registers 1</description>
+        </register>
+        <register name="GICD_ICACTIVER2" size="4" access="RW">
+            <gui_name language="en">GICD_ICACTIVER2</gui_name>
+            <description language="en">Interrupt Clear-Active Registers 2</description>
+        </register>
+        <register name="GICD_IPRIORITYR0" size="4" access="RW">
+            <gui_name language="en">GICD_IPRIORITYR0</gui_name>
+            <description language="en">Interrupt Priority 0</description>
+        </register>
+        <register name="GICD_IPRIORITYR1" size="4" access="RW">
+            <gui_name language="en">GICD_IPRIORITYR1</gui_name>
+            <description language="en">Interrupt Priority 1</description>
+        </register>
+        <register name="GICD_IPRIORITYR2" size="4" access="RW">
+            <gui_name language="en">GICD_IPRIORITYR2</gui_name>
+            <description language="en">Interrupt Priority 2</description>
+        </register>
+        <register name="GICD_IPRIORITYR3" size="4" access="RW">
+            <gui_name language="en">GICD_IPRIORITYR3</gui_name>
+            <description language="en">Interrupt Priority 3</description>
+        </register>
+        <register name="GICD_IPRIORITYR4" size="4" access="RW">
+            <gui_name language="en">GICD_IPRIORITYR4</gui_name>
+            <description language="en">Interrupt Priority 4</description>
+        </register>
+        <register name="GICD_IPRIORITYR5" size="4" access="RW">
+            <gui_name language="en">GICD_IPRIORITYR5</gui_name>
+            <description language="en">Interrupt Priority 5</description>
+        </register>
+        <register name="GICD_IPRIORITYR6" size="4" access="RW">
+            <gui_name language="en">GICD_IPRIORITYR6</gui_name>
+            <description language="en">Interrupt Priority 6</description>
+        </register>
+        <register name="GICD_IPRIORITYR7" size="4" access="RW">
+            <gui_name language="en">GICD_IPRIORITYR7</gui_name>
+            <description language="en">Interrupt Priority 7</description>
+        </register>
+        <register name="GICD_IPRIORITYR8" size="4" access="RW">
+            <gui_name language="en">GICD_IPRIORITYR8</gui_name>
+            <description language="en">Interrupt Priority 8</description>
+        </register>
+        <register name="GICD_IPRIORITYR9" size="4" access="RW">
+            <gui_name language="en">GICD_IPRIORITYR9</gui_name>
+            <description language="en">Interrupt Priority 9</description>
+        </register>
+        <register name="GICD_IPRIORITYR10" size="4" access="RW">
+            <gui_name language="en">GICD_IPRIORITYR10</gui_name>
+            <description language="en">Interrupt Priority 10</description>
+        </register>
+        <register name="GICD_IPRIORITYR11" size="4" access="RW">
+            <gui_name language="en">GICD_IPRIORITYR11</gui_name>
+            <description language="en">Interrupt Priority 11</description>
+        </register>
+        <register name="GICD_IPRIORITYR12" size="4" access="RW">
+            <gui_name language="en">GICD_IPRIORITYR12</gui_name>
+            <description language="en">Interrupt Priority 12</description>
+        </register>
+        <register name="GICD_IPRIORITYR13" size="4" access="RW">
+            <gui_name language="en">GICD_IPRIORITYR13</gui_name>
+            <description language="en">Interrupt Priority 13</description>
+        </register>
+        <register name="GICD_IPRIORITYR14" size="4" access="RW">
+            <gui_name language="en">GICD_IPRIORITYR14</gui_name>
+            <description language="en">Interrupt Priority 14</description>
+        </register>
+        <register name="GICD_IPRIORITYR15" size="4" access="RW">
+            <gui_name language="en">GICD_IPRIORITYR15</gui_name>
+            <description language="en">Interrupt Priority 15</description>
+        </register>
+        <register name="GICD_IPRIORITYR16" size="4" access="RW">
+            <gui_name language="en">GICD_IPRIORITYR16</gui_name>
+            <description language="en">Interrupt Priority 16</description>
+        </register>
+        <register name="GICD_IPRIORITYR17" size="4" access="RW">
+            <gui_name language="en">GICD_IPRIORITYR17</gui_name>
+            <description language="en">Interrupt Priority 17</description>
+        </register>
+        <register name="GICD_IPRIORITYR18" size="4" access="RW">
+            <gui_name language="en">GICD_IPRIORITYR18</gui_name>
+            <description language="en">Interrupt Priority 18</description>
+        </register>
+        <register name="GICD_IPRIORITYR19" size="4" access="RW">
+            <gui_name language="en">GICD_IPRIORITYR19</gui_name>
+            <description language="en">Interrupt Priority 19</description>
+        </register>
+        <register name="GICD_IPRIORITYR20" size="4" access="RW">
+            <gui_name language="en">GICD_IPRIORITYR20</gui_name>
+            <description language="en">Interrupt Priority 20</description>
+        </register>
+        <register name="GICD_IPRIORITYR21" size="4" access="RW">
+            <gui_name language="en">GICD_IPRIORITYR21</gui_name>
+            <description language="en">Interrupt Priority 21</description>
+        </register>
+        <register name="GICD_IPRIORITYR22" size="4" access="RW">
+            <gui_name language="en">GICD_IPRIORITYR22</gui_name>
+            <description language="en">Interrupt Priority 22</description>
+        </register>
+        <register name="GICD_IPRIORITYR23" size="4" access="RW">
+            <gui_name language="en">GICD_IPRIORITYR23</gui_name>
+            <description language="en">Interrupt Priority 23</description>
+        </register>
+        <register name="GICD_ITARGETSR0" size="4" access="RW">
+            <gui_name language="en">GICD_ITARGETSR0</gui_name>
+            <description language="en">Interrupt Target 0</description>
+        </register>
+        <register name="GICD_ITARGETSR1" size="4" access="RW">
+            <gui_name language="en">GICD_ITARGETSR1</gui_name>
+            <description language="en">Interrupt Target 1</description>
+        </register>
+        <register name="GICD_ITARGETSR2" size="4" access="RW">
+            <gui_name language="en">GICD_ITARGETSR2</gui_name>
+            <description language="en">Interrupt Target 2</description>
+        </register>
+        <register name="GICD_ITARGETSR3" size="4" access="RW">
+            <gui_name language="en">GICD_ITARGETSR3</gui_name>
+            <description language="en">Interrupt Target 3</description>
+        </register>
+        <register name="GICD_ITARGETSR4" size="4" access="RW">
+            <gui_name language="en">GICD_ITARGETSR4</gui_name>
+            <description language="en">Interrupt Target 4</description>
+        </register>
+        <register name="GICD_ITARGETSR5" size="4" access="RW">
+            <gui_name language="en">GICD_ITARGETSR5</gui_name>
+            <description language="en">Interrupt Target 5</description>
+        </register>
+        <register name="GICD_ITARGETSR6" size="4" access="RW">
+            <gui_name language="en">GICD_ITARGETSR6</gui_name>
+            <description language="en">Interrupt Target 6</description>
+        </register>
+        <register name="GICD_ITARGETSR7" size="4" access="RW">
+            <gui_name language="en">GICD_ITARGETSR7</gui_name>
+            <description language="en">Interrupt Target 7</description>
+        </register>
+        <register name="GICD_ITARGETSR8" size="4" access="RW">
+            <gui_name language="en">GICD_ITARGETSR8</gui_name>
+            <description language="en">Interrupt Target 8</description>
+        </register>
+        <register name="GICD_ITARGETSR9" size="4" access="RW">
+            <gui_name language="en">GICD_ITARGETSR9</gui_name>
+            <description language="en">Interrupt Target 9</description>
+        </register>
+        <register name="GICD_ITARGETSR10" size="4" access="RW">
+            <gui_name language="en">GICD_ITARGETSR10</gui_name>
+            <description language="en">Interrupt Target 10</description>
+        </register>
+        <register name="GICD_ITARGETSR11" size="4" access="RW">
+            <gui_name language="en">GICD_ITARGETSR11</gui_name>
+            <description language="en">Interrupt Target 11</description>
+        </register>
+        <register name="GICD_ITARGETSR12" size="4" access="RW">
+            <gui_name language="en">GICD_ITARGETSR12</gui_name>
+            <description language="en">Interrupt Target 12</description>
+        </register>
+        <register name="GICD_ITARGETSR13" size="4" access="RW">
+            <gui_name language="en">GICD_ITARGETSR13</gui_name>
+            <description language="en">Interrupt Target 13</description>
+        </register>
+        <register name="GICD_ITARGETSR14" size="4" access="RW">
+            <gui_name language="en">GICD_ITARGETSR14</gui_name>
+            <description language="en">Interrupt Target 14</description>
+        </register>
+        <register name="GICD_ITARGETSR15" size="4" access="RW">
+            <gui_name language="en">GICD_ITARGETSR15</gui_name>
+            <description language="en">Interrupt Target 15</description>
+        </register>
+        <register name="GICD_ITARGETSR16" size="4" access="RW">
+            <gui_name language="en">GICD_ITARGETSR16</gui_name>
+            <description language="en">Interrupt Target 16</description>
+        </register>
+        <register name="GICD_ITARGETSR17" size="4" access="RW">
+            <gui_name language="en">GICD_ITARGETSR17</gui_name>
+            <description language="en">Interrupt Target 17</description>
+        </register>
+        <register name="GICD_ITARGETSR18" size="4" access="RW">
+            <gui_name language="en">GICD_ITARGETSR18</gui_name>
+            <description language="en">Interrupt Target 18</description>
+        </register>
+        <register name="GICD_ITARGETSR19" size="4" access="RW">
+            <gui_name language="en">GICD_ITARGETSR19</gui_name>
+            <description language="en">Interrupt Target 19</description>
+        </register>
+        <register name="GICD_ITARGETSR20" size="4" access="RW">
+            <gui_name language="en">GICD_ITARGETSR20</gui_name>
+            <description language="en">Interrupt Target 20</description>
+        </register>
+        <register name="GICD_ITARGETSR21" size="4" access="RW">
+            <gui_name language="en">GICD_ITARGETSR21</gui_name>
+            <description language="en">Interrupt Target 21</description>
+        </register>
+        <register name="GICD_ITARGETSR22" size="4" access="RW">
+            <gui_name language="en">GICD_ITARGETSR22</gui_name>
+            <description language="en">Interrupt Target 22</description>
+        </register>
+        <register name="GICD_ITARGETSR23" size="4" access="RW">
+            <gui_name language="en">GICD_ITARGETSR23</gui_name>
+            <description language="en">Interrupt Target 23</description>
+        </register>
+        <register name="GICD_ICFGR0" size="4" access="RW">
+            <gui_name language="en">GICD_ICFGR0</gui_name>
+            <description language="en">Interrupt Configuration 0</description>
+        </register>
+        <register name="GICD_ICFGR1" size="4" access="RW">
+            <gui_name language="en">GICD_ICFGR1</gui_name>
+            <description language="en">Interrupt Configuration 1</description>
+        </register>
+        <register name="GICD_ICFGR2" size="4" access="RW">
+            <gui_name language="en">GICD_ICFGR2</gui_name>
+            <description language="en">Interrupt Configuration 2</description>
+        </register>
+        <register name="GICD_ICFGR3" size="4" access="RW">
+            <gui_name language="en">GICD_ICFGR3</gui_name>
+            <description language="en">Interrupt Configuration 3</description>
+        </register>
+        <register name="GICD_ICFGR4" size="4" access="RW">
+            <gui_name language="en">GICD_ICFGR4</gui_name>
+            <description language="en">Interrupt Configuration 4</description>
+        </register>
+        <register name="GICD_ICFGR5" size="4" access="RW">
+            <gui_name language="en">GICD_ICFGR5</gui_name>
+            <description language="en">Interrupt Configuration 5</description>
+        </register>
+        <register name="GICD_SGIR" size="4" access="RW">
+            <gui_name language="en">GICD_SGIR</gui_name>
+            <description language="en">Software Generated Interrupt Register</description>
+        </register>
+        <register name="GICD_CPENDSGIR0" size="4" access="RW">
+            <gui_name language="en">GICD_CPENDSGIR0</gui_name>
+            <description language="en">SGI Clear Pending Register 0</description>
+        </register>
+        <register name="GICD_CPENDSGIR1" size="4" access="RW">
+            <gui_name language="en">GICD_CPENDSGIR1</gui_name>
+            <description language="en">SGI Clear Pending Register 1</description>
+        </register>
+        <register name="GICD_CPENDSGIR2" size="4" access="RW">
+            <gui_name language="en">GICD_CPENDSGIR2</gui_name>
+            <description language="en">SGI Clear Pending Register 2</description>
+        </register>
+        <register name="GICD_CPENDSGIR3" size="4" access="RW">
+            <gui_name language="en">GICD_CPENDSGIR3</gui_name>
+            <description language="en">SGI Clear Pending Register 3</description>
+        </register>
+        <register name="GICD_SPENDSGIR0" size="4" access="RW">
+            <gui_name language="en">GICD_SPENDSGIR0</gui_name>
+            <description language="en">SGI Set Pending Register 0</description>
+        </register>
+        <register name="GICD_SPENDSGIR1" size="4" access="RW">
+            <gui_name language="en">GICD_SPENDSGIR1</gui_name>
+            <description language="en">SGI Set Pending Register 1</description>
+        </register>
+        <register name="GICD_SPENDSGIR2" size="4" access="RW">
+            <gui_name language="en">GICD_SPENDSGIR2</gui_name>
+            <description language="en">SGI Set Pending Register 2</description>
+        </register>
+        <register name="GICD_SPENDSGIR3" size="4" access="RW">
+            <gui_name language="en">GICD_SPENDSGIR3</gui_name>
+            <description language="en">SGI Set Pending Register 3</description>
+        </register>
+        <register name="GICD_PIDR0" size="4" access="RW">
+            <gui_name language="en">GICD_PIDR0</gui_name>
+            <description language="en">Peripheral ID 0</description>
+        </register>
+        <register name="GICD_PIDR1" size="4" access="RW">
+            <gui_name language="en">GICD_PIDR1</gui_name>
+            <description language="en">Peripheral ID 1</description>
+        </register>
+        <register name="GICD_PIDR2" size="4" access="RW">
+            <gui_name language="en">GICD_PIDR2</gui_name>
+            <description language="en">Peripheral ID 2</description>
+        </register>
+        <register name="GICD_PIDR3" size="4" access="RW">
+            <gui_name language="en">GICD_PIDR3</gui_name>
+            <description language="en">Peripheral ID 3</description>
+        </register>
+        <register name="GICD_PIDR4" size="4" access="RW">
+            <gui_name language="en">GICD_PIDR4</gui_name>
+            <description language="en">Peripheral ID 4</description>
+        </register>
+        <register name="GICD_PIDR5" size="4" access="RW">
+            <gui_name language="en">GICD_PIDR5</gui_name>
+            <description language="en">Peripheral ID 5</description>
+        </register>
+        <register name="GICD_PIDR6" size="4" access="RW">
+            <gui_name language="en">GICD_PIDR6</gui_name>
+            <description language="en">Peripheral ID 6</description>
+        </register>
+        <register name="GICD_PIDR7" size="4" access="RW">
+            <gui_name language="en">GICD_PIDR7</gui_name>
+            <description language="en">Peripheral ID 7</description>
+        </register>
+        <register name="GICD_CIDR0" size="4" access="RW">
+            <gui_name language="en">GICD_CIDR0</gui_name>
+            <description language="en">PrimeCell ID 0</description>
+        </register>
+        <register name="GICD_CIDR1" size="4" access="RW">
+            <gui_name language="en">GICD_CIDR1</gui_name>
+            <description language="en">PrimeCell ID 1</description>
+        </register>
+        <register name="GICD_CIDR2" size="4" access="RW">
+            <gui_name language="en">GICD_CIDR2</gui_name>
+            <description language="en">PrimeCell ID 2</description>
+        </register>
+        <register name="GICD_CIDR3" size="4" access="RW">
+            <gui_name language="en">GICD_CIDR3</gui_name>
+            <description language="en">PrimeCell ID 3</description>
+        </register>
+    </register_group>
+</register_list>

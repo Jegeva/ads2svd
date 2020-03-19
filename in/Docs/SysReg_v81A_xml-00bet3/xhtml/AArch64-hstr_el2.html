@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>HSTR_EL2</title>
+    <link href="insn.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body><table align="center"><tr><td><div class="topbar"><a href="AArch32-regindex.html">AArch32 Registers</a></div></td><td><div class="topbar"><a href="AArch64-regindex.html">AArch64 Registers</a></div></td><td><div class="topbar"><a href="AArch32-sysindex.html">AArch32 Instructions</a></div></td><td><div class="topbar"><a href="AArch64-sysindex.html">AArch64 Instructions</a></div></td><td><div class="topbar"><a href="enc_index.html">Index by Encoding</a></div></td><td><div class="topbar"><a href="ext_alpha_index.html">External Registers</a></div></td><td><div class="topbar"><a href="ext_enc_index.html">External Registers by Offset</a></div></td><td><div class="topbar"><a href="func_index.html">Registers by Functional Group</a></div></td></tr></table><hr /><h1 class="register-section">HSTR_EL2, Hypervisor System Trap Register</h1><p>The HSTR_EL2 characteristics are:</p><h2>Purpose</h2>
+          <p>Controls trapping to Hyp mode of Non-secure accesses, at EL1 or lower in AArch32, to the System register in the coproc == <span class="binarynumber">1111</span> encoding space, by the CRn value used to access the register using MCR or MRC instruction. When the register is accessible using an MCRR or MRRC instruction, this is the CRm value used to access the register.</p>
+        <p>This 
+        register
+       is part of the Virtualization registers functional group.</p><h2>Configuration</h2><p>AArch64 System register HSTR_EL2
+                is architecturally mapped to
+              AArch32 System register <a href="AArch32-hstr.html">HSTR</a>.
+          </p>
+          <p>If EL2 is not implemented, this register is <span class="arm-defined-word">RES0</span> from EL3.</p>
+        
+          <p>If no Exception level can use AArch32, then this register is <span class="arm-defined-word">RES0</span></p>
+        <p>
+                RW fields in this register reset to architecturally <span class="arm-defined-word">UNKNOWN</span> values.
+              </p><h2>Attributes</h2>
+          <p>HSTR_EL2 is a 32-bit register.</p>
+        <h2>Field descriptions</h2><p>The HSTR_EL2 bit assignments are:</p><table class="regdiagram"><thead><tr><td>31</td><td>30</td><td>29</td><td>28</td><td>27</td><td>26</td><td>25</td><td>24</td><td>23</td><td>22</td><td>21</td><td>20</td><td>19</td><td>18</td><td>17</td><td>16</td><td>15</td><td>14</td><td>13</td><td>12</td><td>11</td><td>10</td><td>9</td><td>8</td><td>7</td><td>6</td><td>5</td><td>4</td><td>3</td><td>2</td><td>1</td><td>0</td></tr></thead><tbody><tr class="firstrow"><td class="l">0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td class="r">0</td><td class="lr" colspan="1"><a href="#T">T15</a></td><td class="lr" colspan="1"><a href="#T">T14</a></td><td class="lr" colspan="1"><a href="#T">T13</a></td><td class="lr" colspan="1"><a href="#T">T12</a></td><td class="lr" colspan="1"><a href="#T">T11</a></td><td class="lr" colspan="1"><a href="#T">T10</a></td><td class="lr" colspan="1"><a href="#T">T9</a></td><td class="lr" colspan="1"><a href="#T">T8</a></td><td class="lr" colspan="1"><a href="#T">T7</a></td><td class="lr" colspan="1"><a href="#T">T6</a></td><td class="lr" colspan="1"><a href="#T">T5</a></td><td class="lr" colspan="1"><a href="#T">T4</a></td><td class="lr" colspan="1"><a href="#T">T3</a></td><td class="lr" colspan="1"><a href="#T">T2</a></td><td class="lr" colspan="1"><a href="#T">T1</a></td><td class="lr" colspan="1"><a href="#T">T0</a></td></tr></tbody></table><h4 id="0">
+                Bits [31:16]
+              </h4>
+              <p>Reserved, <span class="arm-defined-word">RES0</span>.</p>
+            <h4 id="T">T&lt;n&gt;, bit [n], for n = 0 to 15</h4>
+              <p>Fields T14 and T4 are <span class="arm-defined-word">RES0</span>.</p>
+            
+              <p>The remaining fields control whether Non-secure EL0 and EL1 accesses, using MCR, MRC, MCRR, and MRRC instructions, to the System registers in the coproc == <span class="binarynumber">1111</span> encoding space are trapped to Hyp mode:</p>
+            <table class="valuetable"><tr><th>T&lt;n&gt;</th><th>Meaning</th></tr><tr><td class="bitfield">0</td><td>
+                  <p>This control has no effect on Non-secure EL0 or EL1 accesses to System registers.</p>
+                </td></tr><tr><td class="bitfield">1</td><td>
+                  <p>Any Non-secure EL1 MCR, MRC access with coproc == <span class="binarynumber">1111</span> and CRn == &lt;n&gt; is trapped to Hyp mode if the access is not <span class="arm-defined-word">UNDEFINED</span> when the value of this field is 0.</p>
+                
+                  <p>Any Non-secure EL1 MCRR, MRRC access with coproc == <span class="binarynumber">1111</span> and CRm == &lt;n&gt; is trapped to Hyp mode if the access is not <span class="arm-defined-word">UNDEFINED</span> when the value of this field is 0.</p>
+                </td></tr></table>
+              <p>For example, when HSTR_EL2.T7 is 1:</p>
+            
+              <ul>
+                <li>
+                  Any 32-bit access from a Non-secure EL1 mode, using an MCR or MRC instruction with coproc set to <span class="binarynumber">1111</span> and &lt;CRn&gt; set to c7, and that is not <span class="arm-defined-word">UNDEFINED</span> when HSTR_EL2.T7 is 0, is trapped to Hyp mode.
+                </li>
+                <li>
+                  Any 64-bit access from a Non-secure EL1 mode, using an MCRR or MRRC instruction with coproc set to <span class="binarynumber">1111</span> and &lt;CRm&gt; set to c7, and that is not <span class="arm-defined-word">UNDEFINED</span> when HSTR_EL2.T7 is 0, is trapped to Hyp mode.
+                </li>
+              </ul>
+            
+              <p>When <span class="xref">ARMv8.1-VHE</span> is implemented, and the value of <a href="AArch64-hcr_el2.html">HCR_EL2</a>.{E2H, TGE} is {1, 1}, this field behaves as 0 for all purposes other than a direct read of the value of this bit.</p>
+            <div class="access_mechanisms"><h2>Accessing the HSTR_EL2</h2><div class="access_instructions"><div class="access_instruction"><p>This register can be read using MRS with the following syntax:</p><p class="asm-code">MRS  &lt;Xt&gt;, &lt;systemreg&gt;</p></div><div class="access_instruction"><p>This register can be written using MSR (register) with the following syntax:</p><p class="asm-code">MSR  &lt;systemreg&gt;, &lt;Xt&gt;</p></div><p>This syntax uses the following encoding in the System instruction encoding space:</p><table class="access_instructions"><tr><th rowspan="1">
+        &lt;systemreg&gt;
+      </th><th>op0</th><th>op1</th><th>CRn</th><th>CRm</th><th>op2</th></tr><tr><td>HSTR_EL2</td><td>11</td><td>100</td><td>0001</td><td>0001</td><td>011</td></tr></table></div><h3>Accessibility</h3><p>The register is accessible as follows:</p><table class="accessibility"><tr><th class="accessibility_control" colspan="3">
+            Control
+          </th><th colspan="4">
+          Accessibility
+        </th></tr><tr><th class="accessibility_control">E2H</th><th class="accessibility_control">TGE</th><th class="accessibility_control">NS</th><th>EL0</th><th>EL1</th><th>EL2</th><th>EL3</th></tr><tr><td class="accessibility_control">x</td><td class="accessibility_control">x</td><td class="accessibility_control">0</td><td>
+        -
+      </td><td>
+        -
+      </td><td>
+        n/a
+      </td><td>RW</td></tr><tr><td class="accessibility_control">0</td><td class="accessibility_control">0</td><td class="accessibility_control">1</td><td>
+        -
+      </td><td>
+        -
+      </td><td>RW</td><td>RW</td></tr><tr><td class="accessibility_control">0</td><td class="accessibility_control">1</td><td class="accessibility_control">1</td><td>
+        -
+      </td><td>
+        n/a
+      </td><td>RW</td><td>RW</td></tr><tr><td class="accessibility_control">1</td><td class="accessibility_control">0</td><td class="accessibility_control">1</td><td>
+        -
+      </td><td>
+        -
+      </td><td>RW</td><td>RW</td></tr><tr><td class="accessibility_control">1</td><td class="accessibility_control">1</td><td class="accessibility_control">1</td><td>
+        -
+      </td><td>
+        n/a
+      </td><td>RW</td><td>RW</td></tr></table><p><p>This table applies to all instructions that can access this register.</p></p></div><br /><br /><hr /><table align="center"><tr><td><div class="topbar"><a href="AArch32-regindex.html">AArch32 Registers</a></div></td><td><div class="topbar"><a href="AArch64-regindex.html">AArch64 Registers</a></div></td><td><div class="topbar"><a href="AArch32-sysindex.html">AArch32 Instructions</a></div></td><td><div class="topbar"><a href="AArch64-sysindex.html">AArch64 Instructions</a></div></td><td><div class="topbar"><a href="enc_index.html">Index by Encoding</a></div></td><td><div class="topbar"><a href="ext_alpha_index.html">External Registers</a></div></td><td><div class="topbar"><a href="ext_enc_index.html">External Registers by Offset</a></div></td><td><div class="topbar"><a href="func_index.html">Registers by Functional Group</a></div></td></tr></table><p class="versions">24/03/2017 16:41</p><p class="copyconf">Copyright © 2010-2017 ARM Limited or its affiliates. All rights reserved. This document is Confidential.</p></body>
+</html>

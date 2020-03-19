@@ -1,0 +1,518 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<register_list
+    name="CP15"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns="http://www.arm.com/core_reg"
+    xsi:schemaLocation="http://www.arm.com/core_reg ../../../Schemas/core_register_definition.xsd"
+    xmlns:tcf="http://com.arm.targetconfigurationeditor">
+    <register_group name="ID">
+        <gui_name language="en">ID</gui_name>
+        <description language="en">Identification</description>
+        <register access="RO" name="ID" size="4">
+            <gui_name language="en">Main ID</gui_name>
+            <alias_name>CP15_ID</alias_name>
+            <device_name type="rvi">CP15_ID</device_name>
+            <device_name type="cadi">CP15_ID</device_name>
+            <description language="en">Returns the device ID code that contains information about the processor</description>
+            <bitField conditional="false" name="Implementer">
+                <gui_name language="en">Implementer</gui_name>
+                <description language="en">Indicates the implementer of the processor</description>
+                <definition>[31:24]</definition>
+            </bitField>
+            <bitField conditional="false" name="Variant_number">
+                <gui_name language="en">Variant number</gui_name>
+                <description language="en">Indicates the variant number of the processor</description>
+                <definition>[23:20]</definition>
+            </bitField>
+            <bitField conditional="false" name="Architecture">
+                <gui_name language="en">Architecture</gui_name>
+                <description language="en">Indicates the architecture of the processor</description>
+                <definition>[19:16]</definition>
+            </bitField>
+            <bitField conditional="false" name="Primary_part_number">
+                <gui_name language="en">Primary part number</gui_name>
+                <description language="en">Indicates the primary part number of the processor</description>
+                <definition>[15:4]</definition>
+            </bitField>
+            <bitField conditional="false" name="Revision">
+                <gui_name language="en">Revision</gui_name>
+                <description language="en">Indicates the revision of the processor</description>
+                <definition>[3:0]</definition>
+            </bitField>
+        </register>
+        <register access="RO" name="ID_PFR0" size="4">
+            <gui_name language="en">Processor Feature Register 0</gui_name>
+            <alias_name>CP15_ID_PFR0</alias_name>
+            <device_name type="rvi">CP15_ID_PFR0</device_name>
+            <device_name type="cadi">CP15_ID_PFR0</device_name>
+            <description language="en">Provides information about the execution state support and programmer model for the processor</description>
+            <bitField conditional="false" name="State3" enumerationId="CP15_ID_PFR0_STATE3">
+                <gui_name language="en">State3</gui_name>
+                <description language="en">Indicates support for Thumb Execution Environment</description>
+                <definition>[15:12]</definition>
+            </bitField>
+            <bitField conditional="false" name="State2" enumerationId="CP15_ID_PFR0_STATE2">
+                <gui_name language="en">State2</gui_name>
+                <description language="en">Indicates support for Java extension interface</description>
+                <definition>[11:8]</definition>
+            </bitField>
+            <bitField conditional="false" name="State1" enumerationId="CP15_ID_PFR0_STATE1">
+                <gui_name language="en">State1</gui_name>
+                <description language="en">Indicates type of Thumb encoding that the processor supports</description>
+                <definition>[7:4]</definition>
+            </bitField>
+            <bitField conditional="false" name="State0" enumerationId="CP15_ID_PFR0_STATE0">
+                <gui_name language="en">State0</gui_name>
+                <description language="en">Indicates support for the ARM instruction set</description>
+                <definition>[3:0]</definition>
+            </bitField>
+        </register>
+        <register access="RO" name="ID_PFR1" size="4">
+            <gui_name language="en">Processor Feature Register 1</gui_name>
+            <alias_name>CP15_ID_PFR1</alias_name>
+            <device_name type="rvi">CP15_ID_PFR1</device_name>
+            <device_name type="cadi">CP15_ID_PFR1</device_name>
+            <description language="en">Provides information about the execution state support and programmer model for the processor</description>
+            <bitField conditional="false" name="Microcontroller_programmer_model" enumerationId="GENERIC_NOT_SUPPORTED_SUPPORTED">
+                <gui_name language="en">Microcontroller programmer's model</gui_name>
+                <description language="en">Indicates support for the ARM microcontroller programmer’s model</description>
+                <definition>[11:8]</definition>
+            </bitField>
+            <bitField conditional="false" name="Security_extension" enumerationId="CP15_ID_PFR1_SEC_EXTENSION">
+                <gui_name language="en">Security extension</gui_name>
+                <description language="en">Indicates support for Security Extensions Architecture</description>
+                <definition>[7:4]</definition>
+            </bitField>
+            <bitField conditional="false" name="Programmer_model" enumerationId="CP15_ID_PFR1_PMODEL">
+                <gui_name language="en">Programmer's model</gui_name>
+                <description language="en">Indicates support for standard ARMv4 programmer model</description>
+                <definition>[3:0]</definition>
+            </bitField>
+        </register>
+        <register access="RO" name="ID_DFR0" size="4">
+            <gui_name language="en">Debug Feature Register 0</gui_name>
+            <alias_name>CP15_ID_DFR0</alias_name>
+            <device_name type="rvi">CP15_ID_DFR0</device_name>
+            <device_name type="cadi">CP15_ID_DFR0</device_name>
+            <description language="en">Provides information about the debug system for the processor</description>
+            <bitField conditional="false" name="CDM_MMC" enumerationId="GENERIC_NOT_SUPPORTED_SUPPORTED">
+                <gui_name language="en">CDM-MMC</gui_name>
+                <description language="en">Indicates the type of memory-mapped microcontroller debug model that the processor supports</description>
+                <definition>[23:20]</definition>
+            </bitField>
+            <bitField conditional="false" name="CDM_MMT" enumerationId="GENERIC_NOT_SUPPORTED_SUPPORTED">
+                <gui_name language="en">CDM-MMT</gui_name>
+                <description language="en">Indicates the type of memory-mapped Trace debug model that the processor supports</description>
+                <definition>[19:16]</definition>
+            </bitField>
+            <bitField conditional="false" name="CDM_MMCT" enumerationId="GENERIC_NOT_SUPPORTED_SUPPORTED">
+                <gui_name language="en">CDM-MMCT</gui_name>
+                <description language="en">Indicates the type of coprocessor-based Trace debug model that the processor supports</description>
+                <definition>[15:12]</definition>
+            </bitField>
+            <bitField conditional="false" name="CDM_MM" enumerationId="CP15_ID_DFR0_CDM_MM">
+                <gui_name language="en">CDM-MM</gui_name>
+                <description language="en">Indicates the type of embedded processor debug model that the processor supports</description>
+                <definition>[11:8]</definition>
+            </bitField>
+            <bitField conditional="false" name="SDM" enumerationId="GENERIC_NOT_SUPPORTED_SUPPORTED">
+                <gui_name language="en">SDM</gui_name>
+                <description language="en">Indicates the type of secure debug model that the processor supports</description>
+                <definition>[7:4]</definition>
+            </bitField>
+            <bitField conditional="false" name="CDM_C" enumerationId="GENERIC_NOT_SUPPORTED_SUPPORTED">
+                <gui_name language="en">CDM-C</gui_name>
+                <description language="en">Indicates the type of applications processor debug model that the processor supports</description>
+                <definition>[3:0]</definition>
+            </bitField>
+        </register>
+        <register access="RO" name="ID_AFR0" size="4">
+            <gui_name language="en">Auxiliary Feature Register 0</gui_name>
+            <alias_name>CP15_ID_AFR0</alias_name>
+            <device_name type="rvi">CP15_ID_AFR0</device_name>
+            <device_name type="cadi">CP15_ID_AFR0</device_name>
+            <description language="en">Provides additional information about the features of the processor</description>
+        </register>
+        <register access="RO" name="ID_MMFR0" size="4">
+            <gui_name language="en">Memory Model Feature Register 0</gui_name>
+            <alias_name>CP15_ID_MMFR0</alias_name>
+            <device_name type="rvi">CP15_ID_MMFR0</device_name>
+            <device_name type="cadi">CP15_ID_MMFR0</device_name>
+            <description language="en">Indicates what memory and system architectures the processor supports</description>
+            <bitField conditional="false" name="FCSE" enumerationId="GENERIC_NOT_SUPPORTED_SUPPORTED">
+                <gui_name language="en">FCSE</gui_name>
+                <description language="en">Indicates support for Fast Context Switch Extension</description>
+                <definition>[27:24]</definition>
+            </bitField>
+            <bitField conditional="false" name="AUXCON" enumerationId="CP15_ID_MMFR0_AUXCON">
+                <gui_name language="en">AUXCON</gui_name>
+                <description language="en">Indicates support for the auxiliary registers</description>
+                <definition>[23:20]</definition>
+            </bitField>
+            <bitField conditional="false" name="TCM" enumerationId="CP15_ID_MMFR0_TCM">
+                <gui_name language="en">TCM</gui_name>
+                <description language="en">Indicates support for TCM and associated DMA</description>
+                <definition>[19:16]</definition>
+            </bitField>
+            <bitField conditional="false" name="OUT_SHARE" enumerationId="GENERIC_NOT_SUPPORTED_SUPPORTED">
+                <gui_name language="en">OUT_SHARE</gui_name>
+                <description language="en">Indicates support for cache coherency with DMA agent, shared memory</description>
+                <definition>[15:12]</definition>
+            </bitField>
+            <bitField conditional="false" name="CACHE_CO" enumerationId="GENERIC_NOT_SUPPORTED_SUPPORTED">
+                <gui_name language="en">CACHE_CO</gui_name>
+                <description language="en">Indicates support for cache coherency support with CPU agent, shared memory</description>
+                <definition>[11:8]</definition>
+            </bitField>
+            <bitField conditional="false" name="PMSA" enumerationId="CP15_ID_MMFR0_PMSA">
+                <gui_name language="en">PMSA</gui_name>
+                <description language="en">Indicates support for Physical Memory System Architecture</description>
+                <definition>[7:4]</definition>
+            </bitField>
+            <bitField conditional="false" name="VMSA" enumerationId="CP15_ID_MMFR0_VMSA">
+                <gui_name language="en">VMSA</gui_name>
+                <description language="en">Indicates support for Virtual Memory System Architecture</description>
+                <definition>[3:0]</definition>
+            </bitField>
+        </register>
+        <register access="RO" name="ID_MMFR1" size="4">
+            <gui_name language="en">Memory Model Feature Register 1</gui_name>
+            <alias_name>CP15_ID_MMFR1</alias_name>
+            <device_name type="rvi">CP15_ID_MMFR1</device_name>
+            <device_name type="cadi">CP15_ID_MMFR1</device_name>
+            <description language="en">Indicates what level one memory operations the processor supports</description>
+            <bitField conditional="false" name="BRANCH_PRED" enumerationId="GENERIC_NOT_SUPPORTED_SUPPORTED">
+                <gui_name language="en">BRANCH_PRED</gui_name>
+                <description language="en">Indicates support for branch target buffer</description>
+                <definition>[31:28]</definition>
+            </bitField>
+            <bitField conditional="false" name="L1_TEST_CLEAN" enumerationId="GENERIC_NOT_SUPPORTED_SUPPORTED">
+                <gui_name language="en">L1_TEST_CLEAN</gui_name>
+                <description language="en">Indicates support for test and clean operations on data cache, Harvard or unified architecture</description>
+                <definition>[27:24]</definition>
+            </bitField>
+            <bitField conditional="false" name="L1_CMO_U" enumerationId="GENERIC_NOT_SUPPORTED_SUPPORTED">
+                <gui_name language="en">L1_CMO_U</gui_name>
+                <description language="en">Indicates support for L1 cache, entire cache maintenance operations, unified architecture</description>
+                <definition>[23:20]</definition>
+            </bitField>
+            <bitField conditional="false" name="L1_CMO_H" enumerationId="CP15_ID_MMFR1_L1_CMO_H">
+                <gui_name language="en">L1_CMO_H</gui_name>
+                <description language="en">Indicates support for L1 cache, entire cache maintenance operations, Harvard architecture</description>
+                <definition>[19:16]</definition>
+            </bitField>
+            <bitField conditional="false" name="L1_CLMO_SW_U" enumerationId="GENERIC_NOT_SUPPORTED_SUPPORTED">
+                <gui_name language="en">L1_CLMO_SW_U</gui_name>
+                <description language="en">Indicates support for L1 cache line maintenance operations by Set and Way, unified architecture</description>
+                <definition>[15:12]</definition>
+            </bitField>
+            <bitField conditional="false" name="L1_CLMO_SW_H" enumerationId="CP15_ID_MMFR1_L1_CLMO_SW_H">
+                <gui_name language="en">L1_CLMO_SW_H</gui_name>
+                <description language="en">Indicates support for L1 cache line maintenance operations by Set and Way, Harvard architecture</description>
+                <definition>[11:8]</definition>
+            </bitField>
+            <bitField conditional="false" name="L1_CLMO_MVA_U" enumerationId="GENERIC_NOT_SUPPORTED_SUPPORTED">
+                <gui_name language="en">L1_CLMO_MVA_U</gui_name>
+                <description language="en">Indicates support for L1 cache line maintenance operations by VA, unified architecture</description>
+                <definition>[7:4]</definition>
+            </bitField>
+            <bitField conditional="false" name="L1_CLMO_MVA_H" enumerationId="CP15_ID_MMFR1_L1_CLMO_MVA_H">
+                <gui_name language="en">L1_CLMO_MVA_H</gui_name>
+                <description language="en">Indicates support for L1 cache line maintenance operations by VA, Harvard architecture</description>
+                <definition>[3:0]</definition>
+            </bitField>
+        </register>
+        <register access="RO" name="ID_MMFR2" size="4">
+            <gui_name language="en">Memory Model Feature Register 2</gui_name>
+            <alias_name>CP15_ID_MMFR2</alias_name>
+            <device_name type="rvi">CP15_ID_MMFR2</device_name>
+            <device_name type="cadi">CP15_ID_MMFR2</device_name>
+            <description language="en">Indicates what memory barrier and cache range operations the processor supports</description>
+            <bitField conditional="false" name="HAF" enumerationId="GENERIC_NOT_SUPPORTED_SUPPORTED">
+                <gui_name language="en">HAF</gui_name>
+                <description language="en">Indicates support for a Hardware access flag</description>
+                <definition>[31:28]</definition>
+            </bitField>
+            <bitField conditional="false" name="WFI" enumerationId="GENERIC_NOT_SUPPORTED_SUPPORTED">
+                <gui_name language="en">WFI</gui_name>
+                <description language="en">Indicates support for Wait-For-Interrupt stalling</description>
+                <definition>[27:24]</definition>
+            </bitField>
+            <bitField conditional="false" name="MB" enumerationId="CP15_ID_MMFR2_MB">
+                <gui_name language="en">MB</gui_name>
+                <description language="en">Indicates support for memory barrier operations</description>
+                <definition>[23:20]</definition>
+            </bitField>
+            <bitField conditional="false" name="TLB_MO_U">
+                <gui_name language="en">TLB_MO_U</gui_name>
+                <description language="en">Indicates support for TLB maintenance operations, unified architecture</description>
+                <definition>[19:16]</definition>
+            </bitField>
+            <bitField conditional="false" name="TLB_MO_H">
+                <gui_name language="en">TLB_MO_H</gui_name>
+                <description language="en">Indicates support for TLB maintenance operations, Harvard architecture</description>
+                <definition>[15:12]</definition>
+            </bitField>
+            <bitField conditional="false" name="L1_CMRO_H" enumerationId="CP15_ID_MMFR2_L1_CMRO_H">
+                <gui_name language="en">L1_CMRO_H</gui_name>
+                <description language="en">Indicates support for cache maintenance range operations, Harvard architecture</description>
+                <definition>[11:8]</definition>
+            </bitField>
+            <bitField conditional="false" name="L1_BPCO" enumerationId="GENERIC_NOT_SUPPORTED_SUPPORTED">
+                <gui_name language="en">L1_BPCO</gui_name>
+                <description language="en">Indicates support for background prefetch cache range operations, Harvard architecture</description>
+                <definition>[7:4]</definition>
+            </bitField>
+            <bitField conditional="false" name="L1_FPCO" enumerationId="GENERIC_NOT_SUPPORTED_SUPPORTED">
+                <gui_name language="en">L1_FPCO</gui_name>
+                <description language="en">Indicates support for foreground prefetch cache range operations, Harvard architecture</description>
+                <definition>[3:0]</definition>
+            </bitField>
+        </register>
+        <register access="RO" name="ID_MMFR3" size="4">
+            <gui_name language="en">Memory Model Feature Register 3</gui_name>
+            <alias_name>CP15_ID_MMFR3</alias_name>
+            <device_name type="rvi">CP15_ID_MMFR3</device_name>
+            <device_name type="cadi">CP15_ID_MMFR3</device_name>
+            <description language="en">Indicates what level-2 cache memory operations the processor supports</description>
+            <bitField conditional="false" name="L2CMO_VA" enumerationId="GENERIC_NOT_SUPPORTED_SUPPORTED">
+                <gui_name language="en">L2CMO_VA</gui_name>
+                <description language="en">Indicates support for level two cache line maintenance operations with VA, unified architecture</description>
+                <definition>[7:4]</definition>
+            </bitField>
+            <bitField conditional="false" name="L2CMO_PA" enumerationId="GENERIC_NOT_SUPPORTED_SUPPORTED">
+                <gui_name language="en">L2CMO_PA</gui_name>
+                <description language="en">Indicates support for level two cache line maintenance operations with PA, unified architecture</description>
+                <definition>[3:0]</definition>
+            </bitField>
+        </register>
+        <register access="RO" name="ID_ISAR0" size="4">
+            <gui_name language="en">Instruction Set Attributes Register 0</gui_name>
+            <alias_name>CP15_ID_ISAR0</alias_name>
+            <device_name type="rvi">CP15_ID_ISAR0</device_name>
+            <device_name type="cadi">CP15_ID_ISAR0</device_name>
+            <description language="en">Provides information about the instruction set that the processor supports beyond the basic set</description>
+            <bitField conditional="false" name="DIVIDE" enumerationId="GENERIC_NOT_SUPPORTED_SUPPORTED">
+                <gui_name language="en">DIVIDE</gui_name>
+                <description language="en">Indicates support for divide instructions</description>
+                <definition>[27:24]</definition>
+            </bitField>
+            <bitField conditional="false" name="DEBUG" enumerationId="CP15_ID_ISAR0_DEBUG">
+                <gui_name language="en">DEBUG</gui_name>
+                <description language="en">Indicates support for debug instructions</description>
+                <definition>[23:20]</definition>
+            </bitField>
+            <bitField conditional="false" name="COPROCESSOR" enumerationId="CP15_ID_ISAR0_COPROCESSOR">
+                <gui_name language="en">COPROCESSOR</gui_name>
+                <description language="en">Indicates support for coprocessor instructions</description>
+                <definition>[19:16]</definition>
+            </bitField>
+            <bitField conditional="false" name="CMP_BRANCH" enumerationId="CP15_ID_ISAR0_CMP_BRANCH">
+                <gui_name language="en">CMP_BRANCH</gui_name>
+                <description language="en">Indicates support for combined compare and branch instructions</description>
+                <definition>[15:12]</definition>
+            </bitField>
+            <bitField conditional="false" name="BITFIELD" enumerationId="CP15_ID_ISAR0_BITFIELD">
+                <gui_name language="en">BITFIELD</gui_name>
+                <description language="en">Indicates support for bitfield instructions</description>
+                <definition>[11:8]</definition>
+            </bitField>
+            <bitField conditional="false" name="BIT_COUNT" enumerationId="CP15_ID_ISAR0_BIT_COUNT">
+                <gui_name language="en">BIT_COUNT</gui_name>
+                <description language="en">Indicates support for bit counting instructions</description>
+                <definition>[7:4]</definition>
+            </bitField>
+            <bitField conditional="false" name="ATOMIC" enumerationId="CP15_ID_ISAR0_ATOMIC">
+                <gui_name language="en">ATOMIC</gui_name>
+                <description language="en">Indicates support for atomic load and store instructions</description>
+                <definition>[3:0]</definition>
+            </bitField>
+        </register>
+        <register access="RO" name="ID_ISAR1" size="4">
+            <gui_name language="en">Instruction Set Attributes Register 1</gui_name>
+            <alias_name>CP15_ID_ISAR1</alias_name>
+            <device_name type="rvi">CP15_ID_ISAR1</device_name>
+            <device_name type="cadi">CP15_ID_ISAR1</device_name>
+            <description language="en">Provides information about the instruction set that the processor supports beyond the basic set</description>
+            <bitField conditional="false" name="JAZELLE" enumerationId="CP15_ID_ISAR1_JAZELLE">
+                <gui_name language="en">JAZELLE</gui_name>
+                <description language="en">Indicates support for Jazelle instructions</description>
+                <definition>[31:28]</definition>
+            </bitField>
+            <bitField conditional="false" name="INTERWORKING" enumerationId="CP15_ID_ISAR1_INTERWORKING">
+                <gui_name language="en">INTERWORKING</gui_name>
+                <description language="en">Indicates support for interworking instructions</description>
+                <definition>[27:24]</definition>
+            </bitField>
+            <bitField conditional="false" name="IMMEDIATE" enumerationId="GENERIC_NOT_SUPPORTED_SUPPORTED">
+                <gui_name language="en">IMMEDIATE</gui_name>
+                <description language="en">Indicates support for immediate instructions</description>
+                <definition>[23:20]</definition>
+            </bitField>
+            <bitField conditional="false" name="IF_THEN" enumerationId="GENERIC_NOT_SUPPORTED_SUPPORTED">
+                <gui_name language="en">IF_THEN</gui_name>
+                <description language="en">Indicates support for if then instructions</description>
+                <definition>[19:16]</definition>
+            </bitField>
+            <bitField conditional="false" name="EXTEND" enumerationId="CP15_ID_ISAR1_EXTEND">
+                <gui_name language="en">EXTEND</gui_name>
+                <description language="en">Indicates support for sign or zero extend instructions</description>
+                <definition>[15:12]</definition>
+            </bitField>
+            <bitField conditional="false" name="EXCEPTION2" enumerationId="CP15_ID_ISAR1_EXCEPTION2">
+                <gui_name language="en">EXCEPTION2</gui_name>
+                <description language="en">Indicates support for exception 2 instructions</description>
+                <definition>[11:8]</definition>
+            </bitField>
+            <bitField conditional="false" name="EXCEPTION1" enumerationId="CP15_ID_ISAR1_EXCEPTION1">
+                <gui_name language="en">EXCEPTION1</gui_name>
+                <description language="en">Indicates support for exception 1 instructions</description>
+                <definition>[7:4]</definition>
+            </bitField>
+            <bitField conditional="false" name="ENDIAN" enumerationId="CP15_ID_ISAR1_ENDIAN">
+                <gui_name language="en">ENDIAN</gui_name>
+                <description language="en">Indicates support for endianness control instructions</description>
+                <definition>[3:0]</definition>
+            </bitField>
+        </register>
+        <register access="RO" name="ID_ISAR2" size="4">
+            <gui_name language="en">Instruction Set Attributes Register 2</gui_name>
+            <alias_name>CP15_ID_ISAR2</alias_name>
+            <device_name type="rvi">CP15_ID_ISAR2</device_name>
+            <device_name type="cadi">CP15_ID_ISAR2</device_name>
+            <description language="en">Provides information about the instruction set that the processor supports beyond the basic set</description>
+            <bitField conditional="false" name="REVERSAL" enumerationId="CP15_ID_ISAR2_REVERSAL">
+                <gui_name language="en">REVERSAL</gui_name>
+                <description language="en">Indicates support for reversal instructions</description>
+                <definition>[31:28]</definition>
+            </bitField>
+            <bitField conditional="false" name="PSR" enumerationId="CP15_ID_ISAR2_PSR">
+                <gui_name language="en">PSR</gui_name>
+                <description language="en">Indicates support for PSR instructions</description>
+                <definition>[27:24]</definition>
+            </bitField>
+            <bitField conditional="false" name="U_MULTIPLY" enumerationId="CP15_ID_ISAR2_U_MULTIPLY">
+                <gui_name language="en">U_MULTIPLY</gui_name>
+                <description language="en">Indicates support for advanced unsigned multiply instructions</description>
+                <definition>[23:20]</definition>
+            </bitField>
+            <bitField conditional="false" name="S_MULTIPLY" enumerationId="CP15_ID_ISAR2_S_MULTIPLY">
+                <gui_name language="en">S_MULTIPLY</gui_name>
+                <description language="en">Indicates support for advanced signed multiply instructions</description>
+                <definition>[19:16]</definition>
+            </bitField>
+            <bitField conditional="false" name="MULTIPLY" enumerationId="CP15_ID_ISAR2_MULTIPLY">
+                <gui_name language="en">MULTIPLY</gui_name>
+                <description language="en">Indicates support for multiply instructions</description>
+                <definition>[15:12]</definition>
+            </bitField>
+            <bitField conditional="false" name="INTERRUPT" enumerationId="CP15_ID_ISAR2_INTERRUPT">
+                <gui_name language="en">INTERRUPT</gui_name>
+                <description language="en">Indicates support for multi-access interruptible instructions</description>
+                <definition>[11:8]</definition>
+            </bitField>
+            <bitField conditional="false" name="MEM_HINT" enumerationId="CP15_ID_ISAR2_MEM_HINT">
+                <gui_name language="en">MEM_HINT</gui_name>
+                <description language="en">Indicates support for memory hint instructions</description>
+                <definition>[7:4]</definition>
+            </bitField>
+            <bitField conditional="false" name="LOAD_STORE" enumerationId="CP15_ID_ISAR2_LOAD_STORE">
+                <gui_name language="en">LOAD_STORE</gui_name>
+                <description language="en">Indicates support for additional load and store instructions</description>
+                <definition>[3:0]</definition>
+            </bitField>
+        </register>
+        <register access="RO" name="ID_ISAR3" size="4">
+            <gui_name language="en">Instruction Set Attributes Register 3</gui_name>
+            <alias_name>CP15_ID_ISAR3</alias_name>
+            <device_name type="rvi">CP15_ID_ISAR3</device_name>
+            <device_name type="cadi">CP15_ID_ISAR3</device_name>
+            <description language="en">Provides information about the instruction set that the processor supports beyond the basic set</description>
+            <bitField conditional="false" name="THUMBEE" enumerationId="GENERIC_NOT_SUPPORTED_SUPPORTED">
+                <gui_name language="en">THUMBEE</gui_name>
+                <description language="en">Indicates support for Thumb-2 Execution Environment extensions</description>
+                <definition>[31:28]</definition>
+            </bitField>
+            <bitField conditional="false" name="TRUE_NOP" enumerationId="CP15_ID_ISAR3_TRUE_NOP">
+                <gui_name language="en">TRUE_NOP</gui_name>
+                <description language="en">Indicates support for true NOP instructions</description>
+                <definition>[27:24]</definition>
+            </bitField>
+            <bitField conditional="false" name="THUMB_COPY" enumerationId="CP15_ID_ISAR3_THUMB_COPY">
+                <gui_name language="en">THUMB_COPY</gui_name>
+                <description language="en">Indicates support for Thumb copy instructions</description>
+                <definition>[23:20]</definition>
+            </bitField>
+            <bitField conditional="false" name="TAB_BRANCH" enumerationId="CP15_ID_ISAR3_TAB_BRANCH">
+                <gui_name language="en">TAB_BRANCH</gui_name>
+                <description language="en">Indicates support for table branch instructions</description>
+                <definition>[19:16]</definition>
+            </bitField>
+            <bitField conditional="false" name="SYNCH" enumerationId="CP15_ID_ISAR3_SYNCH">
+                <gui_name language="en">SYNCH</gui_name>
+                <description language="en">Indicates support for synchronization primitive instructions</description>
+                <definition>[15:12]</definition>
+            </bitField>
+            <bitField conditional="false" name="SVC" enumerationId="GENERIC_NOT_SUPPORTED_SUPPORTED">
+                <gui_name language="en">SVC</gui_name>
+                <description language="en">Indicates support for SVC (formerly SWI) instructions</description>
+                <definition>[11:8]</definition>
+            </bitField>
+            <bitField conditional="false" name="SIMD" enumerationId="CP15_ID_ISAR3_SIMD">
+                <gui_name language="en">SIMD</gui_name>
+                <description language="en">Indicates support for Single Instruction Multiple Data (SIMD) instructions</description>
+                <definition>[7:4]</definition>
+            </bitField>
+            <bitField conditional="false" name="SATURATE" enumerationId="CP15_ID_ISAR3_SATURATE">
+                <gui_name language="en">SATURATE</gui_name>
+                <description language="en">Indicates support for saturate instructions</description>
+                <definition>[3:0]</definition>
+            </bitField>
+        </register>
+        <register access="RO" name="ID_ISAR4" size="4">
+            <gui_name language="en">Instruction Set Attributes Register 4</gui_name>
+            <alias_name>CP15_ID_ISAR4</alias_name>
+            <device_name type="rvi">CP15_ID_ISAR4</device_name>
+            <device_name type="cadi">CP15_ID_ISAR4</device_name>
+            <description language="en">Provides information about the instruction set that the processor supports beyond the basic set</description>
+            <bitField conditional="false" name="SPI">
+                <gui_name language="en">SPI</gui_name>
+                <description language="en">Indicates fractional support for synchronization primitive instructions</description>
+                <definition>[23:20]</definition>
+            </bitField>
+            <bitField conditional="false" name="BI" enumerationId="CP15_ID_ISAR4_BARRIER">
+                <gui_name language="en">BI</gui_name>
+                <description language="en">Indicates support for barrier instructions</description>
+                <definition>[19:16]</definition>
+            </bitField>
+            <bitField conditional="false" name="SMC" enumerationId="GENERIC_NOT_SUPPORTED_SUPPORTED">
+                <gui_name language="en">SMC</gui_name>
+                <description language="en">Indicates support for Secure Monitor Call (SMC) (formerly SMI) instructions</description>
+                <definition>[15:12]</definition>
+            </bitField>
+            <bitField conditional="false" name="WRITE_BACK" enumerationId="CP15_ID_ISAR4_WRITE_BACK">
+                <gui_name language="en">WRITE_BACK</gui_name>
+                <description language="en">Indicates support for write-back instructions</description>
+                <definition>[11:8]</definition>
+            </bitField>
+            <bitField conditional="false" name="WITH_SHIFT" enumerationId="CP15_ID_ISAR4_WITH_SHIFT">
+                <gui_name language="en">WITH_SHIFT</gui_name>
+                <description language="en">Indicates support for with-shift instructions</description>
+                <definition>[7:4]</definition>
+            </bitField>
+            <bitField conditional="false" name="UNPRIV" enumerationId="CP15_ID_ISAR4_UNPRIV">
+                <gui_name language="en">UNPRIV</gui_name>
+                <description language="en">Indicates support for Unprivileged instructions</description>
+                <definition>[3:0]</definition>
+            </bitField>
+        </register>
+        <register access="RO" name="ID_ISAR5" size="4">
+            <gui_name language="en">Instruction Set Attributes Register 5</gui_name>
+            <alias_name>CP15_ID_ISAR5</alias_name>
+            <device_name type="rvi">CP15_ID_ISAR5</device_name>
+            <device_name type="cadi">CP15_ID_ISAR5</device_name>
+            <description language="en">Provide additional information about the properties of the processor</description>
+        </register>
+    </register_group>
+</register_list>
+

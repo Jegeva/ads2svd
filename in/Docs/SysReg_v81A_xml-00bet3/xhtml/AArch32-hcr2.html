@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>HCR2</title>
+    <link href="insn.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body><table align="center"><tr><td><div class="topbar"><a href="AArch32-regindex.html">AArch32 Registers</a></div></td><td><div class="topbar"><a href="AArch64-regindex.html">AArch64 Registers</a></div></td><td><div class="topbar"><a href="AArch32-sysindex.html">AArch32 Instructions</a></div></td><td><div class="topbar"><a href="AArch64-sysindex.html">AArch64 Instructions</a></div></td><td><div class="topbar"><a href="enc_index.html">Index by Encoding</a></div></td><td><div class="topbar"><a href="ext_alpha_index.html">External Registers</a></div></td><td><div class="topbar"><a href="ext_enc_index.html">External Registers by Offset</a></div></td><td><div class="topbar"><a href="func_index.html">Registers by Functional Group</a></div></td></tr></table><hr /><h1 class="register-section">HCR2, Hyp Configuration Register 2</h1><p>The HCR2 characteristics are:</p><h2>Purpose</h2>
+          <p>Provides additional configuration controls for virtualization.</p>
+        <p>This 
+        register
+       is part of the Virtualization registers functional group.</p><h2>Configuration</h2><p>AArch32 System register HCR2
+                is architecturally mapped to
+              AArch64 System register <a href="AArch64-hcr_el2.html">HCR_EL2[63:32]
+        </a>.
+          </p>
+          <p>If EL2 is not implemented, this register is <span class="arm-defined-word">RES0</span> from EL3.</p>
+        <p>
+                Some or all RW fields of this register have defined reset values. 
+                
+        These apply
+      
+                only if the PE resets into EL2
+                
+                  with EL2 using AArch32,
+                
+                or into
+                
+                    EL3 with EL3 using AArch32.
+                  
+                Otherwise,
+                
+                RW fields in this register reset to architecturally <span class="arm-defined-word">UNKNOWN</span> values.
+              </p><h2>Attributes</h2>
+          <p>HCR2 is a 32-bit register.</p>
+        <h2>Field descriptions</h2><p>The HCR2 bit assignments are:</p><table class="regdiagram"><thead><tr><td>31</td><td>30</td><td>29</td><td>28</td><td>27</td><td>26</td><td>25</td><td>24</td><td>23</td><td>22</td><td>21</td><td>20</td><td>19</td><td>18</td><td>17</td><td>16</td><td>15</td><td>14</td><td>13</td><td>12</td><td>11</td><td>10</td><td>9</td><td>8</td><td>7</td><td>6</td><td>5</td><td>4</td><td>3</td><td>2</td><td>1</td><td>0</td></tr></thead><tbody><tr class="firstrow"><td class="l">0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td class="r">0</td><td class="lr" colspan="1"><a href="#MIOCNCE">MIOCNCE</a></td><td class="lr" colspan="1"><a href="#TEA">TEA</a></td><td class="lr" colspan="1"><a href="#TERR">TERR</a></td><td class="l">0</td><td class="r">0</td><td class="lr" colspan="1"><a href="#ID">ID</a></td><td class="lr" colspan="1"><a href="#CD">CD</a></td></tr></tbody></table><h4 id="0">
+                Bits [31:7]
+              </h4>
+              <p>Reserved, <span class="arm-defined-word">RES0</span>.</p>
+            <h4 id="MIOCNCE">MIOCNCE, bit [6]
+              </h4>
+              <p>Mismatched Inner/Outer Cacheable Non-Coherency Enable, for the Non-secure PL1&amp;0 translation regime.</p>
+            <table class="valuetable"><tr><th>MIOCNCE</th><th>Meaning</th></tr><tr><td class="bitfield">0</td><td>
+                  <p>For the Non-secure PL1&amp;0 translation regime, for permitted accesses to a memory location that use a common definition of the Shareability and Cacheability of the location, there must be no loss of coherency if the Inner Cacheability attribute for those accesses differs from the Outer Cacheability attribute.</p>
+                </td></tr><tr><td class="bitfield">1</td><td>
+                  <p>For the Non-secure PL1&amp;0 translation regime, for permitted accesses to a memory location that use a common definition of the Shareability and Cacheability of the location, there might be a loss of coherency if the Inner Cacheability attribute for those accesses differs from the Outer Cacheability attribute.</p>
+                </td></tr></table>
+              <p>For more information see <span class="xref">'Mismatched memory attributes' in the ARMv8 ARM, section E2 (The AArch32 Application Level Memory Model)</span>.</p>
+            
+              <p>The value of this field has no effect on translation regimes other than the Non-secure PL1&amp;0 translation regime.</p>
+            
+              <p>This field can be implemented as RAZ/WI.</p>
+            <p>When this register has an architecturally-defined reset value, if this field is implemented as an RW field, it resets to a value that is architecturally <span class="arm-defined-word">UNKNOWN</span>.</p><h4 id="TEA">TEA, bit [5]
+              </h4>
+              <p>Route synchronous External Abort exceptions to EL2. If the RAS Extension is implemented, the possible values of this bit are:</p>
+            <table class="valuetable"><tr><th>TEA</th><th>Meaning</th></tr><tr><td class="bitfield">0</td><td>
+                  <p>Does not route synchronous External Abort exceptions from Non-secure EL0 and EL1 to EL2.</p>
+                </td></tr><tr><td class="bitfield">1</td><td>
+                  <p>Route synchronous External Abort exceptions from Non-secure EL0 and EL1 to EL2, if not routed to EL3.</p>
+                </td></tr></table>
+              <p>This bit resets to zero on a Warm reset into AArch32 state.</p>
+            
+              <p>When the RAS Extension is not implemented, this field is <span class="arm-defined-word">RES0</span>.</p>
+            <p>When this register has an architecturally-defined reset value, this field resets to <span class="binarynumber">0</span>.</p><h4 id="TERR">TERR, bit [4]
+              </h4>
+              <p>Trap Error record accesses. If the RAS Extension is implemented, the possible values of this bit are:</p>
+            <table class="valuetable"><tr><th>TERR</th><th>Meaning</th></tr><tr><td class="bitfield">0</td><td>
+                  <p>Does not trap accesses to error record registers from Non-secure EL1 to EL2.</p>
+                </td></tr><tr><td class="bitfield">1</td><td>
+                  <p>Accesses to the ER* registers from Non-secure EL1 generate a Trap exception to EL2.</p>
+                </td></tr></table>
+              <p>This bit resets to zero on a Warm reset into AArch32 state.</p>
+            
+              <p>When the RAS Extension is not implemented, this field is <span class="arm-defined-word">RES0</span>.</p>
+            <p>When this register has an architecturally-defined reset value, this field resets to <span class="binarynumber">0</span>.</p><h4 id="0">
+                Bits [3:2]
+              </h4>
+              <p>Reserved, <span class="arm-defined-word">RES0</span>.</p>
+            <h4 id="ID">ID, bit [1]
+              </h4>
+              <p>Stage 2 Instruction access cacheability disable. For the Non-secure PL1&amp;0 translation regime, when <a href="AArch32-hcr.html">HCR</a>.VM==1, this control forces all stage 2 translations for instruction accesses to Normal memory to be Non-cacheable.</p>
+            <table class="valuetable"><tr><th>ID</th><th>Meaning</th></tr><tr><td class="bitfield">0</td><td>
+                  <p>This control has no effect on stage 2 of the Non-secure PL1&amp;0 translation regime.</p>
+                </td></tr><tr><td class="bitfield">1</td><td>
+                  <p>For the Non-secure PL1&amp;0 translation regime, forces all stage 2 translations for instruction accesses to Normal memory to be Non-cacheable.</p>
+                </td></tr></table>
+              <p>This bit has no effect on the EL2 translation regime.</p>
+            <p>When this register has an architecturally-defined reset value, this field resets to <span class="binarynumber">0</span>.</p><h4 id="CD">CD, bit [0]
+              </h4>
+              <p>Stage 2 Data access cacheability disable. When <a href="AArch32-hcr.html">HCR</a>.VM==1, this forces all stage 2 translations for data accesses and translation table walks to Normal memory to be Non-cacheable for the Non-secure PL1&amp;0 translation regime.</p>
+            <table class="valuetable"><tr><th>CD</th><th>Meaning</th></tr><tr><td class="bitfield">0</td><td>
+                  <p>This control has no effect on stage 2 of the Non-secure PL1&amp;0 translation regime for data accesses and translation table walks.</p>
+                </td></tr><tr><td class="bitfield">1</td><td>
+                  <p>For the Non-secure PL1&amp;0 translation regime, forces all stage 2 translations for data accesses and translation table walks to Normal memory to be Non-cacheable.</p>
+                </td></tr></table>
+              <p>This bit has no effect on the EL2 translation regime.</p>
+            <p>When this register has an architecturally-defined reset value, this field resets to <span class="binarynumber">0</span>.</p><div class="access_mechanisms"><h2>Accessing the HCR2</h2><div class="access_instructions"><div class="access_instruction"><p>This register can be read using MRC with the following syntax:</p><p class="asm-code">MRC  &lt;syntax&gt;</p></div><div class="access_instruction"><p>This register can be written using MCR with the following syntax:</p><p class="asm-code">MCR  &lt;syntax&gt;</p></div><p>This syntax uses the following encoding in the System instruction encoding space:</p><table class="access_instructions"><tr><th rowspan="1">
+        &lt;syntax&gt;
+      </th><th>opc1</th><th>opc2</th><th>CRn</th><th>coproc</th><th>CRm</th></tr><tr><td>p15, 4, 
+                &lt;Rt&gt;, c1, c1, 4</td><td>100</td><td>100</td><td>0001</td><td>1111</td><td>0001</td></tr></table><ul></ul></div><h3>Accessibility</h3><p>The register is accessible as follows:</p><table class="accessibility"><tr><th class="accessibility_control" colspan="3">
+            Control
+          </th><th colspan="4">
+          Accessibility
+        </th></tr><tr><th class="accessibility_control">E2H</th><th class="accessibility_control">TGE</th><th class="accessibility_control">NS</th><th>EL0</th><th>EL1</th><th>EL2</th><th>EL3</th></tr><tr><td class="accessibility_control">x</td><td class="accessibility_control">x</td><td class="accessibility_control">0</td><td>
+        -
+      </td><td>
+        -
+      </td><td>
+        n/a
+      </td><td>
+        -
+      </td></tr><tr><td class="accessibility_control">x</td><td class="accessibility_control">0</td><td class="accessibility_control">1</td><td>
+        -
+      </td><td>
+        -
+      </td><td>RW</td><td>RW</td></tr><tr><td class="accessibility_control">x</td><td class="accessibility_control">1</td><td class="accessibility_control">1</td><td>
+        -
+      </td><td>
+        n/a
+      </td><td>RW</td><td>RW</td></tr></table><p><p>This table applies to all instructions that can access this register.</p></p><h3>Traps and enables</h3><div class="traps_intro"><p>For a description of the prioritization of any generated exceptions, see section G1.11.2 (Exception priority order) in the <i>ARM<sup>®</sup> Architecture Reference Manual, ARMv8, for ARMv8-A architecture profile</i> for exceptions taken to AArch32 state, and section D1.13.2 (Synchronous exception prioritization) for exceptions taken to AArch64 state. Subject to the prioritization rules, the following traps and enables are applicable when 
+            accessing this register.
+          </p></div><p>
+        When
+        EL2 is implemented and is using AArch64
+        and
+        SCR_EL3.NS==1 &amp;&amp; HCR_EL2.E2H==0
+        :
+      </p><ul><li><p>If <a href="AArch64-hstr_el2.html">HSTR_EL2</a>.T1==1, Non-secure accesses to this register from EL1 are trapped to EL2.</p></li></ul><p>
+        When
+        EL2 is implemented and is using AArch64
+        and
+        SCR_EL3.NS==1 &amp;&amp; HCR_EL2.E2H==1 &amp;&amp; HCR_EL2.TGE==0
+        :
+      </p><ul><li><p>If <a href="AArch64-hstr_el2.html">HSTR_EL2</a>.T1==1, Non-secure accesses to this register from EL1 are trapped to EL2.</p></li></ul><p>
+        When
+        EL2 is implemented and is using AArch32
+        and
+        SCR_EL3.NS==1
+        :
+      </p><ul><li><p>If <a href="AArch32-hstr.html">HSTR</a>.T1==1, Non-secure accesses to this register from EL1 are trapped to Hyp mode.</p></li></ul></div><br /><br /><hr /><table align="center"><tr><td><div class="topbar"><a href="AArch32-regindex.html">AArch32 Registers</a></div></td><td><div class="topbar"><a href="AArch64-regindex.html">AArch64 Registers</a></div></td><td><div class="topbar"><a href="AArch32-sysindex.html">AArch32 Instructions</a></div></td><td><div class="topbar"><a href="AArch64-sysindex.html">AArch64 Instructions</a></div></td><td><div class="topbar"><a href="enc_index.html">Index by Encoding</a></div></td><td><div class="topbar"><a href="ext_alpha_index.html">External Registers</a></div></td><td><div class="topbar"><a href="ext_enc_index.html">External Registers by Offset</a></div></td><td><div class="topbar"><a href="func_index.html">Registers by Functional Group</a></div></td></tr></table><p class="versions">24/03/2017 16:41</p><p class="copyconf">Copyright © 2010-2017 ARM Limited or its affiliates. All rights reserved. This document is Confidential.</p></body>
+</html>

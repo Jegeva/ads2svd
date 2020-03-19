@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>ICH_MISR</title>
+    <link href="insn.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body><table align="center"><tr><td><div class="topbar"><a href="AArch32-regindex.html">AArch32 Registers</a></div></td><td><div class="topbar"><a href="AArch64-regindex.html">AArch64 Registers</a></div></td><td><div class="topbar"><a href="AArch32-sysindex.html">AArch32 Instructions</a></div></td><td><div class="topbar"><a href="AArch64-sysindex.html">AArch64 Instructions</a></div></td><td><div class="topbar"><a href="enc_index.html">Index by Encoding</a></div></td><td><div class="topbar"><a href="ext_alpha_index.html">External Registers</a></div></td><td><div class="topbar"><a href="ext_enc_index.html">External Registers by Offset</a></div></td><td><div class="topbar"><a href="func_index.html">Registers by Functional Group</a></div></td></tr></table><hr /><h1 class="register-section">ICH_MISR, Interrupt Controller Maintenance Interrupt State Register</h1><p>The ICH_MISR characteristics are:</p><h2>Purpose</h2>
+          <p>Indicates which maintenance interrupts are asserted.</p>
+        <p>This 
+        register
+       is part of:</p><ul><li>The GIC system registers functional group.</li><li>The Virtualization registers functional group.</li><li>The GIC host interface control registers functional group.</li></ul><h2>Configuration</h2><p>AArch32 System register ICH_MISR
+                is architecturally mapped to
+              AArch64 System register <a href="AArch64-ich_misr_el2.html">ICH_MISR_EL2</a>.
+          </p>
+          <p>If EL2 is not implemented, this register is <span class="arm-defined-word">RES0</span> from EL3.</p>
+        <h2>Attributes</h2>
+          <p>ICH_MISR is a 32-bit register.</p>
+        <h2>Field descriptions</h2><p>The ICH_MISR bit assignments are:</p><table class="regdiagram"><thead><tr><td>31</td><td>30</td><td>29</td><td>28</td><td>27</td><td>26</td><td>25</td><td>24</td><td>23</td><td>22</td><td>21</td><td>20</td><td>19</td><td>18</td><td>17</td><td>16</td><td>15</td><td>14</td><td>13</td><td>12</td><td>11</td><td>10</td><td>9</td><td>8</td><td>7</td><td>6</td><td>5</td><td>4</td><td>3</td><td>2</td><td>1</td><td>0</td></tr></thead><tbody><tr class="firstrow"><td class="l">0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td class="r">0</td><td class="lr" colspan="1"><a href="#VGrp1D">VGrp1D</a></td><td class="lr" colspan="1"><a href="#VGrp1E">VGrp1E</a></td><td class="lr" colspan="1"><a href="#VGrp0D">VGrp0D</a></td><td class="lr" colspan="1"><a href="#VGrp0E">VGrp0E</a></td><td class="lr" colspan="1"><a href="#NP">NP</a></td><td class="lr" colspan="1"><a href="#LRENP">LRENP</a></td><td class="lr" colspan="1"><a href="#U">U</a></td><td class="lr" colspan="1"><a href="#EOI">EOI</a></td></tr></tbody></table><h4 id="0">
+                Bits [31:8]
+              </h4>
+              <p>Reserved, <span class="arm-defined-word">RES0</span>.</p>
+            <h4 id="VGrp1D">VGrp1D, bit [7]
+              </h4>
+              <p>vPE Group 1 Disabled.</p>
+            <table class="valuetable"><tr><th>VGrp1D</th><th>Meaning</th></tr><tr><td class="bitfield">0</td><td>
+                  <p>vPE Group 1 Disabled maintenance interrupt not asserted.</p>
+                </td></tr><tr><td class="bitfield">1</td><td>
+                  <p>vPE Group 1 Disabled maintenance interrupt asserted.</p>
+                </td></tr></table>
+              <p>This maintenance interrupt is asserted when <a href="AArch32-ich_hcr.html">ICH_HCR</a>.VGrp1DIE==1 and <a href="AArch32-ich_vmcr.html">ICH_VMCR</a>.VMGrp1En==0.</p>
+            <p>When this register has an architecturally-defined reset value, this field resets to <span class="binarynumber">0</span>.</p><h4 id="VGrp1E">VGrp1E, bit [6]
+              </h4>
+              <p>vPE Group 1 Enabled.</p>
+            <table class="valuetable"><tr><th>VGrp1E</th><th>Meaning</th></tr><tr><td class="bitfield">0</td><td>
+                  <p>vPE Group 1 Enabled maintenance interrupt not asserted.</p>
+                </td></tr><tr><td class="bitfield">1</td><td>
+                  <p>vPE Group 1 Enabled maintenance interrupt asserted.</p>
+                </td></tr></table>
+              <p>This maintenance interrupt is asserted when <a href="AArch32-ich_hcr.html">ICH_HCR</a>.VGrp1EIE==1 and <a href="AArch32-ich_vmcr.html">ICH_VMCR</a>.VMGrp1En==1.</p>
+            <p>When this register has an architecturally-defined reset value, this field resets to <span class="binarynumber">0</span>.</p><h4 id="VGrp0D">VGrp0D, bit [5]
+              </h4>
+              <p>vPE Group 0 Disabled.</p>
+            <table class="valuetable"><tr><th>VGrp0D</th><th>Meaning</th></tr><tr><td class="bitfield">0</td><td>
+                  <p>vPE Group 0 Disabled maintenance interrupt not asserted.</p>
+                </td></tr><tr><td class="bitfield">1</td><td>
+                  <p>vPE Group 0 Disabled maintenance interrupt asserted.</p>
+                </td></tr></table>
+              <p>This maintenance interrupt is asserted when <a href="AArch32-ich_hcr.html">ICH_HCR</a>.VGrp0DIE==1 and <a href="AArch32-ich_vmcr.html">ICH_VMCR</a>.VMGrp0En==0.</p>
+            <p>When this register has an architecturally-defined reset value, this field resets to <span class="binarynumber">0</span>.</p><h4 id="VGrp0E">VGrp0E, bit [4]
+              </h4>
+              <p>vPE Group 0 Enabled.</p>
+            <table class="valuetable"><tr><th>VGrp0E</th><th>Meaning</th></tr><tr><td class="bitfield">0</td><td>
+                  <p>vPE Group 0 Enabled maintenance interrupt not asserted.</p>
+                </td></tr><tr><td class="bitfield">1</td><td>
+                  <p>vPE Group 0 Enabled maintenance interrupt asserted.</p>
+                </td></tr></table>
+              <p>This maintenance interrupt is asserted when <a href="AArch32-ich_hcr.html">ICH_HCR</a>.VGrp0EIE==1 and <a href="AArch32-ich_vmcr.html">ICH_VMCR</a>.VMGrp0En==1.</p>
+            <p>When this register has an architecturally-defined reset value, this field resets to <span class="binarynumber">0</span>.</p><h4 id="NP">NP, bit [3]
+              </h4>
+              <p>No Pending.</p>
+            <table class="valuetable"><tr><th>NP</th><th>Meaning</th></tr><tr><td class="bitfield">0</td><td>
+                  <p>No Pending maintenance interrupt not asserted.</p>
+                </td></tr><tr><td class="bitfield">1</td><td>
+                  <p>No Pending maintenance interrupt asserted.</p>
+                </td></tr></table>
+              <p>This maintenance interrupt is asserted when <a href="AArch32-ich_hcr.html">ICH_HCR</a>.NPIE==1 and no List register is in pending state.</p>
+            <p>When this register has an architecturally-defined reset value, this field resets to <span class="binarynumber">0</span>.</p><h4 id="LRENP">LRENP, bit [2]
+              </h4>
+              <p>List Register Entry Not Present.</p>
+            <table class="valuetable"><tr><th>LRENP</th><th>Meaning</th></tr><tr><td class="bitfield">0</td><td>
+                  <p>List Register Entry Not Present maintenance interrupt not asserted.</p>
+                </td></tr><tr><td class="bitfield">1</td><td>
+                  <p>List Register Entry Not Present maintenance interrupt asserted.</p>
+                </td></tr></table>
+              <p>This maintenance interrupt is asserted when <a href="AArch32-ich_hcr.html">ICH_HCR</a>.LRENPIE==1 and <a href="AArch32-ich_hcr.html">ICH_HCR</a>.EOIcount is non-zero.</p>
+            <p>When this register has an architecturally-defined reset value, this field resets to <span class="binarynumber">0</span>.</p><h4 id="U">U, bit [1]
+              </h4>
+              <p>Underflow.</p>
+            <table class="valuetable"><tr><th>U</th><th>Meaning</th></tr><tr><td class="bitfield">0</td><td>
+                  <p>Underflow maintenance interrupt not asserted.</p>
+                </td></tr><tr><td class="bitfield">1</td><td>
+                  <p>Underflow maintenance interrupt asserted.</p>
+                </td></tr></table>
+              <p>This maintenance interrupt is asserted when <a href="AArch32-ich_hcr.html">ICH_HCR</a>.UIE==1 and zero or one of the List register entries are marked as a valid interrupt, that is, if the corresponding <a href="AArch32-ich_lrcn.html">ICH_LRC&lt;n&gt;</a>.State bits do not equal <span class="hexnumber">0x0</span>.</p>
+            <p>When this register has an architecturally-defined reset value, this field resets to <span class="binarynumber">0</span>.</p><h4 id="EOI">EOI, bit [0]
+              </h4>
+              <p>End Of Interrupt.</p>
+            <table class="valuetable"><tr><th>EOI</th><th>Meaning</th></tr><tr><td class="bitfield">0</td><td>
+                  <p>End Of Interrupt maintenance interrupt not asserted.</p>
+                </td></tr><tr><td class="bitfield">1</td><td>
+                  <p>End Of Interrupt maintenance interrupt asserted.</p>
+                </td></tr></table>
+              <p>This maintenance interrupt is asserted when at least one bit in <a href="AArch32-ich_eisr.html">ICH_EISR</a> is 1.</p>
+            <p>When this register has an architecturally-defined reset value, this field resets to <span class="binarynumber">0</span>.</p><div class="access_mechanisms"><h2>Accessing the ICH_MISR</h2><div class="access_instructions"><div class="access_instruction"><p>This register can be read using MRC with the following syntax:</p><p class="asm-code">MRC  &lt;syntax&gt;</p></div><p>This syntax uses the following encoding in the System instruction encoding space:</p><table class="access_instructions"><tr><th rowspan="1">
+        &lt;syntax&gt;
+      </th><th>opc1</th><th>opc2</th><th>CRn</th><th>coproc</th><th>CRm</th></tr><tr><td>p15, 4, 
+                &lt;Rt&gt;, c12, c11, 2</td><td>100</td><td>010</td><td>1100</td><td>1111</td><td>1011</td></tr></table><ul></ul></div><h3>Accessibility</h3><p>The register is accessible as follows:</p><table class="accessibility"><tr><th class="accessibility_control" colspan="2">
+            Control
+          </th><th colspan="4">
+          Accessibility
+        </th></tr><tr><th class="accessibility_control">TGE</th><th class="accessibility_control">NS</th><th>EL0</th><th>EL1</th><th>EL2</th><th>EL3</th></tr><tr><td class="accessibility_control">x</td><td class="accessibility_control">0</td><td>
+        -
+      </td><td>
+        -
+      </td><td>
+        n/a
+      </td><td>
+        -
+      </td></tr><tr><td class="accessibility_control">0</td><td class="accessibility_control">1</td><td>
+        -
+      </td><td>
+        -
+      </td><td>RO</td><td>RO</td></tr><tr><td class="accessibility_control">1</td><td class="accessibility_control">1</td><td>
+        -
+      </td><td>
+        n/a
+      </td><td>RO</td><td>RO</td></tr></table><p><p>This table applies to all instructions that can access this register.</p></p><h3>Traps and enables</h3><div class="traps_intro"><p>For a description of the prioritization of any generated exceptions, see section G1.11.2 (Exception priority order) in the <i>ARM<sup>®</sup> Architecture Reference Manual, ARMv8, for ARMv8-A architecture profile</i> for exceptions taken to AArch32 state, and section D1.13.2 (Synchronous exception prioritization) for exceptions taken to AArch64 state. Subject to the prioritization rules, the following traps and enables are applicable when 
+            accessing this register.
+          </p></div><p>
+            In both Security states, and not dependent on other configuration bits:
+          </p><ul><li><p>If <a href="AArch32-icc_hsre.html">ICC_HSRE</a>.SRE==0, read accesses to this register from EL2 are <span class="arm-defined-word">UNDEFINED</span>.</p></li><li><p>If <a href="AArch32-icc_msre.html">ICC_MSRE</a>.SRE==0, Non-secure read accesses to this register from EL3 are <span class="arm-defined-word">UNDEFINED</span>.</p></li></ul><p>
+        When
+        EL2 is implemented and is using AArch64
+        and
+        SCR_EL3.NS==1 &amp;&amp; .E2H==0
+        :
+      </p><ul><li><p>If <a href="AArch64-hstr_el2.html">HSTR_EL2</a>.T12==1, Non-secure accesses to this register from EL1 are trapped to EL2.</p></li></ul><p>
+        When
+        EL2 is implemented and is using AArch64
+        and
+        SCR_EL3.NS==1 &amp;&amp; .E2H==1 &amp;&amp; HCR_EL2.TGE==0
+        :
+      </p><ul><li><p>If <a href="AArch64-hstr_el2.html">HSTR_EL2</a>.T12==1, Non-secure accesses to this register from EL1 are trapped to EL2.</p></li></ul><p>
+        When
+        EL2 is implemented and is using AArch32
+        and
+        SCR_EL3.NS==1
+        :
+      </p><ul><li><p>If <a href="AArch32-hstr.html">HSTR</a>.T12==1, Non-secure accesses to this register from EL1 are trapped to Hyp mode.</p></li></ul></div><br /><br /><hr /><table align="center"><tr><td><div class="topbar"><a href="AArch32-regindex.html">AArch32 Registers</a></div></td><td><div class="topbar"><a href="AArch64-regindex.html">AArch64 Registers</a></div></td><td><div class="topbar"><a href="AArch32-sysindex.html">AArch32 Instructions</a></div></td><td><div class="topbar"><a href="AArch64-sysindex.html">AArch64 Instructions</a></div></td><td><div class="topbar"><a href="enc_index.html">Index by Encoding</a></div></td><td><div class="topbar"><a href="ext_alpha_index.html">External Registers</a></div></td><td><div class="topbar"><a href="ext_enc_index.html">External Registers by Offset</a></div></td><td><div class="topbar"><a href="func_index.html">Registers by Functional Group</a></div></td></tr></table><p class="versions">24/03/2017 16:41</p><p class="copyconf">Copyright © 2010-2017 ARM Limited or its affiliates. All rights reserved. This document is Confidential.</p></body>
+</html>

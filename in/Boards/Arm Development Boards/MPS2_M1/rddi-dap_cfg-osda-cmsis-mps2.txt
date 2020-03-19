@@ -1,0 +1,38 @@
+# RDDI-DAP CMSIS config file for rddi-dap-cmsis2.dll
+#
+# New .ini like format, # is comment
+#
+# Section names and data case sensitive.
+# 
+
+# section for the USB device info - used by DLL to identify the target device
+#
+# valid keys:-
+#  VENDOR -> optional - if omitted empty string will be used.
+#  PRODUCT -> required
+#  SERNUM -> optional - if omittted or set to '*' will connect to first device found matching 
+#              VENDOR, PRODUCT IDs.
+#
+[cmsis-dap-dev]
+#VENDOR = ARM
+PRODUCT = MPS2 CMSIS-DAP
+SERNUM = *
+
+# configuration info for the device - all data in here is passed to 
+# configuration string verbatim and is not processed by the dll
+#
+[cmsis-dap-cfg]
+Port=JTAG
+Clock=1000000
+SWJ=Y
+
+# configuration for the rddi-dap
+# processed by dll to provide RDDI-DAP required data.
+#
+# valid keys:-
+#   NUM_DAPS -> number of DAPs on the device
+#   DAP_ID<x> -> where <x> is a value 0 <= x < NUM_DAPS; must be NUM_DAPS DAP_ID<x> entries.
+#
+[rddi-dap]
+NUM_DAPS=1
+DAP_ID0=0

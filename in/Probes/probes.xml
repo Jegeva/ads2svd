@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+
+<probes
+    xmlns="http://www.arm.com/probe"
+    xmlns:xi="http://www.w3.org/2001/XInclude"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.arm.com/probe ../../../Schemas/probeschema.xsd">
+
+    <probe>
+        <name>Cadence Virtual Debug</name>
+        <debug_lib name="rddi_3pp_cadence" args="-pollrate 0 -dappwr_timeout 4000"/>
+
+        <config_items>
+            <config_item>
+                <name>TransactorType</name>
+                <description>The type of transactor to use for the connection</description>
+                <enum_options>
+                    <enum_option>JTAG</enum_option>
+                    <enum_option>SWDP</enum_option>
+                </enum_options>
+                <default_value>JTAG</default_value>
+            </config_item>
+            <config_item>
+                <name>BfmPath</name>
+                <description>Path to the required transactor</description>
+                <default_value>tbench.u_vd_jtag_bfm</default_value>
+            </config_item>
+            <config_item>
+                <name>MemoryPath</name>
+                <description>Path to the memory backend</description>
+                <default_value></default_value>
+            </config_item>
+            <config_item>
+                <name>BfmClockPeriod</name>
+                <description>BFM clock period (in ps)</description>
+                <type>Uint32</type>
+                <default_value>20000</default_value>
+            </config_item>
+            <config_item>
+                <name>UseBatchAccel</name>
+                <description>Perform operations in batches for accelerated performance</description>
+                <type>Bool</type>
+                <default_value>True</default_value>
+            </config_item>
+            <config_item>
+                <name>VdLogPath</name>
+                <description>The vdebug library log file path</description>
+                <default_value></default_value>
+            </config_item>
+            <config_item>
+                <name>DebugLevel</name>
+                <description>The vdebug library and client logging levels, in the format 0xL. Bit 0x100 controls whether logging is echoed to stdout</description>
+                <type>Uint32</type>
+                <default_value>0x00</default_value>
+            </config_item>
+        </config_items>
+
+        <capabilities>
+            <capability>
+                <name>SupportsBrowse</name>
+                <value>False</value>
+            </capability>
+            <capability>
+                <name>SupportsJtagAutodetect</name>
+                <value>False</value>
+            </capability>
+        </capabilities>
+    </probe>
+</probes>

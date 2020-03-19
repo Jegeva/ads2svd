@@ -1,0 +1,565 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!--Copyright (C) 2009-2018 Arm Limited (or its affiliates). All rights reserved.-->
+<platform_data xmlns="http://www.arm.com/project_type" xmlns:peripheral="http://com.arm.targetconfigurationeditor" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="HARDWARE" xsi:schemaLocation="http://www.arm.com/project_type ../../../Schemas/platform_data-1.xsd">
+    <project_type_list>
+        <xi:include href="../../../Gdbserver/tcp_project_types.xml"/>
+        <project_type type="BARE_METAL">
+            <name language="en">Bare Metal Debug</name>
+            <description language="en">This allows a bare-metal debug connection.</description>
+            <execution_environment id="BARE_METAL">
+                <name language="en">Bare Metal Debug</name>
+                <description language="en">Connect to a platform for a bare metal debug session</description>
+                <param default="CDB://Altera_DEV5XS1.rvc" id="config_file" type="string" visible="false"/>
+                <param default="CDB://../../../Scripts/altera_target_check.py" id="target_initialization_script" type="string" visible="false"/>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A9_0</name>
+                    <xi:include href="../../../Include/dstream_activity_description_bm.xml"/>
+                    <xi:include href="../../../Include/dstream_connection_type.xml"/>
+                    <core connection_id="Cortex-A9_0" core_ref="Cortex-A9" soc="altera/hps"/>
+                    <param default="CDB://dtsl_config_script.py" id="dtsl_config_script" type="string" visible="false"/>
+                    <param default="DSTREAM_DtslScript" id="dtsl_config" type="string" visible="false"/>
+                    <param default="options.traceBuffer.traceCapture" id="dtsl_tracecapture_option" type="string" visible="false"/>
+                    <xi:include href="../../../Include/hardware_address.xml"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A9_0</name>
+                    <xi:include href="../../../Include/dstream_st_activity_description_bm.xml"/>
+                    <xi:include href="../../../Include/dstream_st_connection_type.xml"/>
+                    <core connection_id="Cortex-A9_0" core_ref="Cortex-A9" soc="altera/hps"/>
+                    <param default="CDB://dtsl_config_script.py" id="dtsl_config_script" type="string" visible="false"/>
+                    <param default="DtslScript_DSTREAM_ST" id="dtsl_config" type="string" visible="false"/>
+                    <param default="options.traceBuffer.traceCapture" id="dtsl_tracecapture_option" type="string" visible="false"/>
+                    <xi:include href="../../../Include/hardware_address.xml"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A9_0</name>
+                    <xi:include href="../../../Include/dstream_pt_activity_description_bm.xml"/>
+                    <xi:include href="../../../Include/dstream_pt_connection_type.xml"/>
+                    <core connection_id="Cortex-A9_0" core_ref="Cortex-A9" soc="altera/hps"/>
+                    <param default="CDB://dtsl_config_script.py" id="dtsl_config_script" type="string" visible="false"/>
+                    <param default="DtslScript_DSTREAM_PT" id="dtsl_config" type="string" visible="false"/>
+                    <param default="options.traceBuffer.traceCapture" id="dtsl_tracecapture_option" type="string" visible="false"/>
+                    <xi:include href="../../../Include/hardware_address.xml"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A9_0</name>
+                    <xi:include href="../../../Include/rvi_activity_description_bm.xml"/>
+                    <xi:include href="../../../Include/rvi_connection_type.xml"/>
+                    <core connection_id="Cortex-A9_0" core_ref="Cortex-A9" soc="altera/hps"/>
+                    <param default="CDB://dtsl_config_script.py" id="dtsl_config_script" type="string" visible="false"/>
+                    <param default="RVI_DtslScript" id="dtsl_config" type="string" visible="false"/>
+                    <param default="options.traceBuffer.traceCapture" id="dtsl_tracecapture_option" type="string" visible="false"/>
+                    <xi:include href="../../../Include/hardware_address.xml"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A9_0</name>
+                    <description language="en">Arm Debugger will connect to an Altera USB-Blaster to debug a bare metal application.</description>
+                    <connection_type language="en">USB-Blaster</connection_type>
+                    <core connection_id="Cortex-A9_0" core_ref="Cortex-A9" soc="altera/hps"/>
+                    <param default="CDB://dtsl_config_script.py" id="dtsl_config_script" type="string" visible="false"/>
+                    <param default="USBBlaster_DtslScript" id="dtsl_config" type="string" visible="false"/>
+                    <param default="options.traceBuffer.traceCapture" id="dtsl_tracecapture_option" type="string" visible="false"/>
+                    <browse_script>
+                        <name language="en">CDB://../../../Scripts/device_browser.py</name>
+                        <arguments>--app=browse_usb_blaster</arguments>
+                    </browse_script>
+                    <setup_script>
+                        <name>CDB://../../../Scripts/altera_debug_server.py</name>
+                        <arguments>CDB://rddi-dap_cfg-altera.txt rddi-dap_altera</arguments>
+                    </setup_script>
+                    <xi:include href="../../../Include/hardware_address.xml"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A9_0</name>
+                    <xi:include href="../../../Include/ulinkpro_activity_description.xml"/>
+                    <xi:include href="../../../Include/ulinkpro_connection_type.xml"/>
+                    <core connection_id="Cortex-A9_0" core_ref="Cortex-A9" soc="altera/hps"/>
+                    <param default="CDB://dtsl_config_script.py" id="dtsl_config_script" type="string" visible="false"/>
+                    <param default="ULINKpro_DtslScript" id="dtsl_config" type="string" visible="false"/>
+                    <param default="options.traceBuffer.traceCapture" id="dtsl_tracecapture_option" type="string" visible="false"/>
+                    <xi:include href="../../../Include/hardware_address.xml"/>
+                    <xi:include href="../../../Include/ulinkpro_browse_script.xml"/>
+                    <xi:include href="../../../Include/ulinkpro_setup_script.xml"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A9_0</name>
+                    <xi:include href="../../../Include/ulinkprod_activity_description.xml"/>
+                    <xi:include href="../../../Include/ulinkprod_connection_type.xml"/>
+                    <core connection_id="Cortex-A9_0" core_ref="Cortex-A9" soc="altera/hps"/>
+                    <param default="CDB://dtsl_config_script.py" id="dtsl_config_script" type="string" visible="false"/>
+                    <param default="ULINKproD_DtslScript" id="dtsl_config" type="string" visible="false"/>
+                    <param default="options.traceBuffer.traceCapture" id="dtsl_tracecapture_option" type="string" visible="false"/>
+                    <xi:include href="../../../Include/hardware_address.xml"/>
+                    <xi:include href="../../../Include/ulinkprod_browse_script.xml"/>
+                    <xi:include href="../../../Include/ulinkprod_setup_script.xml"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A9_1</name>
+                    <xi:include href="../../../Include/dstream_activity_description_bm.xml"/>
+                    <xi:include href="../../../Include/dstream_connection_type.xml"/>
+                    <core connection_id="Cortex-A9_1" core_ref="Cortex-A9" soc="altera/hps"/>
+                    <param default="CDB://dtsl_config_script.py" id="dtsl_config_script" type="string" visible="false"/>
+                    <param default="DSTREAM_DtslScript" id="dtsl_config" type="string" visible="false"/>
+                    <param default="options.traceBuffer.traceCapture" id="dtsl_tracecapture_option" type="string" visible="false"/>
+                    <xi:include href="../../../Include/hardware_address.xml"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A9_1</name>
+                    <xi:include href="../../../Include/dstream_st_activity_description_bm.xml"/>
+                    <xi:include href="../../../Include/dstream_st_connection_type.xml"/>
+                    <core connection_id="Cortex-A9_1" core_ref="Cortex-A9" soc="altera/hps"/>
+                    <param default="CDB://dtsl_config_script.py" id="dtsl_config_script" type="string" visible="false"/>
+                    <param default="DtslScript_DSTREAM_ST" id="dtsl_config" type="string" visible="false"/>
+                    <param default="options.traceBuffer.traceCapture" id="dtsl_tracecapture_option" type="string" visible="false"/>
+                    <xi:include href="../../../Include/hardware_address.xml"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A9_1</name>
+                    <xi:include href="../../../Include/dstream_pt_activity_description_bm.xml"/>
+                    <xi:include href="../../../Include/dstream_pt_connection_type.xml"/>
+                    <core connection_id="Cortex-A9_1" core_ref="Cortex-A9" soc="altera/hps"/>
+                    <param default="CDB://dtsl_config_script.py" id="dtsl_config_script" type="string" visible="false"/>
+                    <param default="DtslScript_DSTREAM_PT" id="dtsl_config" type="string" visible="false"/>
+                    <param default="options.traceBuffer.traceCapture" id="dtsl_tracecapture_option" type="string" visible="false"/>
+                    <xi:include href="../../../Include/hardware_address.xml"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A9_1</name>
+                    <xi:include href="../../../Include/rvi_activity_description_bm.xml"/>
+                    <xi:include href="../../../Include/rvi_connection_type.xml"/>
+                    <core connection_id="Cortex-A9_1" core_ref="Cortex-A9" soc="altera/hps"/>
+                    <param default="CDB://dtsl_config_script.py" id="dtsl_config_script" type="string" visible="false"/>
+                    <param default="RVI_DtslScript" id="dtsl_config" type="string" visible="false"/>
+                    <param default="options.traceBuffer.traceCapture" id="dtsl_tracecapture_option" type="string" visible="false"/>
+                    <xi:include href="../../../Include/hardware_address.xml"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A9_1</name>
+                    <description language="en">Arm Debugger will connect to an Altera USB-Blaster to debug a bare metal application.</description>
+                    <connection_type language="en">USB-Blaster</connection_type>
+                    <core connection_id="Cortex-A9_1" core_ref="Cortex-A9" soc="altera/hps"/>
+                    <param default="CDB://dtsl_config_script.py" id="dtsl_config_script" type="string" visible="false"/>
+                    <param default="USBBlaster_DtslScript" id="dtsl_config" type="string" visible="false"/>
+                    <param default="options.traceBuffer.traceCapture" id="dtsl_tracecapture_option" type="string" visible="false"/>
+                    <browse_script>
+                        <name language="en">CDB://../../../Scripts/device_browser.py</name>
+                        <arguments>--app=browse_usb_blaster</arguments>
+                    </browse_script>
+                    <setup_script>
+                        <name>CDB://../../../Scripts/altera_debug_server.py</name>
+                        <arguments>CDB://rddi-dap_cfg-altera.txt rddi-dap_altera</arguments>
+                    </setup_script>
+                    <xi:include href="../../../Include/hardware_address.xml"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A9_1</name>
+                    <xi:include href="../../../Include/ulinkpro_activity_description.xml"/>
+                    <xi:include href="../../../Include/ulinkpro_connection_type.xml"/>
+                    <core connection_id="Cortex-A9_1" core_ref="Cortex-A9" soc="altera/hps"/>
+                    <param default="CDB://dtsl_config_script.py" id="dtsl_config_script" type="string" visible="false"/>
+                    <param default="ULINKpro_DtslScript" id="dtsl_config" type="string" visible="false"/>
+                    <param default="options.traceBuffer.traceCapture" id="dtsl_tracecapture_option" type="string" visible="false"/>
+                    <xi:include href="../../../Include/hardware_address.xml"/>
+                    <xi:include href="../../../Include/ulinkpro_browse_script.xml"/>
+                    <xi:include href="../../../Include/ulinkpro_setup_script.xml"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A9_1</name>
+                    <xi:include href="../../../Include/ulinkprod_activity_description.xml"/>
+                    <xi:include href="../../../Include/ulinkprod_connection_type.xml"/>
+                    <core connection_id="Cortex-A9_1" core_ref="Cortex-A9" soc="altera/hps"/>
+                    <param default="CDB://dtsl_config_script.py" id="dtsl_config_script" type="string" visible="false"/>
+                    <param default="ULINKproD_DtslScript" id="dtsl_config" type="string" visible="false"/>
+                    <param default="options.traceBuffer.traceCapture" id="dtsl_tracecapture_option" type="string" visible="false"/>
+                    <xi:include href="../../../Include/hardware_address.xml"/>
+                    <xi:include href="../../../Include/ulinkprod_browse_script.xml"/>
+                    <xi:include href="../../../Include/ulinkprod_setup_script.xml"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A9x2 SMP</name>
+                    <xi:include href="../../../Include/dstream_activity_description_bm.xml"/>
+                    <xi:include href="../../../Include/dstream_connection_type.xml"/>
+                    <core connection_id="Cortex-A9 SMP" core_ref="Cortex-A9" soc="altera/hps"/>
+                    <param default="CDB://dtsl_config_script.py" id="dtsl_config_script" type="string" visible="false"/>
+                    <param default="DSTREAM_DtslScript" id="dtsl_config" type="string" visible="false"/>
+                    <param default="options.traceBuffer.traceCapture" id="dtsl_tracecapture_option" type="string" visible="false"/>
+                    <xi:include href="../../../Include/hardware_address.xml"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A9x2 SMP</name>
+                    <xi:include href="../../../Include/dstream_st_activity_description_bm.xml"/>
+                    <xi:include href="../../../Include/dstream_st_connection_type.xml"/>
+                    <core connection_id="Cortex-A9 SMP" core_ref="Cortex-A9" soc="altera/hps"/>
+                    <param default="CDB://dtsl_config_script.py" id="dtsl_config_script" type="string" visible="false"/>
+                    <param default="DtslScript_DSTREAM_ST" id="dtsl_config" type="string" visible="false"/>
+                    <param default="options.traceBuffer.traceCapture" id="dtsl_tracecapture_option" type="string" visible="false"/>
+                    <xi:include href="../../../Include/hardware_address.xml"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A9x2 SMP</name>
+                    <xi:include href="../../../Include/dstream_pt_activity_description_bm.xml"/>
+                    <xi:include href="../../../Include/dstream_pt_connection_type.xml"/>
+                    <core connection_id="Cortex-A9 SMP" core_ref="Cortex-A9" soc="altera/hps"/>
+                    <param default="CDB://dtsl_config_script.py" id="dtsl_config_script" type="string" visible="false"/>
+                    <param default="DtslScript_DSTREAM_PT" id="dtsl_config" type="string" visible="false"/>
+                    <param default="options.traceBuffer.traceCapture" id="dtsl_tracecapture_option" type="string" visible="false"/>
+                    <xi:include href="../../../Include/hardware_address.xml"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A9x2 SMP</name>
+                    <xi:include href="../../../Include/rvi_activity_description_bm.xml"/>
+                    <xi:include href="../../../Include/rvi_connection_type.xml"/>
+                    <core connection_id="Cortex-A9 SMP" core_ref="Cortex-A9" soc="altera/hps"/>
+                    <param default="CDB://dtsl_config_script.py" id="dtsl_config_script" type="string" visible="false"/>
+                    <param default="RVI_DtslScript" id="dtsl_config" type="string" visible="false"/>
+                    <param default="options.traceBuffer.traceCapture" id="dtsl_tracecapture_option" type="string" visible="false"/>
+                    <xi:include href="../../../Include/hardware_address.xml"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A9x2 SMP</name>
+                    <description language="en">Arm Debugger will connect to an Altera USB-Blaster to debug a bare metal SMP application.</description>
+                    <connection_type language="en">USB-Blaster</connection_type>
+                    <core connection_id="Cortex-A9 SMP" core_ref="Cortex-A9" soc="altera/hps"/>
+                    <param default="CDB://dtsl_config_script.py" id="dtsl_config_script" type="string" visible="false"/>
+                    <param default="USBBlaster_DtslScript" id="dtsl_config" type="string" visible="false"/>
+                    <param default="options.traceBuffer.traceCapture" id="dtsl_tracecapture_option" type="string" visible="false"/>
+                    <browse_script>
+                        <name language="en">CDB://../../../Scripts/device_browser.py</name>
+                        <arguments>--app=browse_usb_blaster</arguments>
+                    </browse_script>
+                    <setup_script>
+                        <name>CDB://../../../Scripts/altera_debug_server.py</name>
+                        <arguments>CDB://rddi-dap_cfg-altera.txt rddi-dap_altera</arguments>
+                    </setup_script>
+                    <xi:include href="../../../Include/hardware_address.xml"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A9x2 SMP</name>
+                    <xi:include href="../../../Include/ulinkpro_activity_description.xml"/>
+                    <xi:include href="../../../Include/ulinkpro_connection_type.xml"/>
+                    <core connection_id="Cortex-A9 SMP" core_ref="Cortex-A9" soc="altera/hps"/>
+                    <param default="CDB://dtsl_config_script.py" id="dtsl_config_script" type="string" visible="false"/>
+                    <param default="ULINKpro_DtslScript" id="dtsl_config" type="string" visible="false"/>
+                    <param default="options.traceBuffer.traceCapture" id="dtsl_tracecapture_option" type="string" visible="false"/>
+                    <xi:include href="../../../Include/hardware_address.xml"/>
+                    <xi:include href="../../../Include/ulinkpro_browse_script.xml"/>
+                    <xi:include href="../../../Include/ulinkpro_setup_script.xml"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A9x2 SMP</name>
+                    <xi:include href="../../../Include/ulinkprod_activity_description.xml"/>
+                    <xi:include href="../../../Include/ulinkprod_connection_type.xml"/>
+                    <core connection_id="Cortex-A9 SMP" core_ref="Cortex-A9" soc="altera/hps"/>
+                    <param default="CDB://dtsl_config_script.py" id="dtsl_config_script" type="string" visible="false"/>
+                    <param default="ULINKproD_DtslScript" id="dtsl_config" type="string" visible="false"/>
+                    <param default="options.traceBuffer.traceCapture" id="dtsl_tracecapture_option" type="string" visible="false"/>
+                    <xi:include href="../../../Include/hardware_address.xml"/>
+                    <xi:include href="../../../Include/ulinkprod_browse_script.xml"/>
+                    <xi:include href="../../../Include/ulinkprod_setup_script.xml"/>
+                </activity>
+            </execution_environment>
+        </project_type>
+        <project_type os_abstraction="LINUX_KERNEL" type="BARE_METAL">
+            <name language="en">Linux Kernel and/or Device Driver Debug</name>
+            <description language="en">This allows a bare metal debug connection for Linux kernel or Linux device driver debug.</description>
+            <execution_environment id="bare_metal_linux_kernel_debug">
+                <name language="en">Linux Kernel Debug</name>
+                <description language="en">Connect to a platform for Linux Kernel debug</description>
+                <param default="CDB://Altera_DEV5XS1.rvc" id="config_file" type="string" visible="false"/>
+                <param default="CDB://../../../Scripts/altera_target_check.py" id="target_initialization_script" type="string" visible="false"/>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A9_0</name>
+                    <xi:include href="../../../Include/dstream_activity_description_lk.xml"/>
+                    <xi:include href="../../../Include/dstream_connection_type.xml"/>
+                    <core connection_id="Cortex-A9_0" core_ref="Cortex-A9" soc="altera/hps"/>
+                    <param default="CDB://dtsl_config_script.py" id="dtsl_config_script" type="string" visible="false"/>
+                    <param default="DSTREAM_DtslScript" id="dtsl_config" type="string" visible="false"/>
+                    <param default="options.traceBuffer.traceCapture" id="dtsl_tracecapture_option" type="string" visible="false"/>
+                    <xi:include href="../../../Include/hardware_address.xml"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A9_0</name>
+                    <xi:include href="../../../Include/dstream_st_activity_description_lk.xml"/>
+                    <xi:include href="../../../Include/dstream_st_connection_type.xml"/>
+                    <core connection_id="Cortex-A9_0" core_ref="Cortex-A9" soc="altera/hps"/>
+                    <param default="CDB://dtsl_config_script.py" id="dtsl_config_script" type="string" visible="false"/>
+                    <param default="DtslScript_DSTREAM_ST" id="dtsl_config" type="string" visible="false"/>
+                    <param default="options.traceBuffer.traceCapture" id="dtsl_tracecapture_option" type="string" visible="false"/>
+                    <xi:include href="../../../Include/hardware_address.xml"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A9_0</name>
+                    <xi:include href="../../../Include/dstream_pt_activity_description_lk.xml"/>
+                    <xi:include href="../../../Include/dstream_pt_connection_type.xml"/>
+                    <core connection_id="Cortex-A9_0" core_ref="Cortex-A9" soc="altera/hps"/>
+                    <param default="CDB://dtsl_config_script.py" id="dtsl_config_script" type="string" visible="false"/>
+                    <param default="DtslScript_DSTREAM_PT" id="dtsl_config" type="string" visible="false"/>
+                    <param default="options.traceBuffer.traceCapture" id="dtsl_tracecapture_option" type="string" visible="false"/>
+                    <xi:include href="../../../Include/hardware_address.xml"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A9_0</name>
+                    <xi:include href="../../../Include/rvi_activity_description_lk.xml"/>
+                    <xi:include href="../../../Include/rvi_connection_type.xml"/>
+                    <core connection_id="Cortex-A9_0" core_ref="Cortex-A9" soc="altera/hps"/>
+                    <param default="CDB://dtsl_config_script.py" id="dtsl_config_script" type="string" visible="false"/>
+                    <param default="RVI_DtslScript" id="dtsl_config" type="string" visible="false"/>
+                    <param default="options.traceBuffer.traceCapture" id="dtsl_tracecapture_option" type="string" visible="false"/>
+                    <xi:include href="../../../Include/hardware_address.xml"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A9_0</name>
+                    <description language="en">Arm Debugger will connect to an Altera USB-Blaster to debug a Linux kernel</description>
+                    <connection_type language="en">USB-Blaster</connection_type>
+                    <core connection_id="Cortex-A9_0" core_ref="Cortex-A9" soc="altera/hps"/>
+                    <param default="CDB://dtsl_config_script.py" id="dtsl_config_script" type="string" visible="false"/>
+                    <param default="USBBlaster_DtslScript" id="dtsl_config" type="string" visible="false"/>
+                    <param default="options.traceBuffer.traceCapture" id="dtsl_tracecapture_option" type="string" visible="false"/>
+                    <browse_script>
+                        <name language="en">CDB://../../../Scripts/device_browser.py</name>
+                        <arguments>--app=browse_usb_blaster</arguments>
+                    </browse_script>
+                    <setup_script>
+                        <name>CDB://../../../Scripts/altera_debug_server.py</name>
+                        <arguments>CDB://rddi-dap_cfg-altera.txt rddi-dap_altera</arguments>
+                    </setup_script>
+                    <xi:include href="../../../Include/hardware_address.xml"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A9_0</name>
+                    <xi:include href="../../../Include/ulinkpro_activity_description_lk.xml"/>
+                    <xi:include href="../../../Include/ulinkpro_connection_type.xml"/>
+                    <core connection_id="Cortex-A9_0" core_ref="Cortex-A9" soc="altera/hps"/>
+                    <param default="CDB://dtsl_config_script.py" id="dtsl_config_script" type="string" visible="false"/>
+                    <param default="ULINKpro_DtslScript" id="dtsl_config" type="string" visible="false"/>
+                    <param default="options.traceBuffer.traceCapture" id="dtsl_tracecapture_option" type="string" visible="false"/>
+                    <xi:include href="../../../Include/hardware_address.xml"/>
+                    <xi:include href="../../../Include/ulinkpro_browse_script.xml"/>
+                    <xi:include href="../../../Include/ulinkpro_setup_script.xml"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A9_0</name>
+                    <xi:include href="../../../Include/ulinkprod_activity_description_lk.xml"/>
+                    <xi:include href="../../../Include/ulinkprod_connection_type.xml"/>
+                    <core connection_id="Cortex-A9_0" core_ref="Cortex-A9" soc="altera/hps"/>
+                    <param default="CDB://dtsl_config_script.py" id="dtsl_config_script" type="string" visible="false"/>
+                    <param default="ULINKproD_DtslScript" id="dtsl_config" type="string" visible="false"/>
+                    <param default="options.traceBuffer.traceCapture" id="dtsl_tracecapture_option" type="string" visible="false"/>
+                    <xi:include href="../../../Include/hardware_address.xml"/>
+                    <xi:include href="../../../Include/ulinkprod_browse_script.xml"/>
+                    <xi:include href="../../../Include/ulinkprod_setup_script.xml"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A9_1</name>
+                    <xi:include href="../../../Include/dstream_activity_description_lk.xml"/>
+                    <xi:include href="../../../Include/dstream_connection_type.xml"/>
+                    <core connection_id="Cortex-A9_1" core_ref="Cortex-A9" soc="altera/hps"/>
+                    <param default="CDB://dtsl_config_script.py" id="dtsl_config_script" type="string" visible="false"/>
+                    <param default="DSTREAM_DtslScript" id="dtsl_config" type="string" visible="false"/>
+                    <param default="options.traceBuffer.traceCapture" id="dtsl_tracecapture_option" type="string" visible="false"/>
+                    <xi:include href="../../../Include/hardware_address.xml"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A9_1</name>
+                    <xi:include href="../../../Include/dstream_st_activity_description_lk.xml"/>
+                    <xi:include href="../../../Include/dstream_st_connection_type.xml"/>
+                    <core connection_id="Cortex-A9_1" core_ref="Cortex-A9" soc="altera/hps"/>
+                    <param default="CDB://dtsl_config_script.py" id="dtsl_config_script" type="string" visible="false"/>
+                    <param default="DtslScript_DSTREAM_ST" id="dtsl_config" type="string" visible="false"/>
+                    <param default="options.traceBuffer.traceCapture" id="dtsl_tracecapture_option" type="string" visible="false"/>
+                    <xi:include href="../../../Include/hardware_address.xml"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A9_1</name>
+                    <xi:include href="../../../Include/dstream_pt_activity_description_lk.xml"/>
+                    <xi:include href="../../../Include/dstream_pt_connection_type.xml"/>
+                    <core connection_id="Cortex-A9_1" core_ref="Cortex-A9" soc="altera/hps"/>
+                    <param default="CDB://dtsl_config_script.py" id="dtsl_config_script" type="string" visible="false"/>
+                    <param default="DtslScript_DSTREAM_PT" id="dtsl_config" type="string" visible="false"/>
+                    <param default="options.traceBuffer.traceCapture" id="dtsl_tracecapture_option" type="string" visible="false"/>
+                    <xi:include href="../../../Include/hardware_address.xml"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A9_1</name>
+                    <xi:include href="../../../Include/rvi_activity_description_lk.xml"/>
+                    <xi:include href="../../../Include/rvi_connection_type.xml"/>
+                    <core connection_id="Cortex-A9_1" core_ref="Cortex-A9" soc="altera/hps"/>
+                    <param default="CDB://dtsl_config_script.py" id="dtsl_config_script" type="string" visible="false"/>
+                    <param default="RVI_DtslScript" id="dtsl_config" type="string" visible="false"/>
+                    <param default="options.traceBuffer.traceCapture" id="dtsl_tracecapture_option" type="string" visible="false"/>
+                    <xi:include href="../../../Include/hardware_address.xml"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A9_1</name>
+                    <description language="en">Arm Debugger will connect to an Altera USB-Blaster to debug a Linux kernel</description>
+                    <connection_type language="en">USB-Blaster</connection_type>
+                    <core connection_id="Cortex-A9_1" core_ref="Cortex-A9" soc="altera/hps"/>
+                    <param default="CDB://dtsl_config_script.py" id="dtsl_config_script" type="string" visible="false"/>
+                    <param default="USBBlaster_DtslScript" id="dtsl_config" type="string" visible="false"/>
+                    <param default="options.traceBuffer.traceCapture" id="dtsl_tracecapture_option" type="string" visible="false"/>
+                    <browse_script>
+                        <name language="en">CDB://../../../Scripts/device_browser.py</name>
+                        <arguments>--app=browse_usb_blaster</arguments>
+                    </browse_script>
+                    <setup_script>
+                        <name>CDB://../../../Scripts/altera_debug_server.py</name>
+                        <arguments>CDB://rddi-dap_cfg-altera.txt rddi-dap_altera</arguments>
+                    </setup_script>
+                    <xi:include href="../../../Include/hardware_address.xml"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A9_1</name>
+                    <xi:include href="../../../Include/ulinkpro_activity_description_lk.xml"/>
+                    <xi:include href="../../../Include/ulinkpro_connection_type.xml"/>
+                    <core connection_id="Cortex-A9_1" core_ref="Cortex-A9" soc="altera/hps"/>
+                    <param default="CDB://dtsl_config_script.py" id="dtsl_config_script" type="string" visible="false"/>
+                    <param default="ULINKpro_DtslScript" id="dtsl_config" type="string" visible="false"/>
+                    <param default="options.traceBuffer.traceCapture" id="dtsl_tracecapture_option" type="string" visible="false"/>
+                    <xi:include href="../../../Include/hardware_address.xml"/>
+                    <xi:include href="../../../Include/ulinkpro_browse_script.xml"/>
+                    <xi:include href="../../../Include/ulinkpro_setup_script.xml"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A9_1</name>
+                    <xi:include href="../../../Include/ulinkprod_activity_description_lk.xml"/>
+                    <xi:include href="../../../Include/ulinkprod_connection_type.xml"/>
+                    <core connection_id="Cortex-A9_1" core_ref="Cortex-A9" soc="altera/hps"/>
+                    <param default="CDB://dtsl_config_script.py" id="dtsl_config_script" type="string" visible="false"/>
+                    <param default="ULINKproD_DtslScript" id="dtsl_config" type="string" visible="false"/>
+                    <param default="options.traceBuffer.traceCapture" id="dtsl_tracecapture_option" type="string" visible="false"/>
+                    <xi:include href="../../../Include/hardware_address.xml"/>
+                    <xi:include href="../../../Include/ulinkprod_browse_script.xml"/>
+                    <xi:include href="../../../Include/ulinkprod_setup_script.xml"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A9x2 SMP</name>
+                    <xi:include href="../../../Include/dstream_activity_description_lk.xml"/>
+                    <xi:include href="../../../Include/dstream_connection_type.xml"/>
+                    <core connection_id="Cortex-A9 SMP" core_ref="Cortex-A9" soc="altera/hps"/>
+                    <param default="CDB://dtsl_config_script.py" id="dtsl_config_script" type="string" visible="false"/>
+                    <param default="DSTREAM_DtslScript" id="dtsl_config" type="string" visible="false"/>
+                    <param default="options.traceBuffer.traceCapture" id="dtsl_tracecapture_option" type="string" visible="false"/>
+                    <xi:include href="../../../Include/hardware_address.xml"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A9x2 SMP</name>
+                    <xi:include href="../../../Include/dstream_st_activity_description_lk.xml"/>
+                    <xi:include href="../../../Include/dstream_st_connection_type.xml"/>
+                    <core connection_id="Cortex-A9 SMP" core_ref="Cortex-A9" soc="altera/hps"/>
+                    <param default="CDB://dtsl_config_script.py" id="dtsl_config_script" type="string" visible="false"/>
+                    <param default="DtslScript_DSTREAM_ST" id="dtsl_config" type="string" visible="false"/>
+                    <param default="options.traceBuffer.traceCapture" id="dtsl_tracecapture_option" type="string" visible="false"/>
+                    <xi:include href="../../../Include/hardware_address.xml"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A9x2 SMP</name>
+                    <xi:include href="../../../Include/dstream_pt_activity_description_lk.xml"/>
+                    <xi:include href="../../../Include/dstream_pt_connection_type.xml"/>
+                    <core connection_id="Cortex-A9 SMP" core_ref="Cortex-A9" soc="altera/hps"/>
+                    <param default="CDB://dtsl_config_script.py" id="dtsl_config_script" type="string" visible="false"/>
+                    <param default="DtslScript_DSTREAM_PT" id="dtsl_config" type="string" visible="false"/>
+                    <param default="options.traceBuffer.traceCapture" id="dtsl_tracecapture_option" type="string" visible="false"/>
+                    <xi:include href="../../../Include/hardware_address.xml"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A9x2 SMP</name>
+                    <xi:include href="../../../Include/rvi_activity_description_lk.xml"/>
+                    <xi:include href="../../../Include/rvi_connection_type.xml"/>
+                    <core connection_id="Cortex-A9 SMP" core_ref="Cortex-A9" soc="altera/hps"/>
+                    <param default="CDB://dtsl_config_script.py" id="dtsl_config_script" type="string" visible="false"/>
+                    <param default="RVI_DtslScript" id="dtsl_config" type="string" visible="false"/>
+                    <param default="options.traceBuffer.traceCapture" id="dtsl_tracecapture_option" type="string" visible="false"/>
+                    <xi:include href="../../../Include/hardware_address.xml"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A9x2 SMP</name>
+                    <description language="en">Arm Debugger will connect to an Altera USB-Blaster to debug a SMP Linux kernel</description>
+                    <connection_type language="en">USB-Blaster</connection_type>
+                    <core connection_id="Cortex-A9 SMP" core_ref="Cortex-A9" soc="altera/hps"/>
+                    <param default="CDB://dtsl_config_script.py" id="dtsl_config_script" type="string" visible="false"/>
+                    <param default="USBBlaster_DtslScript" id="dtsl_config" type="string" visible="false"/>
+                    <param default="options.traceBuffer.traceCapture" id="dtsl_tracecapture_option" type="string" visible="false"/>
+                    <browse_script>
+                        <name language="en">CDB://../../../Scripts/device_browser.py</name>
+                        <arguments>--app=browse_usb_blaster</arguments>
+                    </browse_script>
+                    <setup_script>
+                        <name>CDB://../../../Scripts/altera_debug_server.py</name>
+                        <arguments>CDB://rddi-dap_cfg-altera.txt rddi-dap_altera</arguments>
+                    </setup_script>
+                    <xi:include href="../../../Include/hardware_address.xml"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A9x2 SMP</name>
+                    <xi:include href="../../../Include/ulinkpro_activity_description_lk.xml"/>
+                    <xi:include href="../../../Include/ulinkpro_connection_type.xml"/>
+                    <core connection_id="Cortex-A9 SMP" core_ref="Cortex-A9" soc="altera/hps"/>
+                    <param default="CDB://dtsl_config_script.py" id="dtsl_config_script" type="string" visible="false"/>
+                    <param default="ULINKpro_DtslScript" id="dtsl_config" type="string" visible="false"/>
+                    <param default="options.traceBuffer.traceCapture" id="dtsl_tracecapture_option" type="string" visible="false"/>
+                    <xi:include href="../../../Include/hardware_address.xml"/>
+                    <xi:include href="../../../Include/ulinkpro_browse_script.xml"/>
+                    <xi:include href="../../../Include/ulinkpro_setup_script.xml"/>
+                </activity>
+                <activity id="ICE_DEBUG" type="Debug">
+                    <name language="en">Debug Cortex-A9x2 SMP</name>
+                    <xi:include href="../../../Include/ulinkprod_activity_description_lk.xml"/>
+                    <xi:include href="../../../Include/ulinkprod_connection_type.xml"/>
+                    <core connection_id="Cortex-A9 SMP" core_ref="Cortex-A9" soc="altera/hps"/>
+                    <param default="CDB://dtsl_config_script.py" id="dtsl_config_script" type="string" visible="false"/>
+                    <param default="ULINKproD_DtslScript" id="dtsl_config" type="string" visible="false"/>
+                    <param default="options.traceBuffer.traceCapture" id="dtsl_tracecapture_option" type="string" visible="false"/>
+                    <xi:include href="../../../Include/hardware_address.xml"/>
+                    <xi:include href="../../../Include/ulinkprod_browse_script.xml"/>
+                    <xi:include href="../../../Include/ulinkprod_setup_script.xml"/>
+                </activity>
+            </execution_environment>
+        </project_type>
+        <project_type type="GDB_SERVER">
+    <name language="en">Linux Application Debug</name>
+    <description language="en">This allows Linux application debug using gdbserver.</description>
+    <execution_environment id="gdb_tcp">
+        <name language="en">gdbserver (TCP)</name>
+        <description language="en">Connect to a platform running gdbserver using a TCP connection.</description>
+        <param default="" id="gdb_address" rvc_tag="host" type="string">
+            <name language="en">Address:</name>
+            <description language="en">Address of Target (TCP/IP).</description>
+        </param>
+        <param default="5000" id="gdb_port" rvc_tag="port" type="string">
+            <name language="en">Port:</name>
+            <description language="en">Debug Port on Target.</description>
+        </param>
+        <param default="True" id="gdb_disable_acks" type="string" visible="false"/>
+        <config_file>gdbserver.xml</config_file>
+        <xi:include href="../../../Gdbserver/symbols_glibc_2_10_1.xml"/>
+        <activity id="DOWNLOAD_DEBUG" type="Debug">
+            <name language="en">Download and debug application</name>
+            <description language="en">Arm Debugger will download your application to the target system and then start a new gdbserver session to debug the application. This configuration requires ssh and gdbserver on the target platform. </description>
+            <core connection_id="0">
+                <core_definition>GDBServerPseudoCore</core_definition>
+            </core>
+            <setup_script>
+                <name language="en">RSE://</name>
+            </setup_script>
+        </activity>
+        <activity id="DEBUG_RESIDENT_APP" type="Debug">
+            <name language="en">Start gdbserver and debug target resident application</name>
+            <description language="en">Arm Debugger will connect to the target and start a new gdbserver session to debug an application already present on the target system. This configuration requires ssh and gdbserver on the target platform. </description>
+            <core connection_id="0">
+                <core_definition>GDBServerPseudoCore</core_definition>
+            </core>
+            <setup_script>
+                <name language="en">RSE://</name>
+            </setup_script>
+        </activity>
+        <activity id="CONNECT_TO_GDB_SERVER" type="Debug">
+            <name language="en">Connect to already running gdbserver</name>
+            <description language="en">Arm Debugger will connect to an already running gdbserver on the target system.</description>
+            <core connection_id="0">
+                <core_definition>GDBServerPseudoCore</core_definition>
+            </core>
+        </activity>
+    </execution_environment>
+</project_type>
+    </project_type_list>
+</platform_data>
