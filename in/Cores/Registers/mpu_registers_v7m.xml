@@ -1,0 +1,350 @@
+<register_list
+    name="MPU"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns="http://www.arm.com/core_reg"
+    xsi:schemaLocation="http://www.arm.com/core_reg ../../Schemas/core_register_definition.xsd"
+    xmlns:tcf="http://com.arm.targetconfigurationeditor">
+    <access_world>Non-Secure</access_world>
+    <peripheral name="MPU" offset="0x00000000">
+        <gui_name language="en">Memory Protection Unit</gui_name>
+        <description language="en">Memory Protection Unit</description>
+        <!-- Register info from ARM ARM
+        0xE000ED90 MPU_TYPE RO 0x00000800[a] MPU Type Register
+        0xE000ED94 MPU_CTRL RW 0x00000000 MPU Control Register
+        0xE000ED98 MPU_RNR RW 0x00000000 MPU Region Number Register
+        0xE000ED9C MPU_RBAR RW 0x00000000 MPU Region Base Address Register
+        0xE000EDA0 MPU_RASR RW 0x00000000 MPU Region Attribute and Size Register
+        0xE000EDA4 MPU_RBAR_A1 0x00000000 MPU alias registers
+        0xE000EDA8 MPU_RASR_A1 0x00000000
+        0xE000EDAC MPU_RBAR_A2 0x00000000
+        0xE000EDB0 MPU_RASR_A2 0x00000000
+        0xE000EDB4 MPU_RBAR_A3 0x00000000
+        0xE000EDB8 MPU_RASR_A3 0x00000000
+        -->
+        <register access="RO" name="MPU_TYPE" size="4" offset="0xE000ED90">
+            <gui_name language="en">MPU_TYPE</gui_name>
+            <description language="en">MPU Type Register</description>
+            <bitField conditional="false" name="SEPARATE" enumerationId="UNIFORM_SEPARATE">
+                <gui_name language="en">SEPARATE</gui_name>
+                <description language="en">Indicates support for separate instruction and data address maps</description>
+                <definition>[0]</definition>
+            </bitField>
+            <bitField conditional="false" name="DREGION">
+                <gui_name language="en">DREGION</gui_name>
+                <description language="en">Number of regions supported by the MPU</description>
+                <definition>[15:8]</definition>
+            </bitField>
+            <bitField conditional="false" name="IREGION">
+                <gui_name language="en">IREGION</gui_name>
+                <description language="en">Number of instruction regions supported by the MPU</description>
+                <definition>[23:16]</definition>
+            </bitField>
+        </register>
+        <register access="RW" name="MPU_CTRL" size="4" offset="0xE000ED94">
+            <gui_name language="en">MPU_CTRL</gui_name>
+            <description language="en">MPU Control Register</description>
+            <bitField conditional="false" name="ENABLE" enumerationId="DISABLED_ENABLED">
+                <gui_name language="en">ENABLE</gui_name>
+                <description language="en">Enables the MPU</description>
+                <definition>[0]</definition>
+            </bitField>
+            <bitField conditional="false" name="HFNMIENA" enumerationId="DISABLED_ENABLED">
+                <gui_name language="en">HFNMIENA</gui_name>
+                <description language="en">When the ENABLE bit is set to 1, controls whether handlers executing with priority less than 0 access memory with the MPU enabled or with the MPU disabled</description>
+                <definition>[1]</definition>
+            </bitField>
+            <bitField conditional="false" name="PRIVDEFENA" enumerationId="DISABLED_ENABLED">
+                <gui_name language="en">PRIVDEFENA</gui_name>
+                <description language="en">When the ENABLE bit is set to 1, Enables the default memory map as a background region for privileged access</description>
+                <definition>[2]</definition>
+            </bitField>
+        </register>
+        <register access="RW" name="MPU_RNR" size="4" offset="0xE000ED98">
+            <gui_name language="en">MPU_RNR</gui_name>
+            <description language="en">MPU Region Number Register</description>
+            <bitField conditional="false" name="REGION">
+                <gui_name language="en">REGION</gui_name>
+                <description language="en">Indicates the memory region accessed by MPU_RBAR and MPU_RSAR</description>
+                <definition>[7:0]</definition>
+            </bitField>
+        </register>
+        <register access="RW" name="MPU_RBAR" size="4" offset="0xE000ED9C">
+            <gui_name language="en">MPU_RBAR</gui_name>
+            <description language="en">MPU Region Base Address Register</description>
+            <bitField conditional="false" name="REGION">
+                <gui_name language="en">REGION</gui_name>
+                <description language="en">On writes, can specify the number of the region to update. On reads, returns bits [3:0] of MPU_RNR</description>
+                <definition>[3:0]</definition>
+            </bitField>
+            <bitField conditional="false" name="VALID" enumerationId="VALID">
+                <gui_name language="en">VALID</gui_name>
+                <description language="en">On writes, indicates whether the region to update is specified by MPU_RNR.REGION, or by the REGION value specified in this write. When using the REGION value specified by this write, MPU_RNR.REGION is updated to this value</description>
+                <definition>[4]</definition>
+            </bitField>
+            <bitField conditional="false" name="ADDR">
+                <gui_name language="en">ADDR</gui_name>
+                <description language="en">Base address of the region</description>
+                <definition>[31:5]</definition>
+            </bitField>
+        </register>
+        <register access="RW" name="MPU_RASR" size="4" offset="0xE000EDA0">
+            <gui_name language="en">MPU_RASR</gui_name>
+            <description language="en">MPU Region Attribute and Size Register</description>
+            <bitField conditional="false" name="ENABLE" enumerationId="DISABLED_ENABLED">
+                <gui_name language="en">ENABLE</gui_name>
+                <description language="en">Enables this region</description>
+                <definition>[0]</definition>
+            </bitField>
+            <bitField conditional="false" name="SIZE">
+                <gui_name language="en">SIZE</gui_name>
+                <description language="en">Indicates the region size</description>
+                <definition>[5:1]</definition>
+            </bitField>
+            <bitField conditional="false" name="SRD">
+                <gui_name language="en">SRD</gui_name>
+                <description language="en">Subregion Disable</description>
+                <definition>[15:8]</definition>
+            </bitField>
+            <bitField conditional="false" name="B">
+                <gui_name language="en">B</gui_name>
+                <description language="en">MPU Region Attribute field</description>
+                <definition>[16]</definition>
+            </bitField>
+            <bitField conditional="false" name="C">
+                <gui_name language="en">C</gui_name>
+                <description language="en">MPU Region Attribute field</description>
+                <definition>[17]</definition>
+            </bitField>
+            <bitField conditional="false" name="S">
+                <gui_name language="en">S</gui_name>
+                <description language="en">MPU Region Attribute field: Sharable</description>
+                <definition>[18]</definition>
+            </bitField>
+            <bitField conditional="false" name="TEX">
+                <gui_name language="en">TEX</gui_name>
+                <description language="en">MPU Region Attribute field</description>
+                <definition>[21:19]</definition>
+            </bitField>
+            <bitField conditional="false" name="AP" enumerationId="ACCESS_PERMISSIONS">
+                <gui_name language="en">AP</gui_name>
+                <description language="en">Access permissions</description>
+                <definition>[26:24]</definition>
+            </bitField>
+            <bitField conditional="false" name="XN" enumerationId="EXECUTE_NEVER">
+                <gui_name language="en">XN</gui_name>
+                <description language="en">Execute Never</description>
+                <definition>[28]</definition>
+            </bitField>
+        </register>
+        <register access="RW" name="MPU_RBAR_A1" size="4" offset="0xE000EDA4">
+            <gui_name language="en">MPU_RBAR_A1</gui_name>
+            <description language="en">MPU alias register for MPU Region Base Address Register</description>
+            <bitField conditional="false" name="REGION">
+                <gui_name language="en">REGION</gui_name>
+                <description language="en">On writes, can specify the number of the region to update. On reads, returns bits [3:0] of MPU_RNR</description>
+                <definition>[3:0]</definition>
+            </bitField>
+            <bitField conditional="false" name="VALID" enumerationId="VALID">
+                <gui_name language="en">VALID</gui_name>
+                <description language="en">On writes, indicates whether the region to update is specified by MPU_RNR.REGION, or by the REGION value specified in this write. When using the REGION value specified by this write, MPU_RNR.REGION is updated to this value</description>
+                <definition>[4]</definition>
+            </bitField>
+            <bitField conditional="false" name="ADDR">
+                <gui_name language="en">ADDR</gui_name>
+                <description language="en">Base address of the region</description>
+                <definition>[31:5]</definition>
+            </bitField>
+        </register>
+        <register access="RW" name="MPU_RASR_A1" size="4" offset="0xE000EDA8">
+            <gui_name language="en">MPU_RASR_A1</gui_name>
+            <description language="en">MPU alias register for MPU Region Attribute and Size Register</description>
+            <bitField conditional="false" name="ENABLE" enumerationId="DISABLED_ENABLED">
+                <gui_name language="en">ENABLE</gui_name>
+                <description language="en">Enables this region</description>
+                <definition>[0]</definition>
+            </bitField>
+            <bitField conditional="false" name="SIZE">
+                <gui_name language="en">SIZE</gui_name>
+                <description language="en">Indicates the region size</description>
+                <definition>[5:1]</definition>
+            </bitField>
+            <bitField conditional="false" name="SRD">
+                <gui_name language="en">SRD</gui_name>
+                <description language="en">Subregion Disable</description>
+                <definition>[15:8]</definition>
+            </bitField>
+            <bitField conditional="false" name="B">
+                <gui_name language="en">B</gui_name>
+                <description language="en">MPU Region Attribute field</description>
+                <definition>[16]</definition>
+            </bitField>
+            <bitField conditional="false" name="C">
+                <gui_name language="en">C</gui_name>
+                <description language="en">MPU Region Attribute field</description>
+                <definition>[17]</definition>
+            </bitField>
+            <bitField conditional="false" name="S">
+                <gui_name language="en">S</gui_name>
+                <description language="en">MPU Region Attribute field: Sharable</description>
+                <definition>[18]</definition>
+            </bitField>
+            <bitField conditional="false" name="TEX">
+                <gui_name language="en">TEX</gui_name>
+                <description language="en">MPU Region Attribute field</description>
+                <definition>[21:19]</definition>
+            </bitField>
+            <bitField conditional="false" name="AP" enumerationId="ACCESS_PERMISSIONS">
+                <gui_name language="en">AP</gui_name>
+                <description language="en">Access permissions</description>
+                <definition>[26:24]</definition>
+            </bitField>
+            <bitField conditional="false" name="XN" enumerationId="EXECUTE_NEVER">
+                <gui_name language="en">XN</gui_name>
+                <description language="en">Execute Never</description>
+                <definition>[28]</definition>
+            </bitField>
+        </register>
+        <register access="RW" name="MPU_RBAR_A2" size="4" offset="0xE000EDAC">
+            <gui_name language="en">MPU_RBAR_A2</gui_name>
+            <description language="en">MPU alias register for MPU Region Base Address Register</description>
+            <bitField conditional="false" name="REGION">
+                <gui_name language="en">REGION</gui_name>
+                <description language="en">On writes, can specify the number of the region to update. On reads, returns bits [3:0] of MPU_RNR</description>
+                <definition>[3:0]</definition>
+            </bitField>
+            <bitField conditional="false" name="VALID" enumerationId="VALID">
+                <gui_name language="en">VALID</gui_name>
+                <description language="en">On writes, indicates whether the region to update is specified by MPU_RNR.REGION, or by the REGION value specified in this write. When using the REGION value specified by this write, MPU_RNR.REGION is updated to this value</description>
+                <definition>[4]</definition>
+            </bitField>
+            <bitField conditional="false" name="ADDR">
+                <gui_name language="en">ADDR</gui_name>
+                <description language="en">Base address of the region</description>
+                <definition>[31:5]</definition>
+            </bitField>
+        </register>
+        <register access="RW" name="MPU_RASR_A2" size="4" offset="0xE000EDB0">
+            <gui_name language="en">MPU_RASR_A2</gui_name>
+            <description language="en">MPU alias register for MPU Region Attribute and Size Register</description>
+            <bitField conditional="false" name="ENABLE" enumerationId="DISABLED_ENABLED">
+                <gui_name language="en">ENABLE</gui_name>
+                <description language="en">Enables this region</description>
+                <definition>[0]</definition>
+            </bitField>
+            <bitField conditional="false" name="SIZE">
+                <gui_name language="en">SIZE</gui_name>
+                <description language="en">Indicates the region size</description>
+                <definition>[5:1]</definition>
+            </bitField>
+            <bitField conditional="false" name="SRD">
+                <gui_name language="en">SRD</gui_name>
+                <description language="en">Subregion Disable</description>
+                <definition>[15:8]</definition>
+            </bitField>
+            <bitField conditional="false" name="B">
+                <gui_name language="en">B</gui_name>
+                <description language="en">MPU Region Attribute field</description>
+                <definition>[16]</definition>
+            </bitField>
+            <bitField conditional="false" name="C">
+                <gui_name language="en">C</gui_name>
+                <description language="en">MPU Region Attribute field</description>
+                <definition>[17]</definition>
+            </bitField>
+            <bitField conditional="false" name="S">
+                <gui_name language="en">S</gui_name>
+                <description language="en">MPU Region Attribute field: Sharable</description>
+                <definition>[18]</definition>
+            </bitField>
+            <bitField conditional="false" name="TEX">
+                <gui_name language="en">TEX</gui_name>
+                <description language="en">MPU Region Attribute field</description>
+                <definition>[21:19]</definition>
+            </bitField>
+            <bitField conditional="false" name="AP" enumerationId="ACCESS_PERMISSIONS">
+                <gui_name language="en">AP</gui_name>
+                <description language="en">Access permissions</description>
+                <definition>[26:24]</definition>
+            </bitField>
+            <bitField conditional="false" name="XN" enumerationId="EXECUTE_NEVER">
+                <gui_name language="en">XN</gui_name>
+                <description language="en">Execute Never</description>
+                <definition>[28]</definition>
+            </bitField>
+        </register>
+        <register access="RW" name="MPU_RBAR_A3" size="4" offset="0xE000EDB4">
+            <gui_name language="en">MPU_RBAR_A3</gui_name>
+            <description language="en">MPU alias register for MPU Region Base Address Register</description>
+            <bitField conditional="false" name="REGION">
+                <gui_name language="en">REGION</gui_name>
+                <description language="en">On writes, can specify the number of the region to update. On reads, returns bits [3:0] of MPU_RNR</description>
+                <definition>[3:0]</definition>
+            </bitField>
+            <bitField conditional="false" name="VALID" enumerationId="VALID">
+                <gui_name language="en">VALID</gui_name>
+                <description language="en">On writes, indicates whether the region to update is specified by MPU_RNR.REGION, or by the REGION value specified in this write. When using the REGION value specified by this write, MPU_RNR.REGION is updated to this value</description>
+                <definition>[4]</definition>
+            </bitField>
+            <bitField conditional="false" name="ADDR">
+                <gui_name language="en">ADDR</gui_name>
+                <description language="en">Base address of the region</description>
+                <definition>[31:5]</definition>
+            </bitField>
+        </register>
+        <register access="RW" name="MPU_RASR_A3" size="4" offset="0xE000EDB8">
+            <gui_name language="en">MPU_RASR_A3</gui_name>
+            <description language="en">MPU alias register for MPU Region Attribute and Size Register</description>
+            <bitField conditional="false" name="ENABLE" enumerationId="DISABLED_ENABLED">
+                <gui_name language="en">ENABLE</gui_name>
+                <description language="en">Enables this region</description>
+                <definition>[0]</definition>
+            </bitField>
+            <bitField conditional="false" name="SIZE">
+                <gui_name language="en">SIZE</gui_name>
+                <description language="en">Indicates the region size</description>
+                <definition>[5:1]</definition>
+            </bitField>
+            <bitField conditional="false" name="SRD">
+                <gui_name language="en">SRD</gui_name>
+                <description language="en">Subregion Disable</description>
+                <definition>[15:8]</definition>
+            </bitField>
+            <bitField conditional="false" name="B">
+                <gui_name language="en">B</gui_name>
+                <description language="en">MPU Region Attribute field</description>
+                <definition>[16]</definition>
+            </bitField>
+            <bitField conditional="false" name="C">
+                <gui_name language="en">C</gui_name>
+                <description language="en">MPU Region Attribute field</description>
+                <definition>[17]</definition>
+            </bitField>
+            <bitField conditional="false" name="S">
+                <gui_name language="en">S</gui_name>
+                <description language="en">MPU Region Attribute field: Sharable</description>
+                <definition>[18]</definition>
+            </bitField>
+            <bitField conditional="false" name="TEX">
+                <gui_name language="en">TEX</gui_name>
+                <description language="en">MPU Region Attribute field</description>
+                <definition>[21:19]</definition>
+            </bitField>
+            <bitField conditional="false" name="AP" enumerationId="ACCESS_PERMISSIONS">
+                <gui_name language="en">AP</gui_name>
+                <description language="en">Access permissions</description>
+                <definition>[26:24]</definition>
+            </bitField>
+            <bitField conditional="false" name="XN" enumerationId="EXECUTE_NEVER">
+                <gui_name language="en">XN</gui_name>
+                <description language="en">Execute Never</description>
+                <definition>[28]</definition>
+            </bitField>
+        </register>
+    </peripheral>
+    <tcf:enumeration name="VALID" values="Not_valid=0,Valid=1"/>
+    <tcf:enumeration name="VALID_INVALID" values="Valid=0,Invalid=1"/>
+    <tcf:enumeration name="UNIFORM_SEPARATE" values="Uniform=0,Separate=1"/>
+    <tcf:enumeration name="DISABLED_ENABLED" values="Disabled=0,Enabled=1"/>
+    <tcf:enumeration name="EXECUTE_NEVER" values="Execution_Permitted=0,Execution_Not_Permitted=1"/>
+    <tcf:enumeration name="ACCESS_PERMISSIONS" values="Any_access_generates_a_permission_fault=0,Privileged_access_only=1,Any_unprivileged_write_generates_a_permission_fault=2,Full_access=3,Reserved=4,Privileged_read_only=5,Privileged_and_unprivileged_read_only=6,Privileged_and_unprivileged_read_only=7"/>
+</register_list>

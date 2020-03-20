@@ -1,0 +1,637 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<register_list
+    name="CP15"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns="http://www.arm.com/core_reg"
+    xsi:schemaLocation="http://www.arm.com/core_reg ../../../Schemas/core_register_definition.xsd"
+    xmlns:tcf="http://com.arm.targetconfigurationeditor">
+    <register_group name="Control">
+        <gui_name language="en">Control</gui_name>
+        <description language="en">System Control and Configuration</description>
+        <register access="RW" name="SCTLR" size="4">
+            <gui_name language="en">Control</gui_name>
+            <alias_name>CP15_SCTLR</alias_name>
+            <device_name type="rvi">CP15_SCTLR</device_name>
+            <device_name type="cadi">SCTLR</device_name>
+            <description language="en">Provides control and configuration information for:&#x0A;- memory alignment, endianness, protection, and fault behavior&#x0A;- MPU and cache enables and cache replacement strategy&#x0A;- interrupts and the behavior of interrupt latency&#x0A;- the location for exception vectors&#x0A;- program flow prediction</description>
+            <bitField conditional="false" name="IE" enumerationId="CP15_CONTROL_IE" access="RO">
+                <gui_name language="en">IE</gui_name>
+                <description language="en">Identifies little or big instruction endianness in use</description>
+                <definition>[31]</definition>
+            </bitField>
+            <bitField conditional="false" name="TE" enumerationId="CP15_CONTROL_TE">
+                <gui_name language="en">TE</gui_name>
+                <description language="en">Thumb exception enable</description>
+                <definition>[30]</definition>
+            </bitField>
+            <bitField conditional="false" name="AFE" enumerationId="GENERIC_DISABLED_ENABLED">
+                <gui_name language="en">AFE</gui_name>
+                <description language="en">Access Flag Enable</description>
+                <definition>[29]</definition>
+            </bitField>
+            <bitField conditional="false" name="TRE" enumerationId="GENERIC_DISABLED_ENABLED">
+                <gui_name language="en">TRE</gui_name>
+                <description language="en">TEX Remap Enable</description>
+                <definition>[28]</definition>
+            </bitField>
+            <bitField conditional="false" name="NMFI" enumerationId="CP15_CONTROL_NMFI" access="RO">
+                <gui_name language="en">NMFI</gui_name>
+                <description language="en">NMFI, non-maskable fast interrupt enable.</description>
+                <definition>[27]</definition>
+            </bitField>
+            <bitField conditional="false" name="EE" enumerationId="GENERIC_CLEARED_SET">
+                <gui_name language="en">EE</gui_name>
+                <description language="en">Determines the state of the CPSR E bit on an exception</description>
+                <definition>[25]</definition>
+            </bitField>
+            <bitField conditional="false" name="VE" enumerationId="CP15_CONTROL_VE">
+                <gui_name language="en">VE</gui_name>
+                <description language="en">Configures vectored interrupt</description>
+                <definition>[24]</definition>
+            </bitField>
+            <bitField conditional="false" name="FI" enumerationId="GENERIC_DISABLED_ENABLED">
+                <gui_name language="en">FI</gui_name>
+                <description language="en">Fast Interrupts enable</description>
+                <definition>[21]</definition>
+            </bitField>
+            <bitField conditional="false" name="DZ" enumerationId="GENERIC_DISABLED_ENABLED">
+                <gui_name language="en">DZ</gui_name>
+                <description language="en">Enable generation of undefined instruction exception on divide by zero</description>
+                <definition>[19]</definition>
+            </bitField>
+            <bitField conditional="false" name="BR" enumerationId="GENERIC_DISABLED_ENABLED">
+                <gui_name language="en">BR</gui_name>
+                <description language="en">MPU background region enable</description>
+                <definition>[17]</definition>
+            </bitField>
+            <bitField conditional="false" name="RR" enumerationId="CP15_CONTROL_RR">
+                <gui_name language="en">RR</gui_name>
+                <description language="en">Controls replacement strategy for instruction and data caches</description>
+                <definition>[14]</definition>
+            </bitField>
+            <bitField conditional="false" name="V" enumerationId="CP15_CONTROL_V">
+                <gui_name language="en">V</gui_name>
+                <description language="en">Determines the location of exception vectors</description>
+                <definition>[13]</definition>
+            </bitField>
+            <bitField conditional="false" name="I" enumerationId="GENERIC_DISABLED_ENABLED">
+                <gui_name language="en">I</gui_name>
+                <description language="en">Enables L1 instruction cache</description>
+                <definition>[12]</definition>
+            </bitField>
+            <bitField conditional="false" name="Z" enumerationId="GENERIC_NOT_SUPPORTED_SUPPORTED">
+                <gui_name language="en">Z</gui_name>
+                <description language="en">Branch prediction bit</description>
+                <definition>[11]</definition>
+            </bitField>
+            <bitField conditional="false" name="C" enumerationId="GENERIC_DISABLED_ENABLED">
+                <gui_name language="en">C</gui_name>
+                <description language="en">Enables L1 data cache</description>
+                <definition>[2]</definition>
+            </bitField>
+            <bitField conditional="false" name="A" enumerationId="GENERIC_DISABLED_ENABLED">
+                <gui_name language="en">A</gui_name>
+                <description language="en">Enables strict alignment of data to detect alignment faults in data accesses</description>
+                <definition>[1]</definition>
+            </bitField>
+            <bitField conditional="false" name="M" enumerationId="GENERIC_DISABLED_ENABLED">
+                <gui_name language="en">M</gui_name>
+                <description language="en">Enables the MPU</description>
+                <definition>[0]</definition>
+            </bitField>
+        </register>
+        <register access="RW" name="ACTLR" size="4">
+            <gui_name language="en">Auxiliary Control</gui_name>
+            <alias_name>CP15_ACTLR</alias_name>
+            <device_name type="rvi">CP15_ACTLR</device_name>
+            <device_name type="cadi">ACTLR</device_name>
+            <description language="en">The Auxiliary Control Registers control:&#x0A;- branch prediction&#x0A;- performance features&#x0A;- error and parity logic</description>
+            <bitField conditional="false" name="DICDI" enumerationId="GENERIC_ENABLED_DISABLED">
+                <gui_name language="en">DICDI</gui_name>
+                <description language="en">Case C dual issue control</description>
+                <definition>[31]</definition>
+            </bitField>
+            <bitField conditional="false" name="DIB2DI" enumerationId="GENERIC_ENABLED_DISABLED">
+                <gui_name language="en">DIB2DI</gui_name>
+                <description language="en">Case B2 dual issue control</description>
+                <definition>[30]</definition>
+            </bitField>
+            <bitField conditional="false" name="DIB1DI" enumerationId="GENERIC_ENABLED_DISABLED">
+                <gui_name language="en">DIB1DI</gui_name>
+                <description language="en">Case B1 dual issue control</description>
+                <definition>[29]</definition>
+            </bitField>
+            <bitField conditional="false" name="DIADI" enumerationId="GENERIC_ENABLED_DISABLED">
+                <gui_name language="en">DIADI</gui_name>
+                <description language="en">Case A dual issue control</description>
+                <definition>[28]</definition>
+            </bitField>
+            <bitField conditional="false" name="B1TCMPCEN" enumerationId="GENERIC_DISABLED_ENABLED">
+                <gui_name language="en">B1TCMPCEN</gui_name>
+                <description language="en">B1TCM parity or ECC check enable</description>
+                <definition>[27]</definition>
+            </bitField>
+            <bitField conditional="false" name="B0TCMPCEN" enumerationId="GENERIC_DISABLED_ENABLED">
+                <gui_name language="en">B0TCMPCEN</gui_name>
+                <description language="en">B0TCM parity or ECC check enable</description>
+                <definition>[26]</definition>
+            </bitField>
+            <bitField conditional="false" name="ATCMPCEN" enumerationId="GENERIC_DISABLED_ENABLED">
+                <gui_name language="en">ATCMPCEN</gui_name>
+                <description language="en">ATCM parity or ECC check enable</description>
+                <definition>[25]</definition>
+            </bitField>
+            <bitField conditional="false" name="AXISCEN" enumerationId="GENERIC_DISABLED_ENABLED">
+                <gui_name language="en">AXISCEN</gui_name>
+                <description language="en">AXI slave cache RAM access enable</description>
+                <definition>[24]</definition>
+            </bitField>
+            <bitField conditional="false" name="AXISCUEN" enumerationId="GENERIC_DISABLED_ENABLED">
+                <gui_name language="en">AXISCUEN</gui_name>
+                <description language="en">AXI slave cache RAM non-privileged access enable</description>
+                <definition>[23]</definition>
+            </bitField>
+            <bitField conditional="false" name="DILSM" enumerationId="GENERIC_ENABLED_DISABLED">
+                <gui_name language="en">DILSM</gui_name>
+                <description language="en">Disable Low Interrupt Latency (LIL) on load/store multiples</description>
+                <definition>[22]</definition>
+            </bitField>
+            <bitField conditional="false" name="DEOLP" enumerationId="GENERIC_ENABLED_DISABLED">
+                <gui_name language="en">DEOLP</gui_name>
+                <description language="en">Disable end of loop prediction</description>
+                <definition>[21]</definition>
+            </bitField>
+            <bitField conditional="false" name="DBHE" enumerationId="GENERIC_ENABLED_DISABLED">
+                <gui_name language="en">DBHE</gui_name>
+                <description language="en">Disable Branch History (BH) extension</description>
+                <definition>[20]</definition>
+            </bitField>
+            <bitField conditional="false" name="FRCDIS" enumerationId="GENERIC_NORMAL_OPERATION_DISABLED">
+                <gui_name language="en">FRCDIS</gui_name>
+                <description language="en">Fetch rate control disable</description>
+                <definition>[19]</definition>
+            </bitField>
+            <bitField conditional="false" name="RSDIS" enumerationId="GENERIC_NORMAL_OPERATION_DISABLED">
+                <gui_name language="en">RSDIS</gui_name>
+                <description language="en">Return stack disable</description>
+                <definition>[17]</definition>
+            </bitField>
+            <bitField conditional="false" name="BP" enumerationId="CP15_AUXILIARY_CONTROL_BP">
+                <gui_name language="en">BP</gui_name>
+                <description language="en">This field controls the branch prediction policy</description>
+                <definition>[16:15]</definition>
+            </bitField>
+            <bitField conditional="false" name="DBWR" enumerationId="GENERIC_NORMAL_OPERATION_DISABLED">
+                <gui_name language="en">DBWR</gui_name>
+                <description language="en">Disable write burst in the AXI master</description>
+                <definition>[14]</definition>
+            </bitField>
+            <bitField conditional="false" name="DLFO" enumerationId="CP15_AUXILIARY_CONTROL_DLFO">
+                <gui_name language="en">DLFO</gui_name>
+                <description language="en">Disable linefill optimization in the AXI master</description>
+                <definition>[13]</definition>
+            </bitField>
+            <bitField conditional="false" name="ERPEG" enumerationId="GENERIC_DISABLED_ENABLED">
+                <gui_name language="en">ERPEG</gui_name>
+                <description language="en">Enable random parity error generation in the cache RAMs</description>
+                <definition>[12]</definition>
+            </bitField>
+            <bitField conditional="false" name="DNCH" enumerationId="GENERIC_NORMAL_OPERATION_DISABLED">
+                <gui_name language="en">DNCH</gui_name>
+                <description language="en">Disable data forwarding for Non-cacheable accesses in the AXI master</description>
+                <definition>[11]</definition>
+            </bitField>
+            <bitField conditional="false" name="FORA" enumerationId="CP15_AUXILIARY_CONTROL_FORA">
+                <gui_name language="en">FORA</gui_name>
+                <description language="en">Force outer read allocate (ORA) for outer write allocate (OWA) regions</description>
+                <definition>[10]</definition>
+            </bitField>
+            <bitField conditional="false" name="FWT" enumerationId="CP15_AUXILIARY_CONTROL_FWT">
+                <gui_name language="en">FWT</gui_name>
+                <description language="en">Force write-through (WT) for write-back (WB) regions</description>
+                <definition>[9]</definition>
+            </bitField>
+            <bitField conditional="false" name="FDSNS" enumerationId="CP15_AUXILIARY_CONTROL_FDSnS">
+                <gui_name language="en">FDSNS</gui_name>
+                <description language="en">Force D-side to not-shared when MPU is off</description>
+                <definition>[8]</definition>
+            </bitField>
+            <bitField conditional="false" name="SMOV" enumerationId="CP15_AUXILIARY_CONTROL_sMOV">
+                <gui_name language="en">SMOV</gui_name>
+                <description language="en">sMOV of a divide does not complete out of order</description>
+                <definition>[7]</definition>
+            </bitField>
+            <bitField conditional="false" name="DILS" enumerationId="GENERIC_ENABLED_DISABLED">
+                <gui_name language="en">DILS</gui_name>
+                <description language="en">Disable low interrupt latency on all load/store instructions</description>
+                <definition>[6]</definition>
+            </bitField>
+            <bitField conditional="false" name="CEC" enumerationId="CP15_AUXILIARY_CONTROL_CEC">
+                <gui_name language="en">CEC</gui_name>
+                <description language="en">Cache error control for cache parity and ECC errors</description>
+                <definition>[5:3]</definition>
+            </bitField>
+            <bitField conditional="false" name="B1TCMECEN" enumerationId="GENERIC_DISABLED_ENABLED">
+                <gui_name language="en">B1TCMECEN</gui_name>
+                <description language="en">B1TCM external error enable</description>
+                <definition>[2]</definition>
+            </bitField>
+            <bitField conditional="false" name="B0TCMECEN" enumerationId="GENERIC_DISABLED_ENABLED">
+                <gui_name language="en">B0TCMECEN</gui_name>
+                <description language="en">B0TCM external error enable</description>
+                <definition>[1]</definition>
+            </bitField>
+            <bitField conditional="false" name="ATCMECEN" enumerationId="GENERIC_DISABLED_ENABLED">
+                <gui_name language="en">ATCMECEN</gui_name>
+                <description language="en">ATCM external error enable</description>
+                <definition>[0]</definition>
+            </bitField>
+        </register>
+        <register access="RW" name="SECONDARY_AUXILIARY_CONTROL" size="4">
+            <gui_name language="en">Secondary Auxiliary Control</gui_name>
+            <alias_name>CP15_SECONDARY_AUXILIARY_CONTROL</alias_name>
+            <device_name type="rvi">CP15_SECONDARY_AUXILIARY_CONTROL</device_name>
+            <device_name type="cadi">SECONDARY_AUXILIARY_CONTROL</device_name>
+            <description language="en">The Auxiliary Control Registers control:&#x0A;- branch prediction&#x0A;- performance features&#x0A;- error and parity logic</description>
+            <bitField conditional="false" name="DCHE" enumerationId="GENERIC_ENABLED_DISABLED">
+                <gui_name language="en">DCHE</gui_name>
+                <description language="en">Disable hard-error support in the caches</description>
+                <definition>[22]</definition>
+            </bitField>
+            <bitField conditional="false" name="DR2B" enumerationId="GENERIC_DISABLED_ENABLED">
+                <gui_name language="en">DR2B</gui_name>
+                <description language="en">Enable random 2-bit error generation in cache RAMs</description>
+                <definition>[21]</definition>
+            </bitField>
+            <bitField conditional="false" name="DF6DI" enumerationId="GENERIC_ENABLED_DISABLED">
+                <gui_name language="en">DF6DI</gui_name>
+                <description language="en">F6 dual issue control</description>
+                <definition>[20]</definition>
+            </bitField>
+            <bitField conditional="false" name="DF2DI" enumerationId="GENERIC_ENABLED_DISABLED">
+                <gui_name language="en">DF2DI</gui_name>
+                <description language="en">F2_Id/F2_st/F2D dual issue control</description>
+                <definition>[19]</definition>
+            </bitField>
+            <bitField conditional="false" name="DDI" enumerationId="GENERIC_ENABLED_DISABLED">
+                <gui_name language="en">DDI</gui_name>
+                <description language="en">F1/F3/F4dual issue control</description>
+                <definition>[18]</definition>
+            </bitField>
+            <bitField conditional="false" name="DOODPFP" enumerationId="GENERIC_ENABLED_DISABLED">
+                <gui_name language="en">DOODPFP</gui_name>
+                <description language="en">Out-of-order Double Precision Floating Point instruction control</description>
+                <definition>[17]</definition>
+            </bitField>
+            <bitField conditional="false" name="DOOFMACS" enumerationId="GENERIC_ENABLED_DISABLED">
+                <gui_name language="en">DOOFMACS</gui_name>
+                <description language="en">Out-of-order FMACS control</description>
+                <definition>[16]</definition>
+            </bitField>
+            <bitField conditional="false" name="IXC" enumerationId="GENERIC_MASKED_UNMASKED">
+                <gui_name language="en">IXC</gui_name>
+                <description language="en">Floating-point inexact exception output mask</description>
+                <definition>[13]</definition>
+            </bitField>
+            <bitField conditional="false" name="OFC" enumerationId="GENERIC_MASKED_UNMASKED">
+                <gui_name language="en">OFC</gui_name>
+                <description language="en">Floating-point overflow exception output mask</description>
+                <definition>[12]</definition>
+            </bitField>
+            <bitField conditional="false" name="UFC" enumerationId="GENERIC_MASKED_UNMASKED">
+                <gui_name language="en">UFC</gui_name>
+                <description language="en">Floating-point underflow exception output mask</description>
+                <definition>[11]</definition>
+            </bitField>
+            <bitField conditional="false" name="IOC" enumerationId="GENERIC_MASKED_UNMASKED">
+                <gui_name language="en">IOC</gui_name>
+                <description language="en">Floating-point invalid operation exception output mask</description>
+                <definition>[10]</definition>
+            </bitField>
+            <bitField conditional="false" name="DZC" enumerationId="GENERIC_MASKED_UNMASKED">
+                <gui_name language="en">DZC</gui_name>
+                <description language="en">Floating-point divide-by-zero exception output mask</description>
+                <definition>[9]</definition>
+            </bitField>
+            <bitField conditional="false" name="IDC" enumerationId="GENERIC_MASKED_UNMASKED">
+                <gui_name language="en">IDC</gui_name>
+                <description language="en">Floating-point input denormal exception output mask</description>
+                <definition>[8]</definition>
+            </bitField>
+            <bitField conditional="false" name="B0TCMECC" enumerationId="GENERIC_ENABLED_DISABLED">
+                <gui_name language="en">B0TCMECC</gui_name>
+                <description language="en">Correction for internal ECC logic on BTCM ports</description>
+                <definition>[3]</definition>
+            </bitField>
+            <bitField conditional="false" name="ATCMECC" enumerationId="GENERIC_ENABLED_DISABLED">
+                <gui_name language="en">ATCMECC</gui_name>
+                <description language="en">Correction for internal ECC logic on ATCM port</description>
+                <definition>[2]</definition>
+            </bitField>
+            <bitField conditional="false" name="BTCMRMW" enumerationId="GENERIC_DISABLED_ENABLED">
+                <gui_name language="en">BTCMRMW</gui_name>
+                <description language="en">Enables 64-bit stores for the BTCMs</description>
+                <definition>[1]</definition>
+            </bitField>
+            <bitField conditional="false" name="ATCMRMW" enumerationId="GENERIC_DISABLED_ENABLED">
+                <gui_name language="en">ATCMRMW</gui_name>
+                <description language="en">Enables 64-bit stores for the ATCM</description>
+                <definition>[0]</definition>
+            </bitField>
+        </register>
+        <register access="RW" name="CPACR" size="4">
+            <gui_name language="en">Coprocessor Access Control</gui_name>
+            <alias_name>CP15_CPACR</alias_name>
+            <device_name type="rvi">CP15_CPACR</device_name>
+            <device_name type="cadi">CPACR</device_name>
+            <description language="en">Sets access rights for coprocessors CP0-CP13</description>
+            <bitField conditional="false" name="CP13" enumerationId="CP15_COPROCESSOR_ACCESS_CONTROL">
+                <gui_name language="en">CP13</gui_name>
+                <description language="en">Access permissions for coprocessor 13</description>
+                <definition>[27:26]</definition>
+            </bitField>
+            <bitField conditional="false" name="CP12" enumerationId="CP15_COPROCESSOR_ACCESS_CONTROL">
+                <gui_name language="en">CP12</gui_name>
+                <description language="en">Access permissions for coprocessor 12</description>
+                <definition>[25:24]</definition>
+            </bitField>
+            <bitField conditional="false" name="CP11" enumerationId="CP15_COPROCESSOR_ACCESS_CONTROL">
+                <gui_name language="en">CP11</gui_name>
+                <description language="en">Access permissions for coprocessor 11</description>
+                <definition>[23:22]</definition>
+            </bitField>
+            <bitField conditional="false" name="CP10" enumerationId="CP15_COPROCESSOR_ACCESS_CONTROL">
+                <gui_name language="en">CP10</gui_name>
+                <description language="en">Access permissions for coprocessor 10</description>
+                <definition>[21:20]</definition>
+            </bitField>
+            <bitField conditional="false" name="CP9" enumerationId="CP15_COPROCESSOR_ACCESS_CONTROL">
+                <gui_name language="en">CP9</gui_name>
+                <description language="en">Access permissions for coprocessor 9</description>
+                <definition>[19:18]</definition>
+            </bitField>
+            <bitField conditional="false" name="CP8" enumerationId="CP15_COPROCESSOR_ACCESS_CONTROL">
+                <gui_name language="en">CP8</gui_name>
+                <description language="en">Access permissions for coprocessor 8</description>
+                <definition>[17:16]</definition>
+            </bitField>
+            <bitField conditional="false" name="CP7" enumerationId="CP15_COPROCESSOR_ACCESS_CONTROL">
+                <gui_name language="en">CP7</gui_name>
+                <description language="en">Access permissions for coprocessor 7</description>
+                <definition>[15:14]</definition>
+            </bitField>
+            <bitField conditional="false" name="CP6" enumerationId="CP15_COPROCESSOR_ACCESS_CONTROL">
+                <gui_name language="en">CP6</gui_name>
+                <description language="en">Access permissions for coprocessor 6</description>
+                <definition>[13:12]</definition>
+            </bitField>
+            <bitField conditional="false" name="CP5" enumerationId="CP15_COPROCESSOR_ACCESS_CONTROL">
+                <gui_name language="en">CP5</gui_name>
+                <description language="en">Access permissions for coprocessor 5</description>
+                <definition>[11:10]</definition>
+            </bitField>
+            <bitField conditional="false" name="CP4" enumerationId="CP15_COPROCESSOR_ACCESS_CONTROL">
+                <gui_name language="en">CP4</gui_name>
+                <description language="en">Access permissions for coprocessor 4</description>
+                <definition>[9:8]</definition>
+            </bitField>
+            <bitField conditional="false" name="CP3" enumerationId="CP15_COPROCESSOR_ACCESS_CONTROL">
+                <gui_name language="en">CP3</gui_name>
+                <description language="en">Access permissions for coprocessor 3</description>
+                <definition>[7:6]</definition>
+            </bitField>
+            <bitField conditional="false" name="CP2" enumerationId="CP15_COPROCESSOR_ACCESS_CONTROL">
+                <gui_name language="en">CP2</gui_name>
+                <description language="en">Access permissions for coprocessor 2</description>
+                <definition>[5:4]</definition>
+            </bitField>
+            <bitField conditional="false" name="CP1" enumerationId="CP15_COPROCESSOR_ACCESS_CONTROL">
+                <gui_name language="en">CP1</gui_name>
+                <description language="en">Access permissions for coprocessor 1</description>
+                <definition>[3:2]</definition>
+            </bitField>
+            <bitField conditional="false" name="CP0" enumerationId="CP15_COPROCESSOR_ACCESS_CONTROL">
+                <gui_name language="en">CP0</gui_name>
+                <description language="en">Access permissions for coprocessor 0</description>
+                <definition>[1:0]</definition>
+            </bitField>
+        </register>
+        <register access="RW" name="DFSR" size="4">
+            <gui_name language="en">Data Fault Status</gui_name>
+            <alias_name>CP15_DFSR</alias_name>
+            <device_name type="rvi">CP15_DFSR</device_name>
+            <device_name type="cadi">DFSR</device_name>
+            <description language="en">The Data Fault Status Register holds status information regarding the source of the last data abort</description>
+            <bitField conditional="false" name="SD" enumerationId="CP15_DFSR_SD">
+                <gui_name language="en">SD</gui_name>
+                <description language="en">Distinguishes between an AXI Decode or Slave error on an external abort</description>
+                <definition>[12]</definition>
+            </bitField>
+            <bitField conditional="false" name="RW" enumerationId="CP15_DFSR_RW">
+                <gui_name language="en">RW</gui_name>
+                <description language="en">Indicates whether a read or write access caused an abort</description>
+                <definition>[11]</definition>
+            </bitField>
+            <bitField conditional="false" name="STATUS" enumerationId="CP15_DFSR_STATUS">
+                <gui_name language="en">STATUS</gui_name>
+                <description language="en">Indicates the type of fault generated</description>
+                <definition>[3:0][10]</definition>
+            </bitField>
+            <bitField conditional="false" name="DOMAIN">
+                <gui_name language="en">DOMAIN</gui_name>
+                <description language="en">Not implemented in this processor</description>
+                <definition>[7:4]</definition>
+            </bitField>
+        </register>
+        <register access="RW" name="ADFSR" size="4">
+            <gui_name language="en">Auxiliary Data Fault Status</gui_name>
+            <alias_name>CP15_ADFSR</alias_name>
+            <device_name type="rvi">CP15_ADFSR</device_name>
+            <device_name type="cadi">ADFSR</device_name>
+            <description language="en">Provides additional information about data parity, ECC, and external TCM errors</description>
+            <bitField conditional="false" name="CACHE_WAY">
+                <gui_name language="en">CACHE_WAY</gui_name>
+                <description language="en">The value returned indicates the cache way or ways in which the error occurred</description>
+                <definition>[27:24]</definition>
+            </bitField>
+            <bitField conditional="false" name="SIDE" enumerationId="CP15_ADFSR_SIDE">
+                <gui_name language="en">SIDE</gui_name>
+                <description language="en">The value returned indicates the source of the error</description>
+                <definition>[23:22]</definition>
+            </bitField>
+            <bitField conditional="false" name="RECOVERABLE" enumerationId="CP15_ADFSR_RECOVERABLE">
+                <gui_name language="en">RECOVERABLE</gui_name>
+                <description language="en">The value returned indicates if the error is recoverable</description>
+                <definition>[21]</definition>
+            </bitField>
+            <bitField conditional="false" name="CACHE_INDEX">
+                <gui_name language="en">CACHE_INDEX</gui_name>
+                <description language="en">Returns the index value for the access giving the error</description>
+                <definition>[13:5]</definition>
+            </bitField>
+        </register>
+        <register access="RW" name="IFSR" size="4">
+            <gui_name language="en">Instruction Fault Status</gui_name>
+            <alias_name>CP15_IFSR</alias_name>
+            <device_name type="rvi">CP15_IFSR</device_name>
+            <device_name type="cadi">IFSR</device_name>
+            <description language="en">The Instruction Fault Status Register holds status information regarding the source of the last instruction abort</description>
+            <bitField conditional="false" name="SD" enumerationId="CP15_IFSR_SD">
+                <gui_name language="en">SD</gui_name>
+                <description language="en">Distinguishes between an AXI Decode or Slave error on an external abort</description>
+                <definition>[12]</definition>
+            </bitField>
+            <bitField conditional="false" name="STATUS" enumerationId="CP15_IFSR_STATUS">
+                <gui_name language="en">STATUS</gui_name>
+                <description language="en">Indicates the type of fault generated</description>
+                <definition>[3:0][10]</definition>
+            </bitField>
+            <bitField conditional="false" name="DOMAIN">
+                <gui_name language="en">DOMAIN</gui_name>
+                <description language="en">Not implemented in this processor</description>
+                <definition>[7:4]</definition>
+            </bitField>
+        </register>
+        <register access="RW" name="AIFSR" size="4">
+            <gui_name language="en">Auxiliary Instruction Fault Status</gui_name>
+            <alias_name>CP15_AIFSR</alias_name>
+            <device_name type="rvi">CP15_AIFSR</device_name>
+            <device_name type="cadi">AIFSR</device_name>
+            <description language="en">Provides additional information about instruction parity, ECC, and external TCM errors</description>
+            <bitField conditional="false" name="CACHE_WAY">
+                <gui_name language="en">CACHE_WAY</gui_name>
+                <description language="en">The value returned indicates the cache way or ways in which the error occurred</description>
+                <definition>[27:24]</definition>
+            </bitField>
+            <bitField conditional="false" name="SIDE" enumerationId="CP15_AIFSR_SIDE">
+                <gui_name language="en">SIDE</gui_name>
+                <description language="en">The value returned indicates the source of the error</description>
+                <definition>[23:22]</definition>
+            </bitField>
+            <bitField conditional="false" name="RECOVERABLE" enumerationId="CP15_AIFSR_RECOVERABLE">
+                <gui_name language="en">RECOVERABLE</gui_name>
+                <description language="en">The value returned indicates if the error is recoverable</description>
+                <definition>[21]</definition>
+            </bitField>
+            <bitField conditional="false" name="CACHE_INDEX">
+                <gui_name language="en">CACHE_INDEX</gui_name>
+                <description language="en">Returns the index value for the access giving the error</description>
+                <definition>[13:5]</definition>
+            </bitField>
+        </register>
+        <register access="RW" name="DFAR" size="4">
+            <gui_name language="en">Data Fault Address</gui_name>
+            <alias_name>CP15_DFAR</alias_name>
+            <device_name type="rvi">CP15_DFAR</device_name>
+            <device_name type="cadi">DFAR</device_name>
+            <description language="en">The Data Fault Address Register holds the address of the fault when a precise abort occurs</description>
+        </register>
+        <register access="RW" name="IFAR" size="4">
+            <gui_name language="en">Instruction Fault Address</gui_name>
+            <alias_name>CP15_IFAR</alias_name>
+            <device_name type="rvi">CP15_IFAR</device_name>
+            <device_name type="cadi">IFAR</device_name>
+            <description language="en">The Instruction Fault Address Register holds the address of instruction when a prefetch abort occurs</description>
+        </register>
+        <register access="RO" name="CP14_DSCR" size="4">
+            <gui_name language="en">Debug Status and Control</gui_name>
+            <description language="en">Debug Status and Control</description>
+            <bitField conditional="false" name="DBGDSCR_DTR_R_FULL">
+                <gui_name language="en">DTR_R_FULL</gui_name>
+                <description language="en">DTRRX full</description>
+                <definition>[30]</definition>
+            </bitField>
+            <bitField conditional="false" name="DBGDSCR_DTR_T_FULL">
+                <gui_name language="en">DTR_T_FULL</gui_name>
+                <description language="en">DTRTX full</description>
+                <definition>[29]</definition>
+            </bitField>
+            <bitField conditional="false" name="DBGDSCR_PIPE_ADV">
+                <gui_name language="en">PIPE_ADV</gui_name>
+                <description language="en">Sticky Pipeline Advance</description>
+                <definition>[25]</definition>
+            </bitField>
+            <bitField conditional="false" name="DBGDSCR_INSTR_COMPL_L">
+                <gui_name language="en">INSTR_COMPL_L</gui_name>
+                <description language="en">Latched Instruction Complete</description>
+                <definition>[24]</definition>
+            </bitField>
+            <bitField conditional="false" name="DBGDSCR_EXT_DTR" enumerationId="DBGDSCR_EXT_DTR">
+                <gui_name language="en">EXT_DTR</gui_name>
+                <description language="en">EXT-DTR Access Mode</description>
+                <definition>[21:20]</definition>
+            </bitField>
+            <bitField conditional="false" name="DBGDSCR_IDAD">
+                <gui_name language="en">IDAD</gui_name>
+                <description language="en">Imprecise Data aborts discarded</description>
+                <definition>[19]</definition>
+            </bitField>
+            <bitField conditional="false" name="DBGDSCR_NS_STATUS" enumerationId="DBGDSCR_NS_STATUS">
+                <gui_name language="en">NS_STATUS</gui_name>
+                <description language="en">Non-Secure world Status</description>
+                <definition>[18]</definition>
+            </bitField>
+            <bitField conditional="false" name="DBGDSCR_MDBE" enumerationId="GENERIC_DISABLED_ENABLED">
+                <gui_name language="en">MDBE</gui_name>
+                <description language="en">Monitor debug-mode enable</description>
+                <definition>[15]</definition>
+            </bitField>
+            <bitField conditional="false" name="DBGDSCR_HDME" enumerationId="GENERIC_DISABLED_ENABLED">
+                <gui_name language="en">HDME</gui_name>
+                <description language="en">Halting Debug-mode enable</description>
+                <definition>[14]</definition>
+            </bitField>
+            <bitField conditional="false" name="DBGDSCR_EAIE" enumerationId="GENERIC_DISABLED_ENABLED">
+                <gui_name language="en">EAIE</gui_name>
+                <description language="en">Execute ARM instruction enable</description>
+                <definition>[13]</definition>
+            </bitField>
+            <bitField conditional="false" name="DBGDSCR_UDCCD" enumerationId="GENERIC_ENABLE_DISABLE">
+                <gui_name language="en">UDCCD</gui_name>
+                <description language="en">CP14 debug user access disable</description>
+                <definition>[12]</definition>
+            </bitField>
+            <bitField conditional="false" name="DBGDSCR_ID" enumerationId="GENERIC_ENABLED_DISABLED">
+                <gui_name language="en">ID</gui_name>
+                <description language="en">Interrupts disable</description>
+                <definition>[11]</definition>
+            </bitField>
+            <bitField conditional="false" name="DBGDSCR_FDA">
+                <gui_name language="en">FDA</gui_name>
+                <description language="en">Force Debug Acknowledge</description>
+                <definition>[10]</definition>
+            </bitField>
+            <bitField conditional="false" name="DBGDSCR_SU">
+                <gui_name language="en">SU</gui_name>
+                <description language="en">Sticky Undefined</description>
+                <definition>[8]</definition>
+            </bitField>
+            <bitField conditional="false" name="DBGDSCR_ADABORT">
+                <gui_name language="en">ADABORT</gui_name>
+                <description language="en">Sticky asynchronous data Abort</description>
+                <definition>[7]</definition>
+            </bitField>
+            <bitField conditional="false" name="DBGDSCR_SDABORT">
+                <gui_name language="en">SDABORT</gui_name>
+                <description language="en">Sticky synchronous data Abort</description>
+                <definition>[6]</definition>
+            </bitField>
+            <bitField conditional="false" name="DBGDSCR_MOE" enumerationId="DBGDSCR_MOE">
+                <gui_name language="en">MOE</gui_name>
+                <description language="en">Method of Debug Entry</description>
+                <definition>[5:2]</definition>
+            </bitField>
+            <bitField conditional="false" name="DBGDSCR_CR" enumerationId="DBGDSCR_CR">
+                <gui_name language="en">CR</gui_name>
+                <description language="en">Core Restarted</description>
+                <definition>[1]</definition>
+            </bitField>
+            <bitField conditional="false" name="DBGDSCR_CH" enumerationId="DBGDSCR_CH">
+                <gui_name language="en">CH</gui_name>
+                <description language="en">Core Halted</description>
+                <definition>[0]</definition>
+            </bitField>
+        </register>
+    </register_group>
+</register_list>
+

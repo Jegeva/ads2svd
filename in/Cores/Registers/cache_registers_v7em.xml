@@ -1,0 +1,229 @@
+<register_list
+    name="Cache"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns="http://www.arm.com/core_reg"
+    xsi:schemaLocation="http://www.arm.com/core_reg ../../Schemas/core_register_definition.xsd"
+    xmlns:tcf="http://com.arm.targetconfigurationeditor">
+    <access_world>Non-Secure</access_world>
+    <peripheral name="Cache" offset="0x00000000">
+        <gui_name language="en">Cache Control</gui_name>
+        <description language="en">Cache Control</description>
+        <!-- Register info from PRD40-PRDC-013239-1-0 ARMv7-M Architecture Extensions for Cortex-M7 Overview
+        0xE000ED78 CLIDR Cache Level ID register
+        0xE000ED7C CTR Cache Type register
+        0xE000ED80 CCSIDR Cache size ID register
+        0xE000ED84 CSSELR Cache size selection register
+
+        0xE000EF50 ICIALLU I-cache invalidate all to PoU
+        0xE000EF54 RESERVED Space for ICIALLUIS (possible future expansion)
+        0xE000EF58 ICIMVAU I-cache invalidate by MVA to PoU
+        0xE000EF5C DCIMVAC D-cache invalidate by MVA to PoC
+        0xE000EF60 DCISW D-cache invalidate by set-way
+        0xE000EF64 DCCMVAU D-cache clean by MVA to PoU
+        0xE000EF68 DCCMVAC D-cache clean by MVA to PoC
+        0xE000EF6C DCCSW D-cache clean by set-way
+        0xE000EF70 DCCIMVAC D-cache clean and invalidate by MVA to PoC
+        0xE000EF74 DCCISW D-cache clean and invalidate by set-way
+        0xE000EF78 BPIALL Branch predictor invalidate all
+        0xE000EF7C RESERVED Space for BPIALLIS (possible future expansion)
+        0xE000EF80 RESERVED Space for BPIMVA (possible future expansion)
+
+        -->
+        <register access="RO" name="CLIDR" size="4" offset="0xE000ED78">
+            <gui_name language="en">CLIDR</gui_name>
+            <description language="en">Cache Level ID Register</description>
+            <bitField conditional="false" name="LoUU" enumerationId="CLIDR_Lo">
+                <gui_name language="en">LoUU</gui_name>
+                <description language="en">Indicates the Level of Unification Uniprocessor for the cache hierarchy</description>
+                <definition>[29:27]</definition>
+            </bitField>
+            <bitField conditional="false" name="LoC" enumerationId="CLIDR_Lo">
+                <gui_name language="en">LoC</gui_name>
+                <description language="en">Level of Coherency</description>
+                <definition>[26:24]</definition>
+            </bitField>
+            <bitField conditional="false" name="LoUIS" enumerationId="CLIDR_Lo">
+                <gui_name language="en">LoUIS</gui_name>
+                <description language="en">Indicates the Level of Unification Inner Shareable for the cache hierarchy</description>
+                <definition>[23:21]</definition>
+            </bitField>
+            <bitField conditional="false" name="CL7" enumerationId="CLIDR_CL">
+                <gui_name language="en">CL7</gui_name>
+                <description language="en">Cache Type 7</description>
+                <definition>[20:18]</definition>
+            </bitField>
+            <bitField conditional="false" name="CL6" enumerationId="CLIDR_CL">
+                <gui_name language="en">CL6</gui_name>
+                <description language="en">Cache Type 6</description>
+                <definition>[17:15]</definition>
+            </bitField>
+            <bitField conditional="false" name="CL5" enumerationId="CLIDR_CL">
+                <gui_name language="en">CL5</gui_name>
+                <description language="en">Cache Type 5</description>
+                <definition>[14:12]</definition>
+            </bitField>
+            <bitField conditional="false" name="CL4" enumerationId="CLIDR_CL">
+                <gui_name language="en">CL4</gui_name>
+                <description language="en">Cache Type 4</description>
+                <definition>[11:9]</definition>
+            </bitField>
+            <bitField conditional="false" name="CL3" enumerationId="CLIDR_CL">
+                <gui_name language="en">CL3</gui_name>
+                <description language="en">Cache Type 3</description>
+                <definition>[8:6]</definition>
+            </bitField>
+            <bitField conditional="false" name="CL2" enumerationId="CLIDR_CL">
+                <gui_name language="en">CL2</gui_name>
+                <description language="en">Cache Type 2</description>
+                <definition>[5:3]</definition>
+            </bitField>
+            <bitField conditional="false" name="CL1" enumerationId="CLIDR_CL">
+                <gui_name language="en">CL1</gui_name>
+                <description language="en">Cache Type 1</description>
+                <definition>[2:0]</definition>
+            </bitField>
+        </register>
+        <register access="RO" name="CTR" size="4" offset="0xE000ED7C">
+            <gui_name language="en">CTR</gui_name>
+            <description language="en">Cache Type Register</description>
+            <bitField conditional="false" name="F" enumerationId="CTR_F">
+                <gui_name language="en">F</gui_name>
+                <description language="en">ARMv7 register format</description>
+                <definition>[31:29]</definition>
+            </bitField>
+            <bitField conditional="false" name="CWG" enumerationId="CTR_GRAN">
+                <gui_name language="en">CWG</gui_name>
+                <description language="en">Cache Writeback Granule</description>
+                <definition>[27:24]</definition>
+            </bitField>
+            <bitField conditional="false" name="ERG" enumerationId="CTR_GRAN">
+                <gui_name language="en">ERG</gui_name>
+                <description language="en">Exclusives Reservation Granule</description>
+                <definition>[23:20]</definition>
+            </bitField>
+            <bitField conditional="false" name="DMinLine" enumerationId="CTR_GRAN">
+                <gui_name language="en">DMinLine</gui_name>
+                <description language="en">Log2 of the number of words in the smallest cache line of all the data and unified caches under the core control</description>
+                <definition>[19:16]</definition>
+            </bitField>
+            <bitField conditional="false" name="L1IP" enumerationId="CTR_L1IP">
+                <gui_name language="en">L1IP</gui_name>
+                <description language="en">Indicates the level 1 instruction cache policy for indexing and tagging</description>
+                <definition>[15:14]</definition>
+            </bitField>
+            <bitField conditional="false" name="IminLine" enumerationId="CTR_GRAN">
+                <gui_name language="en">IminLine</gui_name>
+                <description language="en">Log2 of the number of words in the smallest cache line of all the instruction caches under the control of the processor</description>
+                <definition>[3:0]</definition>
+            </bitField>
+        </register>
+        <register access="RO" name="CCSIDR" size="4" offset="0xE000ED80">
+            <gui_name language="en">CCSIDR</gui_name>
+            <description language="en">Cache Size ID Register</description>
+            <bitField conditional="false" name="WT" enumerationId="GENERIC_NOTSUPP_SUPP">
+                <gui_name language="en">WT</gui_name>
+                <description language="en">Write-Through</description>
+                <definition>[31]</definition>
+            </bitField>
+            <bitField conditional="false" name="WB" enumerationId="GENERIC_NOTSUPP_SUPP">
+                <gui_name language="en">WB</gui_name>
+                <description language="en">Write-Back</description>
+                <definition>[30]</definition>
+            </bitField>
+            <bitField conditional="false" name="RA" enumerationId="GENERIC_NOTSUPP_SUPP">
+                <gui_name language="en">RA</gui_name>
+                <description language="en">Read-Allocation</description>
+                <definition>[29]</definition>
+            </bitField>
+            <bitField conditional="false" name="WA" enumerationId="GENERIC_NOTSUPP_SUPP">
+                <gui_name language="en">WA</gui_name>
+                <description language="en">Write-Allocation</description>
+                <definition>[28]</definition>
+            </bitField>
+            <bitField conditional="false" name="NS" enumerationId="CCSIDR_NS">
+                <gui_name language="en">NS</gui_name>
+                <description language="en">Number of sets</description>
+                <definition>[27:13]</definition>
+            </bitField>
+            <bitField conditional="false" name="A" enumerationId="CCSIDR_A">
+                <gui_name language="en">A</gui_name>
+                <description language="en">Associativity</description>
+                <definition>[12:3]</definition>
+            </bitField>
+            <bitField conditional="false" name="LS" enumerationId="CCSIDR_LS">
+                <gui_name language="en">LS</gui_name>
+                <description language="en">Line Size</description>
+                <definition>[2:0]</definition>
+            </bitField>
+        </register>
+        <register access="RW" name="CSSELR" size="4" offset="0xE000ED84">
+            <gui_name language="en">CSSELR</gui_name>
+            <description language="en">Cache Size Selection Register</description>
+            <bitField conditional="false" name="L">
+                <gui_name language="en">L</gui_name>
+                <description language="en">Level</description>
+                <definition>[3:1]</definition>
+            </bitField>
+            <bitField conditional="false" name="IND" enumerationId="CSSELR_IND">
+                <gui_name language="en">IND</gui_name>
+                <description language="en">Type</description>
+                <definition>[0]</definition>
+            </bitField>
+        </register>
+        <register access="WO" name="ICIALLU" size="4" offset="0xE000EF50">
+            <gui_name language="en">ICIALLU</gui_name>
+            <description language="en">Instruction Cache Invalidate All to PoU</description>
+        </register>
+        <register access="WO" name="ICIMVAU" size="4" offset="0xE000EF58">
+            <gui_name language="en">ICIMVAU</gui_name>
+            <description language="en">Instruction cache invalidate by MVA to PoU</description>
+        </register>
+        <register access="WO" name="DCIMVAC" size="4" offset="0xE000EF5C">
+            <gui_name language="en">DCIMVAC</gui_name>
+            <description language="en">Data cache invalidate by MVA to PoC</description>
+        </register>
+        <register access="WO" name="DCISW" size="4" offset="0xE000EF60">
+            <gui_name language="en">DCISW</gui_name>
+            <description language="en">Data cache invalidate by set and way</description>
+        </register>
+        <register access="WO" name="DCCMVAU" size="4" offset="0xE000EF64">
+            <gui_name language="en">DCCMVAU</gui_name>
+            <description language="en">Data cache clean by MVA to PoU</description>
+        </register>
+        <register access="WO" name="DCCMVAC" size="4" offset="0xE000EF68">
+            <gui_name language="en">DCCMVAC</gui_name>
+            <description language="en">Data cache clean by MVA to PoC</description>
+        </register>
+        <register access="WO" name="DCCSW" size="4" offset="0xE000EF6C">
+            <gui_name language="en">DCCSW</gui_name>
+            <description language="en">Data cache clean by set and way</description>
+        </register>
+        <register access="WO" name="DCCIMVAC" size="4" offset="0xE000EF70">
+            <gui_name language="en">DCCIMVAC</gui_name>
+            <description language="en">Data cache clean and invalidate by MVA to PoC</description>
+        </register>
+        <register access="WO" name="DCCISW" size="4" offset="0xE000EF74">
+            <gui_name language="en">DCCISW</gui_name>
+            <description language="en">Data cache clean and invalidate by set and way</description>
+        </register>
+        <register access="WO" name="BPIALL" size="4" offset="0xE000EF78">
+            <gui_name language="en">BPIALL</gui_name>
+            <description language="en">Branch predictor invalidate all</description>
+        </register>
+    </peripheral>
+
+    <tcf:enumeration name="CLIDR_CL" values="No_cache=0,I_cache_only=1,D_cache_only=2,Separate_I_and_D_caches=3,Unified_cache=4"/>
+    <tcf:enumeration name="CLIDR_Lo" values="L1_cache=0,L2_cache=1,L3_cache=2"/>
+    <tcf:enumeration name="CTR_F" values="ARMv6_and_earlier_format=0,ARMv7_format=4"/>
+    <tcf:enumeration name="CTR_L1IP" values="Virtual_Index_Virtual_Tag=1,Virtual_Index_Physical_Tag=2,Physical_Index_Physical_Tag=3"/>
+    <tcf:enumeration name="CTR_GRAN" values="_8_word_granularity=3,_16_word_granularity=4"/>
+    <tcf:enumeration name="GENERIC_SUPPORTED" values="Supported=1,Not_supported=0"/>
+    <tcf:enumeration name="CCSIDR_NS" values="_16KB_cache_size=0x7F,_32KB_cache_size=0xFF,_64KB_cache_size=0x1FF"/>
+    <tcf:enumeration name="CCSIDR_A" values="_1_way=0,_2_ways=1,_3_ways=2,_4_ways=3,_5_ways=4,_6_ways=5,_7_ways=6,_8_ways=7,_9_ways=8,_10_ways=9,_11_ways=10,_12_ways=11,_13_ways=12,_14_ways=13,_15_ways=14,_16_ways=15"/>
+    <tcf:enumeration name="CCSIDR_LS" values="_4_words=0,_8_words=1,_16_words=2,_32_words=3,_64_words=4,_128_words=5,_256_words=6,_512_words=7"/>
+    <tcf:enumeration name="CSSELR_IND" values="Data_cache=0,Instruction_cache=1"/>
+
+    <tcf:enumeration name="VALID" values="Not_valid=0,Valid=1"/>
+    <tcf:enumeration name="VALID_INVALID" values="Valid=0,Invalid=1"/>
+    <tcf:enumeration name="DISABLED_ENABLED" values="Disabled=0,Enabled=1"/>
+</register_list>

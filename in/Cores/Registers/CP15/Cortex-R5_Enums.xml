@@ -1,0 +1,329 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<register_list
+    name="CP15"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns="http://www.arm.com/core_reg"
+    xsi:schemaLocation="http://www.arm.com/core_reg ../../../Schemas/core_register_definition.xsd"
+    xmlns:tcf="http://com.arm.targetconfigurationeditor">
+
+    <!-- This register has been included for validation only -->
+    <register access="RW" name="DUMMY_REGISTER" size="4">
+        <gui_name language="en"/>
+        <description language="en"/>
+    </register>
+
+    <tcf:enumeration name="CP15_ADFSR_RECOVERABLE" values="Unrecoverable_error=0,Recoverable_error=1"/>
+    <tcf:enumeration name="CP15_ADFSR_SIDE" values="Cache_AXI=0x00,ATCM=0x01,BTCM=0x02,Reserved=0x03"/>
+    <tcf:enumeration name="CP15_AIFSR_RECOVERABLE" values="Unrecoverable_error=0,Recoverable_error=1"/>
+    <tcf:enumeration name="CP15_AIFSR_SIDE" values="Cache_AXI=0x00,ATCM=0x01,BTCM=0x02,Reserved=0x03"/>
+    <tcf:enumeration name="CP15_AUXILIARY_CONTROL_BP" values="Normal_operation=0,Branch_always_taken=1,Branch_never_taken=2"/>
+    <tcf:enumeration name="CP15_AUXILIARY_CONTROL_CEC">
+        <tcf:enumItem number="0" name="Abort_all_parity_errors_force_write_through_enable_hw_recovery"/>
+        <tcf:enumItem number="1" name="Abort_all_parity_errors_force_write_through_enable_hw_recovery_"/>
+        <tcf:enumItem number="2" name="Abort_all_parity_errors_force_write_through_enable_hw_recovery__"/>
+        <tcf:enumItem number="3" name="Reserved"/>
+        <tcf:enumItem number="4" name="Disable_Parity"/>
+        <tcf:enumItem number="5" name="Force_write_through_enable_hw_recovery_no_parity_aborts"/>
+        <tcf:enumItem number="6" name="Force_write_through_enable_hw_recovery_no_parity_aborts_"/>
+        <tcf:enumItem number="7" name="Reserved"/>
+    </tcf:enumeration>
+    <tcf:enumeration name="CP15_AUXILIARY_CONTROL_DLFO" values="Normal_operation=0,Two_linefills_max=1"/>
+    <tcf:enumeration name="CP15_AUXILIARY_CONTROL_FDSnS" values="Normal_operation=0,D_side_normal_noncacheable_forced_to_not_share=1"/>
+    <tcf:enumeration name="CP15_AUXILIARY_CONTROL_FORA" values="No_forcing_of_ORA=0,ORA_forced=1"/>
+    <tcf:enumeration name="CP15_AUXILIARY_CONTROL_FWT" values="No_forcing_of_WT=0,WT_forced=1"/>
+    <tcf:enumeration name="CP15_AUXILIARY_CONTROL_sMOV" values="Normal_operation=0,Disabled=1"/>
+    <tcf:enumeration name="CP15_CACHE_LEVEL_ID_CL" values="No_cache=0,Instruction_only=1,Data_only=2,Instruction_and_data=3,Unified=4"/>
+    <tcf:enumeration name="CP15_CACHE_LEVEL_ID_LOC" values="Level_of_Coherency=1"/>
+    <tcf:enumeration name="CP15_CACHE_LEVEL_ID_LOU" values="Level_of_Unification=1"/>
+    <tcf:enumeration name="CP15_CACHE_SIZE_SELECT_IND" values="Data=0,Instruction=1"/>
+    <tcf:enumeration name="CP15_CACHE_SIZE_SELECT_LEVEL" values="Level_1_cache=0"/>
+    <tcf:enumeration name="CP15_CACHE_TYPE_CWG" values="No_information=0"/>
+    <tcf:enumeration name="CP15_CACHE_TYPE_DMINLINE" values="_8_words_per_line=3"/>
+    <tcf:enumeration name="CP15_CACHE_TYPE_ERG" values="No_information=0"/>
+    <tcf:enumeration name="CP15_CACHE_TYPE_IMINLINE" values="_8_words_per_line=3"/>
+    <tcf:enumeration name="CP15_CONTROL_IE" values="Little_endianness=0,Big_endianness=1"/>
+    <tcf:enumeration name="CP15_CONTROL_NMFI" values="FIQs_can_be_disabled=0,FIQs_always_enabled=1"/>
+    <tcf:enumeration name="CP15_CONTROL_RR" values="Random=0,Round_robin=1"/>
+    <tcf:enumeration name="CP15_CONTROL_TE" values="ARM_exceptions=0,Thumb_exceptions=1"/>
+    <tcf:enumeration name="CP15_CONTROL_V" values="Normal_vectors=0,High_vectors=1"/>
+    <tcf:enumeration name="CP15_CONTROL_VE" values="IRQ_offset_is_0x18=0,VIC_controlled_IRQ_offset=1"/>
+    <tcf:enumeration name="CP15_COPROCESSOR_ACCESS_CONTROL" values="Access_denied=0,Priv_access_only=1,Reserved=2,Priv_and_User_access=3"/>
+    <tcf:enumeration name="CP15_DFSR_RW" values="Read_access_abort=0,Write_access_abort=1"/>
+    <tcf:enumeration name="CP15_DFSR_SD" values="AXI_decode_error=0,AXI_slave_error=1"/>
+    <tcf:enumeration name="CP15_DFSR_STATUS">
+        <tcf:enumItem number="0x01" name="Alignment"/>
+        <tcf:enumItem number="0x00" name="Background"/>
+        <tcf:enumItem number="0x0D" name="Permission"/>
+        <tcf:enumItem number="0x08" name="Precise_External_Abort"/>
+        <tcf:enumItem number="0x16" name="Imprecise_ext_abort"/>
+        <tcf:enumItem number="0x19" name="Precise_Parity_Error"/>
+        <tcf:enumItem number="0x18" name="Imprecise_Parity_Error"/>
+        <tcf:enumItem number="0x02" name="Debug_Event"/>
+    </tcf:enumeration>
+    <tcf:enumeration name="CP15_DRSR_REGION_SIZE">
+        <tcf:enumItem number="0x00" name="Unpredictable"/>
+        <tcf:enumItem number="0x01" name="Unpredictable"/>
+        <tcf:enumItem number="0x02" name="Unpredictable"/>
+        <tcf:enumItem number="0x03" name="Unpredictable"/>
+        <tcf:enumItem number="0x04" name="_32_bytes"/>
+        <tcf:enumItem number="0x05" name="_64_bytes"/>
+        <tcf:enumItem number="0x06" name="_128_bytes"/>
+        <tcf:enumItem number="0x07" name="_256_bytes"/>
+        <tcf:enumItem number="0x08" name="_512_bytes"/>
+        <tcf:enumItem number="0x09" name="_1KB"/>
+        <tcf:enumItem number="0x0a" name="_2KB"/>
+        <tcf:enumItem number="0x0b" name="_4KB"/>
+        <tcf:enumItem number="0x0c" name="_8KB"/>
+        <tcf:enumItem number="0x0d" name="_16KB"/>
+        <tcf:enumItem number="0x0e" name="_32KB"/>
+        <tcf:enumItem number="0x0f" name="_64KB"/>
+        <tcf:enumItem number="0x10" name="_128KB"/>
+        <tcf:enumItem number="0x11" name="_256KB"/>
+        <tcf:enumItem number="0x12" name="_512KB"/>
+        <tcf:enumItem number="0x13" name="_1MB"/>
+        <tcf:enumItem number="0x14" name="_2MB"/>
+        <tcf:enumItem number="0x15" name="_4MB"/>
+        <tcf:enumItem number="0x16" name="_8MB"/>
+        <tcf:enumItem number="0x17" name="_16MB"/>
+        <tcf:enumItem number="0x18" name="_32MB"/>
+        <tcf:enumItem number="0x19" name="_64MB"/>
+        <tcf:enumItem number="0x1a" name="_128MB"/>
+        <tcf:enumItem number="0x1b" name="_256MB"/>
+        <tcf:enumItem number="0x1c" name="_512MB"/>
+        <tcf:enumItem number="0x1d" name="_1GB"/>
+        <tcf:enumItem number="0x1e" name="_2GB"/>
+        <tcf:enumItem number="0x1f" name="_4GB"/>
+    </tcf:enumeration>
+    <tcf:enumeration name="CP15_DRSR_SUBREGION_DISABLE" values="address_range_is_part_of_this_region=0,address_range_is_not_part_of_this_region=1"/>
+    <tcf:enumeration name="CP15_EVTSELX_SEL">
+        <tcf:enumItem number="0x00" name="Software_Increment"/>
+        <tcf:enumItem number="0x01" name="Instruction_cache_miss"/>
+        <tcf:enumItem number="0x03" name="Data_cache_miss"/>
+        <tcf:enumItem number="0x04" name="Data_cache_access"/>
+        <tcf:enumItem number="0x05" name="Data_read_write_TLB_refill"/>
+        <tcf:enumItem number="0x06" name="Data_read_architecturally_executed"/>
+        <tcf:enumItem number="0x07" name="Data_write_architecturally_executed"/>
+        <tcf:enumItem number="0x08" name="Instruction_architecturally_executed"/>
+        <tcf:enumItem number="0x09" name="Exception_taken"/>
+        <tcf:enumItem number="0x0A" name="Exception_return_architecturally_executed"/>
+        <tcf:enumItem number="0x0B" name="Change_to_Context_ID_executed"/>
+        <tcf:enumItem number="0x0C" name="Software_change_of_PC_except_by_an_exception_architecturally_executed"/>
+        <tcf:enumItem number="0x0D" name="Immediate_branch_architecturally_executed"/>
+        <tcf:enumItem number="0x0E" name="Procedure_return_architecturally_executed"/>
+        <tcf:enumItem number="0x0F" name="Unaligned_access_architecturally_executed"/>
+        <tcf:enumItem number="0x10" name="Branch_mispredicted_or_not_predicted"/>
+        <tcf:enumItem number="0x11" name="Cycle_count"/>
+        <tcf:enumItem number="0x12" name="Predictable_branch"/>
+        <tcf:enumItem number="0x40" name="Stall_because_instruction_buffer_cannot_deliver_an_instruction"/>
+        <tcf:enumItem number="0x41" name="Stall_because_of_a_data_dependency_between_instructions"/>
+        <tcf:enumItem number="0x42" name="Data_cache_write_back"/>
+        <tcf:enumItem number="0x43" name="External_memory_request"/>
+        <tcf:enumItem number="0x44" name="Stall_because_of_LSU_being_busy"/>
+        <tcf:enumItem number="0x45" name="Store_buffer_was_forced_to_drain_completely"/>
+        <tcf:enumItem number="0x46" name="The_number_of_cycles_FIQ_interrupts_are_disabled"/>
+        <tcf:enumItem number="0x47" name="The_number_of_cycles_IRQ_interrupts_are_disabled"/>
+        <tcf:enumItem number="0x48" name="ETMEXTOUT_0"/>
+        <tcf:enumItem number="0x49" name="ETMEXTOUT_1"/>
+        <tcf:enumItem number="0x4A" name="Instruction_cache_tag_RAM_parity_or_ECC_error_correctable"/>
+        <tcf:enumItem number="0x4B" name="Instruction_cache_data_RAM_parity_or_ECC_error_correctable"/>
+        <tcf:enumItem number="0x4C" name="Data_cache_tag_or_dirty_RAM_parity_error_or_correctable_ECC_error"/>
+        <tcf:enumItem number="0x4D" name="Data_cache_data_RAM_parity_error_or_correctable_ECC_error"/>
+        <tcf:enumItem number="0x4E" name="TCM_parity_error_or_fatal_ECC_error_reported_from_the_prefetch_unit"/>
+        <tcf:enumItem number="0x4F" name="TCM_parity_error_or_fatal_ECC_error_reported_from_the_load_store_unit"/>
+        <tcf:enumItem number="0x50" name="Store_buffer_merge"/>
+        <tcf:enumItem number="0x51" name="LSU_stall_caused_by_full_store_buffer"/>
+        <tcf:enumItem number="0x52" name="LSU_stall_caused_by_store_queue_full"/>
+        <tcf:enumItem number="0x53" name="Integer_divide_instruction_SDIV_or_UDIV_executed"/>
+        <tcf:enumItem number="0x54" name="Stall_cycle_caused_by_integer_divide"/>
+        <tcf:enumItem number="0x55" name="PLD_instruction_that_initiates_a_linefill"/>
+        <tcf:enumItem number="0x56" name="PLD_instruction_that_did_not_initiate_a_linefill_because_of_a_resource_shortage"/>
+        <tcf:enumItem number="0x57" name="Non_cacheable_access_on_AXI_master_bus"/>
+        <tcf:enumItem number="0x58" name="Instruction_cache_access"/>
+        <tcf:enumItem number="0x59" name="Store_buffer_operation_has_detected_that_two_slots_have_data_in_same_cache_line_but_with_different_attributes"/>
+        <tcf:enumItem number="0x5A" name="Dual_issue_case_A_branch"/>
+        <tcf:enumItem number="0x5B" name="Dual_issue_case_B1_B2_F2_load_store_F2D"/>
+        <tcf:enumItem number="0x5C" name="Dual_issue_other"/>
+        <tcf:enumItem number="0x5D" name="Double_precision_floating_point_arithmetic_or_conversion_instruction_executed"/>
+        <tcf:enumItem number="0x60" name="Data_cache_data_RAM_fatal_ECC_error"/>
+        <tcf:enumItem number="0x61" name="Data_cache_tag_dirty_RAM_fatal_ECC_error"/>
+        <tcf:enumItem number="0x62" name="Processor_livelock_because_of_hard_errors_or_exception_at_exception_vector"/>
+        <tcf:enumItem number="0x63" name="Unused"/>
+        <tcf:enumItem number="0x64" name="ATCM_parity_or_multi_bit_ECC_error"/>
+        <tcf:enumItem number="0x65" name="B0TCM_parity_or_multi_bit_ECC_error"/>
+        <tcf:enumItem number="0x66" name="B1TCM_parity_or_multi_bit_ECC_error"/>
+        <tcf:enumItem number="0x67" name="ATCM_single_bit_ECC_error"/>
+        <tcf:enumItem number="0x68" name="B0TCM_single_bit_ECC_error"/>
+        <tcf:enumItem number="0x69" name="B1TCM_single_bit_ECC_error"/>
+        <tcf:enumItem number="0x6A" name="TCM_correctable_ECC_error_reported_by_load_store_unit"/>
+        <tcf:enumItem number="0x6B" name="TCM_correctable_ECC_error_reported_by_prefetch_unit"/>
+        <tcf:enumItem number="0x6C" name="TCM_parity_or_fatal_ECC_error_reported_by_AXI_slave_interface"/>
+        <tcf:enumItem number="0x6D" name="TCM_correctable_ECC_error_reported_by_AXI_slave_interface"/>
+        <tcf:enumItem number="0xFF" name="Cycle_count"/>
+    </tcf:enumeration>
+    <tcf:enumeration name="CP15_ID_DFR0_CDM_MM" values="Not_supported=0,ARMv7_based_model_mm=4"/>
+    <tcf:enumeration name="CP15_ID_DFR0_TDM_C" values="Not_supported=0,v7_model_supported=1"/>
+    <tcf:enumeration name="CP15_ID_DFR0_TDM_MM" values="Not_supported=0,Trace_supported_mm=1"/>
+    <tcf:enumeration name="CP15_ID_ISAR0_ATOMIC" values="Not_supported=0,SWP_SWPB_supported=1"/>
+    <tcf:enumeration name="CP15_ID_ISAR0_BITFIELD" values="Not_supported=0,BFC_BFI_SBFX_UBFX=1"/>
+    <tcf:enumeration name="CP15_ID_ISAR0_BIT_COUNT" values="Not_supported=0,CLZ_supported=1"/>
+    <tcf:enumeration name="CP15_ID_ISAR0_CMP_BRANCH" values="Not_supported=0,CBNZ_CZB_supported=1"/>
+    <tcf:enumeration name="CP15_ID_ISAR0_COPROCESSOR">
+        <tcf:enumItem number="0" name="Not_supported"/>
+        <tcf:enumItem number="1" name="CDP_LDC_MCR_MRC_STC"/>
+        <tcf:enumItem number="2" name="CDP_LDC_MCR_MRC_STC_CDP2_LDC2_MCR2_MRC2_STC2"/>
+        <tcf:enumItem number="3" name="CDP_LDC_MCR_MRC_STC_CDP2_LDC2_MCR2_MRC2_STC2_MCRR_MRRC"/>
+        <tcf:enumItem number="4" name="CDP_LDC_MCR_MRC_STC_CDP2_LDC2_MCR2_MRC2_STC2_MCRR_MRRC_MCRR2_MRRC2"/>
+    </tcf:enumeration>
+    <tcf:enumeration name="CP15_ID_ISAR0_DEBUG" values="Not_supported=0,BKPT_supported=1"/>
+    <tcf:enumeration name="CP15_ID_ISAR0_DIVIDE" values="Not_supported=0,SDIV_UDIV_supported=1"/>
+    <tcf:enumeration name="CP15_ID_ISAR1_ENDIAN" values="Not_supported=0,SETEND_supported=1"/>
+    <tcf:enumeration name="CP15_ID_ISAR1_EXCEPTION1" values="Not_supported=0,LDM_STM_supported=1"/>
+    <tcf:enumeration name="CP15_ID_ISAR1_EXCEPTION2" values="Not_supported=0,SRS_RFE_CPS_supported=1"/>
+    <tcf:enumeration name="CP15_ID_ISAR1_EXTEND" values="Not_supported=0,SXTx_UXTx_supported=1,SXTx_UXTx_supported=2"/>
+    <tcf:enumeration name="CP15_ID_ISAR1_IF_THEN" values="Not_supported=0,IT_supported=1"/>
+    <tcf:enumeration name="CP15_ID_ISAR1_IMMEDIATE" values="Not_supported=0,MOVT_MOV16_ADD_SUB12=1"/>
+    <tcf:enumeration name="CP15_ID_ISAR1_INTERWORKING" values="Not_supported=0,BX_supported=1,BX_BLX_supported=2,BX_BLX_BXB_supported=3"/>
+    <tcf:enumeration name="CP15_ID_ISAR1_JAZELLE" values="Not_supported=0,Supported_BXJ_J_bit=1"/>
+    <tcf:enumeration name="CP15_ID_ISAR2_INTERRUPT" values="Not_supported=0,LDM_STM_restartable=1,LDM_STM_continuable=2"/>
+    <tcf:enumeration name="CP15_ID_ISAR2_LOAD_STORE" values="Normal_load_store=0,LDRD_STRD_supported=1"/>
+    <tcf:enumeration name="CP15_ID_ISAR2_MEM_HINT" values="Not_supported=0,PLD_supported=1,PLD_supported=2,PLD_PLI_supported=3"/>
+    <tcf:enumeration name="CP15_ID_ISAR2_MULTIPLY" values="Not_supported=0,MUL_MLA=1,MUL_MLA_MLS=2"/>
+    <tcf:enumeration name="CP15_ID_ISAR2_PSR" values="Not_supported=0,MRS_MSR_exception_ret=1"/>
+    <tcf:enumeration name="CP15_ID_ISAR2_REVERSAL" values="Not_supported=0,REV_REV16_REVSH=1,REV_REV16_REVSH_RBIT=2"/>
+    <tcf:enumeration name="CP15_ID_ISAR2_S_MULTIPLY" values="Not_supported=0,SMULL_SMLAL=1,SMLx_SMMx_SMPx_SMUx=3"/>
+    <tcf:enumeration name="CP15_ID_ISAR2_U_MULTIPLY" values="Not_supported=0,UMULL_UMLAL=1,UMULL_UMLAL_UMAAL=2"/>
+    <tcf:enumeration name="CP15_ID_ISAR3_SATURATE" values="Not_supported=0,QADD_QDADD_QDSUB_QSUB=1"/>
+    <tcf:enumeration name="CP15_ID_ISAR3_SIMD" values="Not_supported=0,SSAT_USAT_supported=1,Supported=3"/>
+    <tcf:enumeration name="CP15_ID_ISAR3_SVC" values="Not_supported=0,SVC_supported=1"/>
+    <tcf:enumeration name="CP15_ID_ISAR3_SYNCH" values="Not_supported=0,LDREX_STREX=1,LDREXx_STREXx_CLREX=2"/>
+    <tcf:enumeration name="CP15_ID_ISAR3_TAB_BRANCH" values="Not_supported=0,TBB_TBH_supported=1"/>
+    <tcf:enumeration name="CP15_ID_ISAR3_THUMBEE" values="Not_supported=0,ENTERX_LEAVEX_supported=1"/>
+    <tcf:enumeration name="CP15_ID_ISAR3_THUMB_COPY" values="No_low_reg_moves=0,Low_reg_moves_supported=1"/>
+    <tcf:enumeration name="CP15_ID_ISAR3_TRUE_NOP" values="Not_supported=0,NOP16_NOP32_supported=1"/>
+    <tcf:enumeration name="CP15_ID_ISAR4_BARRIER" values="Not_supported=0,DMB_DSB_ISB_supported=1"/>
+    <tcf:enumeration name="CP15_ID_ISAR4_EXCLUSIVE" values="ISAR3_synch_prims_only=0"/>
+    <tcf:enumeration name="CP15_ID_ISAR4_UNPRIV" values="Not_supported=0,LDRBT_LDRT_STRBT_STRT=1,LDRT_LDRxT_STRT_STRxT=2"/>
+    <tcf:enumeration name="CP15_ID_ISAR4_WITH_SHIFT" values="MOV_shifts_only=0,Limited_shifts=1,Constant_shifts=3,All_shifts_rc_shifts=4"/>
+    <tcf:enumeration name="CP15_ID_ISAR4_WRITE_BACK" values="Partial_support=0,Full_support=1"/>
+    <tcf:enumeration name="CP15_ID_MMFR0_AUXCON" values="Not_supported=0,Auxiliary_Control=1,AFSRs_and_Auxiliary=2"/>
+    <tcf:enumeration name="CP15_ID_MMFR0_PMSA" values="Not_supported=0,Implementation_Defined=1,PMSAv6=2,PMSAv7=3"/>
+    <tcf:enumeration name="CP15_ID_MMFR0_TCM" values="Not_supported=0,Implementation_Defined=1,ARMv6_TCM_only=2,ARMv6_TCM_and_DMA=3"/>
+    <tcf:enumeration name="CP15_ID_MMFR0_VMSA" values="Not_supported=0,Implementation_Defined=1,VMSAv6=2,VMSAv7=3"/>
+    <tcf:enumeration name="CP15_ID_MMFR2_MB" values="Not_supported=0,DWB_DSB=1,DWB_DSB_ISB_DMB=2"/>
+    <tcf:enumeration name="CP15_ID_MMFR3_BPMO" values="Not_supported=0,Inv_branch_predictor_array=1,Inv_branch_predictor_array_Inv_branch_predictor_MVA=2"/>
+    <tcf:enumeration name="CP15_ID_MMFR3_HCMO_MVA" values="Not_supported=0,Inv_data_Clean_data_Clean_inv_data_Inv_inst_Inv_all_inst=1"/>
+    <tcf:enumeration name="CP15_ID_MMFR3_HCMO_SW" values="Not_supported=0,Inv_Clean_Inv_Clean_SW=1"/>
+    <tcf:enumeration name="CP15_ID_PFR0_STATE0" values="None=0,ARM=1"/>
+    <tcf:enumeration name="CP15_ID_PFR0_STATE1" values="None=0,Thumb=1,Thumb_2_full=3"/>
+    <tcf:enumeration name="CP15_ID_PFR0_STATE2" values="None=0,Jazelle=1,Jazelle_clearing_JOSCR_CV=2"/>
+    <tcf:enumeration name="CP15_ID_PFR0_STATE3" values="None=0,Thumb_2_Execution_Environment=1"/>
+    <tcf:enumeration name="CP15_ID_PFR1_ARMV4_PMODEL" values="ARMv4_Model_Not_supported=0,ARMv4_Model_Supported=1"/>
+    <tcf:enumeration name="CP15_ID_PFR1_MICRO_PMODEL" values="Not_supported=0,Two_Stack_Support=2"/>
+    <tcf:enumeration name="CP15_ID_PFR1_SEC_EXTENSION" values="Not_supported=0,Security_Architecture_v1=1"/>
+    <tcf:enumeration name="CP15_IFSR_SD" values="AXI_decode_error=0,AXI_slave_error=1"/>
+    <tcf:enumeration name="CP15_IFSR_STATUS">
+        <tcf:enumItem number="0x01" name="Alignment"/>
+        <tcf:enumItem number="0x00" name="Background"/>
+        <tcf:enumItem number="0x0D" name="Permission"/>
+        <tcf:enumItem number="0x08" name="Precise_External_Abort"/>
+        <tcf:enumItem number="0x16" name="Imprecise_ext_abort"/>
+        <tcf:enumItem number="0x19" name="Precise_Parity_Error"/>
+        <tcf:enumItem number="0x18" name="Imprecise_Parity_Error"/>
+        <tcf:enumItem number="0x02" name="Debug_Event"/>
+    </tcf:enumeration>
+    <tcf:enumeration name="CP15_MPU_RAC_AP">
+        <tcf:enumItem number="0" name="No_access"/>
+        <tcf:enumItem number="1" name="Privileged_access_only"/>
+        <tcf:enumItem number="2" name="User_mode_write_causes_fault"/>
+        <tcf:enumItem number="3" name="Full_access"/>
+        <tcf:enumItem number="4" name="Reserved"/>
+        <tcf:enumItem number="5" name="Privileged_read_only"/>
+        <tcf:enumItem number="6" name="Privileged_User_read_only"/>
+        <tcf:enumItem number="7" name="Reserved"/>
+    </tcf:enumeration>
+    <tcf:enumeration name="CP15_MPU_RAC_S" values="Non_shared=0,Shared=1"/>
+    <tcf:enumeration name="CP15_MPU_RAC_XN" values="Inst_fetches_enabled=0,Inst_fetches_disabled=1"/>
+    <tcf:enumeration name="CP15_MPU_TYPE_S" values="Unified=0,Separated=1"/>
+    <tcf:enumeration name="CP15_PERF_MON_CTRL_IMP" values="ARM=0x41"/>
+    <tcf:enumeration name="CP15_PMNC_D" values="Every_clock_cycle=0,Every_64th_clock_cycle=1"/>
+    <tcf:enumeration name="CP15_SLAVE_PORT_CTL_PRIVACCESS" values="Priv_unpriv_access=0,Priv_access_only=1"/>
+    <tcf:enumeration name="CP15_xTCM_SIZE">
+        <tcf:enumItem number="0x00" name="_0KB"/>
+        <tcf:enumItem number="0x03" name="_4KB"/>
+        <tcf:enumItem number="0x04" name="_8KB"/>
+        <tcf:enumItem number="0x05" name="_16KB"/>
+        <tcf:enumItem number="0x06" name="_32KB"/>
+        <tcf:enumItem number="0x07" name="_64KB"/>
+        <tcf:enumItem number="0x08" name="_128KB"/>
+        <tcf:enumItem number="0x09" name="_256KB"/>
+        <tcf:enumItem number="0x0A" name="_512KB"/>
+        <tcf:enumItem number="0x0B" name="_1MB"/>
+        <tcf:enumItem number="0x0C" name="_2MB"/>
+        <tcf:enumItem number="0x0D" name="_4MB"/>
+        <tcf:enumItem number="0x0E" name="_8MB"/>
+    </tcf:enumeration>
+    <tcf:enumeration name="CP15_PERIPHERAL_INTERFACE_SIZE">
+        <tcf:enumItem number="0x00" name="_0KB"/>
+        <tcf:enumItem number="0x03" name="_4KB"/>
+        <tcf:enumItem number="0x04" name="_8KB"/>
+        <tcf:enumItem number="0x05" name="_16KB"/>
+        <tcf:enumItem number="0x06" name="_32KB"/>
+        <tcf:enumItem number="0x07" name="_64KB"/>
+        <tcf:enumItem number="0x08" name="_128KB"/>
+        <tcf:enumItem number="0x09" name="_256KB"/>
+        <tcf:enumItem number="0x0A" name="_512KB"/>
+        <tcf:enumItem number="0x0B" name="_1MB"/>
+        <tcf:enumItem number="0x0C" name="_2MB"/>
+        <tcf:enumItem number="0x0D" name="_4MB"/>
+        <tcf:enumItem number="0x0E" name="_8MB"/>
+        <tcf:enumItem number="0x0F" name="_16MB"/>
+        <tcf:enumItem number="0x10" name="_32MB"/>
+        <tcf:enumItem number="0x11" name="_64MB"/>
+        <tcf:enumItem number="0x12" name="_128MB"/>
+        <tcf:enumItem number="0x13" name="_256MB"/>
+        <tcf:enumItem number="0x14" name="_512MB"/>
+        <tcf:enumItem number="0x15" name="_1GB"/>
+        <tcf:enumItem number="0x16" name="_2GB"/>
+        <tcf:enumItem number="0x17" name="_4GB"/>
+    </tcf:enumeration>
+
+    <tcf:enumeration name="DBGDSCR_EXT_DTR" values="Non_blocking_mode=0,Stall_mode=1,Fast_mode=2,Reserved=3"/>
+    <tcf:enumeration name="DBGDSCR_NS_STATUS" values="Secure=0,Normal=1"/>
+    <tcf:enumeration name="DBGDSCR_MOE">
+        <tcf:enumItem number="0" name="DBGDRCR_0_halting_debug_event"/>
+        <tcf:enumItem number="1" name="Breakpoint_occurred"/>
+        <tcf:enumItem number="2" name="Reserved"/>
+        <tcf:enumItem number="3" name="BKPT_instruction"/>
+        <tcf:enumItem number="4" name="EDBGRQm_halting_debug_event"/>
+        <tcf:enumItem number="5" name="Reserved"/>
+        <tcf:enumItem number="6" name="Reserved"/>
+        <tcf:enumItem number="7" name="Reserved"/>
+        <tcf:enumItem number="8" name="Reserved"/>
+        <tcf:enumItem number="9" name="Reserved"/>
+        <tcf:enumItem number="10" name="Synchronous_watchpoint_occurred"/>
+        <tcf:enumItem number="11" name="Reserved"/>
+        <tcf:enumItem number="12" name="Reserved"/>
+        <tcf:enumItem number="13" name="Reserved"/>
+        <tcf:enumItem number="14" name="Reserved"/>
+        <tcf:enumItem number="15" name="Reserved"/>
+    </tcf:enumeration>
+    <tcf:enumeration name="DBGDSCR_CR" values="Exiting=0,Has_exited=1"/>
+    <tcf:enumeration name="DBGDSCR_CH" values="Normal_State=0,Debug_State=1"/>
+
+    <tcf:enumeration name="GENERIC_CLEARED_SET" values="Cleared=0,Set=1"/>
+    <tcf:enumeration name="GENERIC_DISABLED_ENABLED" values="Disabled=0,Enabled=1"/>
+    <tcf:enumeration name="GENERIC_DISABLE_ENABLE" values="Disabled=0,Enabled=1"/>
+    <tcf:enumeration name="GENERIC_ENABLED_DISABLED" values="Enabled=0,Disabled=1"/>
+    <tcf:enumeration name="GENERIC_ENABLE_DISABLE" values="Enabled=0,Disabled=1"/>
+    <tcf:enumeration name="GENERIC_MASKED_UNMASKED" values="Masked=0,Unmasked=1"/>
+    <tcf:enumeration name="GENERIC_NORMAL_OPERATION_DISABLED" values="Normal_operation=0,Disabled=1"/>
+    <tcf:enumeration name="GENERIC_NOT_SUPPORTED_SUPPORTED" values="Not_supported=0,Supported=1"/>
+    <tcf:enumeration name="GENERIC_SUPPORTED_NOT_SUPPORTED" values="Supported=0,Not_supported=1"/>
+    <tcf:enumeration name="GENERIC_UNSUPPORTED_SUPPORTED" values="Unsupported=0,Supported=1"/>
+    <tcf:enumeration name="FLOAT_PRECISION" values="Double_precision_or_no_FPU=0,No_double_precision=1"/>
+    <tcf:enumeration name="CACHE_ES" values="None=0,Detection=1,Detection_correction=2"/>
+    <tcf:enumeration name="xTCM_ES" values="None=0,_32_bit_detection_correction=2,_64_bit_detection_correction=3"/>
+    <tcf:enumeration name="MPU_REGIONS" values="No_MPU=0,MPU_12_regions=2,MPU_16_regions=3"/>
+    <tcf:enumeration name="NUM_CPU" values="Single=0,Twin=1"/>
+</register_list>
+

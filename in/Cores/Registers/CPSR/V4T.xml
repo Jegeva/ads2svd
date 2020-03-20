@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<register_list name="unused"
+               xmlns="http://www.arm.com/core_reg"
+               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+               xmlns:xi="http://www.w3.org/2001/XInclude"
+               xsi:schemaLocation="http://www.arm.com/core_reg ../../../Schemas/core_register_definition.xsd"
+               xmlns:tcf="http://com.arm.targetconfigurationeditor">
+    <register name="CPSR" size="4" access="RMW">
+        <gui_name language="en">CPSR</gui_name>
+        <description language="en">Current Program Status Register</description>
+        <xi:include href="psrfields_V4T.xml" xpointer="xmlns(cr=http://www.arm.com/core_reg)xpointer(//cr:bitField)"/>
+    </register>
+    <tcf:enumeration name="CPSR_MODE_BIT">
+        <tcf:description>Mode Bits</tcf:description>
+        <tcf:enumItem name="USR" number="0x10"><tcf:gui_name>User</tcf:gui_name></tcf:enumItem>
+        <tcf:enumItem name="FIQ" number="0x11"><tcf:gui_name>FIQ</tcf:gui_name></tcf:enumItem>
+        <tcf:enumItem name="IRQ" number="0x12"><tcf:gui_name>IRQ</tcf:gui_name></tcf:enumItem>
+        <tcf:enumItem name="SVC" number="0x13"><tcf:gui_name>Supervisor</tcf:gui_name></tcf:enumItem>
+        <tcf:enumItem name="ABT" number="0x17"><tcf:gui_name>Abort</tcf:gui_name></tcf:enumItem>
+        <tcf:enumItem name="UND" number="0x1B"><tcf:gui_name>Undefined</tcf:gui_name></tcf:enumItem>
+        <tcf:enumItem name="SYS" number="0x1F"><tcf:gui_name>System</tcf:gui_name></tcf:enumItem>
+    </tcf:enumeration>
+</register_list>

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<register_list name="CP15"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns="http://www.arm.com/core_reg"
+    xsi:schemaLocation="http://www.arm.com/core_reg ../../../Schemas/core_register_definition.xsd"
+    xmlns:tcf="http://com.arm.targetconfigurationeditor">
+    <register_group name="MiscOps">
+        <gui_name language="en">MiscOps</gui_name>
+        <description language="en">Miscellaneous operations</description>
+        <register access="WO" name="NOP" size="4">
+            <gui_name language="en">NOP</gui_name>
+            <alias_name>CP15_NOP</alias_name>
+            <device_name type="rvi">CP15_NOP</device_name>
+            <device_name type="cadi">NOP</device_name>
+            <device_name type="rvi">CP15_NOP</device_name>
+            <device_name type="cadi">NOP</device_name>
+            <description language="en">System control No Operation</description>
+        </register>
+        <register access="WO" name="CP15ISB" size="4">
+            <gui_name language="en">CP15ISB</gui_name>
+            <alias_name>CP15_CP15ISB</alias_name>
+            <device_name type="rvi">CP15_CP15ISB</device_name>
+            <device_name type="cadi">CP15ISB</device_name>
+            <device_name type="rvi">CP15_CP15ISB</device_name>
+            <device_name type="cadi">CP15ISB</device_name>
+            <description language="en">Instruction Synchronization Barrier operation</description>
+        </register>
+        <register access="WO" name="CP15DSB" size="4">
+            <gui_name language="en">CP15DSB</gui_name>
+            <alias_name>CP15_CP15DSB</alias_name>
+            <device_name type="rvi">CP15_CP15DSB</device_name>
+            <device_name type="cadi">CP15DSB</device_name>
+            <device_name type="rvi">CP15_CP15DSB</device_name>
+            <device_name type="cadi">CP15DSB</device_name>
+            <description language="en">Data Synchronization Barrier operation</description>
+        </register>
+        <register access="WO" name="CP15DMB" size="4">
+            <gui_name language="en">CP15DMB</gui_name>
+            <alias_name>CP15_CP15DMB</alias_name>
+            <device_name type="rvi">CP15_CP15DMB</device_name>
+            <device_name type="cadi">CP15DMB</device_name>
+            <device_name type="rvi">CP15_CP15DMB</device_name>
+            <device_name type="cadi">CP15DMB</device_name>
+            <description language="en">Data Memory Barrier operation</description>
+        </register>
+        <register access="RW" name="TPIDRURW" size="4">
+            <gui_name language="en">TPIDRURW</gui_name>
+            <alias_name>CP15_TPIDRURW</alias_name>
+            <device_name type="rvi">CP15_TPIDRURW</device_name>
+            <device_name type="cadi">TPIDRURW</device_name>
+            <device_name type="rvi">CP15_TPIDRURW</device_name>
+            <device_name type="cadi">TPIDRURW</device_name>
+            <description language="en">User Read/Write Thread ID</description>
+        </register>
+        <register access="RW" name="TPIDRURO" size="4">
+            <gui_name language="en">TPIDRURO</gui_name>
+            <alias_name>CP15_TPIDRURO</alias_name>
+            <device_name type="rvi">CP15_TPIDRURO</device_name>
+            <device_name type="cadi">TPIDRURO</device_name>
+            <device_name type="rvi">CP15_TPIDRURO</device_name>
+            <device_name type="cadi">TPIDRURO</device_name>
+            <description language="en">User Read Only Thread ID</description>
+        </register>
+        <register access="RW" name="TPIDRPRW" size="4">
+            <gui_name language="en">TPIDRPRW</gui_name>
+            <alias_name>CP15_TPIDRPRW</alias_name>
+            <device_name type="rvi">CP15_TPIDRPRW</device_name>
+            <device_name type="cadi">TPIDRPRW</device_name>
+            <device_name type="rvi">CP15_TPIDRPRW</device_name>
+            <device_name type="cadi">TPIDRPRW</device_name>
+            <description language="en">Privileged Only Thread ID</description>
+        </register>
+        <register access="RW" name="HTPIDR" size="4">
+            <gui_name language="en">HTPIDR</gui_name>
+            <alias_name>CP15_HTPIDR</alias_name>
+            <device_name type="rvi">CP15_HTPIDR</device_name>
+            <device_name type="cadi">HTPIDR</device_name>
+            <device_name type="rvi">CP15_HTPIDR</device_name>
+            <device_name type="cadi">HTPIDR</device_name>
+            <description language="en">Hypervisor Software Thread ID</description>
+        </register>
+    </register_group>
+</register_list>
+

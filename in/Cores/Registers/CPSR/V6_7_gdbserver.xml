@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<register_list name="unused"
+               xmlns="http://www.arm.com/core_reg"
+               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+               xsi:schemaLocation="http://www.arm.com/core_reg ../../../Schemas/core_register_definition.xsd"
+               xmlns:tcf="http://com.arm.targetconfigurationeditor">
+    <register name="CPSR" size="4" access="RMW">
+        <gui_name language="en">CPSR</gui_name>
+        <description language="en">Current Program Status Register</description>
+        <bitField conditional="false" name="N">
+            <gui_name language="en">N</gui_name>
+            <description language="en">Negative/Less than flag</description>
+            <definition>[31]</definition>
+        </bitField>
+        <bitField conditional="false" name="Z">
+            <gui_name language="en">Z</gui_name>
+            <description language="en">Zero flag</description>
+            <definition>[30]</definition>
+        </bitField>
+        <bitField conditional="false" name="C">
+            <gui_name language="en">C</gui_name>
+            <description language="en">Carry or Borrow or Extend flag</description>
+            <definition>[29]</definition>
+        </bitField>
+        <bitField conditional="false" name="V">
+            <gui_name language="en">V</gui_name>
+            <description language="en">Overflow flag</description>
+            <definition>[28]</definition>
+        </bitField>
+        <bitField conditional="false" name="Q">
+            <gui_name language="en">Q</gui_name>
+            <description language="en">Saturation flag</description>
+            <definition>[27]</definition>
+        </bitField>
+        <bitField conditional="false" name="IT">
+            <gui_name language="en">IT</gui_name>
+            <description language="en">If-Then execution state</description>
+            <definition>[15:10][26:25]</definition>
+        </bitField>
+        <bitField conditional="false" name="J">
+            <gui_name language="en">J</gui_name>
+            <description language="en">Jazelle state</description>
+            <definition>[24]</definition>
+        </bitField>
+        <bitField conditional="false" name="GE">
+            <gui_name language="en">GE</gui_name>
+            <description language="en">Greater than or Equal flags, for SIMD instructions</description>
+            <definition>[19:16]</definition>
+        </bitField>
+        <bitField conditional="false" name="E">
+            <gui_name language="en">E</gui_name>
+            <description language="en">Data endianness</description>
+            <definition>[9]</definition>
+        </bitField>
+        <bitField conditional="false" name="A">
+            <gui_name language="en">A</gui_name>
+            <description language="en">Asynchronous abort disable</description>
+            <definition>[8]</definition>
+        </bitField>
+        <bitField conditional="false" name="I">
+            <gui_name language="en">I</gui_name>
+            <description language="en">IRQ disable</description>
+            <definition>[7]</definition>
+        </bitField>
+        <bitField conditional="false" name="F">
+            <gui_name language="en">F</gui_name>
+            <description language="en">FIQ disable</description>
+            <definition>[6]</definition>
+        </bitField>
+        <bitField conditional="false" name="T">
+            <gui_name language="en">T</gui_name>
+            <description language="en">Thumb state</description>
+            <definition>[5]</definition>
+        </bitField>
+        <bitField conditional="false" name="M" enumerationId="CPSR_MODE_BIT" access="RO">
+            <gui_name language="en">M</gui_name>
+            <description language="en">Mode</description>
+            <definition>[4:0]</definition>
+        </bitField>
+    </register>
+    <tcf:enumeration name="CPSR_MODE_BIT" values="USR=0x10,FIQ=0x11,IRQ=0x12,SVC=0x13,MON=0x16,UND=0x1B,ABT=0x17,SYS=0x1F" />
+</register_list>

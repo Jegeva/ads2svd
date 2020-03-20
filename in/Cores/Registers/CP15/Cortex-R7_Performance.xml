@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<register_list
+    name="CP15"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns="http://www.arm.com/core_reg"
+    xsi:schemaLocation="http://www.arm.com/core_reg ../../../Schemas/core_register_definition.xsd"
+    xmlns:tcf="http://com.arm.targetconfigurationeditor">
+    <register_group name="Performance">
+        <gui_name language="en">Performance</gui_name>
+        <description language="en">Performance Monitor</description>
+        <register access="RW" name="PMCR" size="4">
+            <gui_name language="en">Performance Monitor Control</gui_name>
+            <alias_name>CP15_PMCR</alias_name>
+            <device_name type="rvi">CP15_PMCR</device_name>
+            <device_name type="cadi">PMCR</device_name>
+            <description language="en">The Performance Monitor Control Register controls the operation of the three count registers, and the CCNT Register</description>
+            <bitField conditional="false" name="IMP" access="RO">
+                <gui_name language="en">IMP</gui_name>
+                <description language="en">Implementer code</description>
+                <definition>[31:24]</definition>
+            </bitField>
+            <bitField conditional="false" name="IDCODE">
+                <gui_name language="en">IDCODE</gui_name>
+                <description language="en">Identification Code</description>
+                <definition>[23:16]</definition>
+            </bitField>
+            <bitField conditional="false" name="N">
+                <gui_name language="en">N</gui_name>
+                <description language="en">Number of event counters</description>
+                <definition>[15:11]</definition>
+            </bitField>
+            <bitField conditional="false" name="DP" enumerationId="GENERIC_ENABLED_DISABLED">
+                <gui_name language="en">DP</gui_name>
+                <description language="en">Disable PMCCNTR when event counting is prohibited</description>
+                <definition>[5]</definition>
+            </bitField>
+            <bitField conditional="false" name="X" enumerationId="GENERIC_DISABLED_ENABLED">
+                <gui_name language="en">X</gui_name>
+                <description language="en">Enable export of the events to the event bus for an external monitoring block</description>
+                <definition>[4]</definition>
+            </bitField>
+            <bitField conditional="false" name="D" enumerationId="CP15_PMNC_D">
+                <gui_name language="en">D</gui_name>
+                <description language="en">Clock divider</description>
+                <definition>[3]</definition>
+            </bitField>
+            <bitField conditional="false" name="C" access="WO">
+                <gui_name language="en">C</gui_name>
+                <description language="en">Cycle counter reset</description>
+                <definition>[2]</definition>
+            </bitField>
+            <bitField conditional="false" name="P" access="WO">
+                <gui_name language="en">P</gui_name>
+                <description language="en">Event counter reset</description>
+                <definition>[1]</definition>
+            </bitField>
+            <bitField conditional="false" name="E" enumerationId="GENERIC_DISABLED_ENABLED">
+                <gui_name language="en">E</gui_name>
+                <description language="en">Enable</description>
+                <definition>[0]</definition>
+            </bitField>
+        </register>
+        <register access="RW" name="PMCNTENSET" size="4">
+            <gui_name language="en">Count Enable Set</gui_name>
+            <alias_name>CP15_PMCNTENSET</alias_name>
+            <device_name type="rvi">CP15_PMCNTENSET</device_name>
+            <device_name type="cadi">PMCNTENSET</device_name>
+            <description language="en">Enables the Cycle Count Register, PMCCNTR, and any implemented event counters, PMNx</description>
+            <bitField conditional="false" name="C" enumerationId="GENERIC_DISABLED_ENABLED">
+                <gui_name language="en">C</gui_name>
+                <description language="en">PMCCNTR enable bit</description>
+                <definition>[31]</definition>
+            </bitField>
+            <bitField conditional="false" name="P2" enumerationId="GENERIC_DISABLED_ENABLED">
+                <gui_name language="en">P2</gui_name>
+                <description language="en">Counter 2 Enable</description>
+                <definition>[2]</definition>
+            </bitField>
+            <bitField conditional="false" name="P1" enumerationId="GENERIC_DISABLED_ENABLED">
+                <gui_name language="en">P1</gui_name>
+                <description language="en">Counter 1 Enable</description>
+                <definition>[1]</definition>
+            </bitField>
+            <bitField conditional="false" name="P0" enumerationId="GENERIC_DISABLED_ENABLED">
+                <gui_name language="en">P0</gui_name>
+                <description language="en">Counter 0 Enable</description>
+                <definition>[0]</definition>
+            </bitField>
+        </register>
+        <register access="RW" name="PMCNTENCLR" size="4">
+            <gui_name language="en">Count Enable Clear</gui_name>
+            <alias_name>CP15_PMCNTENCLR</alias_name>
+            <device_name type="rvi">CP15_PMCNTENCLR</device_name>
+            <device_name type="cadi">PMCNTENCLR</device_name>
+            <description language="en">Disables the Cycle Count Register, PMCCNTR, and any implemented event counters, PMNx</description>
+            <bitField conditional="false" name="C" enumerationId="GENERIC_DISABLED_ENABLED">
+                <gui_name language="en">C</gui_name>
+                <description language="en">PMCCNTR disable bit</description>
+                <definition>[31]</definition>
+            </bitField>
+            <bitField conditional="false" name="P2" enumerationId="GENERIC_DISABLED_ENABLED">
+                <gui_name language="en">P2</gui_name>
+                <description language="en">Counter 2 Disable</description>
+                <definition>[2]</definition>
+            </bitField>
+            <bitField conditional="false" name="P1" enumerationId="GENERIC_DISABLED_ENABLED">
+                <gui_name language="en">P1</gui_name>
+                <description language="en">Counter 1 Disable</description>
+                <definition>[1]</definition>
+            </bitField>
+            <bitField conditional="false" name="P0" enumerationId="GENERIC_DISABLED_ENABLED">
+                <gui_name language="en">P0</gui_name>
+                <description language="en">Counter 0 Disable</description>
+                <definition>[0]</definition>
+            </bitField>
+        </register>
+        <register access="RW" name="PMOVSR" size="4">
+            <gui_name language="en">Overflow Flag Status</gui_name>
+            <alias_name>CP15_PMOVSR</alias_name>
+            <device_name type="rvi">CP15_PMOVSR</device_name>
+            <device_name type="cadi">PMOVSR</device_name>
+            <description language="en">The overflow FLAG status Register indicates if performance monitor counters have overflowed</description>
+            <bitField conditional="false" name="C" enumerationId="GENERIC_FALSE_TRUE">
+                <gui_name language="en">C</gui_name>
+                <description language="en">PMCCNTR overflow bit</description>
+                <definition>[31]</definition>
+            </bitField>
+            <bitField conditional="false" name="P2" enumerationId="GENERIC_FALSE_TRUE">
+                <gui_name language="en">P2</gui_name>
+                <description language="en">Counter 2 Overflow bit</description>
+                <definition>[2]</definition>
+            </bitField>
+            <bitField conditional="false" name="P1" enumerationId="GENERIC_FALSE_TRUE">
+                <gui_name language="en">P1</gui_name>
+                <description language="en">Counter 1 Overflow bit</description>
+                <definition>[1]</definition>
+            </bitField>
+            <bitField conditional="false" name="P0" enumerationId="GENERIC_FALSE_TRUE">
+                <gui_name language="en">P0</gui_name>
+                <description language="en">Counter 0 Overflow bit</description>
+                <definition>[0]</definition>
+            </bitField>
+        </register>
+        <register access="WO" name="PMSWINC" size="4">
+            <gui_name language="en">Software Increment</gui_name>
+            <alias_name>CP15_PMSWINC</alias_name>
+            <device_name type="rvi">CP15_PMSWINC</device_name>
+            <device_name type="cadi">PMSWINC</device_name>
+            <description language="en">The PMSWINC register increments a counter that is configured to count the Software increment event, event 0x00</description>
+            <bitField conditional="false" name="P2" access="WO">
+                <gui_name language="en">P2</gui_name>
+                <description language="en">Increment Counter 2</description>
+                <definition>[2]</definition>
+            </bitField>
+            <bitField conditional="false" name="P1" access="WO">
+                <gui_name language="en">P1</gui_name>
+                <description language="en">Increment Counter 1</description>
+                <definition>[1]</definition>
+            </bitField>
+            <bitField conditional="false" name="P0" access="WO">
+                <gui_name language="en">P0</gui_name>
+                <description language="en">Increment Counter 0</description>
+                <definition>[0]</definition>
+            </bitField>
+        </register>
+        <register access="RW" name="PMSELR" size="4">
+            <gui_name language="en">Event Counter Selection</gui_name>
+            <alias_name>CP15_PMSELR</alias_name>
+            <device_name type="rvi">CP15_PMSELR</device_name>
+            <device_name type="cadi">PMSELR</device_name>
+            <description language="en">The Performance Counter Selection Register selects a Performance Monitor Count Register</description>
+            <bitField conditional="false" name="SEL">
+                <gui_name language="en">SEL</gui_name>
+                <description language="en">Event counter select</description>
+                <definition>[4:0]</definition>
+            </bitField>
+        </register>
+        <register access="RW" name="PMCCNTR" size="4">
+            <gui_name language="en">Cycle Count</gui_name>
+            <alias_name>CP15_PMCCNTR</alias_name>
+            <device_name type="rvi">CP15_PMCCNTR</device_name>
+            <device_name type="cadi">PMCCNTR</device_name>
+            <description language="en">The PMCCNTR holds the value of the processor Cycle Counter, CCNT, that counts processor clock cycles</description>
+        </register>
+        <register access="RW" name="PMXEVTYPER" size="4">
+            <gui_name language="en">Event Type Select</gui_name>
+            <alias_name>CP15_PMXEVTYPER</alias_name>
+            <device_name type="rvi">CP15_PMXEVTYPER</device_name>
+            <device_name type="cadi">PMXEVTYPER</device_name>
+            <description language="en">Configures which event increments the selected event counter</description>
+            <bitField conditional="false" name="SEL" enumerationId="CP15_PMXEVTYPER_SEL">
+                <gui_name language="en">SEL</gui_name>
+                <description language="en">Event Number</description>
+                <definition>[7:0]</definition>
+            </bitField>
+        </register>
+        <register access="RW" name="PMXEVCNTR" size="4">
+            <gui_name language="en">Performance Count</gui_name>
+            <alias_name>CP15_PMXEVCNTR</alias_name>
+            <device_name type="rvi">CP15_PMXEVCNTR</device_name>
+            <device_name type="cadi">PMXEVCNTR</device_name>
+            <description language="en">The PMXEVCNTR reads or writes the value of the selected event counter</description>
+        </register>
+        <register access="RW" name="PMUSERENR" size="4">
+            <gui_name language="en">User Enable</gui_name>
+            <alias_name>CP15_PMUSERENR</alias_name>
+            <device_name type="rvi">CP15_PMUSERENR</device_name>
+            <device_name type="cadi">PMUSERENR</device_name>
+            <description language="en">PMUSERENR enables or disables User mode access to the Performance Monitors</description>
+            <bitField conditional="false" name="EN" enumerationId="GENERIC_DISABLED_ENABLED">
+                <gui_name language="en">EN</gui_name>
+                <description language="en">User mode access enable bit</description>
+                <definition>[0]</definition>
+            </bitField>
+        </register>
+        <register access="RW" name="PMINTENSET" size="4">
+            <gui_name language="en">Interrupt Enable Set</gui_name>
+            <alias_name>CP15_PMINTENSET</alias_name>
+            <device_name type="rvi">CP15_PMINTENSET</device_name>
+            <device_name type="cadi">PMINTENSET</device_name>
+            <description language="en">Enables the generation of interrupt requests on counter overflows</description>
+            <bitField conditional="false" name="C" enumerationId="GENERIC_DISABLED_ENABLED">
+                <gui_name language="en">C</gui_name>
+                <description language="en">CCNT overflow interrupt enable</description>
+                <definition>[31]</definition>
+            </bitField>
+            <bitField conditional="false" name="P2" enumerationId="GENERIC_DISABLED_ENABLED">
+                <gui_name language="en">P2</gui_name>
+                <description language="en">PMC2 overflow interrupt enable</description>
+                <definition>[2]</definition>
+            </bitField>
+            <bitField conditional="false" name="P1" enumerationId="GENERIC_DISABLED_ENABLED">
+                <gui_name language="en">P1</gui_name>
+                <description language="en">PMC1 overflow interrupt enable</description>
+                <definition>[1]</definition>
+            </bitField>
+            <bitField conditional="false" name="P0" enumerationId="GENERIC_DISABLED_ENABLED">
+                <gui_name language="en">P0</gui_name>
+                <description language="en">PMC0 overflow interrupt enable</description>
+                <definition>[0]</definition>
+            </bitField>
+        </register>
+        <register access="RW" name="PMINTENCLR" size="4">
+            <gui_name language="en">Interrupt Enable Clear</gui_name>
+            <alias_name>CP15_PMINTENCLR</alias_name>
+            <device_name type="rvi">CP15_PMINTENCLR</device_name>
+            <device_name type="cadi">PMINTENCLR</device_name>
+            <description language="en">Disables the generation of interrupt requests on counter overflows</description>
+            <bitField conditional="false" name="C" enumerationId="GENERIC_DISABLED_ENABLED">
+                <gui_name language="en">C</gui_name>
+                <description language="en">CCNT overflow interrupt enable bit</description>
+                <definition>[31]</definition>
+            </bitField>
+            <bitField conditional="false" name="P2" enumerationId="GENERIC_DISABLED_ENABLED">
+                <gui_name language="en">P2</gui_name>
+                <description language="en">Interrupt on PMC2 overflow when enabled</description>
+                <definition>[2]</definition>
+            </bitField>
+            <bitField conditional="false" name="P1" enumerationId="GENERIC_DISABLED_ENABLED">
+                <gui_name language="en">P1</gui_name>
+                <description language="en">Interrupt on PMC1 overflow when enabled</description>
+                <definition>[1]</definition>
+            </bitField>
+            <bitField conditional="false" name="P0" enumerationId="GENERIC_DISABLED_ENABLED">
+                <gui_name language="en">P0</gui_name>
+                <description language="en">Interrupt on PMC0 overflow when enabled</description>
+                <definition>[0]</definition>
+            </bitField>
+        </register>
+    </register_group>
+</register_list>
+

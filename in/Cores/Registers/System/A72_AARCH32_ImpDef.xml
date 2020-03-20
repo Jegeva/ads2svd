@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<register_list xmlns="http://www.arm.com/core_reg" xmlns:tcf="http://com.arm.targetconfigurationeditor" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="System" xsi:schemaLocation="http://www.arm.com/core_reg ../../../Schemas/core_register_definition.xsd">
+    <register_group name="ImplementationDefined">
+        <gui_name language="en">Implementation Defined</gui_name>
+        <description language="en">Implementation Defined</description>
+        <register access="RW" name="L2CTLR" size="4">
+            <gui_name language="en">L2 Control Register</gui_name>
+            <description language="en">L2 Control Register.</description>
+        </register>
+        <register access="RW" name="L2ECTLR" size="4">
+            <gui_name language="en">L2 Extended Control Register</gui_name>
+            <description language="en">L2 Extended Control Register.</description>
+        </register>
+        <register access="WO" name="RAMINDEX" size="4">
+            <gui_name language="en">RAM Index Operation</gui_name>
+            <device_name type="rvi">RAMINDEX_AA32</device_name>
+            <description language="en">RAM Index Operation.</description>
+        </register>
+        <register access="RO" name="IL1Data0" size="4">
+            <gui_name language="en">Instruction L1 Data 0 Register</gui_name>
+            <device_name type="cadi">IL1DATA0</device_name>
+            <description language="en">Instruction L1 Data 0 Register.</description>
+        </register>
+        <register access="RO" name="IL1Data1" size="4">
+            <gui_name language="en">Instruction L1 Data 1 Register</gui_name>
+            <device_name type="cadi">IL1DATA1</device_name>
+            <description language="en">Instruction L1 Data 1 Register.</description>
+        </register>
+        <register access="RO" name="IL1Data2" size="4">
+            <gui_name language="en">Instruction L1 Data 2 Register</gui_name>
+            <device_name type="cadi">IL1DATA2</device_name>
+            <description language="en">Instruction L1 Data 2 Register.</description>
+        </register>
+        <register access="RO" name="IL1Data3" size="4">
+            <gui_name language="en">Instruction L1 Data 3 Register</gui_name>
+            <device_name type="cadi">IL1DATA3</device_name>
+            <description language="en">Instruction L1 Data 3 Register.</description>
+        </register>
+        <register access="RO" name="DL1Data0" size="4">
+            <gui_name language="en">Data L1 Data 0 Register</gui_name>
+            <device_name type="cadi">DL1DATA0</device_name>
+            <description language="en">Data L1 Data 0 Register.</description>
+        </register>
+        <register access="RO" name="DL1Data1" size="4">
+            <gui_name language="en">Data L1 Data 1 Register</gui_name>
+            <device_name type="cadi">DL1DATA1</device_name>
+            <description language="en">Data L1 Data 1 Register.</description>
+        </register>
+        <register access="RO" name="DL1Data2" size="4">
+            <gui_name language="en">Data L1 Data 2 Register</gui_name>
+            <device_name type="cadi">DL1DATA2</device_name>
+            <description language="en">Data L1 Data 2 Register.</description>
+        </register>
+        <register access="RO" name="DL1Data3" size="4">
+            <gui_name language="en">Data L1 Data 3 Register</gui_name>
+            <device_name type="cadi">DL1DATA3</device_name>
+            <description language="en">Data L1 Data 3 Register.</description>
+        </register>
+        <register access="RO" name="DL1Data4" size="4">
+            <gui_name language="en">Data L1 Data 4 Register</gui_name>
+            <device_name type="cadi">DLDATA3</device_name>
+            <description language="en">Data L1 Data 4 Register.</description>
+        </register>
+        <register access="RW" name="L2ACTLR" size="4">
+            <gui_name language="en">L2 Auxiliary Control Register</gui_name>
+            <description language="en">L2 Auxiliary Control Register.</description>
+        </register>
+        <register access="RO" name="CBAR" size="4">
+            <gui_name language="en">Configuration Base Address Register</gui_name>
+            <description language="en">Configuration Base Address Register.</description>
+        </register>
+        <register access="RW" name="CPUACTLR" size="8">
+            <gui_name language="en">CPU Auxiliary Control Register</gui_name>
+            <description language="en">CPU Auxiliary Control Register.</description>
+        </register>
+        <register access="RW" name="CPUECTLR" size="8">
+            <gui_name language="en">CPU Extended Control Register</gui_name>
+            <description language="en">CPU Extended Control Register.</description>
+        </register>
+        <register access="RW" name="CPUMERRSR" size="8">
+            <gui_name language="en">CPU Memory Error Syndrome Register</gui_name>
+            <description language="en">CPU Memory Error Syndrome Register.</description>
+        </register>
+        <register access="RW" name="L2MERRSR" size="8">
+            <gui_name language="en">L2 Memory Error Syndrome Register</gui_name>
+            <description language="en">L2 Memory Error Syndrome Register.</description>
+        </register>
+    </register_group>
+</register_list>

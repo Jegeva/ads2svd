@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<register_list name="CP15"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns="http://www.arm.com/core_reg"
+    xsi:schemaLocation="http://www.arm.com/core_reg ../../../Schemas/core_register_definition.xsd"
+    xmlns:xi="http://www.w3.org/2001/XInclude"
+    xmlns:tcf="http://com.arm.targetconfigurationeditor">
+    <register_group name="OtherControlRegisters">
+        <gui_name language="en">Other Controls</gui_name>
+        <description language="en">Other system control registers</description>
+        <xi:include href="Cortex-v7A_OtherCtl.xml" xpointer="xmlns(reg_group=http://www.arm.com/core_reg)xpointer(//reg_group:register)"/>
+        <register access="RW" name="ACTLR" size="4">
+            <gui_name language="en">ACTLR</gui_name>
+            <alias_name>CP15_ACTLR</alias_name>
+            <device_name type="rvi">CP15_ACTLR</device_name>
+            <device_name type="cadi">ACTLR</device_name>
+            <device_name type="rvi">CP15_ACTLR</device_name>
+            <device_name type="cadi">ACTLR</device_name>
+            <description language="en">Auxiliary Control</description>
+            <!-- This register is grouped under OtherCtl in the Cortex-A12 TRM. -->
+            <bitField conditional="false" enumerationId="E_DISABLE_ENABLE" name="SMP">
+                <gui_name language="en">SMP</gui_name>
+                <description language="en">Enables coherent requests to the processor</description>
+                <definition>[6]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="E_DISABLE_ENABLE" name="L2PF">
+                <gui_name language="en">L2PF</gui_name>
+                <description language="en">Enable L2 prefetch</description>
+                <definition>[2]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="E_DISABLE_ENABLE" name="L1PF">
+                <gui_name language="en">L1PF</gui_name>
+                <description language="en">Enable L1 prefetch</description>
+                <definition>[1]</definition>
+            </bitField>
+        </register>
+        <register access="RW" name="S_ACTLR" size="4"> <!-- Secure variant -->
+            <gui_name language="en">S_ACTLR</gui_name>
+            <alias_name>CP15_S_ACTLR</alias_name>
+            <device_name type="rvi">CP15_S_ACTLR</device_name>
+            <device_name type="cadi">S_ACTLR</device_name>
+            <device_name type="rvi">CP15_S_ACTLR</device_name>
+            <device_name type="cadi">S_ACTLR</device_name>
+            <description language="en">[S] Auxiliary Control</description>
+            <!-- This register is grouped under OtherCtl in the Cortex-A12 TRM. -->
+            <bitField conditional="false" enumerationId="E_DISABLE_ENABLE" name="SMP">
+                <gui_name language="en">SMP</gui_name>
+                <description language="en">Enables coherent requests to the processor</description>
+                <definition>[6]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="E_DISABLE_ENABLE" name="L2PF">
+                <gui_name language="en">L2PF</gui_name>
+                <description language="en">Enable L2 prefetch</description>
+                <definition>[2]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="E_DISABLE_ENABLE" name="L1PF">
+                <gui_name language="en">L1PF</gui_name>
+                <description language="en">Enable L1 prefetch</description>
+                <definition>[1]</definition>
+            </bitField>
+        </register>
+        <register access="RW" name="N_ACTLR" size="4"> <!-- Non-secure variant -->
+            <gui_name language="en">N_ACTLR</gui_name>
+            <alias_name>CP15_N_ACTLR</alias_name>
+            <device_name type="rvi">CP15_N_ACTLR</device_name>
+            <device_name type="cadi">N_ACTLR</device_name>
+            <device_name type="rvi">CP15_N_ACTLR</device_name>
+            <device_name type="cadi">N_ACTLR</device_name>
+            <description language="en">[N] Auxiliary Control</description>
+            <bitField conditional="false" enumerationId="E_DISABLE_ENABLE" name="SMP">
+                <gui_name language="en">SMP</gui_name>
+                <description language="en">Enables coherent requests to the processor</description>
+                <definition>[6]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="E_DISABLE_ENABLE" name="L2PF">
+                <gui_name language="en">L2PF</gui_name>
+                <description language="en">Enable L2 prefetch</description>
+                <definition>[2]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="E_DISABLE_ENABLE" name="L1PF">
+                <gui_name language="en">L1PF</gui_name>
+                <description language="en">Enable L1 prefetch</description>
+                <definition>[1]</definition>
+            </bitField>
+        </register>
+        <register access="RW" name="L2CTLR" size="4">
+            <gui_name language="en">L2CTLR</gui_name>
+            <alias_name>CP15_L2CTLR</alias_name>
+            <device_name type="rvi">CP15_L2CTLR</device_name>
+            <device_name type="cadi">L2CTLR</device_name>
+            <device_name type="rvi">CP15_L2CTLR</device_name>
+            <device_name type="cadi">L2CTLR</device_name>
+            <description language="en">L2 Control</description>
+            <bitField conditional="false" enumerationId="L2CTLR_RSTDISABLE" name="RSTDISABLE">
+                <gui_name language="en">RSTDISABLE</gui_name>
+                <description language="en">L2 hardware reset disable pin</description>
+                <definition>[31]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="L2CTLR_NUMCPU" name="NUMCPU">
+                <gui_name language="en">NUMCPU</gui_name>
+                <description language="en">Number of CPUs present</description>
+                <definition>[25:24]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="GENERIC_EN_DISABLE" name="ECCE">
+                <gui_name language="en">ECCE</gui_name>
+                <description language="en">L2 ECC Disable</description>
+                <definition>[19]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="GENERIC_EN_DISABLE" name="CACHEE">
+                <gui_name language="en">CACHEE</gui_name>
+                <description language="en">L2 cache disable</description>
+                <definition>[18]</definition>
+            </bitField>
+            <bitField conditional="false" name="TRS">
+                <gui_name language="en">TRS</gui_name>
+                <description language="en">L2 Tag RAM setup latency</description>
+                <definition>[17:15]</definition>
+            </bitField>
+            <bitField conditional="false" name="TRR">
+                <gui_name language="en">TRR</gui_name>
+                <description language="en">L2 Tag RAM read latency</description>
+                <definition>[14:12]</definition>
+            </bitField>
+            <bitField conditional="false" name="TRW">
+                <gui_name language="en">TRW</gui_name>
+                <description language="en">L2 Tag RAM write latency</description>
+                <definition>[11:9]</definition>
+            </bitField>
+            <bitField conditional="false" name="DRS">
+                <gui_name language="en">DRS</gui_name>
+                <description language="en">L2 Data RAM setup latency</description>
+                <definition>[8:6]</definition>
+            </bitField>
+            <bitField conditional="false" name="DRR">
+                <gui_name language="en">DRR</gui_name>
+                <description language="en">L2 Data RAM read latency</description>
+                <definition>[5:3]</definition>
+            </bitField>
+            <bitField conditional="false" name="DRW">
+                <gui_name language="en">DRW</gui_name>
+                <description language="en">L2 Data RAM write latency</description>
+                <definition>[2:0]</definition>
+            </bitField>
+        </register>
+        <register access="RW" name="L2ECTLR" size="4">
+            <gui_name language="en">L2ECTLR</gui_name>
+            <alias_name>CP15_L2ECTLR</alias_name>
+            <device_name type="rvi">CP15_L2ECTLR</device_name>
+            <device_name type="cadi">L2ECTLR</device_name>
+            <device_name type="rvi">CP15_L2ECTLR</device_name>
+            <device_name type="cadi">L2ECTLR</device_name>
+            <description language="en">L2 Extended Control</description>
+            <bitField conditional="false" name="L2IAE" enumerationId="L2CTLR_RAMERR">
+                <gui_name language="en">L2IAE</gui_name>
+                <description language="en">ECC uncorrectable error</description>
+                <definition>[30]</definition>
+            </bitField>
+            <bitField conditional="false" name="L2AXIE" enumerationId="L2CTLR_AXIERR">
+                <gui_name language="en">L2AXIE</gui_name>
+                <description language="en">AXI asynchronous error indication</description>
+                <definition>[29]</definition>
+            </bitField>
+            <bitField conditional="false" name="L2RMOD" enumerationId="GENERIC_EN_DISABLE">
+                <gui_name language="en">L2RMOD</gui_name>
+                <description language="en">L2 retention mode</description>
+                <definition>[0]</definition>
+            </bitField>
+        </register>
+        <register access="RW" name="SCUCTLR" size="4">
+            <gui_name language="en">SCUCTLR</gui_name>
+            <alias_name>CP15_SCUCTLR</alias_name>
+            <device_name type="rvi">CP15_SCUCTLR</device_name>
+            <device_name type="cadi">SCUCTLR</device_name>
+            <device_name type="rvi">CP15_SCUCTLR</device_name>
+            <device_name type="cadi">SCUCTLR</device_name>
+            <description language="en">SCU Control Register</description>
+            <bitField conditional="false" enumerationId="RETMODE" name="P3RM">
+                <gui_name language="en">P3RM</gui_name>
+                <description language="en">Processor 3 retention mode</description>
+                <definition>[30]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="PWRSTAT" name="P3PS">
+                <gui_name language="en">P3PS</gui_name>
+                <description language="en">Processor 3 power status</description>
+                <definition>[29:28]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="RETMODE" name="P2RM">
+                <gui_name language="en">P2RM</gui_name>
+                <description language="en">Processor 2 retention mode</description>
+                <definition>[26]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="PWRSTAT" name="P2PS">
+                <gui_name language="en">P2PS</gui_name>
+                <description language="en">Processor 2 power status</description>
+                <definition>[25:24]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="RETMODE" name="P1RM">
+                <gui_name language="en">P1RM</gui_name>
+                <description language="en">Processor 1 retention mode</description>
+                <definition>[22]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="PWRSTAT" name="P1PS">
+                <gui_name language="en">P1PS</gui_name>
+                <description language="en">Processor 1 power status</description>
+                <definition>[21:20]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="RETMODE" name="P0RM">
+                <gui_name language="en">P0RM</gui_name>
+                <description language="en">Processor 0 retention mode</description>
+                <definition>[18]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="PWRSTAT" name="P0PS">
+                <gui_name language="en">P0PS</gui_name>
+                <description language="en">Processor 0 power status</description>
+                <definition>[17:16]</definition>
+            </bitField>
+            <bitField conditional="false" name="ACTLRSMP">
+                <gui_name language="en">ACTLRSMP</gui_name>
+                <description language="en">Copy of ACTLR.SMP for each processor</description>
+                <definition>[7:4]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="L2CTLR_NUMCPU" name="NUMPROC">
+                <gui_name language="en">NUMPROC</gui_name>
+                <description language="en">Number of processors present</description>
+                <definition>[1:0]</definition>
+            </bitField>
+        </register>
+    </register_group>
+</register_list>
+

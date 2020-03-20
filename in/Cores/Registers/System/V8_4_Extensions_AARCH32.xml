@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<container xmlns:cr="http://www.arm.com/core_reg" xmlns="http://www.arm.com/core_reg" xmlns:tcf="http://com.arm.targetconfigurationeditor" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.arm.com/core_reg ../../../Schemas/core_register_definition.xsd">
+  <cr:register_list name="System" override="true">
+
+    <register_group name="AMU">
+    <gui_name language="en">AMU</gui_name>
+    <description language="en">AMU</description>
+    <register access="RW" name="AMCR" size="4">
+      <gui_name language="en">AMCR</gui_name>
+      <description language="en">AMCR</description>
+    </register>
+    <register access="RO" name="AMCFGR" size="4">
+      <gui_name language="en">AMCFGR</gui_name>
+      <description language="en">AMCFGR</description>
+    </register>
+    <register access="RO" name="AMCGCR" size="4">
+      <gui_name language="en">AMCGCR</gui_name>
+      <description language="en">AMCGCR</description>
+    </register>
+    <register access="RW" name="AMUSERENR" size="4">
+      <gui_name language="en">AMUSERENR</gui_name>
+      <description language="en">AMUSERENR</description>
+    </register>
+    <register access="RW" name="AMCNTENCLR0" size="4">
+      <gui_name language="en">AMCNTENCLR0</gui_name>
+      <description language="en">AMCNTENCLR0</description>
+    </register>
+    <register access="RW" name="AMCNTENSET0" size="4">
+      <gui_name language="en">AMCNTENSET0</gui_name>
+      <description language="en">AMCNTENSET0</description>
+    </register>
+    <register access="RW" name="AMEVCNTR0_0" size="8">
+      <gui_name language="en">AMEVCNTR0_0</gui_name>
+      <description language="en">AMEVCNTR0_0_EL0</description>
+    </register>
+    <register access="RW" name="AMEVCNTR0_1" size="8">
+      <gui_name language="en">AMEVCNTR0_1</gui_name>
+      <description language="en">AMEVCNTR0_1</description>
+    </register>
+    <register access="RW" name="AMEVCNTR0_2" size="8">
+      <gui_name language="en">AMEVCNTR0_2</gui_name>
+      <description language="en">AMEVCNTR0_2</description>
+    </register>
+    <register access="RW" name="AMEVCNTR0_3" size="8">
+      <gui_name language="en">AMEVCNTR0_3</gui_name>
+      <description language="en">AMEVCNTR0_3</description>
+    </register>
+    <register access="RO" name="AMEVTYPER0_0" size="4">
+      <gui_name language="en">AMEVTYPER0_0</gui_name>
+      <description language="en">AMEVTYPER0_0</description>
+    </register>
+     <register access="RO" name="AMEVTYPER0_1" size="4">
+      <gui_name language="en">AMEVTYPER0_1</gui_name>
+      <description language="en">AMEVTYPER0_1</description>
+    </register>
+    <register access="RO" name="AMEVTYPER0_2" size="4">
+      <gui_name language="en">AMEVTYPER0_2</gui_name>
+      <description language="en">AMEVTYPER0_2</description>
+    </register>
+    <register access="RO" name="AMEVTYPER0_3" size="4">
+      <gui_name language="en">AMEVTYPER0_3</gui_name>
+      <description language="en">AMEVTYPER0_3</description>
+    </register>
+    <register access="RW" name="AMCNTENCLR1" size="4">
+      <gui_name language="en">AMCNTENCLR1</gui_name>
+      <description language="en">AMCNTENCLR1</description>
+    </register>
+
+    <!-- Temporary fix until register is renamed in firmware (DSCORE-1967) -->
+    <register access="RW" name="AMCNTENSET1" size="4">
+      <gui_name language="en">AMCNTENSET1</gui_name>
+      <device_name type="rvi">AMCNTENSET1_EL0</device_name>
+      <device_name type="cadi">AMCNTENSET1_EL0</device_name>
+      <description language="en">AMCNTENSET1</description>
+    </register>
+
+    <register access="RW" name="AMEVCNTR1_0" size="8">
+      <gui_name language="en">AMEVCNTR1_0</gui_name>
+      <description language="en">AMEVCNTR1_0</description>
+    </register>
+    <register access="RW" name="AMEVCNTR1_1" size="8">
+      <gui_name language="en">AMEVCNTR1_1</gui_name>
+      <description language="en">AMEVCNTR1_1</description>
+    </register>
+    <register access="RW" name="AMEVCNTR1_2" size="8">
+      <gui_name language="en">AMEVCNTR1_2</gui_name>
+      <description language="en">AMEVCNTR1_2</description>
+    </register>
+    <register access="RW" name="AMEVCNTR1_3" size="8">
+      <gui_name language="en">AMEVCNTR1_3</gui_name>
+      <description language="en">AMEVCNTR1_3</description>
+    </register>
+    <register access="RW" name="AMEVCNTR1_4" size="8">
+      <gui_name language="en">AMEVCNTR1_4</gui_name>
+      <description language="en">AMEVCNTR1_4</description>
+    </register>
+    <register access="RW" name="AMEVCNTR1_5" size="8">
+      <gui_name language="en">AMEVCNTR1_5</gui_name>
+      <description language="en">AMEVCNTR1_5</description>
+    </register>
+    <register access="RW" name="AMEVCNTR1_6" size="8">
+      <gui_name language="en">AMEVCNTR1_6</gui_name>
+      <description language="en">AMEVCNTR1_6</description>
+    </register>
+    <register access="RW" name="AMEVCNTR1_7" size="8">
+      <gui_name language="en">AMEVCNTR1_7</gui_name>
+      <description language="en">AMEVCNTR1_7</description>
+    </register>
+    <register access="RW" name="AMEVCNTR1_8" size="8">
+      <gui_name language="en">AMEVCNTR1_8</gui_name>
+      <description language="en">AMEVCNTR1_8</description>
+    </register>
+    <register access="RW" name="AMEVCNTR1_9" size="8">
+      <gui_name language="en">AMEVCNTR1_9</gui_name>
+      <description language="en">AMEVCNTR1_9</description>
+    </register>
+    <register access="RW" name="AMEVCNTR1_10" size="8">
+      <gui_name language="en">AMEVCNTR1_10</gui_name>
+      <description language="en">AMEVCNTR1_10</description>
+    </register>
+    <register access="RW" name="AMEVCNTR1_11" size="8">
+      <gui_name language="en">AMEVCNTR1_11</gui_name>
+      <description language="en">AMEVCNTR1_11</description>
+    </register>
+    <register access="RW" name="AMEVCNTR1_12" size="8">
+      <gui_name language="en">AMEVCNTR1_12</gui_name>
+      <description language="en">AMEVCNTR1_12</description>
+    </register>
+    <register access="RW" name="AMEVCNTR1_13" size="8">
+      <gui_name language="en">AMEVCNTR1_13</gui_name>
+      <description language="en">AMEVCNTR1_13</description>
+    </register>
+    <register access="RW" name="AMEVCNTR1_14" size="8">
+      <gui_name language="en">AMEVCNTR1_14</gui_name>
+      <description language="en">AMEVCNTR1_14</description>
+    </register>
+    <register access="RW" name="AMEVCNTR1_15" size="8">
+      <gui_name language="en">AMEVCNTR1_15</gui_name>
+      <description language="en">AMEVCNTR1_15</description>
+    </register>
+    <register access="RW" name="AMEVTYPER1_0" size="4">
+      <gui_name language="en">AMEVTYPER1_0</gui_name>
+      <description language="en">AMEVTYPER1_0</description>
+    </register>
+    <register access="RW" name="AMEVTYPER1_1" size="4">
+      <gui_name language="en">AMEVTYPER1_1</gui_name>
+      <description language="en">AMEVTYPER1_1</description>
+    </register>
+    <register access="RW" name="AMEVTYPER1_2" size="4">
+      <gui_name language="en">AMEVTYPER1_2</gui_name>
+      <description language="en">AMEVTYPER1_2</description>
+    </register>
+    <register access="RW" name="AMEVTYPER1_3" size="4">
+      <gui_name language="en">AMEVTYPER1_3</gui_name>
+      <description language="en">AMEVTYPER1_3</description>
+    </register>
+    <register access="RW" name="AMEVTYPER1_4" size="4">
+      <gui_name language="en">AMEVTYPER1_4</gui_name>
+      <description language="en">AMEVTYPER1_4</description>
+    </register>
+    <register access="RW" name="AMEVTYPER1_5" size="4">
+      <gui_name language="en">AMEVTYPER1_5</gui_name>
+      <description language="en">AMEVTYPER1_5</description>
+    </register>
+    <register access="RW" name="AMEVTYPER1_6" size="4">
+      <gui_name language="en">AMEVTYPER1_6</gui_name>
+      <description language="en">AMEVTYPER1_6</description>
+    </register>
+    <register access="RW" name="AMEVTYPER1_7" size="4">
+      <gui_name language="en">AMEVTYPER1_7</gui_name>
+      <description language="en">AMEVTYPER1_7</description>
+    </register>
+    <register access="RW" name="AMEVTYPER1_8" size="4">
+      <gui_name language="en">AMEVTYPER1_8</gui_name>
+      <description language="en">AMEVTYPER1_8</description>
+    </register>
+    <register access="RW" name="AMEVTYPER1_9" size="4">
+      <gui_name language="en">AMEVTYPER1_9</gui_name>
+      <description language="en">AMEVTYPER1_9</description>
+    </register>
+    <register access="RW" name="AMEVTYPER1_10" size="4">
+      <gui_name language="en">AMEVTYPER1_10</gui_name>
+      <description language="en">AMEVTYPER1_10</description>
+    </register>
+    <register access="RW" name="AMEVTYPER1_11" size="4">
+      <gui_name language="en">AMEVTYPER1_11</gui_name>
+      <description language="en">AMEVTYPER1_11</description>
+    </register>
+    <register access="RW" name="AMEVTYPER1_12" size="4">
+      <gui_name language="en">AMEVTYPER1_12</gui_name>
+      <description language="en">AMEVTYPER1_12</description>
+    </register>
+    <register access="RW" name="AMEVTYPER1_13" size="4">
+      <gui_name language="en">AMEVTYPER1_13</gui_name>
+      <description language="en">AMEVTYPER1_13</description>
+    </register>
+    <register access="RW" name="AMEVTYPER1_14" size="4">
+      <gui_name language="en">AMEVTYPER1_14</gui_name>
+      <description language="en">AMEVTYPER1_14</description>
+    </register>
+    <register access="RW" name="AMEVTYPER1_15" size="4">
+      <gui_name language="en">AMEVTYPER1_15</gui_name>
+      <description language="en">AMEVTYPER1_15</description>
+    </register>
+    </register_group>
+
+    <register_group name="PMU">
+    <gui_name language="en">PMU</gui_name>
+    <description language="en">PMU</description>
+
+  <!-- Temporary fix until register is renamed in firmware (DSCORE-1967) -->
+    <register access="RO" name="PMMIR" size="4">
+      <gui_name language="en">PMMIR</gui_name>
+      <device_name type="rvi">PMMIDR</device_name>
+      <device_name type="cadi">PMMIDR</device_name>
+      <description language="en">PMMIR</description>
+    </register>
+    </register_group>
+
+    <register_group name="ID">
+    <gui_name language="en">ID</gui_name>
+    <description language="en">ID</description>
+    <register access="RO" name="ID_ISAR6" size="8">
+      <gui_name language="en">Instruction Set Attribute Register 6</gui_name>
+      <description language="en">Provides information about the instruction sets implemented by the PE in AArch32 state...</description>
+      <bitField enumerationId="ID_ISAR6_SPECRES" name="SPECRES">
+        <gui_name language="en">SPECRES</gui_name>
+        <description language="en">Speculation invalidation instruction support in AArch32 state.</description>
+        <definition>[19:16]</definition>
+      </bitField>
+      <bitField enumerationId="ID_ISAR6_SB" name="SB">
+        <gui_name language="en">SB</gui_name>
+        <description language="en">SB instruction support in AArch32 state.</description>
+        <definition>[15:12]</definition>
+      </bitField>
+      <bitField enumerationId="ID_ISAR6_FHM" name="FHM">
+        <gui_name language="en">FHM</gui_name>
+        <description language="en">Indicates whether VFMAL and VFMSL instructions are implemented.</description>
+        <definition>[11:8]</definition>
+      </bitField>
+      <bitField enumerationId="ID_ISAR6_DP" name="DP">
+        <gui_name language="en">DP</gui_name>
+        <description language="en">Indicates the support for dot product instructions in AArch32 state.</description>
+        <definition>[7:4]</definition>
+      </bitField>
+      <bitField enumerationId="ID_ISAR6_JSCVT" name="JSCVT">
+        <gui_name language="en">JSCVT</gui_name>
+        <description language="en">Indicates whether the Javascript conversion instruction is implemented in AArch32 state.</description>
+        <definition>[3:0]</definition>
+      </bitField>
+    </register>
+  </register_group>
+  <tcf:enumeration name="ID_ISAR6_SPECRES">
+    <tcf:enumItem description="CFPRCTX, DVPRCTX, and CPPRCTX instructions are not implemented." name="CFPRCTX_DVPRCTX_and_CPPRCTX_instructions_are_not_implemented" number="0"/>
+    <tcf:enumItem description="CFPRCTX, DVPRCTX, and CPPRCTX instructions are implemented." name="CFPRCTX_DVPRCTX_and_CPPRCTX_instructions_are_implemented" number="1"/>
+  </tcf:enumeration>
+  <tcf:enumeration name="ID_ISAR6_SB">
+    <tcf:enumItem description="SB instruction is not implemented." name="SB_instruction_is_not_implemented" number="0"/>
+    <tcf:enumItem description="SB instruction is implemented." name="SB_instruction_is_implemented" number="1"/>
+  </tcf:enumeration>
+  <tcf:enumeration name="ID_ISAR6_FHM">
+    <tcf:enumItem description="VFMAL and VMFSL instructions not implemented." name="VFMAL_and_VMFSL_instructions_not_implemented" number="0"/>
+    <tcf:enumItem description="VFMAL and VMFSL instructions implemented." name="VFMAL_and_VMFSL_instructions_implemented" number="1"/>
+  </tcf:enumeration>
+  <tcf:enumeration name="ID_ISAR6_DP">
+    <tcf:enumItem description="No dot Product instructions implemented." name="No_dot_Product_instructions_implemented" number="0"/>
+    <tcf:enumItem description="VUDOT and VSDOT instructions implemented." name="VUDOT_and_VSDOT_instructions_implemented" number="1"/>
+  </tcf:enumeration>
+  <tcf:enumeration name="ID_ISAR6_JSCVT">
+    <tcf:enumItem description="The VJCVT instruction is not implemented." name="The_VJCVT_instruction_is_not_implemented" number="0"/>
+    <tcf:enumItem description="The VJCVT instruction is implemented." name="The_VJCVT_instruction_is_implemented" number="1"/>
+  </tcf:enumeration>
+
+  </cr:register_list>
+
+
+</container>

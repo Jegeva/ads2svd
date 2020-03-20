@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<register_list name="SIMD"
+               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+               xmlns="http://www.arm.com/core_reg"
+               xmlns:xi="http://www.w3.org/2001/XInclude"
+               xsi:schemaLocation="http://www.arm.com/core_reg ../../../Schemas/core_register_definition.xsd"
+               xmlns:tcf="http://com.arm.targetconfigurationeditor">
+
+    <register_group name="Quad">
+        <gui_name language="en">Quad Registers</gui_name>
+        <description language="en">SIMD Quadword Register file</description>
+        <register name="Q0" size="16" access="RW">
+            <gui_name language="en">Q0</gui_name>
+            <description language="en">Q0</description>
+            <device_register name="D0" high_bit="63" low_bit="0" shift="0"/>
+            <device_register name="D1" high_bit="63" low_bit="0" shift="64"/>
+            <xi:include href="SIMD_Q_fields.xml" xpointer="xmlns(namespace=http://www.arm.com/core_reg)xpointer(//namespace:array)"/>
+        </register>
+        <register name="Q1" size="16" access="RW">
+            <gui_name language="en">Q1</gui_name>
+            <description language="en">Q1</description>
+            <device_register name="D2" high_bit="63" low_bit="0" shift="0"/>
+            <device_register name="D3" high_bit="63" low_bit="0" shift="64"/>
+            <xi:include href="SIMD_Q_fields.xml" xpointer="xmlns(namespace=http://www.arm.com/core_reg)xpointer(//namespace:array)"/>
+        </register>
+        <register name="Q2" size="16" access="RW">
+            <gui_name language="en">Q2</gui_name>
+            <description language="en">Q2</description>
+            <device_register name="D4" high_bit="63" low_bit="0" shift="0"/>
+            <device_register name="D5" high_bit="63" low_bit="0" shift="64"/>
+            <xi:include href="SIMD_Q_fields.xml" xpointer="xmlns(namespace=http://www.arm.com/core_reg)xpointer(//namespace:array)"/>
+        </register>
+        <register name="Q3" size="16" access="RW">
+            <gui_name language="en">Q3</gui_name>
+            <description language="en">Q3</description>
+            <device_register name="D6" high_bit="63" low_bit="0" shift="0"/>
+            <device_register name="D7" high_bit="63" low_bit="0" shift="64"/>
+            <xi:include href="SIMD_Q_fields.xml" xpointer="xmlns(namespace=http://www.arm.com/core_reg)xpointer(//namespace:array)"/>
+        </register>
+        <register name="Q4" size="16" access="RW">
+            <gui_name language="en">Q4</gui_name>
+            <description language="en">Q4</description>
+            <device_register name="D8" high_bit="63" low_bit="0" shift="0"/>
+            <device_register name="D9" high_bit="63" low_bit="0" shift="64"/>
+            <xi:include href="SIMD_Q_fields.xml" xpointer="xmlns(namespace=http://www.arm.com/core_reg)xpointer(//namespace:array)"/>
+        </register>
+        <register name="Q5" size="16" access="RW">
+            <gui_name language="en">Q5</gui_name>
+            <description language="en">Q5</description>
+            <device_register name="D10" high_bit="63" low_bit="0" shift="0"/>
+            <device_register name="D11" high_bit="63" low_bit="0" shift="64"/>
+            <xi:include href="SIMD_Q_fields.xml" xpointer="xmlns(namespace=http://www.arm.com/core_reg)xpointer(//namespace:array)"/>
+        </register>
+        <register name="Q6" size="16" access="RW">
+            <gui_name language="en">Q6</gui_name>
+            <description language="en">Q6</description>
+            <device_register name="D12" high_bit="63" low_bit="0" shift="0"/>
+            <device_register name="D13" high_bit="63" low_bit="0" shift="64"/>
+            <xi:include href="SIMD_Q_fields.xml" xpointer="xmlns(namespace=http://www.arm.com/core_reg)xpointer(//namespace:array)"/>
+        </register>
+        <register name="Q7" size="16" access="RW">
+            <gui_name language="en">Q7</gui_name>
+            <description language="en">Q7</description>
+            <device_register name="D14" high_bit="63" low_bit="0" shift="0"/>
+            <device_register name="D15" high_bit="63" low_bit="0" shift="64"/>
+            <xi:include href="SIMD_Q_fields.xml" xpointer="xmlns(namespace=http://www.arm.com/core_reg)xpointer(//namespace:array)"/>
+        </register>
+        <register name="Q8" size="16" access="RW">
+            <gui_name language="en">Q8</gui_name>
+            <description language="en">Q8</description>
+            <device_register name="D16" high_bit="63" low_bit="0" shift="0"/>
+            <device_register name="D17" high_bit="63" low_bit="0" shift="64"/>
+            <xi:include href="SIMD_Q_fields.xml" xpointer="xmlns(namespace=http://www.arm.com/core_reg)xpointer(//namespace:array)"/>
+        </register>
+        <register name="Q9" size="16" access="RW">
+            <gui_name language="en">Q9</gui_name>
+            <description language="en">Q9</description>
+            <device_register name="D18" high_bit="63" low_bit="0" shift="0"/>
+            <device_register name="D19" high_bit="63" low_bit="0" shift="64"/>
+            <xi:include href="SIMD_Q_fields.xml" xpointer="xmlns(namespace=http://www.arm.com/core_reg)xpointer(//namespace:array)"/>
+        </register>
+        <register name="Q10" size="16" access="RW">
+            <gui_name language="en">Q10</gui_name>
+            <description language="en">Q10</description>
+            <device_register name="D20" high_bit="63" low_bit="0" shift="0"/>
+            <device_register name="D21" high_bit="63" low_bit="0" shift="64"/>
+            <xi:include href="SIMD_Q_fields.xml" xpointer="xmlns(namespace=http://www.arm.com/core_reg)xpointer(//namespace:array)"/>
+        </register>
+        <register name="Q11" size="16" access="RW">
+            <gui_name language="en">Q11</gui_name>
+            <description language="en">Q11</description>
+            <device_register name="D22" high_bit="63" low_bit="0" shift="0"/>
+            <device_register name="D23" high_bit="63" low_bit="0" shift="64"/>
+            <xi:include href="SIMD_Q_fields.xml" xpointer="xmlns(namespace=http://www.arm.com/core_reg)xpointer(//namespace:array)"/>
+        </register>
+        <register name="Q12" size="16" access="RW">
+            <gui_name language="en">Q12</gui_name>
+            <description language="en">Q12</description>
+            <device_register name="D24" high_bit="63" low_bit="0" shift="0"/>
+            <device_register name="D25" high_bit="63" low_bit="0" shift="64"/>
+            <xi:include href="SIMD_Q_fields.xml" xpointer="xmlns(namespace=http://www.arm.com/core_reg)xpointer(//namespace:array)"/>
+        </register>
+        <register name="Q13" size="16" access="RW">
+            <gui_name language="en">Q13</gui_name>
+            <description language="en">Q13</description>
+            <device_register name="D26" high_bit="63" low_bit="0" shift="0"/>
+            <device_register name="D27" high_bit="63" low_bit="0" shift="64"/>
+            <xi:include href="SIMD_Q_fields.xml" xpointer="xmlns(namespace=http://www.arm.com/core_reg)xpointer(//namespace:array)"/>
+        </register>
+        <register name="Q14" size="16" access="RW">
+            <gui_name language="en">Q14</gui_name>
+            <description language="en">Q14</description>
+            <device_register name="D28" high_bit="63" low_bit="0" shift="0"/>
+            <device_register name="D29" high_bit="63" low_bit="0" shift="64"/>
+            <xi:include href="SIMD_Q_fields.xml" xpointer="xmlns(namespace=http://www.arm.com/core_reg)xpointer(//namespace:array)"/>
+        </register>
+        <register name="Q15" size="16" access="RW">
+            <gui_name language="en">Q15</gui_name>
+            <description language="en">Q15</description>
+            <device_register name="D30" high_bit="63" low_bit="0" shift="0"/>
+            <device_register name="D31" high_bit="63" low_bit="0" shift="64"/>
+            <xi:include href="SIMD_Q_fields.xml" xpointer="xmlns(namespace=http://www.arm.com/core_reg)xpointer(//namespace:array)"/>
+        </register>
+    </register_group>
+</register_list>

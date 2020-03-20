@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<register_list name="CP15"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns="http://www.arm.com/core_reg"
+    xsi:schemaLocation="http://www.arm.com/core_reg ../../../Schemas/core_register_definition.xsd"
+    xmlns:tcf="http://com.arm.targetconfigurationeditor">
+    <register_group name="GenericTimer">
+        <gui_name language="en">Generic Timer</gui_name>
+        <description language="en">Generic Timer registers</description>
+        <register access="RO" name="CNTFRQ" size="4">
+            <gui_name language="en">CNTFRQ</gui_name>
+            <alias_name>CP15_CNTFRQ</alias_name>
+            <device_name type="rvi">CP15_CNTFRQ</device_name>
+            <device_name type="cadi">CNTFRQ</device_name>
+            <device_name type="rvi">CP15_CNTFRQ</device_name>
+            <device_name type="cadi">CNTFRQ</device_name>
+            <description language="en">Clock Ticks Per Second</description>
+        </register>
+        <register access="RO" name="CNTPCT" size="8">
+            <gui_name language="en">CNTPCT</gui_name>
+            <alias_name>CP15_CNTPCT</alias_name>
+            <device_name type="rvi">CP15_CNTPCT</device_name>
+            <device_name type="cadi">CNTPCT</device_name>
+            <device_name type="rvi">CP15_CNTPCT</device_name>
+            <device_name type="cadi">CNTPCT</device_name>
+            <description language="en">Physical Count Register</description>
+        </register>
+        <register access="RW" name="CNTKCTL" size="4">
+            <gui_name language="en">CNTKCTL</gui_name>
+            <alias_name>CP15_CNTKCTL</alias_name>
+            <device_name type="rvi">CP15_CNTKCTL</device_name>
+            <device_name type="cadi">CNTKCTL</device_name>
+            <device_name type="rvi">CP15_CNTKCTL</device_name>
+            <device_name type="cadi">CNTKCTL</device_name>
+            <description language="en">Timer PL1 Control Register</description>
+            <bitField conditional="false" name="PL0PTEN" enumerationId="CNT_CNTCTL_ACCESSIBLE">
+                <gui_name language="en">PL0PTEN</gui_name>
+                <description language="en">Controls whether the physical timer registers are accessible from PL0 modes</description>
+                <definition>[9]</definition>
+            </bitField>
+            <bitField conditional="false" name="PL0VTEN" enumerationId="CNT_CNTCTL_ACCESSIBLE">
+                <gui_name language="en">PL0VTEN</gui_name>
+                <description language="en">Controls whether the virtual timer registers are accessible from PL0</description>
+                <definition>[8]</definition>
+            </bitField>
+            <bitField conditional="false" name="EVNTI">
+                <gui_name language="en">EVNTI</gui_name>
+                <description language="en">which bit of CNTVCT is the trigger for the event stream generated from the virtual counter, when that stream is enabled</description>
+                <definition>[7:4]</definition>
+            </bitField>
+            <bitField conditional="false" name="EVNTDIR" enumerationId="CNTCTL_EVNTDIR">
+                <gui_name language="en">EVNTDIR</gui_name>
+                <description language="en">Controls which transition of the CNTVCT trigger bit, defined by EVNTI, generates an event, when the event stream is enabled</description>
+                <definition>[3]</definition>
+            </bitField>
+            <bitField conditional="false" name="EVNTEN" enumerationId="GENERIC_DIS_ENABLE">
+                <gui_name language="en">EVNTEN</gui_name>
+                <description language="en">Enables the generation of an event stream from the virtual counter</description>
+                <definition>[2]</definition>
+            </bitField>
+            <bitField conditional="false" name="PL0VCTEN"  enumerationId="CNT_CNTCTL_ACCESSIBLE">
+                <gui_name language="en">PL0VCTEN</gui_name>
+                <description language="en">Controls whether the virtual counter, CNTVCT, and the frequency register CNTFRQ, are accessible from PL0 modes</description>
+                <definition>[1]</definition>
+            </bitField>
+            <bitField conditional="false" name="PL0PCTEN" enumerationId="CNT_CNTCTL_ACCESSIBLE">
+                <gui_name language="en">PL0PCTEN</gui_name>
+                <description language="en">Controls whether the physical counter, CNTPCT, and the frequency register CNTFRQ, are accessible from PL0 modes</description>
+                <definition>[0]</definition>
+            </bitField>
+        </register>
+        <register access="RW" name="CNTP_TVAL" size="4">
+            <gui_name language="en">CNTP_TVAL</gui_name>
+            <alias_name>CP15_CNTP_TVAL</alias_name>
+            <device_name type="rvi">CP15_CNTP_TVAL</device_name>
+            <device_name type="cadi">CNTP_TVAL</device_name>
+            <device_name type="rvi">CP15_CNTP_TVAL</device_name>
+            <device_name type="cadi">CNTP_TVAL</device_name>
+            <description language="en">PL1 Physical Timer Value Register</description>
+        </register>
+        <register access="RW" name="CNTP_CTL" size="4">
+            <gui_name language="en">CNTP_CTL</gui_name>
+            <alias_name>CP15_CNTP_CTL</alias_name>
+            <device_name type="rvi">CP15_CNTP_CTL</device_name>
+            <device_name type="cadi">CNTP_CTL</device_name>
+            <device_name type="rvi">CP15_CNTP_CTL</device_name>
+            <device_name type="cadi">CNTP_CTL</device_name>
+            <description language="en">PL1 Physical Timer Control register</description>
+            <bitField conditional="false" name="ISTATUS" enumerationId="CNT_CTL_IS">
+                <gui_name language="en">ISTATUS</gui_name>
+                <description language="en">The status of the timer</description>
+                <definition>[2]</definition>
+            </bitField>
+            <bitField conditional="false" name="IMASK" enumerationId="CNT_CTL_MI">
+                <gui_name language="en">IMASK</gui_name>
+                <description language="en">Timer output signal mask bit</description>
+                <definition>[1]</definition>
+            </bitField>
+            <bitField conditional="false" name="ENABLE" enumerationId="GENERIC_DIS_ENABLE">
+                <gui_name language="en">ENABLE</gui_name>
+                <description language="en">Enables the timer</description>
+                <definition>[0]</definition>
+            </bitField>
+        </register>
+        <register access="RW" name="CNTV_TVAL" size="4">
+            <gui_name language="en">CNTV_TVAL</gui_name>
+            <alias_name>CP15_CNTV_TVAL</alias_name>
+            <device_name type="rvi">CP15_CNTV_TVAL</device_name>
+            <device_name type="cadi">CNTV_TVAL</device_name>
+            <device_name type="rvi">CP15_CNTV_TVAL</device_name>
+            <device_name type="cadi">CNTV_TVAL</device_name>
+            <description language="en">Virtual Timer Value Register</description>
+        </register>
+        <register access="RW" name="CNTV_CTL" size="4">
+            <gui_name language="en">CNTV_CTL</gui_name>
+            <alias_name>CP15_CNTV_CTL</alias_name>
+            <device_name type="rvi">CP15_CNTV_CTL</device_name>
+            <device_name type="cadi">CNTV_CTL</device_name>
+            <device_name type="rvi">CP15_CNTV_CTL</device_name>
+            <device_name type="cadi">CNTV_CTL</device_name>
+            <description language="en">PL2 Physical Timer Control Register</description>
+            <bitField conditional="false" name="ISTATUS" enumerationId="CNT_CTL_IS">
+                <gui_name language="en">ISTATUS</gui_name>
+                <description language="en">The status of the timer interrupt</description>
+                <definition>[2]</definition>
+            </bitField>
+            <bitField conditional="false" name="IMASK" enumerationId="CNT_CTL_MI">
+                <gui_name language="en">IMASK</gui_name>
+                <description language="en">Timer interrupt mask bit</description>
+                <definition>[1]</definition>
+            </bitField>
+            <bitField conditional="false" name="ENABLE" enumerationId="GENERIC_DIS_ENABLE">
+                <gui_name language="en">ENABLE</gui_name>
+                <description language="en">Enables the timer</description>
+                <definition>[0]</definition>
+            </bitField>
+        </register>
+        <register access="RO" name="CNTVCT" size="8">
+            <gui_name language="en">CNTVCT</gui_name>
+            <alias_name>CP15_CNTVCT</alias_name>
+            <device_name type="rvi">CP15_CNTVCT</device_name>
+            <device_name type="cadi">CNTVCT</device_name>
+            <device_name type="rvi">CP15_CNTVCT</device_name>
+            <device_name type="cadi">CNTVCT</device_name>
+            <description language="en">Virtual Count Register</description>
+        </register>
+        <register access="RW" name="CNTP_CVAL" size="8">
+            <gui_name language="en">CNTP_CVAL</gui_name>
+            <alias_name>CP15_CNTP_CVAL</alias_name>
+            <device_name type="rvi">CP15_CNTP_CVAL</device_name>
+            <device_name type="cadi">CNTP_CVAL</device_name>
+            <device_name type="rvi">CP15_CNTP_CVAL</device_name>
+            <device_name type="cadi">CNTP_CVAL</device_name>
+            <description language="en">Counter PL1 Physical Compare Value Register</description>
+        </register>
+        <register access="RW" name="CNTV_CVAL" size="8">
+            <gui_name language="en">CNTV_CVAL</gui_name>
+            <alias_name>CP15_CNTV_CVAL</alias_name>
+            <device_name type="rvi">CP15_CNTV_CVAL</device_name>
+            <device_name type="cadi">CNTV_CVAL</device_name>
+            <device_name type="rvi">CP15_CNTV_CVAL</device_name>
+            <device_name type="cadi">CNTV_CVAL</device_name>
+            <description language="en">Counter PL1 Virtual Compare Value Register</description>
+        </register>
+        <register access="RW" name="CNTVOFF" size="8">
+            <gui_name language="en">CNTVOFF</gui_name>
+            <alias_name>CP15_CNTVOFF</alias_name>
+            <device_name type="rvi">CP15_CNTVOFF</device_name>
+            <device_name type="cadi">CNTVOFF</device_name>
+            <device_name type="rvi">CP15_CNTVOFF</device_name>
+            <device_name type="cadi">CNTVOFF</device_name>
+            <description language="en">Counter Virtual Offset Register</description>
+        </register>
+        <register access="RW" name="CNTHCTL" size="4">
+            <gui_name language="en">CNTHCTL</gui_name>
+            <alias_name>CP15_CNTHCTL</alias_name>
+            <device_name type="rvi">CP15_CNTHCTL</device_name>
+            <device_name type="cadi">CNTHCTL</device_name>
+            <device_name type="rvi">CP15_CNTHCTL</device_name>
+            <device_name type="cadi">CNTHCTL</device_name>
+            <description language="en">Timer PL2 Control Register</description>
+            <bitField conditional="false" name="EVNTI">
+                <gui_name language="en">EVNTI</gui_name>
+                <description language="en">Selects which bit of CNTPCT is the trigger for the event stream generated from the physical counter, when that stream is enabled</description>
+                <definition>[7:4]</definition>
+            </bitField>
+            <bitField conditional="false" name="EVNTDIR"  enumerationId="CNTCTL_EVNTDIR">
+                <gui_name language="en">EVNTDIR</gui_name>
+                <description language="en">Controls which transition of the CNTPCT trigger bit, defined by EVNTI, generates an event, when the event stream is enabled</description>
+                <definition>[3]</definition>
+            </bitField>
+            <bitField conditional="false" name="EVNTEN" enumerationId="GENERIC_DIS_ENABLE">
+                <gui_name language="en">EVNTEN</gui_name>
+                <description language="en">Enables the generation of an event stream from the physical counter</description>
+                <definition>[2]</definition>
+            </bitField>
+            <bitField conditional="false" name="PL1PCEN" enumerationId="CNT_CNTCTL_ACCESSIBLE_BOTH">
+                <gui_name language="en">PL1PCEN</gui_name>
+                <description language="en">Controls whether the Non-secure copies of the physical timer registers are accessible from Non-secure PL1 and PL0 modes</description>
+                <definition>[1]</definition>
+            </bitField>
+            <bitField conditional="false" name="PL1PCTEN" enumerationId="CNT_CNTCTL_ACCESSIBLE_BOTH">
+                <gui_name language="en">PL1PCTEN</gui_name>
+                <description language="en">Controls whether the physical counter, CNTPCT, is accessible from Non-secure PL1 and PL0 modes</description>
+                <definition>[0]</definition>
+            </bitField>
+        </register>
+        <register access="RW" name="CNTHP_TVAL" size="4">
+            <gui_name language="en">CNTHP_TVAL</gui_name>
+            <alias_name>CP15_CNTHP_TVAL</alias_name>
+            <device_name type="rvi">CP15_CNTHP_TVAL</device_name>
+            <device_name type="cadi">CNTHP_TVAL</device_name>
+            <device_name type="rvi">CP15_CNTHP_TVAL</device_name>
+            <device_name type="cadi">CNTHP_TVAL</device_name>
+            <description language="en">Counter Non-secure PL2 Physical Timer Value Register</description>
+        </register>
+        <register access="RW" name="CNTHP_CTL" size="4">
+            <gui_name language="en">CNTHP_CTL</gui_name>
+            <alias_name>CP15_CNTHP_CTL</alias_name>
+            <device_name type="rvi">CP15_CNTHP_CTL</device_name>
+            <device_name type="cadi">CNTHP_CTL</device_name>
+            <device_name type="rvi">CP15_CNTHP_CTL</device_name>
+            <device_name type="cadi">CNTHP_CTL</device_name>
+            <description language="en">PL2 Physical Timer Control Register</description>
+            <bitField conditional="false" name="ISTATUS" enumerationId="CNT_CTL_IS">
+                <gui_name language="en">ISTATUS</gui_name>
+                <description language="en">The status of the timer interrupt</description>
+                <definition>[2]</definition>
+            </bitField>
+            <bitField conditional="false" name="IMASK" enumerationId="CNT_CTL_MI">
+                <gui_name language="en">IMASK</gui_name>
+                <description language="en">Timer interrupt mask bit</description>
+                <definition>[1]</definition>
+            </bitField>
+            <bitField conditional="false" name="ENABLE" enumerationId="GENERIC_DIS_ENABLE">
+                <gui_name language="en">ENABLE</gui_name>
+                <description language="en">Enables the timer</description>
+                <definition>[0]</definition>
+            </bitField>
+        </register>
+        <register access="RW" name="CNTHP_CVAL" size="8">
+            <gui_name language="en">CNTHP_CVAL</gui_name>
+            <alias_name>CP15_CNTHP_CVAL</alias_name>
+            <device_name type="rvi">CP15_CNTHP_CVAL</device_name>
+            <device_name type="cadi">CNTHP_CVAL</device_name>
+            <device_name type="rvi">CP15_CNTHP_CVAL</device_name>
+            <device_name type="cadi">CNTHP_CVAL</device_name>
+            <description language="en">Counter Non-secure PL2 Physical Compare Value Register</description>
+        </register>
+    </register_group>
+</register_list>
+

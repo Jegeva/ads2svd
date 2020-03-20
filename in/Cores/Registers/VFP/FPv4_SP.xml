@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<register_list
+    name="FPv4_SP"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns="http://www.arm.com/core_reg"
+    xsi:schemaLocation="http://www.arm.com/core_reg ../../../Schemas/core_register_definition.xsd"
+    xmlns:tcf="http://com.arm.targetconfigurationeditor">
+
+    <!-- 32-bit Single Precision Registers -->
+    <register_group name="Single">
+        <gui_name language="en">Single</gui_name>
+        <description language="en">Single-precision registers</description>
+        <register name="S0" size="4" access="RW" format="Float">
+            <gui_name language="en">S0</gui_name>
+            <description language="en">S0</description>
+        </register>
+        <register name="S1" size="4" access="RW" format="Float">
+            <gui_name language="en">S1</gui_name>
+            <description language="en">S1</description>
+        </register>
+        <register name="S2" size="4" access="RW" format="Float">
+            <gui_name language="en">S2</gui_name>
+            <description language="en">S2</description>
+        </register>
+        <register name="S3" size="4" access="RW" format="Float">
+            <gui_name language="en">S3</gui_name>
+            <description language="en">S3</description>
+        </register>
+        <register name="S4" size="4" access="RW" format="Float">
+            <gui_name language="en">S4</gui_name>
+            <description language="en">S4</description>
+        </register>
+        <register name="S5" size="4" access="RW" format="Float">
+            <gui_name language="en">S5</gui_name>
+            <description language="en">S5</description>
+        </register>
+        <register name="S6" size="4" access="RW" format="Float">
+            <gui_name language="en">S6</gui_name>
+            <description language="en">S6</description>
+        </register>
+        <register name="S7" size="4" access="RW" format="Float">
+            <gui_name language="en">S7</gui_name>
+            <description language="en">S7</description>
+        </register>
+        <register name="S8" size="4" access="RW" format="Float">
+            <gui_name language="en">S8</gui_name>
+            <description language="en">S8</description>
+        </register>
+        <register name="S9" size="4" access="RW" format="Float">
+            <gui_name language="en">S9</gui_name>
+            <description language="en">S9</description>
+        </register>
+        <register name="S10" size="4" access="RW" format="Float">
+            <gui_name language="en">S10</gui_name>
+            <description language="en">S10</description>
+        </register>
+        <register name="S11" size="4" access="RW" format="Float">
+            <gui_name language="en">S11</gui_name>
+            <description language="en">S11</description>
+        </register>
+        <register name="S12" size="4" access="RW" format="Float">
+            <gui_name language="en">S12</gui_name>
+            <description language="en">S12</description>
+        </register>
+        <register name="S13" size="4" access="RW" format="Float">
+            <gui_name language="en">S13</gui_name>
+            <description language="en">S13</description>
+        </register>
+        <register name="S14" size="4" access="RW" format="Float">
+            <gui_name language="en">S14</gui_name>
+            <description language="en">S14</description>
+        </register>
+        <register name="S15" size="4" access="RW" format="Float">
+            <gui_name language="en">S15</gui_name>
+            <description language="en">S15</description>
+        </register>
+        <register name="S16" size="4" access="RW" format="Float">
+            <gui_name language="en">S16</gui_name>
+            <description language="en">S16</description>
+        </register>
+        <register name="S17" size="4" access="RW" format="Float">
+            <gui_name language="en">S17</gui_name>
+            <description language="en">S17</description>
+        </register>
+        <register name="S18" size="4" access="RW" format="Float">
+            <gui_name language="en">S18</gui_name>
+            <description language="en">S18</description>
+        </register>
+        <register name="S19" size="4" access="RW" format="Float">
+            <gui_name language="en">S19</gui_name>
+            <description language="en">S19</description>
+        </register>
+        <register name="S20" size="4" access="RW" format="Float">
+            <gui_name language="en">S20</gui_name>
+            <description language="en">S20</description>
+        </register>
+        <register name="S21" size="4" access="RW" format="Float">
+            <gui_name language="en">S21</gui_name>
+            <description language="en">S21</description>
+        </register>
+        <register name="S22" size="4" access="RW" format="Float">
+            <gui_name language="en">S22</gui_name>
+            <description language="en">S22</description>
+        </register>
+        <register name="S23" size="4" access="RW" format="Float">
+            <gui_name language="en">S23</gui_name>
+            <description language="en">S23</description>
+        </register>
+        <register name="S24" size="4" access="RW" format="Float">
+            <gui_name language="en">S24</gui_name>
+            <description language="en">S24</description>
+        </register>
+        <register name="S25" size="4" access="RW" format="Float">
+            <gui_name language="en">S25</gui_name>
+            <description language="en">S25</description>
+        </register>
+        <register name="S26" size="4" access="RW" format="Float">
+            <gui_name language="en">S26</gui_name>
+            <description language="en">S26</description>
+        </register>
+        <register name="S27" size="4" access="RW" format="Float">
+            <gui_name language="en">S27</gui_name>
+            <description language="en">S27</description>
+        </register>
+        <register name="S28" size="4" access="RW" format="Float">
+            <gui_name language="en">S28</gui_name>
+            <description language="en">S28</description>
+        </register>
+        <register name="S29" size="4" access="RW" format="Float">
+            <gui_name language="en">S29</gui_name>
+            <description language="en">S29</description>
+        </register>
+        <register name="S30" size="4" access="RW" format="Float">
+            <gui_name language="en">S30</gui_name>
+            <description language="en">S30</description>
+        </register>
+        <register name="S31" size="4" access="RW" format="Float">
+            <gui_name language="en">S31</gui_name>
+            <description language="en">S31</description>
+        </register>
+    </register_group>
+
+    <!-- 64-bit Double Precision Registers -->
+    <register_group name="Double">
+        <gui_name language="en">Double</gui_name>
+        <description language="en">Double-precision registers</description>
+        <register name="D0" size="8" access="RW" format="Float">
+            <gui_name language="en">D0</gui_name>
+            <description language="en">D0</description>
+        </register>
+        <register name="D1" size="8" access="RW" format="Float">
+            <gui_name language="en">D1</gui_name>
+            <description language="en">D1</description>
+        </register>
+        <register name="D2" size="8" access="RW" format="Float">
+            <gui_name language="en">D2</gui_name>
+            <description language="en">D2</description>
+        </register>
+        <register name="D3" size="8" access="RW" format="Float">
+            <gui_name language="en">D3</gui_name>
+            <description language="en">D3</description>
+        </register>
+        <register name="D4" size="8" access="RW" format="Float">
+            <gui_name language="en">D4</gui_name>
+            <description language="en">D4</description>
+        </register>
+        <register name="D5" size="8" access="RW" format="Float">
+            <gui_name language="en">D5</gui_name>
+            <description language="en">D5</description>
+        </register>
+        <register name="D6" size="8" access="RW" format="Float">
+            <gui_name language="en">D6</gui_name>
+            <description language="en">D6</description>
+        </register>
+        <register name="D7" size="8" access="RW" format="Float">
+            <gui_name language="en">D7</gui_name>
+            <description language="en">D7</description>
+        </register>
+        <register name="D8" size="8" access="RW" format="Float">
+            <gui_name language="en">D8</gui_name>
+            <description language="en">D8</description>
+        </register>
+        <register name="D9" size="8" access="RW" format="Float">
+            <gui_name language="en">D9</gui_name>
+            <description language="en">D9</description>
+        </register>
+        <register name="D10" size="8" access="RW" format="Float">
+            <gui_name language="en">D10</gui_name>
+            <description language="en">D10</description>
+        </register>
+        <register name="D11" size="8" access="RW" format="Float">
+            <gui_name language="en">D11</gui_name>
+            <description language="en">D11</description>
+        </register>
+        <register name="D12" size="8" access="RW" format="Float">
+            <gui_name language="en">D12</gui_name>
+            <description language="en">D12</description>
+        </register>
+        <register name="D13" size="8" access="RW" format="Float">
+            <gui_name language="en">D13</gui_name>
+            <description language="en">D13</description>
+        </register>
+        <register name="D14" size="8" access="RW" format="Float">
+            <gui_name language="en">D14</gui_name>
+            <description language="en">D14</description>
+        </register>
+        <register name="D15" size="8" access="RW" format="Float">
+            <gui_name language="en">D15</gui_name>
+            <description language="en">D15</description>
+        </register>
+    </register_group>
+
+    <register_group name="Control">
+        <gui_name language="en">Control</gui_name>
+        <description language="en">Status and Control Registers</description>
+        <register name="FPSCR" size="4" access="RW">
+            <gui_name language="en">FPSCR</gui_name>
+            <description language="en">Floating-Point Status and Control Register</description>
+            <bitField conditional="false" high_bit="31" low_bit="31" name="N">
+                <gui_name language="en">N</gui_name>
+                <description language="en">Set if comparison produces a less than result</description>
+                <definition>[31]</definition>
+            </bitField>
+            <bitField conditional="false" high_bit="30" low_bit="30" name="Z">
+                <gui_name language="en">Z</gui_name>
+                <description language="en">Set if comparison produces an equal result</description>
+                <definition>[30]</definition>
+            </bitField>
+            <bitField conditional="false" high_bit="29" low_bit="29" name="C">
+                <gui_name language="en">C</gui_name>
+                <description language="en">Set if comparison produces an equal, greater than, or unordered result</description>
+                <definition>[29]</definition>
+            </bitField>
+            <bitField conditional="false" high_bit="28" low_bit="28" name="V">
+                <gui_name language="en">V</gui_name>
+                <description language="en">Set if comparison produces an unordered result</description>
+                <definition>[28]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="E_DISABLE_ENABLE" high_bit="25" low_bit="25" name="AHP">
+                <gui_name language="en">AHP</gui_name>
+                <description language="en">Alternative half-precision control bit</description>
+                <definition>[26]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="E_DISABLE_ENABLE" high_bit="25" low_bit="25" name="DN">
+                <gui_name language="en">DN</gui_name>
+                <description language="en">Default NaN mode enable bit</description>
+                <definition>[25]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="E_DISABLE_ENABLE" high_bit="24" low_bit="24" name="FZ">
+                <gui_name language="en">FZ</gui_name>
+                <description language="en">Flush-to-zero mode enable bit</description>
+                <definition>[24]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="E_RMODE" high_bit="23" low_bit="22" name="R_MODE">
+                <gui_name language="en">R_MODE</gui_name>
+                <description language="en">Rounding mode control field</description>
+                <definition>[23:22]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="E_DISABLE_ENABLE" high_bit="7" low_bit="7" name="IDC">
+                <gui_name language="en">IDC</gui_name>
+                <description language="en">Input Denormal cumulative exception bit</description>
+                <definition>[7]</definition>
+            </bitField>
+            <bitField conditional="false" high_bit="4" low_bit="4" name="IXC">
+                <gui_name language="en">IXC</gui_name>
+                <description language="en">Inexact cumulative exception bit</description>
+                <definition>[4]</definition>
+            </bitField>
+            <bitField conditional="false" high_bit="3" low_bit="3" name="UFC">
+                <gui_name language="en">UFC</gui_name>
+                <description language="en">Underflow cumulative exception bit</description>
+                <definition>[3]</definition>
+            </bitField>
+            <bitField conditional="false" high_bit="2" low_bit="2" name="OFC">
+                <gui_name language="en">OFC</gui_name>
+                <description language="en">Overflow cumulative exception bit</description>
+                <definition>[2]</definition>
+            </bitField>
+            <bitField conditional="false" high_bit="1" low_bit="1" name="DZC">
+                <gui_name language="en">DZC</gui_name>
+                <description language="en">Division by Zero cumulative exception bit</description>
+                <definition>[1]</definition>
+            </bitField>
+            <bitField conditional="false" high_bit="0" low_bit="0" name="IOC">
+                <gui_name language="en">IOC</gui_name>
+                <description language="en">Invalid Operation cumulative exception bit</description>
+                <definition>[0]</definition>
+            </bitField>
+        </register>
+    </register_group>
+
+    <tcf:enumeration name="E_DISABLE_ENABLE" values="Disable=0,Enable=1"/>
+    <tcf:enumeration name="E_RMODE" values="Round_to_nearest_mode=0,Round_towards_plus_infinity=1,Round_towards_minus_infinity=2,Round_towards_zero=3"/>
+</register_list>

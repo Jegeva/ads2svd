@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<register_list name="dummy" xmlns="http://www.arm.com/core_reg"
+               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+               xmlns:xi="http://www.w3.org/2001/XInclude"
+               xmlns:tcf="http://com.arm.targetconfigurationeditor"
+               xsi:schemaLocation="http://www.arm.com/core_reg ../../../Schemas/core_register_definition.xsd">
+    <register name="CPSR" size="4" access="RMW">
+        <gui_name language="en">CPSR</gui_name>
+        <description language="en">Current Program Status Register</description>
+        <xi:include href="psrfields_V6_7.xml" xpointer="xmlns(cr=http://www.arm.com/core_reg)xpointer(//cr:bitField)"/>
+    </register>
+    <tcf:enumeration name="CPSR_MODE_BIT" values="USR=0x10,FIQ=0x11,IRQ=0x12,SVC=0x13,MON=0x16,UND=0x1B,ABT=0x17,HYP=0x1A,SYS=0x1F"/>
+</register_list>

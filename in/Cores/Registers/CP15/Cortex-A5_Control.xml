@@ -1,0 +1,607 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<register_list name="CP15"
+               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+               xmlns="http://www.arm.com/core_reg"
+               xsi:schemaLocation="http://www.arm.com/core_reg ../../../Schemas/core_register_definition.xsd"
+               xmlns:tcf="http://com.arm.targetconfigurationeditor">
+
+<register_group name="System">
+        <gui_name language="en">System</gui_name>
+        <description language="en">System Control and Configuration</description>
+    <register access="RW" name="SCTLR" size="4">
+        <gui_name language="en">SCTLR</gui_name>
+        <alias_name>CP15_SCTLR</alias_name>
+        <device_name type="rvi">CP15_SCTLR</device_name>
+        <device_name type="cadi">SCTLR</device_name>
+        <description language="en">System Control Register</description>
+          <bitField conditional="false" enumerationId="GENERIC_DIS_ENABLE" name="TE">
+              <gui_name language="en">TE</gui_name>
+              <description language="en">Banked Thumb exception enable bit</description>
+              <definition>[30]</definition>
+          </bitField>
+          <bitField conditional="false" enumerationId="GENERIC_DIS_ENABLE" name="AFE">
+              <gui_name language="en">AFE</gui_name>
+              <description language="en">Banked This is the Access Flag Enable bit</description>
+              <definition>[29]</definition>
+          </bitField>
+          <bitField conditional="false" enumerationId="GENERIC_DIS_ENABLE" name="TRE">
+              <gui_name language="en">TRE</gui_name>
+              <description language="en">Banked This bit controls the TEX remap functionality in the MMU</description>
+              <definition>[28]</definition>
+          </bitField>
+          <bitField conditional="false" name="EE" enumerationId="GENERIC_CLEAR_SET">
+              <gui_name language="en">EE</gui_name>
+              <description language="en">Banked Determines how the E bit in the CPSR is set on an exception</description>
+              <definition>[25]</definition>
+          </bitField>
+          <bitField conditional="false" name="HA" enumerationId="GENERIC_CLEAR_SET">
+              <gui_name language="en">HA</gui_name>
+              <description language="en">Hardware management access flag disabled, the Cortex-A5 processor does not support this feature</description>
+              <definition>[17]</definition>
+          </bitField>
+          <bitField conditional="false" name="RR" enumerationId="GENERIC_CLEAR_SET">
+              <gui_name language="en">RR</gui_name>
+              <description language="en">Cache replacement strategy, the Cortex-A5 processor only supports a fixed random replacement strategy</description>
+              <definition>[14]</definition>
+          </bitField>
+          <bitField conditional="false" name="V" enumerationId="SCTLR_V">
+              <gui_name language="en">V</gui_name>
+              <description language="en">Determines the location of exception vectors: 0 = 0x00000000, 1 = 0xFFFF0000</description>
+              <definition>[13]</definition>
+          </bitField>
+          <bitField conditional="false" name="I" enumerationId="GENERIC_DIS_ENABLE">
+              <gui_name language="en">I</gui_name>
+              <description language="en">Determines if instructions can be cached in any instruction cache at any cache level</description>
+              <definition>[12]</definition>
+          </bitField>
+          <bitField conditional="false" name="Z"  enumerationId="GENERIC_DIS_ENABLE">
+              <gui_name language="en">Z</gui_name>
+              <description language="en">Program flow prediction control, branch prediction is always enabled on the Cortex-A5 processor when the MMU is enabled</description>
+              <definition>[11]</definition>
+          </bitField>
+          <bitField conditional="false" name="SW" enumerationId="GENERIC_DIS_ENABLE">
+              <gui_name language="en">SW</gui_name>
+              <description language="en">SWP/SWPB enable bit</description>
+              <definition>[10]</definition>
+          </bitField>
+          <bitField conditional="false" enumerationId="GENERIC_DIS_ENABLE"  name="C">
+              <gui_name language="en">C</gui_name>
+              <description language="en">Determines if data can be cached in a data or unified cache at any cache level</description>
+              <definition>[2]</definition>
+          </bitField>
+          <bitField conditional="false" enumerationId="GENERIC_DIS_ENABLE" name="A">
+              <gui_name language="en">A</gui_name>
+              <description language="en">Enables strict alignment of data to detect alignment faults in data accesses</description>
+              <definition>[1]</definition>
+          </bitField>
+          <bitField conditional="false" enumerationId="GENERIC_DIS_ENABLE" name="M">
+              <gui_name language="en">M</gui_name>
+              <description language="en">Enables the MMU</description>
+              <definition>[0]</definition>
+          </bitField>
+    </register>
+    <register access="RW" name="ACTLR" size="4">
+        <gui_name language="en">ACTLR</gui_name>
+        <alias_name>CP15_ACTLR</alias_name>
+        <device_name type="rvi">CP15_ACTLR</device_name>
+        <device_name type="cadi">ACTLR</device_name>
+        <description language="en">Auxiliary Control Register</description>
+        <bitField conditional="false" name="DBDI" enumerationId="GENERIC_EN_DISABLE">
+        <gui_name language="en">DBDI</gui_name>
+        <description language="en">Disable branch dual issue</description>
+        <definition>[28]</definition>
+        </bitField>
+        <bitField conditional="false" name="BTDIS" enumerationId="GENERIC_EN_DISABLE">
+        <gui_name language="en">BTDIS</gui_name>
+        <description language="en">Disable indirect Branch Target Address Cache (BTAC)</description>
+        <definition>[18]</definition>
+        </bitField>
+        <bitField conditional="false" name="RSDIS" enumerationId="GENERIC_EN_DISABLE">
+        <gui_name language="en">RSDIS</gui_name>
+        <description language="en">Disable return stack operation</description>
+        <definition>[17]</definition>
+        </bitField>
+        <bitField conditional="false" name="BP" enumerationId="ACTLR_BP">
+        <gui_name language="en">BP</gui_name>
+        <description language="en">Branch prediction policy</description>
+        <definition>[16:15]</definition>
+        </bitField>
+        <bitField conditional="false" name="L1PCTL" enumerationId="ACTLR_L1PCTL">
+        <gui_name language="en">L1PCTL</gui_name>
+        <description language="en">L1 Data prefetch control</description>
+        <definition>[14:13]</definition>
+        </bitField>
+        <bitField conditional="false" name="RADIS" enumerationId="GENERIC_EN_DISABLE">
+        <gui_name language="en">RADIS</gui_name>
+        <description language="en">Disable Data cache read-allocate mode</description>
+        <definition>[12]</definition>
+        </bitField>
+        <bitField conditional="false" name="DWBST" enumerationId="GENERIC_EN_DISABLE">
+        <gui_name language="en">DWBST</gui_name>
+        <description language="en">Disable data write bursts to normal non-cacheable memory</description>
+        <definition>[11]</definition>
+        </bitField>
+        <bitField conditional="false" name="DODMBS" enumerationId="GENERIC_EN_DISABLE">
+        <gui_name language="en">DODMBS</gui_name>
+        <description language="en">Disable optimized Data Memory Barrier behavior</description>
+        <definition>[10]</definition>
+        </bitField>
+        <bitField conditional="false" name="EXCL" enumerationId="GENERIC_DIS_ENABLE">
+        <gui_name language="en">EXCL</gui_name>
+        <description language="en">Exclusive L1/L2 cache control</description>
+        <definition>[7]</definition>
+        </bitField>
+        <bitField conditional="false" name="SMP" enumerationId="GENERIC_DIS_ENABLE">
+        <gui_name language="en">SMP</gui_name>
+        <description language="en">If this bit is set, data requests with Inner Cacheable Shared attributes are treated as cacheable</description>
+        <definition>[6]</definition>
+        </bitField>
+        <bitField conditional="false" name="FW" enumerationId="GENERIC_CLEAR_SET">
+        <gui_name language="en">FW</gui_name>
+        <description language="en">RAZ/WI</description>
+        <definition>[0]</definition>
+        </bitField>
+    </register>
+    <register access="RW" name="CPACR" size="4">
+        <gui_name language="en">CPACR</gui_name>
+        <alias_name>CP15_CPACR</alias_name>
+        <device_name type="rvi">CP15_CPACR</device_name>
+        <device_name type="cadi">CPACR</device_name>
+        <description language="en">Coprocessor Access Control Register</description>
+        <bitField conditional="false" name="ASEDIS" enumerationId="GENERIC_EN_DISABLE">
+        <gui_name language="en">ASEDIS</gui_name>
+        <description language="en">Disable Advanced SIMD Extension functionalitye</description>
+        <definition>[31]</definition>
+        </bitField>
+        <bitField conditional="false" name="D32DIS" enumerationId="GENERIC_EN_DISABLE">
+        <gui_name language="en">D32DIS</gui_name>
+        <description language="en">Disable use of registers D16-D31 of the VFP register file</description>
+        <definition>[30]</definition>
+        </bitField>
+        <bitField conditional="false" name="CP11" enumerationId="CPPERM">
+        <gui_name language="en">CP11</gui_name>
+        <description language="en">Access rights (CP11)</description>
+        <definition>[23:22]</definition>
+        </bitField>
+        <bitField conditional="false" name="CP10" enumerationId="CPPERM">
+        <gui_name language="en">CP10</gui_name>
+        <description language="en">Access rights (CP10)</description>
+        <definition>[21:20]</definition>
+        </bitField>
+    </register>
+    <register access="RW" name="NSACR" size="4">
+        <gui_name language="en">NSACR</gui_name>
+        <alias_name>CP15_NSACR</alias_name>
+        <device_name type="rvi">CP15_NSACR</device_name>
+        <device_name type="cadi">NSACR</device_name>
+        <description language="en">Nonsecure Access Control Register</description>
+        <bitField conditional="false" name="NS_SMP" enumerationId="GENERIC_DIS_ENABLE">
+        <gui_name language="en">NS_SMP</gui_name>
+        <description language="en">Determines if the SMP bit of the Auxiliary Control Register is writable in Non-secure state</description>
+        <definition>[18]</definition>
+        </bitField>
+        <bitField conditional="false" name="NSASEDIS" enumerationId="GENERIC_EN_DISABLE">
+        <gui_name language="en">NSASEDIS</gui_name>
+        <description language="en">Disable Non-secure Advanced SIMD Extension functionality</description>
+        <definition>[15]</definition>
+        </bitField>
+        <bitField conditional="false" name="NSD32DIS" enumerationId="GENERIC_EN_DISABLE">
+        <gui_name language="en">NSD32DIS</gui_name>
+        <description language="en">Disable the Non-secure use of D16-D31 of the VFP register file</description>
+        <definition>[14]</definition>
+        </bitField>
+        <bitField conditional="false" name="CP11" enumerationId="NSACR_CPx">
+        <gui_name language="en">CP11</gui_name>
+        <description language="en">Determines permission to access coprocessor 11 in the Non-secure state</description>
+        <definition>[11]</definition>
+        </bitField>
+        <bitField conditional="false" name="CP10" enumerationId="NSACR_CPx">
+        <gui_name language="en">CP10</gui_name>
+        <description language="en">Determines permission to access coprocessor 10 in the Non-secure state</description>
+        <definition>[10]</definition>
+        </bitField>
+    </register>
+    <register access="RW" name="VCR" size="4">
+        <gui_name language="en">VCR</gui_name>
+        <alias_name>CP15_VCR</alias_name>
+        <device_name type="rvi">CP15_VCR</device_name>
+        <device_name type="cadi">VCR</device_name>
+        <description language="en">Virtualization Control Register</description>
+        <bitField conditional="false" name="AMO" enumerationId="VCR_OVR">
+        <gui_name language="en">AMO</gui_name>
+        <description language="en">When the processor is in Non-secure state and the SCR.EA bit is set, if the AMO bit is set, this enables an asynchronous Data Abort exception to be taken regardless of the value of the CPSR.A bit</description>
+        <definition>[8]</definition>
+        </bitField>
+        <bitField conditional="false" name="IMO" enumerationId="VCR_OVR">
+        <gui_name language="en">IMO</gui_name>
+        <description language="en">When the processor is in Non-secure state and the SCR.IRQ bit is set, if the IMO bit is set, this enables an IRQ exception to be taken regardless of the value of the CPSR.I bit</description>
+        <definition>[7]</definition>
+        </bitField>
+        <bitField conditional="false" name="IFO" enumerationId="VCR_OVR">
+        <gui_name language="en">IFO</gui_name>
+        <description language="en">When the processor is in Non-secure state and the SCR.FIQ bit is set, if the FMO bit is set, this enables an FIQ exception to be taken regardless of the value of the CPSR.F bit</description>
+        <definition>[6]</definition>
+        </bitField>
+    </register>
+    <register access="RW" name="TTBR0" size="4">
+        <gui_name language="en">TTBR0</gui_name>
+        <alias_name>CP15_TTBR0</alias_name>
+        <device_name type="rvi">CP15_TTBR0</device_name>
+        <device_name type="cadi">TTBR0</device_name>
+        <description language="en">Translation Table Base Register 0</description>
+        <bitField conditional="false" name="IRGN0" enumerationId="GENERIC_CLEAR_SET">
+        <gui_name language="en">IRGN0</gui_name>
+        <description language="en">Used with bit 0, IRGN[1] to describe inner cacheability</description>
+        <definition>[6]</definition>
+        </bitField>
+        <bitField conditional="false" name="RGN" enumerationId="TTBR_RGN">
+        <gui_name language="en">RGN</gui_name>
+        <description language="en">Outer Cacheable attributes for translation table walking</description>
+        <definition>[4:3]</definition>
+        </bitField>
+        <bitField conditional="false" name="S" enumerationId="TTBR0_S">
+        <gui_name language="en">S</gui_name>
+        <description language="en">Translation table walk</description>
+        <definition>[1]</definition>
+        </bitField>
+        <bitField conditional="false" name="IRGN1" enumerationId="GENERIC_CLEAR_SET">
+        <gui_name language="en">IRGN1</gui_name>
+        <description language="en">Indicates inner cacheability for the translation table walk along with IRGN0</description>
+        <definition>[0]</definition>
+        </bitField>
+        <bitField conditional="false" name="IRGN" enumerationId="TTBR0_IRGN">
+        <gui_name language="en">IRGN</gui_name>
+        <description language="en">Indicates inner cacheability for the translation table walk</description>
+        <definition>[6][0]</definition>
+        </bitField>
+    </register>
+    <register access="RW" name="TTBR1" size="4">
+        <gui_name language="en">TTBR1</gui_name>
+        <alias_name>CP15_TTBR1</alias_name>
+        <device_name type="rvi">CP15_TTBR1</device_name>
+        <device_name type="cadi">TTBR1</device_name>
+        <description language="en">Translation Table Base Register 1</description>
+        <bitField conditional="false" name="IRGN0" enumerationId="GENERIC_CLEAR_SET">
+        <gui_name language="en">IRGN0</gui_name>
+        <description language="en">Used with bit 0, IRGN[1] to describe inner cacheability</description>
+        <definition>[6]</definition>
+        </bitField>
+        <bitField conditional="false" name="RGN" enumerationId="TTBR_RGN">
+        <gui_name language="en">RGN</gui_name>
+        <description language="en">Outer Cacheable attributes for translation table walking</description>
+        <definition>[4:3]</definition>
+        </bitField>
+        <bitField conditional="false" name="S" enumerationId="TTBR0_S">
+        <gui_name language="en">S</gui_name>
+        <description language="en">Translation table walk</description>
+        <definition>[1]</definition>
+        </bitField>
+        <bitField conditional="false" name="IRGN1" enumerationId="GENERIC_CLEAR_SET">
+        <gui_name language="en">IRGN1</gui_name>
+        <description language="en">Indicates inner cacheability for the translation table walk along with IRGN0</description>
+        <definition>[0]</definition>
+        </bitField>
+        <bitField conditional="false" name="IRGN" enumerationId="TTBR0_IRGN">
+        <gui_name language="en">IRGN</gui_name>
+        <description language="en">Indicates inner cacheability for the translation table walk</description>
+        <definition>[6][0]</definition>
+        </bitField>
+    </register>
+    <register access="RW" name="TTBCR" size="4">
+        <gui_name language="en">TTBCR</gui_name>
+        <alias_name>CP15_TTBCR</alias_name>
+        <device_name type="rvi">CP15_TTBCR</device_name>
+        <device_name type="cadi">TTBCR</device_name>
+        <description language="en">Translation Table Base Control Register</description>
+        <bitField conditional="false" name="PD1" enumerationId="GENERIC_EN_DISABLE">
+        <gui_name language="en">PD1</gui_name>
+        <description language="en">Specifies occurrence of a translation table walk on a TLB miss when using TTBR1. When translation table walk is disabled, a section translation fault occurs instead of a TLB miss</description>
+        <definition>[5]</definition>
+        </bitField>
+        <bitField conditional="false" name="PD0" enumerationId="GENERIC_EN_DISABLE">
+        <gui_name language="en">PD0</gui_name>
+        <description language="en">Specifies occurrence of a translation table walk on a TLB miss when using TTBR0. When translation table walk is disabled, a section translation fault occurs instead of a TLB miss</description>
+        <definition>[4]</definition>
+        </bitField>
+        <bitField conditional="false" name="N" enumerationId="TTBCR_N">
+        <gui_name language="en">N</gui_name>
+        <description language="en">Specifies the boundary size of TTBR0</description>
+        <definition>[2:0]</definition>
+        </bitField>
+    </register>
+    <register access="RW" name="DACR" size="4">
+        <gui_name language="en">DACR</gui_name>
+        <alias_name>CP15_DACR</alias_name>
+        <device_name type="rvi">CP15_DACR</device_name>
+        <device_name type="cadi">DACR</device_name>
+        <description language="en">Domain Access Control Register</description>
+        <bitField conditional="false" name="D15" enumerationId="ARCHv7_DACR_DN">
+        <gui_name language="en">D15</gui_name>
+        <description language="en">D15 permissions</description>
+        <definition>[31:30]</definition>
+        </bitField>
+        <bitField conditional="false" name="D14" enumerationId="ARCHv7_DACR_DN">
+        <gui_name language="en">D14</gui_name>
+        <description language="en">D14 permissions</description>
+        <definition>[29:28]</definition>
+        </bitField>
+        <bitField conditional="false" name="D13" enumerationId="ARCHv7_DACR_DN">
+        <gui_name language="en">D13</gui_name>
+        <description language="en">D13 permissions</description>
+        <definition>[27:26]</definition>
+        </bitField>
+        <bitField conditional="false" name="D12" enumerationId="ARCHv7_DACR_DN">
+        <gui_name language="en">D12</gui_name>
+        <description language="en">D12 permissions</description>
+        <definition>[25:24]</definition>
+        </bitField>
+        <bitField conditional="false" name="D11" enumerationId="ARCHv7_DACR_DN">
+        <gui_name language="en">D11</gui_name>
+        <description language="en">D11 permissions</description>
+        <definition>[23:22]</definition>
+        </bitField>
+        <bitField conditional="false" name="D10" enumerationId="ARCHv7_DACR_DN">
+        <gui_name language="en">D10</gui_name>
+        <description language="en">D10 permissions</description>
+        <definition>[21:20]</definition>
+        </bitField>
+        <bitField conditional="false" name="D9" enumerationId="ARCHv7_DACR_DN">
+        <gui_name language="en">D9</gui_name>
+        <description language="en">D9 permissions</description>
+        <definition>[19:18]</definition>
+        </bitField>
+        <bitField conditional="false" name="D8" enumerationId="ARCHv7_DACR_DN">
+        <gui_name language="en">D8</gui_name>
+        <description language="en">D8 permissions</description>
+        <definition>[17:16]</definition>
+        </bitField>
+        <bitField conditional="false" name="D7" enumerationId="ARCHv7_DACR_DN">
+        <gui_name language="en">D7</gui_name>
+        <description language="en">D7 permissions</description>
+        <definition>[15:14]</definition>
+        </bitField>
+        <bitField conditional="false" name="D6" enumerationId="ARCHv7_DACR_DN">
+        <gui_name language="en">D6</gui_name>
+        <description language="en">D6 permissions</description>
+        <definition>[13:12]</definition>
+        </bitField>
+        <bitField conditional="false" name="D5" enumerationId="ARCHv7_DACR_DN">
+        <gui_name language="en">D5</gui_name>
+        <description language="en">D5 permissions</description>
+        <definition>[11:10]</definition>
+        </bitField>
+        <bitField conditional="false" name="D4" enumerationId="ARCHv7_DACR_DN">
+        <gui_name language="en">D4</gui_name>
+        <description language="en">D4 permissions</description>
+        <definition>[9:8]</definition>
+        </bitField>
+        <bitField conditional="false" name="D3" enumerationId="ARCHv7_DACR_DN">
+        <gui_name language="en">D3</gui_name>
+        <description language="en">D3 permissions</description>
+        <definition>[7:6]</definition>
+        </bitField>
+        <bitField conditional="false" name="D2" enumerationId="ARCHv7_DACR_DN">
+        <gui_name language="en">D2</gui_name>
+        <description language="en">D2 permissions</description>
+        <definition>[5:4]</definition>
+        </bitField>
+        <bitField conditional="false" name="D1" enumerationId="ARCHv7_DACR_DN">
+        <gui_name language="en">D1</gui_name>
+        <description language="en">D1 permissions</description>
+        <definition>[3:2]</definition>
+        </bitField>
+        <bitField conditional="false" name="D0" enumerationId="ARCHv7_DACR_DN">
+        <gui_name language="en">D0</gui_name>
+        <description language="en">D0 permissions</description>
+        <definition>[1:0]</definition>
+        </bitField>
+    </register>
+    <register access="RW" name="DFSR" size="4">
+        <gui_name language="en">DFSR</gui_name>
+        <alias_name>CP15_DFSR</alias_name>
+        <device_name type="rvi">CP15_DFSR</device_name>
+        <device_name type="cadi">DFSR</device_name>
+        <description language="en">Data Fault Status Register</description>
+        <bitField conditional="false" name="EXT" enumerationId="DFSR_EXT">
+        <gui_name language="en">ExT</gui_name>
+        <description language="en">External Abort Qualifier: Indicates whether an AXI Decode or Slave error caused an abort. Only valid for External Aborts, for all other aborts this bit Should Be Zero</description>
+        <definition>[12]</definition>
+        </bitField>
+        <bitField conditional="false" name="WNR" enumerationId="DFSR_WNR">
+        <gui_name language="en">WnR</gui_name>
+        <description language="en">Not read and write, indicates what type of access caused the abort</description>
+        <definition>[11]</definition>
+        </bitField>
+        <bitField conditional="false" name="FS4" enumerationId="GENERIC_CLEAR_SET">
+        <gui_name language="en">FS4</gui_name>
+        <description language="en">Part of the Status field: See bit [12] and bits [3:0]</description>
+        <definition>[10]</definition>
+        </bitField>
+        <bitField conditional="false" name="D" enumerationId="DFSR_DOMAIN">
+        <gui_name language="en">Domain</gui_name>
+        <description language="en">Specifies which of the 16 domains, D15-D0, was being accessed when a data fault occurred</description>
+        <definition>[7:4]</definition>
+        </bitField>
+        <bitField conditional="false" enumerationId="E_I_D_FAULT_STATUS" name="Status">
+        <gui_name language="en">Status</gui_name>
+        <description language="en">Indicates the type of exception generated, to determine the data fault, bits [12] and [10] must be used in conjunction with bits [3:0]</description>
+        <definition>[3:0][10][12]</definition>
+        </bitField>
+    </register>
+    <register access="RW" name="IFSR" size="4">
+        <gui_name language="en">IFSR</gui_name>
+        <alias_name>CP15_IFSR</alias_name>
+        <device_name type="rvi">CP15_IFSR</device_name>
+        <device_name type="cadi">IFSR</device_name>
+        <description language="en">Instruction Fault Status Register</description>
+        <bitField conditional="false" name="EXT" enumerationId="DFSR_EXT">
+        <gui_name language="en">ExT</gui_name>
+        <description language="en">External Abort Qualifier: Indicates whether an AXI Decode or Slave error caused an abort. Only valid for External Aborts, for all other aborts this bit Should Be Zero</description>
+        <definition>[12]</definition>
+        </bitField>
+        <bitField conditional="false" name="S" enumerationId="GENERIC_CLEAR_SET">
+        <gui_name language="en">S</gui_name>
+        <description language="en">Part of the Status field: See bit [12] and bits [3:0]</description>
+        <definition>[10]</definition>
+        </bitField>
+        <bitField conditional="false" enumerationId="E_I_D_FAULT_STATUS" name="Status">
+            <gui_name language="en">Status</gui_name>
+            <description language="en">Indicates the type of exception generated, to determine the data fault, bits [12] and [10] must be used in conjunction with bits [3:0]</description>
+            <definition>[3:0][10][12]</definition>
+        </bitField>
+    </register>
+    <register access="RW" name="ADFSR" size="4">
+        <gui_name language="en">ADFSR</gui_name>
+        <alias_name>CP15_ADFSR</alias_name>
+        <device_name type="rvi">CP15_ADFSR</device_name>
+        <device_name type="cadi">ADFSR</device_name>
+        <description language="en">Auxiliary Data Fault Status Register</description>
+    </register>
+    <register access="RW" name="AIFSR" size="4">
+        <gui_name language="en">AIFSR</gui_name>
+        <alias_name>CP15_AIFSR</alias_name>
+        <device_name type="rvi">CP15_AIFSR</device_name>
+        <device_name type="cadi">AIFSR</device_name>
+        <description language="en">Auxiliary Instruction Fault Status Register</description>
+    </register>
+    <register access="RW" name="DFAR" size="4">
+        <gui_name language="en">DFAR</gui_name>
+        <alias_name>CP15_DFAR</alias_name>
+        <device_name type="rvi">CP15_DFAR</device_name>
+        <device_name type="cadi">DFAR</device_name>
+        <description language="en">Data Fault Address Register</description>
+    </register>
+    <register access="RW" name="IFAR" size="4">
+        <gui_name language="en">IFAR</gui_name>
+        <alias_name>CP15_IFAR</alias_name>
+        <device_name type="rvi">CP15_IFAR</device_name>
+        <device_name type="cadi">IFAR</device_name>
+        <description language="en">Instruction Fault Address Register</description>
+    </register>
+    <register access="RW" name="PRRR" size="4">
+        <gui_name language="en">PRRR</gui_name>
+        <alias_name>CP15_PRRR</alias_name>
+        <device_name type="rvi">CP15_PRRR</device_name>
+        <device_name type="cadi">PRRR</device_name>
+        <description language="en">Primary Region Remap Register</description>
+    </register>
+    <register access="RW" name="NMRR" size="4">
+        <gui_name language="en">NMRR</gui_name>
+        <alias_name>CP15_NMRR</alias_name>
+        <device_name type="rvi">CP15_NMRR</device_name>
+        <device_name type="cadi">NMRR</device_name>
+        <description language="en">Normal Memory Remap Register</description>
+    </register>
+    <register access="RW" name="VBAR" size="4">
+        <gui_name language="en">VBAR</gui_name>
+        <alias_name>CP15_VBAR</alias_name>
+        <device_name type="rvi">CP15_VBAR</device_name>
+        <device_name type="cadi">VBAR</device_name>
+        <description language="en">Vector Base Address Register</description>
+    </register>
+    <register access="RW" name="MVBAR" size="4">
+        <gui_name language="en">MVBAR</gui_name>
+        <alias_name>CP15_MVBAR</alias_name>
+        <device_name type="rvi">CP15_MVBAR</device_name>
+        <device_name type="cadi">MVBAR</device_name>
+        <description language="en">Monitor Vector Base Address Register</description>
+    </register>
+    <register access="RO" name="ISR" size="4">
+        <gui_name language="en">ISR</gui_name>
+        <alias_name>CP15_ISR</alias_name>
+        <device_name type="rvi">CP15_ISR</device_name>
+        <device_name type="cadi">ISR</device_name>
+        <description language="en">Interrupt Status Register</description>
+        <bitField conditional="false" name="A" enumerationId="ISR_A">
+        <gui_name language="en">A</gui_name>
+        <description language="en">External abort pending flag</description>
+        <definition>[8]</definition>
+        </bitField>
+        <bitField conditional="false" name="I" enumerationId="ISR_I">
+        <gui_name language="en">I</gui_name>
+        <description language="en">IRQ pending</description>
+        <definition>[7]</definition>
+        </bitField>
+        <bitField conditional="false" name="F" enumerationId="ISR_F">
+        <gui_name language="en">F</gui_name>
+        <description language="en">FIQ pending</description>
+        <definition>[6]</definition>
+        </bitField>
+    </register>
+    <register access="RW" name="VIR" size="4">
+        <gui_name language="en">VIR</gui_name>
+        <alias_name>CP15_VIR</alias_name>
+        <device_name type="rvi">CP15_VIR</device_name>
+        <device_name type="cadi">VIR</device_name>
+        <description language="en">Virtualization Interrupt Register</description>
+        <bitField conditional="false" name="VA" enumerationId="GENERIC_CLEAR_SET">
+        <gui_name language="en">VA</gui_name>
+        <description language="en">Virtual Abort bit: when set the virtual abort becomes pending when SCR.EA and VCR.AMO are 1</description>
+        <definition>[8]</definition>
+        </bitField>
+        <bitField conditional="false" name="VI" enumerationId="GENERIC_CLEAR_SET">
+        <gui_name language="en">VI</gui_name>
+        <description language="en">Virtual IRQ bit: when set the virtual interrupt becomes pending when SCR.IRQ and VCR.IMO are 1</description>
+        <definition>[7]</definition>
+        </bitField>
+        <bitField conditional="false" name="VF" enumerationId="GENERIC_CLEAR_SET">
+        <gui_name language="en">VF</gui_name>
+        <description language="en">Virtual FIQ bit: when set the virtual interrupt becomes pending when SCR.FIQ and VCR.FMO are 1</description>
+        <definition>[6]</definition>
+        </bitField>
+    </register>
+    <register access="RO" name="FCSEIDR" size="4">
+        <gui_name language="en">FCSEIDR</gui_name>
+        <alias_name>CP15_FCSEIDR</alias_name>
+        <device_name type="rvi">CP15_FCSEIDR</device_name>
+        <device_name type="cadi">FCSEIDR</device_name>
+        <description language="en">FCSE Process ID (not implemented)</description>
+    </register>
+    <register access="RW" name="CONTEXTIDR" size="4">
+        <gui_name language="en">CONTEXTIDR</gui_name>
+        <alias_name>CP15_CONTEXTIDR</alias_name>
+        <device_name type="rvi">CP15_CONTEXTIDR</device_name>
+        <device_name type="cadi">CONTEXTIDR</device_name>
+        <description language="en">Context ID Register</description>
+        <bitField conditional="false" name="PROCID">
+        <gui_name language="en">PROCID</gui_name>
+        <description language="en">Process Identifier</description>
+        <definition>[31:8]</definition>
+        </bitField>
+        <bitField conditional="false" name="ASID">
+        <gui_name language="en">ASID</gui_name>
+        <description language="en">Address Space Identifier</description>
+        <definition>[7:0]</definition>
+        </bitField>
+    </register>
+    <register access="RW" name="TPIDRURW" size="4">
+        <gui_name language="en">TPIDRURW</gui_name>
+        <alias_name>CP15_TPIDRURW</alias_name>
+        <device_name type="rvi">CP15_TPIDRURW</device_name>
+        <device_name type="cadi">TPIDRURW</device_name>
+        <description language="en">User Read/Write Thread ID</description>
+    </register>
+    <register access="RW" name="TPIDRURO" size="4">
+        <gui_name language="en">TPIDRURO</gui_name>
+        <alias_name>CP15_TPIDRURO</alias_name>
+        <device_name type="rvi">CP15_TPIDRURO</device_name>
+        <device_name type="cadi">TPIDRURO</device_name>
+        <description language="en">User Read Only Thread ID</description>
+    </register>
+    <register access="RW" name="TPIDRPRW" size="4">
+        <gui_name language="en">TPIDRPRW</gui_name>
+        <alias_name>CP15_TPIDRPRW</alias_name>
+        <device_name type="rvi">CP15_TPIDRPRW</device_name>
+        <device_name type="cadi">TPIDRPRW</device_name>
+        <description language="en">Privileged Only Thread ID</description>
+    </register>
+    <register access="RO" name="CBAR" size="4">
+        <gui_name language="en">CBAR</gui_name>
+        <alias_name>CP15_CBAR</alias_name>
+        <device_name type="rvi">CP15_CBAR</device_name>
+        <device_name type="cadi">CBAR</device_name>
+        <description language="en">Configuration Base Address Register</description>
+    </register>
+</register_group>
+</register_list>
+

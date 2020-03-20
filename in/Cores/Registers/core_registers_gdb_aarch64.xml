@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<register_list name="Core" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                xmlns="http://www.arm.com/core_reg"
+                xsi:schemaLocation="http://www.arm.com/core_reg ../../Schemas/core_register_definition.xsd">
+    <register_group name="Core">
+        <gui_name language="en">USR_MODE</gui_name>
+        <description language="en">Core Registers</description>
+        <register name="X0" size="8" access="RW">
+            <gui_name language="en">X0</gui_name>
+            <description language="en">X0</description>
+        </register>
+        <register name="X1" size="8" access="RW">
+            <gui_name language="en">X1</gui_name>
+            <description language="en">X1</description>
+        </register>
+        <register name="X2" size="8" access="RW">
+            <gui_name language="en">X2</gui_name>
+            <description language="en">X2</description>
+        </register>
+        <register name="X3" size="8" access="RW">
+            <gui_name language="en">X3</gui_name>
+            <description language="en">X3</description>
+        </register>
+        <register name="X4" size="8" access="RW">
+            <gui_name language="en">X4</gui_name>
+            <description language="en">X4</description>
+        </register>
+        <register name="X5" size="8" access="RW">
+            <gui_name language="en">X5</gui_name>
+            <description language="en">X5</description>
+        </register>
+        <register name="X6" size="8" access="RW">
+            <gui_name language="en">X6</gui_name>
+            <description language="en">X6</description>
+        </register>
+        <register name="X7" size="8" access="RW">
+            <gui_name language="en">X7</gui_name>
+            <description language="en">X7</description>
+        </register>
+        <register name="X8" size="8" access="RW">
+            <gui_name language="en">X8</gui_name>
+            <description language="en">X8</description>
+        </register>
+        <register name="X9" size="8" access="RW">
+            <gui_name language="en">X9</gui_name>
+            <description language="en">X9</description>
+        </register>
+        <register name="X10" size="8" access="RW">
+            <gui_name language="en">X10</gui_name>
+            <description language="en">X10</description>
+        </register>
+        <register name="X11" size="8" access="RW">
+            <gui_name language="en">X11</gui_name>
+            <description language="en">X11</description>
+        </register>
+        <register name="X12" size="8" access="RW">
+            <gui_name language="en">X12</gui_name>
+            <description language="en">X12</description>
+        </register>
+        <register name="X13" size="8" access="RW">
+            <gui_name language="en">X13</gui_name>
+            <description language="en">X13</description>
+        </register>
+        <register name="X14" size="8" access="RW">
+            <gui_name language="en">X14</gui_name>
+            <description language="en">X14</description>
+        </register>
+        <register name="X15" size="8" access="RW">
+            <gui_name language="en">X15</gui_name>
+            <description language="en">X15</description>
+        </register>
+        <register name="X16" size="8" access="RW">
+            <gui_name language="en">X16</gui_name>
+            <description language="en">X16</description>
+        </register>
+        <register name="X17" size="8" access="RW">
+            <gui_name language="en">X17</gui_name>
+            <description language="en">X17</description>
+        </register>
+        <register name="X18" size="8" access="RW">
+            <gui_name language="en">X18</gui_name>
+            <description language="en">X18</description>
+        </register>
+        <register name="X19" size="8" access="RW">
+            <gui_name language="en">X19</gui_name>
+            <description language="en">X19</description>
+        </register>
+        <register name="X20" size="8" access="RW">
+            <gui_name language="en">X20</gui_name>
+            <description language="en">X20</description>
+        </register>
+        <register name="X21" size="8" access="RW">
+            <gui_name language="en">X21</gui_name>
+            <description language="en">X21</description>
+        </register>
+        <register name="X22" size="8" access="RW">
+            <gui_name language="en">X22</gui_name>
+            <description language="en">X22</description>
+        </register>
+        <register name="X23" size="8" access="RW">
+            <gui_name language="en">X23</gui_name>
+            <description language="en">X23</description>
+        </register>
+        <register name="X24" size="8" access="RW">
+            <gui_name language="en">X24</gui_name>
+            <description language="en">X24</description>
+        </register>
+        <register name="X25" size="8" access="RW">
+            <gui_name language="en">X25</gui_name>
+            <description language="en">X25</description>
+        </register>
+        <register name="X26" size="8" access="RW">
+            <gui_name language="en">X26</gui_name>
+            <description language="en">X26</description>
+        </register>
+        <register name="X27" size="8" access="RW">
+            <gui_name language="en">X27</gui_name>
+            <description language="en">X27</description>
+        </register>
+        <register name="X28" size="8" access="RW">
+            <gui_name language="en">X28</gui_name>
+            <description language="en">X28</description>
+        </register>
+        <register name="X29" size="8" access="RW">
+            <gui_name language="en">X29</gui_name>
+            <description language="en">X29</description>
+        </register>
+        <register name="X30" size="8" access="RW">
+            <gui_name language="en">X30</gui_name>
+            <description language="en">X30</description>
+        </register>
+        <register name="SP" size="8" access="RW">
+            <gui_name language="en">SP</gui_name>
+            <description language="en">Stack Pointer</description>
+        </register>
+        <register name="PC" size="8" access="RW">
+            <gui_name language="en">PC</gui_name>
+            <description language="en">Program Counter</description>
+        </register>
+    </register_group>
+
+</register_list>

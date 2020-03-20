@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<register_list name="CP15"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns="http://www.arm.com/core_reg"
+    xsi:schemaLocation="http://www.arm.com/core_reg ../../../Schemas/core_register_definition.xsd"
+    xmlns:xi="http://www.w3.org/2001/XInclude"
+    xmlns:tcf="http://com.arm.targetconfigurationeditor">
+    <register_group name="OtherControlRegisters">
+        <gui_name language="en">Other Controls</gui_name>
+        <description language="en">Other system control registers</description>
+        <!-- See the implementation-defined registers group for CP15_ACTLR. -->
+        <register access="RW" name="CPACR" size="4">
+            <gui_name language="en">CPACR</gui_name>
+            <alias_name>CP15_CPACR</alias_name>
+            <device_name type="rvi">CP15_CPACR</device_name>
+            <device_name type="cadi">CPACR</device_name>
+            <device_name type="rvi">CP15_CPACR</device_name>
+            <device_name type="cadi">CPACR</device_name>
+            <description language="en">Coprocessor Access Control</description>
+            <bitField conditional="false" enumerationId="GENERIC_EN_DISABLE" name="ASEDIS">
+                <gui_name language="en">ASEDIS</gui_name>
+                <description language="en">ASE disable</description>
+                <definition>[31]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="GENERIC_EN_DISABLE" name="D32DIS">
+                <gui_name language="en">D32DIS</gui_name>
+                <description language="en">Disable use of registers D16-D31 of the VFP register file</description>
+                <definition>[30]</definition>
+                <!-- Exists on Cortex-A7. RAZ/WI on Cortex-A12 and A15. -->
+            </bitField>
+            <bitField conditional="false" enumerationId="CPACR_ACCESS" name="CP11">
+                <gui_name language="en">CP11</gui_name>
+                <description language="en">Access rights (CP11)</description>
+                <definition>[23:22]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="CPACR_ACCESS" name="CP10">
+                <gui_name language="en">CP10</gui_name>
+                <description language="en">Access rights (CP10)</description>
+                <definition>[21:20]</definition>
+            </bitField>
+        </register>
+        <register access="RW" name="FCSEIDR" size="4">
+            <gui_name language="en">FCSEIDR</gui_name>
+            <alias_name>CP15_FCSEIDR</alias_name>
+            <device_name type="rvi">CP15_FCSEIDR</device_name>
+            <device_name type="cadi">FCSEIDR</device_name>
+            <device_name type="rvi">CP15_FCSEIDR</device_name>
+            <device_name type="cadi">FCSEIDR</device_name>
+            <description language="en">FCSE Process ID</description>
+            <!-- FCSE not implemented by Cortex-A7, A12 and A15, but this register must still be included, as RAZ/WI. -->
+            <bitField conditional="false" name="PID">
+                <gui_name language="en">PID</gui_name>
+                <description language="en">PID</description>
+                <definition>[31:25]</definition>
+            </bitField>
+        </register>
+        <register access="RW" name="ACTLR" size="4">
+            <gui_name language="en">ACTLR</gui_name>
+            <alias_name>CP15_ACTLR</alias_name>
+            <device_name type="rvi">CP15_ACTLR</device_name>
+            <device_name type="cadi">ACTLR</device_name>
+            <device_name type="rvi">CP15_ACTLR</device_name>
+            <device_name type="cadi">ACTLR</device_name>
+            <description language="en">Auxiliary Control</description>
+        </register>
+        <register access="RW" name="S_ACTLR" size="4"> <!-- Secure variant -->
+            <gui_name language="en">S_ACTLR</gui_name>
+            <alias_name>CP15_S_ACTLR</alias_name>
+            <device_name type="rvi">CP15_S_ACTLR</device_name>
+            <device_name type="cadi">S_ACTLR</device_name>
+            <device_name type="rvi">CP15_S_ACTLR</device_name>
+            <device_name type="cadi">S_ACTLR</device_name>
+            <description language="en">[S] Auxiliary Control</description>
+        </register>
+        <register access="RW" name="N_ACTLR" size="4"> <!-- Non-secure variant -->
+            <gui_name language="en">N_ACTLR</gui_name>
+            <alias_name>CP15_N_ACTLR</alias_name>
+            <device_name type="rvi">CP15_N_ACTLR</device_name>
+            <device_name type="cadi">N_ACTLR</device_name>
+            <device_name type="rvi">CP15_N_ACTLR</device_name>
+            <device_name type="cadi">N_ACTLR</device_name>
+            <description language="en">[N] Auxiliary Control</description>
+        </register>
+    </register_group>
+</register_list>
+

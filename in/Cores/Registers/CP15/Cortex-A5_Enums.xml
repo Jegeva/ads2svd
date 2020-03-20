@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<register_list
+    name="CP15"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns="http://www.arm.com/core_reg"
+    xsi:schemaLocation="http://www.arm.com/core_reg ../../../Schemas/core_register_definition.xsd"
+    xmlns:tcf="http://com.arm.targetconfigurationeditor">
+
+    <!-- This register has been included for validation only -->
+    <register access="RW" name="DUMMY_REGISTER" size="4">
+        <gui_name language="en"/>
+        <description language="en"/>
+    </register>
+
+    <tcf:enumeration name="GENERIC_CLEAR_SET" values="Clear=0,Set=1"/>
+    <tcf:enumeration name="ACTLR_BP" values="Normal_operation=0,Branch_always_taken=1,Branch_always_not_taken=2,Reserved=3"/>
+    <tcf:enumeration name="ACTLR_L1PCTL" values="Prefetch_disabled=0,_1_outstanding_prefetch_allowed=1,_2_outstanding_prefetches_allowed=2,_3_outstanding_prefetches_allowed=3"/>
+    <tcf:enumeration name="GENERIC_DIS_ENABLE" values="Disabled=0,Enabled=1"/>
+    <tcf:enumeration name="GENERIC_EN_DISABLE" values="Enabled=0,Disabled=1"/>
+    <tcf:enumeration name="TTBR_RGN" values="Outer_noncacheable=0x0,Outer_cacheable_write_back_cached_write_allocate=0x1,Outer_cacheable_write_through_no_allocate_on_write=0x2,Outer_cacheable_write_back_no_allocate_on_write=0x3"/>
+    <tcf:enumeration name="TTBR_S" values="Translation_table_walk_to_non_shared_memory=0x0,Translation_table_walk_to_shared_memory=0x1"/>
+    <tcf:enumeration name="TTBCR_PD" values="Translation_table_walk=0,Section_Translation_Fault=1"/>
+    <tcf:enumeration name="TTBCR_N" values="_16KB=0x0,_8KB=0x1,_4KB=0x2,_2KB=0x3,_1KB=0x4,_512B=0x5,_256B=0x6,_128B=0x7"/>
+    <tcf:enumeration name="CPPERM" values="Access_denied=0,Privileged_mode_access_only=1,Privileged_and_User_mode_access=3,Reserved=2"/>
+    <tcf:enumeration name="ARCHv7_DACR_DN" values="No_access=0,Client_accesses_checked=1,Manager_accesses_not_checked=3"/>
+    <tcf:enumeration name="DFSR_EXT" values="DECERR=0,SLVERR=1"/>
+    <tcf:enumeration name="DFSR_WNR" values="Read=0x0,Write=0x1"/>
+    <tcf:enumeration name="DFSR_EXT" values="DECERR=0,SLVERR=1"/>
+    <tcf:enumeration name="DFSR_DOMAIN" values="D0=0,D1=1,D2=2,D3=3,D4=4,D5=5,D6=6,D7=7,D8=8,D9=9,D10=10,D11=11,D12=12,D13=13,D14=14,D15=15"/>
+    <tcf:enumeration name="IFSR_FS" values="L1_translation_precise_external_abort=0xc,L2_translation_precise_external_abort=0xe,L1_translation_precise_parity_error=0x40c,L2_translation_precise_parity_error=0x40e,Translation_fault_section=5,Translation_fault_page=7,Access_flag_fault_section=3,Access_flag_fault_page=6,Domain_fault_section=9,Domain_fault_page=0xb,Permission_fault_section=0xd,Permission_fault_page=0xf,Precise_external_abort_non_translation=8,Debug_event=2"/>
+    <tcf:enumeration name="PRRR_OS" values="Yes=0,If_Shareable_Normal=1"/>
+    <tcf:enumeration name="PRRR_xS" values="Not_shareable=0,Shareable=1"/>
+    <tcf:enumeration name="PRRR_TR" values="Strongly_ordered=0,Device=1,Normal=2"/>
+    <tcf:enumeration name="NMRR_xR" values="Non_cacheable=0,Write_back_WriteAllocate=1,WriteThrough_Non_WriteAllocate=2,Write_back_Non_WriteAllocate=3"/>
+    <tcf:enumeration name="CPACR_CP" values="Access_denied=0,Privileged_mode_access_only=1,Reserved=2,Privileged_and_User_mode_access=3"/>
+    <tcf:enumeration name="NSACR_CPx" values="Secure_access_only=0,Secure_or_Normal_access=1"/>
+    <tcf:enumeration name="GENERIC_NO_YES" values="No=0,Yes=1"/>
+    <tcf:enumeration name="GENERIC_UN_SET" values="Unset=0,Set=1"/>
+    <tcf:enumeration name="E_DISABLE_ENABLE" values="Disable=0,Enable=1"/>
+
+    <tcf:enumeration name="SCR_xW" values="Secure_state_only=0,Either_security_state=1"/>
+    <tcf:enumeration name="SCR_EA" values="Abort_mode=0,Monitor_mode=1"/>
+    <tcf:enumeration name="SCR_FIQ" values="FIQ_mode=0,Monitor_mode=1"/>
+    <tcf:enumeration name="SCR_IRQ" values="IRQ_mode=0,Monitor_mode=1"/>
+    <tcf:enumeration name="SCR_NS" values="Secure=0,Normal=1"/>
+    <tcf:enumeration name="E_I_D_FAULT_STATUS" values="None=0,Alignment_fault=1,Debug_event=2,Access_flag_fault_on_section=3,Instruction_cache_maintenance_fault=4,Translation_fault_on_section=5,Access_flag_fault_on_page=6,Translation_fault_on_page=7,Nontranslation_AXI_decode_precise_external_abort=8,Domain_fault_on_section=9,Domain_fault_on_page=11,L1_translation_AXI_decode_precise_external_abort=12,Permission_fault_on_section=13,L2_translation_AXI_decode_precise_external_abort=14,Permission_fault_on_page=15,AXI_decode_imprecise_external_abort=22,L1_translation_precise_parity_error=28,L2_translation_precise_parity_error=30,AXI_slave_precise_external_abort_nontranslation=40,L1_translation_AXI_slave_precise_external_abort=44,L2_translation_AXI_slave_precise_external_abort=46,AXI_slave_imprecise_external_abort=54"/>
+
+    <tcf:enumeration name="MIDR_I" values="ARM_Ltd=0x41,Digital_Equipment_Corporation=0x44,Motorola_Freescale_Semiconductor_Inc=0x4d,QUALCOMM_Inc=0x51,Marvell_Semiconductor_Inc=0x56,Intel_Corporation=0x69"/>
+    <tcf:enumeration name="PMCR_D" values="PMCCNTR_counts_every_clock_cycle=0,PMCCNTR_counts_every_64th_clock_cycle=1"/>
+    <tcf:enumeration name="PMxENSET_x" values="Disabled_write_0_ignored=0,Enabled__write_1_enables=1"/>
+    <tcf:enumeration name="PMxENCLR_x" values="Disabled_write_ignored=0,Enabled_write_disables=1"/>
+    <tcf:enumeration name="PMOVSR_x" values="Not_overflowed_write_ignored=0,Overflowed__write_clears=1"/>
+    <tcf:enumeration name="PMXEVTYPER_EC" values="Software_increment=0,I_cache_miss_at_lowest_level=1,TLB_miss_at_lowest_level_due_to_I_fetch=2,D_cache_miss_at_lowest_level=3,D_cache_access_at_lowest_level=4,TLB_miss_at_lowest_level_due_to_data_access=5,Data_read=6,Data_write=7,Instruction_decoded=8,Exception_taken=9,Exception_returned=10,Change_to_Context_ID_retired=11,Software_change_of_PC_except_by_exception=12,Immediate_branch_executed=13,Procedure_return_executed=14,Unaligned_access=15,Branch_misprediction_non_prediction=16,Predictable_branch=18,Java_bytecode_executed=0x40,Software_Java_bytecode_executed=0x41,Jazelle_backward_branches_executed=0x42,Instruction_cache_dependent_stalls=0x60,Data_cache_dependent_stalls=0x61,TLB_miss_dependent_stalls=0x62,STREX_passed=0x63,STREX_failed=0x64,Data_eviction=0x65"/>
+
+    <tcf:enumeration name="MIDR_A" values="ARM_architecture_v4=1,ARM_architecture_v4T=2,ARM_architecture_v5=3,ARM_architecture_v5T=4,ARM_architecture_v5TE=5,ARM_architecture_v5TEJ=6,ARM_architecture_v6=7,Defined_by_CPUID_scheme=15"/>
+    <tcf:enumeration name="CTR_F" values="ARMv6_and_earlier_format=0,ARMv7_format=4"/>
+    <tcf:enumeration name="CTR_L1IP" values="Virtual_Index_Virtual_Tag=1,Virtual_Index_Physical_Tag=2,Physical_Index_Physical_Tag=3"/>
+    <tcf:enumeration name="TLBTR_U" values="TLB_Unified=0,Separate_I_and_D_TLBs=1"/>
+    <tcf:enumeration name="MPIDR_U" values="Processor_is_part_of_a_multiprocessor_system=0,Processor_is_part_of_a_uniprocessor_system=1"/>
+    <tcf:enumeration name="ID_PFR0_STATE3" values="Not_supported=0,Jazelle_RCT_supported=1"/>
+    <tcf:enumeration name="ID_PFR0_STATE2" values="Not_supported=0,Jazelle_extension_supported=1,Jazelle_clearing_JOSCR_CV=2"/>
+    <tcf:enumeration name="ID_PFR0_STATE1" values="None=0,Thumb=1,Thumb_2_full=3"/>
+    <tcf:enumeration name="ID_PFR0_STATE0" values="No_support_for_ARM_ISA=0,ARM_ISA_supported=1"/>
+    <tcf:enumeration name="ID_PFR1_MP" values="Not_supported=0,Two_Stack_Support=2"/>
+    <tcf:enumeration name="ID_PFR1_SE" values="Not_supported=0,Security_extensions_supported=1"/>
+    <tcf:enumeration name="ID_PFR1_P" values="ARMv4_model_not_supported=0,ARMv4_model_supported=1"/>
+    <tcf:enumeration name="GENERIC_NOTSUPP_SUPP" values="Not_supported=0,Supported=1"/>
+    <tcf:enumeration name="ID_DFR0_CS" values="Not_supported=0,v6_1_Debug_model_supported_CP14_based=3,ARMv7_model_supported_CP14_based=4"/>
+    <tcf:enumeration name="ID_DFR0_CC" values="Not_supported_or_Pre_ARMv6=0,v6_Debug_model_supported_CP14_based=2,v6_1_Debug_model_supported_CP14_based=3,ARMv7_model_supported_CP14_based=4"/>
+    <tcf:enumeration name="ID_MMFR0_AUX" values="Not_supported=0,One_Auxiliary_Control_Register_supported=1,AFSRs_and_Auxiliary_Control_Register=2"/>
+    <tcf:enumeration name="ID_MMFR0_TCM_DMA" values="Not_supported=0,Implementation_Defined=1,ARMv6_TCM_only=2,ARMv6_TCM_and_DMA=3"/>
+    <tcf:enumeration name="ID_MMFR0_SL" values="One_level_of_shareability_supported=0"/>
+    <tcf:enumeration name="ID_MMFR0_CC" values="Not_supported=0,Partial_Inner_Shared_Coherency=1,Full_Inner_Shared_Coherency=2,Full_Coherency=3"/>
+    <tcf:enumeration name="ID_MMFR0_PMSA" values="Not_supported=0,Implementation_Defined=1,PMSAv6=2,PMSAv7=3"/>
+    <tcf:enumeration name="ID_MMFR0_VMSA" values="Not_supported=0,Implementation_Defined=1,VMSAv6=2,VMSAv7=3"/>
+    <tcf:enumeration name="ID_MMFR1_BP" values="Not_supported=0,Flush_on_MMU_enable_or_disable_instruction_location_write_page_table_changes_TTBR_or_TTBCR_changes_FCSE_PID_or_CID_changes=1,Flush_on_MMU_enable_or_disable_instruction_location_write_page_table_changes_TTBR_TTBCR_changes_without_FCSE_PID_or_CID_change=2,Flush_on_instruction_location_write=3,No_flushing_required=4"/>
+    <tcf:enumeration name="ID_MMFR1_L1_TC" values="Not_supported=0,Supported_test_and_clean_only=1,Supported_test_clean_and_invalidate=2"/>
+    <tcf:enumeration name="ID_MMFR1_L1_AU" values="Not_supported=0,Supported_invalidate_only=1,Supported_all_operations=2"/>
+    <tcf:enumeration name="ID_MMFR1_L1_AH" values="Not_supported=0,Supported_invalidate_I_cache=1,Supported_invalidate_one_or_both_caches=2,Supported_all_operations=3"/>
+    <tcf:enumeration name="ID_MMFR1_L1_SWU" values="Not_supported=0,Supported_by_Caches_no_clean_and_invalidate_or_invalidate=1,Supported_by_Caches_no_invalidate_without_clean=2,Supported_by_Caches=3"/>
+    <tcf:enumeration name="ID_MMFR1_L1_SWH" values="Not_supported=0,Supported_by_Caches_no_invalidate_without_clean=1,Supported_by_Caches_no_invalidate_without_clean_for_I_cache=2,Supported_by_Caches_with_invalidate_and_clean=3"/>
+    <tcf:enumeration name="ID_MMFR1_L1_VAs" values="Not_supported=0,Supported_by_Caches=1,Supported_by_Caches_and_BTB=2"/>
+    <tcf:enumeration name="ID_MMFR2_HAF" values="Not_supported=0,VMSAv7_access_flag_updated_in_hardware=1"/>
+    <tcf:enumeration name="ID_MMFR2_MB" values="Not_supported=0,DSB=1,DSB_ISB_DMB=2"/>
+    <tcf:enumeration name="ID_MMFR2_TLBs" values="Not_supported=0,Supported_not_by_ASID=1,Supported_including_by_ASID=2,Invalidate_all_by_VA_or_by_ASID=3"/>
+    <tcf:enumeration name="ID_MMFR2_L1_xP" values="Not_supported=0,Supported_prefetch_by_range=1"/>
+    <tcf:enumeration name="ID_MMFR3_BPM" values="Not_supported=0,Invalidate_entire_branch_predictor_array=1,Invalidate_entire_branch_predictor_array_Invalidate_branch_predictor_by_MVA=2"/>
+    <tcf:enumeration name="ID_MMFR3_MB" values="Supported=2"/>
+    <tcf:enumeration name="ID_MMFR3_SS" values="Supported=0"/>
+    <tcf:enumeration name="ID_ISAR0_DIV" values="Not_supported=0,Supported_SDIV_or_UDIV=1"/>
+    <tcf:enumeration name="ID_ISAR0_DBG" values="Not_supported=0,Supported_BKPT=1"/>
+    <tcf:enumeration name="ID_ISAR0_CP" values="Not_supported=0,Supported_CDP_LDC_MCR_MRC_STC=1,Supported_CDP_LDC_MCR_MRC_STC_CDP2_LDC2_MCR2_MRC2_STC2=2,Supported_CDP_LDC_MCR_MRC_STC_CDP2_LDC2_MCR2_MRC2_STC2_MCRR_MRRC=3,Supported_CDP_LDC_MCR_MRC_STC_CDP2_LDC2_MCR2_MRC2_STC2_MCRR_MRRC_MCRR2_MRRC2=4"/>
+    <tcf:enumeration name="ID_ISAR0_CB" values="Not_supported=0,Supported_CBNZ_CZB=1"/>
+    <tcf:enumeration name="ID_ISAR0_BF" values="Not_supported=0,Supported_BFC_BFI_SBFX_UBFX=1"/>
+    <tcf:enumeration name="ID_ISAR0_BC" values="Not_supported=0,Supported_CLZ=1"/>
+    <tcf:enumeration name="ID_ISAR0_S" values="Not_supported=0,Supported_SWP_SWPB=1"/>
+    <tcf:enumeration name="ID_ISAR1_J" values="Not_supported=0,Supported_BXJ_J_bit_in_PSR=1"/>
+    <tcf:enumeration name="ID_ISAR1_INT" values="Not_supported=0,Supported_BX_T_bit_in_PSR=1,Supported_BX_BLX_T_bit_in_PSR=2,Supported_including_data_processing_instructions=3"/>
+    <tcf:enumeration name="ID_ISAR1_IMM" values="Not_supported=0,Special_immediate_generating_instructions_supported=1"/>
+    <tcf:enumeration name="ID_ISAR1_EXT" values="Not_supported=0,Supported_SXTB_SXTH_UXTB_UXTH=1,Supported_all=2"/>
+    <tcf:enumeration name="ID_ISAR1_EXC_AR" values="Not_supported=0,Supported_SRS_RFE_CPS=1"/>
+    <tcf:enumeration name="ID_ISAR1_EXC" values="Not_supported=0,Supported_LDM_STM=1"/>
+    <tcf:enumeration name="ID_ISAR1_END" values="Not_supported=0,Supported_SETEND=1"/>
+    <tcf:enumeration name="ID_ISAR2_R" values="Not_supported=0,Supported_REV_REV16_REVSH=1,Supported_REV_REV16_REVSH_RBIT=2"/>
+    <tcf:enumeration name="ID_ISAR2_PSR_AR" values="Not_supported=0,Supported_MRS_MSR_exception_return=1"/>
+    <tcf:enumeration name="ID_ISAR2_MU" values="Not_supported=0,Supported_UMULL_UMLAL=1,Supported_UMULL_UMLAL_UMAAL=2"/>
+    <tcf:enumeration name="ID_ISAR2_MS" values="Not_supported=0,Supported_SMULL_SMLAL_only=1,Supported_2=2,Supported_3=3"/>
+    <tcf:enumeration name="ID_ISAR2_M" values="Supported_MUL=0,Supported_MUL_MLA=1,Supported_MUL_MLA_MLS=2"/>
+    <tcf:enumeration name="ID_ISAR2_MAI" values="LDM_and_STM_are_not_interruptible=0,LDM_and_STM_are_restartable=1,LDM_and_STM_are_continuable=2"/>
+    <tcf:enumeration name="ID_ISAR2_MH" values="Not_supported=0,Supported_PLD=1,Supported_PLD=2,Supported_PLD_PLI=3,Supported_PLD_PLI_PLDW=4"/>
+    <tcf:enumeration name="ID_ISAR2_LS" values="Supported_normal_load_and_store=0,Supported_with_LDRD_and_STRD=1"/>
+    <tcf:enumeration name="ID_ISAR3_T2EE" values="Not_supported=0,Supported_ENTERX_LEAVEX=1"/>
+    <tcf:enumeration name="ID_ISAR3_TC" values="No_low_reg_to_low_reg_MOV=0,Supported_MOV_low_reg_to_low_reg=1"/>
+    <tcf:enumeration name="ID_ISAR3_TB" values="Not_supported=0,Supported_TBB_TBH=1"/>
+    <tcf:enumeration name="ID_ISAR3_SP" values="Not_supported=0,Supported_load_and_store_word_only=1,Supported_load_and_store_all_sizes=2"/>
+    <tcf:enumeration name="ID_ISAR3_SIMD" values="Not_supported=0,Supported_SSAT_USAT_Q_bit_in_PSR=1,All_supported=3"/>
+    <tcf:enumeration name="ID_ISAR3_S" values="Not_supported=0,Supported_QADD_QDADD_QDSUB_QSUB_Q_bit_in_PSR=1"/>
+    <tcf:enumeration name="ID_ISAR4_SPF" values="Not_supported=0,Supported_for_CLREX_LDREXB_STREXB_LDREXH_STREXH=3"/>
+    <tcf:enumeration name="ID_ISAR4_B" values="All_barrier_instructions_are_CP15_ops=0,DMB_DSB_ISB_barrier_instructions_supported=1"/>
+    <tcf:enumeration name="ID_ISAR4_W" values="Basic_support=0,Full_support=1"/>
+    <tcf:enumeration name="ID_ISAR4_WS" values="Supported_shift_of_MOV_only=0,Supported_shifts_of_MOV_loads_stores_over_range_LSL_0_3=1,Supported_constant_shifts_of_MOV_loads_stores=3,Supported_shifts_of_MOV_loads_stores_by_a_constant_or_register=4"/>
+    <tcf:enumeration name="ID_ISAR4_U" values="Not_supported=0,Supported_LDRBT_LDRT_STRBT_STRT=1,Supported_LDRBT_LDRT_STRBT_STRT_LDRHT_LDRSBT_LDRSHT_STRHT=2"/>
+    <tcf:enumeration name="CCSIDR_NS" values="_16KB_cache_size=0x7F,_32KB_cache_size=0xFF,_64KB_cache_size=0x1FF"/>
+    <tcf:enumeration name="CCSIDR_A" values="Four_ways=3"/>
+    <tcf:enumeration name="CCSIDR_LS" values="_4_words=0,_8_words=1,_16_words=2,_32_words=3,_64_words=4,_128_words=5,_256_words=6,_512_words=7"/>
+    <tcf:enumeration name="CLIDR_CL" values="No_cache=0,I_cache_only=1,D_cache_only=2,Separate_I_and_D_caches=3,Unified_cache=4"/>
+    <tcf:enumeration name="CSSELR_IND" values="Data_cache=0,Instruction_cache=1"/>
+    <tcf:enumeration name="PMU_PMSELR_SEL" values="Select_counter_0=0,Select_counter_1=1,Access_cycle_count_filter_control_register=0x1F"/>
+    <tcf:enumeration name="PMU_PMCR_RESET_BIT" values="Reset=1"/>
+    <tcf:enumeration name="PMU_ENABLE" values="Enable=1"/>
+    <tcf:enumeration name="PMU_PMSOVSR_OVR" values="Not_overflowed=0,Overflowed=1"/>
+    <tcf:enumeration name="PMU_PMCEID0" values="Not_present=0,Present=1"/>
+    <tcf:enumeration name="PMU_PMCR_ID" values="PMCR=0x5"/>
+    <tcf:enumeration name="PMU_PMCR_N" values="_0_counters_implemented=0,_1_counter_implemented=1,_2_counters_implemented=2"/>
+    <tcf:enumeration name="SCTLR_V" values="Normal=0,High=1"/>
+    <tcf:enumeration name="VCR_OVR" values="Normal_operation=0,Overridden=1"/>
+    <tcf:enumeration name="TTBR0_IRGN" values="Non_cacheable=0,Write_Back_Write_Allocate=1,Write_Through_no_allocate_on_write=2,Write_Back_no_allocate_on_write=3"/>
+    <tcf:enumeration name="TTBR0_S" values="to_non_shared_memory=0,to_shared_memory=1"/>
+    <tcf:enumeration name="ISR_A" values="No_pending_external_abort=0,An_external_abort_is_pending=1"/>
+    <tcf:enumeration name="ISR_I" values="No_pending_IRW=0,An_IRQ_is_pending=1"/>
+    <tcf:enumeration name="ISR_F" values="No_pending_FIQ=0,An_FIQ_is_pending=1"/>
+    <tcf:enumeration name="PAR_NS" values="Non_shareable=0,Shareable=1"/>
+    <tcf:enumeration name="PAR_INNER" values="Inner_non_cacheable=0,Strongly_ordered=1,Device=3,Inner_Write_Back_Write_Allocate=5,Inner_Write_Through_No_Write_Allocate=6,Inner_Write_Back_No_Write_Allocate=7"/>
+    <tcf:enumeration name="PAR_OUTER" values="Outer_Non_cacheable=0,Outer_Write_Back_Write_Allocate=1,Outer_Write_Through_No_Write_Allocate=2,Outer_Write_Back_No_Write_Allocate=3"/>
+    <tcf:enumeration name="PAR_SS" values="Not_a_supersection=0,Supersection=1"/>
+    <tcf:enumeration name="PAR_F" values="Failure=0,Success=1"/>
+    <tcf:enumeration name="CTR_GRAN" values="_8_word_granularity=3"/>
+    <tcf:enumeration name="CCSIDR_WT" values="Write_Through_not_supported=0"/>
+    <tcf:enumeration name="CCSIDR_WB" values="Supported_for_data_cache=1,Supported_for_instruction_cache=0"/>
+    <tcf:enumeration name="GENERIC_SUPPORTED" values="Supported=1,Not_supported=0"/>
+
+
+
+</register_list>
+

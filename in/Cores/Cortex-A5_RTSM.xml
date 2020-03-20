@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<core_definition
+    xmlns="http://www.arm.com/core_definition"
+    xmlns:cr="http://www.arm.com/core_reg"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:xi="http://www.w3.org/2001/XInclude"
+    xmlns:tcf="http://com.arm.targetconfigurationeditor"
+    xsi:schemaLocation="http://www.arm.com/core_definition ../Schemas/core_definition.xsd"
+    architecture="ARMv7A">
+
+    <name>Cortex-A5_RTSM</name>
+    <internal_name>Cortex-A5</internal_name>
+    <series>A</series>
+
+    <xi:include href="Cortex-A5.xml" xpointer="xmlns(cr=http://www.arm.com/core_reg)xpointer(//cr:register_list)"/>
+</core_definition>

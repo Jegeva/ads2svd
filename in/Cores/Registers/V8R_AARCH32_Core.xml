@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<register_list
+    name="Core" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns="http://www.arm.com/core_reg"
+    xsi:schemaLocation="http://www.arm.com/core_reg ../../Schemas/core_register_definition.xsd"
+    xmlns:tcf="http://com.arm.targetconfigurationeditor"
+    xmlns:xi="http://www.w3.org/2001/XInclude">
+
+    <register_group name="Core">
+        <gui_name language="en">USR_MODE</gui_name>
+        <description language="en">Core Registers in User Mode</description>
+        <register name="R0" size="4" access="RW">
+            <gui_name language="en">R0</gui_name>
+            <description language="en">R0</description>
+        </register>
+        <register name="R1" size="4" access="RW">
+            <gui_name language="en">R1</gui_name>
+            <description language="en">R1</description>
+        </register>
+        <register name="R2" size="4" access="RW">
+            <gui_name language="en">R2</gui_name>
+            <description language="en">R2</description>
+        </register>
+        <register name="R3" size="4" access="RW">
+            <gui_name language="en">R3</gui_name>
+            <description language="en">R3</description>
+        </register>
+        <register name="R4" size="4" access="RW">
+            <gui_name language="en">R4</gui_name>
+            <description language="en">R4</description>
+        </register>
+        <register name="R5" size="4" access="RW">
+            <gui_name language="en">R5</gui_name>
+            <description language="en">R5</description>
+        </register>
+        <register name="R6" size="4" access="RW">
+            <gui_name language="en">R6</gui_name>
+            <description language="en">R6</description>
+        </register>
+        <register name="R7" size="4" access="RW">
+            <gui_name language="en">R7</gui_name>
+            <description language="en">R7</description>
+        </register>
+        <register name="R8" size="4" access="RW">
+            <gui_name language="en">R8</gui_name>
+            <description language="en">R8</description>
+        </register>
+        <register name="R9" size="4" access="RW">
+            <gui_name language="en">R9</gui_name>
+            <description language="en">R9</description>
+        </register>
+        <register name="R10" size="4" access="RW">
+            <gui_name language="en">R10</gui_name>
+            <description language="en">R10</description>
+        </register>
+        <register name="R11" size="4" access="RW">
+            <gui_name language="en">R11</gui_name>
+            <description language="en">R11</description>
+        </register>
+        <register name="R12" size="4" access="RW">
+            <gui_name language="en">R12</gui_name>
+            <description language="en">R12</description>
+        </register>
+        <register name="R13" size="4" access="RW">
+            <gui_name language="en">SP</gui_name>
+            <device_name type="alternative">SP</device_name>
+            <description language="en">Stack Pointer</description>
+        </register>
+        <register name="R14" size="4" access="RW">
+            <gui_name language="en">LR</gui_name>
+            <device_name type="alternative">LR</device_name>
+            <description language="en">Link Register</description>
+        </register>
+        <register name="R15" size="4" access="RW">
+            <gui_name language="en">PC</gui_name>
+            <device_name type="alternative">PC</device_name>
+            <description language="en">Program Counter</description>
+        </register>
+        <register access="RW" doclink="CDB://../../../Docs/SysReg_xml-00bet19/xhtml/AArch32-cpsr.html" name="CPSR" size="4">
+            <gui_name language="en">Current Processor State Register</gui_name>
+            <description language="en">Holds the current processor state.</description>
+            <xi:include href="CPSR/psrfields_V8R.xml" xpointer="xmlns(cr=http://www.arm.com/core_reg)xpointer(//cr:bitField)"/>
+        </register>
+    </register_group>
+    <xi:include href="CPSR/V8_virt.xml" xpointer="xmlns(tcf=http://com.arm.targetconfigurationeditor)xpointer(//tcf:enumeration)"/>
+</register_list>

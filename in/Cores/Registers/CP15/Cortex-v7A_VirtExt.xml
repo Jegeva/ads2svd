@@ -1,0 +1,620 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<register_list name="CP15"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns="http://www.arm.com/core_reg"
+    xsi:schemaLocation="http://www.arm.com/core_reg ../../../Schemas/core_register_definition.xsd"
+    xmlns:tcf="http://com.arm.targetconfigurationeditor">
+    <register_group name="VirtualizationExtensions">
+        <gui_name language="en">Virtualization Extensions</gui_name>
+        <description language="en">Virtualization Extensions registers</description>
+        <register access="RW" name="VPIDR" size="4">
+            <gui_name language="en">VPIDR</gui_name>
+            <alias_name>CP15_VPIDR</alias_name>
+            <device_name type="rvi">CP15_VPIDR</device_name>
+            <device_name type="cadi">VPIDR</device_name>
+            <device_name type="rvi">CP15_VPIDR</device_name>
+            <device_name type="cadi">VPIDR</device_name>
+            <description language="en">Virtualization Processor ID</description>
+            <bitField conditional="false" name="I">
+                <gui_name language="en">I</gui_name>
+                <description language="en">Implementer</description>
+                <definition>[31:24]</definition>
+            </bitField>
+            <bitField conditional="false" name="V">
+                <gui_name language="en">V</gui_name>
+                <description language="en">Variant</description>
+                <definition>[23:20]</definition>
+            </bitField>
+            <bitField conditional="false" name="A">
+                <gui_name language="en">A</gui_name>
+                <description language="en">Architecture</description>
+                <definition>[19:16]</definition>
+            </bitField>
+            <bitField conditional="false" name="P">
+                <gui_name language="en">P</gui_name>
+                <description language="en">Primary part</description>
+                <definition>[15:4]</definition>
+            </bitField>
+            <bitField conditional="false" name="R">
+                <gui_name language="en">R</gui_name>
+                <description language="en">Revision</description>
+                <definition>[3:0]</definition>
+            </bitField>
+        </register>
+        <register access="RW" name="VMPIDR" size="4">
+            <gui_name language="en">VMPIDR</gui_name>
+            <alias_name>CP15_VMPIDR</alias_name>
+            <device_name type="rvi">CP15_VMPIDR</device_name>
+            <device_name type="cadi">VMPIDR</device_name>
+            <device_name type="rvi">CP15_VMPIDR</device_name>
+            <device_name type="cadi">VMPIDR</device_name>
+            <description language="en">Virtualization Multiprocessor ID</description>
+            <bitField conditional="false" name="U">
+                <gui_name language="en">U</gui_name>
+                <description language="en">U bit</description>
+                <definition>[30]</definition>
+            </bitField>
+            <bitField conditional="false" name="MT">
+                <gui_name language="en">MT</gui_name>
+                <description language="en">MT bit</description>
+                <definition>[24]</definition>
+            </bitField>
+            <bitField conditional="false" name="CID">
+                <gui_name language="en">CID</gui_name>
+                <description language="en">Cluster ID</description>
+                <definition>[11:8]</definition>
+            </bitField>
+            <bitField conditional="false" name="CPUID">
+                <gui_name language="en">CPUID</gui_name>
+                <description language="en">CPU ID</description>
+                <definition>[1:0]</definition>
+            </bitField>
+        </register>
+        <register access="RW" name="HSCTLR" size="4">
+            <gui_name language="en">HSCTLR</gui_name>
+            <alias_name>CP15_HSCTLR</alias_name>
+            <device_name type="rvi">CP15_HSCTLR</device_name>
+            <device_name type="cadi">HSCTLR</device_name>
+            <device_name type="rvi">CP15_HSCTLR</device_name>
+            <device_name type="cadi">HSCTLR</device_name>
+            <description language="en">Hypervisor System Control Register</description>
+            <bitField conditional="false" name="TE" enumerationId="SCTLR_TE">
+                <gui_name language="en">TE</gui_name>
+                <description language="en">Thumb exception enable</description>
+                <definition>[30]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="GENERIC_LITTLE_BIG_ENDIAN" name="EE">
+                <gui_name language="en">EE</gui_name>
+                <description language="en">Exception Endianness bit, the value of this bit defines the value of the CPSR.E bit on entry to an exception vector in Hyp mode</description>
+                <definition>[25]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="E_DISABLE_ENABLE" name="FI">
+                <gui_name language="en">FI</gui_name>
+                <description language="en">Fast Interrupts configuration enable bit</description>
+                <definition>[21]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="E_DISABLE_ENABLE" name="WXN">
+                <gui_name language="en">WXN</gui_name>
+                <description language="en">Write permission implies Execute Never (XN)</description>
+                <definition>[19]</definition>
+            </bitField>
+            <bitField conditional="false"  enumerationId="E_DISABLE_ENABLE" name="I">
+                <gui_name language="en">I</gui_name>
+                <description language="en">Instruction cache enable bit</description>
+                <definition>[12]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="E_DISABLE_ENABLE" name="C">
+                <gui_name language="en">C</gui_name>
+                <description language="en">Unified Cache enable bit</description>
+                <definition>[2]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="E_DISABLE_ENABLE" name="A">
+                <gui_name language="en">A</gui_name>
+                <description language="en">Alignment bit. This is the enable bit for Alignment fault checking, for memory accesses made in Hyp mode</description>
+                <definition>[1]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="E_DISABLE_ENABLE" name="M">
+                <gui_name language="en">M</gui_name>
+                <description language="en">MMU enable bit</description>
+                <definition>[0]</definition>
+            </bitField>
+        </register>
+        <register access="RW" name="HACTLR" size="4">
+            <gui_name language="en">HACTLR</gui_name>
+            <alias_name>CP15_HACTLR</alias_name>
+            <device_name type="rvi">CP15_HACTLR</device_name>
+            <device_name type="cadi">HACTLR</device_name>
+            <device_name type="rvi">CP15_HACTLR</device_name>
+            <device_name type="cadi">HACTLR</device_name>
+            <description language="en">Hypervisor Auxiliary Control</description>
+        </register>
+        <register access="RW" name="HCR" size="4">
+            <gui_name language="en">HCR</gui_name>
+            <alias_name>CP15_HCR</alias_name>
+            <device_name type="rvi">CP15_HCR</device_name>
+            <device_name type="cadi">HCR</device_name>
+            <device_name type="rvi">CP15_HCR</device_name>
+            <device_name type="cadi">HCR</device_name>
+            <description language="en">Hypervisor Configuration Register</description>
+            <bitField conditional="false" enumerationId="E_DISABLE_ENABLE" name="TGE">
+                <gui_name language="en">TGE</gui_name>
+                <description language="en">Trap General Exceptions</description>
+                <definition>[27]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="E_DISABLE_ENABLE" name="TVM">
+                <gui_name language="en">TVM</gui_name>
+                <description language="en">Trap VM Controls</description>
+                <definition>[26]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="E_DISABLE_ENABLE" name="TTLB">
+                <gui_name language="en">TTLB</gui_name>
+                <description language="en">Trap TLB Maintenance operations</description>
+                <definition>[25]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="E_DISABLE_ENABLE" name="TPU">
+                <gui_name language="en">TPU</gui_name>
+                <description language="en">Trap cache maintenance to point of unification operations</description>
+                <definition>[24]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="E_DISABLE_ENABLE" name="TPC">
+                <gui_name language="en">TPC</gui_name>
+                <description language="en">Trap cache maintenance to point of coherency operations</description>
+                <definition>[23]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="E_DISABLE_ENABLE" name="TSW">
+                <gui_name language="en">TSW</gui_name>
+                <description language="en">Trap set/way cache maintenance operations</description>
+                <definition>[22]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="E_DISABLE_ENABLE" name="TAC">
+                <gui_name language="en">TAC</gui_name>
+                <description language="en">Trap ACTLR accesses</description>
+                <definition>[21]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="E_DISABLE_ENABLE" name="TIDCP">
+                <gui_name language="en">TIDCP</gui_name>
+                <description language="en">Trap lockdown. When this bit is set to 1, any valid Non-secure access to a CP15 lockdown, DMA, or TCM operation, is trapped to Hyp mode</description>
+                <definition>[20]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="E_DISABLE_ENABLE" name="TSC">
+                <gui_name language="en">TSC</gui_name>
+                <description language="en">Trap SMC instruction</description>
+                <definition>[19]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="E_DISABLE_ENABLE" name="TID3">
+                <gui_name language="en">TID3</gui_name>
+                <description language="en">Trap ID Register Group 3</description>
+                <definition>[18]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="E_DISABLE_ENABLE" name="TID2">
+                <gui_name language="en">TID2</gui_name>
+                <description language="en">Trap ID Register Group 2</description>
+                <definition>[17]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="E_DISABLE_ENABLE" name="TID1">
+                <gui_name language="en">TID1</gui_name>
+                <description language="en">Trap ID Register Group 1</description>
+                <definition>[16]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="E_DISABLE_ENABLE" name="TID0">
+                <gui_name language="en">TID0</gui_name>
+                <description language="en">Trap ID Register Group 0</description>
+                <definition>[15]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="E_DISABLE_ENABLE" name="TWE">
+                <gui_name language="en">TWE</gui_name>
+                <description language="en">Trap WFE instruction</description>
+                <definition>[14]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="E_DISABLE_ENABLE" name="TWI">
+                <gui_name language="en">TWI</gui_name>
+                <description language="en">Trap WFI instruction</description>
+                <definition>[13]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="E_DISABLE_ENABLE" name="DC">
+                <gui_name language="en">DC</gui_name>
+                <description language="en">Default Cacheable</description>
+                <definition>[12]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="HCR_BSU" name="BSU">
+                <gui_name language="en">BSU</gui_name>
+                <description language="en">Barrier Shareability Upgrade</description>
+                <definition>[11:10]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="E_DISABLE_ENABLE" name="FB">
+                <gui_name language="en">FB</gui_name>
+                <description language="en">Force broadcast of TLB maintenance and other operations</description>
+                <definition>[9]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="E_DISABLE_ENABLE" name="VA">
+                <gui_name language="en">VA</gui_name>
+                <description language="en">Virtual Asynchronous Abort</description>
+                <definition>[8]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="E_DISABLE_ENABLE" name="VI">
+                <gui_name language="en">VI</gui_name>
+                <description language="en">Virtual IRQ Interrupt</description>
+                <definition>[7]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="E_DISABLE_ENABLE" name="VF">
+                <gui_name language="en">VF</gui_name>
+                <description language="en">Virtual FIQ Interrupt</description>
+                <definition>[6]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="E_DISABLE_ENABLE" name="AMO">
+                <gui_name language="en">AMO</gui_name>
+                <description language="en">Overrides the CPSR.A bit, and enables signaling by the VA bit</description>
+                <definition>[5]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="E_DISABLE_ENABLE" name="IMO">
+                <gui_name language="en">IMO</gui_name>
+                <description language="en">Overrides the CPSR.I bit, and enables signaling by the VI bit</description>
+                <definition>[4]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="E_DISABLE_ENABLE" name="FMO">
+                <gui_name language="en">FMO</gui_name>
+                <description language="en">Overrides the CPSR.F bit, and enables signaling by the VF bit</description>
+                <definition>[3]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="E_DISABLE_ENABLE" name="PTW">
+                <gui_name language="en">PTW</gui_name>
+                <description language="en">Protected Table Walk</description>
+                <definition>[2]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="E_DISABLE_ENABLE" name="SWIO">
+                <gui_name language="en">SWIO</gui_name>
+                <description language="en">Set/Way Invalidation Override</description>
+                <definition>[1]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="E_DISABLE_ENABLE" name="VM">
+                <gui_name language="en">VM</gui_name>
+                <description language="en">Virtualization MMU enable bit. This is a global enable bit for the PL1 and 0 stage 2 MMU</description>
+                <definition>[0]</definition>
+            </bitField>
+        </register>
+        <register access="RW" name="HDCR" size="4">
+            <gui_name language="en">HDCR</gui_name>
+            <alias_name>CP15_HDCR</alias_name>
+            <device_name type="rvi">CP15_HDCR</device_name>
+            <device_name type="cadi">HDCR</device_name>
+            <device_name type="rvi">CP15_HDCR</device_name>
+            <device_name type="cadi">HDCR</device_name>
+            <description language="en">Hypervisor Debug Control Register</description>
+            <bitField conditional="false" enumerationId="E_DISABLE_ENABLE" name="TDRA">
+                <gui_name language="en">TDRA</gui_name>
+                <description language="en">Trap Debug ROM Access</description>
+                <definition>[11]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="E_DISABLE_ENABLE" name="TDOSA">
+                <gui_name language="en">TDOSA</gui_name>
+                <description language="en">Trap Debug OS related register Access</description>
+                <definition>[10]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="E_DISABLE_ENABLE" name="TDA">
+                <gui_name language="en">TDA</gui_name>
+                <description language="en">Trap Debug Access</description>
+                <definition>[9]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="E_DISABLE_ENABLE" name="TDE">
+                <gui_name language="en">TDE</gui_name>
+                <description language="en">Trap Debug Exceptions</description>
+                <definition>[8]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="E_DISABLE_ENABLE" name="HPME">
+                <gui_name language="en">HPME</gui_name>
+                <description language="en">Hypervisor Performance Monitors Enable</description>
+                <definition>[7]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="E_DISABLE_ENABLE" name="TPM">
+                <gui_name language="en">TPM</gui_name>
+                <description language="en">Trap Performance Monitors Accesses</description>
+                <definition>[6]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="E_DISABLE_ENABLE" name="TPMCR">
+                <gui_name language="en">TPMCR</gui_name>
+                <description language="en">Trap Performance Monitor Control Register accesses</description>
+                <definition>[5]</definition>
+            </bitField>
+            <bitField conditional="false" name="HPMN">
+                <gui_name language="en">HPMN</gui_name>
+                <description language="en">Defines the number of Performance Monitors counters that are accessible from Non-secure PL1 modes, and from Non-secure PL0 modes if unprivileged access is enabled</description>
+                <definition>[4:0]</definition>
+            </bitField>
+        </register>
+        <register access="RW" name="HCPTR" size="4">
+            <gui_name language="en">HCPTR</gui_name>
+            <alias_name>CP15_HCPTR</alias_name>
+            <device_name type="rvi">CP15_HCPTR</device_name>
+            <device_name type="cadi">HCPTR</device_name>
+            <device_name type="rvi">CP15_HCPTR</device_name>
+            <device_name type="cadi">HCPTR</device_name>
+            <description language="en">Hypervisor Coprocessor Trap Register</description>
+            <bitField conditional="false" enumerationId="E_DISABLE_ENABLE" name="TCPAC">
+                <gui_name language="en">TCPAC</gui_name>
+                <description language="en">Trap Coprocessor Access Control Register accesses</description>
+                <definition>[31]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="E_DISABLE_ENABLE" name="TTA">
+                <gui_name language="en">TTA</gui_name>
+                <description language="en">Trap Trace Access</description>
+                <definition>[20]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="E_DISABLE_ENABLE" name="TASE">
+                <gui_name language="en">TASE</gui_name>
+                <description language="en">Trap Advanced SIMD Extension</description>
+                <definition>[15]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="E_DISABLE_ENABLE" name="TCP11">
+                <gui_name language="en">TCP11</gui_name>
+                <description language="en">Trap coprocessor 11 Access</description>
+                <definition>[11]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="E_DISABLE_ENABLE" name="TCP10">
+                <gui_name language="en">TCP10</gui_name>
+                <description language="en">Trap coprocessor 10 Access</description>
+                <definition>[10]</definition>
+            </bitField>
+        </register>
+        <register access="RW" name="HSTR" size="4">
+            <gui_name language="en">HSTR</gui_name>
+            <alias_name>CP15_HSTR</alias_name>
+            <device_name type="rvi">CP15_HSTR</device_name>
+            <device_name type="cadi">HSTR</device_name>
+            <device_name type="rvi">CP15_HSTR</device_name>
+            <device_name type="cadi">HSTR</device_name>
+            <description language="en">Hypervisor System Trap Register</description>
+            <bitField conditional="false" enumerationId="E_DISABLE_ENABLE" name="TJDBX">
+                <gui_name language="en">TJDBX</gui_name>
+                <description language="en">Trap Jazelle operations</description>
+                <definition>[17]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="E_DISABLE_ENABLE" name="TTEE">
+                <gui_name language="en">TTEE</gui_name>
+                <description language="en">Trap ThumbEE operations</description>
+                <definition>[16]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="E_DISABLE_ENABLE" name="T15">
+                <gui_name language="en">T15</gui_name>
+                <description language="en">Trap coprocessor 15 primary register c15</description>
+                <definition>[15]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="E_DISABLE_ENABLE" name="T13">
+                <gui_name language="en">T13</gui_name>
+                <description language="en">Trap coprocessor 15 primary register c13</description>
+                <definition>[13]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="E_DISABLE_ENABLE" name="T12">
+                <gui_name language="en">T12</gui_name>
+                <description language="en">Trap coprocessor 15 primary register c12</description>
+                <definition>[12]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="E_DISABLE_ENABLE" name="T11">
+                <gui_name language="en">T11</gui_name>
+                <description language="en">Trap coprocessor 15 primary register c11</description>
+                <definition>[11]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="E_DISABLE_ENABLE" name="T10">
+                <gui_name language="en">T10</gui_name>
+                <description language="en">Trap coprocessor 15 primary register c10</description>
+                <definition>[10]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="E_DISABLE_ENABLE" name="T9">
+                <gui_name language="en">T9</gui_name>
+                <description language="en">Trap coprocessor 15 primary register c9</description>
+                <definition>[9]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="E_DISABLE_ENABLE" name="T8">
+                <gui_name language="en">T8</gui_name>
+                <description language="en">Trap coprocessor 15 primary register c8</description>
+                <definition>[8]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="E_DISABLE_ENABLE" name="T7">
+                <gui_name language="en">T7</gui_name>
+                <description language="en">Trap coprocessor 15 primary register c7</description>
+                <definition>[7]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="E_DISABLE_ENABLE" name="T6">
+                <gui_name language="en">T6</gui_name>
+                <description language="en">Trap coprocessor 15 primary register c6</description>
+                <definition>[6]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="E_DISABLE_ENABLE" name="T5">
+                <gui_name language="en">T5</gui_name>
+                <description language="en">Trap coprocessor 15 primary register c5</description>
+                <definition>[5]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="E_DISABLE_ENABLE" name="T3">
+                <gui_name language="en">T3</gui_name>
+                <description language="en">Trap coprocessor 15 primary register c3</description>
+                <definition>[3]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="E_DISABLE_ENABLE" name="T2">
+                <gui_name language="en">T2</gui_name>
+                <description language="en">Trap coprocessor 15 primary register c2</description>
+                <definition>[2]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="E_DISABLE_ENABLE" name="T1">
+                <gui_name language="en">T1</gui_name>
+                <description language="en">Trap coprocessor 15 primary register c1</description>
+                <definition>[1]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="E_DISABLE_ENABLE" name="T0">
+                <gui_name language="en">T0</gui_name>
+                <description language="en">Trap coprocessor 15 primary register c0</description>
+                <definition>[0]</definition>
+            </bitField>
+        </register>
+        <register access="RW" name="HACR" size="4">
+            <gui_name language="en">HACR</gui_name>
+            <alias_name>CP15_HACR</alias_name>
+            <device_name type="rvi">CP15_HACR</device_name>
+            <device_name type="cadi">HACR</device_name>
+            <device_name type="rvi">CP15_HACR</device_name>
+            <device_name type="cadi">HACR</device_name>
+            <description language="en">Hypervisor Auxiliary Configuration</description>
+            <!-- Cortex-A7, A12, A15 and A17 do not implement HACR, so this register is always UNK/SBZP in Hyp mode and in Monitor mode when SCR.NS is 1. -->
+        </register>
+        <register access="RW" name="HTCR" size="4">
+            <gui_name language="en">HTCR</gui_name>
+            <alias_name>CP15_HTCR</alias_name>
+            <device_name type="rvi">CP15_HTCR</device_name>
+            <device_name type="cadi">HTCR</device_name>
+            <device_name type="rvi">CP15_HTCR</device_name>
+            <device_name type="cadi">HTCR</device_name>
+            <description language="en">Hypervisor Translation Control Register</description>
+            <bitField conditional="false" enumerationId="TTBCR_SHx" name="SH0">
+                <gui_name language="en">SH0</gui_name>
+                <description language="en">Shareability attribute for memory associated with translation table walks using HTTBR</description>
+                <definition>[13:12]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="TTBR_RGN" name="ORGN0">
+                <gui_name language="en">ORGN0</gui_name>
+                <description language="en">Outer cacheability attribute for memory associated with translation table walks using HTTBR</description>
+                <definition>[11:10]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="TTBR_IRGN" name="IRGN0">
+                <gui_name language="en">IRGN0</gui_name>
+                <description language="en">Inner cacheability attribute for memory associated with translation table walks using HTTBR</description>
+                <definition>[9:8]</definition>
+            </bitField>
+            <bitField conditional="false" name="T0SZ">
+                <gui_name language="en">T0SZ</gui_name>
+                <description language="en">The size offset of the memory region addressed by HTTBR</description>
+                <definition>[2:0]</definition>
+            </bitField>
+        </register>
+        <register access="RW" name="VTCR" size="4">
+            <gui_name language="en">VTCR</gui_name>
+            <alias_name>CP15_VTCR</alias_name>
+            <device_name type="rvi">CP15_VTCR</device_name>
+            <device_name type="cadi">VTCR</device_name>
+            <device_name type="rvi">CP15_VTCR</device_name>
+            <device_name type="cadi">VTCR</device_name>
+            <description language="en">Virtualization Translation Control Register</description>
+            <bitField conditional="false" enumerationId="TTBCR_SHx" name="SH0">
+                <gui_name language="en">SH0</gui_name>
+                <description language="en">Shareability attribute for memory associated with translation table walks using VTTBR</description>
+                <definition>[13:12]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="TTBR_RGN" name="ORGN0">
+                <gui_name language="en">ORGN0</gui_name>
+                <description language="en">Outer cacheability attribute for memory associated with translation table walks using VTTBR</description>
+                <definition>[11:10]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="TTBR_IRGN" name="IRGN0">
+                <gui_name language="en">IRGN0</gui_name>
+                <description language="en">Inner cacheability attribute for memory associated with translation table walks using VTTBR</description>
+                <definition>[9:8]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="VTCR_SL0" name="SL0">
+                <gui_name language="en">SL0</gui_name>
+                <description language="en">Starting level for translation table walks using VTTBR</description>
+                <definition>[7:6]</definition>
+            </bitField>
+            <bitField conditional="false" name="S">
+                <gui_name language="en">S</gui_name>
+                <description language="en">Sign extension bit</description>
+                <definition>[4]</definition>
+            </bitField>
+            <bitField conditional="false" name="T0SZ">
+                <gui_name language="en">T0SZ</gui_name>
+                <description language="en">The size offset of the memory region addressed by VTTBR</description>
+                <definition>[3:0]</definition>
+            </bitField>
+        </register>
+        <register access="RW" name="HTTBR" size="8">
+            <gui_name language="en">HTTBR</gui_name>
+            <alias_name>CP15_HTTBR</alias_name>
+            <device_name type="rvi">CP15_HTTBR</device_name>
+            <device_name type="cadi">HTTBR</device_name>
+            <device_name type="rvi">CP15_HTTBR</device_name>
+            <device_name type="cadi">HTTBR</device_name>
+            <description language="en">Hypervisor Translation Table Base Address</description>
+            <bitField conditional="false"  name="BADDR">
+                <gui_name language="en">Translation table base address</gui_name>
+                <description language="en">Translation table base address, bits[39:x]. The HTCR.T0SZ field determines the width of the defined translation table base address. Currently defined as [39:0] and includes the zero bits at the start. View as hexadecimal as the decimal values will be wrong.</description>
+                <definition>[39:0]</definition>
+            </bitField>
+        </register>
+        <register access="RW" name="VTTBR" size="8">
+            <gui_name language="en">VTTBR</gui_name>
+            <alias_name>CP15_VTTBR</alias_name>
+            <device_name type="rvi">CP15_VTTBR</device_name>
+            <device_name type="cadi">VTTBR</device_name>
+            <device_name type="rvi">CP15_VTTBR</device_name>
+            <device_name type="cadi">VTTBR</device_name>
+            <description language="en">Virtualization Translation Table Base</description>
+            <bitField conditional="false" name="VMID">
+                <gui_name language="en">VMID</gui_name>
+                <description language="en">The VMID for the translation table.</description>
+                <definition>[55:48]</definition>
+            </bitField>
+             <bitField conditional="false"  name="BADDR">
+                <gui_name language="en">Translation table base address</gui_name>
+                <description language="en">Translation table base address, bits[39:x]. X is determined by the VTCR.T0SZ and VTCR.SL0 fields. Currently defined as [39:0] and includes the zero bits at the start. View as hexadecimal as the decimal values will be wrong.</description>
+                <definition>[39:0]</definition>
+            </bitField>
+        </register>
+        <register access="RW" name="HSR" size="4">
+            <gui_name language="en">HSR</gui_name>
+            <alias_name>CP15_HSR</alias_name>
+            <device_name type="rvi">CP15_HSR</device_name>
+            <device_name type="cadi">HSR</device_name>
+            <device_name type="rvi">CP15_HSR</device_name>
+            <device_name type="cadi">HSR</device_name>
+            <description language="en">Hypervisor Syndrome</description>
+            <bitField conditional="false" name="EC">
+                <gui_name language="en">EC</gui_name>
+                <description language="en">Exception class</description>
+                <definition>[31:26]</definition>
+            </bitField>
+            <bitField conditional="false" name="IL">
+                <gui_name language="en">IL</gui_name>
+                <description language="en">Instruction length</description>
+                <definition>[25]</definition>
+            </bitField>
+            <bitField conditional="false" name="ISS">
+                <gui_name language="en">ISS</gui_name>
+                <description language="en">Instruction-specific syndrome</description>
+                <definition>[24:0]</definition>
+            </bitField>
+        </register>
+        <register access="RW" name="HDFAR" size="4">
+            <gui_name language="en">HDFAR</gui_name>
+            <alias_name>CP15_HDFAR</alias_name>
+            <device_name type="rvi">CP15_HDFAR</device_name>
+            <device_name type="cadi">HDFAR</device_name>
+            <device_name type="rvi">CP15_HDFAR</device_name>
+            <device_name type="cadi">HDFAR</device_name>
+            <description language="en">Hypervisor Data Fault Address</description>
+        </register>
+        <register access="RW" name="HIFAR" size="4">
+            <gui_name language="en">HIFAR</gui_name>
+            <alias_name>CP15_HIFAR</alias_name>
+            <device_name type="rvi">CP15_HIFAR</device_name>
+            <device_name type="cadi">HIFAR</device_name>
+            <device_name type="rvi">CP15_HIFAR</device_name>
+            <device_name type="cadi">HIFAR</device_name>
+            <description language="en">Hypervisor Instruction Fault Address</description>
+        </register>
+        <register access="RW" name="HPFAR" size="4">
+            <gui_name language="en">HPFAR</gui_name>
+            <alias_name>CP15_HPFAR</alias_name>
+            <device_name type="rvi">CP15_HPFAR</device_name>
+            <device_name type="cadi">HPFAR</device_name>
+            <device_name type="rvi">CP15_HPFAR</device_name>
+            <device_name type="cadi">HPFAR</device_name>
+            <description language="en">Hypervisor IPA Fault Address</description>
+        </register>
+        <register access="RW" name="HVBAR" size="4">
+            <gui_name language="en">HVBAR</gui_name>
+            <alias_name>CP15_HVBAR</alias_name>
+            <device_name type="rvi">CP15_HVBAR</device_name>
+            <device_name type="cadi">HVBAR</device_name>
+            <device_name type="rvi">CP15_HVBAR</device_name>
+            <device_name type="cadi">HVBAR</device_name>
+            <description language="en">Hypervisor Vector Base Address</description>
+        </register>
+    </register_group>
+</register_list>
+

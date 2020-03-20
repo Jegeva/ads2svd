@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!-- version for debug hardware connections -->
+<core_definition
+    xmlns="http://www.arm.com/core_definition"
+    xmlns:cr="http://www.arm.com/core_reg"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:xi="http://www.w3.org/2001/XInclude"
+    xmlns:tcf="http://com.arm.targetconfigurationeditor"
+    xsi:schemaLocation="http://www.arm.com/core_definition ../Schemas/core_definition.xsd"
+    architecture="ARMv8M">
+
+    <name>AEMv8M_FVP</name>
+    <internal_name>AEMv8M</internal_name>
+    <series>M</series>
+
+    <xi:include href="V8M_ArchitecturalCoreRegisters.inc" xpointer="xmlns(namespace=http://www.arm.com/core_reg)xpointer(//namespace:register_list)"/>
+    <cr:register_list name="FP">
+        <xi:include href="Registers/VFP/FP_V8M.xml" xpointer="xmlns(reg_group=http://www.arm.com/core_reg)xpointer(//reg_group:register_group)"/>
+    </cr:register_list>
+    <xi:include href="V8M_ArchitecturalSystemRegisters.inc" xpointer="xmlns(namespace=http://www.arm.com/core_reg)xpointer(//namespace:register_list)"/>
+
+</core_definition>

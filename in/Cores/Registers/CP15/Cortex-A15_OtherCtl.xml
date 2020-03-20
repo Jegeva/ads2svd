@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<register_list name="CP15"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns="http://www.arm.com/core_reg"
+    xsi:schemaLocation="http://www.arm.com/core_reg ../../../Schemas/core_register_definition.xsd"
+    xmlns:xi="http://www.w3.org/2001/XInclude"
+    xmlns:tcf="http://com.arm.targetconfigurationeditor">
+    <register_group name="OtherCtl">
+        <gui_name language="en">Other Controls</gui_name>
+        <description language="en">Other system control registers</description>
+        <xi:include href="Cortex-v7A_OtherCtl.xml" xpointer="xmlns(reg_group=http://www.arm.com/core_reg)xpointer(//reg_group:register)"/>
+        <register access="RW" name="ACTLR" size="4">
+            <gui_name language="en">ACTLR</gui_name>
+            <alias_name>CP15_ACTLR</alias_name>
+            <device_name type="rvi">CP15_ACTLR</device_name>
+            <device_name type="cadi">ACTLR</device_name>
+            <device_name type="rvi">CP15_ACTLR</device_name>
+            <device_name type="cadi">ACTLR</device_name>
+            <description language="en">Auxiliary Control</description>
+            <bitField conditional="false" enumerationId="E_DISABLE_ENABLE" name="SDA">
+                <gui_name language="en">SDA</gui_name>
+                <description language="en">Modify snoop-delayed exclusive handling</description>
+                <definition>[31]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="E_DISABLE_ENABLE" name="FCA">
+                <gui_name language="en">FCA</gui_name>
+                <description language="en">Force clock active</description>
+                <definition>[30]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="E_DISABLE_ENABLE" name="FVCA">
+                <gui_name language="en">FVCA</gui_name>
+                <description language="en">Force NEON and VFP clock active</description>
+                <definition>[29]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="ACTLR_L1M3" name="WSNAT">
+                <gui_name language="en">WSNAT</gui_name>
+                <description language="en">Write streaming no-allocate threshold</description>
+                <definition>[28:27]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="ACTLR_L1M2" name="WSNL1AT">
+                <gui_name language="en">WSNL1AT</gui_name>
+                <description language="en">Write streaming no L1-allocate threshold</description>
+                <definition>[26:25]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="E_DISABLE_ENABLE" name="NCSE">
+                <gui_name language="en">NCSE</gui_name>
+                <description language="en">Non-cacheable streaming enhancement</description>
+                <definition>[24]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="E_DISABLE_ENABLE" name="FIRSW">
+                <gui_name language="en">FIRSW</gui_name>
+                <description language="en">Force in-order requests to the same set and way</description>
+                <definition>[23]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="E_DISABLE_ENABLE" name="FILI">
+                <gui_name language="en">FILI</gui_name>
+                <description language="en">Force in-order load issue</description>
+                <definition>[22]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="E_DISABLE_ENABLE" name="DL2P">
+                <gui_name language="en">DL2P</gui_name>
+                <description language="en">Disable L2 TLB prefetching</description>
+                <definition>[21]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="GENERIC_EN_DISABLE" name="DL2IPA">
+                <gui_name language="en">DL2IPA</gui_name>
+                <description language="en">Disable L2 TBW IPA PA cache</description>
+                <definition>[20]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="GENERIC_EN_DISABLE" name="DL2S1W">
+                <gui_name language="en">DL2S1W</gui_name>
+                <description language="en">Disable L2 TBW stage 1 walk cache</description>
+                <definition>[19]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="GENERIC_EN_DISABLE" name="DL2S1L2">
+                <gui_name language="en">DL2S1L2</gui_name>
+                <description language="en">Disable L2 TBW stage 1 L2 PA cache</description>
+                <definition>[18]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="GENERIC_EN_DISABLE" name="DL2PO">
+                <gui_name language="en">DL2PO</gui_name>
+                <description language="en">Disable L2 TLB performance optimization</description>
+                <definition>[17]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="E_DISABLE_ENABLE" name="SODLR">
+                <gui_name language="en">SODLR</gui_name>
+                <description language="en">Enable full Strongly-ordered and Device load replay</description>
+                <definition>[16]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="E_DISABLE_ENABLE" name="FIBE">
+                <gui_name language="en">FIBE</gui_name>
+                <description language="en">Force in-order issue in branch execution unit</description>
+                <definition>[15]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="E_DISABLE_ENABLE" name="FIGL">
+                <gui_name language="en">FIGL</gui_name>
+                <description language="en">Force instruction group limit to one</description>
+                <definition>[14]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="E_DISABLE_ENABLE" name="FAW">
+                <gui_name language="en">FAW</gui_name>
+                <description language="en">Flush after CP14 and CP15 writes</description>
+                <definition>[13]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="E_DISABLE_ENABLE" name="FP">
+                <gui_name language="en">FP</gui_name>
+                <description language="en">Force push of CP14 CP15 registers</description>
+                <definition>[12]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="E_DISABLE_ENABLE" name="F1I">
+                <gui_name language="en">F1I</gui_name>
+                <description language="en">Force 1 instruction groups</description>
+                <definition>[11]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="E_DISABLE_ENABLE" name="FS">
+                <gui_name language="en">FS</gui_name>
+                <description language="en">Force serialization after each instruction group</description>
+                <definition>[10]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="GENERIC_EN_DISABLE" name="DFRO">
+                <gui_name language="en">DFRO</gui_name>
+                <description language="en">Disable flag-rename optimization</description>
+                <definition>[9]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="E_DISABLE_ENABLE" name="EWFIN">
+                <gui_name language="en">EWFIN</gui_name>
+                <description language="en">Execute WFI as NOP</description>
+                <definition>[8]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="E_DISABLE_ENABLE" name="EWFEN">
+                <gui_name language="en">EWFEN</gui_name>
+                <description language="en">Execute WFE as NOP</description>
+                <definition>[7]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="E_DISABLE_ENABLE" name="SMP">
+                <gui_name language="en">SMP</gui_name>
+                <description language="en">Enables the processor to receive instruction cache, BTB, and TLB maintenance operations from other processors</description>
+                <definition>[6]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="E_DISABLE_ENABLE" name="EPLDAN">
+                <gui_name language="en">EPLDAN</gui_name>
+                <description language="en">Execute PLD instructions as a NOP</description>
+                <definition>[5]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="GENERIC_EN_DISABLE" name="DIP">
+                <gui_name language="en">DIP</gui_name>
+                <description language="en">Disable indirect predictor</description>
+                <definition>[4]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="GENERIC_EN_DISABLE" name="DMBTB">
+                <gui_name language="en">DMBTB</gui_name>
+                <description language="en">Disables micro-Branch Target Buffer</description>
+                <definition>[3]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="E_DISABLE_ENABLE" name="LLBD">
+                <gui_name language="en">LLBD</gui_name>
+                <description language="en">Limit to one loop buffer detect per flush</description>
+                <definition>[2]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="GENERIC_EN_DISABLE" name="DLB">
+                <gui_name language="en">DLB</gui_name>
+                <description language="en">Disable loop buffer</description>
+                <definition>[1]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="E_DISABLE_ENABLE" name="EBTBI">
+                <gui_name language="en">EBTBI</gui_name>
+                <description language="en">Enable BTB invalidates</description>
+                <definition>[0]</definition>
+            </bitField>
+        </register>
+        <register access="RW" name="ACTLR2" size="4">
+            <gui_name language="en">ACTLR2</gui_name>
+            <alias_name>CP15_ACTLR2</alias_name>
+            <device_name type="rvi">CP15_ACTLR2</device_name>
+            <device_name type="cadi">ACTLR2</device_name>
+            <device_name type="rvi">CP15_ACTLR2</device_name>
+            <device_name type="cadi">ACTLR2</device_name>
+            <description language="en">Auxiliary Control Register 2</description>
+            <bitField conditional="false" enumerationId="E_DISABLE_ENABLE" name="ECPURCG">
+                <gui_name language="en">ECPURCG</gui_name>
+                <description language="en">Enable CPU regional clock gates</description>
+                <definition>[31]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="E_DISABLE_ENABLE" name="EDCC">
+                <gui_name language="en">EDCC</gui_name>
+                <description language="en">Execute data cache clean as data cache clean and invalidate</description>
+                <definition>[0]</definition>
+            </bitField>
+        </register>
+    </register_group>
+</register_list>
+

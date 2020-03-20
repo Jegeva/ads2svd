@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<register_list xmlns="http://www.arm.com/core_reg" xmlns:tcf="http://com.arm.targetconfigurationeditor" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="System" xsi:schemaLocation="http://www.arm.com/core_reg ../../../Schemas/core_register_definition.xsd">
+    <register_group name="ImplementationDefined">
+        <gui_name language="en">Implementation Defined</gui_name>
+        <description language="en">Implementation Defined</description>
+        <register access="RW" name="CPUACTLR_EL1" size="8">
+            <gui_name language="en">CPU Auxiliary Control Register</gui_name>
+            <description language="en">CPU Auxiliary Control Register.</description>
+        </register>
+        <register access="RW" name="CPUACTLR2_EL1" size="8">
+            <gui_name language="en">CPU Auxiliary Control Register 2</gui_name>
+            <description language="en">CPU Auxiliary Control Register 2.</description>
+        </register>
+        <register access="RO" name="CPUCFR_EL1" size="4">
+            <gui_name language="en">CPU Configuration Register</gui_name>
+            <description language="en">CPU Configuration Register.</description>
+        </register>
+        <register access="RW" name="CPUECTLR_EL1" size="8">
+            <gui_name language="en">CPU Extended Control Register</gui_name>
+            <description language="en">CPU Extended Control Register.</description>
+        </register>
+        <register access="RW" name="CPUPWRCTLR_EL1" size="4">
+            <gui_name language="en">Power Control Register</gui_name>
+            <description language="en">Power Control Register.</description>
+        </register>
+        <register access="RW" name="ERXPFGCDNR_EL1" size="4">
+            <gui_name language="en">Selected Error Pseudo Fault Generation Count Down Register</gui_name>
+            <description language="en">Selected Error Pseudo Fault Generation Count Down Register.</description>
+        </register>
+        <register access="RW" name="ERXPFGCTLR_EL1" size="4">
+            <gui_name language="en">Selected Error Pseudo Fault Generation Control Register</gui_name>
+            <description language="en">Selected Error Pseudo Fault Generation Control Register.</description>
+        </register>
+        <register access="RO" name="ERXPFGFR_EL1" size="4">
+            <gui_name language="en">Selected Pseudo Fault Generation Feature Register</gui_name>
+            <description language="en">Selected Pseudo Fault Generation Feature Register.</description>
+        </register>
+    </register_group>
+</register_list>

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<register_list
+    name="System"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns="http://www.arm.com/core_reg"
+    xsi:schemaLocation="http://www.arm.com/core_reg ../../Schemas/core_register_definition.xsd"
+    xmlns:tcf="http://com.arm.targetconfigurationeditor">
+    <peripheral name="NVIC" offset="0x00000000">
+        <gui_name language="en">NVIC</gui_name>
+        <description language="en">Nested Vectored Interrupt Controller registers</description>
+
+        <register access="RW" name="NVIC_ISER0" size="4" offset="0xE000E100">
+            <gui_name language="en">Interrupt Set-Enable 0</gui_name>
+            <description language="en">Enables, or reads the enable state of a group of interrupts</description>
+        </register>
+        <register access="RW" name="NVIC_ICER0" size="4" offset="0xE000E180">
+            <gui_name language="en">Interrupt Clear-Enable 0</gui_name>
+            <description language="en">Disables, or reads the enable state of a group of interrupts</description>
+        </register>
+        <register access="RW" name="NVIC_ISPR0" size="4" offset="0xE000E200">
+            <gui_name language="en">Interrupt Set-Pending 0</gui_name>
+            <description language="en">For a group of interrupts, changes interrupt status to pending, or shows the current pending
+status</description>
+        </register>
+        <register access="RW" name="NVIC_ICPR0" size="4" offset="0xE000E280">
+            <gui_name language="en">Interrupt Set-Pending 0</gui_name>
+            <description language="en">For a group of interrupts, clears the interrupt pending status, or shows the current pending
+status</description>
+        </register>
+        <register access="RW" name="NVIC_IABR0" size="4" offset="0xE000E300">
+            <gui_name language="en">Interrupt Active Bit 0</gui_name>
+            <description language="en">For a group of 32 interrupts, shows whether each interrupt is active</description>
+        </register>
+        <register access="RW" name="NVIC_IPR0" size="4" offset="0xE000E400">
+            <gui_name language="en">Interrupt Priority Register 0</gui_name>
+            <description language="en">Sets or reads interrupt priorities</description>
+        </register>
+        <register access="RW" name="NVIC_IPR1" size="4" offset="0xE000E404">
+            <gui_name language="en">Interrupt Priority Register 1</gui_name>
+            <description language="en">Sets or reads interrupt priorities</description>
+        </register>
+        <register access="RW" name="NVIC_IPR2" size="4" offset="0xE000E408">
+            <gui_name language="en">Interrupt Priority Register 2</gui_name>
+            <description language="en">Sets or reads interrupt priorities</description>
+        </register>
+        <register access="RW" name="NVIC_IPR3" size="4" offset="0xE000E40C">
+            <gui_name language="en">Interrupt Priority Register 3</gui_name>
+            <description language="en">Sets or reads interrupt priorities</description>
+        </register>
+        <register access="RW" name="NVIC_IPR4" size="4" offset="0xE000E410">
+            <gui_name language="en">Interrupt Priority Register 4</gui_name>
+            <description language="en">Sets or reads interrupt priorities</description>
+        </register>
+        <register access="RW" name="NVIC_IPR5" size="4" offset="0xE000E414">
+            <gui_name language="en">Interrupt Priority Register 5</gui_name>
+            <description language="en">Sets or reads interrupt priorities</description>
+        </register>
+        <register access="RW" name="NVIC_IPR6" size="4" offset="0xE000E418">
+            <gui_name language="en">Interrupt Priority Register 6</gui_name>
+            <description language="en">Sets or reads interrupt priorities</description>
+        </register>
+        <register access="RW" name="NVIC_IPR7" size="4" offset="0xE000E41C">
+            <gui_name language="en">Interrupt Priority Register 7</gui_name>
+            <description language="en">Sets or reads interrupt priorities</description>
+        </register>
+
+    </peripheral>
+
+</register_list>

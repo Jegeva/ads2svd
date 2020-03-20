@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<register_list name="CP15"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns="http://www.arm.com/core_reg"
+    xsi:schemaLocation="http://www.arm.com/core_reg ../../../Schemas/core_register_definition.xsd"
+    xmlns:tcf="http://com.arm.targetconfigurationeditor">
+    <register_group name="TLB_VE">
+        <gui_name language="en">TLB_VE</gui_name>
+        <description language="en">TLB maintenance operations - Virtualisation Extensions</description>
+        <register access="WO" name="TLBIALLHIS" size="4">
+            <gui_name language="en">TLBIALLHIS</gui_name>
+            <alias_name>CP15_TLBIALLHIS</alias_name>
+            <device_name type="rvi">CP15_TLBIALLHIS</device_name>
+            <device_name type="cadi">TLBIALLHIS</device_name>
+            <device_name type="rvi">CP15_TLBIALLHIS</device_name>
+            <device_name type="cadi">TLBIALLHIS</device_name>
+            <description language="en">Invalidate entire Hyp unified TLB Inner Shareable</description>
+        </register>
+        <register access="WO" name="TLBIMVAHIS" size="4">
+            <gui_name language="en">TLBIMVAHIS</gui_name>
+            <alias_name>CP15_TLBIMVAHIS</alias_name>
+            <device_name type="rvi">CP15_TLBIMVAHIS</device_name>
+            <device_name type="cadi">TLBIMVAHIS</device_name>
+            <device_name type="rvi">CP15_TLBIMVAHIS</device_name>
+            <device_name type="cadi">TLBIMVAHIS</device_name>
+            <description language="en">Invalidate Hyp unified TLB entry by MVA Inner Shareable</description>
+        </register>
+        <register access="WO" name="TLBIALLNSNHIS" size="4">
+            <gui_name language="en">TLBIALLNSNHIS</gui_name>
+            <alias_name>CP15_TLBIALLNSNHIS</alias_name>
+            <device_name type="rvi">CP15_TLBIALLNSNHIS</device_name>
+            <device_name type="cadi">TLBIALLNSNHIS</device_name>
+            <device_name type="rvi">CP15_TLBIALLNSNHIS</device_name>
+            <device_name type="cadi">TLBIALLNSNHIS</device_name>
+            <description language="en">Invalidate entire Non-secure Non-Hyp unified TLB Inner Shareable</description>
+        </register>
+        <register access="WO" name="TLBIALLH" size="4">
+            <gui_name language="en">TLBIALLH</gui_name>
+            <alias_name>CP15_TLBIALLH</alias_name>
+            <device_name type="rvi">CP15_TLBIALLH</device_name>
+            <device_name type="cadi">TLBIALLH</device_name>
+            <device_name type="rvi">CP15_TLBIALLH</device_name>
+            <device_name type="cadi">TLBIALLH</device_name>
+            <description language="en">Invalidate entire Hyp unified TLB</description>
+        </register>
+        <register access="WO" name="TLBIMVAH" size="4">
+            <gui_name language="en">TLBIMVAH</gui_name>
+            <alias_name>CP15_TLBIMVAH</alias_name>
+            <device_name type="rvi">CP15_TLBIMVAH</device_name>
+            <device_name type="cadi">TLBIMVAH</device_name>
+            <device_name type="rvi">CP15_TLBIMVAH</device_name>
+            <device_name type="cadi">TLBIMVAH</device_name>
+            <description language="en">Invalidate Hyp unified TLB entry by MVA</description>
+        </register>
+        <register access="WO" name="TLBIALLNSNH" size="4">
+            <gui_name language="en">TLBIALLNSNH</gui_name>
+            <alias_name>CP15_TLBIALLNSNH</alias_name>
+            <device_name type="rvi">CP15_TLBIALLNSNH</device_name>
+            <device_name type="cadi">TLBIALLNSNH</device_name>
+            <device_name type="rvi">CP15_TLBIALLNSNH</device_name>
+            <device_name type="cadi">TLBIALLNSNH</device_name>
+            <description language="en">Invalidate entire Non-secure Non-Hyp unified TLB</description>
+        </register>
+    </register_group>
+</register_list>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<container xmlns:cr="http://www.arm.com/core_reg" xmlns="http://www.arm.com/core_reg" xmlns:tcf="http://com.arm.targetconfigurationeditor" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.arm.com/core_reg ../../../Schemas/core_register_definition.xsd">
+  <cr:register_list name="V8_2" override="true">
+    <register_group name="V8_2_Extensions">
+        <gui_name language="en">V8.2 Extensions</gui_name>
+        <description language="en">V8.2 Extensions</description>
+
+        <register access="RO" name="ERXPFGF_EL1" size="8">
+          <gui_name language="en">ERXPFGF_EL1</gui_name>
+          <description language="en">ERXPFGF_EL1</description>
+        </register>
+        <register access="RW" name="ERXPFGCTL_EL1" size="8">
+          <gui_name language="en">ERXPFGCTL_EL1</gui_name>
+          <description language="en">ERXPFGCTL_EL1</description>
+        </register>
+        <register access="RW" name="ERXPFGCDN_EL1" size="8">
+          <gui_name language="en">ERXPFGCDN_EL1</gui_name>
+          <description language="en">ERXPFGCDN_EL1</description>
+        </register>
+        <register access="RW" name="ERXMISC2_EL1" size="8">
+          <gui_name language="en">ERXMISC2_EL1</gui_name>
+          <description language="en">ERXMISC2_EL1</description>
+        </register>
+        <register access="RW" name="ERXMISC3_EL1" size="8">
+          <gui_name language="en">ERXMISC3_EL1</gui_name>
+          <description language="en">ERXMISC3_EL1</description>
+        </register>
+</register_group>
+</cr:register_list>
+</container>

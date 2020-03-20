@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<register_list name="VGIC" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.arm.com/core_reg"
+    xsi:schemaLocation="http://www.arm.com/core_reg ../../../Schemas/core_register_definition.xsd">
+
+    <register_group name="GICV">
+        <gui_name language="en">VGIC VCPU Virtual Machine view</gui_name>
+        <description language="en">VGIC VCPU Virtual Machine view</description>
+
+        <register name="GICV_CTLR" size="4" access="RW">
+            <gui_name language="en">GICV_CTLR</gui_name>
+            <description language="en">VM Control Register</description>
+        </register>
+        <register name="GICV_PMR" size="4" access="RW">
+            <gui_name language="en">GICV_PMR</gui_name>
+            <description language="en">VM Priority Mask Register</description>
+        </register>
+        <register name="GICV_BPR" size="4" access="RW">
+            <gui_name language="en">GICV_BPR</gui_name>
+            <description language="en">VM Binary Point Register</description>
+        </register>
+        <register name="GICV_IAR" size="4" access="RW">
+            <gui_name language="en">GICV_IAR</gui_name>
+            <description language="en">VM Interrupt Acknowledge Register</description>
+        </register>
+        <register name="GICV_EOIR" size="4" access="RW">
+            <gui_name language="en">GICV_EOIR</gui_name>
+            <description language="en">VM End of Interrupt Register</description>
+        </register>
+        <register name="GICV_RPR" size="4" access="RW">
+            <gui_name language="en">GICV_RPR</gui_name>
+            <description language="en">VM Running Priority Register</description>
+        </register>
+        <register name="GICV_HPPIR" size="4" access="RW">
+            <gui_name language="en">GICV_HPPIR</gui_name>
+            <description language="en">VM Highest Priority Pending Interrupt Register</description>
+        </register>
+        <register name="GICV_ABPR" size="4" access="RW">
+            <gui_name language="en">GICV_ABPR</gui_name>
+            <description language="en">VM Aliased Binary Point Register</description>
+        </register>
+        <register name="GICV_AIAR" size="4" access="RW">
+            <gui_name language="en">GICV_AIAR</gui_name>
+            <description language="en">VM Aliased Interrupt Acknowledge Register</description>
+        </register>
+        <register name="GICV_AEOIR" size="4" access="RW">
+            <gui_name language="en">GICV_AEOIR</gui_name>
+            <description language="en">VM Aliased End of Interrupt Register</description>
+        </register>
+        <register name="GICV_AHPPIR" size="4" access="RW">
+            <gui_name language="en">GICV_AHPPIR</gui_name>
+            <description language="en">VM Aliased Highest Priority Pending Interrupt Register</description>
+        </register>
+        <register name="GICV_APR0" size="4" access="RW">
+            <gui_name language="en">GICV_APR0</gui_name>
+            <description language="en">Active Priority Register 0</description>
+        </register>
+        <register name="GICV_NSAPR0" size="4" access="RW">
+            <gui_name language="en">GICV_NSAPR0</gui_name>
+            <description language="en">NS Active Priority Register 0</description>
+        </register>
+        <register name="GICV_IIDR" size="4" access="RW">
+            <gui_name language="en">GICV_IIDR</gui_name>
+            <description language="en">VM CPU Interface Identification Register</description>
+        </register>
+        <register name="GICV_DIR" size="4" access="RW">
+            <gui_name language="en">GICV_DIR</gui_name>
+            <description language="en">VM Deactivate Interrupt Register</description>
+        </register>
+    </register_group>
+</register_list>

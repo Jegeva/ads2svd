@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<core_definition
+    xmlns="http://www.arm.com/core_definition"
+    xmlns:cr="http://www.arm.com/core_reg"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:xi="http://www.w3.org/2001/XInclude"
+    xmlns:tcf="http://com.arm.targetconfigurationeditor"
+    xsi:schemaLocation="http://www.arm.com/core_definition ../Schemas/core_definition.xsd"
+    architecture="ARMv7M">
+
+    <name>Cortex-M7</name>
+    <internal_name>Cortex-M7</internal_name>
+    <series>M</series>
+
+    <cr:register_list name="Core" display_by_default="true">
+        <xi:include href="Registers/core_registers_m7.xml" xpointer="xmlns(reg_group=http://www.arm.com/core_reg)xpointer(//reg_group:register)"/>
+        <!-- Enumerations -->
+        <xi:include href="Registers/core_registers_m7.xml" xpointer="xmlns(tcf=http://com.arm.targetconfigurationeditor)xpointer(//tcf:enumeration)"/>
+    </cr:register_list>
+
+    <cr:register_list name="System">
+        <xi:include href="Registers/system_registers_m7.xml" xpointer="xmlns(reg_group=http://www.arm.com/core_reg)xpointer(//reg_group:peripheral)"/>
+        <xi:include href="Registers/nvic_registers_v7m.xml" xpointer="xmlns(reg_group=http://www.arm.com/core_reg)xpointer(//reg_group:peripheral)"/>
+        <!-- Enumerations -->
+        <xi:include href="Registers/system_registers_m7.xml" xpointer="xmlns(tcf=http://com.arm.targetconfigurationeditor)xpointer(//tcf:enumeration)"/>
+        <xi:include href="Registers/mpu_registers_v7m.xml" xpointer="xmlns(reg_group=http://www.arm.com/core_reg)xpointer(//reg_group:peripheral)"/>
+        <!-- Enumerations -->
+        <xi:include href="Registers/mpu_registers_v7m.xml" xpointer="xmlns(tcf=http://com.arm.targetconfigurationeditor)xpointer(//tcf:enumeration)"/>
+        <xi:include href="Registers/cache_registers_v7em.xml" xpointer="xmlns(reg_group=http://www.arm.com/core_reg)xpointer(//reg_group:peripheral)"/>
+        <!-- Enumerations -->
+        <xi:include href="Registers/cache_registers_v7em.xml" xpointer="xmlns(tcf=http://com.arm.targetconfigurationeditor)xpointer(//tcf:enumeration)"/>
+    </cr:register_list>
+
+    <cr:register_list name="FP">
+        <xi:include href="Registers/VFP/FPv4_SP.xml" xpointer="xmlns(reg_group=http://www.arm.com/core_reg)xpointer(//reg_group:register_group)"/>
+<!--
+	<xi:include href="Registers/VFP/FPv4_SP.xml" xpointer="xmlns(reg_group=http://www.arm.com/core_reg)xpointer(//reg_group:peripheral)"/>
+-->
+        <xi:include href="Registers/VFP/FPv4_SP.xml" xpointer="xmlns(tcf=http://com.arm.targetconfigurationeditor)xpointer(//tcf:enumeration)"/>
+    </cr:register_list>
+
+</core_definition>

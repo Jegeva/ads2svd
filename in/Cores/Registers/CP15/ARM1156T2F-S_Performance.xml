@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<register_list
+    name="CP15"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns="http://www.arm.com/core_reg"
+    xsi:schemaLocation="http://www.arm.com/core_reg ../../../Schemas/core_register_definition.xsd"
+    xmlns:tcf="http://com.arm.targetconfigurationeditor">
+    <register_group name="Performance">
+        <gui_name language="en">Performance</gui_name>
+        <description language="en">Tightly Coupled Memory control</description>
+        <register access="RW" name="PMNC" size="4">
+            <gui_name language="en">Performance Monitor Control</gui_name>
+            <alias_name>CP15_PMNC</alias_name>
+            <device_name type="rvi">CP15_PMNC</device_name>
+            <device_name type="cadi">CP15_PMNC</device_name>
+            <description language="en">Controls the operation of:&#x0A;- the Cycle Counter Register&#x0A;- the Count Register 0&#x0A;- the Count Register 1</description>
+            <bitField conditional="false" name="FCC" enumerationId="GENERIC_ENABLED_DISABLED">
+                <gui_name language="en">FCC</gui_name>
+                <description language="en">Enable and disable clock counter FIQ interrupt reporting</description>
+                <definition>[30]</definition>
+            </bitField>
+            <bitField conditional="false" name="FC1" enumerationId="GENERIC_ENABLED_DISABLED">
+                <gui_name language="en">-FC1</gui_name>
+                <description language="en">Enable and disable performance counter 1 FIQ interrupt reporting</description>
+                <definition>[29]</definition>
+            </bitField>
+            <bitField conditional="false" name="FC0" enumerationId="GENERIC_ENABLED_DISABLED">
+                <gui_name language="en">FC0</gui_name>
+                <description language="en">Enable and disable performance counter 0 FIQ interrupt reporting</description>
+                <definition>[28]</definition>
+            </bitField>
+            <bitField conditional="false" name="EvtCount0" enumerationId="CP15_PMNC_EVTCOUNTX">
+                <gui_name language="en">Event Count 0</gui_name>
+                <description language="en">Identifies the source of events for Count Register 0</description>
+                <definition>[27:20]</definition>
+            </bitField>
+            <bitField conditional="false" name="EvtCount1" enumerationId="CP15_PMNC_EVTCOUNTX">
+                <gui_name language="en">Event Count 1</gui_name>
+                <description language="en">Identifies the source of events for Count Register 1</description>
+                <definition>[19:12]</definition>
+            </bitField>
+            <bitField conditional="false" name="X" enumerationId="GENERIC_DISABLED_ENABLED">
+                <gui_name language="en">X</gui_name>
+                <description language="en">Enable Export of the events to the event bus to an external monitoring block</description>
+                <definition>[11]</definition>
+            </bitField>
+            <bitField conditional="false" name="OCC" enumerationId="CP15_PMNC_OCX">
+                <gui_name language="en">OCC</gui_name>
+                <description language="en">Cycle Counter Register overflow flag</description>
+                <definition>[10]</definition>
+            </bitField>
+            <bitField conditional="false" name="OC1" enumerationId="CP15_PMNC_OCX">
+                <gui_name language="en">OC1</gui_name>
+                <description language="en">Count Register 1 overflow flag</description>
+                <definition>[9]</definition>
+            </bitField>
+            <bitField conditional="false" name="OC0" enumerationId="CP15_PMNC_OCX">
+                <gui_name language="en">OC0</gui_name>
+                <description language="en">Count Register 0 overflow flag</description>
+                <definition>[8]</definition>
+            </bitField>
+            <bitField conditional="false" name="ICC" enumerationId="GENERIC_DISABLED_ENABLED">
+                <gui_name language="en">ICC</gui_name>
+                <description language="en">Enables or disables Cycle Counter interrupt reporting</description>
+                <definition>[6]</definition>
+            </bitField>
+            <bitField conditional="false" name="IC1" enumerationId="GENERIC_DISABLED_ENABLED">
+                <gui_name language="en">IC1</gui_name>
+                <description language="en">Enables or disables Cycle Counter 1 interrupt reporting</description>
+                <definition>[5]</definition>
+            </bitField>
+            <bitField conditional="false" name="IC0" enumerationId="GENERIC_DISABLED_ENABLED">
+                <gui_name language="en">IC0</gui_name>
+                <description language="en">Enables or disables Cycle Counter 0 interrupt reporting</description>
+                <definition>[4]</definition>
+            </bitField>
+            <bitField conditional="false" name="D" enumerationId="CP15_PMNC_D">
+                <gui_name language="en">D</gui_name>
+                <description language="en">Cycle count divider</description>
+                <definition>[3]</definition>
+            </bitField>
+            <bitField conditional="false" name="C">
+                <gui_name language="en">C</gui_name>
+                <description language="en">Cycle Counter Register Reset</description>
+                <definition>[2]</definition>
+            </bitField>
+            <bitField conditional="false" name="P">
+                <gui_name language="en">P</gui_name>
+                <description language="en">Count Register 1 and Count Register 0 Reset</description>
+                <definition>[1]</definition>
+            </bitField>
+            <bitField conditional="false" name="E" enumerationId="GENERIC_DISABLED_ENABLED">
+                <gui_name language="en">E</gui_name>
+                <description language="en">Enable all counters</description>
+                <definition>[0]</definition>
+            </bitField>
+        </register>
+        <register access="RW" name="CCNT" size="4">
+            <gui_name language="en">Cycle Counter</gui_name>
+            <alias_name>CP15_CCNT</alias_name>
+            <device_name type="rvi">CP15_CCNT</device_name>
+            <device_name type="cadi">CP15_CCNT</device_name>
+            <description language="en">Counts the core clock cycles</description>
+        </register>
+        <register access="RW" name="PMN0" size="4">
+            <gui_name language="en">Count Register 0</gui_name>
+            <alias_name>CP15_PMN0</alias_name>
+            <device_name type="rvi">CP15_PMN0</device_name>
+            <device_name type="cadi">CP15_PMN0</device_name>
+            <description language="en">Counts instances of an event that the Performance Monitor Control Register selects</description>
+        </register>
+        <register access="RW" name="PMN1" size="4">
+            <gui_name language="en">Count Register 1</gui_name>
+            <alias_name>CP15_PMN1</alias_name>
+            <device_name type="rvi">CP15_PMN1</device_name>
+            <device_name type="cadi">CP15_PMN1</device_name>
+            <description language="en">Counts instances of an event that the Performance Monitor Control Register selects</description>
+        </register>
+    </register_group>
+</register_list>
+

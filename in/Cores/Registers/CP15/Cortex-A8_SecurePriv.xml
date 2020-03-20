@@ -1,0 +1,945 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<register_list name="CP15"
+               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+               xmlns="http://www.arm.com/core_reg"
+               xmlns:xi="http://www.w3.org/2001/XInclude"
+               xsi:schemaLocation="http://www.arm.com/core_reg ../../../Schemas/core_register_definition.xsd"
+               xmlns:tcf="http://com.arm.targetconfigurationeditor">
+
+    <access_world>Secure</access_world>
+    <register_group name="Secure">
+        <gui_name language="en">Secure Mode Registers</gui_name>
+        <description language="en">CP15 Registers that are banked in Secure Mode</description>
+        <register access="RW" name="S_CSSELR" size="4">
+            <gui_name language="en">Cache Size Selection</gui_name>
+            <alias_name>CP15_S_CACHE_SIZE_SELECT</alias_name>
+            <device_name type="rvi">CP15_S_CACHE_SIZE_SELECT</device_name>
+            <device_name type="cadi">CP15_S_CACHE_SIZE_SELECT</device_name>
+            <description language="en">Provides cache size information for up to eight levels of cache containing instruction, data, or unified caches</description>
+            <bitField conditional="false" enumerationId="CP15_S_CACHE_SIZE_SELECT_LEVEL" name="Level">
+                <gui_name language="en">Level</gui_name>
+                <description language="en">Cache level selected</description>
+                <definition>[3:1]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="CP15_S_CACHE_SIZE_SELECT_IND" name="IND">
+                <gui_name language="en">IND</gui_name>
+                <description language="en">Instruction or Data/Unified.</description>
+                <definition>[0]</definition>
+            </bitField>
+        </register>
+        <register access="RW" name="S_SCTLR" size="4">
+            <gui_name language="en">Control</gui_name>
+            <alias_name>CP15_S_CONTROL</alias_name>
+            <device_name type="rvi">CP15_S_CONTROL</device_name>
+            <device_name type="cadi">CP15_S_CONTROL</device_name>
+            <description language="en">Provides control and configuration of:&#x0A;-memory alignment, endianness, protection, and fault behavior&#x0A;-MMU, cache enables, and cache replacement strategy&#x0A;-interrupts and behavior of interrupt latency&#x0A;-location for exception vectors&#x0A;-program flow prediction</description>
+            <bitField conditional="false" enumerationId="GENERIC_DISABLED_ENABLED" name="TE">
+                <gui_name language="en">TE</gui_name>
+                <description language="en">Thumb exception enable bit (banked).</description>
+                <definition>[30]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="GENERIC_DISABLED_ENABLED" name="AFE">
+                <gui_name language="en">AFE</gui_name>
+                <description language="en">This is the Access Flag Enable bit (banked).</description>
+                <definition>[29]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="GENERIC_DISABLED_ENABLED" name="TRE">
+                <gui_name language="en">TRE</gui_name>
+                <description language="en">This bit controls the TEX remap functionality in the MMU (banked).</description>
+                <definition>[28]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="GENERIC_MASKABLE_NOT_MASKABLE" name="NMFI" access="RO">
+                <gui_name language="en">NMFI</gui_name>
+                <description language="en">This is the Non-Maskable Fast Interrupt enable bit.</description>
+                <definition>[27]</definition>
+            </bitField>
+            <bitField conditional="false" name="EE">
+                <gui_name language="en">EE</gui_name>
+                <description language="en">Determines the value of the CPSR E bit on an exception (banked).</description>
+                <definition>[25]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="CP15_CONTROL_VECTORS" name="V">
+                <gui_name language="en">V</gui_name>
+                <description language="en">Determines the location of exception vectors (banked).</description>
+                <definition>[13]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="GENERIC_DISABLED_ENABLED" name="I">
+                <gui_name language="en">I</gui_name>
+                <description language="en">Determines if instructions can be cached in any instruction cache at any cache level (banked).</description>
+                <definition>[12]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="GENERIC_DISABLED_ENABLED" name="Z">
+                <gui_name language="en">Z</gui_name>
+                <description language="en">Enables program flow prediction (banked).</description>
+                <definition>[11]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="GENERIC_DISABLED_ENABLED" name="C">
+                <gui_name language="en">C</gui_name>
+                <description language="en">Determines if data can be cached in a data or unified cache at any cache level (banked).</description>
+                <definition>[2]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="GENERIC_DISABLED_ENABLED" name="A">
+                <gui_name language="en">A</gui_name>
+                <description language="en">Enables strict alignment of data to detect alignment faults in data accesses (banked).</description>
+                <definition>[1]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="GENERIC_DISABLED_ENABLED" name="M">
+                <gui_name language="en">M</gui_name>
+                <description language="en">Enables the MMU.</description>
+                <definition>[0]</definition>
+            </bitField>
+        </register>
+        <register access="RW" name="S_ACTLR" size="4">
+            <gui_name language="en">Auxiliary Control</gui_name>
+            <alias_name>CP15_S_AUXILIARY_CONTROL</alias_name>
+            <device_name type="rvi">CP15_S_AUXILIARY_CONTROL</device_name>
+            <device_name type="cadi">CP15_S_AUXILIARY_CONTROL</device_name>
+            <description language="en">Controls processor-specific features that are not architecturally described</description>
+            <bitField conditional="false" enumerationId="CP15_AUXILIARY_CONTROL_HRD" name="L2_hardware_reset_disable" access="RO">
+                <gui_name language="en">L2 hardware reset disable</gui_name>
+                <description language="en">Monitors the L2 hardware reset disable bit, L2RSTDISABLE</description>
+                <definition>[31]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="CP15_AUXILIARY_CONTROL_HRD" name="L1_hardware_reset_disable" access="RO">
+                <gui_name language="en">L1 hardware reset disable</gui_name>
+                <description language="en">Monitors the L1 hardware reset disable bit, L1RSTDISABLE</description>
+                <definition>[30]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="CP15_AUXILIARY_CONTROL_CMP" name="Cache_maintenance_pipeline">
+                <gui_name language="en">Cache maintenance pipeline</gui_name>
+                <description language="en">Specify pipelining of CP15 data cache maintenance operations</description>
+                <definition>[20]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="GENERIC_ENABLED_DISABLED" name="Clock_stop_request_disable">
+                <gui_name language="en">Clock stop request disable</gui_name>
+                <description language="en">Disables Clock stop request</description>
+                <definition>[19]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="GENERIC_DISABLED_ENABLED" name="CP14_CP15_instruction_serialization">
+                <gui_name language="en">CP14/CP15 instruction serialization</gui_name>
+                <description language="en">Impwait_ones serialization on those CP14 and CP15 instructions that are not natively serialized</description>
+                <definition>[18]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="GENERIC_DISABLED_ENABLED" name="CP14_CP15_wait_on_idle">
+                <gui_name language="en">CP14/CP15 wait on idle</gui_name>
+                <description language="en">Imposes wait on idle protocol of CP14 and CP15 serialized instructions that do not natively wait on idle</description>
+                <definition>[17]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="GENERIC_DISABLED_ENABLED" name="CP14_CP15_pipeline_flush">
+                <gui_name language="en">CP14/CP15 pipeline flush</gui_name>
+                <description language="en">Imposes a pipeline flush on CP14 and CP15 instructions that do not natively include one</description>
+                <definition>[16]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="GENERIC_DISABLED_ENABLED" name="Force_ETM_clock">
+                <gui_name language="en">Force ETM clock</gui_name>
+                <description language="en">Forces ETM clock enable active</description>
+                <definition>[15]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="GENERIC_DISABLED_ENABLED" name="Force_NEON_clock">
+                <gui_name language="en">Force NEON clock</gui_name>
+                <description language="en">Forces NEON clock enable active</description>
+                <definition>[14]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="GENERIC_DISABLED_ENABLED" name="Force_main_clock">
+                <gui_name language="en">Force main clock</gui_name>
+                <description language="en">Forces the main processor clock enable active</description>
+                <definition>[13]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="GENERIC_DISABLED_ENABLED" name="Force_NEON_single_issue">
+                <gui_name language="en">Force NEON single issue</gui_name>
+                <description language="en">Forces single issue of Advanced SIMD instructions.</description>
+                <definition>[12]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="GENERIC_DISABLED_ENABLED" name="Force_load_store_single_issue">
+                <gui_name language="en">Force load store single issue</gui_name>
+                <description language="en">Forces single issue of load/store instructions</description>
+                <definition>[11]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="GENERIC_DISABLED_ENABLED" name="Force_single_issue">
+                <gui_name language="en">Force single issue</gui_name>
+                <description language="en">Forces single issue of all instructions</description>
+                <definition>[10]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="CP15_AUXILIARY_CONTROL_PLDNOP" name="PLDNOP">
+                <gui_name language="en">PLDNOP</gui_name>
+                <description language="en">Executes PLD instructions as a NOP instruction</description>
+                <definition>[9]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="CP15_AUXILIARY_CONTROL_WFINOP" name="WFINOP">
+                <gui_name language="en">WFINOP</gui_name>
+                <description language="en">Executes WFI instructions as a NOP instruction</description>
+                <definition>[8]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="GENERIC_ENABLED_DISABLED" name="Disable_branch_size_mispredicts">
+                <gui_name language="en">Disable branch size mispredicts</gui_name>
+                <description language="en">Prevents BTB branch size mispredicts</description>
+                <definition>[7]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="CP15_AUXILIARY_CONTROL_IBE" name="IBE">
+                <gui_name language="en">IBE</gui_name>
+                <description language="en">Invalidates BTB enable</description>
+                <definition>[6]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="GENERIC_DISABLED_ENABLED" name="L1NEON">
+                <gui_name language="en">L1NEON</gui_name>
+                <description language="en">Enables caching NEON data within the L1 data cache</description>
+                <definition>[5]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="GENERIC_DISABLED_ENABLED" name="ASA">
+                <gui_name language="en">ASA</gui_name>
+                <description language="en">Enables speculative accesses on AXI</description>
+                <definition>[4]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="GENERIC_DISABLED_ENABLED" name="L1PE">
+                <gui_name language="en">L1PE</gui_name>
+                <description language="en">Enables L1 cache parity detection</description>
+                <definition>[3]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="GENERIC_DISABLED_ENABLED" name="L2EN_B">
+                <gui_name language="en">L2EN_B</gui_name>
+                <description language="en">B Enables L2 cache</description>
+                <definition>[1]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="GENERIC_ENABLED_DISABLED" name="L1ALIAS">
+                <gui_name language="en">L1ALIAS</gui_name>
+                <description language="en">Enables L1 data cache hardware alias checks</description>
+                <definition>[0]</definition>
+            </bitField>
+        </register>
+        <register access="RW" name="S_TTBR0" size="4">
+            <gui_name language="en">Secure Translation Table Base Register 0</gui_name>
+            <alias_name>CP15_S_TTBR0</alias_name>
+            <device_name type="rvi">CP15_S_TTBR0</device_name>
+            <device_name type="cadi">CP15_S_TTBR0</device_name>
+            <description language="en">Holds the physical address of the first level translation table</description>
+            <bitField conditional="false" enumerationId="E_RGN_TYPE" name="RGN">
+                <gui_name language="en">RGN</gui_name>
+                <description language="en">Indicates the outer cacheable attributes for translation table walking</description>
+                <definition>[4:3]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="CP15_TTBR0_S" name="S">
+                <gui_name language="en">S</gui_name>
+                <description language="en">Indicates the translation table walk is to non-shared or to shared memory</description>
+                <definition>[1]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="CP15_TTBR0_C" name="C">
+                <gui_name language="en">C</gui_name>
+                <description language="en">Indicates the translation table walk is inner cacheable or inner non-cacheable</description>
+                <definition>[0]</definition>
+            </bitField>
+        </register>
+        <register access="RW" name="S_TTBR1" size="4">
+            <gui_name language="en">Secure Translation Table Base Register 1</gui_name>
+            <alias_name>CP15_S_TTBR1</alias_name>
+            <device_name type="rvi">CP15_S_TTBR1</device_name>
+            <device_name type="cadi">CP15_S_TTBR1</device_name>
+            <description language="en">Holds the physical address of the first level table</description>
+            <bitField conditional="false" name="Translation_table_base_1">
+                <gui_name language="en">Translation_table_base_1</gui_name>
+                <description language="en">Holds the translation table base address, the physical address of the first level translation table</description>
+                <definition>[31:14]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="E_RGN_TYPE" name="RGN">
+                <gui_name language="en">RGN</gui_name>
+                <description language="en">Indicates the outer cacheable attributes for translation table walking</description>
+                <definition>[4:3]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="CP15_TTBR1_S" name="S">
+                <gui_name language="en">S</gui_name>
+                <description language="en">Indicates the translation table walk is to non-shared or to shared memory</description>
+                <definition>[1]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="CP15_TTBR1_C" name="C">
+                <gui_name language="en">C</gui_name>
+                <description language="en">Indicates the translation table walk is inner cacheable or inner non-cacheable</description>
+                <definition>[0]</definition>
+            </bitField>
+        </register>
+        <register access="RW" name="S_TTBCR" size="4">
+            <gui_name language="en">Secure Translation Table Base Control</gui_name>
+            <alias_name>CP15_S_TTBC</alias_name>
+            <device_name type="rvi">CP15_S_TTBC</device_name>
+            <device_name type="cadi">CP15_S_TTBCR</device_name>
+            <description language="en">Determines if a translation table miss for a specific VA uses, for its translation table walk, TTBR0 or TTBR1</description>
+            <bitField conditional="false" name="PD1">
+                <gui_name language="en">PD1</gui_name>
+                <description language="en">Specifies occurrence of a translation table walk on a TLB miss when using Translation Table Base Register 1. When translation table walk is disabled, a section translation fault occurs instead on a TLB miss.</description>
+                <definition>[5]</definition>
+            </bitField>
+            <bitField conditional="false" name="PD0">
+                <gui_name language="en">PD0</gui_name>
+                <description language="en">Specifies occurrence of a translation table walk on a TLB miss when using Translation Table Base Register 0. When translation table walk is disabled, a section translation fault occurs instead on a TLB miss.</description>
+                <definition>[4]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="E_TBR_PAGE_SIZE" name="N">
+                <gui_name language="en">N</gui_name>
+                <description language="en">Specifies the boundary size of Translation Table Base Register 0.</description>
+                <definition>[2:0]</definition>
+            </bitField>
+        </register>
+        <register access="RW" name="S_DACR" size="4">
+            <gui_name language="en">Secure Domain Access Control</gui_name>
+            <alias_name>CP15_S_DACR</alias_name>
+            <device_name type="rvi">CP15_S_DACR</device_name>
+            <device_name type="cadi">CP15_S_DACR</device_name>
+            <description language="en">Holds the access permissions for a maximum of 16 domains</description>
+            <bitField conditional="false" enumerationId="E_DOmain_ACC_CTRL" name="D15">
+                <gui_name language="en">D15</gui_name>
+                <description language="en">Defines the access permissions for domain D15</description>
+                <definition>[31:30]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="E_DOmain_ACC_CTRL" name="D14">
+                <gui_name language="en">D14</gui_name>
+                <description language="en">Defines the access permissions for domain D14</description>
+                <definition>[29:28]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="E_DOmain_ACC_CTRL" name="D13">
+                <gui_name language="en">D13</gui_name>
+                <description language="en">Defines the access permissions for domain D13</description>
+                <definition>[27:26]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="E_DOmain_ACC_CTRL" name="D12">
+                <gui_name language="en">D12</gui_name>
+                <description language="en">Defines the access permissions for domain D12</description>
+                <definition>[25:24]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="E_DOmain_ACC_CTRL" name="D11">
+                <gui_name language="en">D11</gui_name>
+                <description language="en">Defines the access permissions for domain D11</description>
+                <definition>[23:22]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="E_DOmain_ACC_CTRL" name="D10">
+                <gui_name language="en">D10</gui_name>
+                <description language="en">Defines the access permissions for domain D10</description>
+                <definition>[21:20]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="E_DOmain_ACC_CTRL" name="D9">
+                <gui_name language="en">D9</gui_name>
+                <description language="en">Defines the access permissions for domain D9</description>
+                <definition>[19:18]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="E_DOmain_ACC_CTRL" name="D8">
+                <gui_name language="en">D8</gui_name>
+                <description language="en">Defines the access permissions for domain D8</description>
+                <definition>[17:16]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="E_DOmain_ACC_CTRL" name="D7">
+                <gui_name language="en">D7</gui_name>
+                <description language="en">Defines the access permissions for domain D7</description>
+                <definition>[15:14]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="E_DOmain_ACC_CTRL" name="D6">
+                <gui_name language="en">D6</gui_name>
+                <description language="en">Defines the access permissions for domain D6</description>
+                <definition>[13:12]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="E_DOmain_ACC_CTRL" name="D5">
+                <gui_name language="en">D5</gui_name>
+                <description language="en">Defines the access permissions for domain D5</description>
+                <definition>[11:10]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="E_DOmain_ACC_CTRL" name="D4">
+                <gui_name language="en">D4</gui_name>
+                <description language="en">Defines the access permissions for domain D4</description>
+                <definition>[9:8]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="E_DOmain_ACC_CTRL" name="D3">
+                <gui_name language="en">D3</gui_name>
+                <description language="en">Defines the access permissions for domain D3</description>
+                <definition>[7:6]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="E_DOmain_ACC_CTRL" name="D2">
+                <gui_name language="en">D2</gui_name>
+                <description language="en">Defines the access permissions for domain D2</description>
+                <definition>[5:4]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="E_DOmain_ACC_CTRL" name="D1">
+                <gui_name language="en">D1</gui_name>
+                <description language="en">Defines the access permissions for domain D1</description>
+                <definition>[3:2]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="E_DOmain_ACC_CTRL" name="D0">
+                <gui_name language="en">D0</gui_name>
+                <description language="en">Defines the access permissions for domain D0</description>
+                <definition>[2:0]</definition>
+            </bitField>
+        </register>
+        <register access="RW" name="S_DFSR" size="4">
+            <gui_name language="en">Secure Data Fault Status</gui_name>
+            <alias_name>CP15_S_DFSR</alias_name>
+            <device_name type="rvi">CP15_S_DFSR</device_name>
+            <device_name type="cadi">CP15_S_DFSR</device_name>
+            <description language="en">Holds the source of the last data fault</description>
+            <bitField conditional="false" name="SD">
+                <gui_name language="en">SD</gui_name>
+                <description language="en">Indicates whether an AXI Decode or Slave error caused an abort. This bit is only valid for external aborts. For all other aborts this bit Should-Be-Zero.</description>
+                <definition>[12]</definition>
+            </bitField>
+            <bitField conditional="false" name="RW" enumerationId="E_DFSR_RW">
+                <gui_name language="en">RW</gui_name>
+                <description language="en">Indicates whether a read or write access caused an abort.</description>
+                <definition>[11]</definition>
+            </bitField>
+            <bitField conditional="false" name="S">
+                <gui_name language="en">S</gui_name>
+                <description language="en">Part of the Status field. See bits [3:0].</description>
+                <definition>[10]</definition>
+            </bitField>
+            <bitField conditional="false" name="Domain">
+                <gui_name language="en">Domain</gui_name>
+                <description language="en">Indicates which one of the 16 domains, D15-D0, is accessed when a data fault occurs. This field takes values 0-15.</description>
+                <definition>[7:4]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="E_I_D_FAULT_STATUS" name="Status">
+                <gui_name language="en">Status</gui_name>
+                <description language="en">Indicates the type of exception generated. To determine the data fault, bits [12] and [10] must be used in conjunction with bits [3:0].</description>
+                <definition>[3:0][10][12]</definition>
+            </bitField>
+        </register>
+        <register access="RW" name="S_IFSR" size="4">
+            <gui_name language="en">Secure Instruction fault status</gui_name>
+            <alias_name>CP15_S_IFSR</alias_name>
+            <device_name type="rvi">CP15_S_IFSR</device_name>
+            <device_name type="cadi">CP15_S_IFSR</device_name>
+            <description language="en">Holds the source of the last instruction fault</description>
+            <bitField conditional="false" name="SD">
+                <gui_name language="en">SD</gui_name>
+                <description language="en">Indicates whether an AXI Decode or Slave error caused an abort. This bit is only valid for external aborts. For all other aborts this bit Should-Be-Zero.</description>
+                <definition>[12]</definition>
+            </bitField>
+            <bitField conditional="false" name="S">
+                <gui_name language="en">S</gui_name>
+                <description language="en">Part of the Status field. See bits [3:0].</description>
+                <definition>[10]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="E_I_D_FAULT_STATUS" name="Status">
+                <gui_name language="en">Status</gui_name>
+                <description language="en">Indicates the type of exception generated. To determine the data fault, bits [12] and [10] must be used in conjunction with bits [3:0].</description>
+                <definition>[3:0][10][12]</definition>
+            </bitField>
+        </register>
+        <register access="RW" name="S_ADFSR" size="4">
+            <gui_name language="en">Secure Data auxiliary fault status</gui_name>
+            <alias_name>CP15_S_DATA_AUX_FAULT</alias_name>
+            <device_name type="rvi">CP15_S_DATA_AUX_FAULT</device_name>
+            <device_name type="cadi">CP15_S_DATA_AUX_FAULT</device_name>
+            <description language="en">Provided for compatibility with all ARMv7-A designs</description>
+        </register>
+        <register access="RW" name="S_AIFSR" size="4">
+            <gui_name language="en">Secure Instruction auxiliary fault status</gui_name>
+            <alias_name>CP15_S_INSTR_AUX_FAULT</alias_name>
+            <device_name type="rvi">CP15_S_INSTR_AUX_FAULT</device_name>
+            <device_name type="cadi">CP15_S_INSTR_AUX_FAULT</device_name>
+            <description language="en">Provided for compatibility with all ARMv7-A designs</description>
+        </register>
+        <register access="RW" name="S_DFAR" size="4">
+            <gui_name language="en">Secure Data Fault Address</gui_name>
+            <alias_name>CP15_S_DFAR</alias_name>
+            <device_name type="rvi">CP15_S_DFAR</device_name>
+            <device_name type="cadi">CP15_S_DFAR</device_name>
+            <description language="en">Holds the Modified Virtual Address of the fault when a precise abort occurs</description>
+        </register>
+        <register access="RW" name="S_IFAR" size="4">
+            <gui_name language="en">Secure Instruction fault address</gui_name>
+            <alias_name>CP15_S_IFAR</alias_name>
+            <device_name type="rvi">CP15_S_IFAR</device_name>
+            <device_name type="cadi">CP15_S_IFAR</device_name>
+            <description language="en">Holds the address of instructions that cause a prefetch abort</description>
+        </register>
+        <register access="WO" name="S_ITLBIALL" size="4">
+            <gui_name language="en">Secure Invalidate Inst-TLB</gui_name>
+            <alias_name>CP15_S_TLB_INVALIDATE_I_ALL</alias_name>
+            <device_name type="rvi">CP15_S_TLB_INVALIDATE_I_ALL</device_name>
+            <device_name type="cadi">CP15_S_TLB_INVALIDATE_I_ALL</device_name>
+            <description language="en">Invalidate Inst-TLB</description>
+        </register>
+        <register access="WO" name="S_ITLBIMVA" size="4">
+            <gui_name language="en">Secure Invalidate Inst-TLB entry (MVA)</gui_name>
+            <alias_name>CP15_S_TLB_INVALIDATE_I_MVA</alias_name>
+            <device_name type="rvi">CP15_S_TLB_INVALIDATE_I_MVA</device_name>
+            <device_name type="cadi">CP15_S_TLB_INVALIDATE_I_MVA</device_name>
+            <description language="en">Invalidate Inst-TLB entry (MVA)</description>
+        </register>
+        <register access="WO" name="S_ITLBIASID" size="4">
+            <gui_name language="en">Secure Invalidate Inst-TLB (ASID)</gui_name>
+            <alias_name>CP15_S_TLB_INVALIDATE_I_ASID</alias_name>
+            <device_name type="rvi">CP15_S_TLB_INVALIDATE_I_ASID</device_name>
+            <device_name type="cadi">CP15_S_TLB_INVALIDATE_I_ASID</device_name>
+            <description language="en">Invalidate Inst-TLB (ASID)</description>
+        </register>
+        <register access="WO" name="S_DTLBIALL" size="4">
+            <gui_name language="en">Secure Invalidate Data-TLB</gui_name>
+            <alias_name>CP15_S_TLB_INVALIDATE_D_ALL</alias_name>
+            <device_name type="rvi">CP15_S_TLB_INVALIDATE_D_ALL</device_name>
+            <device_name type="cadi">CP15_S_TLB_INVALIDATE_D_ALL</device_name>
+            <description language="en">Invalidate Data-TLB</description>
+        </register>
+        <register access="WO" name="S_DTLBIMVA" size="4">
+            <gui_name language="en">Secure Invalidate Data-TLB entry (MVA)</gui_name>
+            <alias_name>CP15_S_TLB_INVALIDATE_D_MVA</alias_name>
+            <device_name type="rvi">CP15_S_TLB_INVALIDATE_D_MVA</device_name>
+            <device_name type="cadi">CP15_S_TLB_INVALIDATE_D_MVA</device_name>
+            <description language="en">Invalidate Data-TLB entry (MVA)</description>
+        </register>
+        <register access="WO" name="S_DTLBIASID" size="4">
+            <gui_name language="en">Secure Invalidate Data-TLB (ASID)</gui_name>
+            <alias_name>CP15_S_TLB_INVALIDATE_D_ASID</alias_name>
+            <device_name type="rvi">CP15_S_TLB_INVALIDATE_D_ASID</device_name>
+            <device_name type="cadi">CP15_S_TLB_INVALIDATE_D_ASID</device_name>
+            <description language="en">Invalidate Data-TLB (ASID)</description>
+        </register>
+        <register access="WO" name="S_TLBIALL" size="4">
+            <gui_name language="en">Secure Invalidate Inst-TLB and Data-TLB</gui_name>
+            <alias_name>CP15_S_TLB_INVALIDATE_ALL</alias_name>
+            <device_name type="rvi">CP15_S_TLB_INVALIDATE_ALL</device_name>
+            <device_name type="cadi">CP15_S_TLB_INVALIDATE_ALL</device_name>
+            <description language="en">Invalidate Inst-TLB and Data-TLB</description>
+        </register>
+        <register access="WO" name="S_TLBIMVA" size="4">
+            <gui_name language="en">Secure Invalidate Inst-TLB and Data-TLB entry (MVA)</gui_name>
+            <alias_name>CP15_S_TLB_INVALIDATE_MVA</alias_name>
+            <device_name type="rvi">CP15_S_TLB_INVALIDATE_MVA</device_name>
+            <device_name type="cadi">CP15_S_TLB_INVALIDATE_MVA</device_name>
+            <description language="en">Invalidate Inst-TLB and Data-TLB entry (MVA)</description>
+        </register>
+        <register access="WO" name="S_TLBIASID" size="4">
+            <gui_name language="en">Secure Invalidate Inst-TLB and Data-TLB (ASID)</gui_name>
+            <alias_name>CP15_S_TLB_INVALIDATE_ASID</alias_name>
+            <device_name type="rvi">CP15_S_TLB_INVALIDATE_ASID</device_name>
+            <device_name type="cadi">CP15_S_TLB_INVALIDATE_ASID</device_name>
+            <description language="en">Invalidate Inst-TLB and Data-TLB (ASID)</description>
+        </register>
+        <register access="RW" name="S_PRRR" size="4">
+            <gui_name language="en">Secure Primary region remap register</gui_name>
+            <alias_name>CP15_S_PRIM_REGION_REMAP</alias_name>
+            <device_name type="rvi">CP15_S_PRIM_REGION_REMAP</device_name>
+            <device_name type="cadi">CP15_S_PRIM_REGION_REMAP</device_name>
+            <description language="en">Primary region remap register</description>
+        </register>
+        <register access="RW" name="S_NMRR" size="4">
+            <gui_name language="en">Secure Normal memory remap</gui_name>
+            <alias_name>CP15_S_NORM_MEM_REMAP</alias_name>
+            <device_name type="rvi">CP15_S_NORM_MEM_REMAP</device_name>
+            <device_name type="cadi">CP15_S_NORM_MEM_REMAP</device_name>
+            <description language="en">Normal memory remap</description>
+        </register>
+        <register access="RW" name="S_VBAR" size="4">
+            <gui_name language="en">Secure Vector Base Address</gui_name>
+            <alias_name>CP15_S_VECTOR_BASE</alias_name>
+            <device_name type="rvi">CP15_S_VECTOR_BASE</device_name>
+            <device_name type="cadi">CP15_S_VECTOR_BASE</device_name>
+            <description language="en">Holds the base address for exception vectors in the Secure and Secure states</description>
+        </register>
+        <register access="RW" name="S_PID" size="4">
+            <gui_name language="en">Secure FCSE PID</gui_name>
+            <alias_name>CP15_S_PID</alias_name>
+            <device_name type="rvi">CP15_S_PID</device_name>
+            <device_name type="cadi">CP15_S_PID</device_name>
+            <description language="en">Use of the FCSE PID Register is deprecated</description>
+            <bitField conditional="false" name="FCSE_PID">
+                <gui_name language="en">FCSE_PID</gui_name>
+                <description language="en">Holds the ProcID. Identifies a specific process for fast context switch. The reset value is 0. The purpose of the FCSE PID Register is to provide the ProcID for fast context switch memory mappings. The MMU uses the contents of this register to map memory addresses in the range 0-32MB.</description>
+                <definition>[31:25]</definition>
+            </bitField>
+        </register>
+        <register access="RW" name="S_CID" size="4">
+            <gui_name language="en">Secure Context ID</gui_name>
+            <alias_name>CP15_S_CID</alias_name>
+            <device_name type="rvi">CP15_S_CID</device_name>
+            <device_name type="cadi">CP15_S_CID</device_name>
+            <description language="en">Provides information on the current ASID and process ID, for example for the ETM and debug logic</description>
+            <bitField conditional="false" name="PROCID">
+                <gui_name language="en">PROCID</gui_name>
+                <description language="en">Extends the ASID to form the process ID and identifies the current process. The reset value is 0.</description>
+                <definition>[31:8]</definition>
+            </bitField>
+            <bitField conditional="false" name="ASID">
+                <gui_name language="en">ASID</gui_name>
+                <description language="en">Holds the ASID of the current process to identify the current ASID. The reset value is 0.</description>
+                <definition>[7:0]</definition>
+            </bitField>
+        </register>
+        <register access="RW" name="S_TPIDRURW" size="4">
+            <gui_name language="en">Secure User read/write thread and process ID</gui_name>
+            <alias_name>CP15_S_USER_RW_ID</alias_name>
+            <device_name type="rvi">CP15_S_USER_RW_ID</device_name>
+            <device_name type="cadi">CP15_S_USER_RW_ID</device_name>
+            <description language="en">Secure User read/write thread and process ID</description>
+        </register>
+        <register access="RW" name="S_TPIDRURO" size="4">
+            <gui_name language="en">Secure User read-only thread and process ID</gui_name>
+            <alias_name>CP15_S_USER_RO_ID</alias_name>
+            <device_name type="rvi">CP15_S_USER_RO_ID</device_name>
+            <device_name type="cadi">CP15_S_USER_RO_ID</device_name>
+            <description language="en">Secure User read-only thread and process ID</description>
+        </register>
+        <register access="RW" name="S_TPIDRPRW" size="4">
+            <gui_name language="en">Secure User privileged only thread and process ID</gui_name>
+            <alias_name>CP15_S_PRIVILEGED_ID</alias_name>
+            <device_name type="rvi">CP15_S_PRIVILEGED_ID</device_name>
+            <device_name type="cadi">CP15_S_PRIVILEGED_ID</device_name>
+            <description language="en">Secure User privileged only thread and process ID</description>
+        </register>
+        <register access="RW" name="S_PAR" size="4">
+            <gui_name language="en">Secure Physical Address</gui_name>
+            <alias_name>CP15_S_PA</alias_name>
+            <device_name type="rvi">CP15_S_PA</device_name>
+            <device_name type="cadi">CP15_S_PA</device_name>
+            <description language="en">Secure Physical Address</description>
+            <bitField conditional="false" name="PA">
+                <gui_name language="en">PA</gui_name>
+                <description language="en">Contains the physical address after a successful translation.</description>
+                <definition>[31:12]</definition>
+            </bitField>
+            <bitField conditional="false" name="NS">
+                <gui_name language="en">NS</gui_name>
+                <description language="en">Indicates the state of the NS attribute bit in the translation table.</description>
+                <definition>[9]</definition>
+            </bitField>
+            <bitField conditional="false" name="P">
+                <gui_name language="en">P</gui_name>
+                <description language="en">Not used in the processor.</description>
+                <definition>[8]</definition>
+            </bitField>
+            <bitField conditional="false" name="SH">
+                <gui_name language="en">SH</gui_name>
+                <description language="en">Indicates shareable memory: 0 = non-shared 1 = shared.</description>
+                <definition>[7]</definition>
+            </bitField>
+            <bitField conditional="false" name="INNER">
+                <gui_name language="en">INNER</gui_name>
+                <description language="en">Indicates the inner attributes from the translation table.</description>
+                <definition>[6:4]</definition>
+            </bitField>
+            <bitField conditional="false" name="OUTER">
+                <gui_name language="en">OUTER</gui_name>
+                <description language="en">Indicates the outer attributes from the translation table.</description>
+                <definition>[3:2]</definition>
+            </bitField>
+            <bitField conditional="false" name="Supersection">
+                <gui_name language="en">Supersection</gui_name>
+                <description language="en">Indicates if the result is a supersection.</description>
+                <definition>[1]</definition>
+            </bitField>
+            <bitField conditional="false" name="FSR">
+                <gui_name language="en">FSR</gui_name>
+                <description language="en">Holds the FSR bits for the aborted address.</description>
+                <definition>[6:1]</definition>
+            </bitField>
+        </register>
+    </register_group>
+        <!--Cache -->
+    <register_group name="Secure_Priv_Debug">
+        <gui_name language="en">Secure Privileged Debug</gui_name>
+        <description language="en">Registers available only in secure privileged modes only</description>
+        <register access="RO" name="BTBR" size="4">
+            <gui_name language="en">CP15_BTB_READ_OP</gui_name>
+            <alias_name>CP15_BTB_READ_OP</alias_name>
+            <device_name type="rvi">CP15_BTB_READ_OP</device_name>
+            <device_name type="cadi">CP15_BTB_READ_OP</device_name>
+            <description language="en">BTB array read operation</description>
+        </register>
+        <register access="RO" name="BTBW" size="4">
+            <gui_name language="en">CP15_BTB_READ_OP</gui_name>
+            <alias_name>CP15_BTB_WRITE_OP</alias_name>
+            <device_name type="rvi">CP15_BTB_WRITE_OP</device_name>
+            <device_name type="cadi">CP15_BTB_WRITE_OP</device_name>
+            <description language="en">BTB array write operation</description>
+        </register>
+
+        <register access="RW" name="DL1LDATA" size="4">
+            <gui_name language="en">CP15_D_L1_LOW_DATA</gui_name>
+            <alias_name>CP15_D_L1_LOW_DATA</alias_name>
+            <device_name type="rvi">CP15_D_L1_LOW_DATA</device_name>
+            <device_name type="cadi">CP15_D_L1_LOW_DATA</device_name>
+            <description language="en">D-L1 Data 0 Register</description>
+        </register>
+        <register access="RW" name="DL1HDATA" size="4">
+            <gui_name language="en">CP15_D_L1_HIGH_DATA</gui_name>
+            <alias_name>CP15_D_L1_HIGH_DATA</alias_name>
+            <device_name type="rvi">CP15_D_L1_HIGH_DATA</device_name>
+            <device_name type="cadi">CP15_D_L1_HIGH_DATA</device_name>
+            <description language="en">D-L1 Data 1 Register</description>
+        </register>
+
+        <register access="RO" name="DTLBCAMW" size="4">
+            <gui_name language="en">CP15_D_TLB_CAM_WRITE_OP</gui_name>
+            <alias_name>CP15_D_TLB_CAM_WRITE_OP</alias_name>
+            <device_name type="rvi">CP15_D_TLB_CAM_WRITE_OP</device_name>
+            <device_name type="cadi">CP15_D_TLB_CAM_WRITE_OP</device_name>
+            <description language="en">D-TLB CAM write operation</description>
+        </register>
+        <register access="RO" name="DTLBATTRW" size="4">
+            <gui_name language="en">CP15_D_TLB_ATTR_WRITE_OP</gui_name>
+            <alias_name>CP15_D_TLB_ATTR_WRITE_OP</alias_name>
+            <device_name type="rvi">CP15_D_TLB_ATTR_WRITE_OP</device_name>
+            <device_name type="cadi">CP15_D_TLB_ATTR_WRITE_OP</device_name>
+            <description language="en">D-TLB ATTR write operation</description>
+        </register>
+        <register access="RO" name="DTLBPAW" size="4">
+            <gui_name language="en">CP15_D_TLB_PA_WRITE_OP</gui_name>
+            <alias_name>CP15_D_TLB_PA_WRITE_OP</alias_name>
+            <device_name type="rvi">CP15_D_TLB_PA_WRITE_OP</device_name>
+            <device_name type="cadi">CP15_D_TLB_PA_WRITE_OP</device_name>
+            <description language="en">D-TLB PA write operation</description>
+        </register>
+        <register access="RO" name="DHVABW" size="4">
+            <gui_name language="en">CP15_D_HVAB_WRITE_OP</gui_name>
+            <alias_name>CP15_D_HVAB_WRITE_OP</alias_name>
+            <device_name type="rvi">CP15_D_HVAB_WRITE_OP</device_name>
+            <device_name type="cadi">CP15_D_HVAB_WRITE_OP</device_name>
+            <description language="en">D-HVAB write operation</description>
+        </register>
+        <register access="RO" name="DTAGW" size="4">
+            <gui_name language="en">CP15_D_TAG_WRITE_OP</gui_name>
+            <alias_name>CP15_D_TAG_WRITE_OP</alias_name>
+            <device_name type="rvi">CP15_D_TAG_WRITE_OP</device_name>
+            <device_name type="cadi">CP15_D_TAG_WRITE_OP</device_name>
+            <description language="en">D-Tag write operation</description>
+        </register>
+        <register access="RO" name="DDATAW" size="4">
+            <gui_name language="en">CP15_D_DATA_WRITE_OP</gui_name>
+            <alias_name>CP15_D_DATA_WRITE_OP</alias_name>
+            <device_name type="rvi">CP15_D_DATA_WRITE_OP</device_name>
+            <device_name type="cadi">CP15_D_DATA_WRITE_OP</device_name>
+            <description language="en">D-Data write operation</description>
+        </register>
+
+
+        <register access="RO" name="DTLBCAMR" size="4">
+            <gui_name language="en">CP15_D_TLB_CAM_READ_OP</gui_name>
+            <alias_name>CP15_D_TLB_CAM_READ_OP</alias_name>
+            <device_name type="rvi">CP15_D_TLB_CAM_READ_OP</device_name>
+            <device_name type="cadi">CP15_D_TLB_CAM_READ_OP</device_name>
+            <description language="en">D-TLB CAM read operation</description>
+        </register>
+        <register access="RO" name="DTLBATTRR" size="4">
+            <gui_name language="en">CP15_D_TLB_ATTR_READ_OP</gui_name>
+            <alias_name>CP15_D_TLB_ATTR_READ_OP</alias_name>
+            <device_name type="rvi">CP15_D_TLB_ATTR_READ_OP</device_name>
+            <device_name type="cadi">CP15_D_TLB_ATTR_READ_OP</device_name>
+            <description language="en">D-TLB ATTR read operation</description>
+        </register>
+        <register access="RO" name="DTLBPAR" size="4">
+            <gui_name language="en">CP15_D_TLB_PA_READ_OP</gui_name>
+            <alias_name>CP15_D_TLB_PA_READ_OP</alias_name>
+            <device_name type="rvi">CP15_D_TLB_PA_READ_OP</device_name>
+            <device_name type="cadi">CP15_D_TLB_PA_READ_OP</device_name>
+            <description language="en">D-TLB PA read operation</description>
+        </register>
+        <register access="RO" name="DHVABR" size="4">
+            <gui_name language="en">CP15_D_HVAB_READ_OP</gui_name>
+            <alias_name>CP15_D_HVAB_READ_OP</alias_name>
+            <device_name type="rvi">CP15_D_HVAB_READ_OP</device_name>
+            <device_name type="cadi">CP15_D_HVAB_READ_OP</device_name>
+            <description language="en">D-HVAB read operation</description>
+        </register>
+        <register access="RO" name="DTAGR" size="4">
+            <gui_name language="en">CP15_D_TAG_READ_OP</gui_name>
+            <alias_name>CP15_D_TAG_READ_OP</alias_name>
+            <device_name type="rvi">CP15_D_TAG_READ_OP</device_name>
+            <device_name type="cadi">CP15_D_TAG_READ_OP</device_name>
+            <description language="en">D-Tag read operation</description>
+        </register>
+        <register access="RO" name="DDATAR" size="4">
+            <gui_name language="en">CP15_D_DATA_READ_OP</gui_name>
+            <alias_name>CP15_D_DATA_READ_OP</alias_name>
+            <device_name type="rvi">CP15_D_DATA_READ_OP</device_name>
+            <device_name type="cadi">CP15_D_DATA_READ_OP</device_name>
+            <description language="en">D-Data read operation</description>
+        </register>
+
+        <register access="RW" name="IL1LDATA" size="4">
+            <gui_name language="en">CP15_I_L1_LOW_DATA</gui_name>
+            <alias_name>CP15_I_L1_LOW_DATA</alias_name>
+            <device_name type="rvi">CP15_I_L1_LOW_DATA</device_name>
+            <device_name type="cadi">CP15_I_L1_LOW_DATA</device_name>
+            <description language="en">I-L1 Data 0 Register</description>
+        </register>
+        <register access="RW" name="IL1HDATA" size="4">
+            <gui_name language="en">CP15_I_L1_HIGH_DATA</gui_name>
+            <alias_name>CP15_I_L1_HIGH_DATA</alias_name>
+            <device_name type="rvi">CP15_I_L1_HIGH_DATA</device_name>
+            <device_name type="cadi">CP15_I_L1_HIGH_DATA</device_name>
+            <description language="en">I-L1 Data 1 Register</description>
+        </register>
+        <register access="RO" name="ITLBCAMW" size="4">
+            <gui_name language="en">CP15_I_TLB_CAM_WRITE_OP</gui_name>
+            <alias_name>CP15_I_TLB_CAM_WRITE_OP</alias_name>
+            <device_name type="rvi">CP15_I_TLB_CAM_WRITE_OP</device_name>
+            <device_name type="cadi">CP15_I_TLB_CAM_WRITE_OP</device_name>
+            <description language="en">I-TLB CAM write operation</description>
+        </register>
+        <register access="RO" name="ITLBATTRW" size="4">
+            <gui_name language="en">CP15_I_TLB_ATTR_WRITE_OP</gui_name>
+            <alias_name>CP15_I_TLB_ATTR_WRITE_OP</alias_name>
+            <device_name type="rvi">CP15_I_TLB_ATTR_WRITE_OP</device_name>
+            <device_name type="cadi">CP15_I_TLB_ATTR_WRITE_OP</device_name>
+            <description language="en">I-TLB ATTR write operation</description>
+        </register>
+        <register access="RO" name="ITLBPAW" size="4">
+            <gui_name language="en">CP15_I_TLB_PA_WRITE_OP</gui_name>
+            <alias_name>CP15_I_TLB_PA_WRITE_OP</alias_name>
+            <device_name type="rvi">CP15_I_TLB_PA_WRITE_OP</device_name>
+            <device_name type="cadi">CP15_I_TLB_PA_WRITE_OP</device_name>
+            <description language="en">I-TLB PA write operation</description>
+        </register>
+        <register access="RO" name="IHVABW" size="4">
+            <gui_name language="en">CP15_I_HVAB_WRITE_OP</gui_name>
+            <alias_name>CP15_I_HVAB_WRITE_OP</alias_name>
+            <device_name type="rvi">CP15_I_HVAB_WRITE_OP</device_name>
+            <device_name type="cadi">CP15_I_HVAB_WRITE_OP</device_name>
+            <description language="en">I-HVAB write operation</description>
+        </register>
+        <register access="RO" name="ITAGW" size="4">
+            <gui_name language="en">CP15_I_TAG_WRITE_OP</gui_name>
+            <alias_name>CP15_I_TAG_WRITE_OP</alias_name>
+            <device_name type="rvi">CP15_I_TAG_WRITE_OP</device_name>
+            <device_name type="cadi">CP15_I_TAG_WRITE_OP</device_name>
+            <description language="en">I-Tag write operation</description>
+        </register>
+        <register access="RO" name="IDATAW" size="4">
+            <gui_name language="en">CP15_I_DATA_WRITE_OP</gui_name>
+            <alias_name>CP15_I_DATA_WRITE_OP</alias_name>
+            <device_name type="rvi">CP15_I_DATA_WRITE_OP</device_name>
+            <device_name type="cadi">CP15_I_DATA_WRITE_OP</device_name>
+            <description language="en">I-Data write operation</description>
+        </register>
+
+        <register access="RO" name="ITLBCAMR" size="4">
+            <gui_name language="en">CP15_I_TLB_CAM_READ_OP</gui_name>
+            <alias_name>CP15_I_TLB_CAM_READ_OP</alias_name>
+            <device_name type="rvi">CP15_I_TLB_CAM_READ_OP</device_name>
+            <device_name type="cadi">CP15_I_TLB_CAM_READ_OP</device_name>
+            <description language="en">I-TLB CAM read operation</description>
+        </register>
+        <register access="RO" name="ITLBATTRR" size="4">
+            <gui_name language="en">CP15_I_TLB_ATTR_READ_OP</gui_name>
+            <alias_name>CP15_I_TLB_ATTR_READ_OP</alias_name>
+            <device_name type="rvi">CP15_I_TLB_ATTR_READ_OP</device_name>
+            <device_name type="cadi">CP15_I_TLB_ATTR_READ_OP</device_name>
+            <description language="en">I-TLB ATTR read operation</description>
+        </register>
+        <register access="RO" name="ITLBPAR" size="4">
+            <gui_name language="en">CP15_I_TLB_PA_READ_OP</gui_name>
+            <alias_name>CP15_I_TLB_PA_READ_OP</alias_name>
+            <device_name type="rvi">CP15_I_TLB_PA_READ_OP</device_name>
+            <device_name type="cadi">CP15_I_TLB_PA_READ_OP</device_name>
+            <description language="en">I-TLB PA read operation</description>
+        </register>
+        <register access="RO" name="IHVABR" size="4">
+            <gui_name language="en">CP15_I_HVAB_READ_OP</gui_name>
+            <alias_name>CP15_I_HVAB_READ_OP</alias_name>
+            <device_name type="rvi">CP15_I_HVAB_READ_OP</device_name>
+            <device_name type="cadi">CP15_I_HVAB_READ_OP</device_name>
+            <description language="en">I-HVAB read operation</description>
+        </register>
+        <register access="RO" name="ITAGR" size="4">
+            <gui_name language="en">CP15_I_TAG_READ_OP</gui_name>
+            <alias_name>CP15_I_TAG_READ_OP</alias_name>
+            <device_name type="rvi">CP15_I_TAG_READ_OP</device_name>
+            <device_name type="cadi">CP15_I_TAG_READ_OP</device_name>
+            <description language="en">I-Tag read operation</description>
+        </register>
+        <register access="RO" name="IDATAR" size="4">
+            <gui_name language="en">CP15_I_DATA_READ_OP</gui_name>
+            <alias_name>CP15_I_DATA_READ_OP</alias_name>
+            <device_name type="rvi">CP15_I_DATA_READ_OP</device_name>
+            <device_name type="cadi">CP15_I_DATA_READ_OP</device_name>
+            <description language="en">I-Data read operation</description>
+        </register>
+
+        <register access="RO" name="GHBR" size="4">
+            <gui_name language="en">CP15_GHB_READ_OP</gui_name>
+            <alias_name>CP15_GHB_READ_OP</alias_name>
+            <device_name type="rvi">CP15_GHB_READ_OP</device_name>
+            <device_name type="cadi">CP15_GHB_READ_OP</device_name>
+            <description language="en">GHB read operation</description>
+        </register>
+        <register access="RO" name="GHBW" size="4">
+            <gui_name language="en">CP15_GHB_WRITE_OP</gui_name>
+            <alias_name>CP15_GHB_WRITE_OP</alias_name>
+            <device_name type="rvi">CP15_GHB_WRITE_OP</device_name>
+            <device_name type="cadi">CP15_GHB_WRITE_OP</device_name>
+            <description language="en">GHB write operation</description>
+        </register>
+
+        <register access="RW" name="MVBA" size="4">
+            <gui_name language="en">CP15_MONITOR_VECTOR_BASE</gui_name>
+            <alias_name>CP15_MONITOR_VECTOR_BASE</alias_name>
+            <device_name type="rvi">CP15_MONITOR_VECTOR_BASE</device_name>
+            <device_name type="cadi">CP15_MONITOR_VECTOR_BASE</device_name>
+            <description language="en">Monitor Vector Base Address</description>
+        </register>
+
+        <register access="RW" name="L2DATA0" size="4">
+            <gui_name language="en">CP15_L2_DATA_0</gui_name>
+            <alias_name>CP15_L2_DATA_0</alias_name>
+            <device_name type="rvi">CP15_L2_DATA_0</device_name>
+            <device_name type="cadi">CP15_L2_DATA_0</device_name>
+            <description language="en">L2 Data 0 Register</description>
+        </register>
+        <register access="RW" name="L2DATA1" size="4">
+            <gui_name language="en">CP15_L2_DATA_1</gui_name>
+            <alias_name>CP15_L2_DATA_1</alias_name>
+            <device_name type="rvi">CP15_L2_DATA_1</device_name>
+            <device_name type="cadi">CP15_L2_DATA_1</device_name>
+            <description language="en">L2 Data 1 Register</description>
+        </register>
+        <register access="RW" name="L2DATA2" size="4">
+            <gui_name language="en">CP15_L2_DATA_2</gui_name>
+            <alias_name>CP15_L2_DATA_2</alias_name>
+            <device_name type="rvi">CP15_L2_DATA_2</device_name>
+            <device_name type="cadi">CP15_L2_DATA_2</device_name>
+            <description language="en">L2 Data 2 Register</description>
+        </register>
+
+        <register access="RW" name="L2TAGVW" size="4">
+            <gui_name language="en">CP15_L2_TAG_VALID_WRITE_OP</gui_name>
+            <alias_name>CP15_L2_TAG_VALID_WRITE_OP</alias_name>
+            <device_name type="rvi">CP15_L2_TAG_VALID_WRITE_OP</device_name>
+            <device_name type="cadi">CP15_L2_TAG_VALID_WRITE_OP</device_name>
+            <description language="en">L2 tag, L2 valid write operation</description>
+        </register>
+
+        <register access="RW" name="L2TAGDW" size="4">
+            <gui_name language="en">CP15_L2_TAG_DIRTY_WRITE_OP</gui_name>
+            <alias_name>CP15_L2_TAG_DIRTY_WRITE_OP</alias_name>
+            <device_name type="rvi">CP15_L2_TAG_DIRTY_WRITE_OP</device_name>
+            <device_name type="cadi">CP15_L2_TAG_DIRTY_WRITE_OP</device_name>
+            <description language="en">L2 tag, L2 dirty write operation</description>
+        </register>
+
+        <register access="RW" name="L2PECCW" size="4">
+            <gui_name language="en">CP15_L2_PARITY_ECC_WRITE_OP</gui_name>
+            <alias_name>CP15_L2_PARITY_ECC_WRITE_OP</alias_name>
+            <device_name type="rvi">CP15_L2_PARITY_ECC_WRITE_OP</device_name>
+            <device_name type="cadi">CP15_L2_PARITY_ECC_WRITE_OP</device_name>
+            <description language="en">L2 parity and ECC write operation</description>
+        </register>
+
+        <register access="RW" name="L2TAGVR" size="4">
+            <gui_name language="en">CP15_L2_TAG_VALID_READ_OP</gui_name>
+            <alias_name>CP15_L2_TAG_VALID_READ_OP</alias_name>
+            <device_name type="rvi">CP15_L2_TAG_VALID_READ_OP</device_name>
+            <device_name type="cadi">CP15_L2_TAG_VALID_READ_OP</device_name>
+            <description language="en">L2 tag, L2 valid read operation</description>
+        </register>
+
+        <register access="RW" name="L2TAGDR" size="4">
+            <gui_name language="en">CP15_L2_TAG_DIRTY_READ_OP</gui_name>
+            <alias_name>CP15_L2_TAG_DIRTY_READ_OP</alias_name>
+            <device_name type="rvi">CP15_L2_TAG_DIRTY_READ_OP</device_name>
+            <device_name type="cadi">CP15_L2_TAG_DIRTY_READ_OP</device_name>
+            <description language="en">L2 tag, L2 dirty read operation</description>
+        </register>
+
+        <register access="RW" name="L2PECCR" size="4">
+            <gui_name language="en">CP15_L2_PARITY_ECC_READ_OP</gui_name>
+            <alias_name>CP15_L2_PARITY_ECC_READ_OP</alias_name>
+            <device_name type="rvi">CP15_L2_PARITY_ECC_READ_OP</device_name>
+            <device_name type="cadi">CP15_L2_PARITY_ECC_READ_OP</device_name>
+            <description language="en">L2 parity and ECC read operation</description>
+        </register>
+    </register_group>
+</register_list>

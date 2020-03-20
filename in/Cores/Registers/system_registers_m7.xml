@@ -1,0 +1,1337 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<register_list
+    name="System"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns="http://www.arm.com/core_reg"
+    xsi:schemaLocation="http://www.arm.com/core_reg ../../Schemas/core_register_definition.xsd"
+    xmlns:tcf="http://com.arm.targetconfigurationeditor">
+
+    <access_world>Non-Secure</access_world>
+
+    <peripheral name="Control" offset="0x00000000">
+        <gui_name language="en">System Control</gui_name>
+        <description language="en">System Control registers</description>
+
+        <register access="RW" name="ACTLR" size="4" offset="0xE000E008">
+            <gui_name language="en">Auxiliary Control</gui_name>
+            <description language="en">Disables certain aspects of functionality within the processor</description>
+            <bitField conditional="false" name="DISOOFP" enumerationId="ENABLED_DISABLED">
+                <gui_name language="en">DISOOFP</gui_name>
+                <description language="en">Disables floating point instructions completing out of order with respect to integer instructions</description>
+                <definition>[9]</definition>
+            </bitField>
+            <bitField conditional="false" name="DISFPCA" enumerationId="ENABLED_DISABLED">
+                <gui_name language="en">DISFPCA</gui_name>
+                <description language="en">Disable automatic update of CONTROL.FPCA</description>
+                <definition>[8]</definition>
+            </bitField>
+            <bitField conditional="false" name="DISFOLD" enumerationId="ENABLED_DISABLED">
+                <gui_name language="en">DISFOLD</gui_name>
+                <description language="en">Disables folding of IT instructions</description>
+                <definition>[2]</definition>
+            </bitField>
+            <bitField conditional="false" name="DISDEFWBUF" enumerationId="ENABLED_DISABLED">
+                <gui_name language="en">DISDEFWBUF</gui_name>
+                <description language="en">Disables write buffer use during default memory map accesses</description>
+                <definition>[1]</definition>
+            </bitField>
+            <bitField conditional="false" name="DISMCYCINT" enumerationId="ENABLED_DISABLED">
+                <gui_name language="en">DISMCYCINT</gui_name>
+                <description language="en">Disables interruption of multi-cycle instructions</description>
+                <definition>[0]</definition>
+            </bitField>
+        </register>
+
+        <register access="RW" name="ICSR" size="4" offset="0xE000ED04">
+            <gui_name language="en">Interrupt Control and State</gui_name>
+            <description language="en">Provides software control of the NMI, PendSV, and SysTick exceptions, and provides interrupt status information</description>
+            <bitField conditional="false" name="NMIPENDSET" enumerationId="ICSR_NMIPENDSET">
+                <gui_name language="en">NMIPENDSET</gui_name>
+                <description language="en">Activates an NMI exception or reads back the current state</description>
+                <definition>[31]</definition>
+            </bitField>
+            <bitField conditional="false" name="PENDSVSET" enumerationId="ICSR_PENDSET">
+                <gui_name language="en">PENDSVSET</gui_name>
+                <description language="en">Sets a pending PendSV interrupt or reads back the current state</description>
+                <definition>[28]</definition>
+            </bitField>
+            <bitField access="WO" conditional="false" name="PENDSVCLR" enumerationId="ICSR_PENDCLR">
+                <gui_name language="en">PENDSVCLR</gui_name>
+                <description language="en">Clears a pending PendSV interrupt</description>
+                <definition>[27]</definition>
+            </bitField>
+            <bitField conditional="false" name="PENDSTSET" enumerationId="ICSR_PENDSET">
+                <gui_name language="en">PENDSTSET</gui_name>
+                <description language="en">Sets a pending SysTick or reads back the current state</description>
+                <definition>[26]</definition>
+            </bitField>
+            <bitField access="WO" conditional="false" name="PENDSTCLR" enumerationId="ICSR_PENDCLR">
+                <gui_name language="en">PENDSTCLR</gui_name>
+                <description language="en">Clears a pending SysTick, whether set here or by the timer hardware</description>
+                <definition>[25]</definition>
+            </bitField>
+            <bitField access="RO" conditional="false" name="ISRPREEMPT" enumerationId="ICSR_PREEMPT">
+                <gui_name language="en">ISRPREEMPT</gui_name>
+                <description language="en">Indicates whether a pending exception will be serviced on exit from debug halt state</description>
+                <definition>[23]</definition>
+            </bitField>
+            <bitField access="RO" conditional="false" name="ISRPENDING" enumerationId="ICSR_PENDING">
+                <gui_name language="en">ISRPENDING</gui_name>
+                <description language="en">Indicates if an external configurable, NVIC generated, interrupt is pending</description>
+                <definition>[22]</definition>
+            </bitField>
+            <bitField access="RO" conditional="false" name="VECTPENDING">
+                <gui_name language="en">VECTPENDING</gui_name>
+                <description language="en">The exception number for the highest priority pending exception. 0 indicates no pending exceptions</description>
+                <definition>[20:12]</definition>
+            </bitField>
+            <bitField access="RO" conditional="false" name="RETTOBASE" enumerationId="ICSR_RETTOBASE">
+                <gui_name language="en">RETTOBASE</gui_name>
+                <description language="en">In Handler mode, indicates whether there is an active exception other than the exception indicated by the current value of the IPSR</description>
+                <definition>[11]</definition>
+            </bitField>
+            <bitField access="RO" conditional="false" name="VECTACTIVE">
+                <gui_name language="en">VECTACTIVE</gui_name>
+                <description language="en">The exception number for the current executing exception</description>
+                <definition>[8:0]</definition>
+            </bitField>
+        </register>
+
+        <register access="RW" name="VTOR" size="4" offset="0xE000ED08">
+            <gui_name language="en">Vector Table Offset</gui_name>
+            <description language="en">Holds the vector table address</description>
+            <bitField conditional="false" name="TBLOFF">
+                <gui_name language="en">TBLOFF</gui_name>
+                <description language="en">Bits [31:7] of the vector table address</description>
+                <definition>[31:7]</definition>
+            </bitField>
+            <bitField access="RO" conditional="false" name="TBLBASE" enumerationId="VTOR_TBLBASE">
+                <gui_name language="en">TBLBASE</gui_name>
+                <description language="en">Determines whether the vector table is in the code or SRAM memory region</description>
+                <definition>[29]</definition>
+            </bitField>
+        </register>
+
+        <register access="RO" name="DEMCR" size="4" offset="0xE000EDFC">
+            <gui_name language="en">Debug Exception and Monitor Control Register</gui_name>
+            <description language="en">Manages vector catch behaviour and DebugMonitor handling when debugging</description>
+            <bitField access="RO" conditional="false" name="MON_EN">
+                <gui_name language="en">MON_EN</gui_name>
+                <description language="en">Enable the DebugMonitor exception</description>
+                <definition>[16]</definition>
+            </bitField>
+            <bitField access="RO" conditional="false" name="MON_PEND">
+                <gui_name language="en">MON_PEND</gui_name>
+                <description language="en">Sets or clears the pending state of the DebugMonitor exception</description>
+                <definition>[17]</definition>
+            </bitField>
+        </register>
+
+
+        <register access="RW" name="AIRCR" size="4" offset="0xE000ED0C">
+            <gui_name language="en">Application Interrupt and Reset Control</gui_name>
+            <description language="en">Sets or returns interrupt control data</description>
+            <bitField access="WO" conditional="false" name="VECTKEY">
+                <gui_name language="en">VECTKEY</gui_name>
+                <description language="en">Vector Key</description>
+                <definition>[31:16]</definition>
+            </bitField>
+            <bitField access="RO" conditional="false" name="VECTKEYSTAT">
+                <gui_name language="en">VECTKEYSTAT</gui_name>
+                <description language="en">UNKNOWN</description>
+                <definition>[31:16]</definition>
+            </bitField>
+            <bitField access="RO" conditional="false" name="ENDIANNESS" enumerationId="AIRCR_ENDIANNESS">
+                <gui_name language="en">ENDIANNESS</gui_name>
+                <description language="en">Indicates the memory system data endianness</description>
+                <definition>[15]</definition>
+            </bitField>
+            <bitField access="RO" conditional="false" name="PRIGROUP">
+                <gui_name language="en">PRIGROUP</gui_name>
+                <description language="en">Priority grouping, indicates the    binary point position.</description>
+                <definition>[10:8]</definition>
+            </bitField>
+
+            <bitField access="WO" conditional="false" name="SYSRESETREQ" enumerationId="AIRCR_RESETREQ">
+                <gui_name language="en">SYSRESETREQ</gui_name>
+                <description language="en">System Reset Request</description>
+                <definition>[2]</definition>
+            </bitField>
+            <bitField access="WO" conditional="false" name="VECTCLRACTIVE" enumerationId="AIRCR_VECTCLR">
+                <gui_name language="en">VECTCLRACTIVE</gui_name>
+                <description language="en">Clears all active state information for fixed and configurable exceptions</description>
+                <definition>[1]</definition>
+            </bitField>
+        </register>
+
+        <register access="RW" name="SCR" size="4" offset="0xE000ED10">
+            <gui_name language="en">System Control</gui_name>
+            <description language="en">Sets or returns system control data</description>
+            <bitField conditional="false" name="SEVONPEND" enumerationId="SCR_SEVONPEND">
+                <gui_name language="en">SEVONPEND</gui_name>
+                <description language="en">Determines whether an interrupt transition from inactive state to pending state is a wakeup event</description>
+                <definition>[4]</definition>
+            </bitField>
+            <bitField conditional="false" name="SLEEPDEEP" enumerationId="SCR_SLEEPDEEP">
+                <gui_name language="en">SLEEPDEEP</gui_name>
+                <description language="en">Hint indicating that waking from sleep might take longer</description>
+                <definition>[2]</definition>
+            </bitField>
+            <bitField conditional="false" name="SLEEPONEXIT" enumerationId="SCR_SLEEPONEXIT">
+                <gui_name language="en">SLEEPONEXIT</gui_name>
+                <description language="en">whether, on an exit from an ISR that returns to the base level of execution priority, the processor enters a sleep state</description>
+                <definition>[1]</definition>
+            </bitField>
+        </register>
+
+        <register access="RW" name="CCR" size="4" offset="0xE000ED14">
+            <gui_name language="en">Configuration and Control</gui_name>
+            <description language="en">Configuration and Control</description>
+            <bitField conditional="false" name="BP" enumerationId="DISABLED_ENABLED">
+                <gui_name language="en">Branch prediction enable</gui_name>
+                <description language="en">Setting this bit to 1 enables branch prediction, also called program flow prediction</description>
+                <definition>[18]</definition>
+            </bitField>
+            <bitField conditional="false" name="IC" enumerationId="DISABLED_ENABLED">
+                <gui_name language="en">Instruction cache enable</gui_name>
+                <description language="en">This is a global enable bit for instruction caches</description>
+                <definition>[17]</definition>
+            </bitField>
+            <bitField conditional="false" name="DC" enumerationId="DISABLED_ENABLED">
+                <gui_name language="en">Cache enable</gui_name>
+                <description language="en">This is a global enable bit for data and unified caches</description>
+                <definition>[16]</definition>
+            </bitField>
+            <bitField conditional="false" name="STKALIGN" enumerationId="CCR_STKALIGN">
+                <gui_name language="en">Stack alignment</gui_name>
+                <description language="en">Determines whether the exception entry sequence guarantees 8-byte stack frame alignment, adjusting the SP if necessary before saving state</description>
+                <definition>[9]</definition>
+            </bitField>
+            <bitField conditional="false" name="BFHFNMIGN" enumerationId="CCR_BFHFNMIGN">
+                <gui_name language="en">BFHFNMIGN</gui_name>
+                <description language="en">Determines the effect of precise data access faults on handlers running at priority -1 or priority -2</description>
+                <definition>[8]</definition>
+            </bitField>
+            <bitField conditional="false" name="DIV_0_TRP" enumerationId="DISABLED_ENABLED">
+                <gui_name language="en">Trap on divide by 0</gui_name>
+                <description language="en">Controls the trap on divide by 0</description>
+                <definition>[4]</definition>
+            </bitField>
+            <bitField conditional="false" name="UNALIGN_TRP" enumerationId="DISABLED_ENABLED">
+                <gui_name language="en">Trap on unaligned access</gui_name>
+                <description language="en">Controls the trapping of unaligned word or halfword accesses</description>
+                <definition>[3]</definition>
+            </bitField>
+            <bitField conditional="false" name="USERSETMPEND" enumerationId="DISABLED_ENABLED">
+                <gui_name language="en">Unprivileged STIR access</gui_name>
+                <description language="en">Controls whether unprivileged software can access the STIR</description>
+                <definition>[1]</definition>
+            </bitField>
+            <bitField conditional="false" name="NONBASETHRDENA" enumerationId="DISABLED_ENABLED">
+                <gui_name language="en">NONBASETHRDENA</gui_name>
+                <description language="en">Controls whether the processor can enter Thread mode at an execution priority level other than base level</description>
+                <definition>[0]</definition>
+            </bitField>
+        </register>
+
+        <register access="RW" name="SHPR1" size="4" offset="0xE000ED18">
+            <gui_name language="en">System Handler Priority 1</gui_name>
+            <description language="en">Sets or returns priority for system handlers 4-7</description>
+            <bitField conditional="false" name="PRI_7">
+                <gui_name language="en">PRI_7</gui_name>
+                <description language="en">Priority of system handler 7</description>
+                <definition>[31:24]</definition>
+            </bitField>
+            <bitField conditional="false" name="PRI_6">
+                <gui_name language="en">PRI_6</gui_name>
+                <description language="en">Priority of system handler 6, UsageFault</description>
+                <definition>[23:16]</definition>
+            </bitField>
+            <bitField conditional="false" name="PRI_5">
+                <gui_name language="en">PRI_5</gui_name>
+                <description language="en">Priority of system handler 5, BusFault</description>
+                <definition>[15:8]</definition>
+            </bitField>
+            <bitField conditional="false" name="PRI_4">
+                <gui_name language="en">PRI_4</gui_name>
+                <description language="en">Priority of system handler 4, MemManage</description>
+                <definition>[7:0]</definition>
+            </bitField>
+        </register>
+
+        <register access="RW" name="SHPR2" size="4" offset="0xE000ED1C">
+            <gui_name language="en">System Handler Priority 2</gui_name>
+            <description language="en">Sets or returns priority for system handlers 8-11</description>
+            <bitField conditional="false" name="PRI_11">
+                <gui_name language="en">PRI_11</gui_name>
+                <description language="en">Priority of system handler 11, SVCall</description>
+                <definition>[31:24]</definition>
+            </bitField>
+            <bitField conditional="false" name="PRI_10">
+                <gui_name language="en">PRI_10</gui_name>
+                <description language="en">Priority of system handler 10</description>
+                <definition>[23:16]</definition>
+            </bitField>
+            <bitField conditional="false" name="PRI_9">
+                <gui_name language="en">PRI_9</gui_name>
+                <description language="en">Priority of system handler 9</description>
+                <definition>[15:8]</definition>
+            </bitField>
+            <bitField conditional="false" name="PRI_8">
+                <gui_name language="en">PRI_8</gui_name>
+                <description language="en">Priority of system handler 8</description>
+                <definition>[7:0]</definition>
+            </bitField>
+        </register>
+
+        <register access="RW" name="SHPR3" size="4" offset="0xE000ED20">
+            <gui_name language="en">System Handler Priority 3</gui_name>
+            <description language="en">Sets or returns priority for system handlers 12-15</description>
+            <bitField conditional="false" name="PRI_15">
+                <gui_name language="en">PRI_15</gui_name>
+                <description language="en">Priority of system handler 15, SysTick</description>
+                <definition>[31:24]</definition>
+            </bitField>
+            <bitField conditional="false" name="PRI_14">
+                <gui_name language="en">PRI_14</gui_name>
+                <description language="en">Priority of system handler 14, PendSV</description>
+                <definition>[23:16]</definition>
+            </bitField>
+            <bitField conditional="false" name="PRI_13">
+                <gui_name language="en">PRI_13</gui_name>
+                <description language="en">Priority of system handler 13</description>
+                <definition>[15:8]</definition>
+            </bitField>
+            <bitField conditional="false" name="PRI_12">
+                <gui_name language="en">PRI_12</gui_name>
+                <description language="en">Priority of system handler 4, DebugMonitor</description>
+                <definition>[7:0]</definition>
+            </bitField>
+        </register>
+
+        <register access="RW" name="SHCSR" size="4" offset="0xE000ED24">
+            <gui_name language="en">System Handler Control and State</gui_name>
+            <description language="en">Controls and provides the active and pending status of system exceptions</description>
+            <bitField conditional="false" name="USGFAULTENA" enumerationId="DISABLED_ENABLED">
+                <gui_name language="en">USGFAULTENA</gui_name>
+                <description language="en">Enable UsageFault</description>
+                <definition>[18]</definition>
+            </bitField>
+            <bitField conditional="false" name="BUSFAULTENA" enumerationId="DISABLED_ENABLED">
+                <gui_name language="en">BUSFAULTENA</gui_name>
+                <description language="en">Enable BusFault</description>
+                <definition>[17]</definition>
+            </bitField>
+            <bitField conditional="false" name="MEMFAULTENA" enumerationId="DISABLED_ENABLED">
+                <gui_name language="en">MEMFAULTENA</gui_name>
+                <description language="en">Enable MemManage fault</description>
+                <definition>[16]</definition>
+            </bitField>
+            <bitField conditional="false" name="SVCALLPENDED" enumerationId="PENDING">
+                <gui_name language="en">SVCALLPENDED</gui_name>
+                <description language="en">SVCall pending</description>
+                <definition>[15]</definition>
+            </bitField>
+            <bitField conditional="false" name="BUSFAULTPENDED" enumerationId="PENDING">
+                <gui_name language="en">BUSFAULTPENDED</gui_name>
+                <description language="en">BusFault pending</description>
+                <definition>[14]</definition>
+            </bitField>
+            <bitField conditional="false" name="MEMFAULTPENDED" enumerationId="PENDING">
+                <gui_name language="en">MEMFAULTPENDED</gui_name>
+                <description language="en">MemManage pending</description>
+                <definition>[13]</definition>
+            </bitField>
+            <bitField conditional="false" name="USGFAULTPENDED" enumerationId="PENDING">
+                <gui_name language="en">USGFAULTPENDED</gui_name>
+                <description language="en">UsageFault pending</description>
+                <definition>[12]</definition>
+            </bitField>
+            <bitField conditional="false" name="SYSTICKACT" enumerationId="ACTIVE">
+                <gui_name language="en">SYSTICKACT</gui_name>
+                <description language="en">SysTick active</description>
+                <definition>[11]</definition>
+            </bitField>
+            <bitField conditional="false" name="PENDSVACT" enumerationId="ACTIVE">
+                <gui_name language="en">PENDSVACT</gui_name>
+                <description language="en">PendSV active</description>
+                <definition>[10]</definition>
+            </bitField>
+            <bitField conditional="false" name="MONITORACT" enumerationId="ACTIVE">
+                <gui_name language="en">MONITORACT</gui_name>
+                <description language="en">Monitor active</description>
+                <definition>[8]</definition>
+            </bitField>
+            <bitField conditional="false" name="SVCALLACT" enumerationId="ACTIVE">
+                <gui_name language="en">SVCALLACT</gui_name>
+                <description language="en">SVCall active</description>
+                <definition>[7]</definition>
+            </bitField>
+            <bitField conditional="false" name="USGFAULTACT" enumerationId="ACTIVE">
+                <gui_name language="en">USGFAULTACT</gui_name>
+                <description language="en">UsageFault active</description>
+                <definition>[3]</definition>
+            </bitField>
+            <bitField conditional="false" name="BUSFAULTACT" enumerationId="ACTIVE">
+                <gui_name language="en">BUSFAULTACT</gui_name>
+                <description language="en">BusFault active</description>
+                <definition>[1]</definition>
+            </bitField>
+            <bitField conditional="false" name="MEMFAULTACT" enumerationId="ACTIVE">
+                <gui_name language="en">MEMFAULTACT</gui_name>
+                <description language="en">MemManage active</description>
+                <definition>[0]</definition>
+            </bitField>
+        </register>
+
+        <register access="RW" name="CFSR" size="4" offset="0xE000ED28">
+            <gui_name language="en">Configurable Fault Status</gui_name>
+            <description language="en">Contains the three Configurable Fault Status Registers MMFSR, BFSR, UFSR</description>
+            <bitField conditional="false" name="DIVBYZERO" enumerationId="OCCURRED">
+                <gui_name language="en">DIVBYZERO</gui_name>
+                <description language="en">Divide by zero error</description>
+                <definition>[25]</definition>
+            </bitField>
+            <bitField conditional="false" name="UNALIGNED" enumerationId="OCCURRED">
+                <gui_name language="en">UNALIGNED</gui_name>
+                <description language="en">Unaligned access error</description>
+                <definition>[24]</definition>
+            </bitField>
+            <bitField conditional="false" name="NOCP" enumerationId="OCCURRED">
+                <gui_name language="en">NOCP</gui_name>
+                <description language="en">Coprocessor access error</description>
+                <definition>[19]</definition>
+            </bitField>
+            <bitField conditional="false" name="INVPC" enumerationId="OCCURRED">
+                <gui_name language="en">INVPC</gui_name>
+                <description language="en">Integrity check error on EXC_RETURN</description>
+                <definition>[18]</definition>
+            </bitField>
+            <bitField conditional="false" name="INVSTATE" enumerationId="OCCURRED">
+                <gui_name language="en">INVSTATE</gui_name>
+                <description language="en">Instruction executed with invalid EPSR.T or EPSR.IT field</description>
+                <definition>[17]</definition>
+            </bitField>
+            <bitField conditional="false" name="UNDEFINSTR" enumerationId="OCCURRED">
+                <gui_name language="en">UNDEFINSTR</gui_name>
+                <description language="en">Processor has attempted to execute an undefined instruction.</description>
+                <definition>[16]</definition>
+            </bitField>
+            <bitField conditional="false" name="BFARVALID" enumerationId="VALID">
+                <gui_name language="en">BFARVALID</gui_name>
+                <description language="en">BFAR has valid contents</description>
+                <definition>[15]</definition>
+            </bitField>
+            <bitField conditional="false" name="LSPERR" enumerationId="OCCURRED">
+                <gui_name language="en">LSPERR</gui_name>
+                <description language="en">Bus fault during FP lazy state preservation</description>
+                <definition>[13]</definition>
+            </bitField>
+            <bitField conditional="false" name="STKERR" enumerationId="OCCURRED">
+                <gui_name language="en">STKERR</gui_name>
+                <description language="en">Derived bus fault on exception entry</description>
+                <definition>[12]</definition>
+            </bitField>
+            <bitField conditional="false" name="UNSTKERR" enumerationId="OCCURRED">
+                <gui_name language="en">UNSTKERR</gui_name>
+                <description language="en">Derived bus fault on exception return</description>
+                <definition>[11]</definition>
+            </bitField>
+            <bitField conditional="false" name="IMPRECISERR" enumerationId="OCCURRED">
+                <gui_name language="en">IMPRECISERR</gui_name>
+                <description language="en">Imprecise data access error</description>
+                <definition>[10]</definition>
+            </bitField>
+            <bitField conditional="false" name="PRECISERR" enumerationId="OCCURRED">
+                <gui_name language="en">PRECISERR</gui_name>
+                <description language="en">Precise data access error</description>
+                <definition>[9]</definition>
+            </bitField>
+            <bitField conditional="false" name="IBUSERR" enumerationId="OCCURRED">
+                <gui_name language="en">IBUSERR</gui_name>
+                <description language="en">Bus fault on an instruction prefetch</description>
+                <definition>[8]</definition>
+            </bitField>
+            <bitField conditional="false" name="MMARVALID" enumerationId="VALID">
+                <gui_name language="en">MMARVALID</gui_name>
+                <description language="en">MMAR has valid contents</description>
+                <definition>[7]</definition>
+            </bitField>
+            <bitField conditional="false" name="MLSPERR" enumerationId="OCCURRED">
+                <gui_name language="en">MLSPERR</gui_name>
+                <description language="en">MemManage fault during FP lazy state preservation</description>
+                <definition>[5]</definition>
+            </bitField>
+            <bitField conditional="false" name="MSTKERR" enumerationId="OCCURRED">
+                <gui_name language="en">MSTKERR</gui_name>
+                <description language="en">Derived MemManage fault on exception entry</description>
+                <definition>[4]</definition>
+            </bitField>
+            <bitField conditional="false" name="MUNSTKERR" enumerationId="OCCURRED">
+                <gui_name language="en">MUNSTKERR</gui_name>
+                <description language="en">Derived MemManage fault on exception return</description>
+                <definition>[3]</definition>
+            </bitField>
+            <bitField conditional="false" name="DACCVIOL" enumerationId="OCCURRED">
+                <gui_name language="en">DACCVIOL</gui_name>
+                <description language="en">Data access violation. The MMAR shows the data address that the load or store tried to access</description>
+                <definition>[1]</definition>
+            </bitField>
+            <bitField conditional="false" name="IACCVIOL" enumerationId="OCCURRED">
+                <gui_name language="en">IACCVIOL</gui_name>
+                <description language="en">MPU or Execute Never (XN) default memory map access violation on an instruction fetch</description>
+                <definition>[0]</definition>
+            </bitField>
+        </register>
+
+        <register access="RW" name="HFSR" size="4" offset="0xE000ED2C">
+            <gui_name language="en">HardFault Status</gui_name>
+            <description language="en">Shows the cause of any hard faults</description>
+            <bitField conditional="false" name="DEBUGEVT" enumerationId="OCCURRED">
+                <gui_name language="en">DEBUGEVT</gui_name>
+                <description language="en">Indicates a Debug event has occurred</description>
+                <definition>[31]</definition>
+            </bitField>
+            <bitField conditional="false" name="FORCED" enumerationId="OCCURRED">
+                <gui_name language="en">FORCED</gui_name>
+                <description language="en">Indicates a fault with configurable priority has been escalated to a HardFault</description>
+                <definition>[30]</definition>
+            </bitField>
+            <bitField conditional="false" name="VECTTBL" enumerationId="OCCURRED">
+                <gui_name language="en">VECTTBL</gui_name>
+                <description language="en">Indicates a fault has occurred because of a vector table read error on exception processing</description>
+                <definition>[1]</definition>
+            </bitField>
+        </register>
+
+        <register access="RW" name="DFSR" size="4" offset="0xE000ED30">
+            <gui_name language="en">Debug Fault Status</gui_name>
+            <description language="en">Shows, at the top level, why a debug event occurred</description>
+            <bitField conditional="false" name="EXTERNAL">
+                <gui_name language="en">EXTERNAL</gui_name>
+                <description language="en">Indicates a debug event generated because of the assertion of EDBGRQ</description>
+                <definition>[4]</definition>
+            </bitField>
+            <bitField conditional="false" name="VCATCH">
+                <gui_name language="en">VCATCH</gui_name>
+                <description language="en">Indicates triggering of a Vector catch</description>
+                <definition>[3]</definition>
+            </bitField>
+            <bitField conditional="false" name="DWTTRAP">
+                <gui_name language="en">DWTTRAP</gui_name>
+                <description language="en">Indicates a debug event generated by the DWT</description>
+                <definition>[2]</definition>
+            </bitField>
+            <bitField conditional="false" name="BKPT">
+                <gui_name language="en">BKPT</gui_name>
+                <description language="en">Indicates a debug event generated by BKPT instruction execution or a breakpoint match in FPB</description>
+                <definition>[1]</definition>
+            </bitField>
+            <bitField conditional="false" name="HALTED">
+                <gui_name language="en">HALTED</gui_name>
+                <description language="en">Indicates a debug event generated by C_HALT or C_STEP request or setting DEMCR.MON_STEP</description>
+                <definition>[0]</definition>
+            </bitField>
+        </register>
+
+        <register access="RW" name="MMFAR" size="4" offset="0xE000ED34">
+            <gui_name language="en">MemManage Fault Address</gui_name>
+            <description language="en">Shows the address of the memory location that caused an MMU fault</description>
+        </register>
+
+        <register access="RW" name="BFAR" size="4" offset="0xE000ED38">
+            <gui_name language="en">BusFault Address</gui_name>
+            <description language="en">Shows the address associated with a precise data access fault</description>
+        </register>
+
+        <register access="RW" name="AFSR" size="4" offset="0xE000ED3C">
+            <gui_name language="en">Auxiliary Fault Status</gui_name>
+            <description language="en">Latched version of the AUXFAULT inputs</description>
+        </register>
+
+        <register access="RW" name="CPACR" size="4" offset="0xE000ED88">
+            <gui_name language="en">Coprocessor Access Control</gui_name>
+            <description language="en">Specifies the access privileges for coprocessors</description>
+            <bitField conditional="false" enumerationId="E_CP_ACC_PERMISSION" name="CP11">
+                <gui_name language="en">CP11</gui_name>
+                <description language="en">Defines access permissions for the CP11 coprocessor.</description>
+                <definition>[23:22]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="E_CP_ACC_PERMISSION" name="CP10">
+                <gui_name language="en">CP10</gui_name>
+                <description language="en">Defines access permissions for the CP10 coprocessor.</description>
+                <definition>[21:20]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="E_CP_ACC_PERMISSION" name="CP7">
+                <gui_name language="en">CP7</gui_name>
+                <description language="en">Defines access permissions for the CP7 coprocessor.</description>
+                <definition>[15:14]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="E_CP_ACC_PERMISSION" name="CP6">
+                <gui_name language="en">CP6</gui_name>
+                <description language="en">Defines access permissions for the CP6 coprocessor.</description>
+                <definition>[13:12]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="E_CP_ACC_PERMISSION" name="CP5">
+                <gui_name language="en">CP5</gui_name>
+                <description language="en">Defines access permissions for the CP5 coprocessor.</description>
+                <definition>[11:10]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="E_CP_ACC_PERMISSION" name="CP4">
+                <gui_name language="en">CP4</gui_name>
+                <description language="en">Defines access permissions for the CP4 coprocessor.</description>
+                <definition>[9:8]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="E_CP_ACC_PERMISSION" name="CP3">
+                <gui_name language="en">CP3</gui_name>
+                <description language="en">Defines access permissions for the CP3 coprocessor.</description>
+                <definition>[7:6]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="E_CP_ACC_PERMISSION" name="CP2">
+                <gui_name language="en">CP2</gui_name>
+                <description language="en">Defines access permissions for the CP2 coprocessor.</description>
+                <definition>[5:4]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="E_CP_ACC_PERMISSION" name="CP1">
+                <gui_name language="en">CP1</gui_name>
+                <description language="en">Defines access permissions for the CP1 coprocessor.</description>
+                <definition>[3:2]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="E_CP_ACC_PERMISSION" name="CP0">
+                <gui_name language="en">CP0</gui_name>
+                <description language="en">Defines access permissions for the CP0 coprocessor.</description>
+                <definition>[1:0]</definition>
+            </bitField>
+        </register>
+
+        <register access="WO" name="STIR" size="4" offset="0xE000EF00">
+            <gui_name language="en">Software Triggered Interrupt</gui_name>
+            <description language="en">Provides a mechanism for software to generate an interrupt</description>
+            <bitField conditional="false" name="INTID">
+                <gui_name language="en">INTID</gui_name>
+                <description language="en">Indicates the interrupt to be triggered. The value written is (ExceptionNumber - 16)</description>
+                <definition>[8:0]</definition>
+            </bitField>
+        </register>
+
+    </peripheral>
+
+    <peripheral name="ID" offset="0x00000000">
+        <gui_name language="en">ID</gui_name>
+        <description language="en">ID registers</description>
+
+        <register access="RO" name="CPUID" size="4" offset="0xE000ED00">
+            <gui_name language="en">CPUID Base</gui_name>
+            <description language="en">Identification information for the processor</description>
+           <bitField conditional="false" name="Implementer">
+                <gui_name language="en">Implementer</gui_name>
+                <description language="en">Implementer code</description>
+                <definition>[31:24]</definition>
+            </bitField>
+            <bitField conditional="false" name="Variant">
+                <gui_name language="en">Variant</gui_name>
+                <description language="en">Implementation defined</description>
+                <definition>[23:20]</definition>
+            </bitField>
+            <bitField conditional="false" name="Constant">
+                <gui_name language="en">Constant</gui_name>
+                <description language="en">Indicates the architecture</description>
+                <definition>[19:16]</definition>
+            </bitField>
+            <bitField conditional="false" name="Partno">
+                <gui_name language="en">Partno</gui_name>
+                <description language="en">Indicates part number</description>
+                <definition>[15:4]</definition>
+            </bitField>
+            <bitField conditional="false" name="Revision">
+                <gui_name language="en">Revision</gui_name>
+                <description language="en">Indicates revision</description>
+                <definition>[3:0]</definition>
+            </bitField>
+        </register>
+
+        <register access="RO" name="ID_PFR0" size="4" offset="0xE000ED40">
+            <gui_name language="en">Processor Feature Register 0</gui_name>
+            <description language="en"></description>
+            <bitField conditional="false" name="State1" enumerationId="ID_PFR0_STATE1">
+                <gui_name language="en">State1</gui_name>
+                <description language="en">Thumb instruction set support</description>
+                <definition>[7:4]</definition>
+            </bitField>
+        </register>
+        <register access="RO" name="ID_PFR1" size="4" offset="0xE000ED44">
+            <gui_name language="en">Processor Feature Register 1</gui_name>
+            <description language="en"></description>
+            <bitField conditional="false" name="M_Profile" enumerationId="ID_PFR1_M_PROFILE">
+                <gui_name language="en">M_Profile</gui_name>
+                <description language="en">M profile programmers' model</description>
+                <definition>[11:8]</definition>
+            </bitField>
+        </register>
+        <register access="RO" name="ID_DFR0" size="4" offset="0xE000ED48">
+            <gui_name language="en">Debug Features Register 0</gui_name>
+            <description language="en"></description>
+            <bitField conditional="false" name="M_Profile" enumerationId="E_FEATURE_SUPPORT">
+                <gui_name language="en">M_Profile</gui_name>
+                <description language="en">Debug model, M profile</description>
+                <definition>[23:20]</definition>
+            </bitField>
+        </register>
+        <register access="RO" name="ID_AFR0" size="4" offset="0xE000ED4C">
+            <gui_name language="en">Auxiliary Features Register 0</gui_name>
+            <description language="en">Implementation defined features</description>
+        </register>
+        <register access="RO" name="ID_MMFR0" size="4" offset="0xE000ED50">
+            <gui_name language="en">Memory Model Feature Register 0</gui_name>
+            <description language="en">Memory Model Features</description>
+            <bitField conditional="false" enumerationId="E_FEATURE_SUPPORT" name="Auxiliary_registers">
+                <gui_name language="en">Auxiliary_registers</gui_name>
+                <description language="en">Indicates support for Auxiliary registers</description>
+                <definition>[23:20]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="ID_MMFR0_TCM" name="TCM_support">
+                <gui_name language="en">TCM_SUPPORT</gui_name>
+                <description language="en">Indicates support for TCM</description>
+                <definition>[19:16]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="ID_MMFR0_SHARABILITY" name="Shareability_levels">
+                <gui_name language="en">Shareability_levels</gui_name>
+                <description language="en">Indicates the number of shareability levels implemented</description>
+                <definition>[15:12]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="ID_MMFR0_OUTER_SHARABILITY" name="Outermost_shareability">
+                <gui_name language="en">Outermost_shareability</gui_name>
+                <description language="en">Indicates the outermost shareability domain implemented</description>
+                <definition>[11:8]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="ID_MMFR0_PMSA" name="PMSA">
+                <gui_name language="en">PMSA</gui_name>
+                <description language="en">Indicates support for a PMSA</description>
+                <definition>[7:4]</definition>
+            </bitField>
+        </register>
+        <register access="RO" name="ID_MMFR1" size="4" offset="0xE000ED54">
+            <gui_name language="en">Memory Model Feature Register 1</gui_name>
+            <description language="en">Memory Model Features</description>
+        </register>
+        <register access="RO" name="ID_MMFR2" size="4" offset="0xE000ED58">
+            <gui_name language="en">Memory Model Feature Register 2</gui_name>
+            <description language="en">Memory Model Features</description>
+            <bitField conditional="false" enumerationId="E_FEATURE_SUPPORT" name="WFI">
+                <gui_name language="en">WFI</gui_name>
+                <description language="en">Indicates support for wait-for-interrupt stalling. </description>
+                <definition>[27:24]</definition>
+            </bitField>
+        </register>
+        <register access="RO" name="ID_MMFR3" size="4" offset="0xE000ED5C">
+            <gui_name language="en">Memory Model Feature Register 3</gui_name>
+            <description language="en">Memory Model Features</description>
+        </register>
+        <register access="RO" name="ID_ISAR0" size="4" offset="0xE000ED60">
+            <gui_name language="en">Instruction Set Attributes Register 0</gui_name>
+            <description language="en">Instruction Set Attributes</description>
+            <bitField conditional="false" enumerationId="E_FEATURE_SUPPORT" name="Divide_instrs">
+                <gui_name language="en">Divide_instrs</gui_name>
+                <description language="en">Indicates the supported divide instructions</description>
+                <definition>[27:24]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="E_FEATURE_SUPPORT" name="Debug_instrs">
+                <gui_name language="en">Debug_instructions</gui_name>
+                <description language="en">Indicates the supported debug instructions</description>
+                <definition>[23:20]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="ID_ISAR0_COPROC" name="Coproc_instrs">
+                <gui_name language="en">Coproc_instrs</gui_name>
+                <description language="en">Indicates the supported coprocessor instructions</description>
+                <definition>[19:16]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="E_FEATURE_SUPPORT" name="CmpBranch_instrs">
+                <gui_name language="en">CmpBranch_instrs</gui_name>
+                <description language="en">Indicates support for combined compare and branch instructions.</description>
+                <definition>[15:12]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="E_FEATURE_SUPPORT" name="Bitfield_instrs">
+                <gui_name language="en">Bitfield_instrs</gui_name>
+                <description language="en">Indicates support for bitfield instructions. </description>
+                <definition>[11:8]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="E_FEATURE_SUPPORT" name="BitCount_instrs">
+                <gui_name language="en">BitCount_instrs</gui_name>
+                <description language="en">Indicates support for bit counting instructions. </description>
+                <definition>[7:4]</definition>
+            </bitField>
+        </register>
+        <register access="RO" name="ID_ISAR1" size="4" offset="0xE000ED64">
+            <gui_name language="en">Instruction Set Attributes Register 1</gui_name>
+            <description language="en">Instruction Set Attributes</description>
+            <bitField conditional="false" name="Interwork_instrs" enumerationId="ID_ISAR1_INTERWORK">
+                <gui_name language="en">Interwork_instrs</gui_name>
+                <description language="en">Indicates support for instructions that branch between ARM and Thumb code.</description>
+                <definition>[27:24]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="E_FEATURE_SUPPORT" name="Immediate_instrs">
+                <gui_name language="en">Immediate_instrs</gui_name>
+                <description language="en">Indicates support for immediate instructions. </description>
+                <definition>[23:20]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="E_FEATURE_SUPPORT" name="IfThen_instrs">
+                <gui_name language="en">IfThen_instrs</gui_name>
+                <description language="en">Indicates support for IfThen instructions.</description>
+                <definition>[19:16]</definition>
+            </bitField>
+            <bitField conditional="false" name="Extend_instrs">
+                <gui_name language="en">Extend_instrs</gui_name>
+                <description language="en">Indicates support for sign or zero extend instructions. </description>
+                <definition>[15:12]</definition>
+            </bitField>
+        </register>
+        <register access="RO" name="ID_ISAR2" size="4" offset="0xE000ED68">
+            <gui_name language="en">Instruction Set Attributes Register 2</gui_name>
+            <description language="en">Instruction Set Attributes</description>
+            <bitField conditional="false" name="Reversal_instrs">
+                <gui_name language="en">Reversal_instrs</gui_name>
+                <description language="en">Indicates the supported reversal instructions. </description>
+                <definition>[31:28]</definition>
+            </bitField>
+            <bitField conditional="false" name="MultU_instrs">
+                <gui_name language="en">Unsigned multiply instructions</gui_name>
+                <description language="en">Indicates the supported advanced unsigned multiply instructions.</description>
+                <definition>[23:20]</definition>
+            </bitField>
+            <bitField conditional="false" name="MultS_instrs">
+                <gui_name language="en">Signed multiply instructions</gui_name>
+                <description language="en">Indicates the supported advanced signed multiply instructions.</description>
+                <definition>[19:16]</definition>
+            </bitField>
+            <bitField conditional="false" name="Mult_instrs">
+                <gui_name language="en">Multiply Instructions</gui_name>
+                <description language="en">Indicates the supported additional multiply instructions. </description>
+                <definition>[15:12]</definition>
+            </bitField>
+            <bitField conditional="false" name="MultiAccessInt_instrs">
+                <gui_name language="en">Interruptible Instructions</gui_name>
+                <description language="en">Indicates the supported multi-access interruptible instructions.</description>
+                <definition>[11:8]</definition>
+            </bitField>
+            <bitField conditional="false" name="MultiAccessInt_instrs">
+                <gui_name language="en">Memory Hint Instructions</gui_name>
+                <description language="en">Indicates the supported memory hint instructions. </description>
+                <definition>[7:4]</definition>
+            </bitField>
+            <bitField conditional="false" name="LoadStore_instrs">
+                <gui_name language="en">Load and Store Instructions</gui_name>
+                <description language="en">Indicates the supported additional load and store instructions. </description>
+                <definition>[3:0]</definition>
+            </bitField>
+        </register>
+        <register access="RO" name="ID_ISAR3" size="4" offset="0xE000ED6C">
+            <gui_name language="en">Instruction Set Attributes Register 3</gui_name>
+            <description language="en">Instruction Set Attributes</description>
+            <bitField conditional="false" enumerationId="E_FEATURE_SUPPORT" name="TrueNOP_instrs">
+                <gui_name language="en">True NOP Instructions</gui_name>
+                <description language="en">Indicates support for true NOP instructions.</description>
+                <definition>[27:24]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="E_FEATURE_SUPPORT" name="ThumbCopy_instrs">
+                <gui_name language="en">Thumb copy instructions</gui_name>
+                <description language="en">Indicates support for Thumb copy instructions. </description>
+                <definition>[23:20]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="E_FEATURE_SUPPORT" name="TabBranch_instrs">
+                <gui_name language="en">Table branch instructions</gui_name>
+                <description language="en">Indicates support for table branch instructions. </description>
+                <definition>[19:16]</definition>
+            </bitField>
+            <bitField conditional="false" name="SynchPrim_instrs">
+                <gui_name language="en">Synchronization primitive instructions</gui_name>
+                <description language="en">Indicates support for synchronization primitive instructions.</description>
+                <definition>[15:12]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="E_FEATURE_SUPPORT" name="SVC_instrs">
+                <gui_name language="en">SVC instructions</gui_name>
+                <description language="en">Indicates support for SVC instructions.</description>
+                <definition>[11:8]</definition>
+            </bitField>
+            <bitField conditional="false" name="SIMD_instrs">
+                <gui_name language="en">SIMD instructions</gui_name>
+                <description language="en">Indicates support for Single Instruction Multiple Data (SIMD) instructions.</description>
+                <definition>[7:4]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="E_FEATURE_SUPPORT" name="Saturate_instrs">
+                <gui_name language="en">Saturate instructions</gui_name>
+                <description language="en">Indicates support for saturate instructions. </description>
+                <definition>[3:0]</definition>
+            </bitField>
+        </register>
+        <register access="RO" name="ID_ISAR4" size="4" offset="0xE000ED70">
+            <gui_name language="en">Instruction Set Attributes Register 4</gui_name>
+            <description language="en">Instruction Set Attributes</description>
+            <bitField conditional="false" enumerationId="E_FEATURE_SUPPORT" name="PSR_M_instrs">
+                <gui_name language="en">PSR modify instructions</gui_name>
+                <description language="en">Indicates support for saturate instructions. </description>
+                <definition>[27:24]</definition>
+            </bitField>
+            <bitField conditional="false" name="SynchPrim_instrs_frac">
+                <gui_name language="en">Synchronization Primitive instructions</gui_name>
+                <description language="en">Indicates support for Synchronization Primitives</description>
+                <definition>[23:20]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="E_FEATURE_SUPPORT" name="Barrier_instrs">
+                <gui_name language="en">Barrier instructions</gui_name>
+                <description language="en">Indicates the supported barrier instructions. </description>
+                <definition>[19:16]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="E_BASIC_FULL" name="Writeback_instrs">
+                <gui_name language="en">Writeback instructions</gui_name>
+                <description language="en">Indicates support for Writeback addressing modes</description>
+                <definition>[11:8]</definition>
+            </bitField>
+            <bitField conditional="false" name="WithShifts_instrs">
+                <gui_name language="en">With shift instructions</gui_name>
+                <description language="en">Indicates the support for instructions with shifts:</description>
+                <definition>[7:4]</definition>
+            </bitField>
+            <bitField conditional="false" name="Unpriv_instrs">
+                <gui_name language="en">Unprivileged instructions</gui_name>
+                <description language="en">Indicates the supported unprivileged instructions</description>
+                <definition>[3:0]</definition>
+            </bitField>
+        </register>
+
+    </peripheral>
+
+    <peripheral name="FPE" offset="0x00000000">
+        <gui_name language="en">FP</gui_name>
+        <description language="en">FP System Control registers</description>
+
+        <register access="RW" name="FPCCR" size="4" offset="0xE000EF34">
+            <gui_name language="en">Floating-Point Context Control</gui_name>
+            <description language="en">Holds control data for the floating-point unit</description>
+            <bitField conditional="false" name="ASPEN">
+                <gui_name language="en">ASPEN</gui_name>
+                <description language="en">When this bit is set to 1, execution of a floating-point instruction sets the CONTROL.FPCA bit to 1</description>
+                <definition>[31]</definition>
+            </bitField>
+            <bitField conditional="false" name="LSPEN" enumerationId="E_DISABLE_ENABLE">
+                <gui_name language="en">LSPEN</gui_name>
+                <description language="en">Enables lazy context save of FP state</description>
+                <definition>[30]</definition>
+            </bitField>
+            <bitField conditional="false" name="MONRDY" enumerationId="E_NOTABLE_ABLE">
+                <gui_name language="en">MONRDY</gui_name>
+                <description language="en">Indicates whether the software executing when the processor allocated the FP stack frame was able to set the DebugMonitor exception to pending</description>
+                <definition>[8]</definition>
+            </bitField>
+            <bitField conditional="false" name="BFRDY" enumerationId="E_NOTABLE_ABLE">
+                <gui_name language="en">BFRDY</gui_name>
+                <description language="en">Indicates whether the software executing when the processor allocated the FP stack frame was able to set the BusFault exception to pending</description>
+                <definition>[6]</definition>
+            </bitField>
+            <bitField conditional="false" name="MMRDY" enumerationId="E_NOTABLE_ABLE">
+                <gui_name language="en">MMRDY</gui_name>
+                <description language="en">Indicates whether the software executing when the processor allocated the FP stack frame was able to set the MemManage exception to pending</description>
+                <definition>[5]</definition>
+            </bitField>
+            <bitField conditional="false" name="HFRDY" enumerationId="E_NOTABLE_ABLE">
+                <gui_name language="en">HFRDY</gui_name>
+                <description language="en">Indicates whether the software executing when the processor allocated the FP stack frame was able to set the HardFault exception to pending</description>
+                <definition>[4]</definition>
+            </bitField>
+            <bitField conditional="false" name="THREAD" enumerationId="E_HANDLER_THREAD">
+                <gui_name language="en">THREAD</gui_name>
+                <description language="en">Indicates the processor mode when it allocated the FP stack frame</description>
+                <definition>[3]</definition>
+            </bitField>
+            <bitField conditional="false" name="USER" enumerationId="E_PRIV_UNPRIV">
+                <gui_name language="en">USER</gui_name>
+                <description language="en">Indicates the privilege level of the software executing when the processor allocated the FP stack frame</description>
+                <definition>[1]</definition>
+            </bitField>
+            <bitField conditional="false" name="LSPACT" enumerationId="E_NOTACTIVE_ACTIVE">
+                <gui_name language="en">LSPACT</gui_name>
+                <description language="en">Indicates whether Lazy preservation of the FP state is active</description>
+                <definition>[0]</definition>
+            </bitField>
+        </register>
+
+        <register access="RW" name="FPCAR" size="4" offset="0xE000EF38">
+            <gui_name language="en">Floating-Point Context Address</gui_name>
+            <description language="en">Holds the location of the unpopulated floating-point register space allocated on an exception stack frame</description>
+        </register>
+
+        <register access="RW" name="FPDSCR" size="4" offset="0xE000EF3C">
+            <gui_name language="en">Floating-Point Default Status Control</gui_name>
+            <description language="en">Holds the default values for the floating-point status control data that the processor assigns to the FPSCR when it creates a new floating-point context</description>
+            <bitField conditional="false" name="AHP">
+                <gui_name language="en">AHP</gui_name>
+                <description language="en">Default value for FPSCR.AHP</description>
+                <definition>[26]</definition>
+            </bitField>
+            <bitField conditional="false" name="DN">
+                <gui_name language="en">DN</gui_name>
+                <description language="en">Default value for FPSCR.DN</description>
+                <definition>[25]</definition>
+            </bitField>
+            <bitField conditional="false" name="FZ">
+                <gui_name language="en">FZ</gui_name>
+                <description language="en">Default value for FPSCR.FZ</description>
+                <definition>[24]</definition>
+            </bitField>
+            <bitField conditional="false" name="RMode">
+                <gui_name language="en">RMode</gui_name>
+                <description language="en">Default value for FPSCR.RMode</description>
+                <definition>[23:22]</definition>
+            </bitField>
+        </register>
+
+        <register access="RO" name="MVFR0" size="4" offset="0xE000EF40">
+            <gui_name language="en">Media and FP Feature Register 0</gui_name>
+            <description language="en">Describes the features provided by the Floating-point extension</description>
+            <bitField conditional="false" name="FP_Rounding_modes" enumerationId="E_SUPPORTED">
+                <gui_name language="en">FP_Rounding_modes</gui_name>
+                <description language="en">Indicates the rounding modes supported by the FP floating-point hardware</description>
+                <definition>[31:28]</definition>
+            </bitField>
+            <bitField conditional="false" name="Short_vectors" enumerationId="E_NOT_SUPPORTED">
+                <gui_name language="en">Short_vectors</gui_name>
+                <description language="en">Indicates the hardware support for FP short vectors</description>
+                <definition>[27:24]</definition>
+            </bitField>
+            <bitField conditional="false" name="Square_root" enumerationId="E_SUPPORTED">
+                <gui_name language="en">Square_root</gui_name>
+                <description language="en">Indicates the hardware support for FP square root operations</description>
+                <definition>[23:20]</definition>
+            </bitField>
+            <bitField conditional="false" name="Divide" enumerationId="E_SUPPORTED">
+                <gui_name language="en">Divide</gui_name>
+                <description language="en">Indicates the hardware support for FP divide operations</description>
+                <definition>[19:16]</definition>
+            </bitField>
+            <bitField conditional="false" name="FP_exception_trapping" enumerationId="E_NOT_SUPPORTED">
+                <gui_name language="en">FP_exception_trapping</gui_name>
+                <description language="en">Indicates whether the FP hardware implementation supports exception trapping</description>
+                <definition>[15:12]</definition>
+            </bitField>
+            <bitField conditional="false" name="Double_precision" enumerationId="E_SUPPORTED2">
+                <gui_name language="en">Double_precision</gui_name>
+                <description language="en">Indicates the hardware support for FP double-precision operations</description>
+                <definition>[11:8]</definition>
+            </bitField>
+            <bitField conditional="false" name="Single_precision" enumerationId="E_SUPPORTED2">
+                <gui_name language="en">Single_precision</gui_name>
+                <description language="en">Indicates the hardware support for FP single-precision operations</description>
+                <definition>[7:4]</definition>
+            </bitField>
+            <bitField conditional="false" name="A_SIMD" enumerationId="E_MVFR0_SIMD">
+                <gui_name language="en">A_SIMD</gui_name>
+                <description language="en">Indicates the size of the FP register bank</description>
+                <definition>[3:0]</definition>
+            </bitField>
+        </register>
+
+        <register access="RO" name="MVFR1" size="4" offset="0xE000EF44">
+            <gui_name language="en">Media and FP Feature Register 1</gui_name>
+            <description language="en">Describes the features provided by the Floating-point extension</description>
+            <bitField conditional="false" name="FP_fused_MAC" enumerationId="E_SUPPORTED">
+                <gui_name language="en">FP_fused_MAC</gui_name>
+                <description language="en">Indicates whether the FP supports fused multiply accumulate operations</description>
+                <definition>[31:28]</definition>
+            </bitField>
+            <bitField conditional="false" name="FP_HPFP" enumerationId="E_SUPPORTED_DOUBLE">
+                <gui_name language="en">FP_HPFP</gui_name>
+                <description language="en">Indicates whether the FP supports half-precision floating-point conversion operations</description>
+                <definition>[27:24]</definition>
+            </bitField>
+            <bitField conditional="false" name="D_NaN" enumerationId="E_SUPPORTED">
+                <gui_name language="en">D_NaN</gui_name>
+                <description language="en">Indicates whether the FP hardware implementation supports only the Default NaN mode</description>
+                <definition>[7:4]</definition>
+            </bitField>
+            <bitField conditional="false" name="FtZ" enumerationId="E_SUPPORTED">
+                <gui_name language="en">FtZ</gui_name>
+                <description language="en">Indicates whether the FP hardware implementation supports only the Flush-to-Zero mode of operation</description>
+                <definition>[3:0]</definition>
+            </bitField>
+        </register>
+        <register access="RO" name="MVFR2" size="4" offset="0xE000EF48">
+            <gui_name language="en">Media and FP Feature Register 2</gui_name>
+            <description language="en">Describes the features provided by the Floating-point extension</description>
+            <bitField conditional="false" name="VFP_Misc" enumerationId="E_SUPPORTED4">
+                <gui_name language="en">VFP_Misc</gui_name>
+                <description language="en">Indicates whether the FP hardware implementation supports Floating-point selection, Floating-point Conversion to Integer with Direct Rounding Modes, Floating-point Round to Integral Floating-point and Floating-point MaxNum and MinNum</description>
+                <definition>[7:4]</definition>
+            </bitField>
+        </register>
+    </peripheral>
+
+    <peripheral name="SysTick" offset="0x00000000">
+        <gui_name language="en">SysTick</gui_name>
+        <description language="en">System Timer registers</description>
+
+        <register access="RW" name="STCSR" size="4" offset="0xE000E010">
+            <gui_name language="en">SysTick Control and Status</gui_name>
+            <description language="en">Controls the system timer and provides status data</description>
+            <bitField access="RO" conditional="false" name="COUNTFLAG" enumerationId="SYST_CSR_COUNTFLAG">
+                <gui_name language="en">COUNTFLAG</gui_name>
+                <description language="en">Indicates whether the counter has counted to 0 since the last read of this register</description>
+                <definition>[16]</definition>
+            </bitField>
+            <bitField conditional="false" name="CLKSOURCE" enumerationId="SYST_CSR_CLKSOURCE">
+                <gui_name language="en">CLKSOURCE</gui_name>
+                <description language="en">Indicates the SysTick clock source</description>
+                <definition>[2]</definition>
+            </bitField>
+            <bitField conditional="false" name="TICKINT" enumerationId="SYST_CSR_TICKINT">
+                <gui_name language="en">TICKINT</gui_name>
+                <description language="en">Indicates whether counting to 0 causes the status of the SysTick exception to change to pending</description>
+                <definition>[1]</definition>
+            </bitField>
+            <bitField conditional="false" name="ENABLE" enumerationId="SYST_CSR_ENABLE">
+                <gui_name language="en">ENABLE</gui_name>
+                <description language="en">Indicates the enabled status of the SysTick counter</description>
+                <definition>[0]</definition>
+            </bitField>
+        </register>
+
+        <register access="RW" name="STRVR" size="4" offset="0xE000E014">
+            <gui_name language="en">SysTick Reload Value</gui_name>
+            <description language="en">Sets or reads the reload value of the SYST_CVR register</description>
+            <bitField conditional="false" name="RELOAD">
+                <gui_name language="en">RELOAD</gui_name>
+                <description language="en">The value to load into the SYST_CVR register when the counter reaches 0</description>
+                <definition>[23:0]</definition>
+            </bitField>
+        </register>
+
+        <register access="RW" name="STCVR" size="4" offset="0xE000E018">
+            <gui_name language="en">SysTick Current Value</gui_name>
+            <description language="en">Reads or clears the current counter value</description>
+            <bitField conditional="false" name="CURRENT">
+                <gui_name language="en">CURRENT</gui_name>
+                <description language="en">This is the value of the counter at the time it is sampled</description>
+                <definition>[23:0]</definition>
+            </bitField>
+        </register>
+
+        <register access="RO" name="STCR" size="4" offset="0xE000E01C">
+            <gui_name language="en">SysTick Calibration Value</gui_name>
+            <description language="en">Reads the calibration value and parameters for SysTick</description>
+            <bitField conditional="false" name="NOREF" enumerationId="SYST_CALIB_NOREF">
+                <gui_name language="en">NOREF</gui_name>
+                <description language="en">Indicates whether the IMPLEMENTATION DEFINED reference clock is provided</description>
+                <definition>[31]</definition>
+            </bitField>
+            <bitField conditional="false" name="SKEW" enumerationId="SYST_CALIB_SKEW">
+                <gui_name language="en">SKEW</gui_name>
+                <description language="en">Indicates whether the 10ms calibration value is exact</description>
+                <definition>[30]</definition>
+            </bitField>
+            <bitField conditional="false" name="TENMS">
+                <gui_name language="en">TENMS</gui_name>
+                <description language="en">Optionally, holds a reload value to be used for 10ms (100Hz) timing, subject to system clock skew errors</description>
+                <definition>[23:0]</definition>
+            </bitField>
+        </register>
+    </peripheral>
+
+        <!-- Register info from Cortex-M7 Eng Spec
+        0xE000EF90 ITCMCR RW Unknown Instruction and Data Tightly-Coupled Memory Control Registers on page 4-7
+        0xE000EF94 DTCMCR RW Unknown
+        0xE000EF98 AHBPCR RW Unknown AHBS Control Register on page 4-8
+        0xE000EF9C CACR RW Unknown L1 Cache Control Register on page 4-9
+        0xE000EFA0 AHBSCR RW Unknown AHBP control register on page 4-10
+        0xE000EFA8 ABFSR RW Unknown Asynchronous Bus Fault Status Register on page 4-11
+        -->
+    <peripheral name="ImpDef" offset="0x00000000">
+        <gui_name language="en">ImpDef</gui_name>
+        <description language="en">Implementation defined registers</description>
+        <register access="RW" name="ITCMCR" size="4" offset="0xE000EF90">
+            <gui_name language="en">Instruction Tightly-Coupled Memory Control Register</gui_name>
+            <description language="en">Controls whether an access is mapped to TCM or AXIM</description>
+            <bitField conditional="false" name="SZ" enumerationId="TCMCR_SIZE">
+                <gui_name language="en">Instruction TCM Size</gui_name>
+                <description language="en">Indicates the size of the relevant TCM</description>
+                <definition>[6:3]</definition>
+            </bitField>
+            <bitField conditional="false" name="RETEN" enumerationId="DISABLED_ENABLED">
+                <gui_name language="en">Retry phase enable</gui_name>
+                <description language="en">When enabled the processor will guarantee to honour the retry output on the corresponding TCM interface</description>
+                <definition>[2]</definition>
+            </bitField>
+            <bitField conditional="false" name="RMW" enumerationId="DISABLED_ENABLED">
+                <gui_name language="en">Read-modify-write enable</gui_name>
+                <description language="en">Indicates that all sub-chunk writes to a given TCM use a RMW sequence</description>
+                <definition>[1]</definition>
+            </bitField>
+            <bitField conditional="false" name="EN" enumerationId="DISABLED_ENABLED">
+                <gui_name language="en">TCM enable</gui_name>
+                <description language="en">Enable TCM. When a TCM is disabled all accesses are made to the AXIM</description>
+                <definition>[0]</definition>
+            </bitField>
+        </register>
+        <register access="RW" name="DTCMCR" size="4" offset="0xE000EF94">
+            <gui_name language="en">Data Tightly-Coupled Memory Control Register</gui_name>
+            <description language="en">Controls whether an access is mapped to TCM or AXIM</description>
+            <bitField conditional="false" name="TCM_Size" enumerationId="TCMCR_SIZE">
+                <gui_name language="en">Data TCM Size</gui_name>
+                <description language="en">Indicates the size of the relevant TCM</description>
+                <definition>[6:3]</definition>
+            </bitField>
+            <bitField conditional="false" name="RETEN" enumerationId="DISABLED_ENABLED">
+                <gui_name language="en">Retry phase enable</gui_name>
+                <description language="en">When enabled the processor will guarantee to honour the retry output on the corresponding TCM interface</description>
+                <definition>[2]</definition>
+            </bitField>
+            <bitField conditional="false" name="RMW" enumerationId="DISABLED_ENABLED">
+                <gui_name language="en">Read-modify-write enable</gui_name>
+                <description language="en">Indicates that all sub-chunk writes to a given TCM use a RMW sequence</description>
+                <definition>[1]</definition>
+            </bitField>
+            <bitField conditional="false" name="EN" enumerationId="DISABLED_ENABLED">
+                <gui_name language="en">TCM enable</gui_name>
+                <description language="en">Enable TCM. When a TCM is disabled all accesses are made to the AXIM</description>
+                <definition>[0]</definition>
+            </bitField>
+        </register>
+        <register access="RW" name="AHBSCR" size="4" offset="0xE000EFA0">
+            <gui_name language="en">AHBS Control Register</gui_name>
+            <description language="en">Controls the priority of AHBS traffic</description>
+            <bitField conditional="false" name="INITCOUNT">
+                <gui_name language="en">Fairness counter initialization value</gui_name>
+                <description language="en">Use the to demote access priority of the requestor selected by the AHBSCR.CTL</description>
+                <definition>[15:11]</definition>
+            </bitField>
+            <bitField conditional="false" name="TPRI">
+                <gui_name language="en">TPRI</gui_name>
+                <description language="en">Threshold execution priority for AHBS traffic demotion.</description>
+                <definition>[10:2]</definition>
+            </bitField>
+            <bitField conditional="false" name="CTL" enumerationId="AHBPCR_CTL">
+                <gui_name language="en">CTL</gui_name>
+                <description language="en">AHBS prioritisation control</description>
+                <definition>[1:0]</definition>
+            </bitField>
+        </register>
+        <register access="RW" name="CACR" size="4" offset="0xE000EF9C">
+            <gui_name language="en">L1 Cache Control Register</gui_name>
+            <description language="en">Controls L1 ECC and the L1 cache coherency usage model</description>
+            <bitField conditional="false" name="WT" enumerationId="DISABLED_ENABLED">
+                <gui_name language="en">WT enable</gui_name>
+                <description language="en">Enables Force WT in the instruction and data cache</description>
+                <definition>[2]</definition>
+            </bitField>
+            <bitField conditional="false" name="ECC" enumerationId="ENABLED_DISABLED">
+                <gui_name language="en">ECC enable</gui_name>
+                <description language="en">Enable TCM. Enables ECC in the instruction and data cache</description>
+                <definition>[1]</definition>
+            </bitField>
+            <bitField conditional="false" name="SIWT" enumerationId="DISABLED_ENABLED">
+                <gui_name language="en">SIWT enable</gui_name>
+                <description language="en">Enables cache coherency usage, globally visible writes</description>
+                <definition>[0]</definition>
+            </bitField>
+        </register>
+        <register access="RW" name="AHBPCR" size="4" offset="0xE000EF98">
+            <gui_name language="en">AHBP control register</gui_name>
+            <description language="en">Controls accesses to AHBP or AXIM</description>
+            <bitField conditional="false" name="SZ" enumerationId="AHBPCR_SIZE">
+                <gui_name language="en">AHBP Size</gui_name>
+                <description language="en">Size of AHBP</description>
+                <definition>[3:1]</definition>
+            </bitField>
+            <bitField conditional="false" name="EN" enumerationId="DISABLED_ENABLED">
+                <gui_name language="en">AHBP enable</gui_name>
+                <description language="en">Enables AHBP. When disabled all accesses are made to the AXIM</description>
+                <definition>[0]</definition>
+            </bitField>
+        </register>
+        <register access="RW" name="ABFSR" size="4" offset="0xE000EFA8">
+            <gui_name language="en">Asynchronous Bus Fault Status Register</gui_name>
+            <description language="en">Specifies the source of the asynchronous bus faults</description>
+            <bitField conditional="false" name="EPPB" enumerationId="DISABLED_ENABLED">
+                <gui_name language="en">AHBP enable</gui_name>
+                <description language="en">Asynchronous fault on EPPB interface</description>
+                <definition>[4]</definition>
+            </bitField>
+            <bitField conditional="false" name="AXIM" enumerationId="DISABLED_ENABLED">
+                <gui_name language="en">AHBP enable</gui_name>
+                <description language="en">Asynchronous fault on AXIM interface</description>
+                <definition>[3]</definition>
+            </bitField>
+            <bitField conditional="false" name="AHBP" enumerationId="DISABLED_ENABLED">
+                <gui_name language="en">AHBP enable</gui_name>
+                <description language="en">Asynchronous fault on AHBP interface</description>
+                <definition>[2]</definition>
+            </bitField>
+            <bitField conditional="false" name="DTCM" enumerationId="DISABLED_ENABLED">
+                <gui_name language="en">AHBP enable</gui_name>
+                <description language="en">Asynchronous fault on DTCM interface</description>
+                <definition>[1]</definition>
+            </bitField>
+            <bitField conditional="false" name="ITCM" enumerationId="DISABLED_ENABLED">
+                <gui_name language="en">AHBP enable</gui_name>
+                <description language="en">Asynchronous fault on ITCM interface</description>
+                <definition>[0]</definition>
+            </bitField>
+        </register>
+    </peripheral>
+
+    <tcf:enumeration name="SCR_SEVONPEND" values="Not_wakeup=0,Wakeup=1"/>
+    <tcf:enumeration name="SCR_SLEEPDEEP" values="Not_deep_sleep=0,Deep_sleep=1"/>
+    <tcf:enumeration name="SCR_SLEEPONEXIT" values="Do_not_enter=0,Enter=1"/>
+    <tcf:enumeration name="VALID" values="Not_valid=0,Valid=1"/>
+    <tcf:enumeration name="VALID_INVALID" values="Valid=0,Invalid=1"/>
+    <tcf:enumeration name="OCCURRED" values="Not_occurred=0,Occurred=1"/>
+    <tcf:enumeration name="ENABLED_DISABLED" values="Enabled=0,Disabled=1"/>
+    <tcf:enumeration name="DISABLED_ENABLED" values="Disabled=0,Enabled=1"/>
+    <tcf:enumeration name="PENDING" values="Not_pending=0,Pending=1"/>
+    <tcf:enumeration name="ACTIVE" values="Not_active=0,Active=1"/>
+    <tcf:enumeration name="CCR_STKALIGN" values="_4_Byte=0,_8_Byte=1"/>
+    <tcf:enumeration name="CCR_BFHFNMIGN" values="Fault=0,Ignore=1"/>
+    <tcf:enumeration name="E_CP_ACC_PERMISSION" values="Access_denied=0,Privileged_mode_access_only=1,Reserved=2,Full_access=3"/>
+
+    <tcf:enumeration name="E_FEATURE_SUPPORT" values="Not_supported=0,Supported=1"/>
+    <tcf:enumeration name="ID_PFR0_STATE1" values="Thumb_Thumb2=3"/>
+    <tcf:enumeration name="ID_PFR1_M_PROFILE" values="Two_stack=2"/>
+    <tcf:enumeration name="ID_MMFR0_TCM" values="No_TCM=0,TCM_Implemented=1"/>
+    <tcf:enumeration name="ID_MMFR0_SHARABILITY" values="One_level=0"/>
+    <tcf:enumeration name="ID_MMFR0_OUTER_SHARABILITY" values="Non_cacheable=0,Ignored=15"/>
+    <tcf:enumeration name="ID_MMFR0_PMSA" values="Not_supported=0,PMSAv7=3"/>
+    <tcf:enumeration name="ID_ISAR0_COPROC" values="None=0,Generic=1,Generic2=2,MCRR_MRRC=3,MCRR2_MRRC2=4"/>
+    <tcf:enumeration name="ID_ISAR1_INTERWORK" values="None=0,BX=1,BX_BLX2=2"/>
+    <tcf:enumeration name="E_BASIC_FULL" values="Basic=0,Full=1"/>
+
+    <tcf:enumeration name="SYST_CSR_COUNTFLAG" values="not_counted_to_0=0,counted_to_0=1"/>
+    <tcf:enumeration name="SYST_CSR_CLKSOURCE" values="External_clock=0,Processor_clock=1"/>
+    <tcf:enumeration name="SYST_CSR_TICKINT" values="Does_not_affect_exception_status=0,Changes_exception_status=1"/>
+    <tcf:enumeration name="SYST_CSR_ENABLE" values="Counter_disabled=0,Counter_operating=1"/>
+    <tcf:enumeration name="SYST_CALIB_NOREF" values="Implemented=0,Not_implemented=1"/>
+    <tcf:enumeration name="SYST_CALIB_SKEW" values="Exact=0,Inexact=1"/>
+    <tcf:enumeration name="ICSR_NMIPENDSET" values="Do_not_activate=0,Activate_NMI_exception=1"/>
+    <tcf:enumeration name="ICSR_PENDSET" values="Do_not_set=0,Set_pending=1"/>
+    <tcf:enumeration name="ICSR_PENDCLR" values="Do_not_clear=0,Clear_pending=1"/>
+    <tcf:enumeration name="ICSR_PREEMPT" values="Will_not_service=0,Will_service_pending_exception=1"/>
+    <tcf:enumeration name="ICSR_PENDING" values="Interrupt_not_pending=0,Interrupt_pending=1"/>
+    <tcf:enumeration name="ICSR_RETTOBASE" values="Active_exception=0,No_Active_Exception=1"/>
+    <tcf:enumeration name="AIRCR_ENDIANNESS" values="Little_endian=0,Big_endian=1"/>
+    <tcf:enumeration name="AIRCR_RESETREQ" values="Do_not_request_reset=0,Request_reset=1"/>
+    <tcf:enumeration name="AIRCR_VECTCLR" values="Do_not_clear=0,Clear_state_information=1"/>
+    <tcf:enumeration name="SHCSR_SVCCALLPEND" values="Not_pending=0,Pending=1"/>
+
+    <tcf:enumeration name="TCMCR_SIZE" values="No_TCM=0,_4KB=3,_8KB=4,_16KB=5,_32KB=6,_64KB=7,_256KB=8,_256KB=9,_512KB=10,_1MB=11,_2MB=12,_4MB=13,_8MB=14,_16MB=15"/>
+    <tcf:enumeration name="AHBSCR_CTL" values="Standard_fairness=0,AHBS_priority_demoted=1,AHBS_priority_demoted_when_software_priority_GE_AHBSCR_TPRI=2,AHBSPRI_controls_priority=3"/>
+    <tcf:enumeration name="AHBPCR_SIZE" values="_64MB=1,_128MB=2,_256MB=3,_512MB=4"/>
+
+    <tcf:enumeration name="E_NOTABLE_ABLE" values="Not_Able=0,Able=1"/>
+    <tcf:enumeration name="E_HANDLER_THREAD" values="Handler=0,Thread=1"/>
+    <tcf:enumeration name="E_PRIV_UNPRIV" values="Privileged=0,Unprivileged=1"/>
+    <tcf:enumeration name="E_NOTACTIVE_ACTIVE" values="Not_Active=0,Active=1"/>
+    <tcf:enumeration name="E_SUPPORTED" values="Not_Supported=0,Supported=1"/>
+    <tcf:enumeration name="E_SUPPORTED_DOUBLE" values="Not_Supported=0,Supported=1,Supports_conversion_to_double=2"/>
+    <tcf:enumeration name="E_SUPPORTED2" values="Not_Supported=0,Supported=2"/>
+    <tcf:enumeration name="E_SUPPORTED4" values="Not_Supported=0,Supported=4"/>
+    <tcf:enumeration name="E_NOT_SUPPORTED" values="Not_Supported=0"/>
+    <tcf:enumeration name="E_MVFR0_SIMD" values="_16x64=1"/>
+    <tcf:enumeration name="VTOR_TBLBASE" values="CODE=0,SRAM=1"/>
+
+</register_list>

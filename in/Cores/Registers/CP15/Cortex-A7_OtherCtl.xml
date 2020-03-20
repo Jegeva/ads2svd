@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<register_list name="CP15"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns="http://www.arm.com/core_reg"
+    xsi:schemaLocation="http://www.arm.com/core_reg ../../../Schemas/core_register_definition.xsd"
+    xmlns:xi="http://www.w3.org/2001/XInclude"
+    xmlns:tcf="http://com.arm.targetconfigurationeditor">
+    <register_group name="OtherControlRegisters">
+        <gui_name language="en">Other Controls</gui_name>
+        <description language="en">Other system control registers</description>
+        <xi:include href="Cortex-v7A_OtherCtl.xml" xpointer="xmlns(reg_group=http://www.arm.com/core_reg)xpointer(//reg_group:register)"/>
+        <register access="RW" name="ACTLR" size="4">
+            <gui_name language="en">ACTLR</gui_name>
+            <alias_name>CP15_ACTLR</alias_name>
+            <device_name type="rvi">CP15_ACTLR</device_name>
+            <device_name type="cadi">ACTLR</device_name>
+            <device_name type="rvi">CP15_ACTLR</device_name>
+            <device_name type="cadi">ACTLR</device_name>
+            <description language="en">Auxiliary Control</description>
+            <bitField conditional="false" enumerationId="GENERIC_EN_DISABLE" name="DDI">
+                <gui_name language="en">DDI</gui_name>
+                <description language="en">Disable dual issue</description>
+                <definition>[28]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="GENERIC_EN_DISABLE" name="DDVM">
+                <gui_name language="en">DDVM</gui_name>
+                <description language="en">Disable Distributed Virtual Memory (DVM) transactions</description>
+                <definition>[15]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="ACTLR_L1PCTL" name="L1PCTL">
+                <gui_name language="en">L1PCTL</gui_name>
+                <description language="en">L1 Data prefetch control</description>
+                <definition>[14:13]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="GENERIC_EN_DISABLE" name="L1RADIS">
+                <gui_name language="en">L1RADIS</gui_name>
+                <description language="en">L1 Data Cache read-allocate mode disable</description>
+                <definition>[12]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="GENERIC_EN_DISABLE" name="L2RADIS">
+                <gui_name language="en">L2RADIS</gui_name>
+                <description language="en">L2 Data Cache read-allocate mode disable</description>
+                <definition>[11]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="GENERIC_EN_DISABLE" name="DODMBS">
+                <gui_name language="en">DODMBS</gui_name>
+                <description language="en">Disable optimized data memory barrier behavior</description>
+                <definition>[10]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="E_DISABLE_ENABLE" name="SMP">
+                <gui_name language="en">SMP</gui_name>
+                <description language="en">Enables coherent requests to the processor</description>
+                <definition>[6]</definition>
+            </bitField>
+        </register>
+        <register access="RW" name="S_ACTLR" size="4"> <!-- Secure variant -->
+            <gui_name language="en">S_ACTLR</gui_name>
+            <alias_name>CP15_S_ACTLR</alias_name>
+            <device_name type="rvi">CP15_S_ACTLR</device_name>
+            <device_name type="cadi">S_ACTLR</device_name>
+            <device_name type="rvi">CP15_S_ACTLR</device_name>
+            <device_name type="cadi">S_ACTLR</device_name>
+            <description language="en">[S] Auxiliary Control</description>
+            <!-- This register is grouped under OtherCtl in the Cortex-A7 TRM. -->
+            <bitField conditional="false" enumerationId="GENERIC_EN_DISABLE" name="DDI">
+                <gui_name language="en">DDI</gui_name>
+                <description language="en">Disable dual issue</description>
+                <definition>[28]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="GENERIC_EN_DISABLE" name="DDVM">
+                <gui_name language="en">DDVM</gui_name>
+                <description language="en">Disable Distributed Virtual Memory (DVM) transactions</description>
+                <definition>[15]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="ACTLR_L1PCTL" name="L1PCTL">
+                <gui_name language="en">L1PCTL</gui_name>
+                <description language="en">L1 Data prefetch control</description>
+                <definition>[14:13]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="GENERIC_EN_DISABLE" name="L1RADIS">
+                <gui_name language="en">L1RADIS</gui_name>
+                <description language="en">L1 Data Cache read-allocate mode disable</description>
+                <definition>[12]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="GENERIC_EN_DISABLE" name="L2RADIS">
+                <gui_name language="en">L2RADIS</gui_name>
+                <description language="en">L2 Data Cache read-allocate mode disable</description>
+                <definition>[11]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="GENERIC_EN_DISABLE" name="DODMBS">
+                <gui_name language="en">DODMBS</gui_name>
+                <description language="en">Disable optimized data memory barrier behavior</description>
+                <definition>[10]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="E_DISABLE_ENABLE" name="SMP">
+                <gui_name language="en">SMP</gui_name>
+                <description language="en">Enables coherent requests to the processor</description>
+                <definition>[6]</definition>
+            </bitField>
+        </register>
+        <register access="RW" name="N_ACTLR" size="4"> <!-- Non-secure variant -->
+            <gui_name language="en">N_ACTLR</gui_name>
+            <alias_name>CP15_N_ACTLR</alias_name>
+            <device_name type="rvi">CP15_N_ACTLR</device_name>
+            <device_name type="cadi">N_ACTLR</device_name>
+            <device_name type="rvi">CP15_N_ACTLR</device_name>
+            <device_name type="cadi">N_ACTLR</device_name>
+            <description language="en">[N] Auxiliary Control</description>
+            <!-- This register is grouped under OtherCtl in the Cortex-A7 TRM. -->
+            <bitField conditional="false" enumerationId="GENERIC_EN_DISABLE" name="DDI">
+                <gui_name language="en">DDI</gui_name>
+                <description language="en">Disable dual issue</description>
+                <definition>[28]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="GENERIC_EN_DISABLE" name="DDVM">
+                <gui_name language="en">DDVM</gui_name>
+                <description language="en">Disable Distributed Virtual Memory (DVM) transactions</description>
+                <definition>[15]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="ACTLR_L1PCTL" name="L1PCTL">
+                <gui_name language="en">L1PCTL</gui_name>
+                <description language="en">L1 Data prefetch control</description>
+                <definition>[14:13]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="GENERIC_EN_DISABLE" name="L1RADIS">
+                <gui_name language="en">L1RADIS</gui_name>
+                <description language="en">L1 Data Cache read-allocate mode disable</description>
+                <definition>[12]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="GENERIC_EN_DISABLE" name="L2RADIS">
+                <gui_name language="en">L2RADIS</gui_name>
+                <description language="en">L2 Data Cache read-allocate mode disable</description>
+                <definition>[11]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="GENERIC_EN_DISABLE" name="DODMBS">
+                <gui_name language="en">DODMBS</gui_name>
+                <description language="en">Disable optimized data memory barrier behavior</description>
+                <definition>[10]</definition>
+            </bitField>
+            <bitField conditional="false" enumerationId="E_DISABLE_ENABLE" name="SMP">
+                <gui_name language="en">SMP</gui_name>
+                <description language="en">Enables coherent requests to the processor</description>
+                <definition>[6]</definition>
+            </bitField>
+        </register>
+    </register_group>
+</register_list>
+
