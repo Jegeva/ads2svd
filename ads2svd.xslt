@@ -340,9 +340,7 @@
            <xsl:otherwise>
              <name><xsl:value-of select="./@name"/></name>                 
            </xsl:otherwise>
-         </xsl:choose>
-         
-         
+         </xsl:choose>                  
          <size><xsl:value-of select="internal:dec2hex(@size*$bitperbyte)"/></size>
          <access>
            <xsl:value-of select="internal:map_access(@access)"/>                
@@ -386,16 +384,36 @@
                  <xsl:copy-of select="./*"/>
                  <xsl:if test="boolean($field[@enumerationId])">
                    <enumeratedValues>
-                     <xsl:for-each select="$enums[@name=$enumid]/tcf:enumItem">
-                       <enumeratedValue>
-                         <name>
-                           <xsl:value-of select="@name"/>
-                         </name>
-                          <value>
-                           <xsl:value-of select="@number"/>
-                         </value>
-                       </enumeratedValue>
-                   </xsl:for-each>
+                     <xsl:choose>
+                       <xsl:when test="boolean($enums[@name=$enumid]/tcf:enumItem)">
+                         <xsl:for-each select="$enums[@name=$enumid]/tcf:enumItem">
+                           <enumeratedValue>
+                             <name>
+                               <xsl:value-of select="@name"/>
+                             </name>
+                             <value>
+                               <xsl:value-of select="@number"/>
+                             </value>
+                           </enumeratedValue>
+                         </xsl:for-each>
+                       </xsl:when>
+                       <xsl:otherwise>
+                         <xsl:variable name="enumval" >
+                           <xsl:value-of select="$enums[@name=$enumid]/@values"/>
+                         </xsl:variable>
+                         <xsl:for-each select="tokenize($enumval,',')">
+                              <xsl:variable name="enumitem" select="tokenize(.,'=')"/>
+                                <enumeratedValue>
+                                  <name>
+                                    <xsl:value-of select="$enumitem[1]"/>
+                                  </name>
+                                  <value>
+                                    <xsl:value-of select="$enumitem[2]"/>
+                                  </value>
+                                </enumeratedValue>
+                         </xsl:for-each>
+                       </xsl:otherwise>                       
+                     </xsl:choose>
                    </enumeratedValues>
                  </xsl:if>
                </field>                          
@@ -442,46 +460,12 @@
            <xsl:for-each select=".//cr:register_list[@filter=$filter and not(.//cr:peripheral)]">
              <xsl:variable name="rlistname" select="@name"/>
              <xsl:copy-of select="internal:parse_reglist(.)"/>
-             <!-- <peripheral>               
-               <name><xsl:value-of select="@name"/></name>
-               <description><xsl:value-of select="@name"/>, the registers are not accessed by address</description>
-               <baseaddress>#FACADE</baseaddress>
-               <registers>
-                 <xsl:for-each select=".//cr:register[not(contains(./cr:gui_name,'_'))]">
-                   <xsl:choose>
-                     <xsl:when test="boolean(./cr:bitField/@enumerationId)">
-                       <xsl:copy-of select="internal:parse_corereg(.,false(),$doc//cr:register_list[@name=$rlistname]/tcf:enumeration)"/>
-                     </xsl:when>
-                     <xsl:otherwise>
-                       <xsl:copy-of select="internal:parse_corereg(.,false(),false())"/>
-                     </xsl:otherwise>
-                   </xsl:choose>
-                 </xsl:for-each>
-               </registers>
-             </peripheral> -->
            </xsl:for-each>  
          </xsl:when>
          <xsl:otherwise>
            <xsl:for-each select=".//cr:register_list[not(.//cr:peripheral)]">
              <xsl:variable name="rlistname" select="@name"/>
              <xsl:copy-of select="internal:parse_reglist(.)"/>
-             <!-- <peripheral>
-               <name><xsl:value-of select="@name"/></name>
-               <description><xsl:value-of select="@name"/>, the registers are not accessed by address</description>
-               <baseaddress>#FACADE</baseaddress>
-               <registers>
-                 <xsl:for-each select="./cr:register[not(contains(./cr:gui_name,'_'))]">
-                   <xsl:choose>
-                     <xsl:when test="boolean(./cr:bitField/@enumerationId)">
-                       <xsl:copy-of select="internal:parse_corereg(.,false(),$doc//cr:register_list[@name=$rlistname]/tcf:enumeration)"/>
-                     </xsl:when>
-                     <xsl:otherwise>
-                       <xsl:copy-of select="internal:parse_corereg(.,false(),false())"/>
-                     </xsl:otherwise>
-                   </xsl:choose>
-                 </xsl:for-each>
-               </registers>
-             </peripheral> -->
            </xsl:for-each>  
          </xsl:otherwise>         
        </xsl:choose>
@@ -542,6 +526,7 @@
           <xsl:copy-of select="internal:parse_reglists($doc,$filter)"/>
             <xsl:for-each select=".//cr:peripheral">
               <peripheral>
+                <xsl:variable name="enums" select="$doc//tcf:enumeration"/>
                 <xsl:variable name="pbase" select="internal:peripheral_base_address(node())"/>
                 <xsl:variable name="pname" select="./@name"/>
                 <name>
@@ -564,17 +549,17 @@
                 <!-- TODO interrupts-->
                 <registers>
                   <xsl:for-each select="./cr:register">
-                    <register>
+                      <xsl:copy-of select="internal:parse_corereg(.,$pbase,$enums)"/>
+                    <!-- <register>
                       <xsl:variable name="rname" select="@name"/>
                       <name><xsl:value-of select="@name"/></name>                  
                       <addressOffset><xsl:value-of select="internal:dec2hex(internal:hex2dec(@offset)-internal:hex2dec($pbase))"/></addressOffset>
-                      <!-- prp grp-->
+                      
                       <size><xsl:value-of select="internal:dec2hex(@size*$bitperbyte)"/></size>
                       <access>
                         <xsl:value-of select="internal:map_access(@access)"/>                
                       </access>                  
-                      <!-- TODO resetValue-->
-                      <!-- TODO resetMask-->
+                      
                       <fields>
                         <xsl:for-each select="./cr:bitField">                          
                           <field>
@@ -593,7 +578,7 @@
                           </field>                          
                         </xsl:for-each>
                       </fields>
-                    </register>
+                    </register> -->
                   </xsl:for-each>              
                 </registers>                
               </peripheral>
