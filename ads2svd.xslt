@@ -399,18 +399,18 @@
                        </xsl:when>
                        <xsl:otherwise>
                          <xsl:variable name="enumval" >
-                           <xsl:value-of select="$enums[@name=$enumid]/@values"/>
+                           <xsl:value-of select="$enums[@name=$enumid][1]/@values"/>
                          </xsl:variable>
-                         <xsl:for-each select="tokenize($enumval,',')">
+                         <xsl:for-each select="tokenize($enumval,',')">                         
                               <xsl:variable name="enumitem" select="tokenize(.,'=')"/>
-                                <enumeratedValue>
+                                <enumeratedValua>
                                   <name>
                                     <xsl:value-of select="$enumitem[1]"/>
                                   </name>
                                   <value>
                                     <xsl:value-of select="$enumitem[2]"/>
                                   </value>
-                                </enumeratedValue>
+                                </enumeratedValua>
                          </xsl:for-each>
                        </xsl:otherwise>                       
                      </xsl:choose>
@@ -526,7 +526,7 @@
           <xsl:copy-of select="internal:parse_reglists($doc,$filter)"/>
             <xsl:for-each select=".//cr:peripheral">
               <peripheral>
-                <xsl:variable name="enums" select="$doc//tcf:enumeration"/>
+                <xsl:variable name="enums" select="../tcf:enumeration"/>
                 <xsl:variable name="pbase" select="internal:peripheral_base_address(node())"/>
                 <xsl:variable name="pname" select="./@name"/>
                 <name>
