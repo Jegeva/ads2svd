@@ -15,21 +15,96 @@
  
   <xsl:template match="@* | node()"><xsl:copy><xsl:apply-templates select="@* | node()"/></xsl:copy></xsl:template>
 
-  <xsl:variable name="max-byte-width" >
-    <xsl:for-each select="//cr:register/@size">
-      <xsl:sort select="." data-type="number" order="descending"/>
-      <xsl:if test="position() = 1">
-        <num>
-          <xsl:value-of select="."/>
-        </num>
-      </xsl:if>
-    </xsl:for-each>
-  </xsl:variable>
   
   <xsl:variable name="bitperbyte" select="8"/>
   
   <xsl:variable name="hexlookup" select="tokenize('0,1,2,3,4,5,6,7,8,9,A,B,C,D,E,F',',')"/>
 
+  <xsl:function name="internal:map_access">
+    <xsl:param name="access"/>
+    <xsl:choose>
+      <xsl:when test="$access='RW'">
+        <xsl:value-of select="'read-write'"/>
+      </xsl:when>
+      <xsl:when test="$access='RO'">
+        <xsl:value-of select="'read-only'"/>
+      </xsl:when>
+      <xsl:when test="$access='WO'">
+        <xsl:value-of select="'write-only'"/>
+      </xsl:when>
+      <xsl:when test="$access='RMW'">
+        <xsl:value-of select="'read-write'"/>
+      </xsl:when>      
+    </xsl:choose>       
+  </xsl:function>
+  
+  <xsl:function name="internal:map_cpu_name">
+    <xsl:param name="cpu_name"/>
+    <xsl:choose>
+      <xsl:when test="$cpu_name='Cortex-M0'">
+        <xsl:value-of select="'CM0'"/>
+      </xsl:when>
+      <xsl:when test="$cpu_name='Cortex-M0+'">
+        <xsl:value-of select="'CM0PLUS'"/>
+      </xsl:when>
+      <xsl:when test="$cpu_name='Cortex-M1'">
+        <xsl:value-of select="'CM1'"/>
+      </xsl:when>
+      <xsl:when test="$cpu_name='Cortex-M3' or $cpu_name='Cortex-M3_RTSM'">
+        <xsl:value-of select="'CM3'"/>
+      </xsl:when>
+      <xsl:when test="$cpu_name='Cortex-M4' or $cpu_name='Cortex-M4_NFP' or $cpu_name='Cortex-M4_RTSM'">
+        <xsl:value-of select="'CM4'"/>
+      </xsl:when>
+      <xsl:when test="$cpu_name='Cortex-M7'">
+        <xsl:value-of select="'CM7'"/>
+      </xsl:when>
+      <xsl:when test="$cpu_name='Cortex-M23' or $cpu_name='Cortex-M23_FVP'">
+        <xsl:value-of select="'CM23'"/>
+      </xsl:when>
+      <xsl:when test="$cpu_name='Cortex-M33' or $cpu_name='Cortex-M33_FVP'">
+        <xsl:value-of select="'CM33'"/>
+      </xsl:when>
+      <xsl:when test="$cpu_name='Cortex-M35P' or $cpu_name='Cortex-M35P_FVP'">
+        <xsl:value-of select="'CM35P'"/>
+      </xsl:when>
+      <xsl:when test="$cpu_name='Cortex-A5'">
+        <xsl:value-of select="'CA5'"/>
+      </xsl:when>
+      <xsl:when test="$cpu_name='Cortex-A7'">
+        <xsl:value-of select="'CA7'"/>
+      </xsl:when>
+      <xsl:when test="$cpu_name='Cortex-A8'">
+        <xsl:value-of select="'CA8'"/>
+      </xsl:when>
+      <xsl:when test="$cpu_name='Cortex-A9'">
+        <xsl:value-of select="'CA9'"/>
+      </xsl:when>
+      <xsl:when test="$cpu_name='Cortex-A15'">
+        <xsl:value-of select="'CA15'"/>
+      </xsl:when>
+      <xsl:when test="$cpu_name='Cortex-A17'">
+        <xsl:value-of select="'CA17'"/>
+      </xsl:when>
+      <xsl:when test="$cpu_name='Cortex-A53'">
+        <xsl:value-of select="'CA53'"/>
+      </xsl:when>
+      <xsl:when test="$cpu_name='Cortex-A55'">
+        <xsl:value-of select="'CA55'"/>
+      </xsl:when>
+      <xsl:when test="$cpu_name='Cortex-A57'">
+        <xsl:value-of select="'CA57'"/>
+      </xsl:when>
+      <xsl:when test="$cpu_name='Cortex-A72'">
+        <xsl:value-of select="'CA72'"/>
+      </xsl:when>
+      <xsl:otherwise>
+        <xsl:value-of select="'other'"/>
+      </xsl:otherwise>
+    </xsl:choose>
+  </xsl:function>
+
+  
   <xsl:function name="internal:strsplit">
     <xsl:param name="text"/>
     <el><xsl:value-of select="substring($text, 1, 1)"/></el>
@@ -171,135 +246,298 @@
       </xsl:otherwise>
     </xsl:choose>
   </xsl:function>
-  
-  <xsl:template match="/">
-    <device schemaVersion="1.3" xmlns:xs="http://www.w3.org/2001/XMLSchema-instance" xs:noNamespaceSchemaLocation="CMSIS-SVD.xsd" >
-      <vendor>ARM Ltd.</vendor>
-      <vendorID>ARM</vendorID>
-      <name><xsl:value-of select="c:core_definition/c:name"/></name>
-      <description><xsl:value-of select="c:core_definition/c:name"/> core descriptions, generated from ARM develloper studio</description>
-      <cpu>
-        <name><xsl:value-of select="c:core_definition/c:name"/></name>
-        <series><xsl:value-of select="c:core_definition/c:series"/></series>
-        <revision>r0p0</revision>
-        <endian>little</endian>
-        <xsl:if test="boolean(//cr:peripheral[@name='MPU'])">
-          <mpuPresent>true</mpuPresent>
+
+  <xsl:function name="internal:arches">
+    <xsl:param name="nodes"/>
+    <xsl:choose>
+    <xsl:when test="count($nodes) gt 0">
+      <xsl:for-each select="$nodes">
+        <filter>
+        <id><xsl:value-of select="@id"/></id>
+        <name><xsl:value-of select="@gui_name"/></name>
+        </filter>
+      </xsl:for-each>
+    </xsl:when>
+    <xsl:otherwise>
+      <filter></filter>
+    </xsl:otherwise>
+  </xsl:choose>
+  </xsl:function>
+
+  <xsl:function name="internal:outfiles">
+    <xsl:param name="nodes"/>
+    <xsl:param name="uri"/>
+    <xsl:param name="doc"/>
+    <xsl:variable name="uribase" select="substring($uri, 1, string-length($uri) - 4)"/>
+    <xsl:for-each select="$nodes">
+      <filter>
+        <outfile>
+        <xsl:value-of select="$uribase" />
+        <xsl:if test="boolean(./name)" >
+          <xsl:value-of select="'_'" />
+          <xsl:value-of select="./name" />
         </xsl:if>
-        <xsl:if test="boolean(//cr:register[@name='FPCCR']) or boolean(//c:peripheral[@name='FPU']) or boolean(//cr:register[@name='MVFR0'])" >
-          <fpuPresent>true</fpuPresent>
-        </xsl:if>
-        <xsl:if test="boolean(//@name='FPDP')" >
-          <!-- if MVFR0 is here the DP FPU is potentially here-->
-          <fpuDP>true</fpuDP>
-        </xsl:if>
-        <xsl:if test="boolean(//@name='SIMDSP')" >
-          <dspPresent>true</dspPresent>
-        </xsl:if>
-        <xsl:if test="boolean(//@name[contains(.,'ICACHE')]) or boolean(//c:cache_awareness/@class[contains(.,'ICache')]) ">
-          <icachePresent>true</icachePresent>
-        </xsl:if>
-        <xsl:if test="boolean(//@name[contains(.,'DCACHE')]) or boolean(//c:cache_awareness/@class[contains(.,'DCache')]) ">
-          <dcachePresent>true</dcachePresent>
-        </xsl:if>
-        <xsl:if test="boolean(//cr:register[@name='ITCMR'])">
-          <itcmPresent>true</itcmPresent>
-        </xsl:if>
-        <xsl:if test="boolean(//cr:register[@name='DTCMR'])">
-          <dtcmPresent>true</dtcmPresent>
-        </xsl:if>
-        <xsl:if test="boolean(//cr:register[@name='VTOR'])">
-          <vtorPresent>true</vtorPresent>
-        </xsl:if>
-        <nvicPrioBits>8</nvicPrioBits>
-        <vendorSystickConfig>true</vendorSystickConfig>
-      </cpu>
-      <addressUnitBits>8</addressUnitBits>
-      <width>         
-        <xsl:variable name="cpu-width" select="$max-byte-width * $bitperbyte" />
-        <xsl:value-of select="$cpu-width" />
-      </width>
-      <peripherals>
-        <xsl:for-each select="//cr:peripheral">
-          <peripheral>
-            <xsl:variable name="pbase" select="internal:peripheral_base_address(node())"/>
-            <xsl:variable name="pname" select="./@name"/>
-            <name>
-              <xsl:value-of select="./@name" />
-            </name>        
-            <description>
-              <xsl:value-of select="./cr:description" />
-            </description>
-            <xsl:if test="boolean(./cr:groupName)">
-              <groupName>
-                <xsl:value-of select="./cr:groupName" />
-              </groupName>
+        <xsl:value-of select="'.svd'" />
+        </outfile>
+        <id>
+          <xsl:value-of select="./id" />
+        </id>
+        <doc>
+          <xsl:copy-of select="$doc" />
+        </doc>
+      </filter>
+    </xsl:for-each>
+  </xsl:function>
+
+ 
+  <xsl:function name="internal:max-byte-width" >
+    <xsl:param name="doc"/>
+    <xsl:param name="filter"/>
+    <xsl:choose>
+      <xsl:when test="boolean($filter)">
+        <xsl:for-each select="$doc//cr:register_list[@filter=$filter]/cr:register/@size">
+          <xsl:sort select="." data-type="number" order="descending"/>
+          <xsl:if test="position() = 1">
+            <num><xsl:value-of select="."/></num>
+          </xsl:if>
+        </xsl:for-each>
+      </xsl:when>
+      <xsl:otherwise>
+        <xsl:for-each select="$doc//cr:register_list/cr:register/@size">
+          <xsl:sort select="." data-type="number" order="descending"/>
+          <xsl:if test="position() = 1">
+            <num><xsl:value-of select="."/></num>
+          </xsl:if>
+        </xsl:for-each>
+      </xsl:otherwise>         
+    </xsl:choose>
+  </xsl:function>
+
+   <!--   <xsl:for-each select="internal:outfiles(internal:arches(//c:core_definition/c:reg_filter),document-uri(/),root())">
+        <xsl:variable name="outfile" select="./outfile"/>
+        <xsl:copy-of select="$outfile" />
+        <xsl:result-document href="{$outfile}"> 
+        <xsl:for-each select="./doc"> -->
+
+   <xsl:function name="internal:parse_corereg">
+     <xsl:param name="reg"/>
+     <xsl:param name="pbase"/>
+     <xsl:for-each select="$reg">
+       <register>
+         <xsl:variable name="rname" select="./cr:gui_name"/>
+         
+         <xsl:choose>
+           <xsl:when test="string-length(./cr:gui_name) lt 10">
+             <name>   <xsl:value-of select="./cr:gui_name"/></name>   
+           </xsl:when>
+           <xsl:otherwise>
+             <name><xsl:value-of select="./@name"/></name>                 
+           </xsl:otherwise>
+         </xsl:choose>
+         
+      
+         <size><xsl:value-of select="internal:dec2hex(@size*$bitperbyte)"/></size>
+         <access>
+           <xsl:value-of select="internal:map_access(@access)"/>                
+         </access>
+         <xsl:choose>
+           <xsl:when test="boolean($pbase)">
+             <addressOffset><xsl:value-of select="internal:dec2hex(internal:hex2dec(@offset)-internal:hex2dec($pbase))"/></addressOffset>
+           </xsl:when>
+           <xsl:otherwise>
+             <addressOffset>#FACADE</addressOffset>
+           </xsl:otherwise>
+         </xsl:choose>
+         <fields>
+           <xsl:for-each select="./cr:bitField">                          
+             <field>
+               <name><xsl:value-of select="@name"/></name>
+               <description>
+                 <xsl:choose>
+                   <xsl:when test="string-length(./cr:description) lt 10">
+                     <xsl:value-of select="./cr:description"/>
+                   </xsl:when>
+                   <xsl:otherwise>
+                     <xsl:value-of select="@name"/>
+                   </xsl:otherwise>
+                 </xsl:choose>
+               </description>
+               <xsl:copy-of select="internal:definition_for(./cr:definition)"/>                            
+             </field>                          
+           </xsl:for-each>
+         </fields>
+       </register>
+     </xsl:for-each>
+   </xsl:function>
+
+   <xsl:function name="internal:parse_reglist">
+     <xsl:param name="doc"/>
+     <xsl:param name="filter"/>
+     <xsl:for-each select="$doc">
+     <xsl:choose>
+       <xsl:when test="boolean($filter)">
+              <xsl:for-each select=".//cr:register_list[@filter=$filter and not(.//cr:peripheral)]">
+                <peripheral>
+                  
+               <name><xsl:value-of select="@name"/></name>
+               <description><xsl:value-of select="@name"/>, the registers are not accessed by address</description>
+               <baseaddress>#FACADE</baseaddress>
+               <registers>
+                 <xsl:for-each select=".//cr:register[not(contains(./cr:gui_name,'_'))]">
+                   <xsl:copy-of select="internal:parse_corereg(.,false())"/>
+                 </xsl:for-each>
+               </registers>
+             </peripheral>
+           </xsl:for-each>  
+       </xsl:when>
+       <xsl:otherwise>
+           <xsl:for-each select=".//cr:register_list[not(.//cr:peripheral)]">
+             <peripheral>
+               <name><xsl:value-of select="@name"/></name>
+               <description><xsl:value-of select="@name"/>, the registers are not accessed by address</description>
+               <baseaddress>#FACADE</baseaddress>
+               <registers>
+                 <xsl:for-each select="./cr:register[not(contains(./cr:gui_name,'_'))]">
+                      <xsl:copy-of select="internal:parse_corereg(.,false())"/>
+                 </xsl:for-each>
+               </registers>
+             </peripheral>
+           </xsl:for-each>  
+         </xsl:otherwise>         
+     </xsl:choose>
+     </xsl:for-each>  
+     </xsl:function>
+
+   <xsl:function name="internal:doparse">
+     <xsl:param name="doc"/>
+     <xsl:param name="filter"/>
+     <xsl:for-each select="$doc">
+        <device schemaVersion="1.3" xmlns:xs="http://www.w3.org/2001/XMLSchema-instance" xs:noNamespaceSchemaLocation="CMSIS-SVD.xsd" >
+          <vendor>ARM Ltd.</vendor>
+          <vendorID>ARM</vendorID>
+          <name><xsl:value-of select="c:core_definition/c:name"/></name>
+          <description><xsl:value-of select="c:core_definition/c:name"/> core descriptions, generated from ARM develloper studio</description>
+          <cpu>
+            <name><xsl:value-of select="internal:map_cpu_name(c:core_definition/c:name)"/></name>
+            <series><xsl:value-of select="c:core_definition/c:series"/></series>
+            <revision>r0p0</revision>
+            <endian>little</endian>
+            <xsl:if test="boolean(./*/cr:peripheral[@name='MPU'])">
+              <mpuPresent>true</mpuPresent>
             </xsl:if>
-            <baseaddress>
-              <xsl:value-of select="$pbase" />             
-            </baseaddress>
-            <addressBlock>
-              <xsl:copy-of select="internal:addressbloc_for(node(),'registers')" />     
-            </addressBlock>           
-            <!-- TODO interrupts-->
-            <registers>
-              <xsl:for-each select="./cr:register">
-                <register>
-                  <xsl:variable name="rname" select="@name"/>
-                  <name><xsl:value-of select="@name"/></name>                  
-                  <addressOffset><xsl:value-of select="internal:dec2hex(internal:hex2dec(@offset)-internal:hex2dec($pbase))"/></addressOffset>
-                  <!-- prp grp-->
-                  <size><xsl:value-of select="internal:dec2hex(@size*$bitperbyte)"/></size>
-                  <access>
-                    <xsl:choose>
-                      <xsl:when test="@access='RW'">
-                        <xsl:value-of select="'read-write'"/>
-                      </xsl:when>
-                      <xsl:when test="@access='RO'">
-                        <xsl:value-of select="'read-only'"/>
-                      </xsl:when>
-                      <xsl:when test="@access='WO'">
-                        <xsl:value-of select="'write-only'"/>
-                      </xsl:when>
-                      <xsl:when test="@access='RMW'">
-                        <xsl:value-of select="'read-write'"/>
-                      </xsl:when>      
-                    </xsl:choose>                   
-                  </access>
-                  <!-- TODO resetValue-->
-                  <!-- TODO resetMask-->
-                  <fields>
-                    <xsl:for-each select="./cr:bitField">
-                      
-                      <field>
-                        <name><xsl:value-of select="@name"/></name>
-                        <description>
-                          <xsl:choose>
-                            <xsl:when test="./cr:description">
-                              <xsl:value-of select="./cr:description"/>
-                            </xsl:when>
-                            <xsl:otherwise>
-                              <xsl:value-of select="@name"/>
-                            </xsl:otherwise>
-                          </xsl:choose>
-                        </description>
-
-                        <xsl:copy-of select="internal:definition_for(./cr:definition)"/>
-                        
-                      </field>
-                      
-                    </xsl:for-each>
-                  </fields>
-
-                  <!--       <xsl:copy-of select="."/>
-                  -->
-                </register>
-              </xsl:for-each>              
-            </registers>                
+            <xsl:if test="boolean(./*/cr:register[@name='FPCCR']) or boolean(./*/c:peripheral[@name='FPU']) or boolean(./*/cr:register[@name='MVFR0'])" >
+              <fpuPresent>true</fpuPresent>
+            </xsl:if>
+            <xsl:if test="boolean(./*/@name='FPDP')" >
+              <!-- if MVFR0 is here the DP FPU is potentially here-->
+              <fpuDP>true</fpuDP>
+            </xsl:if>
+            <xsl:if test="boolean(./*/@name='SIMDSP')" >
+              <dspPresent>true</dspPresent>
+            </xsl:if>
+            <xsl:if test="boolean(./*/@name[contains(.,'ICACHE')]) or boolean(./*/c:cache_awareness/@class[contains(.,'ICache')]) ">
+              <icachePresent>true</icachePresent>
+            </xsl:if>
+            <xsl:if test="boolean(./*/@name[contains(.,'DCACHE')]) or boolean(./*/c:cache_awareness/@class[contains(.,'DCache')]) ">
+              <dcachePresent>true</dcachePresent>
+            </xsl:if>
+            <xsl:if test="boolean(./*/cr:register[@name='ITCMR'])">
+              <itcmPresent>true</itcmPresent>
+            </xsl:if>
+            <xsl:if test="boolean(./*/cr:register[@name='DTCMR'])">
+              <dtcmPresent>true</dtcmPresent>
+            </xsl:if>
+            <xsl:if test="boolean(./*/cr:register[@name='VTOR'])">
+              <vtorPresent>true</vtorPresent>
+            </xsl:if>
+            <nvicPrioBits>8</nvicPrioBits>
+            <vendorSystickConfig>true</vendorSystickConfig>
+          </cpu>
+          <addressUnitBits>8</addressUnitBits>
+          <width>         
+            <xsl:variable name="cpu-width" select="internal:max-byte-width($doc,$filter) * $bitperbyte" />
+            <xsl:value-of select="$cpu-width" />
+          </width>
+          <peripherals>
+          <xsl:copy-of select="internal:parse_reglist($doc,$filter)"/>
+            <xsl:for-each select=".//cr:peripheral">
+              <peripheral>
+                <xsl:variable name="pbase" select="internal:peripheral_base_address(node())"/>
+                <xsl:variable name="pname" select="./@name"/>
+                <name>
+                  <xsl:value-of select="./@name" />
+                </name>        
+                <description>
+                  <xsl:value-of select="./cr:description" />
+                </description>
+                <xsl:if test="boolean(./cr:groupName)">
+                  <groupName>
+                    <xsl:value-of select="./cr:groupName" />
+                  </groupName>
+                </xsl:if>
+                <baseaddress>
+                  <xsl:value-of select="$pbase" />             
+                </baseaddress>
+                <addressBlock>
+                  <xsl:copy-of select="internal:addressbloc_for(node(),'registers')" />     
+                </addressBlock>           
+                <!-- TODO interrupts-->
+                <registers>
+                  <xsl:for-each select="./cr:register">
+                    <register>
+                      <xsl:variable name="rname" select="@name"/>
+                      <name><xsl:value-of select="@name"/></name>                  
+                      <addressOffset><xsl:value-of select="internal:dec2hex(internal:hex2dec(@offset)-internal:hex2dec($pbase))"/></addressOffset>
+                      <!-- prp grp-->
+                      <size><xsl:value-of select="internal:dec2hex(@size*$bitperbyte)"/></size>
+                      <access>
+                        <xsl:value-of select="internal:map_access(@access)"/>                
+                      </access>                  
+                      <!-- TODO resetValue-->
+                      <!-- TODO resetMask-->
+                      <fields>
+                        <xsl:for-each select="./cr:bitField">                          
+                          <field>
+                            <name><xsl:value-of select="@name"/></name>
+                            <description>
+                              <xsl:choose>
+                                <xsl:when test="./cr:description">
+                                  <xsl:value-of select="./cr:description"/>
+                                </xsl:when>
+                                <xsl:otherwise>
+                                  <xsl:value-of select="@name"/>
+                                </xsl:otherwise>
+                              </xsl:choose>
+                            </description>
+                            <xsl:copy-of select="internal:definition_for(./cr:definition)"/>                            
+                          </field>                          
+                        </xsl:for-each>
+                      </fields>
+                    </register>
+                  </xsl:for-each>              
+                </registers>                
               </peripheral>
             </xsl:for-each>            
           </peripherals>          
         </device> 
-      </xsl:template >      
-    </xsl:stylesheet>
+ </xsl:for-each>
+ </xsl:function>
+ 
+ <xsl:template match="/">
+   <xsl:choose>
+     <xsl:when  test="boolean(//c:core_definition/c:reg_filter)">
+       <xsl:for-each select="internal:outfiles(internal:arches(//c:core_definition/c:reg_filter),document-uri(/),root())">
+         <xsl:variable name="outfile" select="./outfile"/>
+<!--         <xsl:copy-of select="./outfile"/> -->
+         <xsl:result-document href="{$outfile}">
+           <xsl:copy-of select="internal:doparse(./doc,./id)"/>
+         </xsl:result-document> 
+       </xsl:for-each>
+     </xsl:when>
+     <xsl:otherwise>
+       <xsl:copy-of select="internal:doparse(root(),false())"/>
+     </xsl:otherwise>
+   </xsl:choose>
+ </xsl:template>
+</xsl:stylesheet>
 

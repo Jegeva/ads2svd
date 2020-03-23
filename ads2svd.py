@@ -113,5 +113,8 @@ build_schema_wrapper()
     
 if(args.all):
     get_all()
-else:
+elif args.infile:
     loadxml(args.infile)
+else:
+    print("No action selected")
+
