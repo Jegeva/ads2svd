@@ -2,6 +2,7 @@
 
 This turn the arm develloper studio xml corpus into a cmsis SVD format compliant description of all the ARM cores described in the ASD XML corpus (sw/debugger/configdb/Cores)
 
+## files
 * ads2svd.py :
 (tries to) resolve the include into ./out/
 * ads2svd.xslt:
@@ -9,14 +10,15 @@ to apply with an xslt 2.0 processor (tested using saxonhe) on a ads2svd.py resul
 * in : 
 the (corrected) infiles from arm develloper studio, this is all @ARM, some includes in the original ARM xml files were broken
 
-this will output the SVD files for the following cores:
 
-
-
-CAVEAT EMPTOR:
+## CAVEAT EMPTOR:
 * This is in devellopment
 * As long as the ARM Develloper Studio files are not correct in the source i cannot guarantee the completeness or accuracy of the generated SVDs
+* Features not implemented:
+..* resets values : the data is abscent from ADS
+..* Interrupts : it is debatable that the exceptions (NMI, HARDFAULT, etc...) are or are not interrupt fired by the core
 
+## Output
 Will generate architecture specific (AARCH32 or AARCH64 if supported) svds for:
 * 88FR101
 * 88FR111
