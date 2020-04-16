@@ -100,7 +100,7 @@
     </xsl:if>
   </xsl:function>
 
-  <xsl:function name="internal:dec2hex">
+  <xsl:function name="internal:dec2hex"> 
     <xsl:param name="val"/>
     <xsl:variable name="lo_hex_mods" select="reverse(internal:lo_num2base($val,16))"/>
     <xsl:variable name="lo_hex" select="string-join(internal:lo_lookup_value($hexlookup,$lo_hex_mods),'')"/>    
