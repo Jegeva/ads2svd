@@ -41,65 +41,11 @@
   <xsl:function name="internal:map_cpu_name">
     <xsl:param name="cpu_name"/>
     <xsl:choose>
-      <xsl:when test="$cpu_name='Cortex-M0'">
-        <xsl:value-of select="'CM0'"/>
-      </xsl:when>
-      <xsl:when test="$cpu_name='Cortex-M0+'">
-        <xsl:value-of select="'CM0PLUS'"/>
-      </xsl:when>
-      <xsl:when test="$cpu_name='Cortex-M1'">
-        <xsl:value-of select="'CM1'"/>
-      </xsl:when>
-      <xsl:when test="$cpu_name='Cortex-M3' or $cpu_name='Cortex-M3_RTSM'">
-        <xsl:value-of select="'CM3'"/>
-      </xsl:when>
-      <xsl:when test="$cpu_name='Cortex-M4' or $cpu_name='Cortex-M4_NFP' or $cpu_name='Cortex-M4_RTSM'">
-        <xsl:value-of select="'CM4'"/>
-      </xsl:when>
-      <xsl:when test="$cpu_name='Cortex-M7'">
-        <xsl:value-of select="'CM7'"/>
-      </xsl:when>
-      <xsl:when test="$cpu_name='Cortex-M23' or $cpu_name='Cortex-M23_FVP'">
-        <xsl:value-of select="'CM23'"/>
-      </xsl:when>
-      <xsl:when test="$cpu_name='Cortex-M33' or $cpu_name='Cortex-M33_FVP'">
-        <xsl:value-of select="'CM33'"/>
-      </xsl:when>
-      <xsl:when test="$cpu_name='Cortex-M35P' or $cpu_name='Cortex-M35P_FVP'">
-        <xsl:value-of select="'CM35P'"/>
-      </xsl:when>
-      <xsl:when test="$cpu_name='Cortex-A5'">
-        <xsl:value-of select="'CA5'"/>
-      </xsl:when>
-      <xsl:when test="$cpu_name='Cortex-A7'">
-        <xsl:value-of select="'CA7'"/>
-      </xsl:when>
-      <xsl:when test="$cpu_name='Cortex-A8'">
-        <xsl:value-of select="'CA8'"/>
-      </xsl:when>
-      <xsl:when test="$cpu_name='Cortex-A9'">
-        <xsl:value-of select="'CA9'"/>
-      </xsl:when>
-      <xsl:when test="$cpu_name='Cortex-A15'">
-        <xsl:value-of select="'CA15'"/>
-      </xsl:when>
-      <xsl:when test="$cpu_name='Cortex-A17'">
-        <xsl:value-of select="'CA17'"/>
-      </xsl:when>
-      <xsl:when test="$cpu_name='Cortex-A53'">
-        <xsl:value-of select="'CA53'"/>
-      </xsl:when>
-      <xsl:when test="$cpu_name='Cortex-A55'">
-        <xsl:value-of select="'CA55'"/>
-      </xsl:when>
-      <xsl:when test="$cpu_name='Cortex-A57'">
-        <xsl:value-of select="'CA57'"/>
-      </xsl:when>
-      <xsl:when test="$cpu_name='Cortex-A72'">
-        <xsl:value-of select="'CA72'"/>
+      <xsl:when test="matches($cpu_name,'[Cc]ortex-?[A-Z][0-9]+')">
+        <xsl:value-of select="replace(replace($cpu_name,'[Cc]ortex-?([A-Z][0-9]+\+?).*','C$1'),'\+','P')"/>
       </xsl:when>
       <xsl:otherwise>
-        <xsl:value-of select="'other'"/>
+        <xsl:value-of select="$cpu_name"/>
       </xsl:otherwise>
     </xsl:choose>
   </xsl:function>
@@ -350,7 +296,7 @@
              <addressOffset><xsl:value-of select="internal:dec2hex(internal:hex2dec(@offset)-internal:hex2dec($pbase))"/></addressOffset>
            </xsl:when>
            <xsl:otherwise>
-             <addressOffset>#FACADE</addressOffset>
+             <!-- <addressOffset>#FACADE</addressOffset> -->
            </xsl:otherwise>
          </xsl:choose>
          <fields>
@@ -432,7 +378,7 @@
        <peripheral>               
          <name><xsl:value-of select="@name"/></name>
          <description><xsl:value-of select="@name"/>, the registers are not accessed by address</description>
-         <baseaddress>#FACADE</baseaddress>
+         <!-- <baseaddress>#FACADE</baseaddress> -->
          <registers>
            <xsl:for-each select=".//cr:register[not(contains(./cr:gui_name,'_'))]">
              <!-- <xsl:copy-of select="internal:parse_corereg(.,false())"/> -->

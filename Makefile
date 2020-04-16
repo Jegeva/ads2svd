@@ -14,7 +14,7 @@ XLST_FILE=./ads2svd.xslt
 
 .PHONY: clean all
 #uncomment to keep the intermediate xml files
-#.SECONDARY: $(INTER_FILES)
+.SECONDARY: $(INTER_FILES)
 
 all: $(OUT_DIR) $(OUT_FILES)
 
