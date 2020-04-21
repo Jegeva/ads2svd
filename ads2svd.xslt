@@ -280,7 +280,7 @@
          <xsl:variable name="rname" select="./cr:gui_name"/>
          
          <xsl:choose>
-           <xsl:when test="string-length(./cr:gui_name) lt 10">
+           <xsl:when test="string-length(./cr:gui_name) lt 10 and string-length(./cr:gui_name) gt 0">
              <name>   <xsl:value-of select="./cr:gui_name"/></name>   
            </xsl:when>
            <xsl:otherwise>
@@ -292,14 +292,21 @@
            <xsl:value-of select="internal:map_access(@access)"/>                
          </access>
          <xsl:choose>
-           <xsl:when test="boolean($pbase)">
-             <addressOffset><xsl:value-of select="internal:dec2hex(internal:hex2dec(@offset)-internal:hex2dec($pbase))"/></addressOffset>
-           </xsl:when>
-           <xsl:otherwise>
-             <!-- <addressOffset>#FACADE</addressOffset> -->
-           </xsl:otherwise>
-         </xsl:choose>
-         <fields>
+           <xsl:when test="boolean(@offset)">
+             <xsl:choose>
+               <xsl:when test="boolean($pbase)">
+                 <addressOffset><xsl:value-of select="internal:dec2hex(internal:hex2dec(@offset)-internal:hex2dec($pbase))"/></addressOffset>
+               </xsl:when>
+               <xsl:otherwise>
+                 <addressOffset><xsl:value-of select="@offset"/></addressOffset>
+               </xsl:otherwise>
+                 </xsl:choose>
+               </xsl:when>
+               <xsl:otherwise>
+                 <!-- <addressOffset>#FACADE</addressOffset> -->
+               </xsl:otherwise>
+             </xsl:choose>
+             <fields>
            <xsl:for-each select="./cr:bitField">
              <xsl:variable name="field" select="."/>
              <xsl:variable name="enumid" >
@@ -349,14 +356,14 @@
                          </xsl:variable>
                          <xsl:for-each select="tokenize($enumval,',')">                         
                               <xsl:variable name="enumitem" select="tokenize(.,'=')"/>
-                                <enumeratedValua>
+                                <enumeratedValue>
                                   <name>
                                     <xsl:value-of select="$enumitem[1]"/>
                                   </name>
                                   <value>
                                     <xsl:value-of select="$enumitem[2]"/>
                                   </value>
-                                </enumeratedValua>
+                                </enumeratedValue>
                          </xsl:for-each>
                        </xsl:otherwise>                       
                      </xsl:choose>
@@ -486,9 +493,9 @@
                     <xsl:value-of select="./cr:groupName" />
                   </groupName>
                 </xsl:if>
-                <baseaddress>
+                <baseAddress>
                   <xsl:value-of select="$pbase" />             
-                </baseaddress>
+                </baseAddress>
                 <addressBlock>
                   <xsl:copy-of select="internal:addressbloc_for(node(),'registers')" />     
                 </addressBlock>           
