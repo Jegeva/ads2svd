@@ -3,6 +3,8 @@
     <name>A73_A53_big.LITTLE</name>
     <internal_name>A73_A53_big.LITTLE</internal_name>
     <series>A</series>
+    <reg_filter id="AARCH64" gui_name="AArch64" core_state="AArch64"/>
+    <reg_filter id="AARCH32" gui_name="AArch32" core_state="AArch32"/>
     <cr:register_list filter="AARCH32" name="Core" display_by_default="true">
         <xi:include href="Registers/V8_AARCH32_Core.xml" xpointer="xmlns(reg_group=http://www.arm.com/core_reg)xpointer(//reg_group:register)"/>
         <xi:include href="Registers/banked_registers_V8_aarch32.xml" xpointer="xmlns(reg_group=http://www.arm.com/core_reg)xpointer(//reg_group:register_group)"/>
