@@ -433,7 +433,7 @@
           <vendor>ARM Ltd.</vendor>
           <vendorID>ARM</vendorID>
           <name><xsl:value-of select="c:core_definition/c:name"/></name>
-          <description><xsl:value-of select="c:core_definition/c:name"/> core descriptions, generated from ARM develloper studio</description>
+          <description><xsl:value-of select="c:core_definition/c:name"/> core descriptions, generated from Arm Development Studio</description>
           <cpu>
             <name><xsl:value-of select="internal:map_cpu_name(c:core_definition/c:name)"/></name>
             <series><xsl:value-of select="c:core_definition/c:series"/></series>
