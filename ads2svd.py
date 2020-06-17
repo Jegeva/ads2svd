@@ -57,7 +57,7 @@ def loadxml(p):
     out_file = os.path.join(config["out_dir"] , p.split(os.path.sep)[-1])
     out_file = open(out_file,"w")
     nfail = 0;  
-    incls = [i for i in root.xpath("//xi:include", namespaces={'xi':'http://www.w3.org/2001/XInclude'})]
+    incls = [i for i in root.xpath("//xi:Include", namespaces={'xi':'http://www.w3.org/2001/XInclude'})]
     for el in incls:        
         tree =  etree.ElementTree(el)
         try :
