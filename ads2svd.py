@@ -65,7 +65,7 @@ def loadxml(p):
             #error_log.write( 'SUCC "%s";"%s";\n' % (p[len(config["base_path"]):],orighref))         
         except lxml.etree.XIncludeError as err:
             if el.get("href"):
-                error_log.write( 'ERR;num=%d;file="%s";errhref="%s";errreason="%s";merrmsg="%s"\n' % (nfail,p[len(config["base_path"]):],el.get("href"),el.get("xpointer"),err))
+                error_log.write( 'ERR;num=%d;file="%s";errhref="%s";errreason="%s";merrmsg="%s"\n' % (nfail,p[len(config["configdb_path"]):],el.get("href"),el.get("xpointer"),err))
                 nfail+=1
                 error_log.flush()
                 pap = el.getparent()        
