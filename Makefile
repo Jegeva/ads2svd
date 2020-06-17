@@ -6,7 +6,7 @@ IN_FILES=$(wildcard $(IN_DIR)/*.xml)
 OUT_FILES=$(IN_FILES:$(IN_DIR)/%.xml=$(OUT_DIR)/%.svd)
 INTER_FILES=$(IN_FILES:$(IN_DIR)/%.xml=$(OUT_DIR)/%.xml)
 
-SAXONHE_PATH=/usr/share/java/Saxon-HE-9.9.1.5.jar
+SAXONHE_PATH=/usr/share/java/Saxon-HE.jar
 
 XLST_FILE=./ads2svd.xslt
 
