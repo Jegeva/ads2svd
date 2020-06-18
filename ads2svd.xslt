@@ -42,7 +42,7 @@
     <xsl:param name="cpu_name"/>
     <xsl:choose>
       <xsl:when test="matches($cpu_name,'[Cc]ortex-?[A-Z][0-9]+')">
-        <xsl:value-of select="replace(replace($cpu_name,'[Cc]ortex-?([A-Z][0-9]+\+?).*','C$1'),'\+','P')"/>
+        <xsl:value-of select="replace(replace(replace($cpu_name,'[Cc]ortex-?([A-Z][0-9]+\+?).*','C$1'),'\+','P'),'(-| )','_')"/>
       </xsl:when>
       <xsl:otherwise>
         <xsl:value-of select="$cpu_name"/>
@@ -432,7 +432,7 @@
         <device schemaVersion="1.3" xmlns:xs="http://www.w3.org/2001/XMLSchema-instance" xs:noNamespaceSchemaLocation="CMSIS-SVD.xsd" >
           <vendor>ARM Ltd.</vendor>
           <vendorID>ARM</vendorID>
-          <name><xsl:value-of select="c:core_definition/c:name"/></name>
+          <name><xsl:value-of select="replace(c:core_definition/c:name,'[ \-]','_')"/></name>
           <description><xsl:value-of select="c:core_definition/c:name"/> core descriptions, generated from ARM develloper studio</description>
           <cpu>
             <name><xsl:value-of select="internal:map_cpu_name(c:core_definition/c:name)"/></name>

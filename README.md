@@ -9,7 +9,8 @@ This turn the arm develloper studio xml corpus into a cmsis SVD format compliant
 to apply with an xslt 2.0 processor (tested using saxonhe) on a ads2svd.py result xml to get a core svd
 * in : 
 the (corrected) infiles from arm develloper studio, this is all @ARM, some includes in the original ARM xml files were broken
-
+* Makefile :
+Do not forget to set the  path to saxon HE to a  valid path on your system
 
 ## CAVEAT EMPTOR
 * This is in devellopment
