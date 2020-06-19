@@ -429,14 +429,15 @@
      <xsl:param name="doc"/>
      <xsl:param name="filter"/>
      <xsl:for-each select="$doc">
-        <device schemaVersion="1.3" xmlns:xs="http://www.w3.org/2001/XMLSchema-instance" xs:noNamespaceSchemaLocation="CMSIS-SVD.xsd" >
+        <device schemaVersion="1.3" xmlns:xs="http://www.w3.org/2001/XMLSchema-instance" xs:noNamespaceSchemaLocation="https://raw.githubusercontent.com/ARM-software/CMSIS_5/develop/CMSIS/Utilities/CMSIS-SVD.xsd" >
           <vendor>ARM Ltd.</vendor>
           <vendorID>ARM</vendorID>
           <name><xsl:value-of select="replace(c:core_definition/c:name,'[ \-]','_')"/></name>
+          <series><xsl:value-of select="c:core_definition/c:series"/></series>
+          <version><xsl:value-of  select="current-dateTime()"/></version>
           <description><xsl:value-of select="c:core_definition/c:name"/> core descriptions, generated from ARM Development studio</description>
           <cpu>
             <name><xsl:value-of select="internal:map_cpu_name(c:core_definition/c:name)"/></name>
-            <series><xsl:value-of select="c:core_definition/c:series"/></series>
             <revision>r0p0</revision>
             <endian>little</endian>
             <xsl:if test="boolean(./*/cr:peripheral[@name='MPU'])">
